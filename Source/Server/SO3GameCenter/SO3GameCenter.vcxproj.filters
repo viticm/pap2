@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="帮派">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="任务">
+      <UniqueIdentifier>{64d5dbc4-2116-49d7-83d4-6955b1c36d8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Connection">
+      <UniqueIdentifier>{31d7fafc-698e-4447-915d-5a4c8c6508ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="副本管理">
+      <UniqueIdentifier>{2d477bea-3eb9-4475-aade-240ddac30d04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="经济系统">
+      <UniqueIdentifier>{7e83212c-1871-489c-a4af-8a6d51efcdd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="配置文件">
+      <UniqueIdentifier>{e7245213-2f42-491e-a3f0-e298046907b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="组队">
+      <UniqueIdentifier>{fba00903-86b9-407f-ae0a-094ee50fa375}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="邮件">
+      <UniqueIdentifier>{6d8cde98-d7a9-4f80-b98f-9fcb42324bdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="角色管理">
+      <UniqueIdentifier>{62828653-b687-4ded-99ae-c4c3349aae54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="好友">
+      <UniqueIdentifier>{4d22c882-3014-4f5f-b9e6-b09a1b23c49e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lua">
+      <UniqueIdentifier>{d14825c5-4b49-4f15-8ffe-2f54df78cf28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MySQL">
+      <UniqueIdentifier>{e6e38676-fa54-4adb-9a0d-a80613eac8ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="寄卖行">
+      <UniqueIdentifier>{fb582d33-3542-44a8-b664-5ba70d4185c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="阵营">
+      <UniqueIdentifier>{16058759-87c5-4610-bd51-433e6528ede9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="全局数据">
+      <UniqueIdentifier>{efbae6d7-8f84-48d7-826f-08ef2a89fc53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="统计数据">
+      <UniqueIdentifier>{74d57a49-b60d-4a3a-9e50-7e9514b89036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="交通">
+      <UniqueIdentifier>{fd6234df-6839-48ae-9d94-a08a9a07b885}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="活动名单">
+      <UniqueIdentifier>{e9d58356-f2b7-4733-9b5a-d2d9957bc6aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="反外挂Proxy">
+      <UniqueIdentifier>{db82494d-bffe-4dce-a595-c2da43748a4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="月卡寄售">
+      <UniqueIdentifier>{c2a7a6f8-a14e-4a3a-8e3e-0ce8ab9c694f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="反打钱">
+      <UniqueIdentifier>{3d9e73ec-d89b-42b6-a7a5-76569960e8ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="师徒">
+      <UniqueIdentifier>{c60312b9-844c-4bf2-a5f7-bc8caeee25dc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Global.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="KOvertimeQueue.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="KSO3GameCenter.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="KTong.h">
+      <Filter>帮派</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\KTongDB.h">
+      <Filter>帮派</Filter>
+    </ClInclude>
+    <ClInclude Include="KTongHistory.h">
+      <Filter>帮派</Filter>
+    </ClInclude>
+    <ClInclude Include="KTongManager.h">
+      <Filter>帮派</Filter>
+    </ClInclude>
+    <ClInclude Include="KTongRepertory.h">
+      <Filter>帮派</Filter>
+    </ClInclude>
+    <ClInclude Include="KGPQCenter.h">
+      <Filter>任务</Filter>
+    </ClInclude>
+    <ClInclude Include="KGameCenterEyes.h">
+      <Filter>Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="KGameServer.h">
+      <Filter>Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="KGatewayAgency.h">
+      <Filter>Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="KLogServerAgency.h">
+      <Filter>Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="KBattleFieldManager.h">
+      <Filter>副本管理</Filter>
+    </ClInclude>
+    <ClInclude Include="KMapCopy.h">
+      <Filter>副本管理</Filter>
+    </ClInclude>
+    <ClInclude Include="KMapInfo.h">
+      <Filter>副本管理</Filter>
+    </ClInclude>
+    <ClInclude Include="KMapManager.h">
+      <Filter>副本管理</Filter>
+    </ClInclude>
+    <ClInclude Include="KHometownList.h">
+      <Filter>配置文件</Filter>
+    </ClInclude>
+    <ClInclude Include="KSO3GameCenterSettings.h">
+      <Filter>配置文件</Filter>
+    </ClInclude>
+    <ClInclude Include="KTeamCenter.h">
+      <Filter>组队</Filter>
+    </ClInclude>
+    <ClInclude Include="KMailBox.h">
+      <Filter>邮件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\KMailDef.h">
+      <Filter>邮件</Filter>
+    </ClInclude>
+    <ClInclude Include="KMailManager.h">
+      <Filter>邮件</Filter>
+    </ClInclude>
+    <ClInclude Include="KMailOperation.h">
+      <Filter>邮件</Filter>
+    </ClInclude>
+    <ClInclude Include="KRole.h">
+      <Filter>角色管理</Filter>
+    </ClInclude>
+    <ClInclude Include="KRoleManager.h">
+      <Filter>角色管理</Filter>
+    </ClInclude>
+    <ClInclude Include="KFellowshipCenter.h">
+      <Filter>好友</Filter>
+    </ClInclude>
+    <ClInclude Include="KRemoteScript.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="KScriptFuncList.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="KScriptManager.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Luna.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="KDBBase.h">
+      <Filter>MySQL</Filter>
+    </ClInclude>
+    <ClInclude Include="KDBTools.h">
+      <Filter>MySQL</Filter>
+    </ClInclude>
+    <ClInclude Include="KIDSequence.h">
+      <Filter>MySQL</Filter>
+    </ClInclude>
+    <ClInclude Include="KMiscDB.h">
+      <Filter>MySQL</Filter>
+    </ClInclude>
+    <ClInclude Include="KRoleDB.h">
+      <Filter>MySQL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\KAuctionDef.h">
+      <Filter>寄卖行</Filter>
+    </ClInclude>
+    <ClInclude Include="KAuctionManager.h">
+      <Filter>寄卖行</Filter>
+    </ClInclude>
+    <ClInclude Include="KAuctionOperation.h">
+      <Filter>寄卖行</Filter>
+    </ClInclude>
+    <ClInclude Include="KCampManager.h">
+      <Filter>阵营</Filter>
+    </ClInclude>
+    <ClInclude Include="KGlobalCustomDataManager.h">
+      <Filter>全局数据</Filter>
+    </ClInclude>
+    <ClInclude Include="KGlobalSystemValueManager.h">
+      <Filter>全局数据</Filter>
+    </ClInclude>
+    <ClInclude Include="KStatDataManager.h">
+      <Filter>统计数据</Filter>
+    </ClInclude>
+    <ClInclude Include="KRoadCenter.h">
+      <Filter>交通</Filter>
+    </ClInclude>
+    <ClInclude Include="KActivityManager.h">
+      <Filter>活动名单</Filter>
+    </ClInclude>
+    <ClInclude Include="KApexProxy.h">
+      <Filter>反外挂Proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\KGameCardDef.h">
+      <Filter>月卡寄售</Filter>
+    </ClInclude>
+    <ClInclude Include="KGameCardManager.h">
+      <Filter>月卡寄售</Filter>
+    </ClInclude>
+    <ClInclude Include="KGameCardOperation.h">
+      <Filter>月卡寄售</Filter>
+    </ClInclude>
+    <ClInclude Include="KAntiFarmerManager.h">
+      <Filter>反打钱</Filter>
+    </ClInclude>
+    <ClInclude Include="KMentorCenter.h">
+      <Filter>师徒</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\KMentorDef.h">
+      <Filter>师徒</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>帮派</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="KOvertimeQueue.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="KSO3GameCenter.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="KLuaTong.cpp">
+      <Filter>帮派</Filter>
+    </ClCompile>
+    <ClCompile Include="KTong.cpp">
+      <Filter>帮派</Filter>
+    </ClCompile>
+    <ClCompile Include="KTongHistory.cpp">
+      <Filter>帮派</Filter>
+    </ClCompile>
+    <ClCompile Include="KTongManager.cpp">
+      <Filter>帮派</Filter>
+    </ClCompile>
+    <ClCompile Include="KTongRepertory.cpp">
+      <Filter>帮派</Filter>
+    </ClCompile>
+    <ClCompile Include="KGPQCenter.cpp">
+      <Filter>任务</Filter>
+    </ClCompile>
+    <ClCompile Include="KGameCenterEyes.cpp">
+      <Filter>Connection</Filter>
+    </ClCompile>
+    <ClCompile Include="KGameServer.cpp">
+      <Filter>Connection</Filter>
+    </ClCompile>
+    <ClCompile Include="KGatewayAgency.cpp">
+      <Filter>Connection</Filter>
+    </ClCompile>
+    <ClCompile Include="KLogServerAgency.cpp">
+      <Filter>Connection</Filter>
+    </ClCompile>
+    <ClCompile Include="KBattleFieldManager.cpp">
+      <Filter>副本管理</Filter>
+    </ClCompile>
+    <ClCompile Include="KMapCopy.cpp">
+      <Filter>副本管理</Filter>
+    </ClCompile>
+    <ClCompile Include="KMapInfo.cpp">
+      <Filter>副本管理</Filter>
+    </ClCompile>
+    <ClCompile Include="KMapManager.cpp">
+      <Filter>副本管理</Filter>
+    </ClCompile>
+    <ClCompile Include="KHometownList.cpp">
+      <Filter>配置文件</Filter>
+    </ClCompile>
+    <ClCompile Include="KSO3GameCenterSettings.cpp">
+      <Filter>配置文件</Filter>
+    </ClCompile>
+    <ClCompile Include="KTeamCenter.cpp">
+      <Filter>组队</Filter>
+    </ClCompile>
+    <ClCompile Include="KMailBox.cpp">
+      <Filter>邮件</Filter>
+    </ClCompile>
+    <ClCompile Include="KMailManager.cpp">
+      <Filter>邮件</Filter>
+    </ClCompile>
+    <ClCompile Include="KRole.cpp">
+      <Filter>角色管理</Filter>
+    </ClCompile>
+    <ClCompile Include="KRoleManager.cpp">
+      <Filter>角色管理</Filter>
+    </ClCompile>
+    <ClCompile Include="KFellowshipCenter.cpp">
+      <Filter>好友</Filter>
+    </ClCompile>
+    <ClCompile Include="KLuaCenterConstList.cpp">
+      <Filter>Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="KRemoteScript.cpp">
+      <Filter>Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="KScriptFuncList.cpp">
+      <Filter>Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="KScriptManager.cpp">
+      <Filter>Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="KDBBase.cpp">
+      <Filter>MySQL</Filter>
+    </ClCompile>
+    <ClCompile Include="KDBTools.cpp">
+      <Filter>MySQL</Filter>
+    </ClCompile>
+    <ClCompile Include="KIDSequence.cpp">
+      <Filter>MySQL</Filter>
+    </ClCompile>
+    <ClCompile Include="KMiscDB.cpp">
+      <Filter>MySQL</Filter>
+    </ClCompile>
+    <ClCompile Include="KMiscDBThread.cpp">
+      <Filter>MySQL</Filter>
+    </ClCompile>
+    <ClCompile Include="KRoleDB.cpp">
+      <Filter>MySQL</Filter>
+    </ClCompile>
+    <ClCompile Include="KRoleDBThread.cpp">
+      <Filter>MySQL</Filter>
+    </ClCompile>
+    <ClCompile Include="KAuctionManager.cpp">
+      <Filter>寄卖行</Filter>
+    </ClCompile>
+    <ClCompile Include="KCampManager.cpp">
+      <Filter>阵营</Filter>
+    </ClCompile>
+    <ClCompile Include="KGlobalCustomDataManager.cpp">
+      <Filter>全局数据</Filter>
+    </ClCompile>
+    <ClCompile Include="KGlobalSystemValueManager.cpp">
+      <Filter>全局数据</Filter>
+    </ClCompile>
+    <ClCompile Include="KStatDataManager.cpp">
+      <Filter>统计数据</Filter>
+    </ClCompile>
+    <ClCompile Include="KRoadCenter.cpp">
+      <Filter>交通</Filter>
+    </ClCompile>
+    <ClCompile Include="KActivityManager.cpp">
+      <Filter>活动名单</Filter>
+    </ClCompile>
+    <ClCompile Include="KLuaActivityManager.cpp">
+      <Filter>活动名单</Filter>
+    </ClCompile>
+    <ClCompile Include="KApexProxy.cpp">
+      <Filter>反外挂Proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="KGameCardManager.cpp">
+      <Filter>月卡寄售</Filter>
+    </ClCompile>
+    <ClCompile Include="KAntiFarmerManager.cpp">
+      <Filter>反打钱</Filter>
+    </ClCompile>
+    <ClCompile Include="KLuaMentorCenter.cpp">
+      <Filter>师徒</Filter>
+    </ClCompile>
+    <ClCompile Include="KMentorCenter.cpp">
+      <Filter>师徒</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="SO3GameCenter.prj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SO3GameCenter.rc" />
+  </ItemGroup>
+</Project>

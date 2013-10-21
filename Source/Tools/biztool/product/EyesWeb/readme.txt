@@ -1,0 +1,1 @@
+上线前需要更新一个 SystemConfig.xml 文件和 ShellScripts 文件夹。

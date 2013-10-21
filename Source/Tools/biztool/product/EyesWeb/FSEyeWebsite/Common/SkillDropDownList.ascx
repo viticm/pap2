@@ -1,0 +1,2 @@
+<%@ control language="C#" autoeventwireup="true" inherits="Common_SkillDropDownList, App_Web_1ceayx6e" %>
+<asp:DropDownList ID="DropDownListPage" runat="server" OnSelectedIndexChanged="DropDownListPage_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList><asp:DropDownList ID="DropDownListSkill" runat="server"></asp:DropDownList>

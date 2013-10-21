@@ -1,0 +1,17 @@
+﻿@title 表现逻辑通用函数
+@detail 一些仅用于客户端的脚本接口
+@obj 
+
+
+@summary [仅客户端使用] 重新加载某个部分的表现逻辑配置
+@param str 表示要重新加载哪个部分的表现配置，可以使用的值有：
+@n	"GameWorldGlobal":	表现逻辑全局配置项，更新global.ini时用
+@n	"GameWorldPlayer": 玩家
+@n	"GameWorldNpc":	Npc
+@n	"GameWorldDoodad":	Doodad
+@n	"GameWorldForceRelation":	势力关系
+@n	"GameWorldSkillBuff":	技能
+@n	"GameWorldSkillCaster":	技能释放者
+@n	"GameWorldSkillEffect":	技能效果
+@n	"GameWorldSkillMissile":	子弹
+function ResetActiveObject(str)

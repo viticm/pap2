@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="窗口属性">
+      <UniqueIdentifier>{9066f46b-714c-488a-9bc5-735af304ff7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="管理">
+      <UniqueIdentifier>{9bacb93b-fd6d-40ac-8470-7a714eeca35d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{b9c79299-32a3-4151-912b-f19c8e18229f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="UiWndButton.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndButtonCommon.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndCheckBox.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndCheckBoxCommon.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndData.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndEdit.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndEditCommon.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndFrame.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndFrameCommon.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndFrameDragDrop.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndFrameScript.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndFrameTabControl.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndImage.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndImageCommon.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndMinimap.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndNewScrollbar.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndNewScrollbarCommon.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndPage.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndPageSet.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndPageSetCommon.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndScene.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndSceneCommon.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndShowAnimate.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndShowAnimateCommon.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndWebPage.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndWebPageCommon.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndWindow.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndWindowCommon.cpp">
+      <Filter>窗口属性</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientManage.cpp">
+      <Filter>管理</Filter>
+    </ClCompile>
+    <ClCompile Include="khotkeytable.cpp">
+      <Filter>管理</Filter>
+    </ClCompile>
+    <ClCompile Include="KTga.cpp">
+      <Filter>管理</Filter>
+    </ClCompile>
+    <ClCompile Include="UiClipboard.cpp">
+      <Filter>管理</Filter>
+    </ClCompile>
+    <ClCompile Include="UiColorManage.cpp">
+      <Filter>管理</Filter>
+    </ClCompile>
+    <ClCompile Include="UiFontManage.cpp">
+      <Filter>管理</Filter>
+    </ClCompile>
+    <ClCompile Include="UiGlobalStringValueMgr.cpp">
+      <Filter>管理</Filter>
+    </ClCompile>
+    <ClCompile Include="UiHotKeyManage.cpp">
+      <Filter>管理</Filter>
+    </ClCompile>
+    <ClCompile Include="UiProjectManage.cpp">
+      <Filter>管理</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWindowManage.cpp">
+      <Filter>管理</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndSelAnimate.cpp">
+      <Filter>管理</Filter>
+    </ClCompile>
+    <ClCompile Include="UiWndSelTgaFram.cpp">
+      <Filter>管理</Filter>
+    </ClCompile>
+    <ClCompile Include="UiItemAnimate.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UiItemAnimateCommon.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UiItemBox.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UiItemBoxCommon.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UiItemCommon.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UiItemHandle.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UiItemHandleCommon.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UiItemImage.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UiItemImageCommon.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UiItemScene.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UiItemSceneCommon.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UiItemShadow.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UiItemShadowCommon.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UiItemText.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UiItemTextCommon.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UiItemTreeLeaf.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UiItemTreeLeafCommon.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Stdafx.cpp" />
+    <ClCompile Include="Ui.cpp" />
+    <ClCompile Include="UiEditor.cpp" />
+    <ClCompile Include="UiShowWndTree.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UiWndButton.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndButtonCommon.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndCheckBox.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndCheckBoxCommon.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndData.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndEdit.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndEditCommon.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndFrame.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndFrameCommon.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndFrameDragDrop.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndFrameScript.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndFrameTabControl.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndImage.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndImageCommon.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndMinimap.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndNewScrollbar.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndNewScrollbarCommon.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndPage.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndPageSet.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndPageSetCommon.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndScene.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndSceneCommon.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndShowAnimate.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndShowAnimateCommon.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndWebPage.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndWebPageCommon.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndWindow.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndWindowCommon.h">
+      <Filter>窗口属性</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientManage.h">
+      <Filter>管理</Filter>
+    </ClInclude>
+    <ClInclude Include="khotkeytable.h">
+      <Filter>管理</Filter>
+    </ClInclude>
+    <ClInclude Include="KTga.h">
+      <Filter>管理</Filter>
+    </ClInclude>
+    <ClInclude Include="UiClipboard.h">
+      <Filter>管理</Filter>
+    </ClInclude>
+    <ClInclude Include="UiColorManage.h">
+      <Filter>管理</Filter>
+    </ClInclude>
+    <ClInclude Include="UiFontManage.h">
+      <Filter>管理</Filter>
+    </ClInclude>
+    <ClInclude Include="UiGlobalStringValueMgr.h">
+      <Filter>管理</Filter>
+    </ClInclude>
+    <ClInclude Include="UiHotKeyManage.h">
+      <Filter>管理</Filter>
+    </ClInclude>
+    <ClInclude Include="UiProjectManage.h">
+      <Filter>管理</Filter>
+    </ClInclude>
+    <ClInclude Include="UiTex.h">
+      <Filter>管理</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWindowManage.h">
+      <Filter>管理</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndSelAnimate.h">
+      <Filter>管理</Filter>
+    </ClInclude>
+    <ClInclude Include="UiWndSelTgaFram.h">
+      <Filter>管理</Filter>
+    </ClInclude>
+    <ClInclude Include="UiItemAnimate.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UiItemAnimateCommon.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UiItemBox.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UiItemBoxCommon.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UiItemCommon.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UiItemHandle.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UiItemHandleCommon.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UiItemImage.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UiItemImageCommon.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UiItemScene.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UiItemSceneCommon.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UiItemShadow.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UiItemShadowCommon.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UiItemText.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UiItemTextCommon.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UiItemTreeLeaf.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="UiItemTreeLeafCommon.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Stdafx.h" />
+    <ClInclude Include="tstring.h" />
+    <ClInclude Include="Ui.h" />
+    <ClInclude Include="UiEditor.h" />
+    <ClInclude Include="UiShowWndTree.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UiEditor.rc" />
+  </ItemGroup>
+</Project>

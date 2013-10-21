@@ -1,0 +1,4 @@
+#/bin/bash
+#rename file
+
+mv --reply=no {0} {1}

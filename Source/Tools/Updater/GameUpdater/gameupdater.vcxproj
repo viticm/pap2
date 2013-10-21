@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4923710C-CC8B-47F4-848D-633B92AC215C}</ProjectGuid>
+    <RootNamespace>FlashContainer</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../common;common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;TIXML_USE_STL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>URLMon.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName)D.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\..\..\..\Lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>md ..\..\..\..\..\sword3-products
+md ..\..\..\..\..\sword3-products\trunk
+md ..\..\..\..\..\sword3-products\trunk\client
+copy "$(TargetDir)$(TargetName).exe" ..\..\..\..\..\sword3-products\trunk\client
+copy "$(TargetDir)$(TargetName).pdb" ..\..\..\..\..\sword3-products\trunk\client
+copy ..\flash\update.swf  ..\..\..\..\..\sword3-products\trunk\client
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../common;common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Update.lib;Urlmon.lib;Shlwapi.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\Lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>md ..\..\..\..\..\sword3-products
+md ..\..\..\..\..\sword3-products\trunk
+md ..\..\..\..\..\sword3-products\trunk\client
+copy "$(TargetDir)$(TargetName).exe" ..\..\..\..\..\sword3-products\trunk\client
+copy "$(TargetDir)$(TargetName).pdb" ..\..\..\..\..\sword3-products\trunk\client
+copy ..\flash\update.swf  ..\..\..\..\..\sword3-products\trunk\client
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="KExtractUpdatePack.cpp" />
+    <ClCompile Include="KSelfUpdater.cpp" />
+    <ClCompile Include="updatepublic.cpp" />
+    <ClCompile Include="bufsocket.cpp" />
+    <ClCompile Include="httpdownload.cpp" />
+    <ClCompile Include="KHttpDownloader.cpp" />
+    <ClCompile Include="KHttpFile.cpp" />
+    <ClCompile Include="sockspacket.cpp" />
+    <ClCompile Include="KFileMD5Maker.cpp" />
+    <ClCompile Include="KFileVersionInfo.cpp" />
+    <ClCompile Include="KGameupdaterText.cpp" />
+    <ClCompile Include="..\Common\KGLog.cpp" />
+    <ClCompile Include="KLastError.cpp" />
+    <ClCompile Include="KMessageWindow.cpp" />
+    <ClCompile Include="..\Common\KProcess.cpp" />
+    <ClCompile Include="..\Common\KRegInfo.cpp" />
+    <ClCompile Include="KThread.cpp" />
+    <ClCompile Include="KUpdateGlobalEvent.cpp" />
+    <ClCompile Include="KVersionNumber.cpp" />
+    <ClCompile Include="KVersionParser.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="md5.cpp" />
+    <ClCompile Include="mymd5.cpp" />
+    <ClCompile Include="SystemInfo.cpp" />
+    <ClCompile Include="tinystr.cpp" />
+    <ClCompile Include="tinyxml.cpp" />
+    <ClCompile Include="tinyxmlerror.cpp" />
+    <ClCompile Include="tinyxmlparser.cpp" />
+    <ClCompile Include="toolhelp.cpp" />
+    <ClCompile Include="..\Common\unzip.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="KClientReport.cpp" />
+    <ClCompile Include="KGU_RemoveRedundantFiles.cpp" />
+    <ClCompile Include="KSystemCheck.cpp" />
+    <ClCompile Include="KFlashWindow.cpp" />
+    <ClCompile Include="KConfig.cpp" />
+    <ClCompile Include="KDownloadUpdatePackage.cpp" />
+    <ClCompile Include="KGameUpdater.cpp" />
+    <ClCompile Include="KGU_GameUpdater.cpp" />
+    <ClCompile Include="KGU_Public.cpp" />
+    <ClCompile Include="KGU_SelfUpdater.cpp" />
+    <ClCompile Include="KUpdate.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="KExtractUpdatePack.h" />
+    <ClInclude Include="KSelfUpdater.h" />
+    <ClInclude Include="updatepublic.h" />
+    <ClInclude Include="bufsocket.h" />
+    <ClInclude Include="httpdownload.h" />
+    <ClInclude Include="IDownloader.h" />
+    <ClInclude Include="KHttpDownloader.h" />
+    <ClInclude Include="KHttpFile.h" />
+    <ClInclude Include="sockspacket.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="KFileMD5Maker.h" />
+    <ClInclude Include="KFileVersionInfo.h" />
+    <ClInclude Include="KGameupdaterText.h" />
+    <ClInclude Include="..\Common\KGError.h" />
+    <ClInclude Include="..\Common\kglog.h" />
+    <ClInclude Include="..\Common\KGPublic.h" />
+    <ClInclude Include="KLastError.h" />
+    <ClInclude Include="KMessageWindow.h" />
+    <ClInclude Include="..\Common\KProcess.h" />
+    <ClInclude Include="..\Common\KRegInfo.h" />
+    <ClInclude Include="KThread.h" />
+    <ClInclude Include="KUpdateGlobalEvent.h" />
+    <ClInclude Include="KVersionNumber.h" />
+    <ClInclude Include="KVersionParser.h" />
+    <ClInclude Include="md5.h" />
+    <ClInclude Include="my_md5.h" />
+    <ClInclude Include="mymd5.h" />
+    <ClInclude Include="SystemInfo.h" />
+    <ClInclude Include="tinystr.h" />
+    <ClInclude Include="tinyxml.h" />
+    <ClInclude Include="toolhelp.h" />
+    <ClInclude Include="..\Common\unzip.h" />
+    <ClInclude Include="KClientReport.h" />
+    <ClInclude Include="KGU_RemoveRedundantFiles.h" />
+    <ClInclude Include="KSystemCheck.h" />
+    <ClInclude Include="KFlashWindow.h" />
+    <ClInclude Include="IUpdateEvent.h" />
+    <ClInclude Include="UpdateDefine.h" />
+    <ClInclude Include="KConfig.h" />
+    <ClInclude Include="KDownloadUpdatePackage.h" />
+    <ClInclude Include="KGameUpdater.h" />
+    <ClInclude Include="KGU_GameUpdater.h" />
+    <ClInclude Include="KGU_Public.h" />
+    <ClInclude Include="KGU_SelfUpdater.h" />
+    <ClInclude Include="KUpdate.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FlashContainer.ico" />
+    <None Include="small.ico" />
+    <None Include="update16bitback.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="FlashContainer.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

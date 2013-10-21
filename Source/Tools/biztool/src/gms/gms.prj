@@ -1,0 +1,30 @@
+[Include]
+./src
+/usr/include
+../Share/Header/FSEye
+../Share/Header
+../../../../../../Base/Include
+../../../../../../Sword3/Include/FSEyes
+
+[Config Debug]
+Product		Dll ../../product/debug/plug/gms
+Options		Debug
+Defines		__linux
+ObjDir		obj
+LibDir		../../../../../../Base/Lib/Linux; /usr/local/lib; /usr/lib/lib; /lib/
+Libraries	pthread; CommonD; EngineD;
+
+[Config Release]
+Product		Dll ../../product/release/plug/gms
+Options		Release
+Defines		__linux
+ObjDir		obj
+LibDir		../../../../../../Base/Lib/Linux; /usr/local/lib; /usr/lib/lib; /lib/
+Libraries	pthread; Common; Engine
+
+[Source]
+stdafx.cpp
+gms.cpp
+gmsplug.cpp
+kclient.cpp
+kgmsclient.cpp

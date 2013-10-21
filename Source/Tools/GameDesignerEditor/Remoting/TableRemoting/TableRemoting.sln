@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTableRemoting", "DataTableRemoting\DataTableRemoting.csproj", "{11819888-9C2B-4967-88CE-A92C3600FE45}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D98030C9-BF41-4B8F-9197-1D75E20DDEF6} = {D98030C9-BF41-4B8F-9197-1D75E20DDEF6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTableRemotingClient", "DataTableRemotingClient\DataTableRemotingClient.csproj", "{77C37935-7118-43F8-B7F3-DD2DA1857A46}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D98030C9-BF41-4B8F-9197-1D75E20DDEF6} = {D98030C9-BF41-4B8F-9197-1D75E20DDEF6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTableRemotingCommon", "DataTableRemotingCommon\DataTableRemotingCommon.csproj", "{D98030C9-BF41-4B8F-9197-1D75E20DDEF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTableRemotingServer", "DataTableRemotingServer\DataTableRemotingServer.csproj", "{B7C0641B-8EC7-4C2C-A177-F4904767320F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{11819888-9C2B-4967-88CE-A92C3600FE45} = {11819888-9C2B-4967-88CE-A92C3600FE45}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteMonitor", "RemoteMonitor\RemoteMonitor.csproj", "{B7581347-BDFE-40D3-9774-C6820EDF7080}"
+	ProjectSection(ProjectDependencies) = postProject
+		{77C37935-7118-43F8-B7F3-DD2DA1857A46} = {77C37935-7118-43F8-B7F3-DD2DA1857A46}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11819888-9C2B-4967-88CE-A92C3600FE45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11819888-9C2B-4967-88CE-A92C3600FE45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11819888-9C2B-4967-88CE-A92C3600FE45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11819888-9C2B-4967-88CE-A92C3600FE45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77C37935-7118-43F8-B7F3-DD2DA1857A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77C37935-7118-43F8-B7F3-DD2DA1857A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77C37935-7118-43F8-B7F3-DD2DA1857A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77C37935-7118-43F8-B7F3-DD2DA1857A46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D98030C9-BF41-4B8F-9197-1D75E20DDEF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D98030C9-BF41-4B8F-9197-1D75E20DDEF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D98030C9-BF41-4B8F-9197-1D75E20DDEF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D98030C9-BF41-4B8F-9197-1D75E20DDEF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7C0641B-8EC7-4C2C-A177-F4904767320F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7C0641B-8EC7-4C2C-A177-F4904767320F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7C0641B-8EC7-4C2C-A177-F4904767320F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7C0641B-8EC7-4C2C-A177-F4904767320F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7581347-BDFE-40D3-9774-C6820EDF7080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7581347-BDFE-40D3-9774-C6820EDF7080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7581347-BDFE-40D3-9774-C6820EDF7080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7581347-BDFE-40D3-9774-C6820EDF7080}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

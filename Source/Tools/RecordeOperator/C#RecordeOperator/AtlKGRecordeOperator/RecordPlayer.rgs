@@ -1,0 +1,26 @@
+HKCR
+{
+	AtlKGRecordeOperator.RecordPlayer.1 = s 'RecordPlayer Class'
+	{
+		CLSID = s '{3D5D9834-A2BA-419F-A11B-7D695518D954}'
+	}
+	AtlKGRecordeOperator.RecordPlayer = s 'RecordPlayer Class'
+	{
+		CLSID = s '{3D5D9834-A2BA-419F-A11B-7D695518D954}'
+		CurVer = s 'AtlKGRecordeOperator.RecordPlayer.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {3D5D9834-A2BA-419F-A11B-7D695518D954} = s 'RecordPlayer Class'
+		{
+			ProgID = s 'AtlKGRecordeOperator.RecordPlayer.1'
+			VersionIndependentProgID = s 'AtlKGRecordeOperator.RecordPlayer'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Both'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{1EFD303F-CA43-4418-8BCA-5E18F5793F0E}'
+		}
+	}
+}

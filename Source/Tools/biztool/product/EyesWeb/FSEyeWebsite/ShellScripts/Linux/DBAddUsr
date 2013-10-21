@@ -1,0 +1,23 @@
+#/bin/sh
+#create by zuolizhi
+
+DBUSER=C#P1
+DBPWD=C#P2
+
+DBNAME=C#P3
+CUSER=C#P4
+CPWD=C#P5
+PRIV=`echo C#P6`
+HOST=C#P7
+
+tmpsql=adduser.sql
+
+echo "GRANT $PRIV ON $DBNAME.* TO $CUSER@'$HOST' IDENTIFIED BY '$CPWD';" > $tmpsql
+
+if [ -z $DBPWD ]; then
+mysql -u $DBUSER < $tmpsql
+else
+mysql -u $DBUSER -p$DBPWD < $tmpsql
+fi
+
+rm -rf $tmpsql

@@ -1,0 +1,27 @@
+[Include]
+./src
+/usr/include
+../Share/Header/FSEye
+../Share/Header
+../../../../../../Base/Include
+../../../../../../Sword3/Include/FSEyes
+
+[Config Debug]
+Product		Dll ../../product/debug/plug/lordmonitor
+Options		Debug
+Defines		__linux
+ObjDir		obj
+LibDir		../../../../../../Base/Lib/Linux; /usr/local/lib; /usr/lib/lib; /lib/
+Libraries	pthread; EngineD
+
+[Config Release]
+Product		Dll ../../product/release/plug/lordmonitor
+Options		Release
+Defines		__linux
+ObjDir		obj
+LibDir		../../../../../../Base/Lib/Linux; /usr/local/lib; /usr/lib/lib; /lib/
+Libraries	pthread; Engine
+
+[Source]
+src/lordmonitor.cpp
+src/kmonitor.cpp

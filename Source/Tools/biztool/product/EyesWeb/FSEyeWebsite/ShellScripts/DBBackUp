@@ -1,0 +1,82 @@
+#/bin/sh
+#create by zuolizhi
+
+DBNAME=C#P1
+DBUSER=C#P2
+DBPWD=C#P3
+BKPATH=C#P4
+BKTYPE=C#P5
+
+CURPWD=`pwd`
+mkdir -p $BKPATH
+cd $BKPATH
+
+if [ $BKTYPE -eq 0  ]; then
+BKFILENAME=FS2DB_`echo $DBNAME`_$(date +%y_%m_%d)_BK.tar.gz
+SQLFILENAME=FS2DB_`echo $DBNAME`_$(date +%y_%m_%d).sql
+else
+BKFILENAME=FS2DBLOG_`echo $DBNAME`_$(date +%y_%m_%d)_BK.tar.gz
+SQLFILENAME=FS2DBLOG_`echo $DBNAME`_$(date +%y_%m_%d).sql
+fi
+
+#CURYEAR=$(date +%y)
+#CURMON=$(date +%m)
+
+# 30 days
+PERIODSECS=2592000
+CURSECONDS=`date +%s`
+
+ls  > curls.txt
+while read line
+do
+YEAR=`echo $line | awk -F _ '{print $3}'`
+MON=`echo $line | awk -F _ '{print $4}'`
+DAY=`echo $line | awk -F _ '{print $5}'`
+expr $YEAR + 0 > /dev/null 2>&1
+if [ $? -eq 0  ]; then
+
+FILESECS=`date -d $YEAR-$MON-$DAY +%s`
+FILESECS=`expr $FILESECS + $PERIODSECS`
+
+if [ $FILESECS -lt $CURSECONDS ]; then
+rm -rf $line > /dev/null 2>&1
+fi
+
+#if [ $YEAR -ne $CURYEAR ]; then
+#rm -rf $line > /dev/null 2>&1
+#fi
+#if [ $MON -ne $CURMON ]; then
+#rm -rf $line > /dev/null 2>&1
+#fi
+
+fi
+done < curls.txt
+rm -rf curls.txt
+
+if [ -f $BKFILENAME ] 
+then 
+rm -rf $BKFILENAME > /dev/null 2>&1
+fi
+
+rm -rf *.sql > /dev/null 2>&1
+
+if [ $BKTYPE -eq 0  ]; then
+
+if [ -z $DBPWD ]; then
+mysqldump -u $DBUSER --skip-opt --extended-insert=false --add-drop-table --add-locks --create-options --disable-keys --quick --hex-blob $DBNAME auction global mails npcsave playeraction rolesdead rolesdelete rolesfirst rolessecond socialrelation globalmail > $SQLFILENAME
+else
+mysqldump -u $DBUSER -p$DBPWD --skip-opt --extended-insert=false --add-drop-table --add-locks --create-options --disable-keys --quick --hex-blob $DBNAME auction global mails npcsave playeraction rolesdead rolesdelete rolesfirst rolessecond socialrelation globalmail > $SQLFILENAME
+fi
+else
+if [ -z $DBPWD ]; then
+mysqldump -u $DBUSER --skip-opt --extended-insert=false --add-drop-table --add-locks --create-options --disable-keys --quick --hex-blob --ignore-table $DBNAME.auction --ignore-table $DBNAME.global --ignore-table $DBNAME.global --ignore-table $DBNAME.mails --ignore-table $DBNAME.npcsave --ignore-table $DBNAME.playeraction --ignore-table $DBNAME.rolesdead --ignore-table $DBNAME.rolesdelete --ignore-table $DBNAME.rolesfirst --ignore-table $DBNAME.rolessecond --ignore-table $DBNAME.socialrelation --ignore-table $DBNAME.procedureerror --ignore-table $DBNAME.globalmail  $DBNAME > $SQLFILENAME
+else
+mysqldump -u $DBUSER -p$DBPWD --skip-opt --extended-insert=false --add-drop-table --add-locks --create-options --disable-keys --quick --hex-blob --ignore-table $DBNAME.auction --ignore-table $DBNAME.global --ignore-table $DBNAME.global --ignore-table $DBNAME.mails --ignore-table $DBNAME.npcsave --ignore-table $DBNAME.playeraction --ignore-table $DBNAME.rolesdead --ignore-table $DBNAME.rolesdelete --ignore-table $DBNAME.rolesfirst --ignore-table $DBNAME.rolessecond --ignore-table $DBNAME.socialrelation --ignore-table $DBNAME.procedureerror --ignore-table $DBNAME.globalmail $DBNAME > $SQLFILENAME
+fi
+fi
+
+tar -czvf $BKFILENAME $SQLFILENAME > /dev/null 2>&1 
+
+rm -rf *.sql > /dev/null 2>&1
+
+cd $CURPWD

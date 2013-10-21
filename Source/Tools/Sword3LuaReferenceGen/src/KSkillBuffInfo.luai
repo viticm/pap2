@@ -1,0 +1,14 @@
+﻿@title	KSKILL_BUFF_INFO对象
+@obj	KSKILL_BUFF_INFO
+@detail
+@catalog
+
+@summary rw. Buff等级
+property nLevel as int rw
+
+@summary rw. Buff持续时间，单位帧
+property nDurationFrame
+
+@summary 获取Buff的所有属性
+@remarks 返回一个包含buff所有属性的table，table的每一项包括：{nID, nValue1, nValue2}
+function GetAttribute()

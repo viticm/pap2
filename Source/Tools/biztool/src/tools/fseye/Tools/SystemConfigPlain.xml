@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SystemConfig>
+	<Config attribute="MaxConnectionCount" value="0"></Config>
+	<Config attribute="AdminServerListenPort" value="6666"></Config>
+	<Config attribute="SecondaryAdminServerListenPort" value="7777"></Config>
+	<Config attribute="ConfigGuardPort" value="9999"></Config>
+	<Config attribute="ListenForConfigGuardReturnPort" value="9999"></Config>
+	<Config attribute="AdminServerUploadFileRootPath" value="D:\fseyeupload\"></Config>
+	<Config attribute="DbConnectionString" value="server=; user id=; password=; connect timeout=30;port=3306; database=fseye; pooling=true; min pool size=2; max pool size=10;"></Config>
+	<Config attribute="DefaultDbName" value="fseye"></Config>
+	<Config attribute="DefaultEncoding" value="gb2312"></Config>	
+	<Config attribute="DefaultNewLine" value="\r\n"></Config>
+	<Config attribute="LogDir" value="D:\fseyelog\"></Config>
+	<Config attribute="LogEnabled" value="true"></Config>
+	<Config attribute="NeedGuardAuthorization" value="true"></Config>
+	<Config attribute="GameSettingDir" value="D:\fs2settings\"></Config>
+	<Config attribute="GuardAuthorizationTimeout" value="30000"></Config>
+	<Config attribute="EnablePaysys" value="false"></Config>
+	<Config attribute="PaySysDbConnectionString" value=""></Config>
+	<Config attribute="PreloadGameData" value="false"></Config>
+</SystemConfig>

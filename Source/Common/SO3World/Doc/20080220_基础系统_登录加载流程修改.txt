@@ -1,0 +1,66 @@
+==================================================================
+登录加载流程修改                                                  |
+==================================================================
+
+评审时间：2008-02-20
+
+参与人员：夏永 赵纯峰 侯锐
+
+
+修改方案和原因：
+------------------------------------------------------------------
+1. 把GS上“load角色数据”放在“将player指针添加到场景中”之前做：
+
+   原有的实现机制是角色登录的时候，GS收到Goddess发来的角色数据后，先将player指针添
+   加到场景中，再load角色数据。这样，将player指针添加到场景中的时候，会用到角色的信
+   息，由于还没有load角色数据，导致添加操作失败。因此，考虑交换两个操作的顺序，即：
+   先“load角色数据”，再“将player指针添加到场景中”。
+
+2. 把“将玩家设置成gsPlaying”的操作放在其他操作都成功执行后做：
+
+   玩家状态从gsWaitForRoleData到gsPlaying的过程中，由于GS收到Goddess发来的角色数据后，
+   先设置玩家状态为gsPlaying，再执行AddPlayer和Load的操作。但是Load一部分后失败的情况
+   下，玩家状态为gsPlaying，后面GS执行Shutdown操作，检测到该玩家状态为gsPlaying，执行
+   保存角色的操作，由于只将部分已加载成功的角色数据保存，会造成角色数据被损坏。因此，
+   考虑把“将玩家设置成gsPlaying”的操作，放在成功执行AddPlayer和Load之后做。
+
+3. 现有的玩家状态转换流程不变。
+
+4. 修改“load角色数据”时候，所有用到场景指针的地方。
+
+
+存在的风险：
+------------------------------------------------------------------
+1. “将player指针添加到场景中”的时候，可能需要用到场景指针的地方无法获取，因此，在
+    相关代码编写的时候，要避免需要用到场景指针的情况。
+
+
+本次修改涉及到的代码：
+------------------------------------------------------------------
+1. 文件KGoddessClient.cpp中，函数KGoddessClient::OnReplyRoleData伪代码如下：
+
+       	pScene = g_SO3World.GetScene(...);
+
+	bRetCode = pPlayer->Load(...);
+	KGLOG_PROCESS_ERROR(bRetCode);
+
+	bRetCode = g_SO3World.AddPlayer(...);
+	KGLOG_PROCESS_ERROR(bRetCode);
+
+    	pPlayer->UpdateLastPositionRecord();
+
+    	bRetCode = pPlayer->CallLoginScript();
+    	KGLOG_PROCESS_ERROR(bRetCode);
+
+    	pPlayer->m_eGameStatus = gsPlaying;
+
+2. 文件KCharacter.cpp中，函数KCharacter::Halt，在入口处增加判断，确保玩家必须已经在
+   场景中：
+	KG_PROCESS_ERROR(m_pRegion);
+
+3. 文件KCharacter.cpp中，函数KCharacter::Stop，在入口处增加判断，确保玩家必须已经在
+   场景中：
+	KG_PROCESS_ERROR(m_pRegion);
+
+
+

@@ -1,0 +1,9 @@
+; kegame.def : Declares the module parameters.
+
+LIBRARY      "kegame.DLL"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE

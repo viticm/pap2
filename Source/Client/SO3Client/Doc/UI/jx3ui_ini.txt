@@ -1,0 +1,243 @@
+简述：
+	这是剑网三界面系统布局配置文件说明，配置项之间有继承，组合两种关系。
+	每种类型有不同的keyname，keyname旁边的是默认值，然后是说明。
+	int为整型，但不分long还是short以及部分signed或unsigned，bool为0或者1,str为字符串。
+
+KWndWindow
+	Width 					0		int			窗口控件宽度；
+	Height 					0		int			窗口控件高度；
+	Left 					0		int			窗口控件相对父窗口左上角x坐标；
+	Top 					0		int			窗口控件相对父窗口左上角y坐标；
+	Disable 				0		bool		窗口控件是否禁止接收鼠标、键盘消息；
+	Moveable 				0		bool		窗口控件是否可以移动；
+	FollowMove 				0,0 	bool,bool	跟随父窗口右下边界的变化移动窗口；
+	FollowSize 				0,0 	bool,bool	跟随父窗口大小的变化调整窗口大小；
+	DummyWnd 				0 		bool		以子窗口的范围测试的集合作为自己的范围测试的集合；
+
+KWndImage : KWndWindow
+	Trans 					0		bool		是否是透明窗口，这个跟鼠标消息的点击区域有关；
+	ImgType 				0		int			图片类型，即将废弃；
+	Image 					""		str			图片路径；
+	Frame 					-1		int			默认帧；
+	GrayColor 				""		str			变灰颜色值名；
+                                            	
+KWndButton : KWndImage                      	
+	Up 						0		int			按钮一般状态显示帧；
+	Down 					1		int			按钮按下状态显示帧；
+	DisableFrame 			-1		int			按钮禁止状态显示帧；
+	NoOverSound 			0		bool		鼠标移过按钮是否播放声音；
+	Over 					0		bool		按钮是否是动画按钮；
+	OverFrame 				2		int			动画按钮显示帧；
+	CheckBox 				0		bool		按钮是否是选中型按钮；
+	CheckOver 				0		int			选中性按钮鼠标移过按钮显示的帧；
+	SendHoldMsg 			0		bool		是否产生持续按消息；
+	$Tip 					""		str			按钮提示；
+                                            	
+KWndLabeledButton : KWndButton              	
+	HAlign 					1  		int			0为左对齐,1为中间对齐,2为右对齐;
+	VAlign 					1  		int			0为上对齐,1为中间对齐,2为下对齐;
+	FontSchemeUp			0		int			一般状态字体方案索引；
+	FontSchemeOver			0		int			鼠标移到按钮上方字体方案索引；
+	$Label 					""		str			按钮显示文字；
+                                            	
+KWndText : KWndWindow                       	
+	HAlign 					0  		int			0为左对齐,1为中间对齐,2为右对齐;
+	VAlign 					0  		int			0为上对齐,1为中间对齐,2为下对齐;
+	FontScheme 				0		int			字体方案索引；
+	TextLength 				32		int			目前支持的值为32、512；
+	$Text 					""		str			显示的文本；
+	MultiLine 				0		bool		是否多行显示；
+                                            	
+KWndPrefixText32 : KWndText                 	
+	FontSchemePrefix		0		int			前缀文字方案索引；
+	$PrefixText				""		str			前缀文字内容；
+                                            	
+KWndPureTextButton : KWndWindow             	
+	FontSchemeUp 			0		int			一般状态字体方案索引；				
+	FontSchemeOver 			0		int			鼠标移到按钮上方字体方案索引；				
+	FontSchemeDown 			0		int			按下状态字体方案索引，替代原来的Sel状态；				
+	HAlign					1		int			0为左对齐,1为中间对齐,2为右对齐，替代原来的CentreAlign;				
+	VAlign 					1  		int			0为上对齐,1为中间对齐,2为下对齐;
+	$Text					""		str			按钮显示文字；
+	$Tip					""		str			按钮提示；                                 	
+                                            	
+KWndEdit : KWndWindow                       	
+	MultiLine 				0		bool		是否多行显示；
+	Password 				0		bool		是否使用密码掩码；
+	Type 					0		int			0表示可输入数字，1表示可输入数字、英文跟标点，2表示可输入数字、英文、标点以及中文；
+	TextLength 				32		int			输入文本最大容量，目前可使用的值是32、80、256、512、1024；
+	MaxLen 					-1		int			可输入的值，如设为-1则使用TextLength，此值不能大于TextLength；
+	FontScheme 				0		int			字体方案索引；
+	FocusBgColor 			""		str			输入焦点背景颜色名字；
+	FocusBgColorAlpha 		128		int			输入焦点背景透明度；
+                                            	
+KWndValueImage : KWndImage                  	
+                                            	
+KWndShadowMaskValueImage : KWndImage        	
+	PartType				0					0表示左到右,1表示右到左,2表示上到下,3表示下到上;
+	ShadowColor 			""		str			半透明颜色名字；
+	ShadowColorAlpha		128		int			透明度，范围为0-255；
+
+KWndMovingImage : KWndImage
+	EndPos					0,0		int,int		结束点坐标值；
+
+KWndShowAnimate : KWndMovingImage
+	StartPos 				0,0		int,int		开始点坐标值；
+
+KWndScrollBar : KWndImage
+	Type					0					0表示水平,1表示垂直；
+	AutoHideSlideButton		1		bool		是否自动隐藏滑动按钮；
+	RepeatImg				0		bool		是否重复图片，即将废弃；
+	Min						0		int			最小滚动值；
+	Max						0		int			最大滚动值；
+	PageSize				1		int			翻一页滚动的跨度；
+	SlideBegin				0		int			滑动按钮滚动最小位置；
+	SlideEnd				0		int			滑动按钮滚动最大位置；
+	ThumbButtonSectionName 	""		str			被绑定滑动按钮节名字；
+
+KWndTreeList : KWndWindow
+	NormalLeafFontScheme	0		int			一般状态叶子字体方案索引；
+	NormalNodeFontScheme	0		int			一般状态节点字体方案索引；
+	SelectLeafFontScheme	0		int			选中状态叶子字体方案索引；
+	SelectNodeFontScheme	0		int			选中状态节点字体方案索引；
+	OverLeafFontScheme		0		int			鼠标移过叶子字体方案索引，替代以前的高亮；
+	OverNodeFontScheme		0		int			鼠标移过节点字体方案索引，替代以前的高亮；
+	IconLineColor			""		str			节点线颜色名字；
+	NodeLineColor			""		str			节点间联系颜色名字；
+	SelectLeafBgColor		""		str			选中状态叶子字体背景颜色名字；
+	SelectNodeBgColor		""		str			选中状态节点字体背景颜色名字；
+	RowSpacing				1		int			行间隔；
+	NodeIndent				12		int			节点缩进；
+	LeafIndent				12		int			叶子缩进，替代原来的ItemIndent；
+	NodeIconWidth			10		int			节点图标宽度；
+	NodeIconHeight			10		int			节点图标高度；
+	ItemCount				0		int			初始数据个数，替代原来的ItemNum；
+	$Item_%d				""		str			第%d个数据项，%d为[0,ItemCount)；
+
+KWndScrollTreeList : KWndWindow
+	ScrolleeSectionName 	""		str			KWndTreeList节名字；
+	ScrollerSectionName		""		str			KWndScrollBar节名字；
+
+KWndShadow : KWndWindow
+	ShadowColor 			""		str			半透明颜色名字；
+	ShadowColorAlpha		128		int			透明度，范围为0-255；
+
+KWndPicFrameShadow : KWndShadow
+	ShowPicFrame			1		bool		是否显示边框；
+	ImgType					0		int			图片类型，即将废弃；
+	Image					""		str			图片路径；
+	ImageFrameTop			0		int			上帧；
+	ImageFrameBottom		0		int			下帧；
+	ImageFrameLeft			0		int			左帧
+	ImageFrameRight			0		int			右帧；
+	ImageFrameLeftTop		0		int			左上帧；
+	ImageFrameLeftBottom	0		int			左下帧；
+	ImageFrameRightTop		0		int			右上帧；
+	ImageFrameRightBottom	0		int			右下帧；
+
+KWndList : KWndWindow
+	NumColumn				1		int			列数；
+	AlwaysSel				1		bool		是否总是要选择到一个选项；
+	MultiSel				0		bool		是否可以多选；
+	HAlign					0		int			0为左对齐,1为中间对齐,2为右对齐;
+	NormalFontScheme		0		int			一般状态字体方案索引；
+	SelectFontScheme		0		int			选中状态字体方案索引；
+	OverFontScheme			0		int			鼠标移过字体方案索引，替代原来的HighLight；
+	SelectBgColor			""		str			选中状态字体背景颜色名字；
+	SelectBgColorAlpha		128		int			选中状态字体背景透明度，替代原来SelBgColorAlpha；
+	RowSpacing				1		int			行间距；			
+	HighLight				1		bool		是否在鼠标移过数据项的时候高亮显示；
+	ItemCount				0		int			初始数据个数，替代原来的ItemNum；
+	$Item_%d				""		str			第%d个数据项，%d为[0,ItemCount)；
+
+KWndList2 : KWndWindow
+	NormalFontScheme		0		int			一般状态字体方案索引；
+	SelectFontScheme		0		int			选中状态字体方案索引；
+	OverFontScheme			0		int			鼠标移过字体方案索引，替代原来的HighLight；
+	HighLight				1		bool		是否在鼠标移过数据项的时候高亮显示；
+	ItemCount				0		int			初始数据个数，替代原来的InitItemCount；
+	$Item_%d				""		str			第%d个数据项，%d为[0,ItemCount)；
+
+KWndMessageListBox : KWndWindow
+	MaxMsgCount				16		int			最大信息数；
+	HitText					0		bool		是否可接收鼠标消息；
+	NormalFontScheme		0		int			一般状态字体方案索引；
+	SelectFontScheme		0		int			选中状态字体方案索引；
+	OverFontScheme			0		int			鼠标移过字体方案索引，替代原来的HighLight；
+	NormalBgColor			""		str			有文字的行拥有的背景颜色名字，如果为0，表示无此背景色，替代TextLineShadow；
+	NormalBgColorAlpha		128		int			有文字的行拥有的背景透明度，替代TextLineShadowAlpha；
+	Selectable				0		bool		是否可选，替代原来的Selable；
+	SelectBgColor			""		str			选中状态字体背景颜色，替代原来SelBgColor；
+	SelectBgColorAlpha		128		int			选中状态字体背景透明度，替代原来SelBgColorAlpha；
+	HighLight				1		bool		是否在鼠标移过数据项的时候高亮显示；
+	TextBottom				0		bool		从下往上显示；
+
+KWndScrollMessageListBox : KWndWindow
+	ScrolleeSectionName 	""		str			被绑定的KWndMessageListBox的节名；
+	ScrollerSectionName		""		str			被绑定的KWndScrollBar的节名；
+
+KWndPage : KWndWindow
+
+KWndPageSet : KWndShowAnimate
+	PageCount 				0		int			属性页数；
+	Page_%d					""		str			被绑定属性页%d，%d为[0,PageCount)；
+	Button_%d 				""		str			被绑定属性页按钮%d，%d为[0,PageCount)；
+
+KWndMenu : KWndWindow
+	ItemWidth				0		int			菜单项宽度；
+	ItemRightWidth			0		int			菜单项右部宽度；
+	ItemHeight				0		int			菜单项高度；
+	ItemTitleUpSpace		0		int			标题上部高度；
+	ItemTitleIndent			0		int			标题缩进；
+	BorderLineColor			""		str			边框线颜色名字；
+	SelectBKColor			""		str			选中项背景颜色名字，替代原来的SelItemBgColor;
+	NormalFontScheme		0		int			一般状态字体方案索引；
+	SelectFontScheme		0		int			选中状态字体方案索引；
+
+KwndRichText : KWndWindow
+	NormalFontScheme		0		int			一般状态字体方案索引；
+	HAlign					1		int			0为左对齐,1为中间对齐,2为右对齐;				
+	VAlign 					1  		int			0为上对齐,1为中间对齐,2为下对齐;
+	RowSpacing				0		int			行间隔，即将废弃；
+	MultiLine				0		bool		是否多行显示；
+	$Text					""		str			图文；
+	
+KWndScrollTreeList : KWndWindow
+	ScrolleeSectionName 	""		str			被绑定的KWndTreeList的节名；
+	ScrollerSectionName		""		str			被绑定的KWndScrollBar的节名；
+
+KWndDropDownList : KWndImage
+	IsEditable				0		bool		是否可编辑；
+	MaxCount				0		int			最大项数；
+	$Tip					""  	str			提示文字；
+	TipColor				""		str			提示文字颜色名字；
+	ListBGColor				""		str			列表项背景颜色名字；
+	ListBGColorAlpha		128		int			列表背景颜色alpha;
+	ListFrameLineColor		""		str			列表边框线颜色名字；
+	ButtonLeft              0       int         下拉按钮左边位置；
+	ButtonTop				0		int			下拉按钮顶部位置；
+	ButtonWidth				0		int			下拉按钮宽；
+	ButtonHeight			0		int			下拉按钮高；
+	BgUp					-1		int			背景图一般状态帧；
+	BgDown					-1		int			背景图按下状态帧；
+	BgDisable				-1		int			背景图禁止状态帧；
+	ButtonUp				-1		int			下拉按钮一般状态帧，下拉按钮实际上是图片，这里的帧的图的路径是按钮自己保存的；
+	ButtonDown				-1		int			下拉按钮按下状态帧，下拉按钮实际上是图片，这里的帧的图的路径是按钮自己保存的；
+	ButtonDisable			-1		int			下拉按钮禁止状态帧，下拉按钮实际上是图片，这里的帧的图的路径是按钮自己保存的；
+	ListBgFrame				-1		int			列表项背景图;
+	EditBoxSectionName		""		str			被绑定KWndEdit节名；
+	ItemListSectionName		""		str			被绑定KWndList2节名；
+
+
+
+
+
+
+
+
+
+
+
+
+
+

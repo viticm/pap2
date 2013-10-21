@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  JBoss Server Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<!-- $Id: db2-ds.xml,v 1.1 2008/12/31 09:22:48 kuangsihao Exp $ -->
+
+
+<datasources>
+  <local-tx-datasource>
+    <jndi-name>DB2DS</jndi-name>
+    <connection-url>jdbc:db2:yourdatabase</connection-url>
+    <driver-class>COM.ibm.db2.jdbc.app.DB2Driver</driver-class>
+    <user-name>x</user-name>
+    <password>y</password>
+    <min-pool-size>0</min-pool-size>
+        <!-- sql to call when connection is created
+        <new-connection-sql>some arbitrary sql</new-connection-sql>
+        -->
+
+        <!-- sql to call on an existing pooled connection when it is obtained from pool 
+        <check-valid-connection-sql>some arbitrary sql</check-valid-connection-sql>
+        -->
+
+      <!-- corresponding type-mapping in the standardjbosscmp-jdbc.xml (optional) -->
+      <metadata>
+         <type-mapping>DB2</type-mapping>
+      </metadata>
+  </local-tx-datasource>
+
+</datasources>

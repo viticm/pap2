@@ -1,0 +1,4 @@
+#/bin/bash
+#stop game
+
+pkill -23 lord

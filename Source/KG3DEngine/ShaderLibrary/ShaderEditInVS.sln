@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShaderEditInVS", "ShaderEditInVS\ShaderEditInVS.vcproj", "{E92BA09C-48D5-4BDB-8CF1-83391E844453}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EffectCompiler", "EffectCompiler\EffectCompiler.vcproj", "{DD64FD84-6CFE-4A4F-AD36-4B39BEB07473}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestCmdLine", "CommandLineParser\TestCmdLine.vcproj", "{47A0E982-B32C-4C54-8AE0-D1B99301FF84}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShaderLibraryUtilizeSample", "ShaderLibraryUtilizeSample\ShaderLibraryUtilizeSample.vcproj", "{D3D0911F-96D0-4629-88B8-122C0256058C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7947E36-F374-4F60-868D-22D6B2D03C7A} = {B7947E36-F374-4F60-868D-22D6B2D03C7A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShaderLibrary", "ShaderLibrary\ShaderLibrary.vcproj", "{B7947E36-F374-4F60-868D-22D6B2D03C7A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShaderRCFileBuilder", "ShaderRCFileBuilder\ShaderRCFileBuilder.vcproj", "{3E8833DC-6404-4F0D-8734-7817C27E0B23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Profile|Win32 = Profile|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E92BA09C-48D5-4BDB-8CF1-83391E844453}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E92BA09C-48D5-4BDB-8CF1-83391E844453}.Debug|Win32.Build.0 = Debug|Win32
+		{E92BA09C-48D5-4BDB-8CF1-83391E844453}.Profile|Win32.ActiveCfg = Release|Win32
+		{E92BA09C-48D5-4BDB-8CF1-83391E844453}.Profile|Win32.Build.0 = Release|Win32
+		{E92BA09C-48D5-4BDB-8CF1-83391E844453}.Release|Win32.ActiveCfg = Release|Win32
+		{E92BA09C-48D5-4BDB-8CF1-83391E844453}.Release|Win32.Build.0 = Release|Win32
+		{DD64FD84-6CFE-4A4F-AD36-4B39BEB07473}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DD64FD84-6CFE-4A4F-AD36-4B39BEB07473}.Debug|Win32.Build.0 = Debug|Win32
+		{DD64FD84-6CFE-4A4F-AD36-4B39BEB07473}.Profile|Win32.ActiveCfg = Release|Win32
+		{DD64FD84-6CFE-4A4F-AD36-4B39BEB07473}.Profile|Win32.Build.0 = Release|Win32
+		{DD64FD84-6CFE-4A4F-AD36-4B39BEB07473}.Release|Win32.ActiveCfg = Release|Win32
+		{DD64FD84-6CFE-4A4F-AD36-4B39BEB07473}.Release|Win32.Build.0 = Release|Win32
+		{47A0E982-B32C-4C54-8AE0-D1B99301FF84}.Debug|Win32.ActiveCfg = Debug|Win32
+		{47A0E982-B32C-4C54-8AE0-D1B99301FF84}.Debug|Win32.Build.0 = Debug|Win32
+		{47A0E982-B32C-4C54-8AE0-D1B99301FF84}.Profile|Win32.ActiveCfg = Release|Win32
+		{47A0E982-B32C-4C54-8AE0-D1B99301FF84}.Profile|Win32.Build.0 = Release|Win32
+		{47A0E982-B32C-4C54-8AE0-D1B99301FF84}.Release|Win32.ActiveCfg = Release|Win32
+		{47A0E982-B32C-4C54-8AE0-D1B99301FF84}.Release|Win32.Build.0 = Release|Win32
+		{D3D0911F-96D0-4629-88B8-122C0256058C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D3D0911F-96D0-4629-88B8-122C0256058C}.Debug|Win32.Build.0 = Debug|Win32
+		{D3D0911F-96D0-4629-88B8-122C0256058C}.Profile|Win32.ActiveCfg = Profile|Win32
+		{D3D0911F-96D0-4629-88B8-122C0256058C}.Profile|Win32.Build.0 = Profile|Win32
+		{D3D0911F-96D0-4629-88B8-122C0256058C}.Release|Win32.ActiveCfg = Release|Win32
+		{D3D0911F-96D0-4629-88B8-122C0256058C}.Release|Win32.Build.0 = Release|Win32
+		{B7947E36-F374-4F60-868D-22D6B2D03C7A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B7947E36-F374-4F60-868D-22D6B2D03C7A}.Debug|Win32.Build.0 = Debug|Win32
+		{B7947E36-F374-4F60-868D-22D6B2D03C7A}.Profile|Win32.ActiveCfg = Release|Win32
+		{B7947E36-F374-4F60-868D-22D6B2D03C7A}.Profile|Win32.Build.0 = Release|Win32
+		{B7947E36-F374-4F60-868D-22D6B2D03C7A}.Release|Win32.ActiveCfg = Release|Win32
+		{B7947E36-F374-4F60-868D-22D6B2D03C7A}.Release|Win32.Build.0 = Release|Win32
+		{3E8833DC-6404-4F0D-8734-7817C27E0B23}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3E8833DC-6404-4F0D-8734-7817C27E0B23}.Debug|Win32.Build.0 = Debug|Win32
+		{3E8833DC-6404-4F0D-8734-7817C27E0B23}.Profile|Win32.ActiveCfg = Release|Win32
+		{3E8833DC-6404-4F0D-8734-7817C27E0B23}.Profile|Win32.Build.0 = Release|Win32
+		{3E8833DC-6404-4F0D-8734-7817C27E0B23}.Release|Win32.ActiveCfg = Release|Win32
+		{3E8833DC-6404-4F0D-8734-7817C27E0B23}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,149 @@
+==================================================================
+副本保存机制                                                     |
+==================================================================
+
+评审时间：
+
+参与人员：夏永 赵纯峰 侯锐
+
+设计方案：
+------------------------------------------------------------------
+1. 在MYSQL数据库中新增数据表：MapCopyInfo。
+2. 对数据表MapCopyInfo的操作统一由GameCenter完成。如：CopyIndex、Owner信息
+   的存储和修改，存取MapData，删除副本信息等。
+3. 副本信息的加载：GameCenter启动时候加载数据库中所有地图副本信息到内存里面，
+   GameServer从文件中加载地图信息后，向GameCenter发送请求，GameCenter把内存
+   中的副本信息发给GameServer。
+4. 副本信息的保存时机：
+(1) 创建副本
+(2) 删除副本
+(3) OwnerId改变
+(4) MapData改变(GameServer中的副本信息定时触发)
+   注意：只有storage为1的地图副本才需要保存
+
+
+本次修改涉及到的代码：
+------------------------------------------------------------------
+1. 新增数据表MapCopyInfo，表结构如下： 
+     MapID          ：unsigned int  (主键)
+     MapCopyIndex   ：bigint        (主键)
+     GroupName      ：varchar<32>   (主键)
+     OwnerID        ：unsigned int  (可以为空，无默认值)
+     CreateTime     ：datetime      (不能为空，无默认值)
+     MapData        ：blob          (可以为空，无默认值)
+     LastModifyTime ：datetime      (不能为空，无默认值)
+
+2. 文件relay_settings.ini中，增加表名和保存的时间间隔。
+
+3. 新增一个类KDBBase，为游戏逻辑提供访问数据库的接口。主要实现如下：
+    public：
+    	BOOL Connect(...);                \\ 连接数据库
+    	BOOL Disconnect(...);             \\ 断开数据库链接
+    protected：
+    	BOOL DoQuey(const char cszSQL[]); \\ 向MYSQL数据库发送SQL语句
+        MYSQL* m_pDBHandle;  
+    private:
+    	BOOL CheckCaseInsensitive();      \\ 大小写敏感检查
+    	BOOL CheckCharacterSet();         \\ 检查字符集设置
+    （注：以后可考虑将KDBBase改造成为KASynchronousDB的基类）  
+
+4. 新建一个类KMapCopyLoader，继承于KDBBase，用于封装加载副本信息相关的
+   数据库操作。主要方法为：
+   pbulic：
+    	BOOL  LoadMapCopyInfo(
+		KMapManager *pMapManager, const char cszGroupName[]
+	);
+
+
+5. 文件KAsynchronousDB.h中：
+(1) 枚举ASYNC_DATABASE_PROTOCOL中，增加保存MapCopy相关的协议：
+    eadpSaveMapCopyInfoRequest
+
+(2) 增加结构体：KSAVE_MAP_COPY_INFO_REQUEST，结构如下：
+    struct KSAVE_MAP_COPY_INFO_REQUEST : KASYNC_DB_REQUEST
+    {
+        dwMapID;
+        nMapCopyIndex;
+        dwOwnerID;
+	nCreateTime;
+        nDataLen;
+        byData[0]
+    };
+
+(3) 增加函数：BOOL SaveMapCopyInfo(KSAVE_MAP_COPY_INFO_REQUEST* pRequest,     
+    unsigned long ulRequestKey);
+    注意：由于函数KASynchronousDB::ThreadFunction()调用的switch-case结构
+          存在问题，待以后统一修正。本函数的实现目前仍保持传值为
+          KSAVE_MAP_COPY_INFO_REQUEST* pRequest的实现方式。
+
+(4) 类KAsynchronousDB中，增加成员变量：MYSQL_STMT* m_pUpdateMapCopyInfo
+
+6. 文件KAsynchronousDB.cpp中：
+(1) 增加函数BOOL SaveMapCopyInfo(KSAVE_MAP_COPY_INFO_REQUEST* pRequest,           
+    unsigned long ulRequestKey)，用于保存地图副本信息到MYSQL数据库。实现
+    方法：
+       a. 拼凑SQL语句select...from...where...
+       b. 调用_DoQuey执行查询
+       c. 调用MYSQL的API生成查询结果
+       d. 保存pRequest中的信息
+(2) 函数KASynchronousDB::ThreadFunction()中，增加eadpSaveMapCopyInfoRequest
+    的处理。
+
+7. 文件KMapManager.h中：
+(1) 枚举KMAP_COPY_STATE中，增加两个状态：
+    eMapStateOffline、eMapStateIdle
+
+(2) 结构KMapCopy中，添加：
+    IKG_Buffer*     piMapData;    // 副本地图数据
+    BOOL            bIsChanged;   // 拥有者和地图数据是否改变
+    删除：
+    BOOL            bIdleKeep;
+
+(3) 结构KMapInfo中，添加：
+    int             bStorage;     // 是否需要保存
+
+(4) 增加函数：
+    BOOL    SaveMapCopyInfo(DWORD dwMapID, __int64 nCopySN)
+    BOOL    LoadMapCopyInfoFromDB();
+
+8. 文件KMapManager.cpp中：
+(1) 函数Activate()中，增加以下内容：
+
+    // 定时保存
+    if (m_lCurrentTimeStamp >= m_lNextSaveTime && pMapCopy->bIsChanged)
+    {
+	SaveMapCopyInfo(dwMapID, nCopyIndex);
+	pMapCopy->bIsChanged = false;
+    }
+
+    // 根据bStorage，检查是否要保存
+    for(遍历m_MapTable)
+    {
+	if (pMapCopy->bAutoDelete && pMapCopy->eState == eMapStateNormal)
+            {
+                if (bStorage)
+                {
+		    pMapCopy->eState == eMapStateOffline；
+                }
+                else
+                {
+		    pMapCopy->eState == eMapStateIdle；
+                }
+            }
+    }
+
+(2) 函数LoadMapList()，增加读bStorage的操作。
+
+(4) 增加函数LoadMapCopyInfo，用于加载副本信息。在本函数中，定义一个
+    KMapCopyLoader的实例，利用方法LoadMapCopyInfoFromDB进行加载副本
+    信息的操作。
+
+(5) 函数Init中，增加对函数LoadMapCopyInfo的调用。
+
+(6) 函数UnInit中，增加保存地图副本的操作。
+
+9. 文件KSO3GameCenterSettings.h中，增加：
+    char m_szMapCopyInfoDBTableName[_NAME_LEN];
+
+10. 文件KSO3GameCenter.cpp中，增加对KMapManager::UnInit()的调用。
+

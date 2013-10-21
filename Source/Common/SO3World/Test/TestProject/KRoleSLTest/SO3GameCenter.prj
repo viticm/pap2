@@ -1,0 +1,60 @@
+[Include]
+../../../../../Server/SO3GameCenter
+../../../../../../Include
+../../../../../../../Base/Include
+../../../../../../../DevEnv/Include/mysql
+
+[Config Debug]
+Product     Exe ../../../../../../../Sword3-products/trunk/server/SO3GameCenterD
+Options     Debug -mms-bitfields
+Defines		LUA_V_5;
+ObjDir      LDebug
+LibDir      ../../../../../../../Base/Lib/Linux; ../../../../../../../DevEnv/Lib/Linux
+Libraries   CommonD; EngineD; pthread; MySQLClientD; Lua5D
+
+[Config Release]
+Product     Exe ../../../../../../../Sword3-products/trunk/server/SO3GameCenter
+Options     Release -mms-bitfields
+Defines		LUA_V_5;
+ObjDir      LRelease
+LibDir      ../../../../../../../Base/Lib/Linux; ../../../../../../../DevEnv/Lib/Linux
+Libraries   Common; Engine; pthread; MySQLClient; Lua5
+
+[Source]
+../../../../../Server/SO3GameCenter/KDBBase.cpp
+../../../../../Server/SO3GameCenter/KDBTools.cpp
+../../../../../Server/SO3GameCenter/KGameCenterEyes.cpp
+./SO3GameCenter/KGameServer.cpp
+../../../../../Server/SO3GameCenter/KGatewayAgency.cpp
+../../../../../Server/SO3GameCenter/KOvertimeQueue.cpp
+./SO3GameCenter/KSO3GameCenter.cpp
+./SO3GameCenter/Main.cpp
+../../../../../Server/SO3GameCenter/stdafx.cpp
+../../../../../Server/SO3GameCenter/KMapCopy.cpp
+../../../../../Server/SO3GameCenter/KMapInfo.cpp
+../../../../../Server/SO3GameCenter/KMapManager.cpp
+../../../../../Server/SO3GameCenter/KFellowshipCenter.cpp
+../../../../../Server/SO3GameCenter/KTong.cpp
+../../../../../Server/SO3GameCenter/KLuaTong.cpp
+../../../../../Server/SO3GameCenter/KTongManager.cpp
+../../../../../Server/SO3GameCenter/KTeamCenter.cpp
+../../../../../Server/SO3GameCenter/KScriptFuncList.cpp
+../../../../../Server/SO3GameCenter/KRole.cpp
+../../../../../Server/SO3GameCenter/KRoleDB.cpp
+../../../../../Server/SO3GameCenter/KRoleDBThread.cpp
+../../../../../Server/SO3GameCenter/KRoleManager.cpp
+../../../../../Server/SO3GameCenter/KHometownList.cpp
+../../../../../Server/SO3GameCenter/KSO3GameCenterSettings.cpp
+../../../../../Server/SO3GameCenter/KScriptManager.cpp
+../../../../../Server/SO3GameCenter/KMiscDB.cpp
+../../../../../Server/SO3GameCenter/KMiscDBThread.cpp
+../../../../../Server/SO3GameCenter/KMailManager.cpp
+../../../../../Server/SO3GameCenter/KMailBox.cpp
+../../../../../Server/SO3GameCenter/KGPQCenter.cpp
+../../../../../Server/SO3GameCenter/KBattleFieldManager.cpp
+../../../../../Server/SO3GameCenter/KAuctionManager.cpp
+../../../../../Server/SO3GameCenter/KCampManager.cpp
+../../../../../Server/SO3GameCenter/KRemoteScript.cpp
+../../../../../Server/SO3GameCenter/KGlobalCustomDataManager.cpp
+../../../../../Server/SO3GameCenter/KIDSequence.cpp
+../../../../../Server/SO3GameCenter/KGlobalSystemValueManager.cpp

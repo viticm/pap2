@@ -1,0 +1,67 @@
+/*
+	Common::ROFile rof;
+	Common::WOFile wof;
+	rof.SetFilename("q3dm0.bsp");
+	rof.Open();
+	wof.SetFilename("BSPFileReceiver.txt");
+	wof.Open();
+
+	Quake3Scene::BSPFileHeader bsp_header;
+	memset(&bsp_header, 0, sizeof(bsp_header));
+	rof.ReadBuffer(&bsp_header, sizeof(bsp_header));  // Read the file header
+	
+	BSPFileLump VertexLump = bsp_header.m_Lumps[Quake3Scene::BFLT_Vertices];
+	unsigned int NumOfVertices = VertexLump.m_Length / sizeof(Quake3Scene::BSPFileVertex);
+	Quake3Scene::BSPFileVertex* pVertices = new Quake3Scene::BSPFileVertex[NumOfVertices];
+	rof.SetPosition(VertexLump.m_Offset);
+	rof.ReadBuffer(pVertices, VertexLump.m_Length);
+
+	cout<<"NumOfVertices: "<<NumOfVertices<<endl;
+
+	bool bShare = true;
+	unsigned int i = 0;
+	for(; i < NumOfVertices; ++i)
+	{
+		Maths::Vector3F mvCurrent;
+		mvCurrent.x = pVertices[i].m_Position[0];
+		mvCurrent.y = pVertices[i].m_Position[1];
+		mvCurrent.z = pVertices[i].m_Position[2];
+
+		for(unsigned int j = 0; j < NumOfVertices; ++j)
+		{
+			if(j == i)
+			{
+				continue;
+			}
+			Maths::Vector3F mv;
+			mv.x = pVertices[j].m_Position[0];
+			mv.y = pVertices[j].m_Position[1];
+			mv.z = pVertices[j].m_Position[2];
+
+			if(mvCurrent == mv)
+			{
+				bShare = false;
+				break;
+			}
+		}
+
+		if(!bShare)
+		{
+			break;
+		}
+	}
+
+	if(bShare)
+	{
+		cout<<"Yes, Quake3 uses shared vertices!"<<endl;
+	}
+	else
+	{
+		cout<<"No, Quake3 does NOT use shared vertices!"<<endl;
+	}
+	
+	rof.Close();
+	wof.Close();
+
+	Common::WaitInputND(0xFFFFFFFF);
+	*/

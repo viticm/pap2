@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{112978B9-E73B-4848-9C47-C34DA99949A0}</ProjectGuid>
+    <RootNamespace>SO3Represent</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent>
+      <Command>attrib -r ..\..\..\lib\win32\$(TargetName).lib</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../Include;../../../Include/SO3World;../../../../Base/Include;../../KG3DEngine/Include;../../../../DevEnv/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;PROFILE;_WINDOWS;_CLIENT;LUA_V_5;SO3REPRESENT_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>atlsd.lib;d3dx9.lib;Engine_lua5D.lib;lzoD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)JX3RepresentD.dll</OutputFile>
+      <AdditionalLibraryDirectories>../../../../Base/Lib;../../../Lib/Win32;../../../../DevEnv/Lib/debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)JX3RepresentD.pdb</ProgramDatabaseFile>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+    <PostBuildEvent>
+      <Command>md ..\..\..\..\sword3-products
+md ..\..\..\..\sword3-products\trunk
+md ..\..\..\..\sword3-products\trunk\client
+copy "$(TargetDir)$(TargetName).lib" ..\..\..\lib\win32
+copy "$(TargetDir)JX3RepresentD.dll" ..\..\..\..\sword3-products\trunk\client\JX3RepresentD.dll
+copy "$(TargetDir)JX3RepresentD.pdb" ..\..\..\..\sword3-products\trunk\client\JX3RepresentD.pdb
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PreBuildEvent>
+      <Command>attrib -r ..\..\..\lib\win32\$(TargetName).lib</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>../../../Include;../../../Include/SO3World;../../../../Base/Include;../../KG3DEngine/Include;../../../../DevEnv/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CLIENT;LUA_V_5;SO3REPRESENT_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>atls.lib;d3dx9.lib;Engine_lua5.lib;lzo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)JX3Represent.dll</OutputFile>
+      <AdditionalLibraryDirectories>../../../../Base/Lib;../../../Lib/Win32;../../../../DevEnv/Lib/release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)JX3Represent.pdb</ProgramDatabaseFile>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+    <PostBuildEvent>
+      <Command>md ..\..\..\..\sword3-products
+md ..\..\..\..\sword3-products\trunk
+md ..\..\..\..\sword3-products\trunk\client
+copy "$(TargetDir)$(TargetName).lib" ..\..\..\lib\win32
+copy "$(TargetDir)JX3Represent.dll" ..\..\..\..\sword3-products\trunk\client\JX3Represent.dll
+copy "$(TargetDir)JX3Represent.pdb" ..\..\..\..\sword3-products\trunk\client\JX3Represent.pdb
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\krlcharacterresource.cpp" />
+    <ClCompile Include="Src\krlcommand.cpp" />
+    <ClCompile Include="src\krloption.cpp" />
+    <ClCompile Include="src\SO3Represent.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\base\File\kbintab.cpp" />
+    <ClCompile Include="src\base\File\kfilepath.cpp" />
+    <ClCompile Include="Src\base\File\KG_TabFile.cpp" />
+    <ClCompile Include="src\base\missile\krepresentmissile.cpp" />
+    <ClCompile Include="src\base\missile\krepresentmissilephase.cpp" />
+    <ClCompile Include="src\base\missile\krepresentmissileprocessor.cpp" />
+    <ClCompile Include="src\common\kmathtools.cpp" />
+    <ClCompile Include="src\common\kmovementcontroller.cpp" />
+    <ClCompile Include="src\common\ksmallobjectpool.cpp" />
+    <ClCompile Include="src\common\tblock.cpp" />
+    <ClCompile Include="src\case\actionobject\krlcamera.cpp" />
+    <ClCompile Include="src\case\actionobject\krlcharacter.cpp" />
+    <ClCompile Include="Src\case\actionobject\krlcharactercamera.cpp" />
+    <ClCompile Include="Src\case\actionobject\krlcharacterturning.cpp" />
+    <ClCompile Include="src\case\actionobject\krlcursor.cpp" />
+    <ClCompile Include="src\case\actionobject\krldoodad.cpp" />
+    <ClCompile Include="src\case\actionobject\krldoodadmgr.cpp" />
+    <ClCompile Include="Src\case\actionobject\krlgodcamera.cpp" />
+    <ClCompile Include="src\case\actionobject\krllocalcharacter.cpp" />
+    <ClCompile Include="src\case\actionobject\krlmissile.cpp" />
+    <ClCompile Include="src\case\actionobject\krlmissilemgr.cpp" />
+    <ClCompile Include="src\case\actionobject\krlremotecharacter.cpp" />
+    <ClCompile Include="src\case\actionobject\krlremotecharactermgr.cpp" />
+    <ClCompile Include="src\case\actionobject\krlrides.cpp" />
+    <ClCompile Include="src\case\actionobject\krlridesmgr.cpp" />
+    <ClCompile Include="src\case\actionobject\krlscene.cpp" />
+    <ClCompile Include="src\case\actionobject\krlscenemgr.cpp" />
+    <ClCompile Include="src\case\actionobject\krlsceneobject.cpp" />
+    <ClCompile Include="src\case\actionobject\krlskilleffectresult.cpp" />
+    <ClCompile Include="src\case\actionobject\krlskillsequence.cpp" />
+    <ClCompile Include="src\case\actionobject\krltarget.cpp" />
+    <ClCompile Include="Src\case\actionobject\krltrackcamera.cpp" />
+    <ClCompile Include="src\case\actionobject\missile\kcirclemissileprocessor.cpp" />
+    <ClCompile Include="Src\case\actionobject\missile\kcompositemissileprocessor.cpp" />
+    <ClCompile Include="src\case\actionobject\missile\kfixedtrackmissileprocessor.cpp" />
+    <ClCompile Include="src\case\actionobject\missile\khomingmissileprocessor.cpp" />
+    <ClCompile Include="Src\case\actionobject\missile\klightningmissileprocessor.cpp" />
+    <ClCompile Include="src\case\actionobject\missile\klinemissileprocessor.cpp" />
+    <ClCompile Include="Src\case\actionobject\missile\kmodelmissileprocessor.cpp" />
+    <ClCompile Include="Src\case\actionobject\missile\ktimelinemissileprocessor.cpp" />
+    <ClCompile Include="Src\case\actionobject\missile\kyaxismissileprocessor.cpp" />
+    <ClCompile Include="src\case\gameworld\kgameworldcharactercontroller.cpp" />
+    <ClCompile Include="src\case\gameworld\kgameworldhandler.cpp" />
+    <ClCompile Include="src\case\gameworld\krlcharacterframedata.cpp" />
+    <ClCompile Include="src\case\gameworld\krldoodadframedata.cpp" />
+    <ClCompile Include="Src\case\gameworld\krllocalcharacterframedata.cpp" />
+    <ClCompile Include="Src\case\gameworld\krlremotecharacterframedata.cpp" />
+    <ClCompile Include="src\case\render\kanimationmodel.cpp" />
+    <ClCompile Include="src\case\render\kmodel.cpp" />
+    <ClCompile Include="src\case\render\kmodelgcmgr.cpp" />
+    <ClCompile Include="src\case\render\kmodelmgr.cpp" />
+    <ClCompile Include="Src\case\render\krlloadingmodel.cpp" />
+    <ClCompile Include="Src\krloptimization.cpp" />
+    <ClCompile Include="Src\krlprofile.cpp" />
+    <ClCompile Include="Src\krlresourcelimit.cpp" />
+    <ClCompile Include="Src\krltracecharacter.cpp" />
+    <ClCompile Include="Src\krltracemsg.cpp" />
+    <ClCompile Include="src\case\gameworld\krlanimationtable.cpp" />
+    <ClCompile Include="src\case\gameworld\ktabledefine.cpp" />
+    <ClCompile Include="src\case\gameworld\ktablelist.cpp" />
+    <ClCompile Include="src\case\gameworld\ktabletransform.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\krlcharacterresource.h" />
+    <ClInclude Include="Src\krlcommand.h" />
+    <ClInclude Include="src\krloption.h" />
+    <ClInclude Include="src\SO3Represent.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Src\base\File\IKG_TabFile.h" />
+    <ClInclude Include="src\base\File\kbintab.h" />
+    <ClInclude Include="src\base\File\kfilepath.h" />
+    <ClInclude Include="Src\base\File\KG_TabFile.h" />
+    <ClInclude Include="src\base\missile\krepresentmissile.h" />
+    <ClInclude Include="Src\base\missile\krepresentmissiledefine.h" />
+    <ClInclude Include="src\base\missile\krepresentmissilephase.h" />
+    <ClInclude Include="src\base\missile\krepresentmissileprocessor.h" />
+    <ClInclude Include="src\common\kmathtools.h" />
+    <ClInclude Include="src\common\kmovementcontroller.h" />
+    <ClInclude Include="src\common\ksmallobjectpool.h" />
+    <ClInclude Include="src\common\tblock.h" />
+    <ClInclude Include="src\common\tstring.h" />
+    <ClInclude Include="Src\case\actionobject\ikgrlcamera.h" />
+    <ClInclude Include="src\case\actionobject\krlcamera.h" />
+    <ClInclude Include="src\case\actionobject\krlcharacter.h" />
+    <ClInclude Include="Src\case\actionobject\krlcharactercamera.h" />
+    <ClInclude Include="Src\case\actionobject\krlcharacterturning.h" />
+    <ClInclude Include="src\case\actionobject\krlcursor.h" />
+    <ClInclude Include="src\case\actionobject\krldoodad.h" />
+    <ClInclude Include="src\case\actionobject\krldoodadmgr.h" />
+    <ClInclude Include="Src\case\actionobject\krlgodcamera.h" />
+    <ClInclude Include="src\case\actionobject\krllocalcharacter.h" />
+    <ClInclude Include="src\case\actionobject\krlmissile.h" />
+    <ClInclude Include="src\case\actionobject\krlmissilemgr.h" />
+    <ClInclude Include="src\case\actionobject\krlremotecharacter.h" />
+    <ClInclude Include="src\case\actionobject\krlremotecharactermgr.h" />
+    <ClInclude Include="src\case\actionobject\krlrides.h" />
+    <ClInclude Include="src\case\actionobject\krlridesmgr.h" />
+    <ClInclude Include="src\case\actionobject\krlscene.h" />
+    <ClInclude Include="src\case\actionobject\krlscenemgr.h" />
+    <ClInclude Include="src\case\actionobject\krlsceneobject.h" />
+    <ClInclude Include="src\case\actionobject\krlskilleffectresult.h" />
+    <ClInclude Include="src\case\actionobject\krlskillsequence.h" />
+    <ClInclude Include="src\case\actionobject\krltarget.h" />
+    <ClInclude Include="Src\case\actionobject\krltrackcamera.h" />
+    <ClInclude Include="src\case\actionobject\missile\kcirclemissileprocessor.h" />
+    <ClInclude Include="Src\case\actionobject\missile\kcompositemissileprocessor.h" />
+    <ClInclude Include="src\case\actionobject\missile\kfixedtrackmissileprocessor.h" />
+    <ClInclude Include="src\case\actionobject\missile\khomingmissileprocessor.h" />
+    <ClInclude Include="Src\case\actionobject\missile\klightningmissileprocessor.h" />
+    <ClInclude Include="src\case\actionobject\missile\klinemissileprocessor.h" />
+    <ClInclude Include="Src\case\actionobject\missile\kmodelmissileprocessor.h" />
+    <ClInclude Include="Src\case\actionobject\missile\ktimelinemissileprocessor.h" />
+    <ClInclude Include="Src\case\actionobject\missile\kyaxismissileprocessor.h" />
+    <ClInclude Include="src\case\gameworld\kgameworldcharactercontroller.h" />
+    <ClInclude Include="src\case\gameworld\kgameworldhandler.h" />
+    <ClInclude Include="src\case\gameworld\krlcharacterframedata.h" />
+    <ClInclude Include="src\case\gameworld\krldoodadframedata.h" />
+    <ClInclude Include="Src\case\gameworld\krllocalcharacterframedata.h" />
+    <ClInclude Include="Src\case\gameworld\krlremotecharacterframedata.h" />
+    <ClInclude Include="Src\case\render\irlmodel.h" />
+    <ClInclude Include="src\case\render\kanimationmodel.h" />
+    <ClInclude Include="src\case\render\kmodel.h" />
+    <ClInclude Include="src\case\render\kmodelgcmgr.h" />
+    <ClInclude Include="src\case\render\kmodelmgr.h" />
+    <ClInclude Include="Src\case\render\krlloadingmodel.h" />
+    <ClInclude Include="src\case\render\krlresource.h" />
+    <ClInclude Include="Src\krloptimization.h" />
+    <ClInclude Include="Src\krlprofile.h" />
+    <ClInclude Include="Src\krlresourcelimit.h" />
+    <ClInclude Include="Src\krltracecharacter.h" />
+    <ClInclude Include="Src\krltracemsg.h" />
+    <ClInclude Include="src\case\gameworld\krlanimationtable.h" />
+    <ClInclude Include="src\case\gameworld\ktabledefine.h" />
+    <ClInclude Include="src\case\gameworld\ktablelist.h" />
+    <ClInclude Include="src\case\gameworld\ktabletransform.h" />
+    <ClInclude Include="..\..\..\Include\SO3Represent\SO3GameWorldRepresentHandler.h" />
+    <ClInclude Include="..\..\..\Include\SO3Represent\SO3RepresentHandler.h" />
+    <ClInclude Include="..\..\..\Include\SO3Represent\SO3RepresentInterface.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SO3Represent.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

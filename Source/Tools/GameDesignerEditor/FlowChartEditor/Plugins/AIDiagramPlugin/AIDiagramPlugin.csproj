@@ -1,0 +1,134 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{07F65E94-E061-43D8-B8DE-E75E84060E33}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AIDiagramPlugin</RootNamespace>
+    <AssemblyName>AIDiagramPlugin</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\FlowChartEditor\bin\Debug\Plugins\FlowChart\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=7.3.0.2, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="luaEditor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\策划工具\Plugins\LuaEditor\luaEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AITableExport.cs" />
+    <Compile Include="AIDiagramHelper.cs" />
+    <Compile Include="LineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LineForm.Designer.cs">
+      <DependentUpon>LineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuaRuntime.cs" />
+    <Compile Include="SingleActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SingleActionForm.Designer.cs">
+      <DependentUpon>SingleActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultiActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultiActionForm.Designer.cs">
+      <DependentUpon>MultiActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AIClass.cs" />
+    <Compile Include="DataEditor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StateNodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StateNodeForm.Designer.cs">
+      <DependentUpon>StateNodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateParmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TemplateParmForm.Designer.cs">
+      <DependentUpon>TemplateParmForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LineForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultiActionForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MultiActionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleActionForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SingleActionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StateNodeForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StateNodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateParmForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TemplateParmForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataElementLibrary\DataElementLibrary.csproj">
+      <Project>{0A330BD8-2628-44F5-B637-69AE567BF808}</Project>
+      <Name>DataElementLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataInteractor\DataInteractor.csproj">
+      <Project>{FA95E7EE-F48E-4779-85A4-8073F86773E9}</Project>
+      <Name>DataInteractor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DBManager\DBManager.csproj">
+      <Project>{F21D11C4-D6D4-448A-8C44-0BDDEB739396}</Project>
+      <Name>DBManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BaseExp\BaseExp.csproj">
+      <Project>{4498196F-64F9-44B7-ACA1-BBF696143D9E}</Project>
+      <Name>BaseExp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

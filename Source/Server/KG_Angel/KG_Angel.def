@@ -1,0 +1,8 @@
+EXPORTS
+	KG_AngelInit			@1
+	KG_GetAngelVersion		@2
+	KG_CreateRoleInfo		@3
+	KG_CreateStatistic		@4
+	KG_CreateRoleProcessor		@5
+	KG_AngelUnInit			@6
+	KG_CreateBishopProcessor	@7

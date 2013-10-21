@@ -1,0 +1,51 @@
+[Include]
+../../../../../Include
+../../../../../../Base/Include
+../../../../../../DevEnv/Include/mysql
+../../../../../../DevEnv/Include
+../../../../../../DevEnv/gtest/include
+../../
+
+[Config Debug]
+Product     Exe ./SO3GameCenterTestD
+Options     Debug -mms-bitfields
+Defines		LUA_V_5;
+ObjDir      LDebug
+LibDir      ../../../../../../Base/Lib/Linux; ../../../../../../DevEnv/Lib/Linux;../../
+Libraries   SO3GameCenterD; CommonD; EngineD; pthread; MySQLClientD; Lua5D; lzoD; gtest;
+
+[Config Release]
+Product     Exe ./SO3GameCenterTest
+Options     Release -mms-bitfields
+Defines		LUA_V_5;
+ObjDir      LRelease
+LibDir      ../../../../../Base/Lib/Linux; ../../../../../DevEnv/Lib/Linux;
+Libraries   Common; Engine; pthread; MySQLClient; Lua5; lzo
+
+[Source]
+KGameCenterWrapper.cpp
+KGameServerSimulator.cpp
+KGatewaySimulator.cpp
+KGuardSimulator.cpp
+KSimulateSocket.cpp
+KTestAuction.cpp
+KTestBattleField.cpp
+KTestCamp.cpp
+KTestDBManager.cpp
+KTestFellowShip.cpp
+KTestFSEyes.cpp
+KTestMail.cpp
+KTestParty.cpp
+KTestPlayerCGStateConver.cpp
+KTestPlayerLGStateConver.cpp
+KTestRoleDB.cpp
+KTestTong.cpp
+MailTools.cpp
+NameGenerator.cpp
+SO3GameCenterTest.cpp
+StdAfx.cpp
+TestTools.cpp
+TongTools.cpp
+CampTools.cpp
+
+

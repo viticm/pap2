@@ -1,0 +1,24 @@
+[Include]
+../Common
+../../../../../../Base/Include
+../../../../../../DevEnv/Include/mysql
+
+[Config Debug]
+Product		EXE ../../product/OfflineRewardD
+Options		Debug
+Defines		__linux; _STANDALONE; _SERVER; C_C_VERSION;
+ObjDir		LDebug
+LibDir		../Common; ../../../../../../Base/Lib/Linux; ../../../../../../DevEnv/Lib/Linux
+Libraries	EngineD; CommonD; MySQLClientD; jx3roleanalyserD
+
+[Config Release]
+Product		EXE ../../product/OfflineReward
+Options		Release
+Defines		__linux; _STANDALONE; _SERVER; C_C_VERSION;
+ObjDir		LRelease
+LibDir		../Common; ../../../../../../Base/Lib/Linux; ../../../../../../DevEnv/Lib/Linux
+Libraries	Engine; Common; MySQLClient; jx3roleanalyser
+
+[Source]
+../Common/KG_Public.cpp
+main.cpp

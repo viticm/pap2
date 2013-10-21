@@ -1,0 +1,51 @@
+RichText_GetFontSize
+	说明：取图文控件默认字体大小；
+	参数：szTreePath  窗口树路径名；
+	返回：nFontSize   字体大小；
+		
+RichText_GetTextColor
+	说明：取图文控件默认字体颜色；
+	参数：szTreePath  窗口树路径名；
+	返回：dwFontColor 字体颜色，目前没做可用性调整；
+		
+RichText_GetTextBorderColor
+	说明：取图文控件默认字体边缘颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwFontBorderColor 字体边缘颜色，目前没做可用性调整；
+		
+RichText_GetVisibleLineCount
+	说明：取图文控件可显示行数；
+	参数：szTreePath 窗口树路径名；
+	返回：nLineCount 文字行数；
+
+RichText_SetText
+	说明：设图文控件内容；
+	参数：szTreePath 	窗口树路径名，
+	 	  szText		文字内容，
+	 	  [nTextLength]	如果设置了，使用nTextLength，否则把szText当作plain text处理；
+	返回：nil
+		
+RichText_SetFontSize
+	说明：设图文控件默认字体大小；
+	参数：szTreePath  		窗口树路径名，
+		  nFontSize			文字大小；
+	返回：nil
+
+RichText_SetTextColor
+	说明：设图文控件默认字体颜色；
+	参数：szTreePath  		窗口树路径名；
+		  dwFontColor		字体颜色，目前未做可用性调整；
+	返回：nil
+
+RichText_SetTextBorderColor
+	说明：设图文控件默认字体边缘颜色；
+	参数：szTreePath  		窗口树路径名；
+		  dwFontBorderColor	字体边缘颜色，目前未做可用性调整；
+	返回：nil
+
+RichText_SetTopLine
+	说明：设图文控件从那行开始显示；
+	参数：szTreePath  		窗口树路径名；
+		  nTopLine			开始显示的行号，从0开始计算；
+	返回：nil
+

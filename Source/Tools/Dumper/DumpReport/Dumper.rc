@@ -1,0 +1,160 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 227
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG1 DIALOGEX 0, 0, 299, 234
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_FIXEDSYS | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST
+CAPTION "错误报告"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "发送错误报告(&S)",IDOK,180,213,65,14,WS_GROUP
+    PUSHBUTTON      "退出(&Q)",IDCANCEL,251,213,42,14,WS_GROUP
+    CONTROL         108,IDC_STATIC,"Static",SS_BITMAP | SS_CENTERIMAGE | SS_REALSIZEIMAGE,0,0,299,47,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_EDIT1,9,132,278,61,ES_MULTILINE | ES_AUTOHSCROLL | ES_WANTRETURN | NOT WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_GROUP,WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    LTEXT           "非常抱歉！剑网3客户端程序发生了意外错误，即将终止运行。",IDC_STATIC,8,55,284,8
+    LTEXT           "查看错误报告内容",IDC_CHECK_STATIC,164,82,67,8,SS_NOTIFY
+    GROUPBOX        "请输入反馈信息（如错误发生时您正在做的操作）",IDC_STATIC,3,121,291,76
+    LTEXT           "为了改进我们的产品，生成了一份错误报告，并希望您将报告发送给我们。",IDC_STATIC,8,69,267,8
+    LTEXT           "错误报告中，不包含任何您的私人信息。",IDC_STATIC,9,82,152,8
+    LTEXT           "",IDC_STATIC,0,47,299,1,0,WS_EX_STATICEDGE
+    CONTROL         "重新启动程序",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,103,64,10
+    PUSHBUTTON      "调试(&D)",IDDEBUG,9,213,42,14,NOT WS_VISIBLE | WS_GROUP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP                  "res\\jx3logo.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,822
+ PRODUCTVERSION 1,4,0,1834
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "CompanyName", "Kingsoft Corporation"
+            VALUE "FileDescription", "Dumper"
+            VALUE "FileVersion", "1, 0, 0,822"
+            VALUE "InternalName", "Dumper"
+            VALUE "LegalCopyright", "(c) Kingsoft Corporation 2006-2009, All Rights Reserved."
+            VALUE "OriginalFilename", "Dumper.dll"
+            VALUE "ProductName", "Dumper"
+            VALUE "ProductVersion", "1,4,0,1834"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON2               ICON                    "res\\DumpReport.ico"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

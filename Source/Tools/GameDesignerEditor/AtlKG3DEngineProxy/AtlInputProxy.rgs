@@ -1,0 +1,26 @@
+HKCR
+{
+	AtlKG3DEngineProxy.AtlInputProxy.1 = s 'AtlInputProxy Class'
+	{
+		CLSID = s '{DE6DA5FC-0382-4ABB-B9C6-FDA14C68DEF6}'
+	}
+	AtlKG3DEngineProxy.AtlInputProxy = s 'AtlInputProxy Class'
+	{
+		CLSID = s '{DE6DA5FC-0382-4ABB-B9C6-FDA14C68DEF6}'
+		CurVer = s 'AtlKG3DEngineProxy.AtlInputProxy.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {DE6DA5FC-0382-4ABB-B9C6-FDA14C68DEF6} = s 'AtlInputProxy Class'
+		{
+			ProgID = s 'AtlKG3DEngineProxy.AtlInputProxy.1'
+			VersionIndependentProgID = s 'AtlKG3DEngineProxy.AtlInputProxy'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{F77619C9-C039-4EDF-AB63-A7BEE4D1E75A}'
+		}
+	}
+}

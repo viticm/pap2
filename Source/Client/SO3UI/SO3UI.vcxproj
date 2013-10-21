@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AA3703A5-5BA1-4458-897C-6980D372C21F}</ProjectGuid>
+    <RootNamespace>ui</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent>
+      <Command>attrib -r ..\..\..\Lib\Win32\$(TargetName).lib</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../Include;../../../Include/SO3World;../../../../Base/Include;../../../../DevEnv/DolbyAxon1.1.1.r10731/Single_Server_10731/Clientlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;PROFILE;_WINDOWS;_USRDLL;_CLIENT;LUA_V_5;SO3UI_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3d9.lib;dinput8.lib;winmm.lib;uuid.lib;Rpcrt4.lib;atlsd.lib;commonD.lib;Engine_lua5D.lib;dxguid.lib;d3dx9.lib;Lua5D.lib;KG3DSoundD.lib;imm32.lib;CheckGameCheatLibD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)JX3UID.dll</OutputFile>
+      <AdditionalLibraryDirectories>../../../../Base/Lib;../../../Lib/Win32;../../../../DevEnv/Lib/Debug/FreeType2;../../../../DevEnv/Lib/debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcp.lib;libc.lib;libci.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)JX3UID.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+    <PostBuildEvent>
+      <Command>md ..\..\..\..\sword3-products
+md ..\..\..\..\sword3-products\trunk
+md ..\..\..\..\sword3-products\trunk\client
+copy "$(TargetDir)JX3UID.dll" ..\..\..\..\sword3-products\trunk\client\JX3UID.dll
+copy "$(TargetDir)JX3UID.pdb" ..\..\..\..\sword3-products\trunk\client\JX3UID.pdb
+copy "$(TargetDir)$(TargetName).lib" ..\..\..\Lib\Win32
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PreBuildEvent>
+      <Command>attrib -r ..\..\..\Lib\Win32\$(TargetName).lib</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>../../../Include;../../../Include/SO3World;../../../../Base/Include;../../../../DevEnv/DolbyAxon1.1.1.r10731/Single_Server_10731/Clientlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CLIENT;LUA_V_5;SO3UI_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3d9.lib;dinput8.lib;winmm.lib;uuid.lib;Rpcrt4.lib;common.lib;Engine_lua5.lib;dxguid.lib;d3dx9.lib;atls.lib;Lua5.lib;KG3DSound.lib;imm32.lib;CheckGameCheatLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)JX3UI.dll</OutputFile>
+      <AdditionalLibraryDirectories>../../../../Base/Lib;../../../Lib/Win32;../../../../DevEnv/Lib/Release/FreeType2;../../../../DevEnv/Lib/release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcp.lib;libc.lib;libci.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)JX3UI.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+    <PostBuildEvent>
+      <Command>md ..\..\..\..\sword3-products
+md ..\..\..\..\sword3-products\trunk
+md ..\..\..\..\sword3-products\trunk\client
+copy "$(TargetDir)JX3UI.dll" ..\..\..\..\sword3-products\trunk\client\JX3UI.dll
+copy "$(TargetDir)JX3UI.pdb" ..\..\..\..\sword3-products\trunk\client\JX3UI.pdb
+copy "$(TargetDir)$(TargetName).lib" ..\..\..\Lib\Win32
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="SO3UI.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="kgameworldmgr.cpp" />
+    <ClCompile Include="k3denginescripttable.cpp" />
+    <ClCompile Include="kdolbyaxonscripttable.cpp" />
+    <ClCompile Include="knullui3dmodeleventhandler.cpp" />
+    <ClCompile Include="krepresentscripttable.cpp" />
+    <ClCompile Include="kschemescripttable.cpp" />
+    <ClCompile Include="kui3dmodeleventhandler.cpp" />
+    <ClCompile Include="kgameworldtextencoder.cpp" />
+    <ClCompile Include="kgwtextatom.cpp" />
+    <ClCompile Include="kgwtextatomattribute.cpp" />
+    <ClCompile Include="kgwtextencoder.cpp" />
+    <ClCompile Include="kgameworlduihandler.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SO3UI.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="kgameworldmgr.h" />
+    <ClInclude Include="k3denginescripttable.h" />
+    <ClInclude Include="kdolbyaxonscripttable.h" />
+    <ClInclude Include="knullui3dmodeleventhandler.h" />
+    <ClInclude Include="krepresentscripttable.h" />
+    <ClInclude Include="kschemescripttable.h" />
+    <ClInclude Include="kscript.h" />
+    <ClInclude Include="kui3dmodeleventhandler.h" />
+    <ClInclude Include="kgameworldtextencoder.h" />
+    <ClInclude Include="kgwtextatom.h" />
+    <ClInclude Include="kgwtextatomattribute.h" />
+    <ClInclude Include="kgwtextencoder.h" />
+    <ClInclude Include="kgameworlduihandler.h" />
+    <ClInclude Include="..\..\..\Include\SO3UI\ISO3UI.h" />
+    <ClInclude Include="..\..\..\Include\SO3UI\SO3GameWorldUIHandler.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SO3UI.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

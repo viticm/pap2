@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioToolFile
+	Name="VS_FX_EffectCompiler"
+	Version="8.00"
+	>
+	<Rules>
+		<CustomBuildRule
+			Name="fxBuildRule"
+			DisplayName="fxBuildRule"
+			CommandLine="&quot;$(ProjectDir)EffectCompiler.exe&quot; [AllOptions] [AdditionalOptions] /F:[Inputs]"
+			Outputs="&amp;(InputName).fxo"
+			FileExtensions="*.fx"
+			ExecutionDescription="Executing tool..."
+			>
+			<Properties>
+				<BooleanProperty
+					Name="ForceCompile"
+					DisplayName="ForceCompile"
+					Description="Force Compile, If not, files are ignored according to their file modification time"
+					Switch="/C"
+					DefaultValue="true"
+				/>
+				<BooleanProperty
+					Name="ShowOnlyError"
+					DisplayName="ShowOnlyError"
+					Description="Show Only Error Results"
+					Switch="/S"
+				/>
+				<StringProperty
+					Name="OutputDirectory"
+					DisplayName="Output Directory"
+					Description="Output Directory. If /O is set, compile result will be output as fxo"
+					Switch="/O:&quot;[value]&quot;"
+				/>
+				<StringProperty
+					Name="RunMode"
+					DisplayName="RunMode"
+					Description="Run Mode, If it is used for compile in VC, it must be set as&quot;vc&quot;"
+					Switch="/Mode:[value]"
+					DefaultValue="Vc"
+				/>
+				<StringProperty
+					Name="CopytoDir"
+					DisplayName="CopytoDir"
+					Description="Auto copy file to the destination,if setted"
+					Switch="/CPY:&quot;[value]&quot;"
+				/>
+			</Properties>
+		</CustomBuildRule>
+	</Rules>
+</VisualStudioToolFile>

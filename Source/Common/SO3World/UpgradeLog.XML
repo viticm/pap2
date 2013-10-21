@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="SO3World">
+</Property><Property Name="Solution File" Value="D:\Code\Game\Sword3\Source\Common\SO3World\SO3World.sln">
+</Property><Property Name="User Options File" Value="D:\Code\Game\Sword3\Source\Common\SO3World\SO3World.suo">
+</Property><Property Name="Date" Value="2010年6月4日">
+</Property><Property Name="Time" Value="22:09">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="SO3World.sln" Description="File successfully backed up as D:\Code\Game\Sword3\Source\Common\SO3World\SO3World.sln.old">
+</Event><Event ErrorLevel="0" Project="" Source="SO3World.suo" Description="File successfully backed up as D:\Code\Game\Sword3\Source\Common\SO3World\SO3World.suo.old">
+</Event><Event ErrorLevel="3" Project="SO3World" Source="SO3World.vcproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="" Source="SO3World.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="SO3World.sln" Description="Converted">
+</Event></UpgradeLog>

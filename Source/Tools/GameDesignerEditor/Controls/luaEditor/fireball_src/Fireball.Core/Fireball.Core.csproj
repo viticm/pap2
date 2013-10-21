@@ -1,0 +1,218 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{909AD284-7020-4FA9-A55E-7C633A641724}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fireball</RootNamespace>
+    <AssemblyName>Fireball.Core</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>fireball.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\build\libs\firefx2\Fireball.Core\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\AutoAssemblyInfo.cs">
+      <Link>AutoAssemblyInfo.cs</Link>
+    </None>
+    <Compile Include="Collections\Generic\IKeyedCollection.cs" />
+    <Compile Include="Collections\Generic\ILightCollection.cs" />
+    <Compile Include="Collections\Generic\ReadOnlyKeyedCollection.cs" />
+    <Compile Include="Collections\Generic\KeyedCollection.cs" />
+    <Compile Include="Collections\Generic\LightCollection.cs" />
+    <None Include="Collections\Generic\TreeCollection.cs" />
+    <None Include="Collections\Generic\TreeItemCollection.cs" />
+    <None Include="Collections\Generic\TreeItemEnumerator.cs" />
+    <None Include="Collections\Generic\TreeItem.cs" />
+    <Compile Include="Collections\Generic\FastQueue.cs" />
+    <Compile Include="Collections\Generic\ReadOnlyCollection.cs" />
+    <Compile Include="Collections\Specialized\StringCollection.cs" />
+    <Compile Include="Drawing\ColorHLS.cs" />
+    <Compile Include="Drawing\ColorUtils.cs" />
+    <Compile Include="Drawing\Drawing2D\PixelBuffer.cs" />
+    <Compile Include="Drawing\Drawing2D\PixelBufferGraphics.cs" />
+    <Compile Include="Drawing\Drawing2D\PixelBufferManagedGraphics.cs" />
+    <Compile Include="Drawing\Drawing2D\PixelBufferManagedRenderer.cs" />
+    <Compile Include="Drawing\Drawing2D\PixelBufferRenderDelegate.cs" />
+    <Compile Include="Drawing\Drawing2D\PixelBufferRenderer.cs" />
+    <Compile Include="Drawing\Drawing2D\PixelBufferRenderInfo.cs" />
+    <Compile Include="Drawing\FreeImage.cs" />
+    <Compile Include="Drawing\FreeImageBrightness.cs" />
+    <Compile Include="Drawing\FreeImageColorConversion.cs" />
+    <Compile Include="Drawing\FreeImageConstrast.cs" />
+    <Compile Include="Drawing\FreeImageGeometryTransformation.cs" />
+    <Compile Include="Drawing\FreeImagePixelTransformation.cs" />
+    <Compile Include="Drawing\FreeImageRescale.cs" />
+    <Compile Include="Drawing\FreeImageSupport.cs" />
+    <Compile Include="Drawing\FreeImageTransformation.cs" />
+    <Compile Include="Drawing\GDI\FontEnum.cs" />
+    <Compile Include="Drawing\GDI\GDIBitmap.cs" />
+    <Compile Include="Drawing\GDI\GDIBrushes.cs" />
+    <Compile Include="Drawing\GDI\GDIColor.cs" />
+    <Compile Include="Drawing\GDI\GDIFont.cs" />
+    <Compile Include="Drawing\GDI\GDIObject.cs" />
+    <Compile Include="Drawing\GDI\GDIPens.cs" />
+    <Compile Include="Drawing\GDI\GDISurface.cs" />
+    <Compile Include="Drawing\GDI\MemHandler.cs" />
+    <Compile Include="Drawing\ImageInfo\Constants.cs" />
+    <Compile Include="Drawing\ImageInfo\Fraction.cs" />
+    <Compile Include="Drawing\ImageInfo\Info.cs" />
+    <Compile Include="Drawing\ImageInfo\PropertyTag.cs" />
+    <Compile Include="Drawing\Internal\FreeImageAPI.cs" />
+    <Compile Include="Drawing\Internal\GDIplus.cs" />
+    <Compile Include="Drawing\RoundRectangleBrush.cs" />
+    <Compile Include="Drawing\Shapes\IDrawable.cs" />
+    <Compile Include="Drawing\Shapes\IFillable.cs" />
+    <Compile Include="Drawing\Shapes\IRectangle.cs" />
+    <Compile Include="Drawing\Shapes\Shape.cs" />
+    <Compile Include="Drawing\Shapes\ShapeArc.cs" />
+    <Compile Include="Drawing\Shapes\ShapeBezier.cs" />
+    <Compile Include="Drawing\Shapes\ShapeClosedCurve.cs" />
+    <Compile Include="Drawing\Shapes\ShapeCurve.cs" />
+    <Compile Include="Drawing\Shapes\ShapeEllipse.cs" />
+    <Compile Include="Drawing\Shapes\ShapeLine.cs" />
+    <Compile Include="Drawing\Shapes\ShapePie.cs" />
+    <Compile Include="Drawing\Shapes\ShapePolygon.cs" />
+    <Compile Include="Drawing\Shapes\ShapePolyline.cs" />
+    <Compile Include="Drawing\Shapes\ShapeRectangle.cs" />
+    <Compile Include="Drawing\Shapes\ShapeRoundRectangle.cs" />
+    <Compile Include="Drawing\Shapes\ShapeSpyral.cs" />
+    <Compile Include="Drawing\Shapes\ShapeStar.cs" />
+    <Compile Include="Drawing\Shapes\ShapeThumbSize.cs" />
+    <Compile Include="Drawing\FreeImageGamma.cs" />
+    <Compile Include="Drawing\SystemImageList.cs" />
+    <Compile Include="Globalization\IMEWindow.cs" />
+    <Compile Include="IO\Compression\BZip2\BZip2.cs" />
+    <Compile Include="IO\Compression\BZip2\BZip2Constants.cs" />
+    <Compile Include="IO\Compression\BZip2\BZip2Exception.cs" />
+    <Compile Include="IO\Compression\BZip2\BZip2InputStream.cs" />
+    <Compile Include="IO\Compression\BZip2\BZip2OutputStream.cs" />
+    <Compile Include="IO\Compression\Checksums\Adler32.cs" />
+    <Compile Include="IO\Compression\Checksums\CRC32.cs" />
+    <Compile Include="IO\Compression\Checksums\IChecksum.cs" />
+    <Compile Include="IO\Compression\Checksums\StrangeCRC.cs" />
+    <Compile Include="IO\Compression\Core\FileSystemScanner.cs" />
+    <Compile Include="IO\Compression\Core\INameTransform.cs" />
+    <Compile Include="IO\Compression\Core\NameFilter.cs" />
+    <Compile Include="IO\Compression\Core\PathFilter.cs" />
+    <Compile Include="IO\Compression\Encryption\PkzipClassic.cs" />
+    <Compile Include="IO\Compression\GZip\GZIPConstants.cs" />
+    <Compile Include="IO\Compression\GZip\GZipException.cs" />
+    <Compile Include="IO\Compression\GZip\GzipInputStream.cs" />
+    <Compile Include="IO\Compression\GZip\GzipOutputStream.cs" />
+    <Compile Include="IO\Compression\SevenZip\Common\CRC.cs" />
+    <Compile Include="IO\Compression\SevenZip\Common\InBuffer.cs" />
+    <Compile Include="IO\Compression\SevenZip\Common\OutBuffer.cs" />
+    <Compile Include="IO\Compression\SevenZip\Compress\LZMA\LzmaBase.cs" />
+    <Compile Include="IO\Compression\SevenZip\Compress\LZMA\LzmaDecoder.cs" />
+    <Compile Include="IO\Compression\SevenZip\Compress\LZMA\LzmaEncoder.cs" />
+    <Compile Include="IO\Compression\SevenZip\Compress\LZ\IMatchFinder.cs" />
+    <Compile Include="IO\Compression\SevenZip\Compress\LZ\LzBinTree.cs" />
+    <Compile Include="IO\Compression\SevenZip\Compress\LZ\LzInWindow.cs" />
+    <Compile Include="IO\Compression\SevenZip\Compress\LZ\LzOutWindow.cs" />
+    <Compile Include="IO\Compression\SevenZip\Compress\RangeCoder\RangeCoder.cs" />
+    <Compile Include="IO\Compression\SevenZip\Compress\RangeCoder\RangeCoderBit.cs" />
+    <Compile Include="IO\Compression\SevenZip\Compress\RangeCoder\RangeCoderBitTree.cs" />
+    <Compile Include="IO\Compression\SevenZip\ICoder.cs" />
+    <Compile Include="IO\Compression\SharpZipBaseException.cs" />
+    <Compile Include="IO\Compression\Tar\InvalidHeaderException.cs" />
+    <Compile Include="IO\Compression\Tar\TarArchive.cs" />
+    <Compile Include="IO\Compression\Tar\TarBuffer.cs" />
+    <Compile Include="IO\Compression\Tar\TarEntry.cs" />
+    <Compile Include="IO\Compression\Tar\TarException.cs" />
+    <Compile Include="IO\Compression\Tar\TarHeader.cs" />
+    <Compile Include="IO\Compression\Tar\TarInputStream.cs" />
+    <Compile Include="IO\Compression\Tar\TarOutputStream.cs" />
+    <Compile Include="IO\Compression\Zip\Compression\Deflater.cs" />
+    <Compile Include="IO\Compression\Zip\Compression\DeflaterConstants.cs" />
+    <Compile Include="IO\Compression\Zip\Compression\DeflaterEngine.cs" />
+    <Compile Include="IO\Compression\Zip\Compression\DeflaterHuffman.cs" />
+    <Compile Include="IO\Compression\Zip\Compression\DeflaterPending.cs" />
+    <Compile Include="IO\Compression\Zip\Compression\Inflater.cs" />
+    <Compile Include="IO\Compression\Zip\Compression\InflaterDynHeader.cs" />
+    <Compile Include="IO\Compression\Zip\Compression\InflaterHuffmanTree.cs" />
+    <Compile Include="IO\Compression\Zip\Compression\PendingBuffer.cs" />
+    <Compile Include="IO\Compression\Zip\Compression\Streams\DeflaterOutputStream.cs" />
+    <Compile Include="IO\Compression\Zip\Compression\Streams\InflaterInputStream.cs" />
+    <Compile Include="IO\Compression\Zip\Compression\Streams\OutputWindow.cs" />
+    <Compile Include="IO\Compression\Zip\Compression\Streams\StreamManipulator.cs" />
+    <Compile Include="IO\Compression\Zip\FastZip.cs" />
+    <Compile Include="IO\Compression\Zip\ZipConstants.cs" />
+    <Compile Include="IO\Compression\Zip\ZipEntry.cs" />
+    <Compile Include="IO\Compression\Zip\ZipException.cs" />
+    <Compile Include="IO\Compression\Zip\ZipFile.cs" />
+    <Compile Include="IO\Compression\Zip\ZipInputStream.cs" />
+    <Compile Include="IO\Compression\Zip\ZipNameTransform.cs" />
+    <Compile Include="IO\Compression\Zip\ZipOutputStream.cs" />
+    <Compile Include="IO\FilesCache.cs" />
+    <None Include="Serialization\Serializer.cs" />
+    <None Include="Serialization\SerializerAttribute.cs" />
+    <None Include="Serialization\SerializerPropertyAttribute.cs" />
+    <Compile Include="IO\ZipHelper.cs" />
+    <Compile Include="IO\ZipHelperDir.cs" />
+    <Compile Include="IO\ZipHelperEntry.cs" />
+    <Compile Include="IO\ZipHelperFile.cs" />
+    <Compile Include="Shell\ShellItem.cs" />
+    <Compile Include="Text\WordReader.cs" />
+    <Compile Include="Xml\XmlNodeTextReader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Timers\WeakTimer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Win32\NativeSubclasser.cs" />
+    <Compile Include="Xml\XmlDocumentExtended.cs" />
+    <Compile Include="Xml\XmlNodeExtended.cs" />
+    <None Include="fireball.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Drawing\Shapes\ToDoList.txt" />
+    <Content Include="Changelog.txt" />
+    <Content Include="ICSharpCodeLicenze.txt" />
+    <None Include="FreeImage.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fireball.Win32\Fireball.Win32\Fireball.Win32.csproj">
+      <Project>{A72D738D-B07F-4920-B4E7-543D18967FBF}</Project>
+      <Name>Fireball.Win32</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

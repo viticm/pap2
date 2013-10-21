@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  Customized TreeCache Service Configuration for Tomcat 5 Clustering   -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<server>
+
+    <classpath codebase="./lib" archives="jboss-cache.jar, jgroups.jar"/>
+
+    <!-- ==================================================================== -->
+    <!-- Defines TreeCache configuration                                      -->
+    <!-- ==================================================================== -->
+
+    <mbean code="org.jboss.cache.TreeCache"
+        name="jboss.cache:service=TomcatClusteringCache">
+
+        <depends>jboss:service=Naming</depends>
+        <depends>jboss:service=TransactionManager</depends>
+
+        <!-- Configure the TransactionManager -->
+        <attribute name="TransactionManagerLookupClass">org.jboss.cache.JBossTransactionManagerLookup</attribute>
+
+        <!--
+            Isolation level : SERIALIZABLE
+                              REPEATABLE_READ (default)
+                              READ_COMMITTED
+                              READ_UNCOMMITTED
+                              NONE
+        -->
+        <attribute name="IsolationLevel">REPEATABLE_READ</attribute>
+
+        <!--
+             Valid modes are LOCAL, REPL_ASYNC and REPL_SYNC
+        -->
+        <attribute name="CacheMode">REPL_ASYNC</attribute>
+
+        <!-- Name of cluster. Needs to be the same for all clusters, in order
+             to find each other
+        -->
+        <attribute name="ClusterName">Tomcat-Cluster</attribute>
+
+        <!-- JGroups protocol stack properties. Can also be a URL,
+             e.g. file:/home/bela/default.xml
+           <attribute name="ClusterProperties"></attribute>
+        -->
+
+        <attribute name="ClusterConfig">
+            <!--
+            The default UDP stack:
+            - If you have a multihomed machine, set the UDP protocol's bind_addr attribute to the
+            appropriate NIC IP address, e.g bind_addr="192.168.0.2".
+            - On Windows machines, because of the media sense feature being broken with multicast
+            (even after disabling media sense) set the UDP protocol's loopback attribute to true
+            -->
+            <config>
+                <UDP mcast_addr="230.1.2.7" mcast_port="45577"
+                    ip_ttl="8" ip_mcast="true" 
+                    mcast_send_buf_size="150000" mcast_recv_buf_size="80000"
+                    ucast_send_buf_size="150000" ucast_recv_buf_size="80000"
+                    loopback="false"/>
+                <PING timeout="2000" num_initial_members="3"
+                    up_thread="false" down_thread="false"/>
+                <MERGE2 min_interval="10000" max_interval="20000"/>
+                <FD_SOCK/>
+                <VERIFY_SUSPECT timeout="1500"
+                    up_thread="false" down_thread="false"/>
+                <pbcast.NAKACK gc_lag="50" retransmit_timeout="600,1200,2400,4800"
+                    max_xmit_size="8192" up_thread="false" down_thread="false"/>
+                <UNICAST timeout="600,1200,2400" window_size="100" min_threshold="10"
+                    down_thread="false"/>
+                <pbcast.STABLE desired_avg_gossip="20000"
+                    up_thread="false" down_thread="false"/>
+                <FRAG frag_size="8192"
+                    down_thread="false" up_thread="false"/>
+                <pbcast.GMS join_timeout="5000" join_retry_timeout="2000"
+                    shun="true" print_local_addr="true"/>
+                <pbcast.STATE_TRANSFER up_thread="true" down_thread="true"/>
+            </config>
+
+           <!-- Alternate TCP stack: customize it for your environment, change bind_addr and initial_hosts -->
+           <!--
+           <config>
+              <TCP bind_addr="thishost" start_port="7810" loopback="true"/>
+              <TCPPING initial_hosts="thishost[7810],otherhost[7810]" port_range="3" timeout="3500"
+                 num_initial_members="3" up_thread="true" down_thread="true"/>
+              <MERGE2 min_interval="5000" max_interval="10000"/>
+              <FD shun="true" timeout="2500" max_tries="5" up_thread="true" down_thread="true" />
+              <VERIFY_SUSPECT timeout="1500" down_thread="false" up_thread="false" />
+              <pbcast.NAKACK down_thread="true" up_thread="true" gc_lag="100"
+                 retransmit_timeout="3000"/>
+              <pbcast.STABLE desired_avg_gossip="20000" down_thread="false" up_thread="false" />
+              <pbcast.GMS join_timeout="5000" join_retry_timeout="2000" shun="false"
+                 print_local_addr="true" down_thread="true" up_thread="true"/>
+              <pbcast.STATE_TRANSFER up_thread="true" down_thread="true"/>
+           </config>
+           -->
+
+        </attribute>
+
+        <!-- Max number of milliseconds to wait for a lock acquisition -->
+        <attribute name="LockAcquisitionTimeout">15000</attribute>
+
+    </mbean>
+
+</server>

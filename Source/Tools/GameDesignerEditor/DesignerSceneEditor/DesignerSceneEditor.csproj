@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\sword3-products\trunk\Tools\DesignerSceneEditor\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\sword3-products\trunk\Tools\DesignerSceneEditor\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectGuid>{3D6A3675-95B6-4591-BBEB-15C4265B4E4C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <ApplicationIcon>SceneEditor_103.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=7.3.0.2, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\sword3-products\trunk\tools\DesignerSceneEditor\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="LuaInterface, Version=1.5.3.0, Culture=neutral, PublicKeyToken=1e1fb15b02227b8a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\sword3-products\trunk\tools\DesignerSceneEditor\LuaInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="MWTreeView, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TargaImage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\TargaImage.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\EditorLayer.cs" />
+    <Compile Include="Application\EngineLayer.cs" />
+    <Compile Include="Application\LogicLayer.cs" />
+    <Compile Include="AppOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppOptionsForm.Designer.cs">
+      <DependentUpon>AppOptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\AIParametersEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\AIParametersEditForm.Designer.cs">
+      <DependentUpon>AIParametersEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\BaseDoc.cs" />
+    <Compile Include="BaseForm\BaseForm_Doodad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\BaseForm_LogicObjs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\BaseForm_Npc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\BaseForm_Poly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\BaseForm_TopView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\BaseForm_Traffic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\BaseForm_Waypoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\BaseView.cs" />
+    <Compile Include="BaseForm\BuildPolyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\BuildPolyForm.Designer.cs">
+      <DependentUpon>BuildPolyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\CheckRelive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\CheckRelive.designer.cs">
+      <DependentUpon>CheckRelive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\GroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\GroupForm.designer.cs">
+      <DependentUpon>GroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\GroupManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\GroupManageForm.designer.cs">
+      <DependentUpon>GroupManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\InputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\InputForm.designer.cs">
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\LogicHelper.cs" />
+    <Compile Include="BaseForm\MyPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseForm\ObjectsEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\ObjectsEditForm.designer.cs">
+      <DependentUpon>ObjectsEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\ObjectSelectMaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\ObjectSelectMaskForm.designer.cs">
+      <DependentUpon>ObjectSelectMaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\PreviewCanvas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseForm\RegionParamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\RegionParamForm.Designer.cs">
+      <DependentUpon>RegionParamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\RegionSplitFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\RegionSplitFrom.Designer.cs">
+      <DependentUpon>RegionSplitFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\SaveOptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\SaveOptionForm.Designer.cs">
+      <DependentUpon>SaveOptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\SideForm_NPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\SideForm_NPC.Designer.cs">
+      <DependentUpon>SideForm_NPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\ThumbnailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\ThumbnailForm.Designer.cs">
+      <DependentUpon>ThumbnailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\LogicManager.cs" />
+    <Compile Include="Misc\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Misc\SymmetricCode.cs" />
+    <Compile Include="BaseForm\RandomGroupConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\RandomGroupConfigForm.Designer.cs">
+      <DependentUpon>RandomGroupConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TopView\TopViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopView\TopViewForm.Designer.cs">
+      <DependentUpon>TopViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TopView\Canvas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Misc\FileFolderHelper.cs" />
+    <Compile Include="Misc\Helper.cs" />
+    <Compile Include="MainFrame\ColorPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainFrame\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Program.cs" />
+    <Compile Include="Misc\IniHandler.cs" />
+    <Compile Include="Misc\LuaEx.cs" />
+    <Compile Include="TopView\Preview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopView\Preview.Designer.cs">
+      <DependentUpon>Preview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppOptionsForm.resx">
+      <DependentUpon>AppOptionsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\AIParametersEditForm.resx">
+      <DependentUpon>AIParametersEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\BaseForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\BuildPolyForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BuildPolyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\CheckRelive.resx">
+      <DependentUpon>CheckRelive.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\GroupForm.resx">
+      <DependentUpon>GroupForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\GroupManageForm.resx">
+      <DependentUpon>GroupManageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\InputForm.resx">
+      <DependentUpon>InputForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\ObjectsEditForm.resx">
+      <DependentUpon>ObjectsEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\ObjectSelectMaskForm.resx">
+      <DependentUpon>ObjectSelectMaskForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\RegionParamForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RegionParamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\RegionSplitFrom.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RegionSplitFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\SaveOptionForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SaveOptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\ThumbnailForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ThumbnailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Misc\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\RandomGroupConfigForm.resx">
+      <DependentUpon>RandomGroupConfigForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopView\TopViewForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TopViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\ColorPicker.resx">
+      <DependentUpon>ColorPicker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopView\Preview.resx">
+      <DependentUpon>Preview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\SceneEditor_103.ico" />
+    <Content Include="SceneEditor_103.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AtlKG3DEngineProxyLib">
+      <Guid>{F77619C9-C039-4EDF-AB63-A7BEE4D1E75A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

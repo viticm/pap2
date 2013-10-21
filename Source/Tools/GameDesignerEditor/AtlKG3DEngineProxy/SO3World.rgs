@@ -1,0 +1,26 @@
+HKCR
+{
+	AtlKG3DEngineProxy.SO3World.1 = s 'SO3World Class'
+	{
+		CLSID = s '{8AD282F9-2BD4-4782-B4B7-44F872ED7326}'
+	}
+	AtlKG3DEngineProxy.SO3World = s 'SO3World Class'
+	{
+		CLSID = s '{8AD282F9-2BD4-4782-B4B7-44F872ED7326}'
+		CurVer = s 'AtlKG3DEngineProxy.SO3World.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {8AD282F9-2BD4-4782-B4B7-44F872ED7326} = s 'SO3World Class'
+		{
+			ProgID = s 'AtlKG3DEngineProxy.SO3World.1'
+			VersionIndependentProgID = s 'AtlKG3DEngineProxy.SO3World'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{F77619C9-C039-4EDF-AB63-A7BEE4D1E75A}'
+		}
+	}
+}

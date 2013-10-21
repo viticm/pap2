@@ -1,0 +1,192 @@
+[KICKROLE]
+local guard_gm_SessionId, guard_gm_RoleName
+guard_gm_SessionID='{0}'
+guard_gm_RoleName='{1}'
+local RetMsg = 'SUCCESS'
+
+gs_gm_gcCmd='Kickout(\''..guard_gm_RoleName..'\')'
+GCCommand(gs_gm_gcCmd)
+SendGmMessage(guard_gm_SessionID,RetMsg)
+[KICKROLE]
+
+[KICKACCOUNT]
+local guard_gm_SessionID='{0}'
+local guard_gm_Account='{1}'
+local RetMsg = 'SUCCESS'
+
+local r1,r2,r3
+r1,r2,r3 = GetAccountRoleList(guard_gm_Account)
+if r1==nil then
+RetMsg = 'NOT_LOGIN'
+elseif IsRoleOnline(r1) then Kickout(r1)
+elseif r2==nil then
+RetMsg = 'NOT_LOGIN'
+elseif IsRoleOnline(r2) then Kickout(r2)
+elseif r3==nil then
+RetMsg = 'NOT_LOGIN'
+elseif IsRoleOnline(r3) then Kickout(r3) 
+else
+RetMsg = 'NOT_LOGIN'
+end
+
+SendGmMessage(guard_gm_SessionID,RetMsg)
+[KICKACCOUNT]
+	
+[FLY2DEST]
+local guard_gm_SessionID='{0}'
+local guard_gm_RoleName='{1}'
+local guard_gm_mapid={2}
+local guard_gm_x = {3}
+local guard_gm_y = {4}
+local guard_gm_z = {5}
+local RetMsg = 'SUCCESS'
+
+if player.GetScene().dwMapID == guard_gm_mapid then
+player.SetPosition(guard_gm_x, guard_gm_y, guard_gm_z)
+else
+player.SwitchMap(guard_gm_mapid,1,guard_gm_x,gaurd_gm_y,guard_gm_z)
+end
+
+SendGmMessage(guard_gm_SessionID,RetMsg)
+[FLY2DEST]
+
+[FLY2TARGET]
+local gaurd_gm_SessionID='{0}'
+local guard_gm_RoleName='{1}'
+local guard_gm_FlyRoleName='{2}'
+local RetMsg = 'SUCCESS'
+
+local gs_strx=tostring(player.nX)
+local gs_stry=tostring(player.nY)
+local gs_strz=tostring(player.nZ)
+
+local gs_strmapid=tostring(player.GetScene().dwMapID )
+local gs_strMapCopyIndex=player.GetScene().szMapCopyIndex
+
+local gc_gm_CmdScriptSource = [[
+local gcRetMsg = 'SUCCESS'
+
+if not IsRoleExist('guard_gm_FlyRoleName') then
+gcRetMsg = 'PLAYER_NOT_FOUND'
+elseif not IsRoleOnline('guard_gm_FlyRoleName') then
+gcRetMsg = 'PLAYER_NOT_ONLINE'
+else
+gs_gm_CmdScript = ]]..'[['..[[
+if player.GetScene().dwMapID == gs_strmapid and player.GetScene().szMapCopyIndex == tostring(gs_strMapCopyIndex) then
+player.SetPosition(gs_strx, gs_stry, gs_strz)
+else 
+player.SwitchMap(gs_strmapid, gs_strMapCopyIndex, gs_strx, gs_stry, gs_strz)
+end 
+]]..']]'..[[
+PlayerExecute('guard_gm_FlyRoleName', gs_gm_CmdScript)
+end 
+
+SendGmMessage('{0}', gcRetMsg)
+]]
+
+local gc_gm_CmdScriptFinal
+gc_gm_CmdScriptFinal = string.gsub(gc_gm_CmdScriptSource, 'guard_gm_FlyRoleName', guard_gm_FlyRoleName)
+gc_gm_CmdScriptFinal = string.gsub(gc_gm_CmdScriptFinal, 'gs_strmapid', gs_strmapid)
+gc_gm_CmdScriptFinal = string.gsub(gc_gm_CmdScriptFinal, 'gs_strMapCopyIndex', gs_strMapCopyIndex)
+gc_gm_CmdScriptFinal = string.gsub(gc_gm_CmdScriptFinal, 'gs_strx', gs_strx)
+gc_gm_CmdScriptFinal = string.gsub(gc_gm_CmdScriptFinal, 'gs_stry', gs_stry)
+gc_gm_CmdScriptFinal = string.gsub(gc_gm_CmdScriptFinal, 'gs_strz', gs_strz)
+
+GCCommand(gc_gm_CmdScriptFinal) 
+[FLY2TARGET]
+
+--密聊玩家
+[ROLECHAT]
+local RetMsg = 'SUCCESS'
+player.SendSystemMessage('{2}:{3}')
+SendGmMessage('{0}', RetMsg)
+[ROLECHAT]
+
+--发布公告
+[ZONECHAT]
+SendGlobalSysMsg('{2}:{3}')
+[ZONECHAT]
+
+--密聊账号
+[ACCOUNTCHAT]
+local gaurd_gm_SessionID='{0}'
+local guard_gm_Account='{1}'
+local RetMsg = 'SUCCESS'
+local gs_gm_script = 'player.SendSystemMessage(\'{2}:{3}\')'
+
+r1,r2,r3 = GetAccountRoleList('{1}')
+if r1==nil then
+RetMsg = 'NOT_LOGIN'
+elseif IsRoleOnline(r1) then PlayerExecute(r1, gs_gm_script)
+elseif r2==nil then
+RetMsg = 'NOT_LOGIN'
+elseif IsRoleOnline(r2) then PlayerExecute(r2, gs_gm_script)
+elseif r3==nil then
+RetMsg = 'NOT_LOGIN'
+elseif IsRoleOnline(r3) then PlayerExecute(r3, gs_gm_script)
+end
+
+SendGmMessage('{0}', RetMsg)
+[ACCOUNTCHAT]
+
+--角色列表
+[ROLELIST]
+local gaurd_gm_SessionID='{0}'
+local guard_gm_Account='{1}'
+
+local RoleListStr
+
+r1,r2,r3 = GetAccountRoleList('{1}')
+if r1 ~=nil then
+RoleListStr = 'Role='..r1..'\n'
+if r2 ~= nil then
+RoleListStr = RoleListStr..'Role='..r2..'\n'
+if r2 ~= nil then
+RoleListStr = RoleListStr..'Role='..r3..'\n'
+end
+end
+end
+RetMsg = tostring(string.len(RoleListStr) - 1)..'-'..RoleListStr
+SendGmMessage(gaurd_gm_SessionID, RetMsg)
+
+[ROLELIST]
+
+--禁言、冻结角色
+[BEHAVE]
+local gaurd_gm_SessionID='{0}'
+local guard_gm_RoleName='{1}'
+local guard_OPT = '{2}'
+local guard_TYPE = '{3}'
+local guard_gm_nTimeOut = {4}
+local RetMsg = 'SUCCESS'
+
+if not IsRoleExist(guard_gm_RoleName) then
+
+RetMsg = 'PLAYER_NOT_FOUND'
+
+else
+if  guard_TYPE == 'SAY' then
+
+if IsRoleOnline(guard_gm_RoleName) then
+local gc_gm_gsCmd = 'player.Ban('..tostring(guard_gm_nTimeOut)..')'
+PlayerExecute(guard_gm_RoleName, gc_gm_gsCmd)
+else
+RetMsg = 'PLAYER_NOT_ONLINE'
+end
+
+elseif guard_TYPE == 'FREEZE' then 
+FreezeRole(guard_gm_RoleName, guard_gm_nTimeOut)
+
+if IsRoleOnline(guard_gm_RoleName) then
+Kickout(guard_gm_RoleName)
+end
+
+else 
+RetMsg = 'CMD_ERR'
+end
+
+
+end
+
+SendGmMessage(gaurd_gm_SessionID, RetMsg)
+[BEHAVE]

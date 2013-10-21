@@ -1,0 +1,163 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script language=javascript src="dialog.js"></script>
+
+<Script language=JavaScript>
+document.write ("<link href='../language/" + AvailableLangs["Active"] + ".css' type='text/css' rel='stylesheet'>");
+document.write ("<link href='dialog.css' type='text/css' rel='stylesheet'>");
+
+var sAction = "INSERT";
+var sTitle = lang["DlgComInsert"];
+
+var oControl;
+var oChild;
+var oSeletion;
+var sRangeType;
+
+var sAlignFieldset = "";
+var sAlignLegend = "";
+var sBorderColor = "";
+var sBgColor = "";
+
+oSelection = dialogArguments.eWebEditor.document.selection.createRange();
+sRangeType = dialogArguments.eWebEditor.document.selection.type;
+
+if (sRangeType == "Control") {
+	if (oSelection.item(0).tagName == "FIELDSET"){
+		sAction = "MODI";
+		sTitle = lang["DlgComModify"];
+		oControl = oSelection.item(0);
+		sAlignFieldset = oControl.align;
+		oChild = GetChildElement(oControl,"LEGEND");
+		if (oChild) sAlignLegend = oChild.align;
+		sBorderColor = oControl.style.borderColor;
+		sBgColor = oControl.style.backgroundColor;
+	}
+}
+
+
+document.write("<title>" + lang["DlgFs"] + "(" + sTitle + ")</title>");
+
+
+function InitDocument(){
+	AvailableLangs.TranslatePage(document);
+
+	SearchSelectValue(d_alignfieldset, sAlignFieldset.toLowerCase());
+	SearchSelectValue(d_alignlegend, sAlignLegend.toLowerCase());
+
+	d_bordercolor.value = sBorderColor;
+	s_bordercolor.style.backgroundColor = sBorderColor;
+	d_bgcolor.value = sBgColor;
+	s_bgcolor.style.backgroundColor = sBgColor;
+
+	adjustDialog();
+}
+
+// get first child element from same tag object
+function GetChildElement(obj, sTag){
+	var el;
+	for (var i=0;i<obj.children.length;i++){
+		if (obj.children[i].tagName==sTag){
+			return obj.children[i];
+		}else{
+			el=GetChildElement(obj.children[i], sTag);
+			if (el){
+				return el;
+			}
+		}
+	}
+	return null;
+}
+
+</script>
+
+<SCRIPT event=onclick for=Ok language=JavaScript>
+	// is valid bordercolor
+	sBorderColor = d_bordercolor.value;
+	if (!IsColor(sBorderColor)){
+		BaseAlert(d_bordercolor,lang["ErrColorBorder"]);
+		return;
+	}
+	// is valid bgcolor
+	sBgColor = d_bgcolor.value;
+	if (!IsColor(sBgColor)){
+		BaseAlert(d_bgcolor,lang["ErrColorBg"]);
+		return;
+	}
+
+	sAlignFieldset = d_alignfieldset.options[d_alignfieldset.selectedIndex].value;
+	sAlignLegend = d_alignlegend.options[d_alignlegend.selectedIndex].value;
+
+	if (sAction == "MODI") {
+		oControl.align = sAlignFieldset;
+		if (oChild) oChild.align = sAlignLegend;
+		oControl.style.borderColor = sBorderColor;
+		oControl.style.backgroundColor = sBgColor;
+	}else{
+		dialogArguments.insertHTML("<fieldset align='"+sAlignFieldset+"' style='border-color:"+sBorderColor+";background-color:"+sBgColor+"'><legend align="+sAlignLegend+">"+lang["DlgComTitle"]+"</legend>"+lang["DlgComContent"]+"</fieldset>");
+	}
+
+	window.returnValue = null;
+	window.close();
+</SCRIPT>
+</HEAD>
+
+<body onload="InitDocument()">
+<table border=0 cellpadding=0 cellspacing=5 id=tabDialogSize><tr><td>
+
+
+<table border=0 cellpadding=0 cellspacing=0 align=center>
+<tr>
+	<td>
+	<fieldset>
+	<legend><span lang=DlgAlign></span></legend>
+	<table border=0 cellpadding=5 cellspacing=0 width="100%">
+	<tr><td>
+
+		<table border=0 cellpadding=0 cellspacing=2 width="100%">
+		<tr>
+			<td noWrap width="20%"><span lang=DlgFsFieldset></span>:</td>
+			<td noWrap width="29%"><select id=d_alignfieldset size=1 style="width:80px"><option value='' lang=DlgComDefault></option><option value='left' lang=DlgAlignLeft></option><option value='center' lang=DlgAlignCenter></option><option value='right' lang=DlgAlignRight></option></select></td>
+			<td width="2%">&nbsp;</td>
+			<td noWrap width="20%"><span lang=DlgFsLegend></span>:</td>
+			<td noWrap width="29%"><select id=d_alignlegend size=1 style="width:80px"><option value='' lang=DlgComDefault></option><option value='left' lang=DlgAlignLeft></option><option value='center' lang=DlgAlignCenter></option><option value='right' lang=DlgAlignRight></option></select></td>
+		</tr>
+		</table>
+
+	</td></tr>
+	</table>
+	</fieldset>
+	</td>
+</tr>
+<tr><td height=5></td></tr>
+<tr>
+	<td>
+	<fieldset>
+	<legend><span lang=DlgColor></span></legend>
+	<table border=0 cellpadding=5 cellspacing=0 width="100%">
+	<tr><td>
+
+		<table border=0 cellpadding=0 cellspacing=2 width="100%">
+		<tr>
+			<td noWrap width="20%"><span lang=DlgColorBorder></span>:</td>
+			<td noWrap width="29%"><input style="width:62px" type=text id=d_bordercolor size=7 value=""><img border=0 src="../sysimage/rect.gif" width=18 style="cursor:hand" id=s_bordercolor onclick="SelectColor('bordercolor')" align=absmiddle></td>
+			<td width="2%">&nbsp;</td>
+			<td noWrap width="20%"><span lang=DlgColorBg></span>:</td>
+			<td noWrap width="29%"><input style="width:62px" type=text id=d_bgcolor size=7 value=""><img border=0 src="../sysimage/rect.gif" width=18 style="cursor:hand" id=s_bgcolor onclick="SelectColor('bgcolor')" align=absmiddle></td>
+		</tr>
+		</table>
+
+	</td></tr>
+	</table>
+	</fieldset>
+	</td>
+</tr>
+<tr><td height=5></td></tr>
+<tr><td noWrap align=right><input type=submit class="dlgBtnCommon" value='' id=Ok lang=DlgBtnOK>&nbsp;&nbsp;<input type=button class="dlgBtnCommon" value=''  lang=DlgBtnCancel onclick="window.close();"></td></tr>
+</table>
+
+
+</td></tr></table>
+</body>
+</html>

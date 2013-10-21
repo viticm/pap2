@@ -1,0 +1,53 @@
+@title KBUFF_LIST_NODEd对象
+@obj KBUFF_LIST_NODE
+@detail 
+@catalogs
+
+@summary ro. Buff的ID
+@catalog 
+@remarks 
+property dwID as DWORD ro
+
+@summary ro. Buff的Level
+@catalog 
+@remarks 
+property nLevel as Integer ro
+
+@summary ro. Buff的唯一索引号
+@catalog 
+@remarks 
+property nIndex as Integer ro
+
+@summary ro. Buff的层数
+@catalog 
+@remarks 
+property nStackNum as Integer ro
+
+@summary ro. 施放者ID
+@catalog 
+@remarks 
+property dwSkillSrcID as DWORD ro
+
+@summary rw. 下一跳帧数
+@catalog 
+@remarks 
+property nNextActiveFrame as Integer rw
+
+@summary rw. 剩余的跳数
+@catalog 
+@remarks 
+property nLeftActiveCount as Integer rw
+
+@summary ro. 定制值
+@catalog 
+@remarks 
+property nCustomValue as Integer ro
+
+
+@summary 获取Buff的每跳间隔Interval
+@remarks 如果成功返回Buff的每跳间隔Interval，单位帧 否则不返回。
+function GetIntervalFrame()
+
+@summary 获取该Buff在游戏的第几帧结束
+@remarks 如果成功返回该Buff在游戏的第几帧结束，否则不返回。
+function GetEndTime()

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: deploy-hasingleton-service.xml,v 1.1 2008/12/31 09:23:03 kuangsihao Exp $ -->
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  This service ensures that exactly one node in the cluster            -->
+<!--  deploys the services under "deploy-hasingleton" 			   -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<server>
+
+   <!--
+    |
+    | Use the deployer service on the singleton node. 
+    |
+    -->
+   <mbean code="org.jboss.ha.singleton.HASingletonController" 
+          name="jboss.ha:service=HASingletonDeployer">
+      <depends>jboss:service=${jboss.partition.name:DefaultPartition}</depends>   
+      <depends optional-attribute-name="TargetName">jboss.system:service=MainDeployer</depends>
+      <attribute name="PartitionName">${jboss.partition.name:DefaultPartition}</attribute>
+      <attribute name="TargetStartMethod">deploy</attribute>
+      <attribute name="TargetStartMethodArgument">${jboss.server.home.url}/deploy-hasingleton</attribute>
+      <attribute name="TargetStopMethod">undeploy</attribute>
+      <attribute name="TargetStopMethodArgument">${jboss.server.home.url}/deploy-hasingleton</attribute>
+   </mbean>
+
+</server>

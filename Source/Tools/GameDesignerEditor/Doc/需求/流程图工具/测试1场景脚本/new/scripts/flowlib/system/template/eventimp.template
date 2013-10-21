@@ -1,0 +1,115 @@
+Include('scripts/flowlib/custom/api.lua')
+using('API')
+using('comgr')
+using('Event')
+
+<%
+local i
+for i = 1, GetEventCount() do
+%>
+
+function <%=GetEventFunctionName(i)%>(context, ...)	
+	local <%=GetNodeNames(i)%>
+	<%
+	local j
+	for j = 1, GetNodeCount(i) do%>
+	<%=GetNodeName(i, j)%> = function(context, parentcontext)
+		<!根据节点类型，生成不同的代码!>
+		<%
+		local nodetype = GetNodeType(i, j)
+		if nodetype == 'Action' then
+		%>
+		<!1.动作节点!>
+			<%
+			out.print(GetNodeCode(i, j)) --输出节点代码
+			local ConnectionCount = GetNextConnetionCount(i, j) 
+			if ConnectionCount <= 1 then
+			<!1.1正常节点!>				
+				if IsNextNodeFinish(i, j) then
+					out.print('return finishnode(parentcontext)')
+				else
+			%>
+				return <%=GetNextNodeName(i, j)%>(cotext, parentcontext)
+			<%
+				end
+			else
+			<!1.2会创建多线程的节点!>
+			    local k
+			    for k = 1, GetNextThreadCount(i, j) do
+			%>
+			        create_subflow(<%=GetNextNodeName(i, j, k)%>)			
+			<%end			    
+			 for k = 1, GetNextThreadCount(i, j) do
+			 %>
+			     coroutine.yield();
+			<%end
+		end%>
+		<!2.分支节点!>
+		<%
+		if nodetype == 'Switch' then
+		%>
+		local ret = <%=GetNodeCode(i, j)%>
+			<%
+			local nSwitchCount = GetNodeSwitchCount(i, j) --获取本节点的分支出去多少条执行流程
+			local k --遍历所有的分支条件连线,无条件的线作为 else 处理
+			for k = 1, nSwitchCount do
+				local BranchCondition = GetConditionResult(i, j, k) --这个接口要求无条件的线最后一个被取出来
+				if k == 1 then
+					out.print('if ')
+				else
+					out.print('elseif ')
+				end			
+				if BranchCondition then	--如果不是else情况
+					out.println(BranchCondition..' == '..ret..' then
+				else
+					out.println('else')
+				end
+				if IsNextNodeFinish(i, j) then
+					out.print('return finishnode(parentcontext)')
+				else
+					out.print(string.format('return %s(context, parentcontext)', GetNextNodeName(i, j)))
+				end
+				out.println('end')
+			%>
+			end				
+			<%
+			end
+		end
+		%>
+	<%end%>
+end	
+
+<%end%>
+
+--[[
+使用过程：
+	1.处理模板，将模板编译成一个可执行的lua中间文件
+	2.使用当前流程图作为参数，运行中间文件，得到一个最终生成的代码
+
+内嵌对象
+	out.print 参数中内容表示直接输出到中间文件中的内容, 不换行
+	out.println 同上，但完成后换行
+	
+<%...%> 表示模板处理代码，直接出现在中间文件中
+<!...!> 表示仅注释，不应出现在最终生成的代码中
+<%=...%>表示需要将=后面的表达式求值结果作为最终生成的代码
+
+在以上标签之外的内容，全部作为最终生成代码内容
+
+
+接口要求：
+GetEventCount() 获取本流程图中一共有多少个事件结点，表示生成多少个事件函数
+GetEventFunctionName(i) 获取第i个事件函数的名字
+GetEventFuntionArgs(i)  获取第i个事件的函数参数列表 以 arg0, arg1, arg2 ... 这样的形式给出
+GetNodeNames(i) 获取第i个事件的所有的节点的名字，用于生成局部变量列表，使用 node1, node2...这样的形式给出
+GetNodeCount(i) 获取第i个事件的节点总数
+GetNodeName(i, j) 获取第i个事件的第j个节点的名字
+GetNodeType(i, j) 获取第i个事件的的第j个节点的类型，以字符串表示类型，如"Action", ...
+GetNodeCode(i, j) 获取第i个事件的的第j个节点的生成代码
+GetNextConnetionCount(i, j) 获取第i个事件的的第j个节点的后续连接线的数量 0~x
+IsNextNodeFinish(i, j) 获取第i个事件的的第j个节点的后续节点类型（只会用在有一个后续节点的情况下）是否结束节点
+GetNextNodeName(i, j, k) 获取第i个事件的的第j个节点的第k个后续节点名
+GetNextThreadCount(i, j)  获取第i个事件的的第j个节点的后续执行线程数量， 用于后续有多线程的情况
+GetNodeSwitchCount(i, j)  获取第i个事件的的第j个节点的分支执行流程数量
+GetConditionResult(i, j, k) 获取第i个事件的的第j个节点的第k个连接线上的条件内容，用于获取分支结点连接线上的内容
+--]]

@@ -1,0 +1,2 @@
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ServerGroupDropDownList.ascx.cs" Inherits="Common_ServerGroupDropDownList" %>
+<asp:DropDownList ID="DropDownListServerGroup" runat="server" OnSelectedIndexChanged="DropDownListServerGroup_SelectedIndexChanged"></asp:DropDownList>

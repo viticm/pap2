@@ -1,0 +1,164 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{43B48F08-5432-411B-BF51-A5B541A63CE9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fireball.Ssh</RootNamespace>
+    <AssemblyName>Fireball.Ssh</AssemblyName>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DiffieHellman, Version=0.0.0.0, Culture=neutral" />
+    <Reference Include="Org.Mentalis.Security, Version=1.0.13.715, Culture=neutral" />
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ITransferProtocol.cs" />
+    <Compile Include="java\io\InputStream.cs" />
+    <Compile Include="java\io\OutputStream.cs" />
+    <Compile Include="java\lang\Class.cs" />
+    <Compile Include="java\lang\Integer.cs" />
+    <Compile Include="java\lang\Runnable.cs" />
+    <Compile Include="java\lang\Thread.cs" />
+    <Compile Include="java\net\InetAddress.cs" />
+    <Compile Include="java\net\ServerSocket.cs" />
+    <Compile Include="java\net\Socket.cs" />
+    <Compile Include="java\RuntimeException.cs" />
+    <Compile Include="java\String.cs" />
+    <Compile Include="java\System.cs" />
+    <Compile Include="java\util\Arrays.cs" />
+    <Compile Include="java\util\Enumeration.cs" />
+    <Compile Include="java\util\Hashtable.cs" />
+    <Compile Include="java\util\JavaString.cs" />
+    <Compile Include="java\util\Vector.cs" />
+    <Compile Include="jsch\Buffer.cs" />
+    <Compile Include="jsch\Channel.cs" />
+    <Compile Include="jsch\ChannelDirectTCPIP.cs" />
+    <Compile Include="jsch\ChannelExec.cs" />
+    <Compile Include="jsch\ChannelForwardedTCPIP.cs" />
+    <Compile Include="jsch\ChannelSession.cs" />
+    <Compile Include="jsch\ChannelSftp.cs" />
+    <Compile Include="jsch\ChannelShell.cs" />
+    <Compile Include="jsch\ChannelSubsystem.cs" />
+    <Compile Include="jsch\ChannelX11.cs" />
+    <Compile Include="jsch\Cipher.cs" />
+    <Compile Include="jsch\Compression.cs" />
+    <Compile Include="jsch\DH.cs" />
+    <Compile Include="jsch\DHG1.cs" />
+    <Compile Include="jsch\DHGEX.cs" />
+    <Compile Include="jsch\ForwardedTCPIPDaemon.cs" />
+    <Compile Include="jsch\HASH.cs" />
+    <Compile Include="jsch\HostKey.cs" />
+    <Compile Include="jsch\HostKeyRepository.cs" />
+    <Compile Include="jsch\Identity.cs" />
+    <Compile Include="jsch\IdentityFile.cs" />
+    <Compile Include="jsch\IO.cs" />
+    <Compile Include="jsch\jce\AES128CBC.cs" />
+    <Compile Include="jsch\jce\BlowfishCBC.cs" />
+    <Compile Include="jsch\jce\DH.cs" />
+    <Compile Include="jsch\jce\HMACMD5.cs" />
+    <Compile Include="jsch\jce\HMACMD596.cs" />
+    <Compile Include="jsch\jce\HMACSHA1.cs" />
+    <Compile Include="jsch\jce\HMACSHA196.cs" />
+    <Compile Include="jsch\jce\KeyPairGenDSA.cs" />
+    <Compile Include="jsch\jce\KeyPairGenRSA.cs" />
+    <Compile Include="jsch\jce\MD5.cs" />
+    <Compile Include="jsch\jce\Random.cs" />
+    <Compile Include="jsch\jce\SHA1.cs" />
+    <Compile Include="jsch\jce\SignatureDSA.cs" />
+    <Compile Include="jsch\jce\SignatureRSA.cs" />
+    <Compile Include="jsch\jce\TripleDESCBC.cs" />
+    <Compile Include="jsch\JSch.cs" />
+    <Compile Include="jsch\JSchAuthCancelException.cs" />
+    <Compile Include="jsch\JSchException.cs" />
+    <Compile Include="jsch\JSchPartialAuthException.cs" />
+    <Compile Include="jsch\KeyExchange.cs" />
+    <Compile Include="jsch\KeyPair.cs" />
+    <Compile Include="jsch\KeyPairDSA.cs" />
+    <Compile Include="jsch\KeyPairGenDSA.cs" />
+    <Compile Include="jsch\KeyPairGenRSA.cs" />
+    <Compile Include="jsch\KeyPairRSA.cs" />
+    <Compile Include="jsch\KnownHosts.cs" />
+    <Compile Include="jsch\MAC.cs" />
+    <Compile Include="jsch\Packet.cs" />
+    <Compile Include="jsch\PortWatcher.cs" />
+    <Compile Include="jsch\Proxy.cs" />
+    <Compile Include="jsch\Random.cs" />
+    <Compile Include="jsch\Request.cs" />
+    <Compile Include="jsch\RequestExec.cs" />
+    <Compile Include="jsch\RequestPtyReq.cs" />
+    <Compile Include="jsch\RequestSftp.cs" />
+    <Compile Include="jsch\RequestShell.cs" />
+    <Compile Include="jsch\RequestSignal.cs" />
+    <Compile Include="jsch\RequestSubsystem.cs" />
+    <Compile Include="jsch\RequestWindowChange.cs" />
+    <Compile Include="jsch\RequestX11.cs" />
+    <Compile Include="jsch\ServerSocketFactory.cs" />
+    <Compile Include="jsch\Session.cs" />
+    <Compile Include="jsch\SftpATTRS.cs" />
+    <Compile Include="jsch\SftpException.cs" />
+    <Compile Include="jsch\SftpProgressMonitor.cs" />
+    <Compile Include="jsch\SignatureDSA.cs" />
+    <Compile Include="jsch\SignatureRSA.cs" />
+    <Compile Include="jsch\SocketFactory.cs" />
+    <Compile Include="jsch\UIKeyboardInteractive.cs" />
+    <Compile Include="jsch\UserAuth.cs" />
+    <Compile Include="jsch\UserAuthKeyboardInteractive.cs" />
+    <Compile Include="jsch\UserAuthNone.cs" />
+    <Compile Include="jsch\UserAuthPassword.cs" />
+    <Compile Include="jsch\UserAuthPublicKey.cs" />
+    <Compile Include="jsch\UserInfo.cs" />
+    <Compile Include="jsch\Util.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scp.cs" />
+    <Compile Include="Sftp.cs" />
+    <Compile Include="SshBase.cs" />
+    <Compile Include="SshExe.cs" />
+    <Compile Include="SshHelper.cs" />
+    <Compile Include="SshShell.cs" />
+    <Compile Include="SshStream.cs" />
+    <Compile Include="SshTransferException.cs" />
+    <Compile Include="SshTransferProtocolBase.cs" />
+    <Compile Include="Streams\CombinedStream.cs" />
+    <Compile Include="Streams\InputStream.cs" />
+    <Compile Include="Streams\OutputStream.cs" />
+    <Compile Include="Streams\PipedInputStream.cs" />
+    <Compile Include="Streams\PipedOutputStream.cs" />
+    <Compile Include="Streams\ProtectedConsoleStream.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="deps\DiffieHellman.dll" />
+    <None Include="deps\Org.Mentalis.Security.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

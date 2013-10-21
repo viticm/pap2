@@ -1,0 +1,390 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C3EE1F61-E073-476C-83CA-752D0CAAB56E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FlowChartEditor</RootNamespace>
+    <AssemblyName>FlowChartEditor</AssemblyName>
+    <ApplicationIcon>Visio .ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=7.3.0.2, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Documents and Settings\cuiwei\桌面\策划工具\Plugins\DevComponents.DotNetBar2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="LuaInterface, Version=1.5.3.0, Culture=neutral, PublicKeyToken=1e1fb15b02227b8a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\策划工具\Plugins\Lua\LuaInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainFrame\InnerChartReferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\InnerChartReferenceForm.Designer.cs">
+      <DependentUpon>InnerChartReferenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrame\ProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\ProgressForm.designer.cs">
+      <DependentUpon>ProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrame\RecycleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\RecycleForm.Designer.cs">
+      <DependentUpon>RecycleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseGraphElement\InnerChart.cs" />
+    <Compile Include="BaseGraphElement\InterfaceGraphElement.cs" />
+    <Compile Include="Editors\InnerChartEditor.cs" />
+    <Compile Include="Editors\InterfaceNodeEditor.cs" />
+    <Compile Include="EventManager.cs" />
+    <Compile Include="MainFrame\InterfaceNodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\InterfaceNodeForm.Designer.cs">
+      <DependentUpon>InterfaceNodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrame\InnerChartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\InnerChartForm.Designer.cs">
+      <DependentUpon>InnerChartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolGraphElement\GuideLine.cs" />
+    <Compile Include="ToolGraphElement\MultiSelectMark.cs" />
+    <Compile Include="ToolGraphElement\Rodman.cs" />
+    <Compile Include="MainFrame\PropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\PropertyForm.Designer.cs">
+      <DependentUpon>PropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrame\LogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\LogForm.Designer.cs">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogRecorder.cs" />
+    <Compile Include="MainFrame\AbbreviateCanvas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseGraphElement\ActionGraphElement.cs" />
+    <Compile Include="BaseGraphElement\AIActionGraphElement.cs" />
+    <Compile Include="BaseGraphElement\AIActionsGraphElement.cs" />
+    <Compile Include="BaseGraphElement\AILineGraphElement.cs" />
+    <Compile Include="BaseGraphElement\AISlotContainer.cs" />
+    <Compile Include="BaseGraphElement\AIStateGraphElement.cs" />
+    <Compile Include="ButtonGraphElement\AddButton.cs" />
+    <Compile Include="ButtonGraphElement\BaseButton.cs" />
+    <Compile Include="Background.cs" />
+    <Compile Include="MainFrame\Canvas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Enum\EnumClass.cs" />
+    <Compile Include="Command\FlowChartCommand\FlowChartCutCommand.cs" />
+    <Compile Include="Command\FlowChartCommand\FlowChartCopyCommand.cs" />
+    <Compile Include="Command\FlowChartCommand\FlowChartPasteCommand.cs" />
+    <Compile Include="LogicBaseManager.cs" />
+    <Compile Include="MainFrame\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\ListForm.Designer.cs">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\Command.cs" />
+    <Compile Include="Command\TreeCommand\TreeBaseCommand.cs" />
+    <Compile Include="DataManager.cs" />
+    <Compile Include="DocumentManager.cs" />
+    <Compile Include="BaseGraphElement\ConditionGraphElement.cs" />
+    <Compile Include="ButtonGraphElement\ConnectButton.cs" />
+    <Compile Include="BaseGraphElement\ConnectorGraphElement.cs" />
+    <Compile Include="BaseGraphElement\EventGraphElement.cs" />
+    <Compile Include="Command\FlowChartCommand\FlowChartBaseCommand.cs" />
+    <Compile Include="Command\FlowChartCommand\FlowChartDeleteCommand.cs" />
+    <Compile Include="Command\FlowChartCommand\FlowChartMultiDeleteCommand.cs" />
+    <Compile Include="Command\FlowChartCommand\FlowChartConnectCommand.cs" />
+    <Compile Include="Command\FlowChartCommand\FlowChartDisconnectCommand.cs" />
+    <Compile Include="Command\FlowChartCommand\FlowChartCreateCommand.cs" />
+    <Compile Include="Command\FlowChartCommand\FlowChartMoveCommand.cs" />
+    <Compile Include="Command\FlowChartCommand\FlowChartCreateLineCommand.cs" />
+    <Compile Include="Command\FlowChartCommand\FlowChartEditCommand.cs" />
+    <Compile Include="Command\FlowChartCommand\FlowChartCreateAndConnectLineCommand.cs" />
+    <Compile Include="Command\FlowChartCommand\FlowChartEditRemarkCommand.cs" />
+    <Compile Include="FlowChartManager.cs" />
+    <Compile Include="GraphManager.cs" />
+    <Compile Include="BaseGraphElement\ConnectorContainer.cs" />
+    <Compile Include="ToolGraphElement\Tooltip.cs" />
+    <Compile Include="Tools\GraphSetting.cs" />
+    <Compile Include="Tools\Helper.cs" />
+    <Compile Include="MainFrame\InputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\InputForm.Designer.cs">
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrame\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseGraphElement\ResizeControler.cs" />
+    <Compile Include="BaseGraphElement\SlotContainer.cs" />
+    <Compile Include="BaseGraphElement\LineGraphElement.cs" />
+    <Compile Include="Command\Memento.cs" />
+    <Compile Include="MainFrame\SearchResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\SearchResultForm.Designer.cs">
+      <DependentUpon>SearchResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainFrame\InnerChartReferenceForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InnerChartReferenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\ProgressForm.resx">
+      <DependentUpon>ProgressForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\RecycleForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RecycleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\InnerChartForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InnerChartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\InterfaceNodeForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InterfaceNodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\ListForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\InputForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\LogForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\SearchForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\SearchResultForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SearchResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\SettingForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\RestoreForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RestoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\PropertyForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\TransferDataForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TransferDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Images\actionNode-activated.wmf" />
+    <None Include="Images\actionNode-disable-activated.wmf" />
+    <None Include="Images\actionNode-disable-normal.wmf" />
+    <None Include="Images\actionNode-disable-selected.wmf" />
+    <None Include="Images\actionNode-disable-shadow.wmf" />
+    <None Include="Images\actionNode-normal.wmf" />
+    <None Include="Images\actionNode-selected.wmf" />
+    <None Include="Images\actionNode-shadow.wmf" />
+    <None Include="Images\addButton-activated.wmf" />
+    <None Include="Images\addButton-normal.wmf" />
+    <None Include="Images\aiActionNode-activated.wmf" />
+    <None Include="Images\aiActionNode-normal.wmf" />
+    <None Include="Images\aiActionNode-selected.wmf" />
+    <None Include="Images\aiActionNode-shadow.wmf" />
+    <None Include="Images\aiActionsNode-activated.wmf" />
+    <None Include="Images\aiActionsNode-normal.wmf" />
+    <None Include="Images\aiActionsNode-selected.wmf" />
+    <None Include="Images\aiActionsNode-shadow.wmf" />
+    <None Include="Images\aiStateNode-activated.wmf" />
+    <None Include="Images\aiStateNode-normal.wmf" />
+    <None Include="Images\aiStateNode-selected.wmf" />
+    <None Include="Images\aiStateNode-shadow.wmf" />
+    <None Include="Images\conditionNode-activated.wmf" />
+    <None Include="Images\conditionNode-disable-activated.wmf" />
+    <None Include="Images\conditionNode-disable-normal.wmf" />
+    <None Include="Images\conditionNode-disable-selected.wmf" />
+    <None Include="Images\conditionNode-disable-shadow.wmf" />
+    <None Include="Images\conditionNode-normal.wmf" />
+    <None Include="Images\conditionNode-selected.wmf" />
+    <None Include="Images\conditionNode-shadow.wmf" />
+    <None Include="Images\connectButton-activated.wmf" />
+    <None Include="Images\connectButton-normal.wmf" />
+    <None Include="Images\eventNode-activated.wmf" />
+    <None Include="Images\eventNode-disable-activated.wmf" />
+    <None Include="Images\eventNode-disable-normal.wmf" />
+    <None Include="Images\eventNode-disable-selected.wmf" />
+    <None Include="Images\eventNode-disable-shadow.wmf" />
+    <None Include="Images\eventNode-normal.wmf" />
+    <None Include="Images\eventNode-selected.wmf" />
+    <None Include="Images\eventNode-shadow.wmf" />
+    <None Include="Images\interfaceNode-activated.wmf" />
+    <None Include="Images\interfaceNode-normal.wmf" />
+    <None Include="Images\interfaceNode-selected.wmf" />
+    <None Include="Images\interfaceNode-shadow.wmf" />
+    <None Include="Images\scrollArraw-down.wmf" />
+    <None Include="Images\scrollArraw-left.wmf" />
+    <None Include="Images\scrollArraw-right.wmf" />
+    <None Include="Images\scrollArraw-up.wmf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="BaseGraphElement\SlotGraphElement.cs" />
+    <Compile Include="Command\SerialMemento.cs" />
+    <Compile Include="Command\TreeCommand\TreeRenameCommand.cs" />
+    <Compile Include="Command\TreeCommand\TreeAddClassCommand.cs" />
+    <Compile Include="Command\TreeCommand\TreeAddFlowChartCommand.cs" />
+    <Compile Include="Command\TreeCommand\TreeCutNodeCommand.cs" />
+    <Compile Include="Command\TreeCommand\TreeCopyCommand.cs" />
+    <Compile Include="Command\TreeCommand\TreeDeleteNodeCommand.cs" />
+    <Compile Include="BaseGraphElement\RemarkGraphElement.cs" />
+    <Compile Include="MainFrame\SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\TreeCommand\TreePasteNodeCommand.cs" />
+    <Compile Include="MainFrame\RestoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\RestoreForm.Designer.cs">
+      <DependentUpon>RestoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrame\SearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\SearchForm.Designer.cs">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\RegionManager.cs" />
+    <Compile Include="MainFrame\TransferDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\TransferDataForm.Designer.cs">
+      <DependentUpon>TransferDataForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeCompiler\CodeCompiler.csproj">
+      <Project>{23438242-5ADA-4B82-8CA5-F97D159F1AB7}</Project>
+      <Name>CodeCompiler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataElementLibrary\DataElementLibrary.csproj">
+      <Project>{0A330BD8-2628-44F5-B637-69AE567BF808}</Project>
+      <Name>DataElementLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataInteractor\DataInteractor.csproj">
+      <Project>{FA95E7EE-F48E-4779-85A4-8073F86773E9}</Project>
+      <Name>DataInteractor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBManager\DBManager.csproj">
+      <Project>{F21D11C4-D6D4-448A-8C44-0BDDEB739396}</Project>
+      <Name>DBManager</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\FlowChartDataLibrary\FlowChartDataLibrary.csproj">
+      <Project>{CF807FA4-C6B7-4880-AE94-AC15242F62E8}</Project>
+      <Name>FlowChartDataLibrary</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\GraphElementLibrary\GraphElementLibrary.csproj">
+      <Project>{EAC5D52B-4722-4FCC-B0C3-02655575953B}</Project>
+      <Name>GraphElementLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogManager\LogManager.csproj">
+      <Project>{FECDD215-3C33-455A-A3AC-484286BAA097}</Project>
+      <Name>LogManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Visio .ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

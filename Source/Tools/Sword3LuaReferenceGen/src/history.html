@@ -1,0 +1,1820 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<title>变更历史</title>
+	<style>
+	<!--
+	table   {width:90%; border:solid 1px; border-collapse:collapse}
+	td      {border-bottom:outset 1 gray; border-collapse:collapse}
+	th      {border-bottom:outset 1 gray; border-collapse:collapse;
+	            text-align:left; background-color:#C4E1FF}
+	body    {margin:5%}
+	h3      {text-align:center}
+	div#indexPos    {margin-right:5%; text-align:right}
+	.small-note   {font-size:small; color:green}
+	-->
+	</style>
+</head>
+<body>
+	<h3>剑网3lua脚本接口文档变更历史</h3>
+	<hr />
+	<div id="indexPos"><a href="Index.html">向上</a></div>
+	<table>
+
+														<tr><th>2008-08-20</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加函数GetNewBuffList，GetBuffCustomValue，SetBuffCustomValue，CancelBuff2，CallBuff，UpdateBuffEndTime，DelBuff，DelGroupBuff，GetReviveLeftTime</li>
+	        <li>KNpc增加函数GetNewBuffList，GetBuffCustomValue，SetBuffCustomValue，CancelBuff2，CallBuff，UpdateBuffEndTime，DelBuff，DelGroupBuff，GetReviveLeftTime</li>
+	    </ul></td></tr>
+	    
+
+														<tr><th>2008-08-11</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加函数GetSkillPrepareState</li>
+	        <li>KNpc增加函数GetSkillPrepareState</li>
+	        <li>KPlayer增加字段dwAIEventSrc， nAIEventParam</li>
+	    </ul></td></tr>
+	    											
+														<tr><th>2008-07-9</th></tr>
+	    <tr><td><ul>
+	        <li>表 ATTRIBUTE_TYPE新增字段 BASE_VENATION_COF</li>
+					<li>表 ATTRIBUTE_TYPE新增字段 SPOOF</li>
+					<li>表 ATTRIBUTE_TYPE新增字段 EMPLOYER_CAST_SKILL_TARGET_SELF</li>
+					<li>表 SKILL_RESULT_CODE新增字段 BUFF_INVALID</li>
+					<li>表 SKILL_RESULT_CODE新增字段 FORCE_EFFECT</li>
+					<li>表 SKILL_RESULT_CODE新增字段 BUFF_IMMUNITY</li>
+					<li>表 CRAFT_RESULT_CODE新增字段 BOOK_IS_ALREADY_MEMORIZED</li>
+					<li>表 PLAYER_TALK_CHANNEL新增字段 NPC_SAY_TO_IDK</li>
+	        <li>KPlayer增加函数CanLearnSkillRecipe</li>
+	    </ul></td></tr>
+		
+														<tr><th>2008-07-9</th></tr>
+	    <tr><td><ul>
+	        <li>KNPC增加函数CanSeeLifeBar， CanSeeName</li>
+	        <li>KPlayer增加函数CanLearnSkillRecipe</li>
+	    </ul></td></tr>
+	    
+	
+												<tr><th>2008-06-25</th></tr>
+	    <tr><td><ul>
+	        <li>KBaseFuncList增加函数GetBindBuffInfo, GetBuffTime,GetBindBuffTime</li>
+	        <li>KBaseFuncList修改函数接口GetBuffInfo</li>
+	    </ul></td></tr>
+	    
+	
+											<tr><th>2008-06-11</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加函数.FireAIEvent，GetProfessionMaxLevel，.GetProfessionProficiency，SetMapVisitFlag，GetMapVisitFlag</li>
+	        <li>KCustomEquipInfo增加函数GetCoolDown</li>
+	        <li>KCustomEquipInfo增加字段dwCoolDownID</li>
+	        <li>KNpc增加函数FireAIEvent</li>
+	        <li>KNpc增加字段dwAIEventSrc，dwMotionID</li>
+	    </ul></td></tr>
+	    
+	
+										<tr><th>2008-05-23</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer, KNPC, KScene, KDoodad删除函数GetCustomData，SetCustomData	，GetCustomBitData	，SetCustomBitData	，GetCustomValue	，SetCustomValue	，GetCustomStringValue	，SetCustomStringValue	，GetCustomStringData	，SetCustomStringData	，SetCustomBitValue	，GetCustomBitValue</li>
+	        <li>KPlayer, KNPC, KScene, KDoodad增加函数SetCustomBoolean，GetCustomBoolean</li>
+	        <li>KPlayer, KNPC, KScene, KDoodad增加函数IsBookMemorized，GetFellowshipAttractionLevel，CanCloseSlay，IsOnSlay</li>
+	    </ul></td></tr>
+	    
+	    
+									<tr><th>2008-05-19</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer, KNPC, KScene, KDoodad增加函数SetCustomInteger4,GetCustomInteger4,SetCustomInteger2,GetCustomInteger2,SetCustomInteger1,GetCustomInteger1,SetCustomUnsigned4,GetCustomUnsigned4,SetCustomUnsigned2,GetCustomUnsigned2,SetCustomUnsigned1,GetCustomUnsigned1,SetCustomBitValue,GetCustomBitValue,SetCustomString,GetCustomString,</li>
+	    </ul></td></tr>
+	    
+								<tr><th>2008-05-08</th></tr>
+	    <tr><td><ul>
+	        <li>ATTRIBUTE_TYPE表增加了字段：LIFE_REPLENISH_COEFFICIENT, LIFE_REPLENISH_EXT, MANA_REPLENISH_COEFFICIENT, MANA_REPLENISH_EXT, PRINK_FORCE,</li>
+	        <li>ATTRIBUTE_TYPE表删除了字段：MODIFY_REPUTE_LEVEL</li>
+	    </ul></td></tr>
+	    
+							<tr><th>2008-05-04</th></tr>
+	    <tr><td><ul>
+	        <li>STALL_RESPOND_CODE表增加了字段：CANNOT_PUT_TO_THAT_PLACE</li>
+	        <li>player增加了字段：nMeleeWeaponDamageRand，nMeleeWeaponDamageBase</li>
+	        <li>NPC增加了字段：nMeleeWeaponDamageRand，nMeleeWeaponDamageBase</li>
+	    </ul></td></tr>
+	    
+						<tr><th>2008-04-25</th></tr>
+	    <tr><td><ul>
+	        <li>ITEM_GENRE表增加了字段：BOOK</li>
+	        <li>ITEM_RESULT_CODE表增加了字段：CANNOT_DESTROY, CANNOT_PUT_THAT_PLACE ,CANNOT_DISABLE_PACKAGE, PACKAGE_NOT_ENOUGH_SIZE</li>
+	        <li>player增加了函数：CanAddItem, SetQuestBitValue,GetQuestBitValue</li>
+	    </ul></td></tr>
+	    
+						<tr><th>2008-04-22</th></tr>
+	    <tr><td><ul>
+	        <li>STALL_RESPOND_CODE表增加了字段：FIGHTING，PKING, TRADING, STALLBOXEMPTY</li>
+	        <li>player增加了函数：GetAroundPlayerID,CanStartStall,IsSkillRecipeExist,AddAssistExp,RegisterQuestAssistance</li>
+	    </ul></td></tr>
+	    
+					<tr><th>2008-04-16</th></tr>
+	    <tr><td><ul>
+	        <li>STALL_RESPOND_CODE表增加了字段：TOO_FAR， NEED_STALL_ITEM</li>
+	        <li>Doodad增加了函数：CanSit</li>
+	        <li>player增加了函数：GetSelectDoodad() SetTargetAStar() Attach(nDebugLevel) Detach() DetachAll()</li>
+	        <li>Npc增加了函数： Attach(nDebugLevel), Detach(), DetachAll()</li>
+	    </ul></td></tr>
+	    
+				<tr><th>2008-04-07</th></tr>
+	    <tr><td><ul>
+	        <li>CRAFT_RESULT_CODE表增加了字段： ITEM_TYPE_ERROR</li>
+	        <li>ATTRIBUTE_TYPE增加了字段：PHYSICS_Venation_COF，MAGIC_Venation_COF，ASSIST_Venation_COF</li>
+	        <li>ATTRIBUTE_TYPE修改了字段：DAMAGE_TO_LIFE_FOR_SELF，DAMAGE_TO_MANA_FOR_SELF</li>
+	        <li>PK_STATE修改字段命名</li>
+	        <li>PK_RESPOND修改字段命名</li>
+	        <li>KSkill增加变量：DamageToManaForParty，DamageToLifeForParty </li>
+	    </ul></td></tr>
+	    
+			<tr><th>2008-04-01</th></tr>
+	    <tr><td><ul>
+	        <li>ATTRIBUTE_TYPE表增加了字段： SKILL_MAGIC_DAMAGE， "MAGIC_CRITICAL_STRIKE", "MAGIC_SHIELD",  "MAGIC_OVERCOME" </li>
+	        <li>增加了常量表：STALL_RESPOND_CODE</li>
+	        <li>增加了常量表：BUFF_COMPARE_FLAG</li>
+	        <li>ERROR_CODE_TYPE表增加了字段：STALL_ERROR_CODE</li>
+	        <li>KSkill修改函数接口：AddSlowCheckSelfBuff(),AddSlowCheckDestBuff()</li>
+	    </ul></td></tr>
+	    
+				<tr><th>2008-03-31</th></tr>
+	    <tr><td><ul>
+	        <li>Kplayer 增加函数： IsProfessionLearnedByCraftID. GetStallTitle()， SetStallTitle(),ApplyStallItem(),OpenVenation(),IsProfessionLearnedByCraftID()</li>
+	        <li>Kplayer 增加属性：nSkillTherapy, nPoisonOvercome, nLunarOvercome, nNeutralOvercome, nSolarOvercome, nPhysicsOvercome, nSkillPhysicsDamageRand</li>
+	    </ul></td></tr>
+	    
+				<tr><th>2008-03-24</th></tr>
+	    <tr><td><ul>
+	        <li>Kplayer 增加函数： GetCurrentLoginTime(), IsProfessionLearnedByCraftID(), AddTrain(), SetMaxTrain(), StartStall(), SetStallItemPrice(), BuyStallItem(), EndStall().</li>
+	        <li>Kplayer 增加属性：nCurrentTrainValue, nMaxTrainValue, nMountingRate</li>
+	        <li>KSkill增加函数：AddSlowCheckSelfBuff(),AddSlowCheckDestBuff()</li>
+	        <li>KScene增加函数：GetTimeIndex(), GetSerialNumber().</li>
+	        <li>KItem增加属性：bBind, dwStallPrice</li>
+	    </ul></td></tr>
+	    
+			<tr><th>2008-03-19</th></tr>
+	    <tr><td><ul>
+	        <li>KScene 增加函数：SendMessage(pszMessage)</li>
+	        <li>KCraftEnchant 更改变量名：更改dwAttributeID 为 dwEnchantID</li>
+	        <li>KNpc 增加属性：Parry　招架概率，ParryValue 招架值，Sense 洞察值，Strain 变化值，Toughness 韧性，HitBase 命中基础值，CriticalDamagePower　暴击加成伤害，DecriticalDamagePower 被暴击降低伤害 Overcome 克性</li>
+	        <li>KluaConst 增加属性：Parry　招架概率，ParryValue 招架值，Sense 洞察值，Strain 变化值，Toughness 韧性，HitBase 命中基础值，CriticalDamagePower　暴击加成伤害，DecriticalDamagePower 被暴击降低伤害 Overcome 克性</li>
+	    </ul></td></tr>
+	    
+			<tr><th>2008-03-13</th></tr>
+	    <tr><td><ul>
+	        <li>Kplayer 增加函数：GetEnchantDestItemSubType</li>
+	        <li>Kplayer 增加属性：Parry　招架概率，ParryValue 招架值，Sense 洞察值，Strain 变化值，Toughness 韧性，HitBase 命中基础值，CriticalDamagePower　暴击加成伤害，DecriticalDamagePower 被暴击降低伤害 Overcome 克性</li>
+	        <li>KNpc 增加属性：Parry　招架概率，ParryValue 招架值，Sense 洞察值，Strain 变化值，Toughness 韧性，HitBase 命中基础值，CriticalDamagePower　暴击加成伤害，DecriticalDamagePower 被暴击降低伤害 Overcome 克性</li>
+	        <li>KluaConst 增加属性：Parry　招架概率，ParryValue 招架值，Sense 洞察值，Strain 变化值，Toughness 韧性，HitBase 命中基础值，CriticalDamagePower　暴击加成伤害，DecriticalDamagePower 被暴击降低伤害 Overcome 克性</li>
+	    </ul></td></tr>
+	    
+			<tr><th>2008-03-06</th></tr>
+	    <tr><td><ul>
+	        <li>KItem修改函数名：GetPermanentEnchantAttrib</li>
+	        <li>KItem修改函数名：GetTemporaryEnchantAttrib</li>
+	    </ul></td></tr>
+	    
+		<tr><th>2008-03-06</th></tr>
+	    <tr><td><ul>
+	        <li>Kplayer增加函数：OpenRouteNode</li>
+	        <li>KBaseFuncList增加函数：CheckRoadTrack</li>
+	        <li>KBaseFuncList增加函数：CalculateTrackCost</li>
+	        <li>KBaseFuncList增加函数：RoadTrackStartOut</li>
+	        <li>KBaseFuncList增加函数：RoadTrackForceRequest</li>
+	        <li>KBaseFuncList增加函数：RoadTrackIsCityOpen</li>
+	    </ul></td></tr>
+	    
+								<tr><th>2008-03-05</th></tr>
+	    <tr><td><ul>
+	        <li>Kplayer增加属性：bOnHorse</li>
+	    </ul></td></tr>
+	    
+							<tr><th>2008-03-03</th></tr>
+	    <tr><td><ul>
+	        <li>Kplayer修改函数返回值：GetFellowshipAttraction</li>
+	    </ul></td></tr>
+	    
+						<tr><th>2008-02-29</th></tr>
+	    <tr><td><ul>
+	        <li>Kplayer增加函数：GetSkillRecipeKeyCount</li>
+	        <li>Kplayer增加函数：GetStackRoomInPackage</li>
+	        <li>Kplayer增加函数：GetStackRoomInBank</li>
+	        <li>Kplayer增加函数：GetBoxType</li>
+	    </ul></td></tr>
+	    
+				<tr><th>2008-02-27</th></tr>
+	    <tr><td><ul>
+	        <li>BaseFunction增加了函数：SetRouteNodeForce</li>
+	        <li>Kplayer删除函数：startFly</li>
+	        <li>Kplayer增加函数：autoFly</li>
+	        <li>EQUIPMENT_SUB表增加了字段：坐骑字段</li>
+	        <li>EQUIPMENT_INVENTORY表增加了字段：坐骑字段</li>
+	        <li>ATTRIBUTE_TYPE表增加了字段：骑马状态字段</li>
+	    </ul></td></tr>
+	    
+			<tr><th>2008-02-26</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了函数：ApplySyncStallBox</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2008-02-25</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了函数:StartFly</li>
+	        <li>EQUIPMENT_REPRESENT表增加了字段：骑马相关的字段</li>
+	        <li>MAIL_RESPOND_CODE.ITEM_BE_BOUND改名为ITEM_BE_BIND</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2008-02-17</th></tr>
+	    <tr><td><ul>
+	        <li>QUEST_RESULT_CODE表增加了字段：ADD_SKILL_FAILED,
+	            NOT_ENOUGH_MONEY</li>
+	        <li>PLAYER_FELLOWSHIP_RESPOND表删除了一些字段</li>
+	        <li>增加了表：PLAYER_TALK_ERROR</li>
+	        <li>KNpc增加了属性：bDisableAutoTurn</li>
+	        <li>KPlayer.DelFellowship的参数改变了</li>
+	        <li>KPlayer增加了函数：SetLastEntry, ResetMap</li>
+	        <li>KQuestInfo增加了属性：nCostMoney</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2008-01-15</th></tr>
+	    <tr><td><ul>
+	        <li>SKILL_CAST_MODE表增加了字段：TARGET_CHAIN</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2008-01-10</th></tr>
+	    <tr><td><ul>
+	        <li>增加了常量表：EQUIPMENT_REPRESENT，PK_STATE</li>
+	        <li>ATTRIBYTE_TYPE增加了字段：MODIFY_REPUTE_LEVEL, PRINK_REPRESENT_ID
+	            PRINK_MODEL</li>
+	        <li>KPlayer增加了函数：GetPKState</li>
+	        <li>KSkill.SetAccumulateSkill改名为：SetSubsectionSkill</li>
+	        <li>KSkill增加了属性：nChainBranch， nChainDepth</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2008-01-09</th></tr>
+	    <tr><td><ul>
+	        <li>KDoodadTemplate增加了属性：szBarText</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2008-01-07</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数：SkillRecipeKeyToIDAndLevel,
+	            SkillRecipeIDAndLevelToKey</li>
+	        <li>KScene增加了函数：GetCustomStringValue, SetCustomStringValue,
+	            GetCustomStringData, SetCustomStringData</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2008-01-03</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了函数：ActiveSkillRecipe, DeactiveSkillRecipe</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2008-01-02</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数：GetBuffInfo</li>
+	        <li>KSkill增加了函数：SetBuffRecipe, SetDebuffRecipe,
+	            SetHotRecipe, SetDotRecipe</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-12-27</th></tr>
+	    <tr><td><ul>
+	        <li>MOVE_STATE表删掉了字段：ON_STIFF</li>
+	        <li>KNpc删掉了属性：dwRepresentID</li>
+	        <li>KNpc增加了属性：dwModelID</li>
+	        <li>KNpc删掉了函数：SetRepresentID</li>
+	        <li>KNpc增加了函数：SetModelID</li>
+	        <li>KPlayer增加了属性：dwModelID</li>
+	        <li>KPlayer增加了函数：SetModelID</li>
+	        <li>KSkill删掉了属性：nStiffFrames</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-12-26</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了函数：GetSkillRecipeKey</li>
+	        <li>ATTRIBUTE_TYPE表增加了字段：DASH_BACKWARD, DASH_LEFT, DASH_RIGHT</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-12-25</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数：GetSkillInfo</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-12-24</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc增加了函数：YellTo</li>
+	        <li>KPlayer以下函数的参数改变了: AddSkillRecipe, DelSkillRecipe,
+	            DelFellowship, AddFellowship</li>
+	        <li>KPlayer.ChangeFellowshipGroupName改名字为：RenameFellowshipGroup</li>
+	        <li>KPlayer删除了函数: SetFellowshipFlag</li>
+	        <li>KPlayer增加了函数：GetFellowshipAttraction，AddFellowshipAttraction</li>
+	        <li>删除了表格：SKILL_RECIPE_TYPE</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-12-21</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer.Talk的参数改变了。</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-12-20</th></tr>
+	    <tr><td><ul>
+	        <li>KDoodad增加了函数：SetCustomIntegerValue, GetCustomIntegerValue,
+	            SetCustomStringValue, GetCustomStringValue</li>
+	        <li>KPlayer.GetRepresentId改为GetRepresentID</li>
+	        <li>KPlayer.Talk的参数改变了</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-12-17</th></tr>
+	    <tr><td><ul>
+	        <li>EQUIPMENT_SUB删掉了字段EXTEND，增加了字段：WAIST_EXTEND, 
+	            BACK_EXTEND</li>
+	        <li>EQUIPMENT_INVENTORY删掉了字段EXTEND, 增加了字段: WAIST_EXTEND,
+	            BACK_EXTEND</li>
+	        <li>ATTRIBUTE_TYPE增加了字段：ACCUMULATE</li>
+	        <li>KPlayer增加了函数：SetAccumulateSkill</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-12-13</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc.Dash和KPlayer.Dash的参数改变了</li>
+	        <li>ATTRIBUTE_TYPE表增加了字段：DASH_FORWARD</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-12-12</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer.CastProfessionSkill的参数改变了</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-12-07</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc的函数：SetCostomIntegerValue, GetCostomIntegerValue,
+	            SetCostomStringValue, GetCostomStringValue。全部改名为：
+	            SetCustomIntegerValue, GetCustomIntegerValue,
+	            SetCustomStringValue, GetCustomStringValue</li>
+	        <li>KNpc删除了属性nSwimAbility</li>
+	        <li>KPlayer删除了属性nSwimAbility</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-12-06</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc增加了函数：SetCostomIntegerValue, GetCostomIntegerValue,
+	            SetCostomStringValue, GetCostomStringValue</li>
+	        <li>KPlayer增加了属性: dwKillerID, dwLastScriptID</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-12-04</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc增加了函数：GetAutoDialogString</li>
+	        <li>KDoodad增加了属性：dwOwnerID</li>
+	        <li>KScene.CreateDoodad的参数改变了</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-12-03</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数：ReloadQuestTable</li>
+	        <li>KNpc.GetQuestString的返回值改变了</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-11-30</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数：GetCurrentTime</li>
+	        <li>KPlayer增加了属性：nMaxStamina, nMaxThew</li>
+	        <li>KPlayer增加了函数：AddThew</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-11-27</th></tr>
+	    <tr><td><ul>
+	        <li>CRAFT_RESULT_CODE表增加了字段：REQUIRE_DOODAD</li>
+	        <li>增加了常量表：PEEK_OTHER_PLAYER_RESPOND</li>
+	        <li>KNpc增加了属性：dwOwner</li>
+	        <li>KCraftRecipe增加了属性：szBelong, bResultOnLevel, dwRequireDoodadID</li>
+	        <li>KCraftEnchant增加了属性：szBelong, dwRequireDoodadID</li>
+	        <li>KCraftCollection增加了属性nThew, 删除了属性nStamina</li>
+	        <li>KPlayer增加了属性nCurrentThew，删除了属性nCurrentQi</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-11-22</th></tr>
+	    <tr><td><ul>
+	        <li>KQuestInfo.GetHortation的返回值改变了</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-11-19</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数：LogoutGame</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-11-14</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数：PeekOtherPlayer</li>
+	        <li>KCraftCollection, KCraftRecipe, KCraftEnchant对象的
+	            dwEquipmentType属性改成了nEquipmentType</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-11-13</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc中以下函数的参数改变了：Say, Whisper</li>
+	        <li>KNpc增加了函数：SayTo</li>
+	        <li>PLAYER_TALK_CHANNEL表增加了NPC相关的常量</li>
+	        <li>MAIL_RESPOND_CODE表增加了常量：ITEM_BE_BOUND,ITEM_NOT_IN_PACKAGE</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-11-6</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer.GetProfessionLevel的返回值改变了</li>
+	        <li>增加了常量表：PARTY_NOTIFY_CODE</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-11-5</th></tr>
+	    <tr><td><ul>
+	        <li>增加了常量表：ERROR_CODE_TYPE</li>
+	        <li>KPlayer增加了函数：SetMessageNotify</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-11-2</th></tr>
+	    <tr><td><ul>
+	        <li>CRAFT_RESULT_CODE表增加了字段：ERROR_TOOL</li>
+	        <li>增加了事件：OnNpcRevive</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-10-31</th></tr>
+	    <tr><td><ul>
+	        <li>TRADING_RESPOND_CODE表增加了字段：ITEM_NOT_IN_PACKAGE, TARGET_DEAD</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-10-30</th></tr>
+	    <tr><td><ul>
+	        <li>删除了全局函数:GetRecipeBookName,GetRecipeListInBook</li>
+	        <li>表SHOP_SYSTEM_RESPOND_CODE增加了字段: MOVE_STATE_WRONG, 
+	            ITEM_BROKEN, ITEM_NOT_IN_PACKAGE</li>
+	        <li>表TRADING_RESPOND_CODE增加了字段: YOU_DEAD</li>
+	        <li>增加了对象KCraftCollection</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-10-26</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数：ApplyMailList, ReturnMail</li>
+	        <li>ITEM_RESULT_CODE增加了字段：EQUIPED_PACKAGE_CANNOT_DESTROY</li>
+	        <li>MAIL_RESPOND_CODE增加了字段：MAIL_BOX_FULL, RETURN_MAIL_FAILED</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-10-25</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer.CanFinishQuest的参数改变了</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-10-24</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc增加了函数:SetBank</li>
+	        <li>KPlayer增加了属性: dwBankNpcID</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-10-23</th></tr>
+	    <tr><td><ul>
+	        <li>增加了常量表：SKILL_FUNCTION_TYPE</li>
+	        <li>KPlayer增加了函数：IsPartyFull，IsExistFellowshipList</li>
+	        <li>KScene.CreateNpc的参数改变了</li>
+	        <li>KSkill增加了属性：nFunctionType</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-10-22</th></tr>
+	    <tr><td><ul>
+	        <li>增加了KCraftEnchant对象</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-10-18</th></tr>
+	    <tr><td><ul>
+	        <li>增加了KProfession对象</li>
+	        <li>增加了KCraftRecipe对象</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-10-17</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了函数：GetItemCDProgress</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-10-16</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了函数: OpenReputation, IsReputationHide</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-10-12</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数：SendGlobalSysMsg</li>
+	        <li>KPlayer删除了函数：TalkToOne, TalkToMany</li>
+	        <li>KPlayer增加了函数：Talk</li>
+	        <li>PLAYER_TALK_CHANNEL增加了字段：GLOBAL_SYS,LOCAL_SYS</li>
+	        <li>PLAYER_TALK_CHANNEL删除了字段：SYSTEM, WHISPER_REPLY</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-10-09</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer.LearnRecipe的参数改变了</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-09-30</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer的CanLearnRecipe和LearnRecipe的参数改变了。</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-09-26</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer.SwitchMap的参数改变了</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-09-25</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数：BindNpcMailbox，IsNpcMailbox</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-09-21</th></tr>
+	    <tr><td><ul>
+	        <li>QUEST_RESULT表增加了字段:ALREADY_FINISHED</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-09-18</th></tr>
+	    <tr><td><ul>
+	        <li>QUEST_RESULT表增加了字段:ADD_REPUTATION_FAILED</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-09-17</th></tr>
+	    <tr><td><ul>
+	        <li>KDoodad增加了函数:SetDisappearFrames</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-09-14</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数：GetCraft</li>
+	        <li>函数GetCraftList的返回值改变了</li>
+	        <li>ALL_CRAFT_TYPE表增加了字段：RADAR</li>
+	        <li>增加了表格：MINI_RADAR_TYPE</li>
+	        <li>KPlayer增加了函数：GetMiniMapRadar</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-09-13</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数：BindRecipeMasterID, GetRecipeMasterID,
+	            GetRecipeLearnInfo, GetMasterRecipeList</li>
+	        <li>KNpc删掉了函数：GetMasterRecipeList</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-09-12</th></tr>
+	    <tr><td><ul>
+	        <li>SKILL_RESULT_CODE表增加了字段：ON_SILENCE, NOT_FORMATION_LEADER, 
+	            NOT_ENOUGH_MEMBER</li>
+	        <li>KPlayer.CastProfessionSkill的参数改变了</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-09-11</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数：LoadAIEvent, GetCraftList</li>
+	        <li>KPlayer增加了函数：GetProfessionLevel，GetProfessionBranch</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-09-07</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数：GetSkillLearningInfo</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-09-06</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数：BindNpcMasterID，GetNpcMasterID，
+	            GetMasterSkillList</li>
+	        <li>KNpc删掉了函数：GetMasterSkillList</li>
+	        <li>KPlayer.CanLearnSkill的参数改变了</li>
+	        <li>KSkill删掉了属性：nExpAddRate</li>
+	        <li>KSkill增加了属性：nExpAddOdds, bIsFormationSkill,
+	            nnFormationRange, LeastFormationPopulation</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-08-30</th></tr>
+	    <tr><td><ul>
+	        <li>增加了表：ALL_CRAFT_TYPE</li>
+	        <li>PLAYER_FELLOWSHIP_RESPOND表增加了字段：SUCCESS_LEVEL_AND_MAP</li>
+	        <li>KNpc.GetMasterSkillList的返回值改变了</li>
+	        <li>KNpc增加了函数: GetMasterRecipeList</li>
+	        <li>KPlayer增加了函数：CanLearnProfession, CanLearnBranch, 
+	            CanLearnRecipe, IsRecipeLearned</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-08-28</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer.DestroyItem不再是仅客户端使用了</li>
+	        <li>KPlayer.GetRecipe的参数和返回值改变了</li>
+	        <li>KPlayer.CanLearnSkill的参数改变了</li>
+	        <li>KPlayer增加了函数: AddItemWithoutNotify</li>
+	        <li>KSkill删除了属性： dwKungfuExpAdd, dwBaseKungfuExpAdd, dwKungfuLevelLimit</li>
+	        <li>KSkill增加了属性: nExpAddRate</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-08-23</th></tr>
+	    <tr><td><ul>
+	        <li>LoadingComplete的行为改变了</li>
+	        <li>KPlayer.GetProfession的返回值改变了</li>
+	        <li>KPlayer.CanLearnSkill的参数改变了</li>
+	        <li>KPlayer增加了函数：LearnBranch</li>
+	        <li>ATTRIBUTE_TYPE表增加了字段：CALL_BUFF_ACCORDING_TO_ATTRACTION</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-08-21</th></tr>
+	    <tr><td><ul>
+	        <li>删掉了全局函数：Ping</li>
+	        <li>增加了全局函数: LoadingComplete, GetPingValue</li>
+	        <li>KNpc增加了函数: GetMasterSkillList</li>
+	        <li>KPlayer.LearnSkill的参数改变了</li>
+	        <li>KPlayer增加了函数: CanLearnSkill</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-08-17</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc增加了函数: SetPosition</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-08-14</th></tr>
+	    <tr><td><ul>
+	        <li>MOVE_STATE表增加了ON_AUTO_FLY和ON_SHIFT字段</li>
+	        <li>KSkill增加了nStiffFrames属性</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-08-13</th></tr>
+	    <tr><td><ul>
+	        <li>ATTRIBUTE_TYPE删除了字段：JUMP_SPEED_XY_BASE，JUMP_SPEED_XY_PERCENT
+	            ,JUMP_SPEED_Z_BASE, JUMP_SPEED_Z_PERCENT</li>    
+	        <li>ATTRIBUTE_TYPE表增加了字段：JUMP_SPEED_BASE, JUMP_SPEED_PERCENT</li>
+	        <li>增加了全局函数：SetMailRead</li>
+	        <li>KNpc和KPlayer删除了属性：nJumpSpeedXY, nJumpSpeedXYBase, nJumpSpeecXYPercent, 
+	            nJumpSpeedZ, nJumpSpeedZBase, nJumpSpeedZPercent</li>
+	        <li>KNpc和KPlayer增加了属性：nJumpSpeed, nJumpSpeedBase, nJumpSpeedPercent</li>
+	        <li>KPlayer增加了函数: ApplyEndStall, ApplyAddStallItem, 
+	            ApplyRemoveStallItem, ApplyExchangeItem, SetStallItemPrice</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-08-09</th></tr>
+	    <tr><td><ul>
+	        <li>GetMailList的返回值改变了</li>
+	        <li>GetMailContent的返回值改变了</li>
+	        <li>DOODAD_KIND表增加了CHAIR字段</li>
+	        <li>KDoodad增加了函数IsCharacterSit</li>
+	        <li>KNpc删除了函数：SitOnDoodad</li>
+	        <li>KPlayer增加了属性: bStall</li>
+	    </ul></td></tr>
+	    
+	    
+	    <tr><th>2007-08-08</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数：SendMail, DeleteMail, GetMailList,
+	            GetMailContent, GetMailAttachment</li>
+	        <li>删掉了常量表：MAIL_DB_SECTION</li>
+	        <li>MAIL_RESPOND_CODE表增加了字段：MAIL_NOT_FOUND</li>
+	        <li>KPlayer.GetFellowshipData函数的返回值改变了</li>
+	        <li>KPlayer增加了函数GetFellowshipNameList, SetStallState</li>
+	        <li>KPlayer删除了函数: SendMail, GetMailList, GetMailBaseInfo,
+	            GetMailData, ReceiveMail, DeleteMail, ClearMailData</li>
+	    </ul></td></tr>
+	    
+	    
+	    <tr><th>2007-08-07</th></tr>
+	    <tr><td><ul>
+	        <li>PLAYER_FELLOWSHIP_RESPOND表增加了字段：SUCCESS_GROUP_NAME</li>    
+	        <li>KPlayer.GetFellowshipData的返回值改变了</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-08-06</th></tr>
+	    <tr><td><ul>
+	        <li>SKILL_RESULT_CODE表的WEAPON_DESTORY改为WEAPON_DESTROY</li>
+	        <li>PLAYER_FELLOWSHIP_RESPOND表增加了：
+	            PLAYER_FELLOWSHIP_SUCCESS_GROUP,
+	            PLAYER_FELLOWSHIP_SUCCESS_REMARK,
+	            PLAYER_FELLOWSHIP_SUCCESS_FLAG,
+	            PLAYER_FELLOWSHIP_ERROR_INVALID_REMARK,
+	            PLAYER_FELLOWSHIP_ERROR_GROUP_NOT_EMPTY,
+	            PLAYER_FELLOWSHIP_ERROR_SYSTEM_GROUP</li>
+	        <li>KPlayer增加了函数：AddFellowshipGroup，DelFellowshipGroup
+	            ChangeFellowshipGroupName, SetFellowshipRemark,
+	            SetFellowshipGroup,SetFellowshipFlag,
+	            SetFellowshipAttraction</li>
+	        <li>KPlayer删除了函数: SetFellowshipData</li>
+	        <li>KPlayer.GetFellowshipData的返回值改变了</li>
+	        <li>KPlayer.GetFellowshipInfo的参数和返回值改变了</li>
+	        <li>KScene的DestoryNpc更名为DestroyNpc</li>
+	        <li>KScene的DestoryDoodad更名为DestroyDoodad</li>
+	    </ul></td></tr>
+	    
+	    <tr><th>2007-08-03</th></tr>
+	    <tr><td><ul>
+	        <li>PLAYER_FELLOWSHIP_RESPOND表增加了字段：
+	            PLAYER_FELLOWSHIP_ERROR_ADD_SELF</li>
+	        <li>KPlayer.GetFellowShip函数的返回值改变了</li>
+	        <li>KScene.DestoryNpc的参数改变了</li>
+	        <li>KSene.DestoryDoodad的参数改变了</li>
+	        </ul></td></tr>
+	    <tr><th>2007-08-02</th></tr>
+	    <tr><td><ul>
+	        <li>删掉了全局函数：GetFellowshipInfo, GetFellowshipData, 
+	            UpdateFellowshipInfo</li>
+	        <li>KPlayer增加了函数：UpdateFellowshipInfo, GetFellowshipData, 
+	            GetFellowshipInfo, GetFellowshipGroupInfo</li>
+	        <li>QUEST_RESULT表增加了字段：ERROR_FORCE_ID</li>
+	        <li>PLAYER_FELLOWSHIP_RESPOND表增加了字段：PLAYER_FELLOWSHIP_SUCCESS_ADD_GROUP,
+	            PLAYER_FELLOWSHIP_SUCCESS_DEL_GROUP,
+	            PLAYER_FELLOWSHIP_ERROR_INVALID_GROUP_NAME,
+	            PLAYER_FELLOWSHIP_ERROR_GROUP_FULL,
+	            PLAYER_FELLOWSHIP_ERROR_GROUP_EXISTS,
+	            PLAYER_FELLOWSHIP_ERROR_GROUP_NOT_FOUND,
+	            PLAYER_FELLOWSHIP_ERROR_DEL_SYSTEM_GROUP,
+	            PLAYER_FELLOWSHIP_ERROR_SET_GROUP</li>
+	        </ul></td></tr>
+	    <tr><th>2007-08-01</th></tr>
+	    <tr><td><ul>
+	        <li>删掉了全局函数：GetPlayerRelationList, GetPlayerRelationName</li>
+	        <li>增加了全局函数：GetFellowShipInfo, GetFellowShipData, UpdateFellowShipInfo</li>
+	        <li>删掉了常量表：PLAYER_RELATION_RESPOND</li>
+	        <li>增加了常量表：PLAYER_FELLOWSHIP_RESPOND</li>
+	        <li>KNpc增加了函数：SitOnDoodad</li>
+	        <li>KPlayer增加了函数：SitOnDoodad, AddFellowShip,DelFellowShip, SetFellowShipData</li>
+	        <li>KPlayer删掉了函数：AddRelation, DelRelation</li>
+	        </ul></td></tr>
+	    <tr><th>2007-07-26</th></tr>
+	    <tr><td><ul>
+	        <li>QUEST_RESULT表的内容改变了</li>
+	        </ul></td></tr>
+	    <tr><th>2007-07-23</th></tr>
+	    <tr><td><ul>
+	        <li>增加了SKILL_RECIPE_TYPE表</li>
+	        </ul></td></tr>
+	    <tr><th>2007-07-20</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了函数：AddSkillRecipe, DelSkillRecipe, GetSkillRecipeList</li>
+	        <li>KScene.CreateNpc的参数改变了</li>
+	        </ul></td></tr>
+	    <tr><th>2007-07-17</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了函数：SetTimer, StopTimer, RestartTimer和RemoveTimer</li>
+	        </ul></td></tr>
+	    <tr><th>2007-07-16</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer.GetQuestTree的返回值改变了</li>
+	        <li>KQuestInfo.GetHortation的返回值改变了</li>
+	        </ul></td></tr>
+	    <tr><th>2007-07-11</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer删除了GetAcceptTime函数</li>
+	        <li>KPlayer增加了函数：GetQuestLastTime, PlayMiniGame</li>
+	        <li>GLOBAL表增加了字段：START_QUEST_DELAY</li>
+	        </ul></td></tr>
+	    <tr><th>2007-07-10</th></tr>
+	    <tr><td><ul>
+	        <li>KScene增加了函数：EndTeamQuest, GetGetTeamQuestMember</li>
+	        <li>KPlayer增加了函数：AcceptTeamQuest</li>
+	        </ul></td></tr>
+	    <tr><th>2007-07-09</th></tr>
+	    <tr><td><ul>
+	        <li>KDoodad删除了以下属性: IsSetBlockCharacter, IsBlockCharacter, IsSetPutObj,
+	            IsPutObj, IsSetSafe, IsSafe, IsSetStall, IsStall, IsSetCellType, CellType,
+	            IsSetPassWidth, PassWidth</li>
+	        </ul></td></tr>
+	    <tr><th>2007-07-04</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了函数: ForceFinishQuest, PlaySound</li>
+	        </ul></td></tr>
+	    <tr><th>2007-07-03</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer.UseItem的参数改变了</li>
+	        <li>SKILL_CAST_MODE增加了字段：ITEM</li>
+	        </ul></td></tr>
+	    <tr><th>2007-06-28</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了函数: GetFreeRoomSize</li>
+	        <li>Event中增加了回调函数: OnCancelQuest, OnFinishQuest</li>
+	        </ul></td></tr>
+	    <tr><th>2007-06-26</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc增加了属性: nUpperWeakLevel, nMiddleWeakLevel, nLowerWeakLevel</li>
+	        <li>KPlayer.AddMapMark函数的参数改变了</li>
+	        <li>KPlayer增加了属性: nUpperWeakLevel, nMiddleWeakLevel, nLowerWeakLevel</li>
+	        </ul></td></tr>
+	    <tr><th>2007-06-25</th></tr>
+	    <tr><td><ul>
+	        <li>ATTRIBUTE_TYPE删掉了DETACH_SINGLE_DOT, DETACH_SINGLE_HOT</li>
+	        <li>ATTRIBUTE_TYPE增加了：DETACH_SINGLE_GROUP_DOT，DETACH_SINGLE_GROUP_HOT</li>
+	        <li>KPlayer增加了属性：nLifeReplenishCoefficient， nLifeReplenishExt,
+	            nManaReplenishCoefficient, nManaReplenishExt</li>
+	        <li>KPlayer增加了函数SyncMidMapMark</li>
+	        <li>KNpc增加了属性：nLifeReplenishCoefficient， nLifeReplenishExt,
+	            nManaReplenishCoefficient, nManaReplenishExt</li>
+	        <li>KPlayer增加了函数SyncMidMapMark</li>
+	        </ul></td></tr>
+	    <tr><th>2007-06-21</th></tr>
+	    <tr><td><ul>
+	        <li>GLOBAL表增加了字段：MAX_BANK_PACKAGE_COUNT</li>
+	        <li>ATTRIBUTE_TYPE表删掉了WEAK字段，增加了字段：ADD_WEAK, 
+	            SHIFT_WEAK, ADD_WEAK_SHIELD</li>
+	        <li>MOVE_STATE表增加了ON_FLOAT字段</li>
+	        </ul></td></tr>
+	    <tr><th>2007-06-19</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数：GetMapList</li>
+	        </ul></td></tr>
+	    <tr><th>2007-06-15</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer.AddItem的参数改变了</li>
+	        <li>KPlayer增加了函数：GetLastSaveTime</li>
+	        <li>KPlayer.GetRepresentID改为服务器端也可以执行了</li>
+	        </ul></td></tr>
+	    <tr><th>2007-06-14</th></tr>
+	    <tr><td><ul>
+	        <li>ATTRIBUTE_TYPE表增加了字段：MODIFY_SKILL_CAST_FLAG</li>
+	        </ul></td></tr>
+	    <tr><th>2007-06-13</th></tr>
+	    <tr><td><ul>
+	        <li>ATTRIBUTE_TYPE表增加了WEAK字段</li>
+	        <li>ATTRIBUTE_EFFECT_MODE表增加了以下字段：<ul>
+	            <li>EFFECT_TO_DEST_ON_MINOR_WEAK</li>
+	            <li>EFFECT_TO_DEST_ON_MAJOR_WEAK</li>
+	            <li>EFFECT_TO_DEST_ON_MAX_WEAK</li>
+	            </ul></li>
+	        <li>增加了SKILL_ATTACK_WEAK_POS表</li>
+	        <li>KSkill增加了nAttackWeakPos属性</li>
+	        </ul></td></tr>
+	    <tr><th>2007-06-12</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了AddMapMark, Revive函数</li>
+	        </ul></td></tr>
+	    <tr><th>2007-06-11</th></tr>
+	    <tr><td><ul>
+	        <li>增加了GetBankPackagePrice全局函数</li>
+	        <li>ITEM_RESULT_CODE增加了BANK_PACKAGE_DISABLED字段</li>
+	        <li>KNpc增加了GetTarget函数</li>
+	        <li>KPlayer增加了函数: EnableBankPackage, GetBankPackageCount,
+	            IsBankPackageEnabled</li>
+	        </ul></td></tr>
+	    <tr><th>2007-06-07</th></tr>
+	    <tr><td><ul>
+	        <li>KDoodad删掉了nMaxLife, nCurrentLife属性</li>
+	        <li>KDoodadTemplate删掉了以下属性: dwMaxLife, dwLifeReplenish,
+	            dwPhysicsDefence, dwMagicDefence, bAttackable, nDeathType</li>
+	        </ul></td></tr>
+	    <tr><th>2007-06-04</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了IsPlayerInMyParty函数</li>
+	        </ul></td></tr>
+	    <tr><th>2007-06-01</th></tr>
+	    <tr><td><ul>
+	        <li>增加了ITEM_RESULT_CODE表</li>
+	        </ul></td></tr>
+	    <tr><th>2007-05-30</th></tr>
+	    <tr><td><ul>
+	        <li>ATTRIBUTE_TYPE表增加了以下字段: SILENCE, SILENCE_ALL,
+	            IMMUNITY</li>
+	        </ul></td></tr>
+	    <tr><th>2007-05-29</th></tr>
+	    <tr><td><ul>
+	        <li>KItem增加了IsReparable函数</li>
+	        </ul></td></tr>
+	    <tr><th>2007-05-24</th></tr>
+	    <tr><td><ul>
+		<li>QUEST_EVENT_TYPE的SET_QUEST_LEVEL字段改为SET_QUEST_VALUE</li>
+		</ul></td></tr>
+	    <tr><th>2007-05-22</th></tr>
+	    <tr><td><ul>
+	        <li>KCustomEquipInfo增加了nMaxExistAmount属性</li>
+	        <li>KNpc.Say的参数改变了</li>
+	        <li>EQUIPMENT_INVENTORY和INVENTORY_INDEX表增加了银行相关的字段</li>
+	        <li>KPlayer.GetEquipPos的返回值改变了</li>
+	        </ul></td></tr>
+	    <tr><th>2007-05-21</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数:GetReputeLimit</li>
+	        <li>增加了以下表格: QUEST_STATE, QUEST_EVENT_TYPE, QUEST_COUNT,
+	            QUEST_RESULT</li>
+	        <li>KNpc.Say的参数改变了</li>
+	        <li>KPlayer增加了以下函数: OpenBank, CloseBank, GetFreeRoomInPackage</li>
+	        </ul></td></tr>
+	    <tr><th>2007-05-18</th></tr>
+	    <tr><td><ul>
+	        <li>SKILL_DAMAGE_TYPE表改名为SKILL_KIND_TYPE</li>
+	        <li>KNpc.SetDisappearFrames的参数改变了</li>
+	        <li>KSkill.nType改名字为nUIType</li>
+	        </ul></td></tr>
+	    <tr><th>2007-05-17</th></tr>
+	    <tr><td><ul>
+	        <li>ATTRIBUTE_TYPE删掉了STUN字段</li>
+	        <li>MOVE_STATE表的ON_STUN字段改为ON_HALT</li>
+	        <li>KSkill.GetCooldownID参数的取值范围改变了。</li>
+	        <li>KPlayer增加了函数:ApplyRevenge, ApplyKilling, CloseKilling,
+	            CanApplyRevenge, CanApplyFight, CanApplyKilling</li>
+	        <li>KItem增加了属性: nMaxExistAmount</li>
+	        </ul></td></tr>
+	    <tr><th>2007-05-15</th></tr>
+	    <tr><td><ul>
+	        <li>SetUserPreference和GetUserPreference的参数改变了</li>
+	        <li>KPlayer增加了ApplyFight, RefuseFight, AcceptFight和
+	            LossFight函数</li>
+	        </ul></td></tr>
+	    <tr><th>2007-05-11</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了函数：GetBookList, GetBookSegmentList</li>
+	        <li>KNpc.Whisper的参数改变了</li>
+	        </ul></td></tr>
+	    <tr><th>2007-05-10</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer.OpenRecipeBook的返回值变了</li>
+	        <li>KPlayer增加了OpenBook函数</li>
+	        </ul></td></tr>
+	    <tr><th>2007-05-09</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer删掉了Say函数</li>
+	        <li>KNpc增加了函数：Yell, Whisper</li>
+	        </ul></td></tr>
+	    <tr><th>2007-04-28</th></tr>
+	    <tr><td><ul>
+	        <li>PLAYER_TALK_CHANNEL增加了FACE字段</li>
+	        <li>KItem增加了函数: GetEnchantAttrib, GetTempEnchantAttrib</li>
+	        <li>KPlayer.GetMailData的返回值改变了</li>
+	        <li>KPlayer.CastProfessionSkill的参数改变了</li>
+	        <li>KPlayer.GetSkillList的参数改变了</li>
+	        <li>KPlayer增加了以下函数: GetSchoolList, GetKungfuList函数</li>
+	        </ul></td></tr>
+	    <tr><th>2007-04-27</th></tr>
+	    <tr><td><ul>
+	        <li>增加了IsNeutrality全局函数</li>
+	        <li>删掉了IsDialog全局函数</li>
+	        <li>IsAlly, IsEnemy, IsParty, IsSelf的参数改变了</li>
+	        <li>KPlayer.SetReputation的参数改变了</li>
+	        <li>RELATION_TYPE表的DIALOG字段改名字为NEUTRALITY</li>
+	        </ul></td></tr>
+	    <tr><th>2007-04-25</th></tr>
+	    <tr><td><ul>
+	        <li>KDoodad.AddLootItem的参数变了</li>
+	        <li>KPlayer增加了函数:
+	            <ul><li>SetQuestFailedFlag</li>
+	                <li>GetQuestFailedFlag</li>
+	                <li>GetSelectCharacter</li>
+	            </ul>
+	        </li>
+	        </ul></td></tr>
+	    <tr><th>2007-04-24</th></tr>
+	    <tr><td><ul>
+	        <li>增加了AI_EVENT_CONDITION表</li>
+	        <li>KNpc增加了SetRepresentID函数</li>
+	        </ul></td></tr>
+	    <tr><th>2007-04-21</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer.GetMailBaseInfo的返回值改变了。</li>
+	        </ul></td></tr>
+	    <tr><th>2007-04-20</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer.SendMail的参数改变了</li>
+	        <li>KPlayer.GetMailList的参数改变了</li>
+	        <li>KPlayer.GetMailData的参数改变了</li>
+	        <li>KPlayer.ReceiveMail的参数改变了</li>
+	        <li>KPlayer增加了函数：GetMailBaseInfo，ClearMailData</li>
+	        <li>KSkill增加了属性: nWeaponDamagePercent</li>
+	        </ul></td></tr>
+	    <tr><th>2007-04-19</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了GetEquipItem函数</li>
+	        </ul></td></tr>
+	    <tr><th>2007-04-17</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer.SwitchMap的参数改变了</li>
+	        <li>KPlayer增加了SetMinimapRadar函数</li>
+	        </ul></td></tr>
+	    <tr><th>2007-04-16</th></tr>
+	    <tr><td><ul>
+	        <li>增加全局函数：GetBuffDetachType</li>
+	        <li>增加常量表：MAIL_DB_SECTION, MAIL_RESPOND_CODE</li>
+	        </ul></td></tr>
+	    <tr><th>2007-04-13</th></tr>
+	    <tr><td><ul>
+	        <li>DOODAD_KIND增加了READ, DIALOGUE, ACCEPT_QUEST字段</li>
+	        <li>增加了GetUserPreferences, SetUserPreferences全局函数</li>
+	        </ul></td></tr>
+	    <tr><th>2007-04-12</th></tr>
+	    <tr><td><ul>
+	        <li>SKILL_CAST_MODE增加了POINT_AREA字段</li>
+	        <li>增加了LOGIN表</li>
+	        </ul></td></tr>
+	    <tr><th>2007-04-07</th></tr>
+	    <tr><td><ul>
+	        <li>增加了GetCharacterDistance, GetDistanceSq函数</li>
+	        <li>KNpc增加了bDialogFlag属性</li>
+	        <li>KNpcTemplate增加了nHeight属性</li>
+	        </ul></td></tr>
+	    <tr><th>2007-04-06</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc.IsSelectable()函数的返回值改变了</li>
+	        <li>KDoodad.GetLooterList的返回值变了</li>
+	        </ul></td></tr>
+	    <tr><th>2007-04-05</th></tr>
+	    <tr><td><ul>
+	        <li>增加了Ping全局函数</li>
+	        <li>KNpc增加了dwRepresentID属性</li>
+	        <li>KNpc增加了GetDebuffCustomValue和SetDebuffCustomValue函数</li>
+	        <li>KSKILL_DEBUFF_INFO删掉了nVoid属性</li>
+	        </ul></td></tr>
+	    <tr><th>2007-04-04</th></tr>
+	    <tr><td><ul>
+	        <li>KQuestInfo增加了GetHortation函数</li>
+	        <li>KScene删掉了dwMapCopyIndex属性</li>
+	        <li>常量表添加了分类（感谢王洋）</li>
+	        </ul></td></tr>
+	    <tr><th>2007-04-03</th></tr>
+	    <tr><td><ul>
+	        <li>NPC_KIND表改成CHARACTER_KIND</li>
+	        <li>KPlayer增加了FullDoubleExp函数</li>
+	        </ul></td></tr>
+	    <tr><th>2007-04-02</th></tr>
+	    <tr><td><ul>
+	        <li>MOVE_STATE表删掉了ON_HALT字段</li>
+	        <li>KPlayer增加了ReceiveMail和DeleteMail函数</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-30</th></tr>
+	    <tr><td><ul>
+	        <li>增加了GetDoodadTemplate全局函数</li>
+	        <li>增加了NPC_KIND表
+	            <a href="#Note20070330a" class="small-note">[注1]</a></li>
+	        <li>KPlayer增加了SendMail，GetMailList和GetMailData函数</li>
+	        </ul>
+	        <p class="small-note"><a id="Note20070330a">注1: 这个表的名字
+	            有问题，不太符合表的内容。因为表中包含Player，并不只是
+	            NPC类型。这个表实际应该是CHARACTER_KIND。已告知开发修改。</a></p>
+	        </td></tr>
+	    <tr><th>2007-03-29</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了OpenRecipeBook函数</li>
+	        <li>KPlayer.CastProfessionSkill的参数改变了</li>
+	        <li>增加了CRAFT_RESULT_CODE表</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-28</th></tr>
+	    <tr><td><ul>
+	        <li>ATTRIBUTE_TYPE表增加了FEAR和CALL_KNOCKED_DOWN</li>
+	        <li>增加了以下全局函数：GetRecipeBookName，GetRecipeListInBook，
+	            GetRecipe</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-27</th></tr>
+	    <tr><td><ul>
+	        <li>增加了以下全局函数：GetLocalTime, GetCustomData, SetCustomData,
+	            GetCustomBitData, SetCustomBitData</li>
+	        <li>增加了DATE_FORMAT表</li>
+	        <li>KPlayer增加了以下函数：GetCustomData, SetCustomData,
+	            GetCustomBitData, SetCustomBitData</li>
+	        <li>KScene增加了以下函数：GetCustomData, SetCustomData,
+	            GetCustomBitData, SetCustomBitData</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-26</th></tr>
+	    <tr><td><ul>
+	        <li>增加了IsSelf全局函数</li>
+	        <li>KPlayer.SwitchMap的参数改变了</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-24</th></tr>
+	    <tr><td><ul>
+	        <li>增加了GetCustomValue，SetCustomValue，GetCustomBitValue和
+	            SetCustomBitValue全局函数</li>
+	        <li>DOODAD_KIND表增加了CRAFT_TARGET字段</li>
+	        <li>KDoodad增加了CanLoot, HaveQuest函数</li>
+	        <li>KNpc增加了GotoReviveList函数</li>
+	        <li>KPlayer.SetPosition的参数改变了</li>
+	        <li>KPlayer增加了以下函数：GetCustomValue，SetCustomValue，GetCustomBitValue
+	            SetCustomBitValue, GetReputeLevel, SetFightFlag,
+	            GetFightFlag, IsFightFlagLocked, SwitchMap</li>
+	        <li>KScene增加了函数：GetCustomValue，SetCustomValue，GetCustomBitValue
+	            SetCustomBitValue</li>
+	        <li>KSkillDebuffInfo增加了nVoid属性</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-23</th></tr>
+	    <tr><td><ul>
+	        <li>增加了全局函数GetPlayerByName</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-22</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc增加了SetForceID函数</li>
+	        <li>KPlayer增加了SetForceID, IsParty, IsPartyLeader函数</li>
+	        <li>KSkill增加了dwBaseKungfuExpAdd属性</li>
+	        <li>KSkill的dwExpAdd改名为dwKungfuExpAdd</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-21</th></tr>
+	    <tr><td><ul>
+	        <li>增加了LOOT_ITEM_RESULT_CODE表</li>
+	        <li>GetSetAttrib函数的返回值改了</li>
+	        <li>以下函数改为仅在客户端使用：GetBaseAttrib, GetMagicAttrib,
+	            GetRequireAttrib, GetSetAttrib</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-20</th></tr>
+	    <tr><td><ul>
+	        <li>删掉了SkillLog全局函数</li>
+	        <li>增加了GetRecipeName全局函数</li>
+	        <li>修改了AddBuff和AddDebuff中可选参数的含义</li>
+	        <li>修改了KPlayer.CastProfessionSkill的参数</li>
+	        <li>KPlayer和KNpc增加了DelSingleBuff和DelSingleDebuff函数</li>
+	        <li>KItem增加了GetSetAttrib函数</li>
+	        <li>KCustomItemInfo增加了GetSetAttrib函数</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-16</th></tr>
+	    <tr><td><ul>
+	        <li>KQuestInfo增加了dwEndDoodadTemplateID属性</li>
+	        <li>KScene的Remove函数改名字为RemoveTimer</li>
+	        <li>KPlayer有关配方的函数都删掉了，因为策划要修改相关设计</li>
+	        <li>KPlayer的AddItem现在返回bool值</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-15</th></tr>
+	    <tr><td><ul>
+	        <li>SKILL_RESULT_CODE增加了WEAPON_DESTROY字段</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-14</th></tr>
+	    <tr><td><ul>
+	        <li>增加了Random全局函数</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-13</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc增加了SetDisappearFrames函数</li>
+	        <li>KPlayer增加了GetPartyMemberList函数</li>
+	        <li>KSkill删掉了bSampleLevelUp属性，增加了nPlayerLevelLimit属性</li>
+	        <li>更正了Event中有些函数的参数顺序</li>
+	        <li>Event删掉了OnWindowSelect函数，增加了OnTimer函数</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-12</th></tr>
+	    <tr><td><ul>
+	        <li>GetLevelUpData的返回值增加了MaxQi项</li>
+	        <li>ATTRIBUTE_TYPE增加了QI_TO_SKILL_EXP_PERCENT_ADD, 
+	            PRACTICE_KUNG_FU</li>
+	        <li>KPlayer增加了nCurrentQi和bOnPracticeRoom</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-09</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc增加了ClearAllThreat函数</li>
+	        <li>KPlayer增加了ClearAllThreat函数</li>
+	        <li>KScene增加了SetTimer, StopTimer, RestartTime和Remove函数</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-08</th></tr>
+	    <tr><td><ul>
+	        <li>KSkill增加了dwExpAdd和dwKungfuLevelLimit属性</li>
+	        <li>ATTRIBUTE_TYPE增加了SIT字段</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-07</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc和KPlayer增加了UpdateBuffLastTime, UpdateHotLastTime,
+	            UpdateDotLastTime, UpdateHotLastTime</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-06</th></tr>
+	    <tr><td><ul>
+	        <li>KDoodad删掉了bAttackable, bPickable</li>
+	        <li>KDoodad增加了IsSelectable函数</li>
+	        <li>KNpc增加了IsSelectable函数</li>
+	        </ul></td></tr>
+	    <tr><th>2007-03-05</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了SetAIType, SetAIParam</li>
+	        <li>增加了AI_TYPE表</li>
+	        </ul>
+	        <p class="small-note">KNpc的SetAIType和SetAIParam问题已经修复</p>
+	        </td></tr>
+	    <tr><th>2007-03-02</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc增加了SetAIType, SetAIParam函数
+	            <a href="#Note20070302a" class="small-note">[注1]</a></li>
+	        <li>KSkill增加了nTargetCountLimit属性</li>
+	        </ul>
+	        <p class="small-note"><a id="Note20070302a">[注1]:</a>这2个函数今天有
+	            问题，开发正在修改。</p>
+	        </td></tr>
+	    <tr><th>2007-02-27</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc增加了dwReliveID, nCurrentReliveIndex, nNpcTeamID, 
+	            nNpcTeamIndex, nPatrolPathID, nExp属性</li>
+	        <li>KNpc增加了SetPatrolPath函数</li>
+	        <li>TRADING_RESPOND_CODE增加了INVALID_INVITE</li>
+	        <li>删掉了TRADING_STATE表</li>
+	        <li>KQuestInfo增加了bIsDeleteEndRequireItem1, bIsDeleteEndRequireItem2
+	            bIsDeleteEndRequireItem3, bIsDeleteEndRequireItem4属性</li>
+	        </ul></td></tr>
+	    <tr><th>2007-02-08</th></tr>
+	    <tr><td><ul>
+	        <li>SHOP_SYSTEM_RESPOND_CODE增加了ITEM_EXIST_LIMIT字段</li>
+	        </ul></td></tr>
+	    <tr><th>2007-02-07</th></tr>
+	    <tr><td><ul>
+	        <li>BaseFunction增加了GetPlayerRelationList和GetPlayerRelationName</li>
+	        <li>KPlayer增加了AddRelation和DelRelation</li>
+	        <li>增加了PLAYER_RELATION_RESPOND表</li>
+	        </ul></td></tr>
+	    <tr><th>2007-02-05</th></tr>
+	    <tr><td><ul>
+	        <li>WEAPON_DETAIL增加了SLING_SHOT, DART, MACH_DART字段</li>
+	        </ul></td></tr>
+	    <tr><th>2007-02-02</th></tr>
+	    <tr><td><ul>
+	        <li>SKILL_RESULT_CODE表增加了NOT_ENOUGH_AMMO, AMMO_ERROR,
+	            NOT_EQUIP_AMMO字段</li>
+	        </ul></td></tr>
+	    <tr><th>2007-02-01</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc增加了nCharacterAction</li>
+	        <li>KPlayer增加了nCharacterAction、StopCurrentAction</li>
+	        <li>KPlayer删掉了StopAutoCastSkillRequest, BreakOffOTAction</li>
+	        <li>EQUIPMENT_SUB和EQUIPMENT_INVENTORY增加了ARROW字段</li>
+	        </ul></td></tr>
+	    <tr><th>2007-01-29</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer删掉了TradingLock</li>
+	        <li>TRADING_STATE删掉了LOCK字段</li>
+	        <li>TRADING_RESPONSE_CODE增加了YOU_BUSY和TOO_FAR字段</li>
+	        </ul></td></tr>
+	    <tr><th>2007-01-26</th></tr>
+	    <tr><td><ul>
+	        <li>KScene增加了bReviveInSitu</li>
+	        </ul></td></tr>
+	    <tr><th>2007-01-25</th></tr>
+	    <tr><td><ul>
+	        <li>KDoodad增加了dwRepresentID属性</li>
+	        <li>ATTRIBUTE_TYPE增加了OTHER_ALARM_RANGE_REVISE，
+	            IGNORE_OTHER_ALARM_RANGE, SELF_ALARM_RANGE_REVISE</li>
+	        <li>增加了TRADING_RESPONSE_CODE表</li>
+	        </ul></td></tr>
+	    <tr><th>2007-01-24</th></tr>
+	    <tr><td><ul>
+	        <li>KSkill增加了CheckTargetState方法。</li>
+	        </ul></td></tr>
+	    <tr><th>2007-01-23</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc和KPlayer删掉了JumpVelocity和SwimVelocity系列的属性，增加了
+	            JumpSpeed和SwimSpeed系列的属性</li>
+	        <li>KNpc和KPlayer的nMoveSpeedPercentAdd改为nMoveSpeedPercent</li>
+	        <li>KSkill的以下方法的返回值改了：CheckWeaponRequest, 
+	            CheckCostItemRequest, CheckAngle, CheckCasterState</li>
+	        <li>GLOBAL表的MOVE_TARGET_RANGE改为MOVE_DEST_RANGE</li>
+	        <li>ATTRIBUTE_TYPE表跟随KNpc和KPlayer的JumpSpeed与SwimSpeed的修改
+	            做了调整。</li>
+	        </ul></td></tr>
+	    <tr><th>2007-01-22</th></tr>
+	    <tr><td><ul>
+	        <li>增加了商店相关的全局函数，见ShopFunction</li>
+	        <li>修改了KSkill.CheckDistance的返回值说明</li>
+	        </ul></td></tr>
+	    <tr><th>2007-01-18</th></tr>
+	    <tr><td><ul>
+	        <li>KDoodadTemplate增加了dwCraftID</li>
+	        <li>KNpc和KPlayer删掉了CanCastSkill</li>
+	        <li>KPlayer的SearchForAllies和SearchForEnemy的参数变了</li>
+	        <li>KScene增加了GetNpcByNickName</li>
+	        <li>KSkill删掉了nCostItemCount</li>
+	        <li>KSkill增加了以下方法：UITestCast, CheckWeaponRequest, CheckMountRequest,
+	            CheckCostItemRequest, CheckDistance, CheckAngle, CheckCasterState</li>
+	        </ul>
+	        <p class="small-note">历史：2007-1-15增加了CanCastSkill，今天删掉了。</p>
+	        </td></tr>
+	    <tr><th>2007-01-17</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc.GetQuestString的返回值格式变了</li>
+	        <li>KPlayer.CastProfessionSkill的参数变了</li>
+	        <li>TARGET表中，NPC_ID, DOODAD_ID, PLAYER_ID都把'_ID'去掉了，
+	            同时增加ITEM项</li>
+	        </ul></td></tr>
+	    <tr><th>2007-01-16</th></tr>
+	    <tr><td><ul>
+	        <li>删掉了LoadRecipe()和GetRecipe()</li>
+	        <li>KDoodad增加了dwNpcTemplateID</li>
+	        </ul></td></tr>
+	    <tr><th>2007-01-15</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc和KPlayer增加了CanCastSkill方法</li>
+	        <li>ATTRIBUTE_TYPE表增加了SPUNK_ATTACK_POWER, MELEE_SPUNK_ATTACK_POWER,
+	            RANGE_SPUNK_ATTACK_POWER</li>
+	        </ul></td></tr>
+	    <tr><th>2007-01-12</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了GetTradingMoney方法</li>
+	        <li>ATTRIBUTE_TYPE增加了EXECUTE_SCRIPT字段</li>
+	        </ul></td></tr>
+	    <tr><th>2007-01-11</th></tr>
+	    <tr><td><ul>
+	        <li>GetLevelUpData的返回值多了以下字段 ：ExpPerMinute, 
+	            ExpPerEnergy, MaxDoubleExp</li>
+	        <li>AddDot, AddHot, AddBuff和AddDebuff的参数变了</li>
+	        <li>KDoodad增加了以下属性：nX, nY, nZ, nTouchRange, nXCell,
+	            nYCell, nMass, nWidth, nLength, nHeight, 
+	            nFaceDirection, nPitchDirection</li>
+	        <li>KDoodad增加了以下方法: GetAbsoluteCoordinate</li>
+	        <li>KNpc和KPlayer增加了以下属性：nPitchDirection, nCurrentStrength, nStrengthBase,
+	            nStrengthBasePercentAdd, nCurrentAgility, nAgilityBase, 
+	            nCurrentVitality,
+	            nAgilityBasePercentAdd, nCurrentSpirit, nSpiritBase, nSpiritBasePercentAdd,
+	            nCurrentSpunk, nSpunkBase, nSpunkBasePercentAdd</li>
+	        <li>KNpc和KPlayer增加了以下方法：PitchTo</li>
+	        <li>KNpc和KPlayer删掉了以下属性: nStrength, nAgility, nVitality, nSpirit, nSpunk</li>
+	        <li>ATTRIBUTE_TYPE增加了STRENGTH_BASE, STRENGTH_BASE_PERCENT_ADD,
+	            AGILITY_BASE, AGILITY_BASE_PERCENT_ADD, SPIRIT_BASE,
+	            SPIRIT_BASE_PERCENT_ADD, SPUNK_BASE, SPUNK_BASE_PERCENT_ADD,
+	            VITALITY_BASE, VITALITY_BASE_PERCENT_ADD</li>
+	        <li>SKILL_RESULT_CODE增加了NO_TARGET字段</li>
+	        <li>TRADING_STATE增加了COMPLETE字段</li>
+	        <li>ATTRIBUTE_TYPE表的所有项都增加了注释。（感谢王洋）</li>
+	        <li>文档的排版有所改进，大的表格不会挤在一起了。（王洋的建议）</li>
+	        </ul></td></tr>
+	    <tr><th>2007-01-10</th></tr>
+	    <tr><td><ul>
+	        <li>BaseFunction增加GetLogicDirection函数</li>
+	        <li>GetLevelUpData函数的返回值去掉了StaminaReplenishPercent字段</li>
+	        <li>KNpc增加了GetAbsoluteCoordinate函数</li>
+	        <li>KNpc删掉了体力相关的属性</li>
+	        <li>KPlayer.OpenWindow测参数改变了</li>
+	        <li>KPlayer增加了GetTradingItem,GetAbsoluteCoordinate</li>
+	        <li>KPlayer删掉了体力相关的属性</li>
+	        <li>KSkill增加了GetAttribute, GetBuff, GetDebuff, GetDot, GetHot</li>
+	        <li>增加了KSKILL_BUFF_INFO, KSKILL_DEBUFF_INFO, KSKILL_DOT_INFO,
+	            KSKILL_HOT_INFO对象</li>
+	        <li>GLOBAL表增加了DIRECTION_COUNT字段</li>
+	        <li>增加了TRADING_STATE常量表</li>
+	        </ul>
+	        <p class="small-note">注：体力部分目前正在修改中</p>
+	        </td></tr>
+	    <tr><th>2007-01-09</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc和KPlayer的nWaterFloatAbility改名字为nWaterFlyAbility</li>
+	        <li>增加了SKILL_DAMAGE_TYPE和SKILL_RESULT_TYPE表</li>
+	        </ul></td></tr>
+	    <tr><th>2007-01-08</th></tr>
+	    <tr><td><ul>
+	        <li>增加了LoadNpcTemplate, GetNpcTemplate, GetNpcName</li>
+	        <li>KNpc增加了nSwimAbility和nWaterFloatAbility属性</li>
+	        <li>KNpc增加了AddBuff,AddDebuff, AddDot, AddHot方法</li>
+	        <li>增加了KNpcTemplate类</li>
+	        <li>KPlayer增加了nDoubleExp, nSwimAbility,nWaterFloatAbility属性</li>
+	        <li>KPlayer增加了GetFreeRoom, AddBuff, AddDebuff, AddDot, AddHot,
+	            DoAnimation方法</li>
+	        <li>KSKILL_EFFECT_TYPE表改名字为SKILL_EFFECT_TYPE</li>
+	        </ul>
+	        <p class="small-note">注：KNPC的nSpecies实际和nRace属性差不多，开发会去掉其中
+	            一个</p>
+	        </td></tr>
+	    <tr><th>2007-01-05</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了GetRepresentId方法</li>
+	        <li>KShop增加了szShopName属性</li>
+	        <li>KSkill增加了BindBuff, BindDebuff, BindHot, BindDot方法</li>
+	        <li>GLOBAL表增加了CURRENT_ITEM_VERSION字段</li>
+	        </ul></td></tr>
+	    <tr><th>2007-01-04</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer.FinishQuest方法增加了2个参数</li>
+	        <li>KATTRIBUTE_MODIFIER删掉了CALL_KNOCKED_OFF_EXHALE，
+	            CALL_KNOCKED_OFF_CONVERGENCE， CALL_KNOCKED_OFF_RANDOM，
+	            CALL_KNOCKED_OFF_SRC_FACE</li>
+	        </ul></td></tr>
+	    <tr><th>2006-12-31</th></tr>
+	    <tr><td><ul>
+	        <li>增加了SHOP_SYSTEM_RESPOND_CODE表</li>
+	        </ul></td></tr>
+	    <tr><th>2006-12-30</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer.CastCommonSkill现在没有返回值了。
+	            <a href="#Note20061230a" class="small-note">[注1]</a></li>
+	        <li>KPlayer增加了GetTarget方法</li>
+	        <li>PLAYER_TALK_CHANNEL中WHISPER字段的值改了，不再重用INVALID，同时
+	            增加WHISPER_REPLY字段</li>
+	        </ul>
+	        <p class="small-note"><a id="Note20061230a" >[注1]:</a> 
+	            目前几个释放技能的函数的返回值有些不统一，
+	            例如CastSkill就有返回值，但CastCommonSkill没有返回值。这些还需开发进一步
+	            改进。
+	            </p>
+	        </td></tr>
+	    <tr><th>2006-12-29</th></tr>
+	    <tr><td><ul>
+	        <li>KDoodad增加了CanDialog方法</li>
+	        <li>KNpc和KPlayer增加了CanDialog方法</li>
+	        </ul></td></tr>
+	    <tr><th>2006-12-28</th></tr>
+	    <tr><td><ul>
+	        <li>IsCommonSkill的返回值改变了。现在会返回2个值。</li>
+	        <li>KPlayer增加SendSystemMessage方法</li>
+	        <li>DOODAD_KIND表增加ORNAMENT字段</li>
+	        <li>PLAYER_TALK_CHANNEL增加SYSTEM字段</li>
+	        </ul></td></tr>
+	    <tr><th>2006-12-27</th></tr>
+	    <tr><td><ul>
+	        <li>BaseFunction中增加了IsCommonSkill</li>
+	        <li>KPlayer增加了GetCommonSkill, GetReputeLevel</li>
+	        <li>LuaConst增加了INVENTORY_BOX，这个取代了以前的ITEM_BOX</li>
+	        <li>ATTRIBUTE_TYPE的POSITIVE_THREAT_COEFFICIENT和
+	            NEGATIVE_THREAT_COEFFICIENT分别改为：
+	            GAIN_POSITIVE_THREAT_COEFFICIENT和
+	            GAIN_NEGATIVE_THREAT_COEFFICIENT</li>
+	         <li>ATTRIBUTE_TYPE增加了IMPAIR_POSITIVE_THREAT_COEFFICIENT和
+	            IMPAIR_NEGATIVE_THREAT_COEFFICIENT</li>
+	        </ul></td></tr>
+		<tr><th>2006-12-26</th></tr>
+		<tr><td><ul>
+			<li>KPlayer增加SwimTo方法</li>
+			<li>KQuestInfo增加nRequireRoleType</li>
+			<li>ATTRIBUTE_TYPE的PHYSICS_SHIELD_PERCENT_ADD改为PHYSICS_SHIELD_PERCENT
+				</li>
+			<li>ATTRIBUTE_TYPE的DETACH_MULTI_XXX系列（如DETACH_MULTI_BUFF）
+				都改为DETACH_MULTI_GROUP_XXX</li>
+			<li>MOVE_STATE增加了OnSwim</li>
+			<li>增加了RESPONSE_MSG_TYPE， PLAYER_TALK_ERROR表</li>
+			</ul></td></tr>
+		<tr><th>2006-12-25</th></tr>
+		<tr><td><ul>
+			<li>KNpc和KPlayer添加了nDivingFrame, nDivingFrameBase, 
+				nDivingFramePercent, nSwimVelocity, nSwimVelocityBase,
+				nSwimVelocityPercent </li>
+			<li>PLAYER_TALK_CHANNEL的INVALID字段改为WHISPER</li>
+			</ul></td></tr>
+		<tr><th>2006-12-22</th></tr>
+		<tr><td><ul>
+			<li>KSkill添加nBrokenRate</li>
+			<li>增加EQUIPMENT_SUB， EQUIPMENT_INVENTORY表 </li>
+			</ul></td></tr>
+		<tr><th>2006-12-21</th></tr>
+		<tr><td><ul>
+			<li>KDoodad删掉了nStandDirection属性</li>
+			<li>KNpc和KPlayer的跳跃与重力属性改变了</li>
+			</ul></td></tr>
+		<tr><th>2006-12-20</th></tr>
+		<tr><td><ul>
+			<li>ATTRIBUTE_TYPE删掉了DODGE_EXP</li>
+			<li>ATTRIBUTE_TYPE增加了POSITIVE_SHIELD, NEGATIVE_SHIELD, 
+				MAX_JUMP_COUNT, JUMP_VELOCITY, DROP_DEFENCE</li>
+			</ul></td></tr>
+	    <tr><th>2006-12-19</th></tr>
+	    <tr><td><ul>
+	        <li>增加了表现逻辑的ResetActiveObject函数</li>
+	        </ul></td></tr>
+	    <tr><th>2006-12-14</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加了nMoveState, TalkToOne, TalkToMany</li>
+	        <li>增加了IsDialog, IsAlly, IsParty</li>
+	        </ul></td></tr>
+	    <tr><th>2006-12-13</th></tr>
+	    <tr><td><ul>
+	        <li>KSkill去掉了nDirectBaseThreat和IndirectBaseThreat</li>
+	        </ul></td></tr>
+	    <tr><th>2006-12-11</th></tr>
+	    <tr><td><ul>
+	        <li>GetLevelUpData函数的返回值增加MaxPhysicsDefense项</li>
+	        <li>KNpc和KPlayer的Jump方法修改了参数</li>
+	        <li>KPlayer增加CostItem方法</li>
+	        <li>KSkill的BaseThreat改为DirectBaseThreat和InDirectBaseThreat</li>
+	        <li>KPlayer删除了nDoubleExp, GetSysBuffList, GetSysDotList</li>
+	        </ul></td></tr>
+	    <tr><th>2006-12-5</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc和KPlayer增加了有关伤害抗性和吸收的接口</li>
+	        </ul></td></tr>
+	    <tr><th>2006-11-29</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc和KPlayer增加了nDestX, nDestY，几个和速度相关的属性改为只读</li>
+	        <li>KPlayer的bKilledByNpc改为dwKillerID</li>
+	        <li>KPlayer增加AbradeEquipmentOnDeath函数</li>
+	        </ul></td></tr>
+	    <tr><th>2006-11-24</th></tr>
+	    <tr><td><ul>
+	        <li>KShop中有关收购物品的部分被删除。其余函数属性名字有变化。</li>
+	        </ul></td></tr>
+	    <tr><th>2006-11-23</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc对象删除了dwTemplateID, nAlarmRange, nReviveTime和CastSkill</li>
+	        <li>增加了SkillLog全局函数</li>
+	        <li>KPlayer增加SetReputation, GetReputation和AddReputation函数</li>
+	        <li>Global表增加MOVE_TARGET_RANGE</li>
+	        </ul></td></tr>
+	    <tr><th>2006-11-22</th></tr>
+	    <tr><td><ul>
+	        <li>KSkill删除了nEffectType属性，增加了bCauseAbradeEquipment属性</li>
+	        </ul></td></tr>
+	    <tr><th>2006-11-21</th></tr>
+	    <tr><td><ul>
+	        <li>DOODAD_KIND表删掉了REMOVE字段</li>
+	        </ul></td></tr>
+	    <tr><th>2006-11-20</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer增加nCamp属性</li>
+	        <li>ATTRIBUTE_TYPE增加REVIVE字段</li>
+	        <li>增加CAMP常量表</li>
+	        </ul></td></tr>
+	    <tr><th>2006-11-15</th></tr>
+	    <tr><td><ul>
+	        <li>ATTRIBUTE_TYPE增加MEDITATE字段</li>
+	        </ul></td></tr>
+	    <tr><th>2006-11-13</th></tr>
+	    <tr><td><ul>
+	        <li>KShop:AddItem方法变为AddSaleItem, DeleteItem变为DeleteSaleItem</li>
+	        <li>KShop增加AddCoemptionItem和DeleteCoemptionItem</li>
+	        </ul></td></tr>
+	    <tr><th>2006-11-10</th></tr>
+	    <tr><td><ul>
+	        <li>增加RELATION_TYPE常量表</li>
+	        <li>增加GetRelation全局函数</li>
+	        <li>KPlayer的CastBaseSkill改名为CastCommonSkill</li>
+	        <li>Kplayer的FollowSelectTarget和StopFollow改为仅在客户端使用</li>
+	        </ul></td></tr>
+	    <tr><th>2006-11-8</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer对象增加SearchForAllies和SearchForEnemy方法</li>
+	        <li>SKILL_RESULT_CODE增加IN_OTACTION字段</li>
+	        </ul></td></tr>
+	    <tr><th>2006-11-7</th></tr>
+	    <tr><td><ul>
+	        <li>KSkill的nThreatPercent改为nBaseThreat</li>
+	        <li>KSkill的nThreatAdditional改为nThreatRevisePercent</li>
+	        <li>ATTRIBUTE_TYPE表增加POSITIVE_THREAT_COEFFICIENT， 
+	            NEGATIVE_THREAT_COEFFICIENT</li>
+	            
+	        </ul></td></tr>
+	    <tr><th>2006-11-6</th></tr>
+	    <tr><td><ul>
+	        <li>KNpc对象增加FollowTarget方法</li>
+	        <li>KPlayer对象增加BreakOffOtAction和FollowSelectTarget方法</li>
+	        <li>增加KShop对象的文档</li>
+	        <li>增加SHOP_TYPE常量表</li>
+	        </ul></td></tr>
+	    <tr><th>2006-10-26</th></tr>
+	    <tr><td><ul>
+	        <li>ATTRIBUTE_TYPE表增加PHYSICS_ATTACK_POWER,MAGIC_ATTACK_POWER,
+	            MELEE_WEAPON_DAMAGE_BASE, MELEE_WEAPON_DAMAGE_RAND,
+	            RANGE_WEAPON_DAMAGE_BASE, RANGE_WEAPON_DAMAGE_RAND,
+	            SKILL_PHYSICS_DAMAGE, SKILL_PHYSICS_DAMAGE_PERCENT,
+	            PHYSICS_ATTACK_POWER_BASE, PHYSICS_DAMAGE_COEFFICIENT,
+	            SKILL_SOLAR_DAMAGE, SKILL_SOLAR_DAMAGE_PERCENT,
+	            SOLAR_ATTACK_POWER_BASE, SOLAR_DAMAGE_COEFFICIENT,
+	            SOLAR_MAGIC_SHIELD, SKILL_NEUTRAL_DAMAGE,
+	            SKILL_NEUTRAL_DAMAGE_PERCENT, NEUTRAL_ATTACK_POWER_BASE,
+	            NEUTRAL_DAMAGE_COEFFICIENT, NEUTRAL_MAGIC_SHIELD,
+	            SKILL_LUNAR_DAMAGE, SKILL_LUNAR_DAMAGE_PERCENT,
+	            LUNAR_DAMAGE_COEFFICIENT, LUNAR_DAMAGE_POWER_BASE,
+	            LUNAR_MAGIC_SHIELD, SKILL_POISON_DAMAGE,
+	            POISON_DAMAGE_COEFFICIENT, POISON_ATTACK_POWER_BASE,
+	            POISON_MAGIC_SHIELD, CALL_BUFF,
+	            CALL_DEBUFF, CALL_DOT, CALL_HOT
+	            </li>
+	        <li>ATTRIBUTE_TYPE表删除了以下字段: MELEE_PHYSICS_DAMAGE_PERCENT_ADD,
+	            MELEE_PHYSICS_DAMAGE_ADDITIONAL, MELEE_PHYSICS_DAMAGE_RAND,
+	            MELEE_PHYSICS_ATTACK_BASE, MELEE_PHYSICS_ATTACK_PERCENT_ADD,
+	            MELEE_PHYSICS_ATTACK_ADDITIONAL, 
+	            RANGE_PHYSICS_DAMAGE_PERCENT_ADD, 
+	            RANGE_PHYSICS_DAMAGE_ADDITIONAL,
+	            RANGE_PHYSICS_DAMAGE_RAND, RANGE_PHYSICS_ATTACK_BASE,
+	            RANGE_PHYSICS_ATTACK_PERCENT_ADD, 
+	            RANGE_PHYSICS_ATTACK_ADDITIONAL,
+	            SOLAR_MAGIC_DAMAGE_BASE,
+	            SOLAR_MAGIC_DAMAGE_PERCENT_ADD,
+	            SOLAR_MAGIC_DAMAGE_ADDITIONAL,
+	            SOLAR_MAGIC_DEFENCE,
+	            SOLAR_MAGIC_DEFENCE_MAX, 
+	            NEUTRAL_MAGIC_DAMAGE_BASE,
+	            NEUTRAL_MAGIC_DAMAGE_PERCENT_ADD,
+	            NEUTRAL_MAGIC_DAMAGE_ADDITIONAL,
+	            NEUTRAL_MAGIC_DEFENSE, NEUTRAL_MAGIC_DEFENSE_MAX,
+	            LUNAR_MAGIC_DAMAGE_BASE,
+	            LUNAR_MAGIC_DAMAGE_PERCENT_ADD,
+	            LUNAR_MAGIC_DAMAGE_ADDITIONAL,
+	            LUNAR_MAGIC_DEFENCE,
+	            LUNAR_MAGIC_DEFENCE_MAX,
+	            POISON_MAGIC_DAMAGE_BASE,
+	            POISON_MAGIC_DAMAGE_PERCENT_ADD,
+	            POISON_MAGIC_DAMAGE_ADDITIONAL,
+	            POISON_MAGIC_DEFENCE,
+	            POISON_MAGIC_DEFENCE_MAX,
+	            THERAPY_BASE,
+	            THERAPY_PERCENT_ADD,
+	            THERAPY_ADDITIONAL,
+	            </li>
+	        <li>KNpc对象增加了以下字段： nPhysicsAttackPowerBase, 
+	            nSpunkAttackPower, nNeutralMagicShield, nLunarMagicShield，
+	            nPoisonMagicShield, 
+	            </li>
+	        <li>KNpc对象删除了以下字段：nPhysicsAttackPowerBase,
+	            nMeleePhysicsDamageBase, MeleePhysicsDamagePercentAdd,
+	            nMeleePhysicsDamageAdditional, nMeleePhysicsAttack,
+	            nMeleePhysicsAttackBase, nMeleePhysicsAttackPercentAdd,
+	            nMeleePhysicsAttackAdditional, nRangePhysicsDamage,
+	            nRangePhysicsDamageBase, nRangePhysicsDamagePercentAdd,
+	            nRangePhysicsDamageAdditional, nRangePhysicsAttack,
+	            nRangePhysicsAttackBase, nRangePhysicsAttackPercentAdd,
+	            nRangePhysicsAttackAdditional, nPhysicsResistPercent,
+	            nPhysicsDefenceAdd, nPhysicsDefenceMax,
+	            nPhysicsShieldBase, nPhysicsShieldPercentAdd,
+	            nPhysicsShieldAdditional, nPhysicsReflection,
+	            nPhysicsReflectionPercent, nPhysicsBlock,
+	            nPhysicsDamageAbsorb, nPhysicsDamageManaShield,
+	            nSolarMagicDamage, nSolarMagicDamageBase, 
+	            nSolarMagicDamagePercentAdd, nSolarMagicDamageAdditional,
+	            nSolarMagicResistPercent, nSolarMagicDefence,
+	            nSolarMagicDefenceMax, nSolarMagicReflection,
+	            nSolarMagicReflectionPercent, nSolarMagicBlock,
+	            nSolarDamageAbsorb,nSolarDamageManaShield,
+	            nNeutralMagicDamage, nNeutralMagicDamageBase,
+	            nNeutralMagicDamagePercentAdd,
+	            nNeutralMagicDamageAdditional,
+	            nNeutralMagicResistPercent, nNeutralMagicDefence,
+	            nNeutralMagicDefenceMax,
+	            nNeutralMagicReflection,
+	            nNeutralMagicReflectionPercent,nNeutralMagicBlock,
+	            nNeutralDamageAbsorb,
+	            nNeutralDamageManaShield,
+	            nLunarMagicDamage， nLunarMagicDamageBase，
+	            nLunarMagicDamagePercentAdd， nLunarMagicDamageAdditional，
+	            nLunarMagicResistPercent, nLunarMagicDefence,
+	            nLunarMagicDefenceMax,
+	            nLunarMagicReflection,
+	            nLunarMagicReflectionPercent,
+	            nLunarMagicBlock,
+	            nLunarDamageAbsorb,nLunarDamageManaShield,
+	            nPoisonMagicDamage, nPoisonMagicDamageBase,
+	            nPoisonMagicDamagePercentAdd, nPoisonMagicDamageAdditional,
+	            nPoisonMagicResistPercent， nPoisonMagicDefence，
+	            nPoisonMagicDefenceMax，nPoisonMagicReflection，
+	            nPoisonMagicReflectionPercent，nPoisonMagicBlock，
+	            nPoisonDamageAbsorb，nPoisonDamageManaShield，
+	            nTherapy, nTherapyBase, 
+	            nTherapyPercentAdd, nTherapyAdditional
+	            </li>
+	            <li>KPlayer对象的变更与KNpc相同</li>
+	            <li>KSkill对象删除了BindBuff, BindDebuff, BindHot, BindDot</li>
+	        </ul></td></tr>
+	    <tr><th>2006-10-25</th></tr>
+	    <tr><td><ul>
+	        <li>ITEM_GENRE表的字段名换了</li>
+	        <li>SKILL_CAST_MODE表的字段名换了</li>
+	        <li>BUFF_STYLE表的字段名换了</li>
+	        <li>PARTY_LOOT_MODE表的字段名换了</li>
+	        <li>DOODAD_KIND表的字段名换了</li>
+	        </ul></td></tr>
+	    <tr><th>2006-10-19</th></tr>
+	    <tr><td><ul>
+	        <li>ATTRIBUTE_TYPE增加HALT字段</li>
+	        </ul></td></tr>
+	    <tr><th>2006-10-18</th></tr>
+	    <tr><td><ul>
+	        <li>KPlayer对象增加ForgetSkill方法</li>
+	        <li>KSkill对象增加bIsExactHit, bSampleLevelUp属性</li>
+	        </ul></td></tr>
+	    <tr><th>2006-10-17</th></tr>
+	    <tr><td><ul>
+	        <li>GetLevelUpData的返回值增加NoneWeaponAttackSpeedBase字段</li>
+	        <li>KPlayer和KNpc对象分别增加了nNoneWeaponAttackSpeedBase属性</li>
+	        <li>ATTRIBUTE_TYPE增加了NONE_WEAPON_ATTACK_SPEED_BASE字段</li>
+	        </ul></td></tr>
+	    <tr><th>2006-10-16</th></tr>
+	    <tr><td>
+	        <ul>
+	        <li>Player对象增加CastBaseSkill函数</li>
+	        </ul>
+	        </td></tr>
+	    <tr><th>2006-10-13</th></tr>
+	    <tr><td>
+	        <ul>
+	        <li>增加KCell对象</li>
+	        <li>增加KQuestInfo对象</li>
+	        </ul>
+	        </td></tr>
+	    <tr><th>2006-10-12</th></tr>
+	    <tr><td>
+	        <ul>
+	        <li>Player对象去掉了nAccelerationXY属性</li>
+	        <li>Player对象的nPhysicsDamage, nPhysicsDamageBase, nPhysicsDamagePercentAdd,
+	            nPhysicsDamageAdditional分别变成：nMeleePhysicsDamage, 
+	            nMeleePhysicsDamageBase, nMeleePhysicsDamagePercentAdd,
+	            nMeleePhysicsDamageAdditional</li>
+	        <li>Player对象的nPhysicsAttack,nPhysicsAttackBase, nPhysicsAttackPercentAdd,
+	            nPhysicsAttackAdditional分别变成：nMeleePhysicsAttack,
+	            nMeleePhysicsAttackBase, nMeleePhysicsAttackPercentAdd,
+	            nMeleePhysicsAttackAdditional</li>
+	        <li>Player对象增加以下属性：nMeleePhysicsDamageRand, nRangePhysicsDamage, 
+	            nRangePhysicsDamageBase,
+	            nRangePhysicsDamagePercentAdd, nRangePhysicsDamageAdditional,
+	            nRangePhysicsAttack, nRangePhysicsAttackBase, 
+	            nRangePhysicsAttackPercentAdd, nRangePhysicsAttackAdditional</li>
+	        <li>Npc对象去掉了nAccelerationXY属性</li>
+	        <li>Npc对象的nPhysicsDamage, nPhysicsDamageBase, nPhysicsDamagePercentAdd,
+	            nPhysicsDamageAdditional分别变成：nMeleePhysicsDamage, 
+	            nMeleePhysicsDamageBase, nMeleePhysicsDamagePercentAdd,
+	            nMeleePhysicsDamageAdditional</li>
+	        <li>Npc对象的nPhysicsAttack,nPhysicsAttackBase, nPhysicsAttackPercentAdd,
+	            nPhysicsAttackAdditional分别变成：nMeleePhysicsAttack,
+	            nMeleePhysicsAttackBase, nMeleePhysicsAttackPercentAdd,
+	            nMeleePhysicsAttackAdditional</li>
+	        <li>Npc对象增加以下属性：nRangePhysicsDamage, nRangePhysicsDamageBase,
+	            nRangePhysicsDamagePercentAdd, nRangePhysicsDamageAdditional,
+	            nRangePhysicsAttack, nRangePhysicsAttackBase, 
+	            nRangePhysicsAttackPercentAdd, nRangePhysicsAttackAdditional</li>
+	        <li>ATTRIBUTE_TYPE常量表将以下字段：PHYSICS_DAMAGE_PERCENT_ADD，
+	            PHYSICS_DAMAGE_ADDITIONAL, PHYSICS_DAMAGE_RAND, PHYSICS_ATTACK_BASE,
+	            PHYSICS_ATTACK_PERCENT_ADD, PHYSICS_ATTACK_ADDITIONAL都添加了"MELEE_"
+	            前缀</li>
+	        <li>ATTRIBUTE_TYPE常量表增加了以下字段：RANGE_PHYSICS_DAMAGE_PERCENT_ADD，
+	            RANGE_PHYSICS_DAMAGE_ADDITIONAL, RANGE_PHYSICS_DAMAGE_RAND,
+	            RANGE_PHYSICS_ATTACK_BASE, RANGE_PHYSICS_ATTACK_PERCENT_ADD,
+	            RANGE_PHYSICS_ATTACK_ADDITIONAL, MELEE_WEAPON_ATTACK_SPEED_BASE,
+	            MELEE_WEAPON_ATTACK_PERCENT_ADD, MELEE_WEAPON_ATTACK_ADDITIONAL,
+	            RANGE_WEAPON_ATTACK_SPEED_BASE, 
+	            RANGE_WEAPON_ATTACK_SPEED_PERCENT_ADD,
+	            RANGE_WEAPON_ATTACK_SPEED_ADDITIONAL</li>
+	        <li>增加KCustomEquipInfo对象</li>
+	        <li>增加KDoodadTemplate对象</li>
+	        <li>增加KItem对象</li>
+	        <li>增加DOODAD_KIND表</li>
+	        </ul>
+	        </td></tr>
+	    <tr><th>2006-9-27</th></tr>
+	    <tr><td>
+	        <ul>
+	        <li>Npc和Player对象增加nSpunk属性</li>
+	        <li>ATTRIBUTE_TYPE表增加SPUNK字段</li>
+	        </ul>
+	        </td></tr>
+	    <tr><th>2006-9-25</th></tr>
+	    <tr><td>
+	        <ul>
+	        <li>删除了Player对象的nHit, nCriticalStrike属性</li>
+	        <li>Player对象增加GlobalBlock，nPhysicsAttackHit, nPhysicsCriticalStrike,
+	            nLunarMagicHit, nLunarCriticalStrike, nSolarMagicHit, 
+	            nSolarCriticalStrike, nNeutralMagicHit, nNeutralCriticalStrike,
+	            nPoisonMagicHit, nPoisonCriticalDamage属性</li>
+	        <li>删除了Npc对象的nHit, nCriticalStrike属性</li>
+	        <li>Npc对象增加GlobalBlock，nPhysicsAttackHit, nPhysicsCriticalStrike,
+	            nLunarMagicHit, nLunarCriticalStrike, nSolarMagicHit, 
+	            nSolarCriticalStrike, nNeutralMagicHit, nNeutralCriticalStrike,
+	            nPoisonMagicHit, nPoisonCriticalDamage属性</li>
+	        <li>ATTRIBUTE_TYPE表删除了HIT, CRITICAL_STRIKE字段</li>
+	        <li>ATTRIBUTE_TYPE表增加了GLOBAL_BLOCK, LUNAR_MAGIC_HIT, 
+	        LUNAR_CRITICAL_STRIKE, SOLAR_MAGIC_HIT, SOLAR_CRITICAL_STRIKE,
+	        NEUTRAL_MAGIC_HIT, NEUTRAL_CRITICAL_STRIKE, POISON_MAGIC_HIT,
+	        POISON_CRITICAL_STRIKE字段</li>
+	        </ul>
+	        </td></tr>
+	    <tr><th>2006-9-19</th></tr>
+	    <tr><td>
+	        <ul>
+	        <li>Npc对象增加GetMapID方法</li>
+	        <li>Player对象增加GetMapID方法</li>
+	        </ul>
+	        </td></tr>
+	    <tr><th>2006-9-18</th></tr>
+	    <tr><td>
+	        <ul>
+	        <li>ATTRIBUTE_TYPE表增加DASH字段</li>
+	        </ul>
+	        </td></tr>
+	    <tr><th>2006-9-13</th></tr>
+	    <tr><td>
+	        <ul>
+	        <li>Player对象增加bPartyLeaderFlag属性</li>
+	        </ul>
+	        </td></tr>
+	    <tr><th>2006-9-12</th></tr>
+	    <tr><td>
+	        <ul>
+	        <li>Npc对象的nKnockOffRate改为nKnockedOffRate</li>
+	        <li>Npc对象添加nKnockedBackRate属性</li>
+	        <li>Player对象的nKnockOffRate改为nKnockedOffRate</li>
+	        <li>Player对象添加nKnockedBackRate属性</li>
+	        <li>Player对象添加GetItemByIndex方法</li>
+	        <li>ATTRIBUTE_TYPE常量表的CALL_UNTYPED_HEALTH改名为CALL_THERAPY</li>
+	        <li>ATTRIBUTE_TYPE常量表增加以下字段：THERAPY_BASE，THERAPY_PERCENT_ADD,
+	            THERAPY_ADDITIONAL, CALL_KNOCKED_BACK_EXHALE, 
+	            CALL_KNOCKED_BACK_CONVERGENCE, CALL_KNOCKED_BACK_RANDOM,
+	            CALL_KNOCKED_BACK_SRC_FACE, CALL_KNOCKED_OFF_PARABOLA,
+	            CALL_KNOCKED_OFF_EXHALE, CALL_KNOCKED_OFF_CONVERGENCE,
+	            CALL_KNOCKED_OFF_RANDOM, CALL_KNOCKED_OFF_SRC_FACE,
+	            BEAT_BACK_RATE, KNOCKED_OFF_RATE, KNOCKED_BACK_RATE
+	            </li>
+	        </ul>
+	        </td></tr>
+	    <tr><th>2006-9-11</th></tr>
+	    <tr><td>
+	        <ul><li>Scene对象的方法改为仅在服务器端使用</li></ul></td></tr>
+	    <tr><th>2006-9-10</th></tr>
+	    <tr><td>
+	        <ul>
+	        <li>添加Scene对象的文档</li>
+	        <li>添加npc对象的文档</li>
+	        </ul>
+	        </td></tr>
+	    <tr><th>2006-9-8</th></tr>
+	    <tr><td>
+	        <ul>
+	        <li>修正文档中的一些错误描述</li>
+	        <li>添加SKILL_RESULT_CODE常量表</li>
+	        </ul>
+	        </td></tr>
+	    <tr><th>2006-9-7</th></tr>
+	    <tr><td>
+	        <ul>
+	        <li>Skill对象的BindDebuff方法中添加参数nAddDebuffRate</li>
+	        </ul></td></tr>
+		<tr><th>2006-9-6</th></tr>
+		<tr><td>
+				<ul>
+				<li>GLOBAL常量表里增加INVALID_PARTY_ID和INVALID_SKILL_ID</li>
+				<li>增加枚举PARTY_LOOT_MODE</li>
+				<li>Player对象增加方法SetPartyLootMode</li>
+				<li>Skill的BindBuff, BindDebuff, BindHot, BindDot分别增加1个nLevel参数，
+				    表示对应等级</li>
+				</ul>
+			</td></tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,34 @@
+Part1.统一光照参数的获取方式
+
+光参数应该从KG3DScene的KG3DEnvironment的KG3DEnvEffLightSet的KG3DEnvEffLight中取，不能从Device的GetLight里面取。因为Device的状态是很容易被改动的。
+
+080829-一直从Environment取Light参数很不方便，而且也不必要的和Light类耦合在一起。所以为了方便。可以使用g_GetRenderGlobalState().GetSunLightParam()；
+g_GetRenderGlobalState().GetPlayerLightParam()；
+来取得两个灯光的参数。
+
+使用g_GetRenderGlobalState需要包含KG3DRenderGlobalState.h
+
+注意，我们的光照模型和通用版的不一样。通用版的是Ambient = lightAmbient*materialAmbient*sceneAmbient*tex.我们简化成Ambient=sceneAmbient*tex;
+而且sceneAmbient分SunLight和PlayerLight。所以取的时候，ambient记得是取KG3DLightParam里面的sceneAmbient。
+
+所有参数都已经做了方便Shader使用的转换了，不用Color2Value了。
+
+Part2.统一Shader的创建
+主要包括KG3DShaderHolder和KG3DShaderManager。
+
+特性：简化的创建和Include，自动的设备丢失与恢复，Shader重加载（自动使用所有原创建参数），简单的Shader重用策略（直接复制KG3DShaderHolder)。
+
+使用方法：
+2.1 创建
+KG3DShaderHolder A = g_GetShaderManager().Create(FilePath);//大部分参数可以忽略
+LPD3DXEFFECT p = A.GetEffect();
+_ASSERTE(NULL != p);
+HRESULT hr= p->Begin(NULL, 0);
+...
+
+2.2重新加载
+A.Reload();
+
+自动创建D3DXInclude的派生类，创建只需要传包含文件路径，并兼容打包
+
+

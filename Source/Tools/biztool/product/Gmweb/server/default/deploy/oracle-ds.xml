@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  JBoss Server Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<!-- $Id: oracle-ds.xml,v 1.2 2009/02/23 03:35:43 kuangsihao Exp $ -->
+<!-- ==================================================================== -->
+<!--  Datasource config for Oracle originally from Steven Coy             -->
+<!-- ==================================================================== -->
+
+
+<datasources>
+ <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM_ACCOUNT_JXSJ</jndi-name>
+    <connection-url>jdbc:oracle:thin:@192.168.27.15:1521:orcl</connection-url>	
+    <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+    <user-name>jx3gm</user-name>
+    <password>jx3gm</password>    
+    <exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleExceptionSorter</exception-sorter-class-name>      
+  </local-tx-datasource>
+  <local-tx-datasource>
+
+    <jndi-name>OracleDB_GMSYSTEM_FILL</jndi-name>
+
+    <connection-url>jdbc:oracle:thin:@192.168.8.245:1521:orcl</connection-url>
+
+    <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+
+    <user-name>wangtong</user-name>
+
+    <password>wangtong</password>
+
+    <min-pool-size>3</min-pool-size>
+
+    <max-pool-size>300</max-pool-size>    
+
+  </local-tx-datasource>
+</datasources>

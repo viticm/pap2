@@ -1,0 +1,82 @@
+// AtlKGRecordeOperator.idl : IDL source for AtlKGRecordeOperator
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (AtlKGRecordeOperator.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(DCA6998A-7600-481F-90BB-5ECB27FA2B12),
+	helpstring("IBaseLib Interface"),
+	pointer_default(unique)
+]
+interface IBaseLib : IUnknown{
+    [helpstring("method Init")] HRESULT Init([in] int nhWnd);
+    [helpstring("method UnInit")] HRESULT UnInit(void);
+};
+[
+	object,
+	uuid(18A7E96F-A8C0-4335-87A5-F73AF7A888F6),
+	helpstring("IRecordPlayer Interface"),
+	pointer_default(unique)
+]
+interface IRecordPlayer : IUnknown{
+    [helpstring("method RePlay")] HRESULT RePlay([out] int* pRetResult);
+    [helpstring("method PauseRePlay")] HRESULT PauseRePlay([out] int* pRetResult);
+    [helpstring("method StopRePlay")] HRESULT StopRePlay(void);
+    [helpstring("method LoadRecordFile")] HRESULT LoadRecordFile([in] BSTR pstrFileName);
+    [helpstring("method SetReplayWindow")] HRESULT SetReplayWindow([in] ULONG uhWnd);
+    [helpstring("method FrameMoveRePlay")] HRESULT FrameMoveRePlay(void);
+    [helpstring("method IsPlayFinished")] HRESULT IsPlayFinished([out] int* pbFinished);
+    [helpstring("method GetLoadingProgress")] HRESULT GetLoadingProgress([out] FLOAT* pnLoadFilePer, [out] FLOAT* pnStepToEventPer, [out] INT* pnLoadScenePer);
+    [helpstring("method SaveRecordFile")] HRESULT SaveRecordFile([in] BSTR pstrFileName);
+    [helpstring("method SetOption")] HRESULT SetOption([in] int nWidth, [in] int nHeight);
+    [helpstring("method FreeCamera")] HRESULT FreeCamera(void);
+    [helpstring("method IsFreeCamera")] HRESULT IsFreeCamera([out] int* pnRetResult);
+
+    [helpstring("method GetCameraType")] HRESULT GetCameraType(void);
+    [helpstring("method GetObjSize")] HRESULT GetObjSize([out] int* pnSize);
+    [helpstring("method GetFirstObj")] HRESULT GetFirstObj([out] int* pnID, [out] BSTR* pstrRetName, [out] int* pnType);
+    [helpstring("method GetNextObj")] HRESULT GetNextObj([out] int* pnID, [out] BSTR* pstrRetName, [out] int* pnType);
+    [helpstring("method InitTree")] HRESULT InitTree(void);
+    [helpstring("method GetFirstEvent")] HRESULT GetFirstEvent([out] BSTR* pnFunction, [out] int* pnInfo);
+    [helpstring("method GetNextEvent")] HRESULT GetNextEvent([out] BSTR* pnFunction, [out] int* pnInfo);
+    [helpstring("method GetInformation")] HRESULT GetInformation([in] int pnInfo, [out] BSTR* pstrLabel, [out] BSTR* pstrTextBox, [out] int* pnNum);
+    [helpstring("method AddEvent")] HRESULT AddEvent([in] int nNum, [in] BSTR strName, [in] BSTR strValue);
+    [helpstring("method DeleteEvent")] HRESULT RemoveEvent([in] int nInfo);
+    [helpstring("method GetNowTime")] HRESULT GetNowTime([out] int* pnNowTime);
+    [helpstring("method GetTotalTime")] HRESULT GetTotalTime([out] int* pnTotalTime);
+    [helpstring("method GetPlayState")] HRESULT GetPlayState([out] int* pPlayState);
+    [helpstring("method GetObjInfo")] HRESULT GetObjInfo(int nID, [out] int* pnSuccess);
+    [helpstring("method GetFirstEventTime")] HRESULT GetFirstEventTime([out] int* pnTime, [out] int* pnInfo);
+    [helpstring("method GetNextEventTime")] HRESULT GetNextEventTime([out] int* pnTime, [out] int* pnInfo);
+    [helpstring("method GetEventFunction")] HRESULT GetEventFunction([in] int pnInfo, [out] BSTR* pstrFunction);
+};
+[
+	uuid(1EFD303F-CA43-4418-8BCA-5E18F5793F0E),
+	version(1.0),
+	helpstring("AtlKGRecordeOperator 1.0 Type Library")
+]
+library AtlKGRecordeOperatorLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(6951EF60-C91E-408D-B468-4F62F3C67A81),
+		helpstring("BaseLib Class")
+	]
+	coclass BaseLib
+	{
+		[default] interface IBaseLib;
+	};
+	[
+		uuid(3D5D9834-A2BA-419F-A11B-7D695518D954),
+		helpstring("RecordPlayer Class")
+	]
+	coclass RecordPlayer
+	{
+		[default] interface IRecordPlayer;
+	};
+};

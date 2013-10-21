@@ -1,0 +1,35 @@
+#define APSTUDIO_READONLY_SYMBOLS
+#include "afxres.h"
+#undef APSTUDIO_READONLY_SYMBOLS
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 1,0,0,2404
+PRODUCTVERSION 1,0,8,1514
+FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+FILEFLAGS 0x1L
+#else
+FILEFLAGS 0x0L
+#endif
+FILEOS 0x4L
+FILETYPE 0x1L
+FILESUBTYPE 0x0L
+BEGIN
+BLOCK "StringFileInfo"
+BEGIN
+BLOCK "080403a8"
+BEGIN
+VALUE "CompanyName", "Kingsoft Corporation"
+VALUE "FileDescription", "Sword3 GameServer"
+VALUE "FileVersion", "1,0,0,2404"
+VALUE "InternalName", "SO3GameServer"
+VALUE "LegalCopyright", "(c) Kingsoft Corporation 2003-2008, All Rights Reserved."
+VALUE "OriginalFilename", "SO3GameServer.exe"
+VALUE "ProductName", "SO3GameServer"
+VALUE "ProductVersion", "1,0,8,1514"
+END
+END
+BLOCK "VarFileInfo"
+BEGIN
+VALUE "Translation", 0x804, 936
+END
+END

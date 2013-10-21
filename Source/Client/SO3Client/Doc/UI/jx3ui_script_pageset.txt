@@ -1,0 +1,11 @@
+PageSet_ActivePage
+	说明：激活属性页，禁止其他属性页；
+	参数：szTreePath		窗口树路径名，
+		  nPageIndex		属性页索引，以0开始；
+	返回：nil
+		
+PageSet_GetActivePageIndex
+	说明：取当前属性页索引；
+	参数：szTreePath		窗口树路径名；
+	返回：nPageIndex		属性页索引，以0开始；
+		

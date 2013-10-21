@@ -1,0 +1,21 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  FileName    : DiskFileController.h
+//  Version     : 1.0
+//  Creator     : Chen Tianhong
+//  Create Date : 2009-5-11 17:18:57
+//  Comment     : 
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#ifndef _INCLUDE_DISKFILECONTROLLER_H_
+#define _INCLUDE_DISKFILECONTROLLER_H_
+
+////////////////////////////////////////////////////////////////////////////////
+struct  ICCompileFileController;
+
+ICCompileFileController* CreateDiskFileController();
+
+
+
+#endif //_INCLUDE_DISKFILECONTROLLER_H_

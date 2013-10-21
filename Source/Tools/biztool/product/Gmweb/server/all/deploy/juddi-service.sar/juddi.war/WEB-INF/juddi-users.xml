@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<juddi-users>
+  <user userid="sviens" password="password" />
+  <user userid="juddi" password="password" />
+</juddi-users>

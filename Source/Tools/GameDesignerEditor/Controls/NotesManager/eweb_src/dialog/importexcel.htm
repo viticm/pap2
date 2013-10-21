@@ -1,0 +1,242 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script language=javascript src="dialog.js"></script>
+
+<script language="javascript">
+document.write ("<link href='../language/" + AvailableLangs["Active"] + ".css' type='text/css' rel='stylesheet'>");
+document.write ("<link href='dialog.css' type='text/css' rel='stylesheet'>");
+
+document.write ("<TITLE>" + lang["DlgExcel"] + "</TITLE>");
+
+var bInstalled = true;
+
+function ok(){
+	if (!bInstalled){
+		alert(lang["MsgNoClient"]);
+		return;
+	}
+
+	if (d_sheet.length<=0){
+		alert(lang["DlgExcelInvalidFile"]);
+		return;
+	}
+	
+	var n_Index = d_sheet.options[d_sheet.selectedIndex].value;
+	var s_File = d_file.value;
+	var s_PostUrl = getSitePath() + getWebEditorRootPath() + "/" + config.ServerExt + "/upload." + config.ServerExt + "?action=local&type=local&style=" + config.StyleName + "&language=" + AvailableLangs["Active"] + "&cusdir=" + config.CusDir;
+	var b_VML = d_vmlyes.checked;
+	var b_OverFlow = d_overflowyes.checked;
+	var b_AddBorder = d_addborderyes.checked;
+
+	divProcessing.style.display="";
+	eWebEditorClient.ImportExcelSheet(s_File, n_Index, s_PostUrl, b_VML, b_OverFlow, b_AddBorder);
+	divProcessing.style.display="none";
+
+	var s_Error = eWebEditorClient.Error;
+	if (s_Error!=""){
+		var s_ErrorCode = s_Error.substring(0,s_Error.indexOf(":"));
+		switch(s_ErrorCode){
+		case "InvalidFile":
+			alert(lang["DlgExcelInvalidFile"]);
+			break;
+		default:
+			alert(s_Error);
+		}
+		return;
+	}
+
+	var s_StyleVML = "\n"
+			+"<STYLE id=eWebEditor_Style_VML>\n"
+			+"v\\:* {behavior: url(#default#VML);}\n"
+			+"o\\:* {behavior: url(#default#VML);}\n"
+			+"w\\:* {behavior: url(#default#VML);}\n"
+			+"x\\:* {behavior: url(#default#VML);}\n"
+			+".shape{behavior: url(#default#VML);}\n"
+			+"</STYLE>\n";
+
+	var s_Style = eWebEditorClient.Style;
+	if (b_VML){
+		s_Style = s_StyleVML + s_Style;
+	}
+	var s_Body = eWebEditorClient.Body;
+
+	var s_OriginalFiles = eWebEditorClient.OriginalFiles;
+	var s_SavedFiles = eWebEditorClient.SavedFiles;
+	if (s_OriginalFiles){
+		var a_Original = s_OriginalFiles.split("|");
+		var a_Saved = s_SavedFiles.split("|");
+		for (var i=0; i<a_Original.length; i++){
+			if (a_Saved[i]){
+				var s_OriginalFileName = a_Original[i];
+				var s_SaveFileName = a_Saved[i].substr(a_Saved[i].lastIndexOf("/")+1);
+				var s_SavePathFileName = a_Saved[i];
+				dialogArguments.addUploadFile(s_OriginalFileName, s_SaveFileName, s_SavePathFileName);
+			}
+		}
+	}
+	
+	dialogArguments.setHTML(s_Style + s_Body, true);
+	
+
+	window.returnValue = null;
+	window.close();
+}
+
+var s_LastFile = "";
+function DoGetExcelSheet(){
+	if (!bInstalled){return;}
+
+	var s_File = BaseTrim(d_file.value);
+	if ((s_LastFile!=s_File)){
+		d_sheet.options.length = 0;
+		s_LastFile="";
+	}
+	if (s_File=="") {return;}
+	if (s_File.indexOf(":")<0){return;}
+	if ((s_LastFile!="")&&(s_LastFile==s_File)) {return;}
+	
+	var n=s_File.lastIndexOf(".");
+	if (n<0){return;}
+
+	var s_Ext = s_File.substr(n+1);
+	if (s_Ext.toLowerCase()!="xls"){return;}
+
+	var s_Sheets = eWebEditorClient.GetExcelWorkSheetName(s_File);
+	var s_Error = eWebEditorClient.Error;
+	if (s_Error!=""){
+		var s_ErrorCode = s_Error.substring(0, s_Error.indexOf(":"));
+		if (s_ErrorCode!="InvalidFile"){
+			alert(s_Error);
+			return;
+		}
+	}
+	
+	var a_Sheets = s_Sheets.split("\n");
+	for (var i=0; i<a_Sheets.length; i++){
+		d_sheet.options[d_sheet.options.length] = new Option(a_Sheets[i], i+1);
+	}
+	s_LastFile = s_File;
+	
+}
+
+function RadioClickVML(s_Flag){
+	if (s_Flag=="1"){
+		d_vmlyes.checked=true;
+		d_vmlno.checked=false;
+	}else{
+		d_vmlyes.checked=false;
+		d_vmlno.checked=true;
+	}
+}
+
+function RadioClickOverFlow(s_Flag){
+	if (s_Flag=="1"){
+		d_overflowyes.checked=true;
+		d_overflowno.checked=false;
+	}else{
+		d_overflowyes.checked=false;
+		d_overflowno.checked=true;
+	}
+}
+
+function RadioClickAddBorder(s_Flag){
+	if (s_Flag=="1"){
+		d_addborderyes.checked=true;
+		d_addborderno.checked=false;
+	}else{
+		d_addborderyes.checked=false;
+		d_addborderno.checked=true;
+	}
+}
+
+function InitDocument(){
+	AvailableLangs.TranslatePage(document);
+
+	try{
+		if(eWebEditorClient.Test()!="eWebEditor"){
+			bInstalled = false;
+		}
+	}catch(e){
+		bInstalled = false;
+	}
+	
+	adjustDialog();
+}
+
+</script>
+
+
+<BODY onload="InitDocument()">
+
+
+
+<table border=0 cellpadding=0 cellspacing=5 id=tabDialogSize><tr><td>
+
+<table border=0 cellpadding=0 cellspacing=0 align=center>
+<tr>
+	<td>
+	<fieldset>
+	<legend><span lang=DlgExcelLegend></span>:</legend>
+	<table border=0 cellpadding=5 cellspacing=0 width="100%">
+	<tr><td>
+
+		<table border=0 cellpadding=0 cellspacing=2 width="100%">
+		<tr>
+			<td noWrap><span lang=DlgExcelFile></span>:</td>
+			<td noWrap><input type=file id="d_file" size=30 onchange="DoGetExcelSheet()" onkeyup="DoGetExcelSheet()"></td>
+		</tr>
+		<tr>
+			<td noWrap><span lang=DlgExcelSheet></span>:</td>
+			<td noWrap><select id="d_sheet" size=1 style="width:100%"></select></td>
+		</tr>
+		</table>
+
+	</td></tr>
+	</table>
+	</fieldset>
+	</td>
+</tr>
+<tr><td height=5></td></tr>
+<tr>
+	<td>
+	<fieldset>
+	<legend><span lang=DlgExcelImportLegend></span>:</legend>
+	<table border=0 cellpadding=5 cellspacing=0 width="100%">
+	<tr><td>
+
+		<table border=0 cellpadding=0 cellspacing=2 width="100%">
+		<tr>
+			<td noWrap width="20%"><span lang=DlgExcelVML></span>:</td>
+			<td noWrap width="29%"><input type=radio id=d_vmlyes onclick="RadioClickVML('1')"><label for=d_vmlyes><span lang=DlgComYes></span></label> <input type=radio id=d_vmlno onclick="RadioClickVML('0')" checked><label for=d_vmlno><span lang=DlgComNo></span></label></td>
+			<td noWrap width="20%"><span lang=DlgExcelOverFlow></span>:</td>
+			<td noWrap width="29%"><input type=radio id=d_overflowyes onclick="RadioClickOverFlow('1')"><label for=d_overflowyes><span lang=DlgComYes></span></label> <input type=radio id=d_overflowno onclick="RadioClickOverFlow('0')" checked><label for=d_overflowno><span lang=DlgComNo></span></label></td>
+		</tr>
+		<tr>
+			<td noWrap width="20%"><span lang=DlgExcelAddBorder></span>:</td>
+			<td noWrap width="29%"><input type=radio id=d_addborderyes onclick="RadioClickAddBorder('1')"><label for=d_addborderyes><span lang=DlgComYes></span></label> <input type=radio id=d_addborderno onclick="RadioClickAddBorder('0')" checked><label for=d_addborderno><span lang=DlgComNo></span></label></td>
+			<td noWrap width="20%">&nbsp;</td>
+			<td noWrap width="29%">&nbsp;</td>
+		</tr>
+
+		</table>
+
+	</td></tr>
+	</table>
+	</fieldset>
+	</td>
+</tr>
+<tr><td height=5></td></tr>
+<tr><td noWrap align=right><input type=submit class="dlgBtnCommon" value='' id=Ok onclick="ok()" lang=DlgBtnOK>&nbsp;&nbsp;<input type=button class="dlgBtnCommon" value='' onclick="window.close();" lang=DlgBtnCancel></td></tr>
+</table>
+
+</td></tr></table>
+
+<div id=divProcessing style="width:200px;height:30px;position:absolute;left:60px;top:85px;display:none">
+<table border=0 cellpadding=0 cellspacing=1 bgcolor="#000000" width="100%" height="100%"><tr><td bgcolor=#3A6EA5 align=center><marquee align="middle" behavior="alternate" scrollamount="5"><font color=#FFFFFF><span lang=DlgExcelImporting></span></font></marquee></td></tr></table>
+</div>
+
+<OBJECT ID="eWebEditorClient" CLASSID="CLSID:D39A5EBE-F907-4EC2-BCDF-A72F58DA01F4" width=0 height=0 CODEBASE="eWebEditorClient.CAB#version=1,2,0,3"></OBJECT>
+
+</body>
+</html>

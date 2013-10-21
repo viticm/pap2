@@ -1,0 +1,222 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""AtlKG3DEngineProxy.tlb""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,506
+ PRODUCTVERSION 1,4,0,1834
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "Kingsoft Corporation"
+            VALUE "FileDescription", "AtlKG3DEngineProxy"
+            VALUE "FileVersion", "1,0,0,506"
+            VALUE "InternalName", "AtlKG3DEngineProxy.dll"
+            VALUE "LegalCopyright", "(c) Kingsoft Corporation 1988-2008, All Rights Reserved."
+            VALUE "OriginalFilename", "AtlKG3DEngineProxy.dll"
+            VALUE "ProductName", "AtlKG3DEngineProxy"
+            VALUE "ProductVersion", "1,4,0,1834"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+IDR_ATLKG3DENGINEPROXY  REGISTRY                "AtlKG3DEngineProxy.rgs"
+IDR_ATLBASE             REGISTRY                "AtlBase.rgs"
+IDR_BASELIB             REGISTRY                "BaseLib.rgs"
+IDR_SO3WORLD            REGISTRY                "SO3World.rgs"
+IDR_ATLINPUTPROXY       REGISTRY                "AtlInputProxy.rgs"
+IDR_SCENEEDITOR         REGISTRY                "SceneEditor.rgs"
+IDR_ATLOLD3DENGINE      REGISTRY                "AtlOld3DEngine.rgs"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROGRESSFORM DIALOGEX 0, 0, 278, 81
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "进度"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Static",IDC_STATIC_NAME,19,19,235,8
+    CONTROL         "",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,19,41,236,14
+END
+
+IDD_TOPVIEWFORM DIALOGEX 0, 0, 390, 368
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "顶视图"
+MENU IDR_SCENEEDITORTOPVIEW
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PROGRESSFORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 271
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 74
+    END
+
+    IDD_TOPVIEWFORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 383
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 361
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_SCENEEDITORTOPVIEW MENU 
+BEGIN
+    POPUP "查看"
+    BEGIN
+        MENUITEM "地表",                          ID_TOPVIEW_GROUND, CHECKED
+        MENUITEM "地表光照图",                       ID_TOPVIEWLIGHTMAP, CHECKED
+        MENUITEM "地表区域边界",                      ID_TOPVIEW_GROUNDGIRD, CHECKED
+        MENUITEM "水面",                          ID_TOPVIEW_WATER, CHECKED
+        MENUITEM "草",                           ID_TOPVIEW_GRASS, INACTIVE
+        MENUITEM "灌木",                          ID_TOPVIEW_MESHES, INACTIVE
+        MENUITEM "物件-远距离",                      ID_TOPVIEW_ENTITYFAR, CHECKED
+        MENUITEM "物件-中距离",                      ID_TOPVIEW_ENTITYMIDDLE, INACTIVE
+        MENUITEM "物件-近距离",                      ID_TOPVIEW_ENTITYNEAR, INACTIVE
+        MENUITEM "物件-最后渲染",                     ID_TOPVIEW_ENTITYLAST, INACTIVE
+        MENUITEM "主窗口摄像机",                      ID_33187, INACTIVE
+        MENUITEM "模拟主角",                        ID_33188, INACTIVE
+        MENUITEM "摄像机动画点",                      ID_33189, INACTIVE
+        MENUITEM "场景四叉树",                       ID_33190, INACTIVE
+    END
+    POPUP "操作"
+    BEGIN
+        MENUITEM "矩形选择区域",                      ID_REGIONSELECTION
+        MENUITEM "多边形区域选择",                     ID_40013
+        POPUP "障碍物多边形区域选择"
+        BEGIN
+            MENUITEM "新建多边形并添加顶点",                  ID_NEWPOLY
+            MENUITEM "顶点添加结束并转换为逻辑区域",              40025
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "加载所有物件",                      ID_FOCELOADALL
+    END
+    POPUP "地图管理"
+    BEGIN
+        MENUITEM "加载一张新地图到该场景",                 ID_ADDMAP
+        MENUITEM "加载默认地形",                      ID_LOAD_DEFAULT_MAP
+    END
+    MENUITEM "物件管理",                        ID_40041
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PROJNAME            "AtlKG3DEngineProxy"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "AtlKG3DEngineProxy.tlb"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

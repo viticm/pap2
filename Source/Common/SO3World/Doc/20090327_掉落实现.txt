@@ -1,0 +1,73 @@
+修改步骤：
+1,
+PARTY_LOOT_MODE 修改为ITEM_LOOT_MODE，表示掉落的拾取模式
+
+
+2,修改物品Winner的表示
+
+  KLootItem中的
+  DWORD		dwWinnerID;修改为BYTE byWinnerMask;
+  前五个bit位表示KLootList::m_LooterList
+  表示该位置对应的玩家是否可以拾取该物品。
+  
+  涉及的修改：
+  a，KLootList::CanLoot，根据掩码判断玩家能否拾取
+  b, KLootList::SetWinner 根据玩家位置设置掩码,去掉bCanOTFreeLoot参数
+  c，KLootList::SetOwnerInParty
+  d，KLootList::RollItem
+  e,KLootList::LeaderDistributeItem
+  f,KLootList::EndRollItem
+  g,BOOL KLootList::CheckGameLoop(void)
+  
+  
+3，lootlist物品的权限：
+
+enum LOOT_ITEM_TYPE // 具体含义需参考相关文档
+{
+    litInvalid,
+
+    litOverTimeDelete,
+    litOverTimeLooterFree,
+    litAbsoluteFree,
+    litLooterFree,
+    litNeedRoll,
+    litNeedDistribute
+};
+分别与下面的类型一一对应.
+    a. 仅Owner拾取,无所谓超时-->任务掉落.doodad填了Dropforeach的非任务掉落.一个人的情况.脚本添加掉落给某玩家（AddLootItem）
+	b. 仅Owner拾取,超时后队伍自由拾取-->普通非任务掉落.
+	c. 任何人都可拾取,无所谓超时-->Doodad掉落除了任务掉落以外,其他掉落物品都是任何人都可以拾取的.
+	d. 队伍内自由拾取,无所谓超时-->队伍本来就设置为自由拾取,或者是其他情况超时变成自由拾取的.
+	e. 需要Roll的,超时后给胜利者或者变队伍内自由拾取-->队伍设置未Roll拾取,并且道具在品质线以上.
+	   如果roll结束，没有胜利者或者胜利者下线了，变成队伍内自由拾取d；如果有胜利者但是无法添加到胜利者背包，则变成b
+	f. 由分配者分配,超时后变自由拾取-->队伍设置为分配者分配,并且道具在品质线以上,物品分配后放入对应玩家包里面或者就留在LootList里面(变成2);
+
+KLootItem结构增加LOOT_ITEM_TYPE变量，表示这个item的类型。
+
+物品的LOOT_ITEM_TYPE在掉落的时候就可以决定:
+
+NPC死亡掉落，
+KDropCenter::_AddToLootList 和 KCharacter::GenerateLootList
+如果是任务物品，则类型为a；否则类型延迟到SetOwnerInParty中决定。
+
+KLootList::SetOwnerInParty，根据当前的拾取模式决定物品的拾取类型。
+
+ilmFreeForAll----》d
+ilmLeaderLoot----》高于品质线的为f，否则b
+ilmGroupLoot-----》高于品质线的为e，否则b
+
+打开doodad：
+KDropCenter::_AddToLootList 和 KDoodad::DropQuestItem
+
+如果是任务物品，则类型为a；
+
+其它物品类型全部为c。
+
+类型决定好后，canloot和canroll要做相应的修改
+
+
+4，Doodad上加一个配置项,表示这个Doodad上掉落的物品的拾取超时时间.OverLootFrame,单位是帧数
+
+5，超时后的处理。在activate函数中检查，根据LOOT_ITEM_TYPE类型做不同处理
+
+

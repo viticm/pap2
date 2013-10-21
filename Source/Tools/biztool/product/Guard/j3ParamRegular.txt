@@ -1,0 +1,43 @@
+[MAIN]
+prefix=[
+postfix=]
+
+
+[FLY2DEST]
+DEST:{},{},{},{}
+[FLY2DEST]
+
+[FLY2TARGET]
+TARGET:{}
+[FLY2TARGET]
+
+
+[KICKACCOUNT]
+
+[KICKACCOUNT]
+
+[KICKROLE]
+
+[KICKROLE]
+
+--密聊玩家
+[ROLECHAT]
+GM:{} T_DATA:1-{}
+[ROLECHAT]
+
+--密聊账号
+[ACCOUNTCHAT]
+GM:{} T_DATA:1-{}
+[ACCOUNTCHAT]
+
+--发布公告
+[ZONECHAT]
+GM:{} T_DATA:1-{}
+[ZONECHAT]
+
+
+--角色行为控制一类的功能
+[BEHAVE]
+OPT:{} TYPE:{} TIMEOUT:{}
+[BEHAVE]
+

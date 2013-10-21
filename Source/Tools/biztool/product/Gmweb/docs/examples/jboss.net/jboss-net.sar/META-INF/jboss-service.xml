@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE server>
+<!-- $Id: jboss-service.xml,v 1.1 2008/12/31 09:22:47 kuangsihao Exp $ -->
+
+<server>
+
+   <classpath codebase="lib" archives="javax.servlet.jar"/>
+
+   <!-- ==================================================================== -->
+   <!-- Starts the Axis Deployer                                             -->
+   <!-- ==================================================================== -->
+
+   <!--
+      | The Axis service as an mbean.
+      |
+      | Besure to check that the configuration values are valid for your
+      | environment.
+      |
+      | If you want to enable several services, be sure that you choose
+      | different root contexts.
+    -->
+   <mbean code="org.jboss.net.axis.server.AxisService"
+      name="jboss.net:service=Axis">
+   </mbean>
+
+   <!--
+      | (Another!) JMX Adaptor that exposes itself as a web service through
+      | Axis
+    -->
+   <mbean code="org.jboss.net.jmx.adaptor.server.Adaptor"
+      name="jboss.net:service=Adaptor">
+   </mbean>
+
+   <!-- ==================================================================== -->
+   <!-- Mail Transport Mbean and it's associated Scheduler                   -->
+   <!-- ==================================================================== -->
+
+   <!-- uncomment to enable the email transport -->
+   <!--
+   <mbean code="org.jboss.net.axis.transport.mailto.server.MailTransportService" 
+         name="jboss.net:service=MailTransport">
+      <depends>jboss.net:service=Axis</depends>
+      <attribute name="SessionName">java:/Mail</attribute>
+      <attribute name="FolderName">INBOX</attribute>
+      <attribute name="TransportName">mailto</attribute>
+      <attribute name="EngineName">jboss.net:service=Axis</attribute>
+      <attribute name="DeleteMail">true</attribute>
+   </mbean>
+   
+   <mbean code="org.jboss.varia.scheduler.Scheduler" 
+         name="jboss.net:service=Scheduler,name=MailTransport">
+      <depends>jboss:service=Mail</depends>
+      <attribute name="StartAtStartup">true</attribute>
+      <attribute name="SchedulableMBean">jboss.net:service=MailTransport</attribute>
+      <attribute name="SchedulableMBeanMethod">pollMail()</attribute>
+      <attribute name="InitialStartDate">NOW</attribute>
+      <attribute name="SchedulePeriod">30000</attribute>
+      <attribute name="InitialRepetitions">-1</attribute>
+   </mbean>
+   -->
+
+</server>

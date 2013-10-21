@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <PersonalityInfo>
+    <Option>
+      <Option Name="Personality">Default.Personality</Option>
+      <Option Name="ProjectType"></Option>
+      <Option Name="Version">1.0</Option>
+      <Option Name="GUID">{B4D816D0-B909-44B3-9A18-696F9C3D8FC2}</Option>
+    </Option>
+  </PersonalityInfo>
+  <Default.Personality>
+    
+    <Projects>
+      <Projects Name="Package1.bpl">Package1.bdsproj</Projects>
+      <Projects Name="AnimationSeekBarProj1.ocx">AnimationSeekBarProj1.bdsproj</Projects>
+      <Projects Name="Targets">Package1.bpl AnimationSeekBarProj1.ocx</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>

@@ -1,0 +1,314 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MERGETGA            ICON                    "MergeTga.ico"
+IDI_SMALL               ICON                    "small.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_MERGETGA MENU 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "新建(&N)\tCtrl+N",              IDM_NEW
+        MENUITEM "打开(&O)...\tCtrl+O",           IDM_OPEN
+        MENUITEM "保存(&S)\tCtrl+S",              IDM_SAVE
+        MENUITEM "另存为(&A)...",                  IDM_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "导入TGA(&T)...\tCtrl+T",        IDM_IMPORT_TGA
+        MENUITEM "导入UiTex(&U)...\tCtrl+U",      IDM_IMPORT_UITEX
+        MENUITEM "导入文本文件(&X)...",               IDM_IMPORT_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM "导出所有TGA(&E)...\tCtrl+E",      IDM_EXPORT_ALL_TGA
+        MENUITEM "导出文本文件(&W)...",               IDM_EXPORT_TEXT
+        MENUITEM "导出新文本文件(&L)...",              IDM_EXPORT_NEW_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&E)",                      IDM_EXIT
+    END
+    POPUP "编辑(&E)"
+    BEGIN
+        MENUITEM "设置期望拼图大小(&S)...",             IDM_SET_WIDTH_AND_HEIGHT
+        MENUITEM "自动拼图(&M)\tCtrl+M",            IDM_AUTO_MAKE_UP
+        MENUITEM "单张批量生成(&P)...",               ID_BATCH
+        MENUITEM "撤销所有拼好的图(&R)\tCtrl+R",        IDM_UNMAKE_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "清空已经拼好的图(&C)\t",              IDM_CLEAR_THE_MAKE_UP
+    END
+    POPUP "窗口(&W)"
+    BEGIN
+        MENUITEM "没合并的TGA列表",                   IDM_SHOW_NAME_LIST, CHECKED
+        MENUITEM "动画列表",                        IDM_SHOW_ANIMATE_LIST, CHECKED
+        MENUITEM "综合图片列表",                      IDM_SHOW_FRAME_LIST, CHECKED
+    END
+    POPUP "设置(&S)"
+    BEGIN
+        MENUITEM "保存掩码文件",                      IDM_SAVE_HIDE_CODE_WHEN_SAVE, CHECKED
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于(&A) ...\tCtrl+?",          IDM_ABOUT
+    END
+END
+
+IDR_LIST_RCLICK_MENU MENU 
+BEGIN
+    POPUP "文件列表右键菜单"
+    BEGIN
+        MENUITEM "导出TGA",                       IDM_LIST_RCLICK_EXPORT_TGA
+        MENUITEM "导出CUR",                       32857
+        MENUITEM "替换已经拼好的图",                    IDM_LIST_RCLICK_REPLACE
+        MENUITEM "删除",                          32827
+    END
+END
+
+IDR_ANIMATE_GROUP_RCLICK_MENU MENU 
+BEGIN
+    POPUP "动画组右键菜单"
+    BEGIN
+        MENUITEM "添加帧",                         IDM_ANIMATE_GROUP_ADD_FRAME
+        MENUITEM "新建动画组...",                    32833
+        MENUITEM "导出TGA...",                    IDM_ANIMATE_GROUP_EXPORT_TGA
+        MENUITEM "删除",                          32830
+    END
+END
+
+IDR_ANIMATE_FRAME_RCLICK_MENU MENU 
+BEGIN
+    POPUP "动画帧右键菜单"
+    BEGIN
+        MENUITEM "上移",                          IDM_ANIMATE_FRAME_MOVE_UP
+        MENUITEM "下移",                          32838
+        MENUITEM "插入帧",                         32834
+        MENUITEM "添加帧",                         32839
+        MENUITEM "导出TGA...",                    32842
+        MENUITEM "删除",                          32835
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_MERGETGA ACCELERATORS 
+BEGIN
+    "/",            IDM_ABOUT,              ASCII,  ALT, NOINVERT
+    "?",            IDM_ABOUT,              ASCII,  ALT, NOINVERT
+    "M",            IDM_AUTO_MAKE_UP,       VIRTKEY, CONTROL, NOINVERT
+    "T",            IDM_IMPORT_TGA,         VIRTKEY, CONTROL, NOINVERT
+    "U",            IDM_IMPORT_UITEX,       VIRTKEY, CONTROL, NOINVERT
+    "N",            IDM_NEW,                VIRTKEY, CONTROL, NOINVERT
+    "O",            IDM_OPEN,               VIRTKEY, CONTROL, NOINVERT
+    "S",            IDM_SAVE,               VIRTKEY, CONTROL, NOINVERT
+    "L",            IDM_SHOW_NAME_LIST,     VIRTKEY, CONTROL, NOINVERT
+    "R",            IDM_UNMAKE_ALL,         VIRTKEY, CONTROL, NOINVERT
+    "E",            IDM_EXPORT_ALL_TGA,     VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 22, 17, 230, 75
+STYLE DS_SETFONT | DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 9, "System", 0, 0, 0x0
+BEGIN
+    ICON            IDI_MERGETGA,IDC_MYICON,14,9,20,20
+    LTEXT           "MergeTga Version 1.0",IDC_STATIC,49,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright Kingsoft(C) 2005",IDC_STATIC,49,20,119,8
+    DEFPUSHBUTTON   "OK",IDOK,195,6,30,11,WS_GROUP
+    LTEXT           "Author: Hu Changyin",IDC_STATIC,49,33,119,8
+END
+
+IDD_UNMAKE_LIST DIALOGEX 350, 0, 137, 234
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_CAPTION | WS_SYSMENU
+CAPTION "图像列表"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_NAME_LIST,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,6,7,124,220
+END
+
+IDD_SET_WIDTH_AND_HEIGHT DIALOGEX 110, 50, 186, 90
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "请设置期望的长宽"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,24,58,50,14
+    PUSHBUTTON      "取消",IDCANCEL,110,58,50,14
+    COMBOBOX        IDC_COMB_WIDTH,27,23,56,60,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMB_HEIGHT,110,23,56,60,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "宽：",IDC_STATIC,10,25,15,8
+    LTEXT           "高：",IDC_STATIC,90,26,15,8
+END
+
+IDD_ANIMATE_LIST DIALOGEX 240, 0, 251, 262
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CAPTION | WS_SYSMENU
+CAPTION "动画列表"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_ANIMATE_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,117,177
+    CONTROL         "",IDC_ANIMATE_SHOW_RECT,"Static",SS_BLACKFRAME,7,188,237,67
+    CONTROL         "",IDC_ANIMATE_FRAME_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,123,7,121,177
+END
+
+IDD_NEW_ANIMATE_GROUP DIALOGEX 0, 0, 186, 103
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "新建动画组"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,102,71,50,14
+    PUSHBUTTON      "取消",IDCANCEL,27,71,50,14
+    EDITTEXT        IDC_NEW_ANIMATE_GROUP_NAME,7,41,172,17,ES_AUTOHSCROLL
+    LTEXT           "请输入改组动画的名称:",IDC_STATIC,7,26,109,11
+END
+
+IDD_FRAME_LIST DIALOGEX 0, 0, 516, 258
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CAPTION | WS_SYSMENU
+CAPTION "综合图象列表"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_FRAME_LIST,"SysListView32",LVS_REPORT | LVS_OWNERDRAWFIXED | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,6,6,503,245
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_UNMAKE_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 130
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 227
+    END
+
+    IDD_SET_WIDTH_AND_HEIGHT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_ANIMATE_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 244
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 255
+    END
+
+    IDD_NEW_ANIMATE_GROUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 96
+    END
+
+    IDD_FRAME_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 509
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 251
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE           "MergeTga"
+    IDC_MERGETGA            "MERGETGA"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

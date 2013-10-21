@@ -1,0 +1,26 @@
+4、为美术填骨骼表提供一个简单的EXE，可以批量查找指定文件夹下的资源，并按文件名规则，填入骨骼表中。即是填入一张TAB表中
+
+
+动作文件夹里
+
+XXX_sb01  闪避          Volt
+XXX_gd01  格挡          Wardoff
+XXX_xy01  眩晕          Vertigo
+XXX_jt01  击退          Beatback
+XXX_th01  停滑          Glissade
+XXX_jd01  击倒          Knockdown
+XXX_jdz01  击倒中       OnGround
+XXX_jdbat01  击倒中被击 OnGroundUnderAttack
+XXX_pq01  爬起          Standup
+XXX表示骨骼表第一列对应的内容。如P001_SB01则填入
+所有P001所在的行的闪避Volt列里。
+
+
+下面的功能可以延后
+
+Knockdown_OnGround_OnGroundUnderAttack_Standup_Death_Time
+一套都满足则填一套，发现缺失则不填。死亡时间填个默认值，24帧
+结尾“01”标为一套动作，如出现“02”则为另一套动作
+
+
+

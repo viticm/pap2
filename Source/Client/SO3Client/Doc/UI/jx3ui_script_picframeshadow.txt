@@ -1,0 +1,14 @@
+PicFrameShadow_GetPicFrameElemWidth	
+	说明：取带边框半透明窗口边框元素宽；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex		边框元素索引, 0:上，1：下，2：左，3：右，4:左上，5：左下，6：右上，7：右下；
+	返回：nWidth			边框元素宽
+		
+PicFrameShadow_GetPicFrameElemHeight
+	说明：取带边框半透明窗口边框元素高；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex		边框元素索引, 0:上，1：下，2：左，3：右，4:左上，5：左下，6：右上，7：右下；
+	返回：nHeight			边框元素高
+		
+		
+

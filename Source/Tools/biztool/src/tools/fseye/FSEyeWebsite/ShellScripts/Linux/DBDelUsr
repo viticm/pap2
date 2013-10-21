@@ -1,0 +1,20 @@
+#/bin/sh
+#create by zuolizhi
+
+DBUSER=C#P1
+DBPWD=C#P2
+
+DUSER=C#P3
+HOST=C#P4
+
+tmpsql=adduser.sql
+
+echo "DROP USER $DUSER@'$HOST';" > $tmpsql
+
+if [ -z $DBPWD ]; then
+mysql -u $DBUSER < $tmpsql
+else
+mysql -u $DBUSER -p$DBPWD < $tmpsql
+fi
+
+rm -rf $tmpsql

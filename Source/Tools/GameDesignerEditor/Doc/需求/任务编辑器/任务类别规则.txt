@@ -1,0 +1,14 @@
+1> StartNpcTemplateID	StartDoodadTemplateID	StartItemType	StartItemIndex 都为空(0), 是不可接任务
+
+2> QuestValue1	QuestValueStr1 非空，是脚本任务
+
+3> EndRequireItemType1	EndRequireItemIndex1	EndRequireItemAmount1 非空的前提下， 如果DropDoodadTemplateID1不为空，就是采集任务，
+否则DropNpcTemplateID1不为空，就是收集，
+    为空，先判断5>
+    如果不是5，就是收集。
+
+4> KillNpcTemplateID1	KillNpcAmount1 非空，是杀怪任务
+
+5> OfferItemType1	OfferItemIndex1	OfferItemAmount1 和 EndRequireItemType1	EndRequireItemIndex1	EndRequireItemAmount1 相对应，是送东西任务。
+
+6> 如果前面2, 3, 4都为空，是对话任务。

@@ -1,0 +1,4 @@
+#/bin/bash
+#deploy guard.cfg
+
+mv -f {0} {1}/guard.cfg

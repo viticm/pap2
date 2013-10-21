@@ -1,0 +1,106 @@
+===========================================================================
+闪电链技能实现方案                                                        |
+===========================================================================
+
+评审时间：2007.12.26
+
+参与人员：孟凡、王洋、陈杰、汪淘、侯锐
+
+修改目的：
+-------------------------------------
+1. 增加“闪电链”技能
+2. 一些约定：
+  (1) 闪电链技能释放后，先作用到一个目标上，再发散开
+  (2) 闪电链技能的第一重，从技能的首个作用目标之后开始计算
+  (3) 闪电链技能的作用目标上限为：20个(不足20个，则取实际数值)
+
+
+修改方案：
+-------------------------------------
+1. 给skill对象增加两个成员变量，记录链的“重数”和“每重的分支数”
+2. 新增释放方式为“闪电链技能”的项
+3. 新增释放闪电链技能的协议
+4. 闪电技能的作用流程：
+ (1) 将首个作用对象周围的玩家（或NPC）按照“由近及远”的顺序，将前20个作用目标
+     插入到“满树”中
+ (2) 将生成的“满树”和闪电链的“重数”和“每重的分支数”发给客户端
+ (3) 客户端收到服务端的数据包后，按照链的“重数”和“每重的分支数”对“满树”进
+     行解析，以“释放者-作用目标”为一对，通知表现逻辑表现
+
+
+本次修改涉及的代码：
+-------------------------------------
+1. 为KSkill增加两个成员变量：闪电链的重数、每重的分支数
+
+2. 为枚举类型KSKILL_CAST_MODE增加“闪电链技能”对应的项：scmTargetChain
+
+3. 为LUA常量定义LUA_CONST_SKILL_CAST_MODE增加“闪电链技能”对应的项
+
+4. 为以下代码中用到枚举类型KSKILL_CAST_MODE的地方，增加新的case项处理：
+ (1) 文件KLuaChracter.cpp中，函数int KCharacter::LuaCastSkill
+ (2) 文件KSkill.cpp中，函数SKILL_RESULT_CODE KSkill::CanCast
+ (3) 文件KSkill.cpp中，函数SKILL_RESULT_CODE KSkill::CanCastOnPrepare
+ (4) 文件KSkill.cpp中，函数SKILL_RESULT_CODE KSkill::Cast
+ (5) 文件KSkill.cpp中，函数BOOL KSkill::SetupBullet
+ (6) 文件KSkillManager.cpp中，代码块DECLARE_STRING_MAP_BEGIN(KSKILL_CAST_MODE)
+
+5. 函数KSkill::Cast中，增加以下两个闪电链技能相关的函数：
+
+   SKILL_RESULT_CODE CastOnTargetChain(
+	KCharacter* pCaster, KTarget& rTarget, 
+	const KSKILL_RECIPE_KEY& crRecipeKey
+   )
+   {
+    	创建一个新的子弹。
+    	设置该子弹。
+
+      	判断该子弹是否立即应用
+           是则应用。
+           否则加入子弹列表等待处理。
+   }
+
+   SKILL_RESULT_CODE KSkill::ApplyOnChain(KSKILL_BULLET* pBullet)
+   {
+       从子弹中获取施法者
+       从子弹中获取目标
+
+       获取目标的Region
+       遍历目标所在的Region以及周围的8块Region，
+           寻找Region上可攻击的玩家，按照距离排序，最多取最近的20个，不满20个
+           的全部取出。
+
+       同步闪电链信息给客户端
+
+       将子弹应用到目标身上。
+
+       遍历每一层传递
+           遍历该层中的每一个目标节点
+               生成该层对应的子弹，应用给目标。
+   }
+
+6. 新增结构体
+   struct FindTarget
+   {
+    	operator () (KCharacter* pCharacter)
+    	{
+        	判断该目标是否能被pCaster攻击，不能则跳过。
+
+        	遍历pAttackArray，插入排序，若大于20，则删除第21个目标。
+    	}
+
+        std::vector<KCHAIN_TARGET> AttackArray;
+        size_t                     uAttackNum;
+        KCharacter*                pCaster;
+        KSkill*                    pSrcSkill;
+        int                        nRadius;
+   }
+
+7. GS_Client_Protocol.h中，增加闪电链技能相关的g2c协议。
+
+8. 类KPlayerClient中，增加对7中新增的g2c协议的处理函数。实现方法：
+     获得N个目标，查看每个目标是否可见
+     去除不可见的
+     从第2个节点开始遍历数组(第一个肯定没有入度)
+         每个节点获得它的父亲，构成一条边
+     把结构信息传递给表现逻辑
+

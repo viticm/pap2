@@ -1,0 +1,163 @@
+==================================================================
+增加附魔表现                                                     |
+==================================================================
+
+评审时间：2008-03-14
+
+参与人员：汪淘 侯锐
+
+修改目的：
+------------------------------------------------------------------
+1. 技能的命中结果增加“招架”、“识破”两种：
+   1.1 招架：只对减益类型的外功而言，其他类型的攻击没有招架的概念。
+   1.2 识破：只有玩家攻击NPC的时候才会出现，只有NPC会识破，玩家不会。
+
+2. 将原伤害流程中的根据命中方式生成随机值变为统一生成随机值，根据随机区间，决定
+   执行哪种命中计算。
+
+3. 将技能事件的调用放在释放了所有的子技能之后执行，这样随后释放的子技能都不会收
+   到技能事件的影响。
+
+4. 命中、闪避在Dot、Debuff中不用重新计算。
+
+本次修改涉及到的代码：
+------------------------------------------------------------------
+1. 文件KSkillManager.h
+   1.1 结构体SKILL_TABLE_LINE，增加一项：
+       BOOL  bIsHarmful;   // 是否属于有害技能
+
+2. 文件BOOL KSkillManager.cpp：
+   2.1 函数KSkillManager::LoadSkillTableLine，增加对技能配置表中新增列IsHarmful
+       的读取。
+   2.2 函数BOOL KSkillManager::TranslateTableInfo，增加pSkillBaseInfo->bIsHarmful
+       的赋值。
+
+3. 文件KSkill.h：
+   3.1 结构体KSKILL_BASE_INFO，增加一项：
+       BOOL    bIsHarmful;  // 该技能是否是对目标有害的技能。
+
+4. 文件GS_Client_Protocol.h：
+   4.1 结构体G2C_SKILL_EFFECT_RESULT，修改如下：
+       4.1.1 增加项：BYTE  bParry       : 1;
+       4.1.2 增加项：BYTE  bInsight     : 1;
+       4.1.3 删除项：BYTE  bDebuffDodge : 1;
+       4.1.4 删除项：BYTE  bDotDodge    : 1;
+
+   4.2 结构体G2C_SYNC_BEHIT_REPRESENT，修改如下：
+       4.2.1 增加项：int bParry         : 1;
+       4.2.2 增加项：int bInsight       : 1;
+
+5. 文件SO3GlobalDef.h：
+   5.1 结构体KSKILL_RESULT_TYPE，增加两项：serParryDamage、serInsightDamage
+
+6. 文件KCharacter.h
+   6.1 结构体KSKILL_CALCULATE_RESULT，修改如下：
+       6.1.1 增加项：BOOL bParry;
+       6.1.2 增加项：BOOL bInsight;
+       6.1.3 删除项：BOOL bDebuffDodge;
+       6.1.4 删除项：BOOL bDotDodge;
+   
+   6.2 增加枚举KSKILL_HIT_RESULT，用以标识技能的命中结果。
+
+   6.3 类KCharacter声明中，增加以下内容：
+       int     m_nParry;                   // 招架点数
+       int     m_nParryValue;              // 招架值，决定招架减免的伤害
+       int     m_nSense;                   // 洞察值 与NPC的识破有关
+       int     m_nStrain;                  // 应变值 和Player抵抗Npc的识破有关
+       int     m_nToughness;               // 韧性值 用来减少被会心的几率
+       int     m_nHitBase;                 // 命中的基础值，天生的
+       int     m_nCriticalDamagePower;     // 增加会心伤害
+       int     m_nDecriticalDamagePower;   // 减少会心伤害
+       int     m_nPhysicsOvercome;         // 外功克性,针对削弱目标的外功防御
+       int     m_nSolarOvercome;
+       int     m_nNeutralOvercome;
+       int     m_nLunarOvercome;                  
+       int     m_nPoisonOvercome;                 
+  
+   6.4 结构KSKILL_ATTRIBUTE_PARAM中，增加以下内容：
+       BOOL    bParray;                    // 是否被招架
+       BOOL    bInsight;                   // 是否被识破
+
+7. 文件KCharacter.cpp：
+   7.1 函数KCharacter::Init中，增加对类中新增成员变量的初始化。
+
+   7.2 将函数KCharacter::CalculateSkillHit改名为KCharacter::JudgeSkillHit。主要修改：
+       7.2.1 增加招架值的计算(减益类型的外功有效)
+       7.2.2 增加识破值的计算(Player->Npc，且减益类型)
+       7.2.3 调整命中值的计算公式
+       7.2.4 生成随机值，根据随机区间，决定执行哪种命中计算。
+
+   7.3 函数KCharacter::ApplyBullet，主要修改为：
+       7.3.1 将技能事件的处理放在函数的结束位置。
+       7.3.2 将通知客户端技能结果的操作统一处理
+       7.3.3 将通知客户端技能表现的操作统一处理。
+
+   7.4 函数KCharacter::ProcessDamage，主要修改为：
+       7.4.1 外功伤害计算中，加上“招架”的计算
+       7.4.2 加上“识破”的计算
+
+   7.5 函数KCharacter::ProcessDebuff中，去掉闪避、命中的计算
+
+   7.6 函数KCharacter::ProcessDot中，去掉闪避、命中的计算
+
+8. 文件KLuaConstList.cpp：
+   8.1 数组KLuaConst LUA_ATTRIBUTE_TYPE[]中，增加以下项：
+       {"PARRY",                               atParry}, 
+       {"PARRYVALUE",                          atParryValue},
+       {"SENSE",                               atSense}, 
+       {"STRAIN",                              atStrain}, 
+       {"TOUGHNESS",                           atToughness}, 
+       {"HITBASE",                             atHitBase}, 
+       {"CRITICALDAMAGEPOWER",                 atCriticalDamagePower}, 
+       {"DECRITICALDAMAGEPOWER",               atDecriticalDamagePower}, 
+       {"PHYSICS_OVERCOME",                    atPhysicsOvercome},
+       {"SOLAR_OVERCOME",                      atSolarOvercome},
+       {"NEUTRAL_OVERCOME",                    atNeutralOvercome},
+       {"LUNAR_OVERCOME",                      atLunarOvercome},
+       {"POISON_OVERCOME",                     atPoisonOvercome},
+
+   8.2 数组KLuaConst LUA_SKILL_RESULT_TYPE[]中，增加以下项：
+       {"PARRY_DAMAGE",            serParryDamage},
+       {"INSIGHT_DAMAGE",          serInsightDamage},
+
+9. 文件KPlayerServer.cpp：
+   9.1 函数KPlayerServer::DoSkillEffectResult中：
+       9.1.1 增加招架、识破的相关赋值
+       9.1.2 删除Debuff、Dot闪避的赋值
+
+   9.2 函数KPlayerServer::DoSyncBehitRepresent中：
+       9.2.1 增加招架、识破的相关赋值
+
+10. 文件KSkill.cpp：
+   10.1 函数KSkill::CheckSelfState中，增加对Player骑马状态的检查
+   10.2 函数KSkill::CheckTargetState中，增加目标Player情况下，对骑马状态的检查
+
+11. 文件KNpcTemplateList.cpp：
+   11.1 增加洞察相关的宏定义
+   11.2 函数KNpcTemplateList::LoadNpcTemplate中，增加闪避相关的配置表读取
+
+12. 文件KBuffList.cpp：
+   12.1 函数KBuffList::CleanBuffByPersist，增加骑马状态下，标志位bHorseStatePass的处理
+   12.2 函数KBuffList::CleanDebuffByPersist，增加骑马状态下，标志位bHorseStatePass的处理
+   12.3 函数KBuffList::CleanDotByPersist，增加骑马状态下，标志位bHorseStatePass的处理
+   12.4 函数KBuffList::CleanHotByPersist，增加骑马状态下，标志位bHorseStatePass的处理
+
+13. 文件KAttrModifier.cpp：
+   13.1 增加以下魔法属性处理函数：
+        ProcessParry
+        ProcessParryValue
+        ProcessSense
+        ProcessStrain
+        ProcessToughness
+        ProcessHitBase
+        ProcessCriticalDamagePower
+        ProcessDecriticalDamagePower
+        ProcessPhysicsOvercome
+        ProcessSolarOvercome
+        ProcessNeutralOvercome
+        ProcessLunarOvercome
+        ProcessPoisonOvercome
+   
+   13.2 函数InitAttributeFunctions中，增加上述新增魔法属性的的注册。
+
+14. 文件KAttribute.cpp中，增加新增魔法属性的字符串映射

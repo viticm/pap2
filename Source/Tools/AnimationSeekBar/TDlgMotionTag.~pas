@@ -1,0 +1,74 @@
+unit TDlgMotionTag;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, AnimationSeekBarImpl1;
+
+type
+  TMotionTagDialog = class(TForm)
+    Label_TagType: TLabel;
+    Combo_TagType: TComboBox;
+    Button_Delete: TButton;
+    Button_Copy: TButton;
+    Button_Paste: TButton;
+    procedure Button_PasteClick(Sender: TObject);
+    procedure Button_CopyClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+    m_nFrame : Integer;
+    procedure UpdateUI(nTagType : Integer);
+  public
+    { Public declarations }
+    m_AnimationSeekBar : TAnimationSeekBar;
+    procedure OnInitDialog(nFrame : Integer);
+  end;
+
+var
+  MotionTagDialog: TMotionTagDialog;
+
+implementation
+
+{$R *.dfm}
+
+procedure TMotionTagDialog.UpdateUI(nTagType : Integer);
+begin
+  Combo_TagType.ItemIndex := nTagType;
+end;
+
+procedure TMotionTagDialog.OnInitDialog(nFrame : Integer);
+var
+  nTagType : Integer;
+begin
+  m_nFrame := nFrame;
+  m_AnimationSeekBar := TAnimationSeekBar(Owner);
+  if m_AnimationSeekBar.FEvents <> nil then
+  begin
+    m_AnimationSeekBar.FEvents.OnMotionTagLoad(m_nFrame, nTagType);
+    UpdateUI(nTagType);
+  end;
+
+end;
+
+procedure TMotionTagDialog.Button_PasteClick(Sender: TObject);
+begin
+  if m_AnimationSeekBar.FEvents <> nil then
+    m_AnimationSeekBar.FEvents.OnSFXTagCopy(m_AnimationSeekBar.m_nSFXTagSrcFrame,
+      m_nFrame);
+end;
+
+procedure TMotionTagDialog.Button_CopyClick(Sender: TObject);
+begin
+  m_AnimationSeekBar.m_nMotionTagSrcFrame := m_nFrame;
+end;
+
+procedure TMotionTagDialog.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  if m_AnimationSeekBar.FEvents <> nil then
+    m_AnimationSeekBar.FEvents.OnMotionTagSave(m_nFrame, Combo_TagType.ItemIndex);
+end;
+
+end.

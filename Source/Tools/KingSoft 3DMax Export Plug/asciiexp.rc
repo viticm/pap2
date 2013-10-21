@@ -1,0 +1,239 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+// Generated Help ID header file
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.hm"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_FRONTEND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 191
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 191
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_FRONTEND DIALOGEX 0, 0, 198, 198
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,141,7,50,14
+    CONTROL         "Ö÷½Ç",IDC_RADIO_MAIN,"Button",BS_AUTORADIOBUTTON | WS_GROUP,24,22,32,10
+    CONTROL         "ÆÕÍ¨",IDC_RADIO_NORMAL,"Button",BS_AUTORADIOBUTTON,25,36,32,10
+    DEFPUSHBUTTON   "Cancel",IDCANCEL,141,25,50,14
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 165
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 69
+    END
+
+    IDD_ASCIIEXPORT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 414
+        BOTTOMMARGIN, 279
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG  0, 0, 172, 76
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About KingSoft Model Export"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,60,55,50,14
+    RTEXT           "KingSoft Model File Exporter\nVersion 1.0\nYangLin\nCopyright 2003 KingSoft",IDC_STATIC,10,13,151,36
+    GROUPBOX        "",IDC_STATIC,7,7,158,44
+END
+
+IDD_ASCIIEXPORT_DLG DIALOGEX 0, 0, 423, 286
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "KingSoft Model Export"
+FONT 8, "Microsoft Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Mesh ",IDC_MESH,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,46,94,10,0,HIDC_MESH
+    CONTROL         "Material ",IDC_MATERIAL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,58,95,10,0,HIDC_MATERIAL
+    CONTROL         "Animation",IDC_ANIMATION,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,70,95,10,0,HIDC_ANIMATION
+    DEFPUSHBUTTON   "OK",IDOK,364,10,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,364,28,50,14
+    CONTROL         "",IDC_MESH_STEP,"CustEdit",WS_TABSTOP,368,208,25,10,0,HIDC_MESH_STEP
+    CONTROL         "",IDC_STATIC_FRAME,"CustEdit",WS_TABSTOP,266,208,25,10,0,HIDC_STATIC_FRAME
+    GROUPBOX        "Output Option",IDC_STATIC,5,35,193,129
+    GROUPBOX        "Animation",IDC_STATIC,5,164,194,114
+    GROUPBOX        "Material",IDC_STATIC,223,101,187,77
+    GROUPBOX        "Frame Option",IDC_STATIC,224,181,186,72
+    CONTROL         "",IDC_MESH_STEP_SPIN,"SpinnerControl",0x0,394,208,7,10
+    RTEXT           "Animated Objects:",IDC_STATIC,302,208,60,8
+    RTEXT           "Frames per Sample:",IDC_STATIC,332,197,70,8,0,0,HIDC_STATIC
+    CONTROL         "",IDC_STATIC_FRAME_SPIN,"SpinnerControl",0x0,292,208,7,10
+    RTEXT           "Frame #:",IDC_STATIC,230,208,31,8,0,0,HIDC_STATIC
+    CONTROL         "Vertices Animation",IDC_VERTICESANIMATION,"Button",BS_AUTORADIOBUTTON,12,172,110,12,0,HIDC_VERTICESANIMATION
+    CONTROL         "Bone Animation",IDC_BONEANIMATION,"Button",BS_AUTORADIOBUTTON,11,199,115,12,0,HIDC_BONEANIMATION
+    EDITTEXT        IDC_ANIMATIONNAME,12,260,118,13,ES_AUTOHSCROLL,0,HIDC_ANIMATIONNAME
+    RTEXT           "Static Frame",IDC_STATIC,230,197,70,8,0,0,HIDC_STATIC
+    CONTROL         "Unit to 1 Model",IDC_UNITMODEL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,82,104,10,0,HIDC_UNITMODEL
+    CONTROL         "Diffuse Texture",IDC_MAPDIFFUSE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,231,111,73,10,0,HIDC_MAPDIFFUSE
+    CONTROL         "Copy Texture Files To Relative Directory",IDC_MOVETEXTUREFILE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,231,146,171,10,0,HIDC_MOVETEXTUREFILE
+    EDITTEXT        IDC_TEXTUREFILEDIR,231,159,125,13,ES_AUTOHSCROLL,0,HIDC_TEXTUREFILEDIR
+    PUSHBUTTON      "Browe...",IDC_SETTEXTUREDIR,362,159,39,13,0,0,HIDC_SETTEXTUREDIR
+    CONTROL         "Exchange Y-Z Axis",IDC_EXCHANGEYZ,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,94,110,10,0,HIDC_EXCHANGEYZ
+    GROUPBOX        "Mesh Option",IDC_STATIC,223,6,130,93
+    CONTROL         "Vertices Position",IDC_VERTICESPOSITION,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,231,17,111,9
+    CONTROL         "Vertices Normal",IDC_VERTICESNORMAL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,231,30,113,9
+    CONTROL         "Vertices Diffuse Color",IDC_VERTICESDIFFUSE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,231,43,111,10
+    CONTROL         "Texture UVW Channel 1",IDC_TEXTUREUVW1,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,231,56,118,9
+    CONTROL         "Texture UVW Channel 2",IDC_TEXTUREUVW2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,231,68,118,9
+    CONTROL         "Texture UVW Channel 3",IDC_TEXTUREUVW3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,231,81,118,9
+    CONTROL         "Related Vertex Ani",IDC_RELATEVERTICESANIMATION,"Button",BS_AUTORADIOBUTTON,11,185,95,12,0,HIDC_RELATEVERTICESANIMATION
+    CONTROL         "Relate Bone Animation",IDC_RELATEBONEANIMATION,"Button",BS_AUTORADIOBUTTON,11,212,115,12,0,HIDC_RELATEBONEANIMATION
+    CONTROL         "Bump Texture",IDC_MAPBUMP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,314,111,73,10,0,HIDC_MAPBUMP
+    CONTROL         "Specular Texture",IDC_MAPSPECULAR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,231,122,73,10,0,HIDC_MAPSPECULAR
+    CONTROL         "Reflection Texture",IDC_MAPREFLECTION,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,314,122,73,10,0,HIDC_MAPREFLECTION
+    LTEXT           "Animation Name:",IDC_STATIC,13,247,116,10
+    CONTROL         "Inch 2 CM",IDC_INCH2CM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,108,110,10,0,HIDC_INCH2CM
+    CONTROL         "RTS Seperated Ani",IDC_RADIO_RTS,"Button",BS_AUTORADIOBUTTON,11,225,77,10
+    CONTROL         "Key Frame Only",IDC_RADIO_KEYONLY,"Button",BS_AUTORADIOBUTTON,11,237,65,10
+    CONTROL         "Normalize Socket Size",IDC_CHECK_NORMALIZE_SS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,123,87,10
+    CONTROL         "UV Animation",IDC_CHECK_UVANI,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,137,59,10
+    GROUPBOX        "Export Type",IDC_STATIC,13,7,184,25
+    CONTROL         "Main",IDC_RADIO_MAIN,"Button",BS_AUTORADIOBUTTON | WS_GROUP,21,18,31,10
+    CONTROL         "Common",IDC_RADIO_COMMON,"Button",BS_AUTORADIOBUTTON,64,18,43,10
+    CONTROL         "Merge Subset",IDC_CHECK_MERGESUBSET,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,151,161,10
+    LTEXT           "Intervel",IDC_STATIC,233,223,25,8
+    EDITTEXT        IDC_EDIT_INTERVEL,266,222,54,12,ES_AUTOHSCROLL
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "#include ""veroverrides.h""\r\n"
+    "#include ""maxversion.r""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ASCIIEXP            "ModelExp"
+    IDS_CATEGORY            "Standard"
+    IDS_EXTENSION1          "Mesh"
+    IDS_LONGDESC            "3DS Max Model Exporter"
+    IDS_SHORTDESC           "Sword3 Exporter"
+    IDS_COPYRIGHT           "Copyright 2003 KingSoft."
+    IDS_PROGRESS_MSG        "Exporting file..."
+    IDS_VERSIONSTRING       "KingSoft Model Version"
+    IDS_LIBDESCRIPTION      "Sword3 Exporter"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+#include "veroverrides.h"
+#include "maxversion.r"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

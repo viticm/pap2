@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<product>
+  <version>1.0.0.0</version>
+  <serveraddress>\\\\changan\\newtools</serveraddress>
+  <description>修正一些Bug</description>
+  <filelist count="3" >
+    <item name="\\\\changan\\newtools\\Replace.exe" size="">
+      <value />
+    </item>
+    <item name="\\\\changan\\newtools\\GameDesingerTools.exe" size="">
+      <value />
+    </item>
+    <item name="\\\\changan\\newtools\\UpdateProgram.exe" size="">
+      <value />
+    </item>
+  </filelist>
+</product>

@@ -1,0 +1,552 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4A2A6787-888F-4EF0-A2F0-DB057E49BFC0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GameDesingerTools</RootNamespace>
+    <AssemblyName>GameDesingerTools</AssemblyName>
+    <ManifestCertificateThumbprint>BB6953F1148B604EF5A2A23857C4DCD888646290</ManifestCertificateThumbprint>
+    <ManifestKeyFile>GameDesignerTools_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <PublishUrl>C:\Documents and Settings\dzh\桌面\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>sign_key.pfx</AssemblyOriginatorKeyFile>
+    <ApplicationIcon>Resources\Project.ico</ApplicationIcon>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\Documents and Settings\xiewenjie.RDEV\桌面\策划工具\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\策划工具\</OutputPath>
+    <DefineConstants>TRACE; </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataTableRemotingClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=7.3.0.2, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.atlaxLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="LuaInterface, Version=1.5.3.0, Culture=neutral, PublicKeyToken=1e1fb15b02227b8a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LUA\luainterface\luainterface-1.5.3\Built\LuaInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppOptionsForm.Designer.cs">
+      <DependentUpon>AppOptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Audit\EditLog\CatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Audit\EditLog\CatForm.designer.cs">
+      <DependentUpon>CatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Audit\EditLog\DataRecord.cs" />
+    <Compile Include="Audit\EditLog\EditLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Audit\EditLog\EditLog.designer.cs">
+      <DependentUpon>EditLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseDialog.designer.cs">
+      <DependentUpon>BaseDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Audit\Commands.cs" />
+    <Compile Include="BaseForm\BaseForm_Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\BaseForm_ExpFunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\BaseForm_Preview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomProperty\CustomClass.cs" />
+    <Compile Include="CustomProperty\CustomClassCache.cs" />
+    <Compile Include="CustomProperty\CustomEditor.cs" />
+    <Compile Include="CustomProperty\CustomProperty.cs" />
+    <Compile Include="CustomProperty\DBCustomClass.cs" />
+    <Compile Include="CustomProperty\DBCustomProperty.cs" />
+    <Compile Include="CustomProperty\NewRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomProperty\NewRecord.Designer.cs">
+      <DependentUpon>NewRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomProperty\NewRowHelper.cs" />
+    <Compile Include="CustomProperty\ObjPool.cs" />
+    <Compile Include="DBProcess.cs" />
+    <Compile Include="DBTools\AddFieldRelationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\AddFieldRelationForm.Designer.cs">
+      <DependentUpon>AddFieldRelationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\AddImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\AddImageForm.Designer.cs">
+      <DependentUpon>AddImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\AttachAttribute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\AttachAttribute.Designer.cs">
+      <DependentUpon>AttachAttribute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\ChooseField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\ChooseField.Designer.cs">
+      <DependentUpon>ChooseField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\ChooseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\ChooseForm.Designer.cs">
+      <DependentUpon>ChooseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\ColumnOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\ColumnOrder.Designer.cs">
+      <DependentUpon>ColumnOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\ConfigModelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\ConfigModelForm.Designer.cs">
+      <DependentUpon>ConfigModelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\ExportFieldConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\ExportFieldConfigForm.designer.cs">
+      <DependentUpon>ExportFieldConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\FieldRelationManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\FieldRelationManageForm.Designer.cs">
+      <DependentUpon>FieldRelationManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\FieldRelationSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\FieldRelationSearchForm.Designer.cs">
+      <DependentUpon>FieldRelationSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\FieldSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\FieldSearchForm.designer.cs">
+      <DependentUpon>FieldSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\PreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\PreviewForm.Designer.cs">
+      <DependentUpon>PreviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\SortForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\SortForm.Designer.cs">
+      <DependentUpon>SortForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\TypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\TypeForm.Designer.cs">
+      <DependentUpon>TypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\UniteModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\UniteModel.Designer.cs">
+      <DependentUpon>UniteModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FiltrateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiltrateForm.Designer.cs">
+      <DependentUpon>FiltrateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindForm1.Designer.cs">
+      <DependentUpon>FindForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputBoxForm.designer.cs">
+      <DependentUpon>InputBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrame\ModelConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\ModelConfigForm.designer.cs">
+      <DependentUpon>ModelConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\Encrypt.cs" />
+    <Compile Include="Misc\FtpClient.cs" />
+    <Compile Include="Misc\IniHandler.cs" />
+    <Compile Include="Misc\LuaCallBack.cs" />
+    <Compile Include="Misc\queryCommand.cs" />
+    <Compile Include="Misc\RecordLock.cs" />
+    <Compile Include="Misc\TableLock.cs" />
+    <Compile Include="Misc\LuaEx.cs" />
+    <Compile Include="Misc\TimeLog.cs">
+    </Compile>
+    <Compile Include="DBTools\addField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\addField.Designer.cs">
+      <DependentUpon>addField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\AddVirtualField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\AddVirtualField.Designer.cs">
+      <DependentUpon>AddVirtualField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\DBTableEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\DBTableEditor.Designer.cs">
+      <DependentUpon>DBTableEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\ExportEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\ExportEditor.designer.cs">
+      <DependentUpon>ExportEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\IconConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\IconConfig.Designer.cs">
+      <DependentUpon>IconConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\ImportInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\ImportInfo.Designer.cs">
+      <DependentUpon>ImportInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\ModelEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\ModelEditor.Designer.cs">
+      <DependentUpon>ModelEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\MetaInfoEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\MetaInfoEditorForm.designer.cs">
+      <DependentUpon>MetaInfoEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBTools\NameInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBTools\NameInput.Designer.cs">
+      <DependentUpon>NameInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\FileFolderHelper.cs" />
+    <Compile Include="Misc\Helper.cs" />
+    <Compile Include="MainFrame\ColorPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainFrame\TabExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\TabExport.Designer.cs">
+      <DependentUpon>TabExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrame\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrame\TabImportComfirming.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame\TabImportComfirming.Designer.cs">
+      <DependentUpon>TabImportComfirming.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyPanelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NPCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NPCForm.Designer.cs">
+      <DependentUpon>NPCForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptimizeLoadTreeFinder.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppOptionsForm.resx">
+      <DependentUpon>AppOptionsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Audit\EditLog\EditLog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\BaseForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomProperty\NewRecord.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\addField.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>addField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\AddFieldRelationForm.resx">
+      <DependentUpon>AddFieldRelationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\AddVirtualField.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddVirtualField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\AttachAttribute.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AttachAttribute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\ChooseField.resx">
+      <DependentUpon>ChooseField.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\ChooseForm.resx">
+      <DependentUpon>ChooseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\ColumnOrder.resx">
+      <DependentUpon>ColumnOrder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\ConfigModelForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConfigModelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\DBTableEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DBTableEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\ExportEditor.resx">
+      <DependentUpon>ExportEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\ExportFieldConfigForm.resx">
+      <DependentUpon>ExportFieldConfigForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\FieldRelationManageForm.resx">
+      <DependentUpon>FieldRelationManageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\FieldRelationSearchForm.resx">
+      <DependentUpon>FieldRelationSearchForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\FieldSearchForm.resx">
+      <DependentUpon>FieldSearchForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\IconConfig.resx">
+      <DependentUpon>IconConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\ImportInfo.resx">
+      <DependentUpon>ImportInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\ModelEditor.resx">
+      <DependentUpon>ModelEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\MetaInfoEditorForm.resx">
+      <DependentUpon>MetaInfoEditorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\NameInput.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NameInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\PreviewForm.resx">
+      <DependentUpon>PreviewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\SortForm.resx">
+      <DependentUpon>SortForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\TypeForm.resx">
+      <DependentUpon>TypeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBTools\UniteModel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UniteModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FiltrateForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FiltrateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindForm1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FindForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputBoxForm.resx">
+      <DependentUpon>InputBoxForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\ColorPicker.resx">
+      <DependentUpon>ColorPicker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\TabExport.resx">
+      <DependentUpon>TabExport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame\TabImportComfirming.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TabImportComfirming.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NPCForm.resx">
+      <DependentUpon>NPCForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScriptDebugForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ScriptDebugForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Audit\Rights.cs" />
+    <Compile Include="ScriptCodeForm.cs">
+    </Compile>
+    <Compile Include="ScriptDebugForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScriptDebugForm.Designer.cs">
+      <DependentUpon>ScriptDebugForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="bin\Debug\Plugins\LuaEditor\scriptcode.lua" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="CustomProperty\env.lua.txt" />
+    <None Include="GameDesignerTools_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="sign_key.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Project.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,77 @@
+Button_IsButtonChecked		
+	说明：判断按钮是否被选中，如果按钮不是选中性按钮，则此函数行为未确定；
+	参数：szTreePath 窗口树路径名；
+	返回：bChecked 	 true为选中，false为未选中；
+		
+Button_IsButtonActive			
+	说明：判断按钮是否激活，这里激活的意思为一个选项开关，用于鼠标移到鼠标上方时是否产生WND_N_BUTTON_OVER消息，可能废弃；
+	参数：szTreePath 窗口树路径名；
+	返回：bActive 	 true为激活，false为未激活；
+		
+Button_EnableCheck				
+	说明：设置按钮选中开关；
+	参数：szTreePath 窗口树路径名，
+		  bEnable	 true为激活，false为未激活；
+	返回：nil；
+		
+Button_CheckButton				
+	说明：选中按钮，如果按钮不是选中性按钮，则此函数行为未确定；
+	参数：szTreePath 窗口树路径名，
+		  bCheck	 true为选中，false为未选中；
+	返回：nil；
+		
+Button_Enable							
+	说明：禁止或者允许按钮被操作，即将废弃；
+	参数：szTreePath 窗口树路径名，
+	      bEnable    true为允许，false为禁止；
+	返回：nil
+		
+Button_SetToolTipInfo			
+	说明：设按钮提示；
+	参数：szTreePath 窗口树路径名，
+	      szTip		 提示文字；
+	返回：nil
+
+Button_SetUpFrame					
+	说明：设鼠标释放按钮显示的帧；
+	参数：szTreePath 窗口树路径名，
+	      nFrame	 在UITex里面的帧序列；
+	返回：nil
+
+Button_SetDownFrame				
+	说明：设鼠标按下按钮显示的帧；
+	参数：szTreePath 窗口树路径名，
+	      nFrame	 在UITex里面的帧序列；
+	返回：nil
+
+Button_SetCheckOverFame		
+	说明：设鼠标在按钮上显示的帧，如果按钮不是选中性按钮，则此函数行为未确定；
+	参数：szTreePath 窗口树路径名，
+	      nFrame	 在UITex里面的帧序列；
+	返回：nil
+
+Button_SetOverStartFrame	
+	说明：设鼠标在按钮上开始动画的开始帧帧；
+	参数：szTreePath 窗口树路径名，
+	      nFrame	 在UITex里面的帧序列；
+	返回：nil
+
+Button_SetDisableFrame		
+	说明：设按钮禁止状态显示的帧；
+	参数：szTreePath 窗口树路径名，
+	      nFrame	 在UITex里面的帧序列；
+	返回：nil
+
+Button_SetAllButtonTipTextColor
+	说明：设所有按钮提示字体颜色；
+	参数：[szTreePath] 	窗口树路径名，
+		  dwFontColor	字体颜色，目前未做可用性调整；
+	返回：nil
+
+Button_EnableAllButtonTip				
+	说明：禁止或者激活所有按钮提示；
+	参数：[szTreePath] 	窗口树路径名，
+		  bEnable		true为激活，false为禁止；
+	返回：nil
+
+

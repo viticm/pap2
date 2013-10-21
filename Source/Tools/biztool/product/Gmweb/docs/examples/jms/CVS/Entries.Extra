@@ -1,0 +1,16 @@
+D/conf///////
+D/standalone///////
+/file-state-service.xml///1230715370////
+/hsqldb-jdbc3-service.xml///1230715370////
+/https-service.xml///1230715370////
+/mssql-jdbc2-service.xml///1230715371////
+/mysql-jdbc2-service.xml///1230715371////
+/null-persistence-service.xml///1230715371////
+/oil-service.xml///1230715371////
+/oracle-jdbc2-service.xml///1230715371////
+/oracle-jdbc3-service.xml///1230715371////
+/postgres-jdbc2-service.xml///1230715371////
+/postgres-jdbc3-service.xml///1230715371////
+/rmi-il-service.xml///1230715371////
+/sybase-jdbc2-service.xml///1230715371////
+/uil-service.xml///1230715371////

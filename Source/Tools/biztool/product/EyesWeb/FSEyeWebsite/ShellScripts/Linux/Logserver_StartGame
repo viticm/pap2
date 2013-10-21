@@ -1,0 +1,15 @@
+#/bin/bash
+#add by zuolizhi
+#start game
+
+read path
+echo $path
+cd $path
+ulimit -c unlimited
+pid='pgrep kg_cslogserverd_linux'
+$pid
+if [ $? -eq 1 ]; then
+./kg_cslogserverd_linux &> logserver_output.txt &
+else
+echo 'process already exist! kg_cslogserverd_linux'
+fi

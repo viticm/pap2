@@ -1,0 +1,1578 @@
+﻿@title npc对象
+@obj KNpc
+@detail 
+@catalogs 基本属性, 物理属性, 移动属性, 潜能属性, 角色动作, 武功技能, 任务相关,  商店, AI
+
+
+
+@summary ro. ID
+@catalog 基本属性
+@remarks 
+property dwID
+
+
+
+@summary ro. 地图中的X坐标，单位点
+@catalog 物理属性
+@remarks 
+property nX
+
+
+
+@summary ro. 地图中的Y坐标，单位点
+@catalog 物理属性
+@remarks 
+property nY
+
+
+
+@summary ro. 距离地表的Z坐标，单位点
+@catalog 物理属性
+@remarks Z坐标的单位“点”与XY坐标的单位“点”不同
+property nZ
+
+
+
+@summary rw. 触碰范围
+@catalog 物理属性
+@remarks 
+property nTouchRange
+
+
+
+@summary ro. Region中X方向的第几个格子
+@catalog 物理属性
+@remarks 
+property nXCell
+
+
+
+@summary ro. Region中Y方向的第几个格子
+@catalog 物理属性
+@remarks 
+property nYCell
+
+
+
+@summary rw. 物体的质量
+@catalog 物理属性
+@remarks 
+property nMass
+
+
+@summary rw. 宽度，单位点
+@catalog 物理属性
+@remarks 
+property nWidth
+
+
+
+@summary rw. 长度，单位点
+@catalog 物理属性
+@remarks 
+property nLength
+
+
+
+@summary rw. 高度，单位点
+@catalog 物理属性
+@remarks 
+property nHeight
+
+
+@summary rw. 面部朝向，单位360/256度
+@catalog 物理属性
+@remarks 
+property nFaceDirection
+
+@summary rw. 俯仰角,单位(360/256)度
+@catalog 物理属性
+property nPitchDirection
+
+
+@summary rw. string. npc名字
+@catalog 基本属性
+@remarks 
+property szName
+
+
+
+@summary rw. string. npc头衔
+@catalog 基本属性
+@remarks 
+property szTitle
+
+
+
+@summary rw. npc性别，参见[[see CHARACTER_GENDER]]
+@catalog 基本属性
+@remarks [[get CHARACTER_GENDER]]
+property nGender
+
+
+
+@summary rw. npc类型，参见[[see CHARACTER_KIND]]
+@catalog 基本属性
+@remarks 取值：[[get CHARACTER_KIND]]
+property nKind
+
+
+
+@summary rw. 分类ID
+@catalog 基本属性
+@remarks 
+property dwClassID
+
+
+
+@summary rw. 种族，参见[[see CHARACTER_RACE]]
+@catalog 基本属性
+@remarks 取值：[[get CHARACTER_RACE]]
+property nRace
+
+
+
+@summary rw. 势力ID
+@catalog 基本属性
+@remarks 
+property dwForceID
+
+
+
+@summary rw. npc等级
+@catalog 基本属性
+@remarks 
+property nLevel
+
+@summary rw. 道德值
+@catalog 基本属性
+@remarks 
+property nMoral
+
+@summary rw. 模型id
+@catalog 基本属性
+@remarks
+property dwModelID
+
+@summary rw. 模板id
+@catalog 基本属性
+@remarks 
+property dwTemplateID
+
+@summary rw. 重生时间
+@catalog 基本属性
+property nReviveTime
+
+@summary rw. 表情状态
+@catalog 角色动作
+property dwCharacterAction
+
+
+@summary rw. Npc身上是否有可以对话的脚本
+@catalog 基本属性
+property bDialogFlag
+
+@summary
+@catalog 基本属性
+property bDisableAutoTurn
+
+@summary rw. NPC所有者的id
+@catalog 基本属性
+property dwOwner
+
+
+@summary ro. 角色移动状态
+@catalog 移动属性
+@remarks 取值：[[get MOVE_STATE]]
+property nMoveState as int ro
+
+
+@summary ro. 水平面上速率，单位点/帧
+@catalog 移动属性
+@remarks 
+property nVelocityXY
+
+@summary ro. 水平面上速度方向，单位360/256度
+@catalog 基本属性
+@remarks 
+property nDirectionXY
+
+	
+@summary ro. 垂直方向速率，单位点/帧
+@catalog 移动属性
+@remarks 
+property nVelocityZ
+
+@summary ro. 走路或跑步目标点的X坐标
+@catalog 移动属性
+property nDestX
+
+
+@summary ro. 走路或跑步目标点的Y坐标
+@catalog 移动属性
+property nDestY
+
+
+@summary ro. 行走速度
+@catalog 移动属性
+property nWalkSpeed as int ro
+
+
+@summary ro. 跑步速度
+@catalog 移动属性
+property nRunSpeed as int ro
+
+@summary ro. 游泳速度
+@catalog 移动属性
+property nSwimSpeed as int ro
+
+
+@summary ro. 行走基础速度
+@catalog 移动属性
+property nWalkSpeedBase as int ro
+
+
+@summary ro. 跑步基础速度
+@catalog 移动属性
+property nRunSpeedBase as int ro
+
+@summary ro. 游泳基础速度
+@catalog 移动属性
+property nSwimSpeedBase as int ro
+
+
+@summary ro. 移动速度加成
+@catalog 移动属性
+property nMoveSpeedPercent as int ro
+
+
+@summary ro. 最大跳跃次数
+@catalog 移动属性
+property nMaxJumpCount as int ro
+
+@summary ro. 重力
+@catalog 物理属性
+@remarks nGravity = nGravityBase * (1024 + nGravityPercent) / 1024
+property nGravity as int ro
+
+@summary ro. 重力基础值
+@catalog 物理属性
+@remarks 参考[[see KNpc.nGravity]]
+property nGravityBase as int ro
+
+@summary ro. 重力百分比加成，单位1/1024
+@catalog 物理属性
+@remarks 参考[[see KNpc.nGravity]]
+property nGravityPercent as int ro
+
+@summary ro. 跳跃时水平方向的速度，单位点/帧
+@catalog 移动属性
+@remarks 
+property nJumpSpeed as int ro
+
+@summary ro. 水平方向跳跃速度基础值，单位点/帧
+@catalog 移动属性
+@remarks 参考[[see KNpc.nJumpSpeedXY]]
+property nJumpSpeedBase as int ro
+
+@summary ro. 水平方向跳跃速度百分比加成，单位1/1024
+@catalog 移动属性
+@remarks 参考[[see KNpc.nJumpSpeedXY]]
+property nJumpSpeedPercent as int ro
+
+
+
+@summary ro. 抗摔伤系数，取值[0 - 1024]
+@catalog 基本属性
+property nDropDefence as int ro
+
+@summary ro. 潜水时间计数器。单位与nDivingFrame相同
+@catalog 移动属性
+property nDivingCount as int ro
+
+@summary ro. 最大潜水时间，单位是帧数
+@catalog 移动属性
+property nDivingFrame
+
+@summary ro. 最大潜水时间基础值
+@catalog 移动属性
+property nDivingFrameBase as int ro
+
+@summary ro. 最大潜水时间百分比加成
+@catalog 移动属性
+property nDivingFramePercent as int ro
+
+
+@summary ro. 是否可以水上漂
+@catalog 移动属性
+@remarks 取值：true（可以漂），false（不会漂）
+property nWaterFlyAbility as int ro
+
+@summary rw. 当前力量值
+@catalog 潜能属性
+@remarks 
+property nCurrentStrength
+
+@summary rw. 力量基础值
+@catalog 潜能属性
+@remarks
+property nStrengthBase
+
+@summary rw. 力量百分比加成，单位1/1024
+@catalog 潜能属性
+property nStrengthBasePercentAdd
+
+
+@summary rw. 当前敏捷值
+@catalog 潜能属性
+@remarks 
+property nCurrentAgility
+
+@summary rw. 敏捷基础值
+@catalog 潜能属性
+@remarks
+property nAgilityBase
+
+@summary rw. 敏捷百分比加成，单位1/1024
+@catalog 潜能属性
+property nAgilityBasePercentAdd
+
+@summary rw. 当前体质
+@catalog 潜能属性
+property nCurrentVitality
+
+@summary rw. 体质基础值
+@catalog 潜能属性
+property nVitalityBase
+
+@summary rw. 体质基础值百分比加成，单位1/1024
+@catalog 潜能属性
+property nVitalityBasePercentAdd
+
+
+
+@summary rw. 当前根骨值
+@catalog 潜能属性
+@remarks 
+property nCurrentSpirit
+
+@summary rw. 根骨基础值
+@catalog 潜能属性
+property nSpiritBase
+
+@summary rw. 根骨百分比加成，单位1/1024
+@catalog 潜能属性
+property nSpiritBasePercentAdd
+
+
+@summary rw. 当前精神值
+@catalog 潜能属性
+@remarks 
+property nCurrentSpunk
+
+@summary rw. 精神基础值
+@catalog 潜能属性
+property nSpunkBase
+
+@summary rw. 精神百分比加成，单位1/1024
+@catalog 潜能属性
+property nSpunkBasePercentAdd
+
+
+@summary rw. int. 当前生命
+@catalog 基本属性
+@remarks 
+property nCurrentLife
+
+
+@summary rw. int. 最大生命
+@catalog 基本属性
+@remarks 
+property nMaxLife
+
+
+@summary rw. int. 最大生命基础值
+@catalog 基本属性
+@remarks 
+property nMaxLifeBase
+
+
+@summary rw. int 生命最大值增加百分比，单位1/1024
+@catalog 基本属性
+@remarks 
+property nMaxLifePercentAdd
+
+
+@summary rw. int 追加的生命最大值
+@catalog 基本属性
+@remarks 
+property nMaxLifeAdditional
+
+
+@summary rw. int 生命点数恢复速度
+@catalog 基本属性
+@remarks 
+property nLifeReplenish
+
+
+@summary rw. int 生命百分比恢复速度，单位1/1024
+@catalog 基本属性
+@remarks 
+property nLifeReplenishPercent
+
+@summary rw. int 生命点数的回复系数，单位1/1024
+@catalog 基本属性
+@remarks
+property nLifeReplenishCoefficient
+
+@summary rw. int 额外的生命回复点数
+@catalog 基本属性
+@remarks
+property nLifeReplenishExt
+
+@summary rw. int 上段虚弱程度
+@catalog
+@remarks 取值[[get SKILL_WEAK_LEVEL]]
+property nUpperWeakLevel
+
+
+@summary rw. int 中段虚弱程度
+@catalog
+@remarks 取值[[get SKILL_WEAK_LEVEL]]
+property nMiddleWeakLevel
+
+@summary rw. int 下段虚弱程度
+@catalog
+@remarks 取值[[get SKILL_WEAK_LEVEL]]
+property nLowerWeakLevel
+
+@summary rw. 当前内力值
+@catalog 基本属性
+@remarks 
+property nCurrentMana
+
+
+@summary rw. int 最大内力值
+@catalog 基本属性
+@remarks 
+property nMaxMana
+
+
+
+@summary rw. int 最大内力基础值
+@catalog 基本属性
+@remarks 
+property nMaxManaBase
+
+
+
+@summary rw. 最大内力百分比加成，单位1/1000
+@catalog 基本属性
+@remarks 
+property nMaxManaPercentAdd as int rw
+
+
+
+@summary rw. int 内力最大值追加百分比，单位1/1024
+@catalog 基本属性
+@remarks 
+property nMaxManaAdditional
+
+
+
+@summary rw. int 内力点数恢复速度
+@catalog 基本属性
+@remarks 
+property nManaReplenish
+
+
+
+@summary rw. int 内力百分比恢复速度，单位1/1024
+@catalog 基本属性
+@remarks 
+property nManaReplenishPercent
+
+@summary rw. int 内力点数的回复系数，单位1/1024
+@catalog 基本属性
+@remarks
+property nManaReplenishCoefficient
+
+@summary rw. int 额外的内力回复点数
+@catalog 基本属性
+@remarks
+property nManaReplenishExt
+
+
+
+# @summary rw. int 当前体力值
+# @catalog 基本属性
+# @remarks 
+# property nCurrentStamina
+# 
+# 
+# 
+# @summary rw. int 最大体力值
+# @catalog 基本属性
+# @remarks 
+# property nMaxStamina
+# 
+# 
+# 
+# @summary rw. 最大体力基础值
+# @catalog 基本属性
+# @remarks 
+# property nMaxStaminaBase as int rw
+# 
+# 
+# 
+# @summary rw. 最大体力增加百分比，单位1/1024
+# @catalog 基本属性
+# @remarks 
+# property nMaxStaminaPercentAdd as int rw
+# 
+# 
+# 
+# @summary rw. 体力最大值追加点数
+# @catalog 基本属性
+# @remarks 
+# property nMaxStaminaAdditional as int rw
+# 
+# 
+# 
+# @summary rw. 体力点数回复速度
+# @catalog 基本属性
+# @remarks 
+# property nStaminaReplenish as int rw
+# 
+# 
+# 
+# @summary rw. 体力百分比恢复速度，单位1/1024
+# @catalog 基本属性
+# @remarks 
+# property nStaminaReplenishPercent as int rw
+
+@summary rw. 闪避点数
+@catalog 基本属性
+@remarks 
+property nDodge as int rw
+
+
+@summary rw. 是否在战斗状态
+property bFightState as bool rw
+
+@summary rw. 是否拔出武器来
+@catalog 基本属性
+@remarks 
+property bSheathFlag as 布尔值 rw
+
+@summary rw.
+@catalog 基本属性
+property nPositiveShield as int rw
+
+@summary rw.
+@catalog 基本属性
+property nNegativeShield as int rw
+
+@summary rw. 无类型格挡
+@catalog 基本属性
+@remarks 
+property nGlobalBlock as int rw
+
+
+@summary rw. 无类型限制的伤害吸收
+@catalog 基本属性
+@remarks 
+property nGlobalDamageAbsorb as int rw
+
+
+@summary rw. 无类型限制的内力抵消伤害
+@catalog 基本属性
+@remarks 
+property nGlobalDamageManaShield as int rw
+
+
+@summary rw. 偷取生命百分比
+@catalog 基本属性
+@remarks 
+property nDamageToLifeForSelf
+
+
+
+@summary rw. 偷取魔法百分比
+@catalog 基本属性
+@remarks 
+property nDamageToManaForSelf
+
+
+@summary rw. OT动作被打退的退几率，单位是1/1000。
+@catalog 基本属性
+@remarks 被攻击者如果在做ot动作时，受到了攻击，且攻击可能导致击退效果，
+@	那么这个值用于判断被攻击者的ot动作是否被打退，也就是延长动作时间。
+property nBeatBackRate as int rw
+
+
+
+@summary rw. 击晕率
+@catalog 基本属性
+@remarks 
+property nStunStrikeRate as int rw
+
+
+@summary rw. 击飞值
+@catalog 基本属性
+@remarks 
+property nKnockedOffRate as int rw
+
+
+
+@summary rw. 击退值
+@catalog 基本属性
+@remarks 
+property nKnockedBackRate as int rw
+
+@summary rw. 外功会心率
+@catalog 基本属性
+@remarks 
+property nPhysicsCriticalStrike as int rw
+
+
+@summary rw. 外功伤害抵抗百分比，单位是1/1000
+@catalog 基本属性
+@remarks
+property nPhysicsResistPercent as int rw
+
+
+
+@summary rw. 外功防御值
+@catalog 基本属性
+@remarks 
+property nPhysicsShield as int rw
+
+
+@summary rw. 外功伤害反弹点数
+@catalog 基本属性
+@remarks 
+property nPhysicsReflection as int rw
+
+
+@summary rw. 外功伤害反弹百分比，单位1/1000
+@catalog 基本属性
+property nPhysicsReflectionPercent as int rw
+
+
+
+
+@summary rw. 外功伤害吸收
+@catalog 基本属性
+@remarks
+property nPhysicsDamageAbsorb as int rw
+
+
+@summary rw. 内力吸收的外功伤害
+@catalog 基本属性
+property nPhysicsDamageManaShield as int rw
+
+@summary rw. 阳性内功会心值
+@catalog 基本属性
+@remarks 
+property nSolarCriticalStrike as int rw
+
+@summary rw. 阳性内功魔法防御值
+@catalog 基本属性
+@remarks 需要消耗mana来防御阳性内功的防御值
+property nSolarMagicShield as int rw
+
+
+
+@summary rw. 阳性内功的抵抗百分比，单位1/1000
+@catalog 基本属性
+property nSolarMagicResistPercent as int rw
+
+
+@summary rw. 阳性内功反弹点数
+@catalog 基本属性
+property nSolarMagicReflection as int rw
+
+
+@summary rw. 阳性内功百分比反弹，单位1/1000
+@catalog 基本属性
+property nSolarMagicReflectionPercent as int rw
+
+
+
+@summary rw. 阳性内功格挡
+@catalog 基本属性
+property nSolarMagicBlock as int rw
+
+
+@summary rw. 阳性内功点数吸收
+@catalog 基本属性
+property nSolarDamageAbsorb as int rw
+
+
+
+@summary rw. 阳性内功的魔法防御
+@catalog 基本属性
+property nSolarDamageManaShield as int rw
+
+@summary rw. 中性内功会心值
+@catalog 基本属性
+@remarks 
+property nNeutralCriticalStrike as int rw
+
+@summary rw. 中性内功魔法防御值
+@catalog 基本属性
+@remarks 需要消耗mana来防御中性内功的防御值
+property nNeutralMagicShield as int rw
+
+
+@summary rw. 中性内功的抵抗百分比，单位1/1000
+@catalog 基本属性
+property nNeutralMagicResistPercent as int rw
+
+
+@summary rw. 中性内功反弹点数
+@catalog 基本属性
+property nNeutralMagicReflection as int rw
+
+
+@summary rw. 中性内功百分比反弹，单位1/1000
+@catalog 基本属性
+property nNeutralMagicReflectionPercent as int rw
+
+
+@summary rw. 中性内功格挡
+@catalog 基本属性
+property nNeutralMagicBlock as int rw
+
+
+@summary rw. 中性内功点数吸收
+@catalog 基本属性
+property nNeutralDamageAbsorb as int rw
+
+
+@summary rw. 中性内功的魔法防御
+@catalog 基本属性
+property nNeutralDamageManaShield as int rw
+
+@summary rw. 阴性内功会心值
+@catalog 基本属性
+@remarks 
+property nLunarCriticalStrike as int rw
+
+
+@summary rw. 阴性内功魔法防御值
+@catalog 基本属性
+@remarks 需要消耗mana来防御阴性内功的防御值
+property nLunarMagicShield as int rw
+
+
+@summary rw. 阴性内功的抵抗百分比，单位1/1000
+@catalog 基本属性
+property nLunarMagicResistPercent as int rw
+
+
+@summary rw. 阴性内功反弹点数
+@catalog 基本属性
+property nLunarMagicReflection as int rw
+
+@summary rw. 阴性内功百分比反弹，单位1/1000
+@catalog 基本属性
+property nLunarMagicReflectionPercent as int rw
+
+
+@summary rw. 阴性内功格挡
+@catalog 基本属性
+property nLunarMagicBlock as int rw
+
+
+@summary rw. 阴性内功点数吸收
+@catalog 基本属性
+property nLunarDamageAbsorb as int rw
+
+
+@summary rw. 阴性内功的魔法防御
+@catalog 基本属性
+property nLunarDamageManaShield as int rw
+
+@summary rw. 毒性内功会心值
+@catalog 基本属性
+@remarks 
+property nPoisonCriticalStrike as int rw
+
+
+
+@summary rw. 毒性内功魔法防御值
+@catalog 基本属性
+@remarks 需要消耗mana来防御毒性内功的防御值
+property nPoisonMagicShield as int rw
+
+
+
+@summary rw. 毒性内功的抵抗百分比，单位1/1000
+@catalog 基本属性
+property nPoisonMagicResistPercent as int rw
+
+
+@summary rw. 毒性内功反弹点数
+@catalog 基本属性
+property nPoisonMagicReflection as int rw
+
+
+@summary rw. 毒性内功百分比反弹，单位1/1000
+@catalog 基本属性
+property nPoisonMagicReflectionPercent as int rw
+
+
+@summary rw. 毒性内功格挡
+@catalog 基本属性
+property nPoisonMagicBlock as int rw
+
+
+@summary rw. 毒性内功点数吸收
+@catalog 基本属性
+property nPoisonDamageAbsorb as int rw
+
+
+@summary rw. 毒性内功的魔法防御
+@catalog 基本属性
+property nPoisonDamageManaShield as int rw
+
+
+
+@summary 空手时拳头的攻击速度
+@catalog 基本属性
+@remarks
+property nNoneWeaponAttackSpeedBase
+
+
+@summary rw. 近战武器的攻击速度
+@catalog
+@remarks
+property nMeleeWeaponAttackSpeed as int rw
+
+
+@summary rw. 近战武器的基础攻击速度
+@catalog
+@remarks
+property nMeleeWeaponAttackSpeedBase as int rw
+
+
+@summary rw. 近战武器攻击速度的的加成比例，单位是1/1000
+@catalog
+@remarks
+property nMeleeWeaponAttackSpeedPercentAdd as int rw
+
+@summary rw. 近战武器攻击的额外加成点数
+@catalog
+@remarks
+property nMeleeWeaponAttackSpeedAdditional as int rw
+
+@summary rw. 远程武器的攻击速度，表示多少帧攻击一次
+@catalog
+@remarks
+property nRangeWeaponAttackSpeed as int rw
+
+
+@summary rw. 远程武器的基础攻击速度
+@catalog
+@remarks
+property nRangeWeaponAttackSpeedBase as int rw
+
+
+@summary rw. 远程武器攻击速度的加成比例。单位是1/1000
+@catalog
+@remarks
+property nRangeWeaponAttackSpeedPercentAdd as int rw
+
+
+@summary rw. 远程武器攻击速度的额外加成点数
+@catalog
+@remarks
+property nRangeWeaponAttackSpeedAdditional as int rw
+
+
+@summary 
+@catalog 
+@remarks 
+property nIntensity as int rw
+
+
+@summary 
+@catalog 
+@remarks 
+property dwScriptID as DWORD rw
+
+@summary [仅服务器端使用] 重生群组的编号
+@catalog
+@remarks
+property dwReliveID as DWORD rw
+
+@summary [仅服务器端使用] Npc小队ID
+@catalog
+@remarks
+property nNpcTeamID as int rw
+
+@summary [仅服务器端使用] NPC小队中的编号，没有队伍的npc为-1
+property nNpcTeamIndex as int rw
+
+@summary 获取当前的坐标
+@remarks 返回3个值(nX, nY, nZ)，分别代表X坐标、Y坐标和Z坐标。单位
+@	都是点。注意：水平方向上的“点”和垂直方向上的“点”是不一样的。
+function GetAbsoluteCoordinate()
+
+@summary 打开一个Doodad
+@catalog 角色动作
+@param Doodad Doodad的ID或Doodad对象
+@remarks 
+function Open(Doodad)
+
+
+
+@summary 站立
+function Stand()
+
+
+
+@summary 跑到指定坐标处
+@catalog 角色动作
+@param nDestX 目标X坐标
+@param nDestY 目标Y坐标
+@remarks 
+function RunTo(nDestX, nDestY)
+
+@summary 游泳
+@catalog 角色动作
+@param nDestX 目标X坐标
+@param nDestY 目标Y坐标
+@param nDestZ 目标Z坐标
+@remarks 该函数无返回值
+@n
+@n	在客户端执行这个函数时，会检查当前对象是否对应当前客户端玩家，如果不是，
+@	则立即返回。也就是说，如果在客户端对某个KNpc对象执行SwimTo，实际是没有
+@	任何效果的。
+function SwimTo(nDestX, nDestY, nDestZ)
+
+@summary 走到指定坐标处
+@catalog 角色动作
+@param nDestX 目标X坐标
+@param nDestY 目标Y坐标
+@remarks 该函数没有返回值。
+function WalkTo(nDestX, nDestY)
+
+
+@summary 跳
+@catalog 角色动作
+@remarks 参数含义待查
+function Jump(bStandJump, nDirectionXY)
+
+@summary 冲刺
+@catalog 角色动作
+@param nFrame	冲刺持续的游戏帧数
+@param nDirection 方向
+@param nDistance 距离
+@param nVelocity 速率
+@remarks 该函数没有返回值。
+function Dash(nFrame, nDirection, nDistance, nVelocity)
+
+
+@summary [未实现] 巡逻
+@catalog 角色动作
+@remarks 
+function Patrol()
+
+
+@summary 坐下
+@catalog 角色动作
+@remarks 该函数没有返回值。
+function SitDown()
+
+
+
+@summary 死亡
+@catalog 角色动作
+@remarks 该函数没有返回值。
+function Die()
+
+
+
+@summary [仅服务器端使用] 说话
+@catalog 角色动作
+@param szText	说话的内容
+@param nRange	说话的范围，单位是点。
+@remarks 此函数接收1个或2个参数:
+@n	当只有1个参数时，是指定说话的内容字符串，此时
+@n	说话的范围是32*2*12个点.
+@
+@n	如果函数执行成功，返回true；否则返回false
+function Say(szText)
+	Say(szText, nRange)
+
+@summary [仅服务器端使用] 大喊
+@catalog 角色动作
+@param szText	要喊出来的内容字符串
+@remarks 如果函数执行成功，返回true；否则返回false
+function Yell(szText)
+
+@summary [仅服务器端使用] 悄悄说
+@catalog 角色动作
+@param dwPlayerID	NPC悄悄说话的目标玩家id
+@param szText	说的内容字符串
+@remarks 如果函数执行成功，返回true；否则返回false
+function Whisper(dwPlayerID, szText)
+
+@summary [仅服务器端使用] NPC对某个玩家说话
+@catalog 角色动作
+@param dwPlayerID	NPC说话的目标玩家id
+@param szText	说的内容字符串
+@remarks 如果函数执行成功，返回true；否则返回false
+function SayTo(dwPlayerID, szText)
+
+@summary [仅服务器端使用] 朝某个玩家大喊
+@catalog 角色动作
+@param dwPlayerID	玩家id
+@param szText		喊话内容
+@remarks 如果函数执行成功，返回true；否则返回false
+function YellTo(dwPlayerID, szText)
+
+@summary [仅服务器端使用] 设置NPC的位置
+@catalog 角色动作
+@param nX	新位置的X坐标
+@param nY	新位置的Y坐标
+@param nZ	新位置的Z坐标
+@remarks 该函数没有返回值
+function SetPosition(nX, nY, nZ)
+
+@summary [仅服务器端使用] 设置npc是否具有银行功能
+@catalog
+@param bFlag	true表示npc有银行功能;false表示没有
+@remarks 如果函数执行成功，返回true；否则返回false
+function SetBank(bFlag)
+
+@summary 转身
+@catalog 角色动作
+@param nFaceDirection 转身后的朝向
+@remarks 
+function TurnTo(nFaceDirection)
+
+@summary 仰视或俯视
+@catalog 角色动作
+@param nNewDirection	新的视角，单位(360/256)度。取值在[-256, 255]。如果
+@	角度是一个负值，那么会自动加256作为新的角度。
+function PitchTo(nNewDirection)
+
+
+
+@summary 让角色做动作
+@catalog 角色动作
+@param dwCharacterID 角色ID
+@param byAction 动作类型，参见[[see CHARACTER_ACTION_TYPE]]
+@remarks 
+function DoAction(dwCharacterID, byAction)
+
+
+
+@summary 设置角色选中的目标
+@catalog 角色动作
+@param eTargetType 目标类型，[[get TARGET]]
+@param dwID 目标id
+@remarks 
+function SetTarget(eTargetType, dwID)
+
+
+
+@summary 释放技能
+@catalog 武功技能
+@param dwSkillID	技能id
+@param dwSkillLevel 技能等级
+@remarks 返回代表操作结果的常量，含义如下：[[get SKILL_RESULT_CODE]]
+function CastSkill(dwSkillID, dwSkillLevel)
+
+@summary 设置角色的模型id
+@catalog 基本属性
+@param dwModelID	新模型id
+@remarks 该函数无返回值。
+function SetModelID(dwModelID)
+
+@summary 在某个坐标处释放技能
+@catalog 武功技能
+@param dwSkillID 技能id
+@param dwSkillLevel 技能等级
+@param nX 目标X坐标
+@param nY 目标Y坐标
+@param nZ 目标Z坐标
+@remarks 返回值参见[[see SKILL_RESULT_CODE]]
+function CastSkillXYZ()
+
+
+
+
+
+@summary 设置npc的AI类型
+@catalog 
+@param nAIType	AI类型，取值[[get AI_TYPE]]
+@remarks 如果函数执行成功，返回true,否则返回false
+function SetAIType(AIType)
+
+
+@summary 获取npc身上的任务字符串
+@catalog 任务相关
+@remarks 返回的字符串描述了npc身上所有的任务id。如果没有找到，则返回空字符串。
+@n
+@n	字符串开头是"<O%d %d>",第1个%d会被替换为TARGET.NPC的值，第2个%d会被替换为
+@	npc的id。接下来是所有任务的描述串。 每个任务表示为"<Q%d>\n"，其中%d会被
+@	替换为任务id。
+@n
+@n	例如，假设TARGET.NPC的值为3，当前npc的id为9567，那么该函数的返回值是这个样子：
+@	"<O3 9567><Q1>\n<Q2>\n<Q334>\n"
+function GetQuestString()
+
+@summary 获取NPC当前的目标
+@catalog
+@remarks 返回2个值:
+@n	eTargetType:	目标类型
+@n	dwTargetID:		目标id
+@n
+@n	其中eTargetType的含义如下表: [[get TARGET]]	
+function GetTarget()
+
+@summary [仅在服务器端使用] 获取npc对某个玩家的自动对话。
+@catalog
+@param dwPlayerID	玩家id
+@remarks 获取npc对某个玩家的自动对话。如果没有，则返回空字符串。
+function GetAutoDialogString(dwPlayerID)
+
+@summary [仅在服务器端使用] 共享任务 
+@catalog 任务相关
+@param nQuestIndex 任务在npc任务列表中的索引
+@remarks 
+function ShareQuest(nQuestIndex)
+
+
+
+@summary [仅在服务器端使用] 给1个npc绑定商店
+@catalog 商店
+@param dwShopTemplateID 商店模板id
+@remarks 
+function BindNpcShop(dwShopTemplateID)
+
+
+@summary [仅在服务器端使用] 取消1个npc的商店
+@catalog 商店
+@remarks 
+function UnbindNpcShop()
+
+
+
+@summary [仅在服务器端使用] 获取npc身上的商店对象
+@catalog 商店
+@remarks 返回npc身上商店对应的KShop对象。如果没有帮定商店，返回nil
+function GetShop()
+
+
+
+@summary [仅在服务器端使用] Npc跟随目标
+@catalog
+@param dwID 目标的id
+@remarks 设定npc跟随某个目标。如果函数执行成功，返回true；否则返回false
+function FollowTarget(dwID)
+
+@summary [仅服务器端使用]修改某个角色的仇恨值
+@param 角色id
+@nThreat 仇恨的修改量
+function ModifyThreat(dwCharacterID, nThreat)
+
+@summary [仅在服务器端使用]设置与Npc关联的脚本
+@catalog 
+@param szFileName 脚本文件名
+@remarks 
+function SetScript(szFileName)
+
+
+@summary [仅服务器端使用] 清除角色身上的仇恨与被仇恨列表
+@remarks 函数执行成功返回true，否则返回false
+function ClearAllThreat()
+
+@summary [仅服务器端使用] 设置角色的势力id
+@param dwForceID	势力id
+@remarks 如果设置成功，返回true；否则返回false
+function SetForceID(dwForceID)
+
+@summary [仅服务器端使用] 设置npc的消失时间
+@param nFrames	从现在起，过多少帧npc消失
+@param bGotoReviveList	可选，bool类型，表示npc是否进入重生列表
+@remarks 函数执行成功返回true，否则返回false
+function SetDisappearFrames(nFrames, [bGotoReviveList])
+
+@summary [仅服务器端使用] 使npc进入重生列表 
+@remarks 如果函数执行成功，返回true；否则返回false
+function GotoReviveList()
+
+
+# @summary 判定角色当前能否释放某个技能
+# @catalog 武功技能
+# @param dwSkillID	技能id
+# @param dwSkillLevel	技能等级
+# @remarks 如果可以释放，返回SKILL_RESULT_CODE.SUCCESS, 否则返回SKILL_RESULT_CODE.FAILED
+# function CanCastSkill(dwSkillID, dwSkillLevel)
+
+
+@summary 设置npc拔剑状态
+@catalog 武功技能
+@param bSheath bool值，是否拔出武器来
+@remarks 
+function SetSheath(bSheath)
+
+
+
+@summary 获取npc所在场景的Scene对象
+@catalog 
+@remarks 
+function GetScene()
+
+
+
+@summary 获取角色所在地图的id
+@catalog 
+@remarks 
+function GetMapID()
+
+
+@summary 判断能够与目标player对话
+@param playerObj 目标KPlayer对象
+@remarks 如果可以对话，返回true；否则返回false
+function CanDialog(playerObj)
+
+@summary 判断能否被选中
+@remarks 如果可以对话，返回true；否则返回false
+function IsSelectable()
+
+@summary [仅服务器端使用] 设置NPC是否能够对话
+@param bFlag	能否对话
+@remarks 如果执行成功，返回true；否则返回false
+@n
+@n	服务器会将设置的属性通知给客户端。
+function SetDialogFlag(bFlag)
+
+@summary rw. 招架几率
+@catalog 基本属性
+property nParry as int rw
+
+@summary rw. 招架值，和减免伤害相关
+@catalog 基本属性
+property nParryValue as int rw
+
+@summary rw. 洞察值
+@catalog 基本属性
+property nSense as int rw   
+ 
+@summary rw. 变化值
+@catalog 基本属性
+property nStrain as int rw
+
+@summary rw. 韧性
+@catalog 基本属性
+property nToughness as int rw
+
+@summary rw. 暴击加成伤害
+@catalog 基本属性
+property nCriticalDamagePower as int rw 
+
+@summary rw. 被暴击降低伤害
+@catalog 基本属性
+property nDecriticalDamagePower as int rw 
+
+@summary  开启技能调试
+@catalog   武功技能
+@param 	nDebugLevel 技能等级
+@remarks  如果函数执行成功，返回true；否则返回false
+function 	Attach(nDebugLevel)
+
+@summary  关闭技能调试
+@catalog   武功技能
+@remarks  如果函数执行成功，返回true；否则返回false
+function 	Detach()
+
+@summary [仅服务端使用] 设置INT32类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围（INT_MIN - INT_MAX）
+@remarks 	函数不返回
+function 	SetCustomInteger4(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取INT32类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomInteger4(nOffset)
+
+@summary [仅服务端使用] 设置INT16类型自定义数据
+@catalog   定制数据 
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围（SHRT_MIN - SHRT_MAX）
+@remarks 	函数不返回
+function 	SetCustomInteger2(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取INT16类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomInteger2(nOffset)
+
+@summary [仅服务端使用] 设置INT8类型自定义数据
+@catalog   定制数据 
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围（SCHAR_MIN - SCHAR_MAX）
+@remarks 	函数不返回
+function 	SetCustomInteger1(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取INT8类型自定义数据
+@catalog   定制数据 
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomInteger1(nOffset)
+
+@summary [仅服务端使用] 设置UINT32类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围 (0 - UINT_MAX )
+@remarks 函数不返回
+function 	SetCustomUnsigned4(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取UINT32类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomUnsigned4(nOffset)
+
+@summary [仅服务端使用] 设置UINT16类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围 (0 - USHRT_MAX )
+@remarks 函数不返回
+function 	SetCustomUnsigned2(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取UINT16类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomUnsigned2(nOffset)
+
+@summary [仅服务端使用] 设置UINT8类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围 (0 - UCHAR_MAX )
+@remarks 函数不返回
+function 	SetCustomUnsigned1(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取UINT8类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomUnsigned1(nOffset)
+
+@summary [仅服务端使用] 设置比特位自定义数据
+@catalog   定制数据
+@param 	nByteOffset 自定义数据块字节位索引
+@param 	nBitOffset 自定义数据块比特位索引 范围 (0 - 7)
+@param 	bValue 输入值
+@remarks 函数不返回
+function 	SetCustomBitValue(nByteOffset, nBitOffset)
+
+@summary  [仅服务端使用] 获取比特位类型自定义数据
+@catalog   定制数据
+@param 	nByteOffset 自定义数据块字节位索引
+@param 	nBitOffset 自定义数据块比特位索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomBitValue(nByteOffset, nBitOffset)
+
+@summary [仅服务端使用] 设置字符串类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	pcszValue 输入值
+@remarks 函数不返回
+function 	SetCustomString(nOffset, pcszValue)
+
+@summary  [仅服务端使用] 获取字符串类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomString(nOffset)
+
+@summary [仅服务端使用] 设置布尔类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	bInput 输入值 范围（0-1）
+@remarks 函数不返回
+function 	SetCustomBoolean(nOffset, bInput)
+
+@summary  [仅服务端使用] 获取布尔类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomBoolean(nOffset)
+
+@summary [仅服务器端使用] NPC随机ID
+@catalog
+@remarks
+property dwRandomID as DWORD rw
+
+@summary  触发AI事件
+@catalog AI
+@param 事件ID [[get AI_EVENT]]
+@remarks
+function FireAIEvent(nEventID)
+
+@summary  NPC的AI事件源
+@catalog
+@remarks
+property dwAIEventSrc as DWORD ro
+
+
+@summary 判断能否被看见血条
+@remarks 如果可以对话，返回true；否则返回false
+function CanSeeLifeBar()
+
+@summary 判断能否被看见名字
+@remarks 如果可以对话，返回true；否则返回false
+function CanSeeName()
+
+@summary rw. 这个NPC的雇主，也就是主人，一般情况下NPC是没有雇主的
+@catalog
+@remarks 
+property dwEmployer
+
+@summary rw. AI事件参数
+@catalog
+@remarks 
+property nAIEventParam
+
+@summary  获取技能准备状态
+@catalog   武功技能
+@remarks  函数返回4个参数
+@n 参数1 bIsPrepare 技能是否在准备
+@n 参数2 dwSkillID 技能ID
+@n 参数3 dwSkillLevel 技能等级
+@n 参数4 fProgress 技能准备进度
+function 	GetSkillPrepareState()
+
+@summary   取消buff
+@catalog   武功技能
+@param nIndex  buffer索引
+@remarks  如果成功，返回true，否则返回false
+function 	CancelBuff(nIndex)
+
+@summary [仅服务端使用] 加buff
+@catalog   武功技能
+@param dwCasterID  释放者ID
+@param nCasterLevel  释放者等级
+@param dwBuffID  bufferID
+@param nBuffLevel  buffer等级
+@param nCount  buffer跳数
+@remarks  如果成功，返回true，否则返回false
+function 	AddBuff(dwCasterID, nCasterLevel, dwBuffID, nBuffLevel)
+AddBuff(dwCasterID, nCasterLevel, dwBuffID, nBuffLevel, nCount)
+
+@summary  [仅服务端使用]取消buff
+@catalog   武功技能
+@param dwBuffID  bufferID
+@param nBuffLevel  buffer等级
+@remarks  如果成功，返回true，否则返回false
+function 	DelBuff(dwBuffID, nBuffLevel)
+
+@summary  [仅服务端使用]取消GroupBuff
+@catalog   武功技能
+@param dwBuffID  bufferID
+@param nBuffLevel  buffer等级
+@remarks  如果成功，返回true，否则返回false
+function 	DelGroupBuff(dwBuffID, nBuffLevel)
+
+@summary 获取Buff列表
+@catalog 武功技能
+@remarks 如果函数执行成功，返回1个table，包含：
+@n	dwID: BuffID
+@n	nLevel: Buff等级
+@n	bCanCancel: 是否能取消
+@n	nEndFrame:	Buff结束时间
+@n	nIndex:	buff索引
+@n	nStackNum:	buff叠加数
+@n	dwSkillSrcID:	buff所属技能ID
+function GetBuffList()
+
+@summary 获取Buff对象
+@catalog 武功技能
+@param dwBuffID  bufferID
+@param nBuffLevel  buffer等级
+@remarks 如果函数执行成功，返回buff对象[[see KBUFF_LIST_NODE]] 否则不返回
+function GetBuff(dwBuffID, nBuffLevel)
+
+@summary 统一清除一个 character 身上某类的多个BUFF, 不管叠加层数及个数。
+@catalog 武功技能
+@param dwType	Buff的FunctionType，见常量[[get SKILL_FUNCTION_TYPE]]
+@remarks 成功则返回true，否则返回false
+function DelMultiGroupBuffByFunctionType(dwType)
+
+@summary rw. 外功攻击强度
+@catalog 武功技能
+property nPhysicsAttackPower as int rw
+
+@summary rw. 外功命中值
+@catalog 武功技能
+property nPhysicsHitValue as int rw
+
+@summary rw. 阳性内功攻击强度
+@catalog 武功技能
+property nSolarAttackPower as int rw
+
+@summary rw. 阳性内功命中值
+@catalog 武功技能
+property nSolarHitValue as int rw
+
+@summary rw. 中性内功攻击强度
+@catalog 武功技能
+property nNeutralAttackPower as int rw
+
+@summary rw. 中性内功命中值
+@catalog 武功技能
+property nNeutralHitValue as int rw
+
+@summary rw. 阴性内功攻击强度
+@catalog 武功技能
+property nLunarAttackPower as int rw
+
+@summary rw. 阴性内功命中值
+@catalog 武功技能
+property nLunarHitValue as int rw
+
+@summary rw. 毒性内功攻击强度
+@catalog 武功技能
+property nPoisonAttackPower as int rw
+
+@summary rw. 毒性内功命中值
+@catalog 武功技能
+property nPoisonHitValue as int rw
+
+@summary rw. 基础治疗
+@catalog 武功技能
+property nTherapyPower as int rw
+
+@summary 设置buff下一跳帧数
+@catalog 武功技能
+@param nBuffIndex buff索引
+@param nNextActiveFrame  下一跳帧数
+@remarks 
+function SetBuffNextActiveFrame(nBuffIndex, nNextActiveFrame)
+
+@summary 设置buff剩余的跳数
+@catalog 武功技能
+@param nBuffIndex buff索引
+@param nLeftActiveCount  剩余的跳数
+@remarks 
+function SetBuffLeftActiveCount(nBuffIndex, nLeftActiveCount)
+
+@summary 设置巡逻路径
+@catalog AI
+@param nPatrolPath 巡逻路径ID
+@param nNextPointIndex  下一个巡逻路径ID
+@remarks 
+function SetPatrolPath(nPatrolPath, nNextPointIndex)

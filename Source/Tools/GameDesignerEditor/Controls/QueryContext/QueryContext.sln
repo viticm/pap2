@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryContextData", "QueryContextData\QueryContextData.csproj", "{1D05E327-35F8-4B84-AE5B-F4B3F4514005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryContext", "QueryContext\QueryContext.csproj", "{AA561F11-8CF1-4617-9C3B-E4F893C4F295}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D05E327-35F8-4B84-AE5B-F4B3F4514005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D05E327-35F8-4B84-AE5B-F4B3F4514005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D05E327-35F8-4B84-AE5B-F4B3F4514005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D05E327-35F8-4B84-AE5B-F4B3F4514005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA561F11-8CF1-4617-9C3B-E4F893C4F295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA561F11-8CF1-4617-9C3B-E4F893C4F295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA561F11-8CF1-4617-9C3B-E4F893C4F295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA561F11-8CF1-4617-9C3B-E4F893C4F295}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

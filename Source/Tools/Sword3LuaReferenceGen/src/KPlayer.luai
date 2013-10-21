@@ -1,0 +1,3260 @@
+﻿@title Player对象
+@obj KPlayer
+@detail 
+@catalogs 基本属性, 物理属性, 潜能属性, 移动属性, 交易相关, 
+@	玩家动作, 装备道具, 武功技能, 任务相关, 生活技能, 组队相关, 邮件系统,
+@	声望势力, 组队好友, 定制数据, AI
+
+@summary ro. ID
+@catalog 基本属性
+@remarks 
+property dwID
+
+@summary ro. 地图中的X坐标，单位点
+@catalog 物理属性
+@remarks 
+property nX
+
+@summary ro. 地图中的Y坐标，单位点
+@catalog 物理属性
+@remarks 
+property nY
+
+@summary ro. 距离地表的Z坐标，单位点
+@catalog 物理属性
+@remarks Z坐标的单位“点”与XY坐标的单位“点”不同
+property nZ
+
+@summary rw. 触碰范围
+@catalog 物理属性
+@remarks 
+property nTouchRange
+
+@summary ro. 在地图中X方向上的第几个格子
+@catalog 物理属性
+@remarks 这个格子坐标是相对于地图左下角的
+property nXCell
+
+@summary ro. 在地图中Y方向上的第几个格子
+@catalog 物理属性
+@remarks 这个格子坐标是相对于地图左下角的
+property nYCell
+
+@summary rw. 物体的质量
+@catalog 物理属性
+@remarks 
+property nMass
+
+
+@summary rw. 宽度，单位点
+@catalog 物理属性
+@remarks 
+property nWidth
+
+@summary rw. 长度，单位点
+@catalog 物理属性
+@remarks 
+property nLength
+
+@summary rw. 高度，单位点
+@catalog 物理属性
+@remarks 物理属性
+property nHeight
+
+@summary rw. 面部朝向，单位360/256度
+@catalog 物理属性
+@remarks 
+property nFaceDirection
+
+@summary rw. 俯仰角,单位(360/256)度
+@catalog 物理属性
+property nPitchDirection
+
+
+@summary rw. string. 玩家名字
+@catalog 基本属性
+@remarks 
+property szName
+
+@summary rw. string. 玩家头衔
+@catalog 基本属性
+@remarks 
+property szTitle
+
+@summary rw. 玩家性别，参见[[see CHARACTER_GENDER]]
+@catalog 基本属性
+@remarks [[get CHARACTER_GENDER]]
+property nGender
+
+@summary rw. 玩家类型，参见[[see CHARACTER_KIND]]
+@catalog 基本属性
+@remarks 取值：[[get CHARACTER_KIND]]
+property nKind
+
+@summary rw. 分类ID
+@catalog 基本属性
+@remarks 
+property dwClassID
+
+@summary rw. 种族，参见[[see CHARACTER_RACE]]
+@catalog 基本属性
+@remarks 取值：[[get CHARACTER_RACE]]
+property nRace
+
+@summary rw. 势力ID
+@catalog 基本属性
+@remarks 
+property dwForceID as dword rw
+
+@summary rw. 玩家等级
+@catalog 基本属性
+@remarks 
+property nLevel
+
+@summary rw. 模型id
+@catalog 基本属性
+@remarks 
+property dwModelID
+
+@summary rw. 玩家经验
+@catalog 基本属性
+@remarks 
+property nExperience
+
+@summary rw. 剩余的双倍经验值
+@remarks
+property nDoubleExp
+
+@summary rw. 是否在练功房
+@remarks
+property bOnPracticeRoom as bool rw
+
+@summary rw. 当前的精力
+property nCurrentStamina
+
+@summary rw. 当前的体力值
+@remarks
+property nCurrentThew as int rw
+
+@summary rw. 最大的精力
+property nMaxStamina
+
+@summary rw. 最大的体力值
+@remarks
+property nMaxThew as int rw
+
+@summary rw. 道德值
+@catalog 基本属性
+@remarks 
+property nMoral
+
+@summary rw. 表情状态
+@catalog 玩家动作
+@remarks
+property dwCharacterAction
+
+@summary ro. 角色移动状态
+@catalog 移动属性
+@remarks 取值[[get MOVE_STATE]]
+property nMoveState as int ro
+
+@summary ro. 水平面上速率，单位点/帧
+@catalog 移动属性
+@remarks 
+property nVelocityXY
+
+@summary ro. 水平面上速度方向，单位360/256度
+@catalog 基本属性
+@remarks 
+property nDirectionXY
+
+	
+@summary ro. 垂直方向速率，单位点/帧
+@catalog 移动属性
+@remarks 
+property nVelocityZ
+
+@summary ro. 走路或跑步目标点的X坐标
+@catalog 移动属性
+property nDestX
+
+@summary ro. 走路或跑步目标点的Y坐标
+@catalog 移动属性
+property nDestY
+
+@summary ro. 行走速度
+@catalog 移动属性
+property nWalkSpeed as int ro
+
+@summary ro. 跑步速度
+@catalog 移动属性
+property nRunSpeed as int ro
+
+@summary ro. 游泳速度
+@catalog 移动属性
+property nSwimSpeed as int ro
+
+@summary ro. 行走基础速度
+@catalog 移动属性
+property nWalkSpeedBase as int ro
+
+@summary ro. 跑步基础速度
+@catalog 移动属性
+property nRunSpeedBase Base as int ro
+
+@summary ro. 游泳基础速度
+@catalog 移动属性
+property nSwimSpeedBase as int ro
+
+@summary ro. 移动速度加成
+@catalog 移动属性
+property nMoveSpeedPercent as int ro
+
+
+@summary ro. 最大跳跃次数
+@catalog 移动属性
+property nMaxJumpCount as int ro
+
+@summary ro. 重力
+@catalog 物理属性
+@remarks nGravity = nGravityBase * (1024 + nGravityPercent) / 1024
+property nGravity as int ro
+
+@summary ro. 重力基础值
+@catalog 物理属性
+@remarks 参考[[see KPlayer.nGravity]]
+property nGravityBase as int ro
+
+@summary ro. 重力百分比加成，单位1/1024
+@catalog 物理属性
+@remarks 参考[[see KPlayer.nGravity]]
+property nGravityPercent as int ro
+
+@summary ro. 跳跃时水平方向的速度，单位点/帧
+@catalog 移动属性
+@remarks 
+property nJumpSpeed as int ro
+
+@summary ro. 水平方向跳跃速度基础值，单位点/帧
+@catalog 移动属性
+@remarks 参考[[see KNpc.nJumpSpeedXY]]
+property nJumpSpeedBase as int ro
+
+@summary ro. 水平方向跳跃速度百分比加成，单位1/1024
+@catalog 移动属性
+@remarks 参考[[see KNpc.nJumpSpeedXY]]
+property nJumpSpeedPercent as int ro
+
+
+@summary ro. 抗摔伤系数，取值[0 - 1024]
+@catalog 基本属性
+property nDropDefence as int ro
+
+@summary ro. 潜水时间计数器。单位与nDivingFrame相同
+@catalog 移动属性
+property nDivingCount as int ro
+
+@summary ro. 最大潜水时间，单位是帧数
+@catalog 移动属性
+property nDivingFrame
+
+@summary ro. 最大潜水时间基础值
+@catalog 移动属性
+property nDivingFrameBase as int ro
+
+@summary ro. 最大潜水时间百分比加成
+@catalog 移动属性
+property nDivingFramePercent as int ro
+
+
+
+@summary ro. 是否可以水上漂
+@catalog 移动属性
+@remarks 取值：true（可以漂），false（不会漂）
+property nWaterFlyAbility as int ro
+
+@summary rw. 当前力量值
+@catalog 潜能属性
+@remarks 
+property nCurrentStrength
+
+@summary rw. 力量基础值
+@catalog 潜能属性
+@remarks
+property nStrengthBase
+
+@summary rw. 力量百分比加成，单位1/1024
+@catalog 潜能属性
+property nStrengthBasePercentAdd
+
+
+@summary rw. 当前敏捷值
+@catalog 潜能属性
+@remarks 
+property nCurrentAgility
+
+@summary rw. 敏捷基础值
+@catalog 潜能属性
+@remarks
+property nAgilityBase
+
+@summary rw. 敏捷百分比加成，单位1/1024
+@catalog 潜能属性
+property nAgilityBasePercentAdd
+
+@summary rw. 当前体质
+@catalog 潜能属性
+property nCurrentVitality
+
+@summary rw. 体质基础值
+@catalog 潜能属性
+property nVitalityBase
+
+@summary rw. 体质基础值百分比加成，单位1/1024
+@catalog 潜能属性
+property nVitalityBasePercentAdd
+
+@summary rw. 当前根骨值
+@catalog 潜能属性
+@remarks 
+property nCurrentSpirit
+
+@summary rw. 根骨基础值
+@catalog 潜能属性
+property nSpiritBase
+
+@summary rw. 根骨百分比加成，单位1/1024
+@catalog 潜能属性
+property nSpiritBasePercentAdd
+
+
+@summary rw. 当前精神值
+@catalog 潜能属性
+@remarks 
+property nCurrentSpunk
+
+@summary rw. 精神基础值
+@catalog 潜能属性
+property nSpunkBase
+
+@summary rw. 精神百分比加成，单位1/1024
+@catalog 潜能属性
+property nSpunkBasePercentAdd
+
+@summary rw. int. 当前生命
+@catalog 基本属性
+@remarks 
+property nCurrentLife
+
+@summary rw. int. 最大生命
+@catalog 基本属性
+@remarks 
+property nMaxLife
+
+@summary rw. int. 最大生命基础值
+@catalog 基本属性
+@remarks 
+property nMaxLifeBase
+
+@summary rw. int 生命最大值增加百分比，单位1/1024
+@catalog 基本属性
+@remarks 
+property nMaxLifePercentAdd
+
+@summary rw. int 追加的生命最大值
+@catalog 基本属性
+@remarks 
+property nMaxLifeAdditional
+
+@summary rw. int 生命点数恢复速度
+@catalog 基本属性
+@remarks 
+property nLifeReplenish
+
+@summary rw. int 生命百分比恢复速度，单位1/1024
+@catalog 基本属性
+@remarks 
+property nLifeReplenishPercent
+
+@summary rw. int 生命点数的回复系数，单位1/1024
+@catalog 基本属性
+@remarks
+property nLifeReplenishCoefficient
+
+@summary rw. int 额外的生命回复点数
+@catalog 基本属性
+@remarks
+property nLifeReplenishExt
+
+@summary rw. int 上段虚弱程度
+@catalog
+@remarks 取值[[get SKILL_WEAK_LEVEL]]
+property nUpperWeakLevel
+
+
+@summary rw. int 中段虚弱程度
+@catalog
+@remarks 取值[[get SKILL_WEAK_LEVEL]]
+property nMiddleWeakLevel
+
+@summary rw. int 下段虚弱程度
+@catalog
+@remarks 取值[[get SKILL_WEAK_LEVEL]]
+property nLowerWeakLevel
+
+
+@summary rw. 当前内力值
+@catalog 基本属性
+@remarks 
+property nCurrentMana
+
+@summary rw. int 最大内力值
+@catalog 基本属性
+@remarks 
+property nMaxMana
+
+@summary rw. int 最大内力基础值
+@catalog 基本属性
+@remarks 
+property nMaxManaBase
+
+@remarks rw. 内力最大值的百分比加成，单位1/1024
+@catalog 基本属性
+@remarks
+property nMaxManaPercentAdd as int rw
+
+@summary rw. int 内力最大值追加点数
+@catalog 基本属性
+@remarks 
+property nMaxManaAdditional
+
+@summary rw. int 内力点数恢复速度
+@catalog 基本属性
+@remarks 
+property nManaReplenish
+
+@summary rw. int 内力百分比恢复速度，单位1/1024
+@catalog 基本属性
+@remarks 
+property nManaReplenishPercent
+
+@summary rw. int 内力点数的回复系数，单位1/1024
+@catalog 基本属性
+@remarks
+property nManaReplenishCoefficient
+
+@summary rw. int 额外的内力回复点数
+@catalog 基本属性
+@remarks
+property nManaReplenishExt
+
+# @summary rw. int 当前体力值
+# @catalog 基本属性
+# @remarks 
+# property nCurrentStamina
+# 
+# @summary rw. int 最大体力值
+# @catalog 基本属性
+# @remarks 
+# property nMaxStamina
+# 
+# @summary rw. 最大体力基础值
+# @catalog 基本属性
+# @remarks 
+# property nMaxStaminaBase as int rw
+# 
+# @summary rw. 最大体力增加百分比，单位1/1024
+# @catalog 基本属性
+# @remarks 
+# property nMaxStaminaPercentAdd as int rw
+# 
+# @summary rw. 体力最大值追加点数
+# @catalog 基本属性
+# @remarks 
+# property nMaxStaminaAdditional as int rw
+# 
+# @summary rw. 体力点数回复速度
+# @catalog 基本属性
+# @remarks 
+# property nStaminaReplenish as int rw
+# 
+# @summary rw. 体力百分比恢复速度，单位1/1024
+# @catalog 基本属性
+# @remarks 
+# property nStaminaReplenishPercent as int rw
+
+
+@summary rw. 闪避值
+@catalog 基本属性
+@remarks 用于计算外功闪避
+property nDodge as int rw
+
+
+@summary rw. 是否战斗状态
+@catalog 基本属性
+@remarks 
+property bFightState as bool rw
+
+@summary rw. 是否拔出武器来
+@catalog 基本属性
+@remarks 
+property bSheathFlag as bool rw
+
+@summary rw.
+@catalog 基本属性
+property nPositiveShield as int rw
+
+@summary rw.
+@catalog 基本属性
+property nNegativeShield as int rw
+
+
+
+@summary rw. 无类型格挡状态
+@catalog 基本属性
+@remarks 
+property nGlobalBlock as int rw
+
+@summary rw. 无类型限制的伤害吸收
+@catalog 基本属性
+@remarks 
+property nGlobalDamageAbsorb as int rw
+
+@summary rw. 无类型限制的内力抵消伤害
+@catalog 基本属性
+@remarks 
+property nGlobalDamageManaShield as int rw
+
+@summary rw. 偷取生命百分比
+@catalog 基本属性
+@remarks 
+property nDamageToLifeForSelf as int rw
+
+@summary rw. 偷取内力百分比
+@catalog 基本属性
+@remarks 
+property nDamageToManaForSelf as int rw
+
+@summary rw. OT动作被打退的退几率，单位是1/1024。
+@catalog 基本属性
+@remarks 被攻击者如果在做ot动作时，受到了攻击，且攻击可能导致击退效果，
+@	那么这个值用于判断被攻击者的ot动作是否被打退，也就是延长动作时间。
+property nBeatBackRate as int rw
+
+@summary rw. 击晕率
+@catalog 基本属性
+@remarks 
+property nStunStrikeRate as int rw
+
+@summary rw. 击飞值
+@catalog 基本属性
+@remarks 
+property nKnockedOffRate as int rw
+
+@summary rw. 击退值
+@catalog 基本属性
+@remarks 
+property nKnockedBackRate as int rw
+
+
+@summary rw. 外功会心率
+@catalog 基本属性
+@remarks 
+property nPhysicsCriticalStrike as int rw
+
+@summary rw. 外功伤害抵抗百分比，单位是1/1024
+@catalog 基本属性
+@remarks
+property nPhysicsResistPercent as int rw
+
+
+@summary rw. 外功防御值
+@catalog 基本属性
+@remarks 
+property nPhysicsShield as int rw
+
+@summary rw. 外功伤害反弹点数
+@catalog 基本属性
+@remarks 
+property nPhysicsReflection as int rw
+
+@summary rw. 外功伤害反弹百分比，单位1/1024
+@catalog 基本属性
+property nPhysicsReflectionPercent as int rw
+
+
+@summary rw. 外功伤害吸收
+@catalog 基本属性
+@remarks
+property nPhysicsDamageAbsorb as int rw
+
+@summary rw. 内力吸收的外功伤害
+@catalog 基本属性
+property nPhysicsDamageManaShield as int rw
+
+
+@summary rw. 阳性内功会心值
+@catalog 基本属性
+@remarks 
+property nSolarCriticalStrike as int rw
+
+
+@summary rw. 阳性内功魔法防御值
+@catalog 基本属性
+@remarks 需要消耗mana来防御阳性内功的防御值
+property nSolarMagicShield as int rw
+
+@summary rw. 阳性内功的抵抗百分比，单位1/1024
+@catalog 基本属性
+property nSolarMagicResistPercent as int rw
+
+@summary rw. 阳性内功反弹点数
+@catalog 基本属性
+property nSolarMagicReflection as int rw
+
+@summary rw. 阳性内功百分比反弹，单位1/1024
+@catalog 基本属性
+property nSolarMagicReflectionPercent as int rw
+
+@summary rw. 阳性内功格挡
+@catalog 基本属性
+property nSolarMagicBlock as int rw
+
+@summary rw. 阳性内功点数吸收
+@catalog 基本属性
+property nSolarDamageAbsorb as int rw
+
+@summary rw. 阳性内功的魔法防御
+@catalog 基本属性
+property nSolarDamageManaShield as int rw
+
+
+@summary rw. 中性内功会心值
+@catalog 基本属性
+@remarks 
+property nNeutralCriticalStrike as int rw
+
+@summary rw. 中性内功魔法防御值
+@catalog 基本属性
+@remarks 需要消耗mana来防御中性内功的防御值
+property nNeutralMagicShield as int rw
+
+@summary rw. 中性内功的抵抗百分比，单位1/1024
+@catalog 基本属性
+property nNeutralMagicResistPercent as int rw
+
+@summary rw. 中性内功反弹点数
+@catalog 基本属性
+property nNeutralMagicReflection as int rw
+
+@summary rw. 中性内功百分比反弹，单位1/1024
+@catalog 基本属性
+property nNeutralMagicReflectionPercent as int rw
+
+@summary rw. 中性内功格挡
+@catalog 基本属性
+property nNeutralMagicBlock as int rw
+
+@summary rw. 中性内功点数吸收
+@catalog 基本属性
+property nNeutralDamageAbsorb as int rw
+
+@summary rw. 中性内功的魔法防御
+@catalog 基本属性
+property nNeutralDamageManaShield as int rw
+
+
+@summary rw. 阴性内功会心值
+@catalog 基本属性
+@remarks 
+property nLunarCriticalStrike as int rw
+
+@summary rw. 阴性内功魔法防御值
+@catalog 基本属性
+@remarks 需要消耗mana来防御阴性内功的防御值
+property nLunarMagicShield as int rw
+
+@summary rw. 阴性内功的抵抗百分比，单位1/1024
+@catalog 基本属性
+property nLunarMagicResistPercent as int rw
+
+@summary rw. 阴性内功反弹点数
+@catalog 基本属性
+property nLunarMagicReflection as int rw
+
+@summary rw. 阴性内功百分比反弹，单位1/1024
+@catalog 基本属性
+property nLunarMagicReflectionPercent as int rw
+
+@summary rw. 阴性内功格挡
+@catalog 基本属性
+property nLunarMagicBlock as int rw
+
+@summary rw. 阴性内功点数吸收
+@catalog 基本属性
+property nLunarDamageAbsorb as int rw
+
+@summary rw. 阴性内功的魔法防御
+@catalog 基本属性
+property nLunarDamageManaShield as int rw
+
+
+@summary rw. 毒性内功会心值
+@catalog 基本属性
+@remarks 
+property nPoisonCriticalStrike as int rw
+
+@summary rw. 毒性内功魔法防御值
+@catalog 基本属性
+@remarks 需要消耗mana来防御毒性内功的防御值
+property nPoisonMagicShield as int rw
+
+@summary rw. 毒性内功的抵抗百分比，单位1/1024
+@catalog 基本属性
+property nPoisonMagicResistPercent as int rw
+
+@summary rw. 毒性内功反弹点数
+@catalog 基本属性
+property nPoisonMagicReflection as int rw
+
+@summary rw. 毒性内功百分比反弹，单位1/1024
+@catalog 基本属性
+property nPoisonMagicReflectionPercent as int rw
+
+@summary rw. 毒性内功格挡
+@catalog 基本属性
+property nPoisonMagicBlock as int rw
+
+@summary rw. 毒性内功点数吸收
+@catalog 基本属性
+property nPoisonDamageAbsorb as int rw
+
+@summary rw. 毒性内功的魔法防御
+@catalog 基本属性
+property nPoisonDamageManaShield as int rw
+
+
+
+@summary 空手时拳头的攻击速度
+@catalog 基本属性
+@remarks
+property nNoneWeaponAttackSpeedBase
+
+@summary rw. 近战武器的攻击速度
+@catalog
+@remarks
+property nMeleeWeaponAttackSpeed as int rw
+
+@summary rw. 近战武器的基础攻击速度
+@catalog
+@remarks
+property nMeleeWeaponAttackSpeedBase as int rw
+
+@summary rw. 近战武器攻击速度的的加成比例，单位是1/1024
+@catalog
+@remarks
+property nMeleeWeaponAttackSpeedPercentAdd as int rw
+
+@summary rw. 近战武器攻击的额外加成点数
+@catalog
+@remarks
+property nMeleeWeaponAttackSpeedAdditional as int rw
+
+@summary rw. 远程武器的攻击速度，表示多少帧攻击一次
+@catalog
+@remarks
+property nRangeWeaponAttackSpeed as int rw
+
+@summary rw. 远程武器的基础攻击速度
+@catalog
+@remarks
+property nRangeWeaponAttackSpeedBase as int rw
+
+@summary rw. 远程武器攻击速度的加成比例。单位是1/1024
+@catalog
+@remarks
+property nRangeWeaponAttackSpeedPercentAdd as int rw
+
+@summary rw. 远程武器攻击速度的额外加成点数
+@catalog
+@remarks
+property nRangeWeaponAttackSpeedAdditional as int rw
+
+@summary ro. [仅在服务器端使用]帐户名
+@catalog 基本属性
+property szAccount as string ro
+
+@summary [仅在服务器端使用] rw. 获取上一个cell的trap脚本的id
+@catalog
+property dwLastScriptID
+
+@summary rw. [仅在服务器端使用] 凶手的id
+@catalog 基本属性
+property dwKillerID as dword rw
+
+
+@summary rw. 势力
+@catalog 基本属性
+@remarks 取值：[[get CAMP]]
+property nCamp as 枚举 rw
+
+@summary rw. 是否正在摆摊
+@catalog 基本属性
+property bStall
+
+
+@summary rw. 队伍ID
+@catalog 组队相关
+@remarks 
+property dwPartyID as DWORD rw
+
+@summary rw. 角色类型，参见[[see ROLE_TYPE]]
+@catalog 基本属性
+@remarks 取值：[[get ROLE_TYPE]]
+property nRoleType as 枚举 rw
+
+@summary rw. 银行npc的id
+@catalog
+@remarks 记录玩家用于打开银行的npc，以便在超出距离后自动关闭银行界面。
+property dwBankNpcID
+
+
+@summary [仅服务器端使用] 被玩家A复活的时候, 玩家A的ID
+@catalog 基本属性
+property dwReviver as DWORD rw
+
+@summary [仅服务器端使用] 被玩家A复活的时候, 玩家A的X坐标
+@catalog 基本属性
+property nReviveX as int rw
+
+@summary [仅服务器端使用] 被玩家A复活的时候, 玩家A的y坐标
+@catalog 基本属性
+property nReviveY as int rw
+
+@summary [仅服务器端使用] 被玩家A复活的时候, 玩家A的z坐标
+@catalog 基本属性
+property nReviveZ as int rw
+
+@summary 获取当前的绝对坐标
+@remarks 返回3个值(nX, nY, nZ)，分别代表X坐标、Y坐标和Z坐标。单位
+@	都是点。注意：水平方向上的“点”和垂直方向上的“点”是不一样的，它们所
+@	代表的长度不同。
+@
+@n	其中X和Y是相对于地图原点的坐标，Z是相对于海平面的坐标。地图的原点
+@	在地图的左下角。
+function GetAbsoluteCoordinate()
+
+
+@summary 设置角色的模型id
+@catalog 基本属性
+@param dwModelID	新模型id
+@remarks 该函数无返回值。
+function SetModelID(dwModelID)
+
+@summary 打开一个Doodad
+@catalog 玩家动作
+@param Doodad Doodad的ID或Doodad对象
+@remarks 
+function Open(Doodad)
+
+@summary 停下来
+@catalog 玩家动作
+@remarks 
+function Stop()
+
+@summary 站立
+@catalog 玩家动作
+function Stand()
+
+@summary 跑到指定坐标处
+@catalog 玩家动作
+@param nDestX 目标X坐标
+@param nDestY 目标Y坐标
+@remarks 
+function RunTo(nDestX, nDestY)
+
+@summary 游泳
+@catalog 玩家动作
+@param nDestX 目标X坐标
+@param nDestY 目标Y坐标
+@param nDestZ 目标Z坐标
+@remarks 该函数无返回值
+@n
+@n	在客户端执行这个函数时，会检查当前对象是否对应当前客户端玩家，如果不是，
+@	则立即返回。如果一切正常，则发送游泳消息到服务器。
+function SwimTo(nDestX, nDestY, nDestZ)
+
+@summary 走到指定坐标处
+@catalog 玩家动作
+@param nDestX 目标X坐标
+@param nDestY 目标Y坐标
+@remarks 
+function WalkTo(nDestX, nDestY)
+
+@summary 跳
+@catalog 玩家动作
+@remarks 参数含义待查
+function Jump(bStandJump, nDirectionXY)
+
+@summary 冲刺
+@catalog 玩家动作
+@param nFrame	冲刺持续的游戏帧数
+@param nDirection 方向
+@param nDistance 距离
+@param nVelocity 速率
+@remarks 该函数没有返回值。
+function Dash(nFrame, nDirection, nDistance, nVelocity)
+
+@summary 未实现
+@catalog 玩家动作
+@remarks 
+function Patrol()
+
+@summary 坐下
+@catalog 玩家动作
+@remarks 
+function SitDown()
+
+@summary 死亡
+@catalog 玩家动作
+@remarks 只有在服务器端执行时才会真正挂掉
+function Die()
+
+#@summary 说话
+#@catalog 玩家动作
+#@param szText 要说出来的string
+#@remarks 
+#function Say(szText)
+
+@summary 转身
+@catalog 玩家动作
+@param nFaceDirection 转身后的朝向
+@remarks 
+function TurnTo(nFaceDirection)
+
+@summary 仰视或俯视
+@catalog 玩家动作
+@param nNewDirection	新的视角，单位(360/256)度。取值在[-256, 255]。如果
+@	角度是一个负值，那么会自动加256作为新的角度。
+function PitchTo(nNewDirection)
+
+
+@summary 让角色做动作
+@catalog 玩家动作
+@param dwCharacterID 角色ID
+@param byAction 动作类型，参见[[see CHARACTER_ACTION_TYPE]]
+@remarks 
+function DoAction(dwCharacterID, byAction)
+
+@summary 获取身上背包中的某个物品的Item对象
+@catalog 装备道具
+@param dwBoxIndex 背包序号，取值：[[get INVENTORY_INDEX]]
+@param dwX 格子在背包中的位置
+@remarks 
+function GetItem(dwBoxIndex, dwX)
+
+@summary 删除物品（未实现）
+@catalog 装备道具
+@remarks 
+function DelItem()
+
+@summary 获取玩家身上指定类型物品的对象
+@catalog 装备道具
+@param dwTab 道具表类型，取值[[get ITEM_TABLE_TYPE]]
+@param dwIndex 道具在道具配置表中的索引
+@remarks 对应的Item对象。如果没找到，则返回nil
+function GetItemByIndex(dwTab, dwIndex)
+
+@summary 获取人物装备的某个道具
+@catalog 装备道具
+@param eEquipmentType	获取哪个部位的装备，取值[[get EQUIPMENT_INVENTORY]]
+@remarks 如果指定部位有装备，那么返回代表这个装备的KItem对象；否则返回nil
+function GetEquipItem(eEquipmentType)
+
+@summary [仅服务器端使用] 添加道具 
+@catalog 装备道具
+@param dwTabType 道具类型，取值：[[get ITEM_TABLE_TYPE]]
+@param dwIndex 道具索引
+@param nStackNum 堆叠数量
+@param dwBoxIndex	物品放置的背包索引，取值：[[get INVENTORY_INDEX]]
+@param dwPos	创建出的物品要放置在背包中的哪个格子
+@remarks 	如果函数执行成功，返回true; 否则返回false
+function AddItem(dwTabType, dwIndex) 
+	AddItem(dwTabType, dwIndex, nStackNum)
+	AddItem(dwTabType, dwIndex, nStackNum, dwBoxIndex, dwPos)
+
+@summary 交换身上背包两个物品的位置
+@catalog 装备道具
+@param dwSrcBox 源背包序号
+@param dwSrcX 物品在源背包的位置
+@param dwDestBox 目标背包序号
+@param dwDestX 物品在目标背包的位置
+@param dwAmount 可选，移动的数量
+@remarks 背包序号取值：[[get INVENTORY_INDEX]]
+function ExchangeItem(dwSrcBox, dwSrcX, dwDestBox, dwDestX, [dwAmount])
+
+@summary 摧毁道具
+@catalog 装备道具
+@param dwBox 背包序号，取值: [[get INVENTORY_INDEX]]
+@param dwX 道具位置
+@remarks 如果函数执行成功，返回true；否则返回false
+function DestroyItem(dwBox, dwX)
+
+@summary 获取表现逻辑Id
+@catalog
+@remarks 会把所有的表现逻辑id返回，总共数量是REPRESENT_COUNT个（8个）
+@n
+@n	返回值从左到右依次是：MELEE_WEAPON, HELM, CHEST, WAISTS, PANTS, BANGLE, 
+@	EXTEND, FACE
+function GetRepresentID()
+
+@summary [仅服务器端使用] 设置玩家表现逻辑id
+@catalog
+@param nIndex	表现逻辑的部位
+@param wValue	新表现逻辑的id
+@remarks
+function SetRepresentID(nIndex, wValue)
+
+
+@summary 激活银行的下一个背包位
+@catalog
+@remarks 如果函数执行成功，返回true；否则返回false
+@n	
+@n	如果在客户端执行，那么会向服务器请求激活背包。如果在服务器端执行,
+@	那么会执行实际的激活操作，并扣除相应的金钱。
+function EnableBankPackage()
+
+@summary 获取银行中已经激活的背包位数量
+@catalog
+@remarks
+function GetBankPackageCount()
+
+@summary 判断某个银行背包位是否已经激活
+@catalog
+@param nInventoryType	背包位索引。取值应该是[[see EQUIPMENT_INVENTORY]]中的
+@	BANK_PACKAGE1到BANK_PACKAGE6
+@remarks 如果背包位可以使用，那么返回true；否则返回false
+function IsBankPackageEnabled(nInventoryType)
+
+@summary 获取背包容量
+@catalog 装备道具
+@param dwBox 背包序号，取值：[[get INVENTORY_INDEX]]
+@remarks 
+function GetBoxSize(dwBox)
+
+@summary 判断2个道具是否可以交换位置
+@catalog 装备道具
+@param nSrcBoxIndex 源背包序号
+@param nSrcX 源物品在背包的位置
+@param nDestBoxIndex 目标背包序号
+@param nDestX 目标物品在背包的位置
+@remarks 操作Item结果 取值为：[[get ITEM_RESULT_CODE]]
+function CanExchange(nSrcBoxIndex, nSrcX, nDestBoxIndex, nDestX)
+
+@summary 打开银行
+@catalog
+@param dwNpcID	目标npc的id
+@remarks 如果函数执行成功，返回true；否则返回false
+@n
+@n	如果在客户端执行，将会执行额外一些步骤：通知服务器要打开银行，通知UI。
+@	但如果在服务器执行，并不会通知客户端打开银行。
+function OpenBank(dwNpcID)
+
+@summary 关闭银行
+@catalog
+@remarks 如果函数执行成功，返回true，否则返回false
+function CloseBank()
+
+@summary 看道具能在身上哪个部位装备，返回对应的位置
+@catalog 装备道具
+@remarks 如果可以装备，返回装备位置。否则返回nil
+@n	有4种参数组合：
+@n	1) dwID：道具ID
+@n	2) BoxIndex, X: 背包序号，道具位置
+@n	3) version, type, index: 版本号，道具表，物品在道具表里填的id。
+@n	4) version, type, index, dwID: 版本号，道具表，物品在道具表里填的id，道具的id
+@n
+@n	道具表取值：[[get ITEM_TABLE_TYPE]]
+function GetEquipPos(dwId) 
+	GetEquipPos(BoxIndex, X) 
+	GetEquipPos(version, type, index)
+	GetEquipPos(version, type, index, dwID)
+
+@summary 获取某个背包内的一个空位置
+@catalog 装备道具
+@param dwBoxIndex	背包序号
+@remarks 如果找到了空位置，返回这个位置的序号；否则返回nil
+function GetFreeRoom(dwBoxIndex)
+
+@summary 获取所有背包的空位数目
+@catalog 装备道具
+@remarks 这个函数返回玩家身上所有背包的空位数目，只查找类型为ivtPackage的背包位。
+function GetFreeRoomSize()
+
+
+@summary 获取身上背包中的一个空位置
+@catalog 装备道具
+@remarks 如果函数执行成功，返回2个值:
+@n	dwBoxIndex:	空格子所在的背包索引
+@n	dwX:	空格子在背包内的位置。
+function GetFreeRoomInPackage()
+
+@summary 检查角色是否满足某个属性要求
+@catalog 
+@param nAttributeID 属性id
+@param nValue1 属性的value1
+@param nValue2 可选，属性的value2
+@remarks 
+function SatisfyRequire(nAttributeID, nValue1, [nValue2])
+
+@summary 获取角色身上某种道具的数量
+@catalog 装备道具
+@param dwTabType 道具表类型，取值[[get ITEM_TABLE_TYPE]]
+@param dwIndex 道具在道具表中填的id
+@param nDurabiltity 道具的耐久度
+@remarks 返回角色身上某种道具的数量
+function GetItemAmount(dwTabType, dwIndex, [nDurabiltity])
+
+@summary 获取角色所有背包某种道具的数量
+@catalog 装备道具
+@param dwTabType 道具表类型，取值[[get ITEM_TABLE_TYPE]]
+@param dwIndex 道具在道具表中填的id
+@param nDurabiltity 道具的耐久度
+@remarks 返回角色所有背包某种道具的数量
+function GetItemAmountInAllPackages(dwTabType, dwIndex, [nDurabiltity])
+
+@summary 设置角色选中的目标
+@catalog 
+@param eTargetType 目标类型，[[get TARGET]]
+@param dwID 目标id
+@remarks 
+function SetTarget(eTargetType, dwID)
+
+@summary 获取当前选定的目标
+@remarks 该函数返回2个值：eTargetType, dwTargetID
+@n
+@	eTargetType是[[see TARGET]]，表明选定目标的类型
+@n	dwTargetID是目标的id
+function GetTarget()
+
+@summary 在某个坐标处释放技能
+@catalog 武功技能
+@param dwSkillID 技能id
+@param dwSkillLevel 技能等级
+@param nX 目标X坐标
+@param nY 目标Y坐标
+@param nZ 目标Z坐标
+@remarks 返回值参见[[see SKILL_RESULT_CODE]]
+function CastSkillXYZ(dwSkillID, dwSkillLevel, nX, nY, nZ)
+
+
+@summary 释放技能
+@catalog 武功技能
+@param dwSkillID 技能ID
+@param dwSkillLevel 技能等级
+@remarks 返回值参见[[see SKILL_RESULT_CODE]]
+function CastSkill(dwSkillID, dwSkillLevel)
+
+@summary 获取玩家身上所有技能所属门派的列表
+@catalog 武功技能
+@remarks 返回一个table，是一个下表从1开始的数组，数组的每一项是门派的id
+function GetSchoolList()
+
+@summary 获取玩家身上武功的列表
+@catalog 武功技能
+@param dwSchoolID	门派id
+@remarks 如果函数执行成功，返回一个包含玩家身上属于该门派的武功的table。
+@	这个table以武功的id为索引，对应武功的等级，即这个表是如下形式的：
+@n	{[dwKungfuID]=dwKungfuLevel, ...}
+function GetKungfuList(dwSchoolID)
+
+@summary 获取角色身上属于某种武功的技能列表
+@catalog 武功技能
+@param dwKungfuID 武功的id
+@remarks 返回一个table，table的每一项以技能id为索引，对应的值为技能等级，即
+@	是这种形式：{[dwSkillId] = skillLevel, ...}
+function GetSkillList(dwKungfuID)
+
+@summary [仅客户端使用] 获取秘笈的key
+@catalog 武功技能
+@param dwSkillID	技能id
+@param dwSkillLevel	技能等级
+@remarks 如果函数执行成功，返回秘笈的key，是一个table，包含以下内容：
+@n	"skill_id":	skill id
+@n	"skill_level":	skill等级
+@n	"recipe0" ~ "recipe4":	秘笈
+function GetSkillRecipeKey(dwSkillID, dwSkillLevel)
+
+
+@summary 判断能否接某个任务
+@catalog 任务相关
+@remarks 这个函数分2个版本：服务器端的和客户端的
+@ 服务器端的接收3个参数：eTargetType，dwID和dwQuestID。eTargetType是任务给予者的类型，取值参见[[see TARGET]]。dwID是任务给予者的ID，dwQuestID是任务ID
+@ 客户端的只接收1个参数：dwQuestID，即任务id
+function CanAcceptQuest()
+
+@summary 判断玩家是否已完成某个任务
+@catalog 任务相关
+@param dwQuestID 任务id
+@param eTargetType	目标类型，取值[[get TARGET]]
+@param dwTargetID	目标的id
+@remarks 如果已经完成了任务，那么返回true；否则返回false
+@	
+@	如果给出了eTargetType和dwTargetID，那么会在判断时考虑目标的因素：任务能否
+@	在目标处交？
+function CanFinishQuest(dwQuestID)
+	CanFinishQuest(dwQuestID, eTargetType, dwTargetID)
+
+@summary 获取任务阶段状态
+@catalog 任务相关
+@param dwQuestID 任务id
+@remarks 返回值含义：
+@	3:	表示已完成任务
+@	0:	表示任务不存在
+@	1:	表示任务正在进行中，
+@	2:	表示任务已完成但还没有交
+@	-1:	表示任务id非法
+function GetQuestPhase(dwQuestID)
+
+@summary 获取任务列表
+@catalog 任务相关
+@remarks 返回2个值：
+@n	任务table:这个表包含一系列“第几个任务:任务id”项，其中“第几个”任务是一个从1
+@		开始的整数
+@n	任务数量：总任务数目
+function GetQuestList()
+
+@summary 获取任务序号
+@catalog 任务相关
+@param dwQuestID 任务id
+@remarks 任务在程序内部以一个定长数组存储，这个函数返回某个任务在这个数组中的位置，
+@	从0开始。
+function GetQuestIndex(dwQuestID)
+
+@summary 取出玩家身上某个任务的状态
+@catalog 任务相关
+@param dwQuestID 任务id
+@remarks 返回值是一个表示任务状态的数字
+function GetQuestState(dwQuestID)
+
+@summary 获取玩家身上的任务列表
+@catalog 任务相关
+@remarks 返回2个值：任务table及其元素个数。
+@
+@n	任务table是一个下表从1开始的数组。每一个任务是数组的一项，也是一个table。
+@	每一个任务的table包含以下字段：nQuestIndex(任务索引，对应程序内部的存储索引), 
+@	nLevel(任务等级), szName(任务名称), szQuestDiff(对应Quests.tab中的Difficulty).
+@
+@n	任务table中的任务会分类，即同一类（按照Quests.tab中Class分类）任务会
+@	放在相邻的位置。每一类任务开始时，那个任务的table中的nQuestIndex字段是-1, nLevel是0，
+@	szItem是分类的名字（对应Quests.tab中的Class）,szQuestDiff则是一个没有用的值。
+@
+@n	同一类任务中的每个任务又是按照nLevel升序排列的。例如对于类别为“扬州”的一系列任务，
+@	级别低的任务会排在级别高的任务前面。
+@
+@n	例如某个玩家的结果可能是: 
+@n	{	{nQuestIndex=-1, nLevel=0, szItem="稻香村", szQuestDiff="s3@#"},	--第1类任务开始
+@n			{nQuestIndex=1, nLevel=1, szItem="送饭", szQuestDiff="主线"},
+@n			{nQuestIndex=2, nLevel=2, szItem="手中针", szQuestDiff="主线"},,
+@n		{nQuestIndex=-1, nLevel=0, szItem="万花", szQuestDiff="fh@3%!"},	--第2类任务开始
+@n			{nQuestIndex=3, nLevel=15, szItem="深谷指引"}
+@n	}	--第1个返回值，任务table。每类任务是按照nLevel升序排列的。
+@n	5	--第2个返回值，任务table中元素的个数	
+function GetQuestTree()
+
+@summary 获取任务列表中某个任务的id
+@catalog 任务相关
+@param nQuestIndex 任务在玩家任务列表中的索引，从0开始
+@remarks 
+function GetQuestID(nQuestIndex)
+
+@summary 接任务
+@catalog 任务相关
+@param eTargetType 任务给予者类型，取值：[[get TARGET]]
+@param dwID 任务给予者id
+@param dwQuestID 任务id
+@param bIgnoreRules 可选。bool值，表示接任务前是否判断玩家能否接任务。
+@remarks 
+function AcceptQuest(eTartetType, dwID, dwQuestID, [bIgnoreRules])
+
+@summary 完成任务
+@catalog 任务相关
+@param dwQuestID 任务id
+@param dwTargetType	目标类型，取值[[get TARGET]]
+@param dwTargetID	目标id
+@param nPresentChoice1 选择的奖励1的索引
+@param nPresentChoice2 选择的奖励2的索引
+@remarks 该函数没有返回值。
+@n
+@n	在客户端，这个函数向服务器发送通知，表示要完成某个任务；在服务器端，该
+@	函数则执行实际的完成任务和领取奖励的动作。
+@n
+@n	发奖励时，会先检查任务关于奖励的设置。如果任务设定第1组奖励全给，那么就
+@	把第1组奖励全部给玩家；否则只给玩家选择的奖励，即nPresentChoice1指定
+@	的那个奖励。对于第2组奖励也是一样的处理。
+function FinishQuest(dwQuestID, dwTargetType, dwTargetID, nPresentChoice1, nPresentChoice2)
+
+@summary 放弃任务
+@catalog 任务相关
+@param nQuestIndex 任务在玩家任务列表中的索引，从0开始
+@remarks 
+function CancelQuest(nQuestIndex)
+
+@summary 共享任务
+@catalog 任务相关
+@param nQuestIndex 任务在玩家任务列表中的索引
+@remarks 
+function ShareQuest(nQuestIndex)
+
+@summary 强制完成任务
+@catalog 任务相关
+@param dwQuestID	任务ID
+@remarks 如果函数执行成功，返回true；否则返回false
+@n
+@n	只有在服务器端执行时，才会真正将任务状态置为完成。
+function ForceFinishQuest(dwQuestID)
+
+@summary 接受团队任务
+@catalog 任务相关
+@param dwPlayerID	任务发起者id
+@param dwQuestID	任务id
+@remarks 如果函数执行成功，返回true；否则返回false
+@n
+@n	如果在客户端执行，那么会判断能否接受此任务，并向服务器请求接受任务。如果在服务器端执行，
+@	目前函数不会执行任何实际操作。
+function AcceptTeamQuest(dwPlayerID, dwQuestID)
+
+@summary 设置任务的价值量
+@catalog 任务相关
+@param nQuestIndex 任务在玩家任务列表中的索引
+@param nValueIndex 价值量索引
+@param nNewValue 新的价值量
+@remarks 
+function SetQuestValue(nQuestIndex, nValueIndex, nNewValue)
+
+@summary 设置杀死的任务npc数量
+@catalog 任务相关
+@param nQuestIndex 任务索引。任务在程序内部以一个下标从0开始的数组存放，这个索引就是
+@	任务在数组中的下标
+@param nCountIndex 要杀的npc的索引。任务要杀的npc在程序内部以一个下标从0开始的数组存
+@	放，这个索引就是在npc数组中的下标
+@param nNewCount 杀死npc的数量
+@remarks 这个函数没有返回值。
+function SetKillNpcCount(nQuestIndex, nCountIndex, nNewCount)
+
+@summary 获取杀死任务怪的数量
+@catalog 任务相关
+@param nQuestIndex 任务在玩家任务列表中的索引
+@param nCountIndex 玩家身上记录杀死任务怪数量的数组的索引
+@remarks 
+function GetKillNpcCount(nQuestIndex, nCountIndex)
+
+@summary 获取任务已经进行的时间
+@catalog 任务相关
+@param nQuestIndex 任务在玩家任务列表中的索引
+@remarks 返回的是表示时间的一个time_t类型数字，代表从接任务到当前所经过的时间。
+function GetQuestLastTime(nQuestIndex)
+
+@summary 设置任务的失败状态
+@catalog 任务相关
+@param nQuestIndex	在程序内部有一个存放任务的数组，这个值代表
+@	任务在那个数组中的索引，从0开始
+@param bFailedFlag	是否失败，true表示任务失败
+@remarks 函数执行成功返回true；否则返回false
+function SetQuestFailedFlag(nQuestIndex, bFailedFlag)
+
+@summary 获取任务的失败状态
+@catalog 任务相关
+@param nQuestIndex	在程序内部有一个存放任务的数组，这个值代表
+@	任务在那个数组中的索引，从0开始
+@remarks 返回任务是否失败
+function GetQuestFailedFlag(nQuestIndex)
+
+@summary 获取玩家身上的生活技能列表
+@catalog 生活技能
+@remarks 返回值一个下标从1开始的Table，每一项是一个包含以下字段的table:
+@n	"ProfessionID":	技能id
+@n	"MaxLevel": 最高等级
+@n	"Level": 当前等级
+@n	"Proficiency":	熟练度
+@n	"BranchID":	
+function GetProfession()
+
+@summary 获取生活技能的等级和熟练度
+@catalog 生活技能
+@param dwProfessionID	生活技能id
+@remarks 如果函数执行成功，返回2个值：dwLevel和dwExp，分别代表技能的等级和熟练度。
+function GetProfessionLevel(dwProfessionID)
+
+@summary 获取生活技能的分支id
+@catalog 生活技能
+@param dwProfessionID	生活技能id
+@remarks
+function GetProfessionBranch(dwProfessionID)
+
+@summary 遗忘生活技能
+@catalog 生活技能
+@param dwProfessionID 技能id
+@remarks 
+function ForgetProfession(dwProfessionID)
+
+@summary 获取一个Profession中所有的Recipe
+@catalog 生活技能
+@param dwProfessionID
+@remarks 函数执行成功，会返回一个下标从1开始的table，每一项是是一个包含了
+@	配方id和Craft id的table，内容如下：
+@n	"CraftID"
+@n	"RecipeID"
+function GetRecipe(dwProfessionID)
+
+#@summary 遗忘配方
+#@catalog 生活技能
+#@param dwCraftID
+#@param dwRecipeID
+#@remarks 改函数没有返回值
+#function ForgetRecipe(dwCraftID, dwRecipeID)
+
+@summary 释放生活技能
+@catalog 生活技能
+@param dwCraftID	生活技能id
+@param dwRecipeID	配方id
+@param eTargetType	可选，必须与dwTargetID连用。技能的作用目标的类型，
+@	取值[[get TARGET]]
+@param dwTargetID	可选, 必须与eTargetType连用。技能的作用目标的id。
+@remarks 该函数的返回值参见：[[see CRAFT_RESULT_CODE]]
+function CastProfessionSkill(dwCraft, dwRecipeID, [eTargetType, dwTargetType])
+
+@summary 获取书籍的索引列表
+@catalog 生活技能
+@remarks 如果函数执行成功，返回一个table，这个table是一个下标从1开始的数组，
+@	每一项是书籍的一个索引，只有玩家读过的书才会加入到结果返回。
+@n
+@n	书籍的索引从1开始。
+function GetBookList()
+
+@summary 获取某本书已经阅读过的卷
+@catalog 生活技能
+@param dwBookID	书籍的id
+@remarks 如果函数执行成功，返回一个table，这个table是一个下标从1开始的数组，
+@	数组的每一项是书籍的第几卷。只有读过的书才会加入到这个table中。
+function GetBookSegmentList(dwBookID)
+
+@summary 判断玩家能否学习某个技能
+@catalog 武功技能
+@param dwSkillID	技能id
+@param dwMasterID	训练师id
+@remarks 如果可以学习技能，返回true；否则返回false。
+@n
+@n	如果玩家还没有学会这个技能，那么学习新技能。否则是判断能否学习技能的下一等级。
+function CanLearnSkill(dwSkillID, dwMasterID)
+
+@summary [仅客户端使用] 向服务器请求学习配方
+@catalog 生活技能
+@param dwCraftID	技艺id
+@param dwRecipeID	配方id
+@remarks 如果函数执行成功，返回true；否则返回false
+function LearnRecipe(dwCraftID, dwRecipeID)
+
+@summary 学习某个技能
+@catalog 武功技能
+@param dwSkillID 技能ID
+@param dwNpcID	仅在客户端执行时必要，技能训练师的id
+@param bNotifyPlayer	可选参数，仅用在服务器端。是否通知玩家
+@remarks 如果在服务器端执行，直接学会指定技能。
+@	如果在客户端执行，那么需要有dwNpcID，这时是向服务器请求在指定npc处学习技能
+@n
+@n	该函数没用返回值。
+function LearnSkill(dwSkillID, dwNpcID)
+	LearnSkill(dwSkillID, [bNotifyPlayer])
+
+@summary [仅服务器端使用] 增加玩家经验值
+@catalog 基本属性
+@param nExpIncrement 经验值的增加量
+@remarks 
+function AddExp(nExpIncrement)
+
+@summary [仅服务器端使用] 移动玩家位置
+@catalog 玩家动作
+@param nX 新X坐标
+@param nY 新Y坐标
+@param nZ 新Z坐标
+@remarks 该函数没有返回值
+function SetPosition(nX, nY, nZ)
+
+@summary [仅服务器端使用] 设置玩家上一次进入的地图及位置信息
+@catalog
+@param dwMapID	地图id
+@param nMapCopyIndex	地图副本id
+@param nX	X坐标
+@param nY	Y坐标
+@param nZ	Z坐标
+@param nFaceDirection	朝向
+@remarks 设置玩家上一次进入的地图及位置信息。
+@n
+@n	如果函数执行成功，返回true；否则返回false
+function SetLastEntry(dwMapID, nMapCopyIndex, nX, nY, nZ, nFaceDirection)
+
+
+@summary [仅服务器端使用] 切换地图
+@catalog 玩家动作
+@param dwMapID	map的id
+@param nMapCopyIndex	地图副本的id
+@param nX 新X坐标
+@param nY 新Y坐标
+@param nZ 新Z坐标
+@remarks 该函数没有返回值
+function SwitchMap(dwMapID, nX, nY, nZ)
+	SwitchMap(dwMapID, nMapCopyIndex, nX, nY, nZ)
+
+@summary [仅服务器端使用] 重置地图副本
+@catalog
+@remarks 
+function ResetMap(dwMapID)
+
+@summary 增加技能的经验值
+@catalog 武功技能
+@param dwSkillID 技能ID
+@param dwAddExp 增加的经验值
+@remarks 
+function AddSkillExp(dwSkillID, dwAddExp)
+
+
+
+@summary 遗忘某个武功技能
+@catalog 武功技能
+@param dwSkillID 技能ID
+@remarks 
+function ForgetSkill(dwSkillID)
+
+@summary [仅服务器端使用] 学习生活技能
+@catalog 生活技能
+@param dwProfessionID	生活技能id
+@remarks 如果函数执行成功，返回true；否则返回false
+function LearnProfession()
+
+@summary [仅服务器端使用] 学习生活技能的分支
+@catalog 生活技能
+@param dwProfessionID	生活技能id
+@param dwBranchID		生活技能分支id
+@remarks 如果函数执行成功，返回true；否则返回false
+function LearnBranch(dwProfessionID, dwBranchID)
+
+@summary [仅服务器端使用] 增加生活技能的熟练度
+@catalog 生活技能
+@param dwProfessionID	生活技能id
+@param dwExp	要增加的熟练度
+@remarks 如果函数执行成功，返回true；否则返回false
+function AddProfessionProficiency(dwProfessionID, dwExp)
+
+@summary [仅服务器端使用] 设置生活技能的最大等级
+@catalog 生活技能
+@param dwProfessioinID	生活技能id
+@param nMaxLevel	最大等级
+@remarks 如果函数执行成功，返回true；否则返回false
+function SetMaxProfessionLevel(dwProfessionID, nMaxLevel)
+
+#@summary 学习配方
+#@catalog 生活技能
+#@param dwCraftID
+#@param dwRecipeID
+@remarks 如果函数执行成功，返回true；否则返回false
+function LearnRecipe(dwCraftID, dwRecipeID)
+
+@summary [仅服务器端使用] 通知客户端打开一个窗口
+@catalog 
+@param dwTargetType	目标类型。取值：[[get TARGET]]
+@param dwTargetID	目标id
+@param szText	内容
+@
+@n	这个参数可以包含一些选项，当客户端执行时将对其进行特殊解释。支持的选项有：
+@n	<$%s>: 选项，%s为选项显示的字符串 <$C %s>: 选项点击后关闭
+@n	<S%d>: 字符串，%d为字符串的id
+@n	<P%d>: 玩家，%d为玩家id
+@n	<I%d>: 道具，%d为道具id
+@n	<Q%d>: 任务，%d为任务ID
+@n	<O%d %d>: 目标，第一个%d为目标类型，第二个为目标ID
+@n	<M%d %s>: 商店，%d为商店ID,%s为商店在对话中显示的名称,可以没有
+@n	<N>: 自己的名字
+@n	<C>: 体型的字符串
+@n	<L%d>: 邮件id
+@n	<B%d>: 银行id
+@n	<F%d %s>: %s的文字用%d的字体
+@n	<T%d 1>: 图片，%d为图片的ID。 <$TC %s>: 选项点击后关闭
+@n	<A%d>: 动画，%d的动画的ID <$AC %s>--选项点击后关闭
+@n	<H%d>控制当前行高，如果%d大于当前行高，则把行高变为%d，否则不变。
+@remarks 该函数没有返回值。
+function OpenWindow(dwTargetType, dwTargetID, szText)
+
+@summary 获取上次存盘时间
+@catalog
+@remarks 返回值是一个time_t类型
+function GetLastSaveTime()
+
+@summary 对自身使用道具
+@catalog 装备道具
+@param dwBox 背包索引，取值：[[get INVENTORY_INDEX]]
+@param dwX 道具位置
+@remarks 返回是否使用成功
+function UseItemOnSelf(dwBox, dwX)
+
+@summary 对当前选定目标使用道具
+@catalog 装备道具
+@param dwBox 背包索引，取值：[[get INVENTORY_INDEX]]
+@param dwX 道具位置
+@remarks 返回是否使用成功
+function UseItemOnTarget(dwBox, dwX)
+
+@summary 对目标位置使用道具
+@catalog 装备道具
+@param dwBox 背包索引，取值：[[get INVENTORY_INDEX]]
+@param dwX 道具位置
+@param nX 目标X坐标
+@param nY 目标Y坐标
+@param nZ 目标Z坐标
+@remarks 返回是否使用成功
+function UseItemOnCoordination()
+
+@summary 
+@catalog 
+@remarks 
+function WindowSelect()
+
+@summary 通知角色已经死亡。仅客户端使用
+@catalog 
+@param nRespondCode 通知码
+@remarks 
+function DoDeathRespond(nRespondCode)
+
+@summary 获取道具位置。仅客户端使用
+@catalog 装备道具
+@remarks 这个函数接收3种参数组合：
+@n 1) dwID 道具id
+@n 2) dwTabType, dwIndex: dwTabType是道具表类型，参见[[see ITEM_TABLE_TYPE]]dwIndex是道具在配置表的索引
+@n 3) nVersion, dwTabType, dwIndex: nVersion是版本号，其余与2)中含义相同
+@n 返回值是dwBox, dwX，即道具所在背包索引和位置
+function GetItemPos(dwID) GetItemPos(dwTabType, dwIndex)
+	GetItemPos(nVersion, dwTabType, dwIndex)
+
+@summary [仅客户端使用] 对目标使用道具。
+@catalog 装备道具
+@remarks 这个函数有以下几种参数组合：
+@n	dwBox	必选参数，背包索引，取值：[[get INVENTORY_INDEX]]
+@n	dwX	必选参数，道具在背包中的位置
+@
+@n	如果参数个数大于2，那么第3个参数是eCastMode, 表示施放方式。
+@	取值：[[get SKILL_CAST_MODE]]
+@n
+@n	如果eCastMode是POINT或POINT_AREA，那么必定还要有3个参数：nX, nY, nZ，代表
+@	目标点的坐标。
+@n
+@n	如果eCastMode是ITEM，表示对另外一个道具使用。那么必定还要有2个参数：
+@	dwTargetBox, dwTargetX, 分别表示: 
+@	目标道具所在的背包，取值[[see INVENTORY_INDEX]],和目标道具所在的格子
+@n
+@n	函数返回值的含义参见：[[see ITEM_RESULT_CODE]]
+function UseItem()
+
+@summary [仅客户端使用] 结束Loot
+@remarks 只是做一些常规检查，然后将完成loot的消息发送到服务器
+function OnCloseLootWindow()
+
+@summary 获取武器对应的技能
+@param bMelee	是否近战武器。true表示是近战武器，false表示是远程武器
+@remarks 这个函数在WeaponMapSkill.tab中查找武器所对应的技能，如果找到了
+@	则返回技能id；否则返回-1
+function GetCommonSkill(bMelee)
+
+
+@summary 获取道具的cd信息
+@catalog 装备道具
+@remarks 有以下几种参数组合：
+@
+@n 1个参数：dwItemID: 道具id
+@n 2个参数：dwBox, dwX。 dwBox是道具所在背包的索引，参见[[see INVENTORY_INDEX]]。
+@	dwX是道具在背包内的位置。
+@n 3个参数：version, type, index: version是道具系统的版本号，整数。type是道具表类型，
+@	取值参见[[see ITEM_TABLE_TYPE]]。index是道具在配置表中的id
+@n 4个参数：version, type, index, dwID。其中version，type和index的含义与3个参数的
+@	情况相同，dwID是道具的id。
+function GetItemCDProgress(dwItemID)
+	GetItemCDProgress(dwBox, dwX)
+	GetItemCDProgress(version, type, index)
+	GetItemCDProgress(version, type, index, dwID)
+
+@summary 获取技能的CD相关信息：是否有cd，剩余cd时间和总cd时间
+@catalog 武功技能
+@param dwSkillID 技能ID
+@param dwSkillLevel 技能等级
+@remarks 如果执行成功，返回3个值：是否有CD(true或false)，剩余CD时间和总CD时间。Cd时间的单位是帧。
+@ 如果技能有多个cd计时器，那么会返回结束时间最晚的cd信息。
+function GetSkillCDProgress(dwSkillID, dwSkillLevel)
+
+@summary 获取某个Cooldown计时器的cd时间
+@catalog 武功技能
+@param dwCooldownID CD计时器ID
+@remarks 
+function GetCDInterval(dwCooldownID)
+
+@summary 获取剩余CD时间，单位帧
+@catalog 武功技能
+@param dwCooldownID CD计时器ID
+@remarks 
+function GetCDLeft(dwCooldownID)
+
+@summary 获取当前某个技能的等级
+@catalog 武功技能
+@param dwSkillID 技能id
+@remarks 
+function GetSkillLevel(dwSkillID)
+
+@summary 获取技能消耗的生命值
+@catalog 武功技能
+@param dwSkillID 技能id
+@param dwSkillLevel 技能等级
+@remarks 
+function GetSkillLifeCost(dwSkillID, dwSkillLevel)
+
+@summary 获取技能消耗的内力值
+@catalog 武功技能
+@param dwSkillID 技能id
+@param dwSkillLevel 技能等级
+@remarks 
+function GetSkillManaCost(dwSkillID, dwSkillLevel)
+
+
+@summary 获取技能消耗的体力值
+@catalog 武功技能
+@param dwSkillID 技能id
+@param dwSkillLevel 技能等级
+@remarks 
+function GetSkillStaminaCost(dwSkillID, dwSkillLevel)
+
+@summary 获取技能的吟唱帧数
+@catalog 武功技能
+@param dwSkillID 技能id
+@param dwSkillLevel 技能等级
+@remarks 
+function GetSkillPrepare(dwSkillID, dwSkillLevel)
+
+@summary 获取技能的通道时间，单位帧
+@catalog 武功技能
+@param dwSkillID 技能id
+@param dwSkillLevel 技能等级
+@remarks 
+function GetSkillChannel(dwSkillID, dwSkillLevel)
+
+@summary 获取技能的最小攻击距离
+@catalog 武功技能
+@param dwSkillID 技能id
+@param dwSkillLevel 技能等级
+@remarks 
+function GetSkillMinRadius(dwSkillID, dwSkillLevel)
+
+@summary 获取技能的最大攻击距离
+@catalog 武功技能
+@param dwSkillID 技能id
+@param dwSkillLevel 技能等级
+@remarks 
+function GetSkillMaxRadius(dwSkillID, dwSkillLevel)
+
+@summary 获取技能的熟练度
+@catalog 武功技能
+@param dwSkillID 技能id
+@remarks 
+function GetSkillExp(dwSkillID)
+
+@summary 装备武功
+@catalog 武功技能
+@param dwKungfuID 武功ID
+@param dwKungfuLevel 武功等级
+@remarks 这个函数没有返回值
+@n
+@n	如果在客户端执行这个函数，会通知服务器来装备武功；如果在服务器端
+@	执行，那么会先卸载当前已经装备的武功（如果已经装备有武功），然后
+@	再装备新的武功。
+function MountKungfu(dwKungfuID, dwKungfuLevel)
+
+@summary 把装备的武功拆卸下来
+@catalog 武功技能
+@remarks 这个函数没有返回值
+@n
+@n	如果在客户端执行这个函数，会通知服务器来拆卸已经装备的武功；如果
+@	在服务器端执行，那么将直接执行拆卸武功的操作。
+function UmountKungfu()
+
+@summary 获取已装备的武功对象，返回对应的[[see Skill]]对象
+@catalog 武功技能
+@remarks 
+function GetKungfuMount()
+
+#	@summary 判定角色当前能否释放某个技能
+#	@catalog 武功技能
+#	@param dwSkillID	技能id
+#	@param dwSkillLevel	技能等级
+#	@remarks 如果可以释放，返回SKILL_RESULT_CODE.SUCCESS, 否则返回SKILL_RESULT_CODE.FAILED
+#	function CanCastSkill(dwSkillID, dwSkillLevel)
+
+@summary 设置玩家拔剑状态
+@catalog 武功技能
+@param bSheath bool值，是否拔出武器来
+@remarks 
+function SetSheath(bSheath)
+
+@summary 获取玩家所在场景的Scene对象
+@catalog 
+@remarks 
+function GetScene()
+
+@summary 
+@catalog 
+@remarks 
+function SearchForPartyMember()
+
+@summary 增加金钱 仅服务器端使用
+@catalog 装备道具
+@param nMoney 增加的金钱数量
+@remarks 如果函数执行成功，返回true；否则返回false
+function AddMoney(nMoney)
+
+@summary 消耗道具
+@catalog 装备道具
+@param dwType 道具表类型，取值[[get ITEM_TABLE_TYPE]]
+@param dwIndex	道具索引
+@param dwAmount 消耗数量
+@param nDurabiltity  消耗耐久度
+@remarks 如果函数执行成功，返回true；否则返回false
+function CostItem(dwType, dwIndex, dwAmount, [nDurabiltity])
+
+@summary 获取金钱数量
+@catalog 装备道具
+@remarks 
+function GetMoney()
+
+@summary 获取ot动作的状态
+@catalog 
+@remarks 
+function GetOTActionState()
+
+@summary [仅服务器端使用] 添加秘笈
+@catalog 武功技能
+@param dwRecipeID	秘笈id
+@param dwRecipeLevel	秘笈的等级
+@remarks 如果函数执行成功，返回true；否则返回false
+function AddSkillRecipe(dwRecipeID, dwRecipeLevel)
+
+@summary [仅服务器端使用] 删除武功秘笈
+@catalog 武功技能
+@param dwRecipeID	秘笈id
+@param dwRecipeLevel	秘笈的等级
+@remarks 如果函数执行成功，返回true；否则返回false
+function DelSkillRecipe(nType, dwRecipeID, dwRecipeLevel)
+
+@summary 获取武功秘笈列表
+@catalog 武功技能
+@param dwSkillID	技能id
+@param dwSkillLevel	技能等级
+@remarks 如果函数执行成功，返回一个下标从1开始的table，table的每一项是一个包含
+@	秘笈信息的table。每个秘笈信息table包含以下内容：
+@n	"recipe_id":	秘笈id
+@n	"recipe_level":	秘笈等级
+@n	"active":	bool类型，秘笈是否被激活
+function GetSkillRecipeList(dwSkillID, dwSkillLevel)
+
+@summary 激活武功秘笈
+@catalog 武功技能
+@param dwRecipeID		秘笈id
+@param dwRecipeLevel	秘笈等级
+@remarks 如果函数执行成功，返回true；否则返回false
+function ActiveSkillRecipe(dwRecipeID, dwRecipeLevel)
+
+@summary 取消激活武功秘笈
+@catalog 武功技能
+@param dwRecipeID		秘笈id
+@param dwRecipeLevel	秘笈等级
+@remarks 如果函数执行成功，返回true；否则返回false
+function DeactiveSKillRecipe(dwRecipeID, dwRecipeLevel)
+
+@summary [仅客户端使用]释放自动技能，例如自动射击等等
+@catalog 武功技能
+@param bMeleeOrRange 近战攻击为true，远程攻击为false
+@remarks 该函数无返回值
+function CastCommonSkill(bMeleeOrRange)
+
+@summary [仅客户端使用] 停止当前动作
+@catalog 玩家动作
+function StopCurrentAction()
+
+# @summary [仅客户端使用] 停止自动释放普通技能
+# @catalog 武功技能
+# @remarks 这个函数向服务器请求停止释放自动技能
+# function StopAutoCastSkillRequest()
+
+# @summary [仅客户端使用] 中断本客户端玩家当前的OT行为
+# function BreakOffOTAction()
+
+
+@summary 设置队伍拾取模式（仅服务器端使用）
+@catalog 组队相关
+@param nLootMode 拾取方式，取值: [[get PARTY_LOOT_MODE]]
+@param nRollQuality 需要roll的物品品质
+@remarks 设置队伍的拾取模式。成功返回true，否则返回false
+function SetPartyLootMode(nLootMode, nRollQuality)
+
+@summary [仅服务器端使用] 执行OT动作
+@catalog 玩家动作
+@param nType	0代表非通道技，取其它值代表通道技
+@param bIsBreakable 是否能打断
+@param nFrame 对于通道技，表示通道帧数；对于非通道技，代表准备帧数
+@param nTargetType 目标类型，取值[[get TARGET]]
+@param nTargetID 目标id
+@param pszScriptFileName 脚本文件名
+@param pszActionName OT动作名
+@remarks 执行成功返回true, 失败返回false
+function DoCustomOTAction(nType, bIsBreakable, nFrame, nTargetType,
+	nTargetID, pszScriptFileName, pszActionName)
+	
+@summary [仅服务器端使用] 增加体力
+@catalog 基本属性
+@param nStaminaAdd	增加的体力值
+@remarks 该函数没有返回值。
+function AddStamina(nStaminaAdd)
+
+@summary [仅服务器端使用] 增加精力
+@catalog 基本属性
+@param nThewAdd	增加的精力值
+@remarks 该函数没有返回值。
+function AddThew(nThewAdd)
+
+@summary [仅服务器端使用] 打开可供阅读的书
+@catalog 生活技能
+@param dwBox	书所在的背包序号，取值[[get INVENTORY_INDEX]]
+@param dwX		书所在背包中格子的序号
+@remarks 如果函数执行成功，返回true；否则返回false
+function OpenBook(dwBox, dwX)
+
+@summary 判断能否学习生活技能
+@catalog 生活技能
+@param dwProfessionID	生活技能id
+@remarks 如果可以学习生活技能，返回true；否则返回false
+function CanLearnProfession(dwProfessionID)
+
+@summary 判断能否学习生活技能分支
+@catalog 生活技能
+@remarks 未实现
+function CanLearnBranch()
+
+@summary 判断能否学习配方
+@catalog 生活技能
+@param dwCraftID	技艺id
+@param dwRecipeID	配方id
+@param dwMasterID	训练师id
+@remarks 如果可以学习，返回true；否则返回false
+function CanLearnRecipe(dwCraftID, dwRecipeID, dwMasterID)
+
+@summary 判断是否已经学会配方
+@catalog 生活技能
+@param dwCraftID	生活技能id
+@param dwRecipeID	配方id
+@remarks 如果已经学会配方，返回true；否则返回false
+function IsRecipeLearned(dwCraftID, dwRecipeID)
+
+
+
+@summary 获取角色所在地图的id
+@catalog 
+@remarks 
+function GetMapID()
+
+@summary 判断能够与目标player对话
+@param playerObj 目标KPlayer对象
+@remarks 如果可以对话，返回true；否则返回false
+function CanDialog(playerObj)
+
+@summary [仅客户端使用] 跟随当前选定的目标
+@catalog 玩家动作
+function FollowSelectTarget()
+
+@summary [仅客户端使用] 停止跟随
+@catalog 玩家动作
+function StopFollow()
+
+@summary 搜索附近同势力角色
+@catalog 声望势力
+@param nDistance 搜索的范围，单位是点。
+@param nAngel 搜索的角度，单位360/256度
+@remarks 这个函数搜索附近的同势力角色（包括npc和玩家），筛选出在指定距离和角度范围内
+@	的，将结果按照到玩家的距离由近到远排序，然后返回包含所有找到的角色id的table。
+@	该table的索引就是数字，从1开始。
+@n
+@n	搜索的距离是按照水平面上的距离来算的，不会计算高度。即搜索以玩家为原点，nDistance
+@	为半径的水平面上的一个圆的范围。
+function SearchForAllies(nDistance, nAngel)
+
+@summary 搜索附近敌对势力角色
+@catalog 声望势力
+@param nDistance 搜索的范围，单位是点。
+@param nAngel 搜索的角度，单位360/256度
+@remarks 这个函数搜索附近的敌对势力角色（包括npc和玩家），筛选出在指定距离和角度范围内
+@	的，将结果按照到玩家的距离由近到远排序，然后返回敌对角色id的table。该table的索引
+@	是数字，从1开始
+@n
+@n	搜索的距离是按照水平面上的距离来算的，不会计算高度。即搜索以玩家为原点，nDistance
+@	为半径的水平面上的一个圆的范围。
+function SearchForEnemy(nDistance, nAngel)
+
+@summary [仅服务器端使用]设置玩家声望
+@catalog 声望势力
+@param dwForceID	势力id
+@param nLevel	声望等级
+@param nReputation 新声望值
+@remarks 函数执行成功返回true，否则返回false
+function SetReputation(dwForceID, nLevel, nReputation)
+
+
+@summary [仅服务器端使用]增加玩家的声望值
+@catalog 声望势力
+@param dwForceID 势力id
+@param nReputation 增加的声望值
+@param nLowLimit	增加的下限
+@param nHighLimit	增加的上限
+@remarks 将玩家在某个势力的声望增加
+@n	函数执行成功返回true，否则返回false
+function AddReputation(dwForceID, nReputation)
+	AddReputation(dwForceID, nReputation, nLowLimit, nHighLimit)
+
+@summary [仅服务器端使用] 使声望可见
+@catalog 声望势力
+@param dwForceID	要可见的势力id
+@remarks 函数执行成功返回true，否则返回false
+function OpenReputation(dwForceID)
+
+
+
+@summary [仅服务器端使用] 清除角色身上的仇恨与被仇恨列表
+@remarks 函数执行成功返回true，否则返回false
+function ClearAllThreat()
+
+@summary [仅服务器端使用] 设置角色的势力id
+@catalog 声望势力
+@param dwForceID	势力id
+@remarks 如果设置成功，返回true；否则返回false
+function SetForceID(dwForceID)
+
+@summary [仅服务器端使用] 创建一个计时器
+@catalog
+@param nTime	定时器的触发时间，单位是游戏的逻辑帧，即nTime帧后触发
+@param szScriptName 在定时器触发时执行的脚本的名字
+@param param1	第1个参数，整数
+@param param2	第2个参数，整数
+@remarks 如果函数执行成功，返回timer的id；否则返回0
+@
+@n	当计时器的触发时间到达时，就会调用szScriptName脚本中的OnTimer函数。
+@	这个函数形式如下：
+@n	function OnTimer(player, param1, param2)
+@n
+@n	其中player是这个计时器的拥有者，param1和param2分别是执行SetTimer时指定的
+@	参数。
+@
+@n	执行完这个函数后，就会将计时器删除。
+function SetTimer(nTime, szScriptName, param1, param2)
+
+@summary [仅服务器端使用] 停止计时
+@catalog
+@param dwTimerID Timer的id
+@remarks 如果函数成功，返回true；否则返回false
+function StopTimer(dwTimerID)
+
+@summary [仅服务器端使用] 重新开始计时
+@catalog 
+@param dwTimerID	timer的id
+@remarks 如果函数执行成功，返回true；否则返回false
+@n
+@n	这个函数重新激活一个已经停止的timer。下次触发的时间是上次停止时还剩余的帧数加上
+@	当前的帧数。即上次停止时还剩下多少时间，那么这次把这些时间等完再触发。
+function RestartTimer(dwTimerID)
+
+@summary [仅服务器端使用] 删除一个计时器
+@catalog
+@param dwTimerID	计时器id
+@remarks 如果函数执行成功，返回true；否则返回false
+function RemoveTimer(dwTimerID)
+
+@summary 获取玩家的声望等级
+@catalog 声望势力
+@param dwForceID	势力id
+@remarks 获取玩家在某一势力的声望等级
+function GetReputeLevel(dwForceID)
+
+@summary 获取玩家声望值
+@catalog 声望势力
+@param dwForceID 势力Id
+@remarks 返回玩家在某势力内的声望
+function GetReputation(dwForceID)
+
+@summary 声望是否被隐藏
+@catalog 声望势力
+@param dwForceID	要查看的势力id
+@remarks 如果指定势力的声望被隐藏,那么返回true；否则返回false
+function IsReputationHide(dwForceID)
+
+@summary [仅客户端使用] 设置玩家与某一势力的交战状态
+@catalog 声望势力
+@param dwForceID	势力id
+@param bFlag	true或false，分别代表交战和不交战。
+@remarks 如果函数执行成功，返回true；否则返回false
+function SetFightFlag(dwForceID, bFlag)
+
+@summary [仅客户端使用] 获取玩家与某一势力的交战状态
+@catalog 声望势力
+@param dwForceID	势力id
+@remarks 返回玩家与某势力的交战状态
+function GetFightFlag(dwForceID)
+
+@summary [仅客户端使用] 判断玩家与某一势力是否处于不能更改的交战状态
+@catalog 声望势力
+@param dwForceID	势力id
+@remarks 如果玩家与某势力处于交战状态，且不能更改，那么返回true；否则返回false
+function IsFightFlagLocked(dwForceID)
+
+@summary 设置AI类型
+@catalog 
+@param nAIType	AI类型，取值[[get AI_TYPE]]
+@remarks 如果函数执行成功，返回true,否则返回false
+@n
+@n	因为Player有时会不受玩家控制，这时角色的行动就有其AI决定了。
+function SetAIType(AIType)
+
+@summary [仅客户端使用]对单个目标说话
+@catalog 玩家动作
+@remarks 获取当前聊天内容。返回一个table，具体内容与[[see KPlayer.Talk]]中第3个参数
+@	data的内容相同
+function GetTalkData()
+
+@summary [仅客户端使用] 获取聊天信息中道具链接所代表的道具对象
+@catalog 玩家动作
+@param dwItemID	道具的id
+@remarks 如果函数执行成功，返回道具对应的KItem对象。
+function GetTalkLinkItem(dwItemID)
+
+@summary [仅客户端使用] 说话
+@catalog 玩家动作
+@param nTalkRange	说话范围，取值：[[get PLAYER_TALK_CHANNEL]]
+@param szReceiver	密聊时目标的名字。在其它情况下将忽略该参数
+@param data 是一个table，每一项又是一个table，每一个table描述一部分信息，它包含以下字段：
+@	第1个字段是type:
+@n	当type值为"text"时，另外一个字段为text，其值就是要说的内容，为字符串
+@n	当type值为"name"时，另外一个字段为name, 其值是角色的名字，为字符串
+@n	当type值为"item"时，另外一个字段为item，其值是道具的id，dword类型
+@n	当type值为"iteminfo"时，其它字段则描述item的信息，有："version"（道具的版本号）,
+@	"tabtype"（道具表类型，取值见[[see ITEM_TABLE_TYPE]]），"index"（道具在道具表中的索引）
+@n	当type值为"quest"时，其它字段包括"questid"（其值为Quest的id）。
+@n	当type值为"recipe"时，表示这个table包含的是生活技能配方信息,包括"craftid"(生活技能id),
+@		"recipeid"(配方id)
+@n	当type值为"skill"时，表示这个table包含的是技能信息，包括"skill_id"(技能id), 
+@		"skill_level"(技能等级), "recipe1" ~ "recipe4"(秘笈id)
+@n	当type值为"skillrecipe"时，表示这个table包含的是秘笈配方信息，包括:"id"(秘笈id),
+@		"level"(秘笈等级)
+@remarks 如果函数执行成功，返回true; 否则返回false
+function Talk(nTalkRange, szReceiver, data)
+
+@summary [仅客户端使用] 播放动画
+@param dwAnimationID	动画id
+@remarks 函数执行成功返回true；失败返回false
+function DoAnimation(dwAnimationID)
+
+@summary [仅客户端使用] 判断角色是否在一个队伍中
+@catalog 组队好友
+@remarks 如果角色在队伍中，返回true；否则返回false
+function IsInParty()
+
+@summary [仅客户端使用] 判断玩家是否与本玩家在同一个队伍中。
+@catalog 组队好友
+@param dwPlayerID	玩家id
+@remarks 如果dwPlayerID的玩家与本玩家属于同一队伍，那么返回true；否则返回false
+function IsPlayerInMyParty(dwPlayerID)
+
+@summary [仅客户端使用] 判断角色是否是队长
+@catalog 组队好友
+@remarks 如果角色处于一个队伍中，且是队长，返回true；否则返回false
+function IsPartyLeader()
+
+@summary [仅客户端使用] 判断队伍是否已经满员
+@catalog 组队好友
+@remarks 如果玩家所在队伍已经满员，返回true；否则返回false
+function IsPartyFull()
+
+@summary 增加一个联系人
+@catalog 组队好友
+@param pszAlliedPlayerName	联系人的名字
+@remarks 把名字为pszAlliedPlayerName的玩家添加为一个联系人
+@n
+@	如果函数执行成功，返回true；否则返回false
+function AddFellowship(pszAlliedPlayerName)
+
+@summary 删除一个联系人关系
+@catalog 组队好友
+@param dwAlliedPlayerID	联系人的id
+@param dwGroupID		联系人所在组的id
+@remarks 把id为dwAlliedPlayerID的玩家从联系人列表删除
+@n
+@	如果函数执行成功，返回true；否则返回false
+function DelFellowship(dwAlliedPlayerID, dwGroupID)
+
+@summary 增加联系人分组
+@catalog 组队好友
+@param pszGroupName	分组名字
+@remarks 如果函数执行成功，返回true；否则返回false
+function AddFellowshipGroup(pszGroupName)
+
+@summary 删除联系人分组
+@catalog 组队好友
+@param dwGroupID	联系人组id
+@remarks 如果函数执行成功，返回true；否则返回false
+function DelFellowshipGroup(dwGroupID)
+
+@summary 更改联系人分组名称
+@catalog 组队好友
+@param dwGroupID	要修改的分组id
+@param dwGroupName	新的分组名称
+@remarks 如果函数执行成功，返回true；否则返回false
+function RenameFellowshipGroup(dwGroupID, dwGroupName)
+
+@summary 设置联系人备注
+@catalog 组队好友
+@param dwAlliedPlayerID	联系人id
+@param szRemark	备注信息
+@remarks 如果函数执行成功，返回true；否则返回false
+function SetFellowshipRemark(dwAlliedPlayerID, szRemark)
+
+@summary [仅客户端使用] 更改联系人分组
+@catalog 组队好友
+@param dwAlliedPlayerID	联系人id
+@param dwOldGroupID	原分组id
+@param dwNewGroupID	新分组id
+@remarks 如果函数执行成功，返回true；否则返回false
+function SetFellowshipGroup(dwAlliedPlayerID, dwOldGroupID, dwNewGroupID)
+
+# @summary [仅服务器端使用] 设置联系人标志
+# @catalog 组队好友
+# @param dwAlliedPlayerID	联系人id
+# @param dwFlag	联系人标志
+# @param bSet	如果为true，则添加标志；如果为false，则清除标志
+# @remarks 如果函数执行成功，返回true；否则返回false
+# function SetFellowshipFlag(dwAlliedPlayerID, dwFlag, bSet)
+
+# @summary [仅服务器端使用] 设置联系人好感度
+# @catalog 组队好友
+# @param dwAlliedPlayerID	联系人id
+# @param nAttraction	好感度
+# @param bAddUp	如果为true，则增加好感度；如果为false，则减少好感度
+# @remarks 如果函数执行成功，返回true；否则返回false
+# function SetFellowshipAttraction(dwAlliedPlayerID, nAttraction, bAddUp)
+
+@summary [仅服务器端使用] 增加好友的友好度
+@catalog 组队好友
+@param dwAlliedPlayerID	好友id
+@param nAttraction	增加的友好度，可以为负值
+@remarks 如果函数执行成功，返回true；否则返回false
+function AddFellowshipAttraction(dwAlliedPlayerID, nAttraction)
+
+
+@summary [仅服务器端使用] 获取好友的友好度
+@catalog 组队好友
+@param dwAlliedPlayerID	
+@remarks 函数返回两个参数。玩家之间是否有Fellowship，玩家好感度。
+function GetFellowshipAttraction(dwAlliedPlayerID)
+
+
+
+@summary [仅客户端使用] 获取联系人信息
+@catalog 组队好友
+@param dwGroupID 联系人列表分组id。其中黑名单的id为1
+@n	其它数值:	分组联系人列表的id
+@remarks 函数获取dwGroupID分组的联系人列表，返回一个下表从1开始的table，
+@	table的每一项包含一个联系人信息，其中包括：
+@n	id:	好友id
+@n	married:	是否已婚
+@n	brother:	是否兄弟
+@n	level:	好友等级
+@n	name:	好友名字
+function GetFellowshipInfo(dwGroupID)
+
+@summary [仅客户端使用] 获取联系人数据
+@catalog 组队好友
+@param dwAlliedPlayerID	玩家联系人的id
+@remarks 如果函数执行成功，返回1个table，包含：
+@n	mapid: 地图id
+@n	Remark: 备注
+@n	level:	等级
+@n	attraction:	好感度
+@n	married:	是否结婚
+@n	brother:	是否兄弟
+@n	blacklist:	是否在黑名单中
+function GetFellowshipData(dwAlliedPlayerID)
+
+@summary [仅客户端使用] 获取联系人分组名称
+@catalog 组队好友
+@param dwGroupID	联系人分组id
+@remarks 根据分组id获得其名称
+function GetFellowshipGroupName(dwGroupID)
+
+@summary [仅客户端使用] 更新好友数据
+@catalog 组队好友
+@param	dwPlayerID	玩家id
+@remarks 请求服务器发送dwPlayerID玩家最新的好友数据。
+@n
+@	该函数没有返回值。
+function UpdateFellowshipInfo(dwPlayerID)
+
+@summary [仅客户端使用] 获取联系人名字列表
+@catalog 组队好友
+@remarks 如果函数执行成功，返回1个下标从1开始的table，每一项是一个联系人的名字
+function GetFellowshipNameList()
+
+@summary [仅客户端使用] 判断是否有指定名称的好友存在
+@catalog 组队好友
+@param szAlliedPlayerName	好友名字
+@remarks 如果指定名称的好友存在，返回true；否则返回false。
+@n	如果在查找好友过程中出了错误，则没有返回值。
+function IsExistFellowshipList(szAlliedPlayerName)
+
+@summary [仅客户端使用] 获取联系人分组信息
+@catalog 组队好友
+@remarks 如果函数执行成功，返回一个下标从1开始的table，每个项包含：
+@n	id:	分组id
+@n	name:	分组名称
+function GetFellowshipGroupInfo()
+
+
+@summary 获取角色所在队伍的成员列表
+@catalog 组队好友
+@remarks 如果角色处于一个队伍中，那么这个函数返回一个包含队伍所有成员ID
+@	的table。该table的索引从1开始。
+function GetPartyMemberList()
+
+@summary [仅服务器端使用] 给玩家发送系统消息
+@param szText	消息内容
+@remarks 函数执行成功返回true，失败返回false
+function SendSystemMessage(szText)
+
+
+@summary [仅服务器端使用]死亡后减少装备耐久度
+@param nBoxType 哪个背包的装备需要减少耐久度，取值[[get INVENTORY_INDEX]]
+@param nAbradePercent 耐久度减少百分比
+@remarks 函数执行成功返回true，否则返回false
+function AbradeEquipmentOnDeath(nBoxType, nAbradePercent)
+
+@summary [仅客户端使用] 向其它玩家请求交易
+@catalog 交易相关
+@param dwInviteDst 目标玩家的id
+@remarks 该函数无返回值。
+@n	
+@n	这个函数向服务器发送请求交易的消息。在发送消息之前会做些常规判断。例如目标玩家是否存在，
+@	目标玩家是否正在交易状态，离目标玩家的距离是否够近。如果这些判断失败，则不会向服务器
+@	发送消息。
+function TradingInviteRequest(dwInviteDst)
+
+@summary [仅客户端使用] 响应其它玩家发送来的交易请求
+@catalog 交易相关
+@param bAccept 1表示接收交易请求，0表示拒绝交易请求
+@remarks 该函数无返回值
+function TradingInviteRespond(bAccept)
+
+@summary [仅客户端使用] 往交易栏中添加道具时向服务器发送通知
+@catalog 交易相关
+@param dwBoxIndex 玩家身上背包的序号，对应的取值见[[get INVENTORY_INDEX]]
+@param dwPosIndex 道具在背包中的位置
+@param dwGridIndex 在交易栏中的位置
+@remarks 该函数无返回值。
+@n
+@n	这个函数在向服务器发送通知时，会先做一些常规判断：交易目标是否存在，交易目标是否也在交易
+@	状态。如果这些判断失败，则不会向服务器发送通知。
+function TradingAddItem(dwBoxIndex, dwPosIndex, dwGridIndex)
+
+
+
+@summary [仅客户端使用] 从交易栏中删除一个道具时向服务器发送通知
+@catalog 交易相关
+@param dwGridIndex 道具在交易栏中的位置索引
+@remarks 该函数无返回值
+function TradingDeleteItem(dwGridIndex)
+
+@summary [仅客户端使用] 在交易栏放置金钱时向服务器发送通知
+@catalog 交易相关
+@param nMoney 金钱数量
+@remarks 该函数无返回值
+@n
+@n	在发送通知前，会检查一些常规条件：1) 添加金钱的玩家id是当前客户端的玩家 
+@	2) 交易目标存在，且也处于交易状态；3) 玩家有足够数额的金钱 4) 玩家处于
+@	普通交易状态或锁定状态，且还没有确认
+function TradingSetMoney(nMoney)
+
+# @summary [仅客户端使用] 锁定交易时向服务器端发送通知
+# @catalog 交易相关
+# @remarks 该函数无返回值
+# @n
+# @n	向服务器端发送锁定交易的通知。
+# function TradingLock()
+
+
+@summary [仅客户端使用] 确认交易时向服务器发送通知
+@catalog 交易相关
+@param bConfirm 是否确认，1表示确认，0表示没有确认
+@remarks 该函数无返回值。
+function TradingConfirm(bConfirm)
+
+@summary [仅客户端使用] 获取交易列表中某个格子中的道具
+@catalog 交易相关
+@param nGridIndex	格子的坐标
+@remarks 如果函数执行成功，返回道具的KItem对象；否则返回nil
+function GetTradingItem(nGridIndex)
+
+@summary [仅客户端使用]
+@catalog 交易相关
+@remarks 返回在交易栏内放置的金钱数目
+function GetTradingMoney()
+
+@summary [仅服务器端使用] 是否进行地图检测
+@param nX	要测试Cell的X坐标
+@param nY	要测试Cell的Y坐标
+@remarks true：该函数无返回值
+@n
+@n	进行地图测试时，是把(nX, nY)处的所有Cell信息发送到客户端，然后客户端会将其与客户端本地
+@	的地图信息对比，如果不一致，会报告错误。
+function MapTest(nX, nY)
+
+@summary [仅服务器端使用] 将玩家的双经验值设为当前级别所能达到的最大值。
+@remarks 将玩家的双经验值设为当前级别所能达到的最大值，就是LevelUpData
+@	目录下表的MaxDoubleExp列的值。
+@
+@n	如果函数执行成功，返回true；否则返回false
+function FullDoubleExp()
+
+@summary [仅服务器端使用] 返回当前选定的目标角色的对象
+@catalog
+@remarks 如果选中的是npc，那么返回一个KNpc对象；如果选中的是
+@	玩家，那么返回一个KPlayer对象
+function GetSelectCharacter()
+
+@summary [仅服务器端使用] 添加地图标记
+@catalog
+@param nX	标记的X坐标
+@param nY	标记的Y坐标
+@param nZ	标记的Z坐标
+@param nType	标记类型，待定
+@remarks 如果函数执行成功，返回true；否则返回false
+function AddMapMark(nX, nY, nZ, nType)
+
+@summary [仅服务器端使用] 复活
+@catalog
+@param bToRevivePoint	可选，是否在复活点复活。如果忽略此参数或参数值为false，
+@	则在原地复活
+@remarks 如果函数执行成功，返回true；否则返回false
+function Revive()
+
+@summary [仅服务器端使用] 播放声音
+@catalog
+@param dwSoundID	声音id
+@remarks 如果函数执行成功，返回true；否则返回false
+@
+@n	这个函数通知客户端播放某个声音。
+function PlaySound(dwSoundID)
+
+@summary [仅服务器端使用] 发起一个小游戏
+@catalog
+@param nGameID	游戏id
+@remarks 如果函数执行成功，返回true；否则返回false
+@
+@n	这个函数通知客户端开始一个小游戏
+function PlayMiniGame(nGameID)
+
+@summary [仅服务器端使用] 向客户端发送一个错误码
+@catalog
+@param dwErrorCodeType	错误码类型，取值[[get ERROR_CODE_TYPE]]
+@param dwErrorCode		错误码数值
+@remarks 如果函数执行成功，返回true；否则返回false
+function SendMessageNotify(dwErrorCodeType, dwErrorCode)
+
+@summary 将玩家做的地图标记同步到队友
+@catalog
+@param nMapID	地图id
+@param nX		标记的X坐标
+@param nY		标记的Y坐标
+@param nType	标记类型，待定
+@param pszComment	备注
+@remarks 
+function SyncMidMapMark(nMapID, nX, nY, nType, pszComment)
+
+
+
+@summary [仅客户端使用] 设置小地图雷达
+@param dwRadarType	雷达类型，取值[[get MINI_RADAR_TYPE]]
+@param dwRadarParam	雷达参数
+@remarks 如果函数执行成功，返回true；否则返回false
+function SetMinimapRadar(dwRadarType, dwRadarParam)
+
+@summary [仅客户端使用] 获取小地图雷达的类型
+@remarks 如果函数执行成功，返回2个值，分别是eRadarType和nRadarParam, 
+@	其中eRadarType的取值参见[[see MINI_RADAR_TYPE]]
+function GetMiniMapRadar()
+ 
+
+@summary 检查能否与目标玩家切磋
+@catalog 
+@param dwTargetID	目标玩家的id
+@remarks 如果可以，返回true；否则返回false
+function CanApplyDuel(dwTargetID)
+
+@summary 检查能否仇杀目标玩家
+@catalog 
+@param dwTargetPlayerID 目标玩家id
+@remarks 如果可以，返回true；否则返回false
+function CanApplyRevenge(dwTargetPlayerID)
+
+@summary 检查能否屠杀目标玩家
+@catalog 
+@remarks 如果可以，返回true；否则返回false
+function CanApplySlay()
+
+@summary 向某个玩家申请切磋
+@catalog
+@param dwTargetPlayer	目标玩家的ID
+@remarks 如果函数执行成功，返回true；否则返回false
+@n
+@n	如果在客户端执行，则会把请求发送到服务器端，由服务器端执行实际的请求。
+function ApplyDuel(dwTargetPlayer)
+
+@summary 拒绝切磋
+@catalog
+@remarks 如果函数执行成功，返回true；否则返回false
+@n
+@n	如果在客户端执行，则会把拒绝请求发送到服务器，由服务器执行实际的拒绝操作。
+function RefuseDuel()
+
+@summary 接受切磋
+@catalog
+@remarks 如果函数执行成功，返回true；否则返回false
+@n
+@n	如果在客户端执行，则会把接收请求发送到服务器，由服务器执行实际的接受操作。
+function AcceptDuel()
+
+@summary 认输
+@catalog
+@remarks 如果函数执行成功，返回true；否则返回false
+@n
+@n	如果在客户端执行，则会把接收请求发送到服务器，由服务器执行实际的接受操作。
+function LossDuel()
+
+@summary 仇杀目标玩家
+@catalog 
+@param dwTargetPlayer	目标玩家的ID
+@remarks 如果函数执行成功，返回true；否则返回false
+@n
+@n	如果在客户端执行，则会把接收请求发送到服务器，由服务器执行实际的接受操作。
+function ApplyRevenge(dwTargetPlayer)
+
+@summary 屠杀目标玩家
+@catalog 
+@remarks 如果函数执行成功，返回true；否则返回false
+@n
+@n	如果在客户端执行，则会把接收请求发送到服务器，由服务器执行实际的接受操作。
+function ApplySlay()
+
+@summary 结束屠杀
+@catalog 
+@remarks 如果函数执行成功，返回true；否则返回false
+@n
+@n	如果在客户端执行，则会把接收请求发送到服务器，由服务器执行实际的接受操作。
+function CloseSlay()
+
+@summary 获取玩家当前的PK状态
+@catalog
+@remarks 返回玩家的PK状态，取值为：[[get PK_STATE]]
+function GetPKState()
+
+@summary 飞到另一个城市
+@catalog
+@param nFromNode	起点
+@param nToCity		终点
+@remarks 该函数返回2个值。是否可以飞行，飞行所需最小花费。
+function AutoFly(nFromNode, nToCity)
+
+@summary 统计技能秘籍数量
+@catalog 武功技能
+@param 	dwSkillID  技能ID
+@param 	dwSkillLevel 技能等级
+@remarks 该函数返回1个值。技能秘籍数量
+function GetSkillRecipeKeyCount(dwSkillID, dwSkillLevel)
+
+@summary 在背包中查找可以堆叠物品的空格
+@catalog 装备道具
+@param 	dwSrcBox  物品原存放背包ID
+@param 	dwSrcX 物品在背包中的位置
+@remarks 该函数返回2个值。可以堆叠物品背包ID，可以堆叠物品背包中位置。
+function GetStackRoomInPackage(dwSrcBox, dwSrcX)
+
+@summary 在银行中查找可以堆叠物品的空格
+@catalog 装备道具
+@param 	dwSrcBox  物品原存放背包ID
+@param 	dwSrcX 物品在背包中的位置
+@remarks 该函数返回2个值。可以堆叠物品银行ID，可以堆叠物品银行背包中位置。
+function GetStackRoomInBank(dwSrcBox, dwSrcX)
+
+@summary 获取背包类型
+@catalog 装备道具
+@param 	dwBox  背包ID
+@remarks 该函数返回1个值。背包类型
+function GetBoxType(dwBox)
+
+@summary rw. 是否在坐骑上
+@catalog 基本属性
+property bOnHorse
+
+@summary 打开交通点
+@catalog 
+@param 	nNodeID   交通点
+@remarks 	如果函数执行成功，返回true；否则返回false
+function OpenRouteNode(nNodeID)
+
+@summary rw. 招架几率
+@catalog 基本属性
+property nParry as int rw
+
+@summary rw. 招架值，和减免伤害相关
+@catalog 基本属性
+property nParryValue as int rw
+
+@summary rw. 洞察值
+@catalog 基本属性
+property nSense as int rw
+ 
+@summary rw. 变化值
+@catalog 基本属性
+property nStrain as int rw  
+
+@summary rw. 韧性
+@catalog 基本属性
+property nToughness as int rw
+
+@summary rw. 暴击加成伤害
+@catalog 基本属性
+property nCriticalDamagePower as int rw
+
+@summary rw. 被暴击降低伤害
+@catalog 基本属性
+property nDecriticalDamagePower as int rw 
+
+@summary 获取附魔目标Item的subType
+@catalog 装备道具
+@param 	nEnchantID   附魔属性ID
+@remarks 该函数返回1个值。目标Item的subType
+function GetEnchantDestItemSubType(nEnchantID)
+
+@summary 骑马
+@catalog 
+@remarks 如果函数执行成功，返回true；否则返回false
+function RideHorse()
+
+@summary 下马
+@catalog 
+@remarks 如果函数执行成功，返回true；否则返回false
+function DownHorse()
+
+@summary 添加附魔属性
+@catalog 
+@param 	dwBoxIndex   道具所在背包ID
+@param 	dwPos   道具所在背包位置
+@param 	nEnchantID   附魔属性ID
+@remarks 如果函数执行成功，返回true；否则返回false
+function AddEnchant(dwBoxIndex, dwPos, nEnchantID)
+
+@summary 移除附魔属性
+@catalog  
+@param 	dwBoxIndex   道具所在背包ID
+@param 	dwPos   道具所在背包位置
+@param 	bPermanentEnchant 可选   
+@remarks 如果函数执行成功，返回true；否则返回false
+function RemoveEnchant(dwBoxIndex, dwPos, bPermanentEnchant)
+
+@summary 获取最后一次登录时间
+@catalog  
+@remarks 函数更新m_nLastLoginTime后返回
+function GetLastLoginTime()
+
+@summary 获取当前登录时间
+@catalog   
+@remarks 函数更新m_nCurrentLoginTime后返回
+function GetCurrentLoginTime()
+
+@summary [仅服务器端使用] 增加修为
+@catalog   武功技能
+@param 	nAddTrain   增加修为值
+@remarks 如果函数执行成功，返回true；否则返回false
+function AddTrain(nAddTrain)
+
+@summary [仅服务器端使用] 设置玩家为摆摊状态
+@catalog   交易相关
+@param dwStallScriptID 脚本ID
+@remarks 如果函数返回True
+function StartStall(dwStallScriptID)
+
+@summary  设置摆摊出售物品价格
+@catalog   交易相关
+@param 	dwBoxIndex   背包ID
+@param 	dwItemPos   背包中位置
+@param 	dwNewPrice   价格
+@remarks 如果函数执行成功返回True
+function SetItemPrice(dwBoxIndex, dwItemPos, dwNewPrice)
+
+@summary [仅客户端使用] 购入摆摊物品
+@catalog   交易相关
+@param 	dwSellerID   卖家ID
+@param 	byItemPos   购入物品在卖家摆摊背包位置
+@remarks  如果函数执行成功，返回true；否则返回false
+function BuyStallItem(dwSellerID, byItemPos)
+
+@summary  结束摆摊
+@catalog   交易相关
+@remarks  如果函数执行成功，返回true；否则返回false
+function EndStall()
+
+@summary rw. 当前修为
+@catalog 基本属性
+property nCurrentTrainValue as int rw
+
+@summary rw. 最大修为
+@catalog 基本属性
+property nMaxTrainValue as int rw
+
+@summary ro. 修为打通概率
+@catalog 基本属性
+property nPhysicsVenationCof as int ro
+
+@summary ro. 修为打通概率
+@catalog 基本属性
+property nMagicVenationCof as int ro
+
+@summary ro. 修为打通概率
+@catalog 基本属性
+property nAssistVenationCof as int ro
+
+@summary rw. 被打下马的抵抗概率
+@catalog 基本属性
+property nMountingRate as int rw
+
+@summary  放弃任务
+@catalog   任务相关
+@param 	dwQuestID   任务ID
+@remarks  如果函数执行成功，返回true；否则返回false
+function 	ClearQuest(dwQuestID)
+
+@summary  获取摊位名
+@catalog   交易相关
+@remarks  函数返回更新m_pszStallTitle
+function 	GetStallTitle()
+
+@summary  设置摊位名
+@catalog   交易相关
+@param 	pcszStallTitle 摊位名
+@remarks  如果函数执行成功，返回true；否则返回false
+function 	SetStallTitle(pcszStallTitle)
+
+@summary [仅客户端使用] 查看摊位信息
+@catalog   交易相关
+@param 	dwSellerID 摆摊玩家ID
+@remarks  如果函数执行成功，返回true；否则返回false
+function 	ApplyStallItem(dwSellerID)
+
+@summary  打通筋络
+@catalog   
+@param 	nVenationID 筋络ID
+@remarks  如果函数执行成功，返回true；否则返回false
+function 	OpenVenation(nVenationID)
+
+@summary rw. 技能外功伤害随机值
+@catalog 基本属性
+property nSkillPhysicsDamageRand as int rw
+
+@summary rw. 外功克性
+@catalog 基本属性
+property nPhysicsOvercome as int rw
+
+@summary rw. 阳性内功克性
+@catalog 基本属性
+property nSolarOvercome as int rw
+
+@summary rw. 中性内功克性
+@catalog 基本属性
+property nNeutralOvercome as int rw
+
+@summary rw. 阴性内功克性
+@catalog 基本属性
+property nLunarOvercome as int rw
+
+@summary rw. 毒性克性
+@catalog 基本属性
+property nPoisonOvercome as int rw
+
+@summary rw. 技能治疗
+@catalog 基本属性
+property nSkillTherapy as int rw
+
+@summary  是已学习生活技能
+@catalog   生活技能
+@param 	dwCraftID 生活技能ID
+@remarks  如果是已学习生活技能，返回true；否则返回false
+function 	IsProfessionLearnedByCraftID(dwCraftID)
+
+@summary  获取选取的doodad
+@catalog   
+function 	GetSelectDoodad()
+
+@summary  设置开始目标
+@catalog   武功技能
+@remarks  如果函数执行成功，返回true；否则返回false
+function 	SetTargetAStar()
+
+@summary  开启技能调试
+@catalog   武功技能
+@param 	nDebugLevel 技能等级
+@remarks  如果函数执行成功，返回true；否则返回false
+function 	Attach(nDebugLevel)
+
+@summary  关闭技能调试
+@catalog   武功技能
+@remarks  如果函数执行成功，返回true；否则返回false
+function 	Detach()
+
+@summary  关闭所以技能调试
+@catalog   武功技能
+function 	DetachAll()
+
+@summary  获取周围玩家ID
+@catalog   
+@remarks  返回一个table，是一个下表从1开始，数组每一项代表玩家周围playerID
+function 	GetAroundPlayerID()
+
+@summary  是否能摆摊
+@catalog   
+@remarks  如果函数执行成功，返回true；否则返回false
+function 	CanStartStall()
+
+@summary  是否是技能秘笈
+@catalog   
+@param 	dwRecipeID 技能等级
+@param 	dwRecipeLevel 技能等级
+@remarks  如果是技能秘笈，返回true；否则返回false
+function 	IsSkillRecipeExist()
+
+@summary  增加协助经验
+@catalog   任务相关
+@param 	nAddAssistExp 增加协助经验
+function 	AddAssistExp()
+
+@summary  注册队伍辅助任务
+@catalog   任务相关
+@param 	dwQuestID 任务ID
+function 	RegisterQuestAssistance()
+
+@summary   能否添加道具
+@catalog   装备道具
+@param 	dwTabType  道具类型
+@param 	dwIndex  道具索引
+@param 	nStackNum 可选  道具数量
+@param 	dwBoxIndex  可选  目标背包
+@param 	dwPosIndex  可选 目标背包格子
+@remarks  取值[[get ITEM_RESULT_CODE]]
+function 	CanAddItem(dwTabType, dwIndex) 
+	CanAddItem(dwTabType, dwIndex, nStackNum)
+	CanAddItem(dwTabType, dwIndex, nStackNum, dwBoxIndex, dwPos)
+
+@summary  获取任务变量值
+@catalog   任务相关
+@param 	nQuestIndex 任务索引
+@param 	nValueIndex 任务变量值索引
+@remarks 	返回任务变量值
+function 	GetQuestValue(nQuestIndex, nValueIndex)
+
+@summary  设置任务变量比特位值
+@catalog   任务相关
+@param 	nQuestIndex 任务索引
+@param 	nValueIndex 任务变量值索引
+@param 	dwBitIndex 任务变量比特位
+@param 	bValue 比特值 1 或 0 
+@remarks
+function 	SetQuestBitValue(nQuestIndex, nValueIndex, dwBitIndex, bValue)
+
+@summary  获取任务变量比特位值
+@catalog   任务相关
+@param 	nQuestIndex 任务索引
+@param 	nValueIndex 任务变量值索引
+@param 	dwBitIndex 任务变量比特位
+@remarks 	bValue 比特值 1 或 0 
+function 	GetQuestBitValue(nQuestIndex, nValueIndex, dwBitIndex)
+
+@summary  获取系统设定卖家物品价格
+@catalog   交易相关
+@param 	dwBoxIndex 背包ID 取值 [[get ITEM_BOX]]
+@param 	dwItemPos 物品在背包中位置
+@remarks 	返回两个值，第一个表示执行是否成功，第二个表示价格。
+function 	GetAutoUserPrice(dwBoxIndex, dwItemPos)
+
+@summary rw. 进站武器伤害基础值
+@catalog 装备道具
+@remarks 
+property nMeleeWeaponDamageBase
+
+@summary rw. 进站武器伤害随机值
+@catalog 装备道具
+@remarks 
+property nMeleeWeaponDamageRand
+
+@summary [仅服务端使用] 设置INT32类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围（INT_MIN - INT_MAX）
+@remarks  函数不返回
+function 	SetCustomInteger4(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取INT32类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomInteger4(nOffset)
+
+@summary [仅服务端使用] 设置INT16类型自定义数据
+@catalog   定制数据 
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围（SHRT_MIN - SHRT_MAX）
+@remarks 	函数不返回
+function 	SetCustomInteger2(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取INT16类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomInteger2(nOffset)
+
+@summary [仅服务端使用] 设置INT8类型自定义数据
+@catalog   定制数据 
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围（SCHAR_MIN - SCHAR_MAX）
+@remarks 	函数不返回
+function 	SetCustomInteger1(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取INT8类型自定义数据
+@catalog   定制数据 
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomInteger1(nOffset)
+
+@summary [仅服务端使用] 设置UINT32类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围 (0 - UINT_MAX )
+@remarks 	函数不返回
+function 	SetCustomUnsigned4(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取UINT32类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomUnsigned4(nOffset)
+
+@summary [仅服务端使用] 设置UINT16类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围 (0 - USHRT_MAX )
+@remarks 	函数不返回
+function 	SetCustomUnsigned2(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取UINT16类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomUnsigned2(nOffset)
+
+@summary [仅服务端使用] 设置UINT8类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围 (0 - UCHAR_MAX )
+@remarks 	函数不返回
+function 	SetCustomUnsigned1(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取UINT8类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomUnsigned1(nOffset)
+
+@summary [仅服务端使用] 设置比特位自定义数据
+@catalog   定制数据
+@param 	nByteOffset 自定义数据块字节位索引
+@param 	nBitOffset 自定义数据块比特位索引 范围 (0 - 7)
+@param 	bValue 输入值
+@remarks 	函数不返回
+function 	SetCustomBitValue(nByteOffset, nBitOffset)
+
+@summary  [仅服务端使用] 获取比特位类型自定义数据
+@catalog   定制数据
+@param 	nByteOffset 自定义数据块字节位索引
+@param 	nBitOffset 自定义数据块比特位索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomBitValue(nByteOffset, nBitOffset)
+
+@summary [仅服务端使用] 设置字符串类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	pcszValue 输入值
+@remarks 	函数不返回
+function 	SetCustomString(nOffset, pcszValue)
+
+@summary  [仅服务端使用] 获取字符串类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomString(nOffset)
+
+@summary [仅服务端使用] 设置布尔类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	bInput 输入值 范围（0-1）
+@remarks 	函数不返回
+function 	SetCustomBoolean(nOffset, bInput)
+
+@summary  [仅服务端使用] 获取布尔类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomBoolean(nOffset)
+
+@summary  是否是已记忆书籍
+@catalog   生活技能
+@param 	dwBookID 书籍ID
+@param 	dwIndex 书籍第几卷
+@remarks 	如果是，返回true；否则返回false
+function 	IsBookMemorized(dwBookID, dwIndex)
+
+@summary  获取好感度等级
+@catalog   组队好友
+@param 	dwAlliedPlayerID  有关系玩家ID
+@remarks 	2个返回值，第一个表示是否存在好友关系，第二个表示好感度等级
+function 	GetFellowshipAttractionLevel(dwAlliedPlayerID)
+
+@summary  能否关闭屠杀
+@catalog   
+@remarks 	如果能，返回true；否则返回false
+function 	CanCloseSlay()
+
+@summary  是否在屠杀中
+@catalog   
+@remarks 	如果是，返回true；否则返回false
+function 	IsOnSlay()
+
+@summary  是否是仇杀对象
+@catalog   
+@param 	dwTargetID  查看玩家ID
+@remarks 	如果是，返回true；否则返回false
+function 	IsRevengeToTarget(dwTargetID)
+
+@summary  触发AI事件
+@catalog AI
+@param nEventID 事件ID [[get AI_EVENT]]
+@remarks
+function FireAIEvent(nEventID)
+
+@summary  获取生活技能最大等级
+@catalog   生活技能
+@param dwProfessionID 生活技能ID
+@remarks  函数如果执行成功返回最大等级，否则不返回.
+function 	GetProfessionMaxLevel(dwProfessionID)
+
+@summary  获取生活技能熟练度
+@catalog   生活技能
+@param dwProfessionID 生活技能ID
+@remarks  函数如果执行成功返回熟练度，否则不返回.
+function 	GetProfessionProficiency(dwProfessionID)
+
+@summary  设置玩家已访问地图标志
+@catalog   
+@param nMapID 地图ID
+@remarks  
+function 	SetMapVisitFlag(nMapID)
+
+@summary  获取玩家是否已访问地图标志
+@catalog   
+@param nMapID 地图ID
+@remarks  如果已访问，返回true，否则返回false
+function 	GetMapVisitFlag(nMapID)
+
+@summary  是否能学习某种技能秘笈
+@catalog   武功技能
+@param dwRecipeID  秘笈ID
+@param dwRecipeLevel  秘笈等级
+@remarks  如果能学习，返回true，否则返回false
+function 	CanLearnSkillRecipe(dwRecipeID, dwRecipeLevel)
+
+@summary rw. 基础系打通筋脉的成功率
+@catalog 物理属性
+@remarks 
+property nBaseVenationCof as int rw
+
+@summary rw. 蓄气值
+@catalog 物理属性
+@remarks 
+property nAccumulateValue as int rw
+
+
+@summary  获取技能准备状态
+@catalog   武功技能
+@remarks  函数返回4个参数
+@n 参数1 bIsPrepare 技能是否在准备
+@n 参数2 dwSkillID 技能ID
+@n 参数3 dwSkillLevel 技能等级
+@n 参数4 fProgress 技能准备进度
+function 	GetSkillPrepareState()
+
+@summary ro. AI事件源
+@catalog AI
+@remarks 
+property dwAIEventSrc as DWORD ro
+
+@summary ro. AI事件参数
+@catalog AI
+@remarks 
+property nAIEventParam as int ro
+
+@summary   取消buff
+@catalog   武功技能
+@param nIndex  buffer索引
+@remarks  如果成功，返回true，否则返回false
+function 	CancelBuff(nIndex)
+
+@summary [仅服务端使用] 加buff
+@catalog   武功技能
+@param dwCasterID  释放者ID
+@param nCasterLevel  释放者等级
+@param dwBuffID  bufferID
+@param nBuffLevel  buffer等级
+@param nCount  buffer跳数
+@remarks  如果成功，返回true，否则返回false
+function 	AddBuff(dwCasterID, nCasterLevel, dwBuffID, nBuffLevel)
+AddBuff(dwCasterID, nCasterLevel, dwBuffID, nBuffLevel, nCount)
+
+@summary  [仅服务端使用]取消buff
+@catalog   武功技能
+@param dwBuffID  bufferID
+@param nBuffLevel  buffer等级
+@remarks  如果成功，返回true，否则返回false
+function 	DelBuff(dwBuffID, nBuffLevel)
+
+@summary  [仅服务端使用]取消GroupBuff
+@catalog   武功技能
+@param dwBuffID  bufferID
+@param nBuffLevel  buffer等级
+@remarks  如果成功，返回true，否则返回false
+function 	DelGroupBuff(dwBuffID, nBuffLevel)
+
+@summary 获取Buff列表
+@catalog 武功技能
+@remarks 如果函数执行成功，返回1个table，包含：
+@n	dwID: BuffID
+@n	nLevel: Buff等级
+@n	bCanCancel: 是否能取消
+@n	nEndFrame:	Buff结束时间
+@n	nIndex:	buff索引
+@n	nStackNum:	buff叠加数
+@n	dwSkillSrcID:	buff所属技能ID
+function GetBuffList()
+
+@summary  获取复活剩余时间
+@catalog  
+@remarks  如果成功，返回剩余时间，否则不返回
+function 	GetReviveLeftTime(nIndex, nEndTime)
+
+@summary 获取Buff对象
+@catalog 武功技能
+@param dwBuffID  bufferID
+@param nBuffLevel  buffer等级
+@remarks 如果函数执行成功，返回1个buff对象[[see KBUFF_LIST_NODE]] 否则不返回
+function GetBuff(dwBuffID, nBuffLevel)
+
+@summary 统一清除一个 character 身上某类的多个BUFF, 不管叠加层数及个数。
+@catalog 武功技能
+@param dwType	Buff的FunctionType，见常量[[get SKILL_FUNCTION_TYPE]]
+@remarks 成功则返回true，否则返回false
+function DelMultiGroupBuffByFunctionType(dwType)
+
+@summary 获取指定背包剩余空间
+@catalog 
+@param nBoxIndex 背包索引[[get INVENTORY_INDEX]]
+@remarks 成功则返回剩余空间大小。
+function GetBoxFreeRoomSize(nBoxIndex)
+
+@summary rw. 今天已经加的修为数
+@catalog 基本属性
+property nAddTrainInToday as int rw
+
+@summary rw. 外功攻击强度
+@catalog 武功技能
+property nPhysicsAttackPower as int rw
+
+@summary rw. 外功命中值
+@catalog 武功技能
+property nPhysicsHitValue as int rw
+
+@summary rw. 阳性内功攻击强度
+@catalog 武功技能
+property nSolarAttackPower as int rw
+
+@summary rw. 阳性内功命中值
+@catalog 武功技能
+property nSolarHitValue as int rw
+
+@summary rw. 中性内功攻击强度
+@catalog 武功技能
+property nNeutralAttackPower as int rw
+
+@summary rw. 中性内功命中值
+@catalog 武功技能
+property nNeutralHitValue as int rw
+
+@summary rw. 阴性内功攻击强度
+@catalog 武功技能
+property nLunarAttackPower as int rw
+
+@summary rw. 阴性内功命中值
+@catalog 武功技能
+property nLunarHitValue as int rw
+
+@summary rw. 毒性内功攻击强度
+@catalog 武功技能
+property nPoisonAttackPower as int rw
+
+@summary rw. 毒性内功命中值
+@catalog 武功技能
+property nPoisonHitValue as int rw
+
+@summary rw. 基础治疗
+@catalog 武功技能
+property nTherapyPower as int rw
+
+@summary 设置buff下一跳帧数
+@catalog 武功技能
+@param nBuffIndex buff索引
+@param nNextActiveFrame  下一跳帧数
+@remarks 
+function SetBuffNextActiveFrame(nBuffIndex, nNextActiveFrame)
+
+@summary 设置buff剩余的跳数
+@catalog 武功技能
+@param nBuffIndex buff索引
+@param nLeftActiveCount  剩余的跳数
+@remarks 
+function SetBuffLeftActiveCount(nBuffIndex, nLeftActiveCount)
+
+@summary 飞行节点是否打开
+@catalog 
+@param nNodeID 节点ID
+@remarks 如果打开返回true，否则返回false
+function IsOpenRouteNode(nNodeID)

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  Sample Clustering Service Configuration                              -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<server>
+
+   <classpath codebase="lib" archives="jbossha.jar"/>
+
+   <!-- ==================================================================== -->
+   <!-- Cluster Partition: defines cluster                                   -->
+   <!-- ==================================================================== -->
+
+   <mbean code="org.jboss.ha.framework.server.ClusterPartition"
+      name="jboss:service=${jboss.partition.name:DefaultPartition}">
+         
+      <!-- Name of the partition being built -->
+      <attribute name="PartitionName">${jboss.partition.name:DefaultPartition}</attribute>
+
+      <!-- The address used to determine the node name -->
+      <attribute name="NodeAddress">${jboss.bind.address}</attribute>
+
+      <!-- Determine if deadlock detection is enabled -->
+      <attribute name="DeadlockDetection">False</attribute>
+     
+      <!-- Max time (in ms) to wait for state transfer to complete. Increase for large states -->
+      <attribute name="StateTransferTimeout">30000</attribute>
+
+      <!-- The JGroups protocol configuration -->
+      <attribute name="PartitionConfig">
+         <!--
+         The default UDP stack:
+         - If you have a multihomed machine, set the UDP protocol's bind_addr attribute to the
+         appropriate NIC IP address, e.g bind_addr="192.168.0.2".
+         - On Windows machines, because of the media sense feature being broken with multicast
+         (even after disabling media sense) set the UDP protocol's loopback attribute to true
+         -->
+         <Config>
+            <UDP mcast_addr="228.1.2.3" mcast_port="45566"
+               ip_ttl="8" ip_mcast="true"
+               mcast_send_buf_size="800000" mcast_recv_buf_size="150000"
+               ucast_send_buf_size="800000" ucast_recv_buf_size="150000"
+               loopback="false"/>
+            <PING timeout="2000" num_initial_members="3"
+               up_thread="true" down_thread="true"/>
+            <MERGE2 min_interval="10000" max_interval="20000"/>
+            <FD shun="true" up_thread="true" down_thread="true"
+               timeout="2500" max_tries="5"/>
+            <VERIFY_SUSPECT timeout="3000" num_msgs="3"
+               up_thread="true" down_thread="true"/>
+            <pbcast.NAKACK gc_lag="50" retransmit_timeout="300,600,1200,2400,4800"
+               max_xmit_size="8192"
+               up_thread="true" down_thread="true"/>
+            <UNICAST timeout="300,600,1200,2400,4800" window_size="100" min_threshold="10"
+               down_thread="true"/>
+            <pbcast.STABLE desired_avg_gossip="20000"
+               up_thread="true" down_thread="true"/>
+            <FRAG frag_size="8192"
+               down_thread="true" up_thread="true"/>
+            <pbcast.GMS join_timeout="5000" join_retry_timeout="2000"
+               shun="true" print_local_addr="true"/>
+            <pbcast.STATE_TRANSFER up_thread="true" down_thread="true"/>
+         </Config>
+
+         <!-- Alternate TCP stack: customize it for your environment, change bind_addr and initial_hosts -->
+         <!--
+         <Config>
+            <TCP bind_addr="thishost" start_port="7800" loopback="true"/>
+            <TCPPING initial_hosts="thishost[7800],otherhost[7800]" port_range="3" timeout="3500"
+               num_initial_members="3" up_thread="true" down_thread="true"/>
+            <MERGE2 min_interval="5000" max_interval="10000"/>
+            <FD shun="true" timeout="2500" max_tries="5" up_thread="true" down_thread="true" />
+            <VERIFY_SUSPECT timeout="1500" down_thread="false" up_thread="false" />
+            <pbcast.NAKACK down_thread="true" up_thread="true" gc_lag="100"
+               retransmit_timeout="3000"/>
+            <pbcast.STABLE desired_avg_gossip="20000" down_thread="false" up_thread="false" />
+            <pbcast.GMS join_timeout="5000" join_retry_timeout="2000" shun="false"
+               print_local_addr="true" down_thread="true" up_thread="true"/>
+            <pbcast.STATE_TRANSFER up_thread="true" down_thread="true"/>
+         </Config>
+         -->
+      </attribute>
+
+   </mbean>
+
+   <!-- ==================================================================== -->
+   <!-- HA Session State Service for SFSB                                    -->
+   <!-- ==================================================================== -->
+
+   <mbean code="org.jboss.ha.hasessionstate.server.HASessionStateService"
+      name="jboss:service=HASessionState">
+      <depends>jboss:service=${jboss.partition.name:DefaultPartition}</depends>
+      <!-- Name of the partition to which the service is linked -->
+      <attribute name="PartitionName">${jboss.partition.name:DefaultPartition}</attribute>
+      <!-- JNDI name under which the service is bound -->
+      <attribute name="JndiName">/HASessionState/Default</attribute>
+      <!-- Max delay before cleaning unreclaimed state.
+           Defaults to 30*60*1000 => 30 minutes -->
+      <attribute name="BeanCleaningDelay">0</attribute>
+   </mbean>
+
+   <!-- ==================================================================== -->
+   <!-- HA JNDI                                                              -->
+   <!-- ==================================================================== -->
+
+   <mbean code="org.jboss.ha.jndi.HANamingService"
+      name="jboss:service=HAJNDI">
+      <depends>jboss:service=${jboss.partition.name:DefaultPartition}</depends>
+      <!-- Name of the partition to which the service is linked -->
+      <attribute name="PartitionName">${jboss.partition.name:DefaultPartition}</attribute>
+      <!-- Bind address of bootstrap and HA-JNDI RMI endpoints -->
+      <attribute name="BindAddress">${jboss.bind.address}</attribute>
+      <!-- Port on which the HA-JNDI stub is made available -->
+      <attribute name="Port">1100</attribute>
+      <!-- Accept backlog of the bootstrap socket -->
+      <attribute name="Backlog">50</attribute>
+      <!-- The thread pool service used to control the bootstrap and
+      auto discovery lookups -->
+      <depends optional-attribute-name="LookupPool"
+         proxy-type="attribute">jboss.system:service=ThreadPool</depends>
+
+      <!-- A flag to disable the auto discovery via multicast -->
+      <attribute name="DiscoveryDisabled">false</attribute>
+      <!-- Set the auto-discovery bootstrap multicast bind address. If not 
+      specified and a BindAddress is specified, the BindAddress will be used. -->
+      <attribute name="AutoDiscoveryBindAddress">${jboss.bind.address}</attribute>
+      <!-- Multicast Address and group port used for auto-discovery -->
+      <attribute name="AutoDiscoveryAddress">230.0.0.4</attribute>
+      <attribute name="AutoDiscoveryGroup">1102</attribute>
+      <!-- The TTL (time-to-live) for autodiscovery IP multicast packets -->
+      <attribute name="AutoDiscoveryTTL">16</attribute>
+
+      <!-- RmiPort to be used by the HA-JNDI service once bound. 0 => auto. -->
+      <attribute name="RmiPort">0</attribute>
+      <!-- Client socket factory to be used for client-server
+           RMI invocations during JNDI queries
+      <attribute name="ClientSocketFactory">custom</attribute>
+      -->
+      <!-- Server socket factory to be used for client-server
+           RMI invocations during JNDI queries
+      <attribute name="ServerSocketFactory">custom</attribute>
+      -->
+   </mbean>
+
+   <mbean code="org.jboss.invocation.jrmp.server.JRMPInvokerHA"
+      name="jboss:service=invoker,type=jrmpha">
+      <attribute name="ServerAddress">${jboss.bind.address}</attribute>
+      <!--
+      <attribute name="RMIObjectPort">0</attribute>
+      <attribute name="RMIClientSocketFactory">custom</attribute>
+      <attribute name="RMIServerSocketFactory">custom</attribute>
+      -->
+   </mbean>
+
+   <!-- the JRMPInvokerHA creates a thread per request.  This implementation uses a pool of threads -->
+   <mbean code="org.jboss.invocation.pooled.server.PooledInvokerHA"
+      name="jboss:service=invoker,type=pooledha">
+      <attribute name="NumAcceptThreads">1</attribute>
+      <attribute name="MaxPoolSize">300</attribute>
+      <attribute name="ClientMaxPoolSize">300</attribute>
+      <attribute name="SocketTimeout">60000</attribute>
+      <attribute name="ServerBindAddress">${jboss.bind.address}</attribute>
+      <attribute name="ServerBindPort">4446</attribute>
+      <attribute name="ClientConnectAddress">${jboss.bind.address}</attribute>
+      <attribute name="ClientConnectPort">0</attribute>
+      <attribute name="EnableTcpNoDelay">false</attribute>
+      <depends optional-attribute-name="TransactionManagerService">jboss:service=TransactionManager</depends>
+   </mbean>
+
+   <!-- ==================================================================== -->
+
+   <!-- ==================================================================== -->
+   <!-- Distributed cache invalidation                                       -->
+   <!-- ==================================================================== -->
+
+   <mbean code="org.jboss.cache.invalidation.bridges.JGCacheInvalidationBridge"
+      name="jboss.cache:service=InvalidationBridge,type=JavaGroups">
+      <depends>jboss:service=${jboss.partition.name:DefaultPartition}</depends>
+      <depends>jboss.cache:service=InvalidationManager</depends>
+      <attribute name="InvalidationManager">jboss.cache:service=InvalidationManager</attribute>
+      <attribute name="PartitionName">${jboss.partition.name:DefaultPartition}</attribute>
+      <attribute name="BridgeName">DefaultJGBridge</attribute>
+   </mbean>
+
+</server>

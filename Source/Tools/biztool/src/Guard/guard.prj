@@ -1,0 +1,32 @@
+[Include]
+./src
+/usr/include
+../Share/Header/FSEye
+../Share/Header
+../../../../../../Base/Include
+../../../../../../Sword3/Include/FSEyes
+
+[Config Debug]
+Product		Exe ../../product/debug/guard
+Options		Debug
+Defines		__linux
+ObjDir		Debug
+LibDir		../../../../../../Base/Lib/Linux; /usr/local/lib; /usr/lib/lib; /lib/
+Libraries	pthread; CommonD; EngineD
+
+[Config Release]
+Product		Exe ../../product/release/guard
+Options		Release
+Defines		__linux
+ObjDir		Release
+LibDir		../../../../../../Base/Lib/Linux; /usr/local/lib; /usr/lib/lib; /lib/
+Libraries	pthread; Common; Engine
+
+[Source]
+src/stdafx.cpp
+src/client.cpp
+src/filedl.cpp
+src/guard.cpp
+src/plugin.cpp
+src/getnccfg.cpp
+src/kclient.cpp

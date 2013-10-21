@@ -1,0 +1,114 @@
+PopupMenu_InitMenuData
+	说明：初始化弹出菜单；
+	参数：szTreePath		窗口树路径名,
+		  nFontSize 		默认字体大小；
+	返回：nil
+		
+PopupMenu_Popup
+	说明：显示弹出菜单；
+	参数：szMenuTreePath	弹出菜单窗口树路径名；
+		  szCallerTreePath	弹出菜单的窗口控件的窗口树路径名,
+		  dwCallerParam		弹出菜单的窗口控件传入的参数；
+	返回：nil
+		
+PopupMenu_Cancel
+	说明：隐藏弹出菜单；
+	参数：nil
+	返回：nil
+		
+PopupMenu_LoadScheme
+	说明：加载弹出菜单配置方案；
+	参数：szTreePath		窗口树路径名,
+		  szScheme 			配置方案路径名，相对于游戏目录；
+	返回：nil
+	
+PopupMenu_GetHeight
+	说明：取弹出菜单高度；
+	参数：nil
+	返回：nHeight			高度；
+
+PopupMenu_GetIndent(int& nIndent);
+	说明：取弹出菜单缩进；
+	参数：nil
+	返回：nIndent			缩进；
+
+PopupMenu_GetBorderLineColor
+	说明：取弹出菜单边线颜色；
+	参数：nil
+	返回：dwColor 			边线颜色，目前没做可用性调整；
+
+PopupMenu_GetItemBgColor
+	说明：取弹出菜单菜单项背景颜色；
+	参数：nil
+	返回：dwColor 			背景颜色，目前没做可用性调整；
+
+PopupMenu_GetSelItemBgColor
+	说明：取弹出菜单选中菜单项背景颜色；
+	参数：nil
+	返回：dwColor 			背景颜色，目前没做可用性调整；
+
+PopupMenu_GetTextColor
+	说明：取弹出菜单菜单项文字字体颜色；
+	参数：nil
+	返回：dwFontColor 		字体颜色，目前没做可用性调整；
+
+PopupMenu_GetTextBorderColor
+	说明：取弹出菜单菜单项文字字体边缘颜色；
+	参数：nil
+	返回：dwFontBorderColor 字体边缘颜色，目前没做可用性调整；
+
+PopupMenu_GetSelTextColor
+	说明：取弹出菜单选中菜单项文字字体颜色；
+	参数：nil
+	返回：dwFontColor 		字体颜色，目前没做可用性调整；
+
+PopupMenu_GetSelTextBorderColor
+	说明：取弹出菜单选中菜单项文字字体边缘颜色；
+	参数：nil
+	返回：dwFontBorderColor 字体边缘颜色，目前没做可用性调整；
+
+PopupMenu_SetHeight
+	说明：设置弹出菜单高度；
+	参数：nHeight			高度；
+	返回：nil
+
+PopupMenu_SetIndent
+	说明：设置弹出菜单缩进；
+	参数：nIndent			缩进；
+	返回：nil
+
+PopupMenu_SetBorderLineColor
+	说明：设置弹出菜单边线颜色；
+	参数：dwColor 			边线颜色，目前没做可用性调整；
+	返回：nil
+
+PopupMenu_SetItemBgColor
+	说明：取弹出菜单菜单项背景颜色；
+	参数：dwColor 			背景颜色，目前没做可用性调整；
+	返回：nil
+
+PopupMenu_SetSelItemBgColor
+	说明：取弹出菜单选中菜单项背景颜色；
+	参数：dwColor 			背景颜色，目前没做可用性调整；
+	返回：nil
+
+PopupMenu_SetTextColor
+	说明：取弹出菜单菜单项文字字体颜色；
+	参数：dwFontColor 		字体颜色，目前没做可用性调整；
+	返回：nil
+
+PopupMenu_SetTextBorderColor
+	说明：取弹出菜单菜单项文字字体边缘颜色；
+	参数：dwFontBorderColor 字体边缘颜色，目前没做可用性调整；
+	返回：nil
+
+PopupMenu_SetSelTextColor
+	说明：取弹出菜单选中菜单项文字字体颜色；
+	参数：dwFontColor 		字体颜色，目前没做可用性调整；
+	返回：nil
+
+PopupMenu_SetSelTextBorderColor
+	说明：取弹出菜单选中菜单项文字字体边缘颜色；
+	参数：dwFontBorderColor 字体边缘颜色，目前没做可用性调整；
+	返回：nil
+

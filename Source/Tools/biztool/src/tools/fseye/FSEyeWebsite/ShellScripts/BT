@@ -1,0 +1,55 @@
+#/bin/bash
+#add by huangbiao
+
+read path
+echo $path
+echo
+cd $path
+
+latestmin=0
+latesthour=0
+latestfile="none"
+exefile="none"
+
+#check which would be used: kg_bishopd_linux ; gamecenterd_linux ; kg_goddessd_linux ; logserverd_linux ; js_gameserver*
+if [ -f "kg_goddessd_linux" ]; then
+ exefile="kg_goddessd_linux"
+elif [ -f "kg_bishopd_linux" ]; then
+ exefile="kg_bishopd_linux"
+elif [ -f "gamecenterd_linux" ]; then
+ exefile="gamecenterd_linux"
+elif [ -f "logserverd_linux" ]; then
+ exefile="logserverd_linux"
+elif [ "$exefile"="none" ]; then
+ exefile="js_gameserver*"
+fi
+
+ls -t  -l core.* > curls.txt
+
+while read line
+do
+checkfile=`echo $line | awk '{print $7}'`
+filefirstchar=`expr substr "$checkfile" 1 4`
+
+if [ "$filefirstchar" != "core" ]; then
+ echo $line
+ echo
+ latestfile=`echo $line | awk '{print $8}'`
+ break
+fi
+done < curls.txt
+#rm -rf curls.txt
+
+if [ "$latestfile" != "none" ]; then
+if [ "$latestfile" != "" ]; then
+echo bt > bt.txt
+#echo =================================
+echo gdb -batch -c $latestfile $exefile -x bt.txt
+#echo =================================
+echo
+gdb -batch -c $latestfile $exefile -x bt.txt
+#rm -rf bt.txt
+#rm -rf core.*
+fi
+fi
+

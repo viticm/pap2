@@ -1,0 +1,244 @@
+KG3DSFX.cpp
+1、在特效里添加了读写脚印贴图的功能，对应函数（KG3DSFX::ReadSelectMarkBlock和WriteSelectMarkBlock，KG3DSFX::ReadMagicParpetBlock,KG3DSFX::WriteMagicParpetBlock也有改动）
+(1)ReadFootprintBlock中会取原来的m_pFootprint，然后重新加载指定名称的贴图，设置脚印贴图的宽、高
+(2)写的操作刚好相反
+
+2、渲染脚印贴图（KG3DSFX::RenderFootprint）（*注意哦，KG3DSFX::Render是不对其调用的，也就是不会渲染脚印贴图）
+
+3、如果原来存在脚印贴图，就获得脚印贴图；否则则进行创建操作（AddSelectMark）
+
+4、释放脚印贴图（RemoveSelectMark）
+
+5、更新脚印贴图，即添加新的投影贴图（NewOneMagicParpet）：这个有待重新考察
+**原函数名UpdateFootprint，已经改成NewOneMagicParpet，改成和magicParpet调用NewOneFootprint
+
+6、特效的保存（SaveToFile）
+
+7、设备恢复和丢失（OnInvalidDevice和OnRestoreDevice）
+
+8、特效的BBox的范围，注意哦，可能不会影响原来的m_staticAABB（KG3DSFX::CalculateAABB）
+
+9、播放动画，设置投影贴图的当前光环（KG3DSFX::PlayAnimation和KG3DSFX::AureolaToProTextureMgr，注意playAnimation的调用）
+   注：KG3DSFX::AureolaToProTextureMgr功能函数已去掉，在playAnimation中直接改为使用设置当前光环贴图
+**测试，暂停状态下，光环贴图没有；播放状态下，重新把m_pFootprint设置回去，并执行Playing函数，即判断是否是脚印类型，是则执行相应的矩阵和更新操作
+
+10、Playing，被PlayAnimation调用
+
+
+KG3DSFXFileDefine.h
+SFX_MAGIC_PARPET_BLOCK中添加了dwIsFootprint和dwLife两个变量，且dwReserved预留从5变成了3个
+
+***********************************************************
+**注意m_nCellCountLine, m_pVB，m_pIB, footprint.nCellCountLine是否实时的同步
+
+KG3DSFXMagicParpet.cpp
+1、添加了一些用于脚印的类型和数据
+   (1)成员类_Footprint记录有关footprint的数据，相关的容器是m_listFootprint
+   (2)m_fAngle, m_fLife, m_nIsFootprint, m_nCurCellCountLine, m_nOptionFcaeTo
+
+2、Set\GetOptionFaceTo, Set\GetLife, IsFootprint\EnableFootprint
+   功能：分为FACE_TO_NONE，FACE_TO_CAMERA、FACE_TO_SWORDSMAN（朝向角色？）三种类型
+   在特效加载\保存中被调用，即KG3DSFX::LoadFromFile\SaveToFile中被调用
+   **注意熟悉编辑器，编辑器中该函数的调用熟悉
+
+3、NewOneFootprint
+   功能：m_listFootprint中不断的压入新的footprint数据，最多只能压入12个
+   在特效标签中被调用，KG3DAnimationSFXTag::Helper_Apply中调用KG3DSFX::NewOneMagicParpet，即不断调用NewOneFootprint
+
+4、Update（将对应的特效m_pSFX的m_dwTotalFrameNum置为0xfffffff）
+   **在KG3DSFX::Render中被调用，注意分为m_nOptionFcaeTo == FACE_TO_CAMERA和m_nOptionFcaeTo == FACE_TO_SWORDSMAN两种情况进行测试
+   **在KG3DSFX::Playing中被调用
+
+5、Render
+   功能：分为客户端和编辑器两种，
+   (1)在客户端中如果m_nIsFootprint标志为True，则调用UpdateFootprint，对m_listFootprint的每个元素执行RenderFootprint，渲染完后，弹出生命已经结束的footprint；如果m_nIsFootprint标志为false，则执行RenderAOE
+   (2)在编辑器中，则是一定先执行RenderAOE,当m_nIsFootprint为True时，才调用UpdateFootprint
+
+6、UpdateFootprint
+   功能：对m_listFootprint的每个元素执行RenderFootprint，渲染完后，弹出生命已经结束的footprint
+   在Render中被调用
+
+7、RenderFootprint
+   功能：渲染脚印贴图
+   在UpdateFootprint中被调用
+
+8、FillVertexBuffer(VFormat::_Faces_Diffuse_Texture1* pData,FOOTPRINT Footprint)
+   功能：填充m_pVB
+   在RenderFootprint中被调用
+
+9、Set\GetAngle
+   目前未被调过
+
+
+***********************************************************
+
+
+KG3DSFXSelectTexture.cpp（针对KG3DSFXFootprint而言）
+注：m_nTextureWidth和m_nTextureHeight是应用中需要用到的贴图大小，不是贴图的实际大小
+
+1、LoadTexture:
+   功能：加载指定名称的贴图，记录贴图的大小
+   在特效加载中被调用，即KG3DSFX::LoadFromFile中被调用（特效里面加载脚印的时候，貌似存在不一致或者冗余加载的可能？）
+
+2、GetTexture:
+   功能：获得当前贴图
+   在存特效文件时，即KG3DSFX::WriteFootprintBlock被调用  
+
+3、CreatVertexBuffer：
+   功能：创建顶点缓冲和索引Buffer，填充顶点缓冲的数据
+   在渲染脚印贴图(RenderTexture)时被调用
+
+4、RenderTexture:
+   功能：渲染贴图
+   在特效里被调用（KG3DSFX::RenderFootprint）
+   **测试检查时可以根据特效编辑器   KG3DSceneSFXEditor::RenderForMainWindow中
+   (1) 当m_pHandModel的类型为SFX，
+   (2) 当m_listRenderEntity中存在类型为SCENEENTITY_MODEL的实体，且该实体所指的model是SFX类型
+   (3) 当m_lpSFX且其m_nIsSockWave为false时
+
+5、FillVertexBuffer：
+   功能：填充顶点缓冲的数据，包括顶点坐标，颜色，UV坐标
+   访问级别是不是应该是private，而不是public，因为它只在CreatVertexBuffer中被调用？。。。
+
+6、AddProTexture：
+   功能：通过g_ProTextureMgr来添加KG3DSFXSelectTexture类型的贴图（注意考察KG3DSFXProjectionTextureMgr的功能和内存管理），并设置脚印贴图对应的特效和贴图为该SelectTexture的特效和贴图，并设置所在位置和矩阵，
+   在更新脚印贴图里（KG3DSFX::UpdateFootprint）被调用，（该函数有引起内存泄漏之嫌，需要查对）
+
+7、BindToProTextureMgr
+   功能：将g_ProTextureMgr的当前的光环设置为该脚印贴图（熟悉功能，编辑器？）
+   在特效里播放动画时被调用（KG3DSFX::PlayAnimation调用KG3DSFX::AureolaToProTextureMgr，KG3DSFX::AureolaToProTextureMgr中调用该函数）
+
+8、OnInvalidDevice/OnRestoreDevice
+   功能：设备丢失和恢复处理（释放顶点缓冲和索引Buffer）
+   在特效里设备恢复和丢失中处理（KG3DSFX::OnInvalidDevice/OnRestoreDevice）
+
+9、GetCurPos:
+   功能：获得所指特效的世界矩阵，分解获得当前位置
+   在KG3DSFXProjectionTextureMgr::GetCurAureolaPos中被调用，即在mesh被绘制的时候（Shader_DrawMeshSubset_NoChange和Shader_DrawMeshAmbientMap_NoChange中调用）
+
+10、Get\SetTextureWidth、Get\SetTextureHeight：
+   功能：获得\设置贴图的宽或高
+   在关于SFX里的读取和存储和贴图的渲染就有该函数的调用，只用检查调用它的函数在调用时是否正确即可
+
+11、Get\SetenFoot、Get\SetFootprintType
+   功能：获得\设置脚印的类型
+
+12、如果当前为g_ProTextureMgr的m_pCurAureola，则析构函数会g_ProTextureMgr的当前光环设置为NULL
+***********************************************************
+
+与KG3DSFXProjectionTextureMgr的交互（详细可参见文档Engine_KG3DSFXProjectionTextureMgr.doc，相关变量g_ProTextureMgr和该类的成员光环m_pCurAureola）
+
+注：KG3DSFXProjectionTextureMgr的成员m_nWidth和m_nHeight不是动态贴图m_pDynamicTexture的长宽，而是“要贴上地表的大小”，不然容易晕的。。。
+ 
+注：KG3DSFXProjectionTextureMgr的成员m_vecModel是用来判断所处的model是否包含投影贴图的model列表中。
+
+
+KG3DSFXProjectionTextureMgr.cpp
+
+1、CreateProjectionTexture
+   功能：创建动态贴图，顶点缓冲，索引Buffer
+   在设备恢复中被调用（OnRestoreDevice）
+   **注意目前程序里只是创建长宽均为800的默认大小的动态贴图（注意测试）
+
+2、OnInvalidDevice\OnRestoreDevice
+   功能：设备丢失\恢复的处理
+   由EngineManager来接管对g_ProTextureMgr进行处理。
+
+3、SetTexturePos
+   功能：设置地表的中心位置，并保存原位置
+   在ShutDown中被调用
+
+4、ShutDown
+   功能：将地表中心位置移到无效位置，并清除相关容器
+   在场景编辑器中被调用（KG3DSceneSceneEditor::SetOpenAddTexture）
+   **需要跟踪编辑器对它的调用情况
+
+5、NewOneProjectionTexture
+   功能：获得一个新的投影贴图，压入m_vecProjectionTexture
+   在KG3DSFXFootprint::AddProTexture中被调用
+   **只需要测试脚印的更新就可以了，该函数会被测试到的
+
+
+
+注：下面是新添加的功能函数，与footprint有关
+
+6、GetCurAureola
+   功能：获得当前的光环m_pCurAureola
+   在KG3DSFXFootprint的析构中被调用
+
+6、SetCurAureola
+   功能：设置当前的光环
+   在KG3DSFXFootprint的BindToProTextureMgr中被调用和KG3SFX的AureolaToProTextureMgr中被调用，不过最终都是在AureolaToProTextureMgr中被调用，而AureolaToProTextureMgr又是在特效播放动画的时候被调用
+   **测试特效播放动画的情况
+
+7、GetCurAureolaPos
+   功能：获得光环的位置
+   在KG3DMesh的Shader_DrawMeshSubset_NoChange和Shader_DrawMeshAmbientMap_NoChange中存在调用该函数
+   **测试所属模型是需要投影时的绘制
+
+8、GetCurAureolaWidth\Height
+   功能：获得光环贴图的宽\高
+
+9、GetCurAureolaTexture
+   功能：获得光环贴图
+   **注意测试所属模型的光环贴图存在和不存在两种情况
+
+10、UpdateAureola
+   功能：获得包含该贴图的所有RoadPart，RegionIndex和model
+   在FrameMove中被调用
+
+11、FrameMove
+   功能：调用UpdateAureola
+   在EngineManager的FrameMove中会被调用
+
+
+注：下面是未被调用过的函数
+
+6、GetTextureWidth\Height
+   功能：获得要贴上地表的长宽
+   目前没被调用过
+
+7、GetTexture
+   功能：获得动态贴图m_pDynamicTexture
+   目前没被调用过
+
+8、ReSetPos
+   功能：重置地表的中心位置
+   目前没被调用过
+
+9、GetTexturePos
+   功能：获得地表的中心位置
+   目前没有被调用过
+
+10、AddProjectionTexture
+   功能：添加指定的投影贴图
+   目前没被调用过
+
+11、RemoveProjectionTexture
+   功能：删除指定的投影贴图
+   目前没被调用过
+
+12、GetNeedDrawProTexture
+   功能：遍历投影贴图容器m_vecProjectionTexture，将在地表范围内的贴图压入m_vecNeedDrawProTexture（当前需要绘制出来的贴图）
+   目前没被调用过
+
+13、IsInside
+   功能：判断是否在地表的范围内
+   该函数在GetNeedDrawProTexture中被调用
+
+14、RenderToTexture
+   功能：将m_vecNeedDrawProTexture对应的贴图进行渲染
+   目前没被调用过
+
+
+***********************************************************
+
+KG3DAnimationSFXTag.cpp
+(1)特效标签显示，会更新脚印贴图，包括更新矩阵，跟新MagicParpet的Vertex缓冲和Index缓冲，以及插入Footprint（Helper_Apply）
+  （熟悉功能，编辑器？）
+  （ KG3DAnimationTagContainer::FrameMove调用m_vecTags[i].pTag->Apply，从而调用Helper_Apply）
+   当m_KeyedFrame的每个元素对应的KeyFrame容器的每个RunTime.RunState为激活态, 会调用pModel->Playing()，
+   **NewOneMagicParpet时，在MagicParpet中m_listFootprint只能最多插入12(MAX_FOOTPRINT_NUM)个Footprint。
+   **如果执行到OnSFXActived时，将pModel执行UnBindFromOther，那么这个时候它的m_pMagicParpet记录的m_listFootprint还有效么？要不要清除？
+
+注意修改的地方对于MagicParpet的clone的改变

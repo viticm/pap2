@@ -1,0 +1,100 @@
+==================================================================
+增加附魔表现                                                     |
+==================================================================
+
+评审时间：2008-02-29
+
+参与人员：夏永 赵纯峰 侯锐
+
+修改目的：
+------------------------------------------------------------------
+1. 为附魔增加表现。
+2. 附魔表只有一份版本。
+3. 锁定状态下，不改变附魔表现。
+
+
+修改方案：
+------------------------------------------------------------------
+1. 增加一张附魔表。相关字段如下：
+   EnchantID：     附魔表现ID
+   AttibuteID：    魔法属性ID
+   Value1：        魔法属性值
+   Value2：        魔法属性值
+   RepresentIndex：表现Index
+   RepresentID：   表现ID
+
+2. item相关的文件加载中，增加对附魔表的加载。
+
+3. 新增一个类，提供对附魔相关属性的读取。
+
+4. 装备item时，应用附魔的魔法属性后，增加对附魔表现的相关调用。
+
+5. 卸载item时，反应用附魔的魔法属性后，增加对附魔表现停止的相关调用。
+
+
+本次修改涉及到的代码：
+------------------------------------------------------------------
+1. 在客户端settings\item 目录下，增加附魔表。相关字段如下：
+   EnchantID      ：附魔表现ID
+   AttibuteID     ：魔法属性ID
+   Value1         ：魔法属性值
+   Value2         ：魔法属性值
+   RepresentIndex ：表现Index
+   RepresentID    ：表现ID
+
+2. 新增文件KEnchantLib.h，提供附魔表现相关的类和接口。主要内容如下：
+(1) 增加结构体KENCHANT，对应于附魔表中的每一条数据。结构如下：
+    struct KENCHANT
+    {
+	KAttribute *pAttribute；
+	int nRepresentIndex；
+	int nRepresentID；
+    }；
+
+(2) 增加map，用于存放加载的附魔表。
+    typedef std::map<int nEnchantID, KENCHANT> KEnchantMap;
+
+(3) 增加函数int Init()，用于从指定目录加载附魔表现表，存储至KEnchantMap。
+
+(4) 增加函数KENCHANT* GetEnchantInfo(DWORD dwEnchantID)，用于获取某个指
+    定的附魔表现。
+
+3. 新增文件KEnchantLib.cpp，实现附魔表现相关的接口。
+(1) 增加成员函数int Init()，用于从指定目录加载附魔表现表至KEnchantMap。
+
+(2) 增加函数KENCHANT* GetEnchantInfo(DWORD dwEnchantID)，用于获取某个指
+    定的附魔表现。
+
+4. 文件KItemManager.h中，类KItemManager中，增加成员变量m_EnchantLib。
+
+5. 文件KItemManager.cpp中，函数KItemManager::Init，增加附魔表现的加载。
+   注意，附魔表现只用加载一次，没有多版本的概念。
+
+6. 文件KItem.h中：
+(1) 将类KItem里面的成员变量：
+	KAttribute*	m_pEnchant;		//附魔属性
+	KAttribute*	m_pTemporaryEnchant;	//限时附魔
+    换成：
+	KENCHANT*       m_pEnchant;
+        KENCHANT*	m_pTempEnchant;
+
+7. 函数KItem::AddEnchant中，将代码
+	pAttribInfo = g_ItemLib.m_pItemLib->GetAttribInfo(dwAttributeID);
+   换成：
+	pEnchantInfo = g_ItemLib.m_EnchantLib->GetEnchantInfo(dwEnchantID);
+        并将pEnchantInfo的内容拷贝给m_pEnchant；
+
+8. 文件KItemList.cpp中：
+(1) 函数KItemList::Equip中，增加附魔表现的代码：
+    if (nRepresentIndex >= 0 && nRepresentIndex < perRepresentCount)
+    {
+	m_pPlayer->m_wRepresentId[nRepresentIndex] = nRepresentID;
+	g_PlayerServer.DoSyncEquipRepresent(pPlayer, nRepresentIndex, RepresentID);
+    }
+
+(2) 函数KItemList::UnEquip中，增加去除附魔表现的代码：
+    if (nRepresentIndex >= 0 && nRepresentIndex < perRepresentCount)
+    {
+	m_pPlayer->m_wRepresentId[nRepresentIndex] = 0;
+	g_PlayerServer.DoSyncEquipRepresent(pPlayer, nRepresentIndex, 0);
+    }

@@ -1,0 +1,5 @@
+15/04/2006 - Added Some new Methods on KeyedCollection added IndexOfKey RemoveByKey and others, because a key overload can cause some problem by the generics nature
+04/04/2006 - Fixed problems: LightCollection, KeyedCollection and Win32 namespace
+04/04/2006 - Renamed RoundSelectionBrush to RoundRectangleBrush
+04/04/2006 - XmlNodeTextReader moved to Fireball.Xml
+03/04/2006 - Removed Registry Association because it don't work, and this thing can't be added for the release 1 of FireFX

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SO3World", "SO3World.vcxproj", "{D9F789A3-547C-4FA2-A443-A0EF6F89375F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_Client|Win32 = Debug_Client|Win32
+		Debug_Server|Win32 = Debug_Server|Win32
+		Release_Client|Win32 = Release_Client|Win32
+		Release_Server|Win32 = Release_Server|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9F789A3-547C-4FA2-A443-A0EF6F89375F}.Debug_Client|Win32.ActiveCfg = Debug_Client|Win32
+		{D9F789A3-547C-4FA2-A443-A0EF6F89375F}.Debug_Client|Win32.Build.0 = Debug_Client|Win32
+		{D9F789A3-547C-4FA2-A443-A0EF6F89375F}.Debug_Server|Win32.ActiveCfg = Debug_Server|Win32
+		{D9F789A3-547C-4FA2-A443-A0EF6F89375F}.Debug_Server|Win32.Build.0 = Debug_Server|Win32
+		{D9F789A3-547C-4FA2-A443-A0EF6F89375F}.Release_Client|Win32.ActiveCfg = Release_Client|Win32
+		{D9F789A3-547C-4FA2-A443-A0EF6F89375F}.Release_Client|Win32.Build.0 = Release_Client|Win32
+		{D9F789A3-547C-4FA2-A443-A0EF6F89375F}.Release_Server|Win32.ActiveCfg = Release_Server|Win32
+		{D9F789A3-547C-4FA2-A443-A0EF6F89375F}.Release_Server|Win32.Build.0 = Release_Server|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

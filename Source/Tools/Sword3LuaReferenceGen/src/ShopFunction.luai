@@ -1,0 +1,113 @@
+﻿@title ShopFunction
+@obj
+@detail 商店全局函数
+
+@summary [仅客户端使用] 向服务器发送打开商店的请求
+@param dwShopId	商店的id
+@param dwNpcId	npc的id
+@remarks 该函数无返回值
+@n
+@n	在发送请求前，会验证当前玩家到npc的距离，太远的话是不会发送请求的。
+function OpenShopRequest(dwShopId, dwNpcId)
+
+@summary [仅客户端使用] 向服务器请求商店中某个页面的道具
+@param dwShopId		商店的id
+@param dwPageIndex	商店页面的索引
+@remarks 该函数无返回值
+function QueryShopPage(dwShopId, dwPageIndex)
+
+@summary [仅客户端使用] 获取商店中某个道具的id
+@param dwShopId		商店id
+@param dwPageIndex	页面id
+@param nPos			道具在页面中的位置 
+@remarks 返回道具的id。如果没有道具，那么返回0
+function GetShopItemID(dwShopId, dwPageIndex, nPos)
+
+@summary [仅客户端使用] 获取商店中某个道具的购买价格
+@param dwNpcId		npc的id
+@param dwShopId		商店id
+@param dwPageIndex	页面id
+@param nPos			道具在页面中的位置 
+@remarks 返回道具的购买价格
+function GetShopItemBuyPrice(dwNpcId, dwShopId, dwPageIndex, nPos)
+
+@summary [仅客户端使用] 获取玩家身上某个道具的出售价格
+@param dwNpcId		npc的id
+@param dwShopId		商店id
+@param dwBoxIndex	道具所在背包的索引
+@param nPos			道具在背包的位置 
+@remarks 返回道具的出售价格
+function GetShopItemSellPrice(dwNpcId, dwShopId, dwPageIndex, nPos)
+
+@summary [仅客户端使用] 获取玩家身上某个道具的修理价格
+@param dwNpcId		npc的id
+@param dwShopId		商店id
+@param dwBoxIndex	道具所在背包的索引
+@param nPos			道具在背包的位置 
+@remarks 返回道具的修理价格
+function GetShopItemRepairPrice(dwNpcId, dwShopId, dwPageIndex, nPos)
+
+@summary [仅客户端使用] 获取修理玩家身上所有道具的价格
+@param dwNpcId		npc的id
+@param dwShopId		商店id
+@remarks 返回修理所有道具的价格。
+function GetRepairAllItemsPrice(dwNpcId, dwShopId)
+
+@summary [仅客户端使用] 获取商店中某个道具的数量上限
+@param dwShopId		商店id
+@param dwPageIndex	页面id
+@param nPos			道具在页面中的位置 
+function GetShopItemLimit(dwShopId, dwPageIndex, nPos)
+
+@summary [仅客户端使用] 获取商店中某个道具的数量
+@param dwShopId		商店id
+@param dwPageIndex	页面id
+@param nPos			道具在页面中的位置 
+function GetShopItemCount(dwShopId, dwPageIndex, nPos)
+
+@summary [仅客户端使用] 获取商店中某个道具的声望等级需求
+@param dwShopId		商店id
+@param dwPageIndex	页面id
+@param nPos			道具在页面中的位置 
+function GetShopItemReputeLevel(dwShopId, dwPageIndex, nPos)
+
+@summary [仅客户端使用] 向服务器请求购买某道具
+@param dwNpcId		npc的id
+@param dwShopId		商店id
+@param dwPageIndex	道具所在页面的索引
+@param nPos			道具在页面中的位置 
+@param nCount		购买的数量
+@remarks 该函数无返回值
+@n
+@n	如果因为某种原因不能购买道具，那么是不会发送请求的。
+function BuyItem(dwNpcId, dwShopId, dwPageIndex, nPos, nCount)
+
+@summary [仅客户端使用] 玩家将身上某个道具卖给商店
+@param dwNpcId		npc的id
+@param dwShopId		商店id
+@param dwBoxIndex	道具所在背包的索引
+@param nPos			道具在背包中的位置 
+@param nCount		出售的数量
+@remarks 该函数无返回值
+function SellItem(dwNpcId, dwShopId, dwBoxIndex, nPos, nCount)
+
+@summary [仅客户端使用] 回购某个已经卖出的道具
+@param dwNpcId		npc的id
+@param dwShopId		商店id
+@param nPos			道具在回购列表中的位置
+@remarks 该函数无返回值
+function BuySoldListItem(dwNpcId, dwShopId, nPos)
+
+@summary [仅客户端使用] 修理某个道具
+@param dwNpcId		npc的id
+@param dwShopId		商店id
+@param dwBoxIndex	道具所在背包的索引
+@param nPos			道具在背包中的位置 
+@remarks	该函数无返回值
+function RepairItem(dwNpcId, dwShopId, dwBoxIndex, nPos)
+
+@summary [仅客户端使用] 修理身上所有道具
+@param dwNpcId		npc的id
+@param dwShopId		商店id
+@remarks	该函数无返回值
+function RepairAllItems(dwNpcId, dwShopId)

@@ -1,0 +1,83 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>ActiveX控件获取系统信息</title>
+		<style>
+			*{
+				margin:0px;
+				padding:0px;
+			}
+			table{
+				table-layout:fixed;
+			}
+		</style>
+		<script language="JavaScript" type="text/javascript">
+			function InitPage()
+			{
+				// 操作系统版本
+				document.getElementById("TD_System").innerHTML = KEGame.GetSystemVersion();
+				// 操作系统版本号
+				document.getElementById("TD_SystemNum").innerHTML = KEGame.GetSystemId();
+				// 系统CPU信息,多CPU以 '&' 分隔
+				document.getElementById("TD_CPU").innerHTML = KEGame.GetSystemCpuInfo();
+				// 系统内存大小,以mb为单位
+				document.getElementById("TD_Memory").innerHTML = KEGame.GetSystemMemInfo();
+				// 显卡信息,多显卡以 '&' 分隔
+				document.getElementById("TD_Display").innerHTML = KEGame.GetDisplayInfo();
+				// 获取显存大小，以mb为单位
+				document.getElementById("TD_DisplaySize").innerHTML = KEGame.GetDisplayMem();
+				// 机器唯一ID 对所有网卡MAC地址取MD5值
+				document.getElementById("TD_UUID").innerHTML = KEGame.GetHardDiskId();
+			}
+			function EncryptString()
+			{
+				// 加密字符串,将输入字符串追加"92A73EB6-FA72-40f9-AFD2-BD0376F40FD0",再计算MD5值
+				var strSrc = document.getElementById("Text_Encrypt").value;
+				if ("" == strSrc)
+				{
+					alert("请输入需要加密的字符串!")
+					return;
+				}
+				alert("加密后MD5: " + KEGame.EncryptString(strSrc));
+			}
+		</script>
+	</head>
+	<body onload="InitPage()">
+		<object classid="CLSID:19CC8AC3-7B26-40FF-8389-AB2460E647A9" id="KEGame" width="1" height="1" codebase="kegame.cab#Version=2008,9,17,1"></object>
+		<table border=1 cellpadding=0 cellspacing=0 width="100%">
+			<tr height="30px">
+				<td height="200px">操作系统：</td>
+				<td id="TD_System" height="100%">正在获取...</td>
+			</tr>
+			<tr height="30px">
+				<td height="200px">操作系统版本号：</td>
+				<td id="TD_SystemNum" height="100%">正在获取...</td>
+			</tr>
+			<tr height="30px">
+				<td height="200px">CPU信息(多cpu以 '&' 分隔)：</td>
+				<td id="TD_CPU" height="100%">正在获取...</td>
+			</tr>
+			<tr height="30px">
+				<td height="200px">内存信息(以MB为单位)：</td>
+				<td id="TD_Memory" height="100%">正在获取...</td>
+			</tr>
+			<tr height="30px">
+				<td height="200px">显卡信息(多显卡以 '&' 分隔)：</td>
+				<td id="TD_Display" height="100%">正在获取...</td>
+			</tr>
+			<tr height="30px">
+				<td height="200px">显存大小(以MB为单位，多显卡以 '&' 分隔)：</td>
+				<td id="TD_DisplaySize" height="100%">正在获取...</td>
+			</tr>
+			<tr height="30px">
+				<td height="200px">机器唯一ID(将所有网卡MAC地址取MD5值)：</td>
+				<td id="TD_UUID" height="100%">正在获取...</td>
+			</tr>
+			<tr height="30px">
+				<td height="200px">加密字符串(将输入字符串追加"92A73EB6-FA72-40f9-AFD2-BD0376F40FD0",再计算MD5值)：</td>
+				<td height="100%"><input id="Text_Encrypt" type="text"><input type="button" value="计算" onclick="EncryptString()"></td>
+			</tr>
+		</table>
+	</body>
+</html>

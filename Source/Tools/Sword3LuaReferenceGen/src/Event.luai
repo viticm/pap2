@@ -1,0 +1,181 @@
+﻿@title 事件接口
+@detail 当程序在运行过程中满足了某种条件时，会调用写在脚本文件中特定的函数。
+@n
+@n	目前只是列举出了程序中有的接口，具体使用细节还有待补充。
+@catalogs KPlayer, KScene, KNpc, KDoodad, KSkill, 任务相关
+
+
+
+@summary 玩家进入一个Scene
+@catalog KScene
+@param Player	玩家对象
+@param Scene	玩家进入的那个Scene的对象
+@remarks 在向一个Scene中添加玩家时调用的。这个事件在KScene相关的脚本中实现。
+@
+@	目前还没发现有哪个地方是来设置KScene对象的脚本属性的。需确认。
+function OnEnterScene(Player, Scene)
+
+
+
+@summary [仅服务器端使用]玩家登陆时调用。
+@catalog KPlayer
+@param Player	登陆的玩家对象
+@remarks 在玩家登陆服务器时调用。这个事件在Scripts/player/LoginScript.lua中实现
+function OnPlayerLogin(Player)
+
+
+@summary [仅服务器端使用]玩家离开Trap点时调用
+@catalog KPlayer
+@param Player	玩家对象
+@remarks 这个脚本是挂在Cell上的。
+function OnLeaveTrap(Player)
+
+
+
+@summary [仅服务器端使用]玩家进入Trap点时调用
+@catalog KPlayer
+@param Player	玩家对象
+@remarks 这个脚本是挂在Cell上的。
+function OnEnterTrap(Player)
+
+
+@summary [仅服务器端使用]Npc死亡时调用
+@catalog KNpc
+@param DeadNpc	挂掉的Npc对象
+@param Killer	杀死npc的玩家（Player）或Npc对象
+@remarks 这个脚本挂在npc身上
+function OnDeath(DeadNpc, Killer)
+
+
+@summary [仅服务器端使用]自定义事件
+@catalog KCharacter
+@param Player	执行动作的玩家对象
+@param Target	目标对象。根据当前玩家所选的目标，这个参数会有不同的取值：
+@n	1)nil. 当玩家没有选择目标时是一个空值
+@n	2)Npc. 选择的目标是个Npc
+@n	3)Player. 选择的目标是个Player
+@n	4)Doodad. 选择的目标是个Doodad
+@n	
+@n	如果没有选择目标，那么第2个参数Target为nil
+@remarks 执行自定义的OT事件时会调用这个函数。
+@
+@	目前还没有发现哪里会设置这个值。需确认。
+function OnCustomEvent(Player, Target)
+
+@summary 场景定时器触发
+@catalog KScene
+@param Scene	触发定时器的场景对象
+@param nParam1	定时器第1个参数
+@param nParam2	定时器第2个参数
+@remarks 当场景中某个定时器的时间到了，会调用这个函数。
+function OnTimer(Scene, nParam1, nParam2)
+
+
+@summary [仅服务器端使用]打开Doodad
+@catalog KDoodad
+@param Doodad	被打开的Doodad对象
+@param Player	执行打开动作的Player对象
+@remarks 在角色打开Doodad，最开始判断时调用。KDoodad::CheckOpen中调用。
+@n
+@n	这个脚本记录在Doodad上。
+function OnOpen(Doodad, Player)
+
+
+@summary [仅服务器端使用]打开Doodad时被打断
+@catalog KDoodad
+@param Doodad	被打开的Doodad
+@param Player	正在打开Doodad的玩家对象
+@remarks 在2个情况下会被调用：
+@n	1) 玩家打开Doodad的过程中被打断时调用（KCharacter::DoOTAction）。
+@n	2) 玩家已经打开了Doodad后被打断时调用（KCharacter::ProcessOTAction)。
+@n
+@n 这个脚本记录在Doodad上。
+function OnBreak(Doodad, Player)
+
+
+
+@summary [仅服务器端使用]第一次打开doodad时调用
+@catalog KDoodad
+@param Doodad	正在被打开的Doodad
+@param Player	执行打开操作的Player
+@remarks 当角色打开一个Doodad，且这个Doodad不是尸体，也没有拾取列表时，会调用
+@	这个事件处理函数。
+@
+@n	这个脚本记录在Doodad上
+function OnPick(Doodad, Player)
+
+
+@summary 读取技能升级数据
+@catalog KSkill
+@param Skill	技能对象
+@remarks 这个函数应该返回表示是否执行成功的bool值。
+@n
+@n	当初始化技能数据时调用的，在这个函数中设置技能的一些属性。
+function GetSkillLevelData(Skill)
+
+
+@summary 技能升级时调用
+@catalog KSkill
+@param	Skill	升级的技能
+@param	Player	升级技能的玩家
+@remarks 没有返回值。
+@
+@n	在简单升级模式下,加经验值的时候,如果足够升级,则程序会自动把级别升上去，
+@	这时会调用这个函数。
+function OnSkillLevelUp(Skill, Player)
+
+
+@summary 判断角色能否释放某个技能时调用
+@catalog KSkill
+@param Player	技能释放者
+@param nPreResult 先前判断能否释放技能的结果，含义见[[see SKILL_RESULT_CODE]]
+@remarks 执行成功应返回true；否则应返回false。
+@n
+@n	这个脚本会在程序判断角色能否释放某个技能时调用。
+function CanCast(Player, nPreResult)
+
+
+@summary 使用物品
+@catalog KItem
+@param Player	物品使用者
+@param Item	被使用的Item对象
+@remarks 当角色使用物品时，会调用物品的这个事件。
+function OnUse(Player, Item)
+
+
+@summary 与Npc对话
+@catalog KNpc
+@param Npc 	对话的Npc
+@param Player	对话的玩家
+@remarks 这个函数没有返回值。
+@n
+@n	当玩家与Npc对话时会调用这个函数。
+function OnDialogue(Npc, Player)
+
+@summary [仅在服务器端执行] 取消任务
+@catalog 任务相关
+@param KPlayer	取消任务的玩家对象
+@remarks 该函数没有返回值。
+@n
+@n	当玩家取消此任务时，会找到该任务对应的脚本（这个脚本在Quests.tab中指定），
+@	然后调用这个脚本中的这个函数。
+function OnCancelQuest(KPlayer)
+
+@summary [仅在服务器端执行] 完成任务
+@catalog 任务相关
+@param player	[[see KPlayer]]类型，完成任务的玩家对象
+@param nPresentChoice1	完成任务时选择的第1组奖励的索引
+@param nPresentChoice1	完成任务时选择的第2组奖励的索引
+@remarks 该函数没有返回值。
+@n
+@n	当玩家完成此任务时，会找到该任务对应的脚本（这个脚本在Quests.tab中指定），
+@	然后调用这个脚本中的这个函数。
+function OnFinishQuest(player, nPresentChoice1, nPresentChoice2)
+
+@summary [仅在服务器端执行] NPC复活
+@catalog KNpc
+@param npc	正在复活的KNpc对象
+@remarks 该函数没有返回值
+@
+@n	当npc复活时，调用这个函数。这个函数在npc关联的脚本内指定。
+function OnNpcRevive(npc)

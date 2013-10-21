@@ -1,0 +1,51 @@
+1. 功能
+   批量转换一个目录下的TGA图片文件为DXT5格式，工具还将在当前目录下按时间生成一个目录，里面有2个文件，功能如下：
+   ErrorTexture.txt:存放不符合标准的贴图(tga)
+   FilterTexture.txt:存放过滤的贴图，依据给定的过滤条件(tga)
+   
+2. 使用方法
+	dxtconverter.exe -p 源路径 
+	源路径: DXTConvertor.ini文件所在的路径，默认取当前路径
+    例子：
+    dxtconverter.exe -p D:\tools\dxtconvertor\
+
+3. 配置文件使用：
+   以下所有SECTION里面必须要有KEY，[Base][CheckPath]对应KEY值不能为空，[FilterPath]中path_01的值为空，表示不处理过滤目录，
+   [FilterFile][ConvertorFile]里面filepath对应值为空，表示不处理对应的文件内容
+	
+   [Base]
+	MaplistPath=xxx
+   		maplist.tab(即客户端下\settings\Maplist.tab)文件所在目录，必须是绝对路径
+	AutoRun=xxx
+		取值：0或1，1表示自动构建使用，0表示个人使用。这个选项主要是给自动构建那边使用，会出现文件不存在的情			况发生，个人使用可以将该值填0
+   [CheckPath]
+	path_01=xxx
+	path_02=xxx
+	....
+	path_99=xxx
+   要检查的贴图文件所在的路径，最多99个，超过99个的不做处理，且必须是绝对路径   	
+   [FilterPath]
+	path_01=xxx
+	path_02=xxx
+	....
+	path_99=xxx
+   要过滤的贴图文件所在的相对路径(相对于CheckPath路径)，最多99个，超过99个的不做处理，该路径下的所有TGA文件将被过滤，但DDS文件不过滤，
+   里面的路径应该都是[CheckPath]里面路径的子路径，否则将不被过滤，第一个字符不能是'\'，且最后必须是'\'结束
+   [FilterFile]	
+	filepath=xxx.tab
+   要过滤的贴图文件所在的tab文件全路径，tab文件的格式参照模板文件(FilterFiles.tab)
+   [ConvertorFile]
+	filepath=xxx.tab
+   特殊转换方式的贴图文件所在的tab文件全路径，tab文件的格式参照模板文件(ConvertorFiles.tab)
+
+4.模板文件规则：
+   FilterFiles.tab：
+	字段name:要过滤的文件名，必须是TGA文件
+	字段path:文件名所在路径，可以为空，为空表示[CheckPath]下的所有该文件都被过滤，不为空时，必须填写相对路径，
+		且是相对于[CheckPath]的，第一个字符不能是'\'，且最后必须是'\'结束
+   ConvertorFiles.tab:
+	字段name:特殊转换文件名，必须是TGA文件
+	字段path:文件名所在路径，可以为空，为空表示[CheckPath]下的所有改文件都将被转换成特殊格式，不为空时，必须填写相对路径，
+		且是相对于[CheckPath]的，第一个字符不能是'\'，且最后必须是'\'结束
+
+5. dxtconverter是一个前端的批处理工具， 还需要texconv.exe, 这个要求和dxtconverter.exe放在一起。

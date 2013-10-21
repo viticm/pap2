@@ -1,0 +1,192 @@
+1.玩家历程查询语句
+查询结果：事件 时间 备注
+set @roleID=(select cRoleId from trolebaseinfo where cRoleName = '角色名' limit 1);
+
+**************
+select logtime as time, '升级' as event, CONCAT('升到<', CAST(field2 as char(8)),'>级') as remark
+from log_3_1
+where field1='asdasdasd-7e91dasdasdo823'
+union
+select logtime as time, '加入门派' as event, CONCAT('加入<', (select field2 from faction where log_3_2.field3=faction.field1), '>，当时为<', CAST(field2 as char(8)), '>级')   as remark
+from log_3_2
+where field1='asdasdasd-7e91dasdasdo823'
+union
+select logtime as time, '出师' as event, CONCAT('出师自<', (select field2 from faction where log_3_3.field3=faction.field1), '>，当时为<', CAST(field2 as char(8)), '>级')   as remark
+from log_3_3
+where field1='asdasdasd-7e91dasdasdo823'
+union
+select logtime as time, '加入家族' as event, CONCAT('加入<', (select field2 from kin where log_3_4.field3=kin.field1), '>，当时为<', CAST(field2 as char(8)), '>级')   as remark
+from log_3_4
+where field1='asdasdasd-7e91dasdasdo823'
+union
+select logtime as time, '退出家族' as event, CONCAT('退出<', (select field2 from kin where log_3_5.field3=kin.field1), '>，当时为<', CAST(field2 as char(8)), '>级')   as remark
+from log_3_5
+where field1='asdasdasd-7e91dasdasdo823'
+**************
+
+
+2.查询某个角色的某个时期的装备
+set @begintime;
+set @endtime;
+set @goodsName;
+set @roleID=(select cRoleId from trolebaseinfo where cRoleName = '角色名' limit 1);
+
+set @goodsID = '0';
+set @begintime = '2007-01-01';
+set @endtime='2009-01-01';
+set @roleid='5';
+
+select Field1 as GoodsID, Field30 as GoodsName, logtime, '生成' as eventname,Field31 as note
+from log_4_1
+where logtime between @begintime and @endtime
+and Field2 = @roleID
+union
+select t1.Field1 as GoodsID, t1.Field30 as GoodsName, t42.logtime, t42.eventname, Field31 as note
+from log_4_1 t1
+right outer join
+(select Field1,
+(case Field3
+when 1 then '销毁:系统回收(如丢弃在地上等)'
+when 2 then '销毁:有效期至'
+when 3 then '销毁:使用消耗'
+when 4 then '销毁:商品叠加'
+when 5 then '销毁:任务删除'
+when 6 then '销毁:卖给NPC'
+when 7 then '销毁:异常删除'
+else '未知事件'
+end) as eventname,
+logtime
+from log_4_2
+where logtime between @begintime and @endtime) t42
+on t1.Field1 =  t42.Field1  --物品GUID
+where t1.Field30 like CONCAT('%',@goodsName,'%')
+union
+select t2.Field1 as GoodsID, t2.Field30 as GoodsName, t43.logtime, t43.eventname, Field31 as note
+from log_4_1 t2
+right outer join
+(select Field1,
+(case Field3
+when 1 then CONCAT('丢弃:丢弃在地上',' 坐标:',(select mapName from map where mapid = Field4 limit 1  ),'X:',CAST(Field5 as char(12)),'Y:',CAST(Field6 as char(12)))
+when 2 then CONCAT('邮寄',' 坐标:',(select mapName from map where mapid = Field4 limit 1  ),'X:',CAST(Field5 as char(12)),'Y:',CAST(Field6 as char(12)))
+else '未知事件'
+end) as eventname,
+logtime
+from log_4_3
+where logtime between @begintime and @endtime) t43
+on t2.Field1 =  t43.Field1  --物品GUID
+where t2.Field30 like CONCAT('%',@goodsName,'%')
+union
+select t3.Field1 as GoodsID, t3.Field30 as GoodsName, t44.logtime, t44.eventname, Field31 as note
+from log_4_1 t3
+right outer join
+(select Field1,
+(case Field3
+when 1 then CONCAT('捡起',' 坐标:',(select mapName from map where mapid = Field4 limit 1),'X:',CAST(Field5 as char(12)),'Y:',CAST(Field6 as char(12)))
+when 2 then CONCAT('获取邮件附件',' 坐标:',(select mapName from map where mapid = Field4 limit 1),'X:',CAST(Field5 as char(12)),'Y:',CAST(Field6 as char(12)))
+else '未知事件'
+end) as eventname,
+logtime
+from log_4_4
+where logtime between @begintime and @endtime) t44
+on t3.Field1 =  t44.Field1  --物品GUID
+where t3.Field30 like CONCAT('%',@goodsName,'%')
+union
+select t4.Field1 as GoodsID, t4.Field30 as GoodsName, t45.logtime, t45.eventname, Field31 as note
+from log_4_1 t4
+right outer join
+(select Field1,
+(case Field4
+when 1 then CONCAT('所有者变更:玩家交易',' 买家<',(select cRoleName from trolebaseinfo where cRoleId =Field2 limit 1),'>坐标:',(select mapName from map where mapid = Field5 limit 1),' X:',CAST(Field6 as char(12)),' Y:',CAST(Field7 as char(12)),' 卖家<',(select cRoleName from trolebaseinfo where cRoleId =Field3 limit 1),'>坐标:',(select mapName from map where mapid = Field8 limit 1),' X:',CAST(Field9 as char(12)),' Y:',CAST(Field10 as char(12)))
+when 2 then CONCAT('所有者变更:收购',' 买家<',(select cRoleName from trolebaseinfo where cRoleId =Field2 limit 1),'>坐标:',(select mapName from map where mapid = Field5 limit 1),' X:',CAST(Field6 as char(12)),' Y:',CAST(Field7 as char(12)),' 卖家<',(select cRoleName from trolebaseinfo where cRoleId =Field3 limit 1),'>坐标:',(select mapName from map where mapid = Field8 limit 1),' X:',CAST(Field9 as char(12)),' Y:',CAST(Field10 as char(12)))
+when 3 then CONCAT('所有者变更:贩卖',' 买家<',(select cRoleName from trolebaseinfo where cRoleId =Field2 limit 1),'>坐标:',(select mapName from map where mapid = Field5 limit 1),' X:',CAST(Field6 as char(12)),' Y:',CAST(Field7 as char(12)),' 卖家<',(select cRoleName from trolebaseinfo where cRoleId =Field3 limit 1),'>坐标:',(select mapName from map where mapid = Field8 limit 1),' X:',CAST(Field9 as char(12)),' Y:',CAST(Field10 as char(12)))
+else '未知事件'
+end) as eventname,
+logtime
+from log_4_5
+where logtime between @begintime and @endtime) t45
+on t4.Field1 =  t45.Field1  --物品GUID
+where t4.Field30 like CONCAT('%',@goodsName,'%')
+order by logtime
+
+3.跟踪某个物品
+set @begintime;
+set @endtime;
+set @goodsID;
+
+
+select Field30 as GoodsName, logtime, '生成' as eventname,Field31 as note,
+Field2 as userGUID,
+(select cRoleName from trolebaseinfo where cRoleId =Field2 limit 1)  as userName
+from log_4_1
+where Field1 = @goodsID
+and logtime between @begintime and @endtime
+union
+select '',
+logtime,
+(case Field3
+when 1 then '销毁:系统回收(如丢弃在地上等)'
+when 2 then '销毁:有效期至'
+when 3 then '销毁:使用消耗'
+when 4 then '销毁:商品叠加'
+when 5 then '销毁:任务删除'
+when 6 then '销毁:卖给NPC'
+when 7 then '销毁:异常删除'
+else '未知事件'
+end) as eventname,
+'',
+'' as userGUID,
+'' as userName
+from log_4_2
+where logtime between @begintime and @endtime
+and Field1= @goodsID
+union
+select '',
+logtime,
+(case Field3
+when 1 then CONCAT('丢弃:丢弃在地上',' 坐标:',(select mapName from map where mapid = Field4 limit 1  ),'X:',CAST(Field5 as char(12)),'Y:',CAST(Field6 as char(12)))
+when 2 then CONCAT('邮寄',' 坐标:',(select mapName from map where mapid = Field4 limit 1  ),'X:',CAST(Field5 as char(12)),'Y:',CAST(Field6 as char(12)))
+else '未知事件'
+end) as eventname,
+'',
+Field2 as userGUID,
+(select cRoleName from trolebaseinfo where cRoleId =Field2 limit 1)  as userName
+from log_4_3
+where logtime between @begintime and @endtime
+and Field1= @goodsID
+union
+select  '',logtime,
+(case Field3
+when 1 then CONCAT('捡起',' 坐标:',(select mapName from map where mapid = Field4 limit 1),'X:',CAST(Field5 as char(12)),'Y:',CAST(Field6 as char(12)))
+when 2 then CONCAT('获取邮件附件',' 坐标:',(select mapName from map where mapid = Field4 limit 1),'X:',CAST(Field5 as char(12)),'Y:',CAST(Field6 as char(12)))
+else '未知事件'
+end) as eventname,
+'',
+Field2 as userGUID,
+(select cRoleName from trolebaseinfo where cRoleId =Field2 limit 1)  as userName
+from log_4_4
+where logtime between @begintime and @endtime
+and Field1= @goodsID
+union
+select '',logtime,
+(case Field4
+when 1 then CONCAT('所有者变更:玩家交易',' 买家<',(select cRoleName from trolebaseinfo where cRoleId =Field2 limit 1),'>坐标:',(select mapName from map where mapid = Field5 limit 1),' X:',CAST(Field6 as char(12)),' Y:',CAST(Field7 as char(12)),' 卖家<',(select cRoleName from trolebaseinfo where cRoleId =Field3 limit 1),'>坐标:',(select mapName from map where mapid = Field8 limit 1),' X:',CAST(Field9 as char(12)),' Y:',CAST(Field10 as char(12)))
+when 2 then CONCAT('所有者变更:收购',' 买家<',(select cRoleName from trolebaseinfo where cRoleId =Field2 limit 1),'>坐标:',(select mapName from map where mapid = Field5 limit 1),' X:',CAST(Field6 as char(12)),' Y:',CAST(Field7 as char(12)),' 卖家<',(select cRoleName from trolebaseinfo where cRoleId =Field3 limit 1),'>坐标:',(select mapName from map where mapid = Field8 limit 1),' X:',CAST(Field9 as char(12)),' Y:',CAST(Field10 as char(12)))
+when 3 then CONCAT('所有者变更:贩卖',' 买家<',(select cRoleName from trolebaseinfo where cRoleId =Field2 limit 1),'>坐标:',(select mapName from map where mapid = Field5 limit 1),' X:',CAST(Field6 as char(12)),' Y:',CAST(Field7 as char(12)),' 卖家<',(select cRoleName from trolebaseinfo where cRoleId =Field3 limit 1),'>坐标:',(select mapName from map where mapid = Field8 limit 1),' X:',CAST(Field9 as char(12)),' Y:',CAST(Field10 as char(12)))
+else '未知事件'
+end) as eventname,
+'',
+Field2 as userGUID,
+(select cRoleName from trolebaseinfo where cRoleId =Field2 limit 1)  as userName
+from log_4_5
+where logtime between @begintime and @endtime
+and Field1= @goodsID
+order by logtime
+
+
+页面间传递QueryString的命名:
+
+中心服务器ID ----- serverID
+角色GUID ----- roleGUID
+物品GUID ----- itemGUID
+查询起始时间 ----- queryPeriodBegin
+查询截止时间 ----- queryPeriodEnd

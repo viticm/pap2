@@ -1,0 +1,70 @@
+LabeledButton_GetFontSchemeUp
+	说明：取带文字按钮标签一般状态文字字体方案；
+	参数：szTreePath  		窗口树路径名；
+	返回：nScheme	 		字体方案；
+		
+LabeledButton_GetFontSchemeOver
+	说明：取带文字按钮标签鼠标滑过状态文字字体方案；
+	参数：szTreePath  		窗口树路径名；
+	返回：nScheme	 		字体方案；
+		
+LabeledButton_GetUpFontSize
+	说明：取带文字按钮标签一般状态文字字体大小；
+	参数：szTreePath  		窗口树路径名；
+	返回：nFontSize	 		字体大小；
+		
+LabeledButton_GetOverFontSize
+	说明：取带文字按钮标签鼠标滑过状态文字字体大小；
+	参数：szTreePath  		窗口树路径名；
+	返回：nFontSize	 		字体大小；
+
+LabeledButton_GetLabelLength		
+	说明：取带文字按钮标签文字长度；
+	参数：szTreePath  窗口树路径名；
+	返回：nTextLength 文字长度；
+		
+LabeledButton_GetLabel					
+	说明：取带文字按钮标签文字；
+	参数：szTreePath  窗口树路径名；
+	返回：szText      文字内容；
+		
+LabeledButton_GetLabelUpFontColor			
+	说明：取带文字按钮文字颜色；
+	参数：szTreePath  窗口树路径名；
+	返回：dwFontColor 字体颜色，目前没做可用性调整；
+		
+LabeledButton_GetLabelUpFontBorderColor
+	说明：取带文字按钮文字边缘颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwFontBorderColor 字体边缘颜色，目前没做可用性调整；
+		
+LabeledButton_GetLabelOverFontColor		
+	说明：取当鼠标停留按钮上，带文字按钮文字颜色；
+	参数：szTreePath  窗口树路径名；
+	返回：dwFontColor 字体颜色，目前没做可用性调整；
+		
+LabeledButton_GetLabelOverFontBorderColor	
+	说明：取当鼠标停留按钮上，带文字按钮文字边缘颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwFontBorderColor 字体边缘颜色，目前没做可用性调整；
+		
+LabeledButton_SetLabel						
+	说明：设带文字按钮文字内容；
+	参数：szTreePath 	窗口树路径名，
+	 	  szText		文字内容，
+	 	  [nTextLength]	如果设置了，使用nTextLength，否则把szText当作plain text处理；
+	返回：nil
+		
+LabeledButton_SetFontSchemeUp
+	说明：设置带文字按钮标签一般状态文字字体方案；
+	参数：szTreePath  		窗口树路径名,
+		  nScheme 			字体方案；
+	返回：nil
+		
+LabeledButton_SetFontSchemeOver
+	说明：设置带文字按钮标签鼠标移动状态文字字体方案；
+	参数：szTreePath  		窗口树路径名,
+		  nScheme 			字体方案；
+	返回：nil
+
+

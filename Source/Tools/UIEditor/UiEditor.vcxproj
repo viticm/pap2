@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Editor|Win32">
+      <Configuration>Debug_Editor</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Editor|Win32">
+      <Configuration>Release_Editor</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{034423CE-C571-4D6D-9740-979FB9A1A102}</ProjectGuid>
+    <RootNamespace>UiEditor</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Editor|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Editor|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Editor|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Editor|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Editor|Win32'">./$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_Editor|Win32'">./$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug_Editor|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Editor|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Editor|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release_Editor|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug_Editor|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug_Editor|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug_Editor|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release_Editor|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release_Editor|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release_Editor|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Editor|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\Client\SO3Client\plugin;..\..\..\include;..\..\..\..\Base\include;..\..\..\..\Base\SourceCode\Engine\File;..\..\..\..\Base\include\Engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;PROFILE;_WINDOWS;_USRDLL;FLXSHOWER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>engine_lua5D.lib;comctl32.lib;gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName)D.dll</OutputFile>
+      <AdditionalLibraryDirectories>..\..\..\lib\win32;..\..\..\..\Base\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)UiEditorD.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>md ..\..\..\..\sword3-products
+md ..\..\..\..\sword3-products\trunk
+md ..\..\..\..\sword3-products\trunk\client
+md ..\..\..\..\sword3-products\trunk\client\plugin
+copy "$(TargetDir)$(TargetName).dll" ..\..\..\..\sword3-products\trunk\client\plugin
+copy "$(TargetDir)$(TargetName).pdb" ..\..\..\..\sword3-products\trunk\client\plugin
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Editor|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\Include;..\..\..\..\Base\Include;..\..\Client\SO3Client\plugin;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;FLXSHOWER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>engine_lua5.lib;comctl32.lib;gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>..\..\..\lib\win32;..\..\..\..\Base\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)UiEditor.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>md ..\..\..\..\sword3-products
+md ..\..\..\..\sword3-products\trunk
+md ..\..\..\..\sword3-products\trunk\client
+md ..\..\..\..\sword3-products\trunk\client\plugin
+copy "$(TargetDir)$(TargetName).dll" ..\..\..\..\sword3-products\trunk\client\plugin
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="UiWndButton.cpp" />
+    <ClCompile Include="UiWndButtonCommon.cpp" />
+    <ClCompile Include="UiWndCheckBox.cpp" />
+    <ClCompile Include="UiWndCheckBoxCommon.cpp" />
+    <ClCompile Include="UiWndData.cpp" />
+    <ClCompile Include="UiWndEdit.cpp" />
+    <ClCompile Include="UiWndEditCommon.cpp" />
+    <ClCompile Include="UiWndFrame.cpp" />
+    <ClCompile Include="UiWndFrameCommon.cpp" />
+    <ClCompile Include="UiWndFrameDragDrop.cpp" />
+    <ClCompile Include="UiWndFrameScript.cpp" />
+    <ClCompile Include="UiWndFrameTabControl.cpp" />
+    <ClCompile Include="UiWndImage.cpp" />
+    <ClCompile Include="UiWndImageCommon.cpp" />
+    <ClCompile Include="UiWndMinimap.cpp" />
+    <ClCompile Include="UiWndNewScrollbar.cpp" />
+    <ClCompile Include="UiWndNewScrollbarCommon.cpp" />
+    <ClCompile Include="UiWndPage.cpp" />
+    <ClCompile Include="UiWndPageSet.cpp" />
+    <ClCompile Include="UiWndPageSetCommon.cpp" />
+    <ClCompile Include="UiWndScene.cpp" />
+    <ClCompile Include="UiWndSceneCommon.cpp" />
+    <ClCompile Include="UiWndShowAnimate.cpp" />
+    <ClCompile Include="UiWndShowAnimateCommon.cpp" />
+    <ClCompile Include="UiWndWebPage.cpp" />
+    <ClCompile Include="UiWndWebPageCommon.cpp" />
+    <ClCompile Include="UiWndWindow.cpp" />
+    <ClCompile Include="UiWndWindowCommon.cpp" />
+    <ClCompile Include="ClientManage.cpp" />
+    <ClCompile Include="khotkeytable.cpp" />
+    <ClCompile Include="KTga.cpp" />
+    <ClCompile Include="UiClipboard.cpp" />
+    <ClCompile Include="UiColorManage.cpp" />
+    <ClCompile Include="UiFontManage.cpp" />
+    <ClCompile Include="UiGlobalStringValueMgr.cpp" />
+    <ClCompile Include="UiHotKeyManage.cpp" />
+    <ClCompile Include="UiProjectManage.cpp" />
+    <ClCompile Include="UiWindowManage.cpp" />
+    <ClCompile Include="UiWndSelAnimate.cpp" />
+    <ClCompile Include="UiWndSelTgaFram.cpp" />
+    <ClCompile Include="UiItemAnimate.cpp" />
+    <ClCompile Include="UiItemAnimateCommon.cpp" />
+    <ClCompile Include="UiItemBox.cpp" />
+    <ClCompile Include="UiItemBoxCommon.cpp" />
+    <ClCompile Include="UiItemCommon.cpp" />
+    <ClCompile Include="UiItemHandle.cpp" />
+    <ClCompile Include="UiItemHandleCommon.cpp" />
+    <ClCompile Include="UiItemImage.cpp" />
+    <ClCompile Include="UiItemImageCommon.cpp" />
+    <ClCompile Include="UiItemScene.cpp" />
+    <ClCompile Include="UiItemSceneCommon.cpp" />
+    <ClCompile Include="UiItemShadow.cpp" />
+    <ClCompile Include="UiItemShadowCommon.cpp" />
+    <ClCompile Include="UiItemText.cpp" />
+    <ClCompile Include="UiItemTextCommon.cpp" />
+    <ClCompile Include="UiItemTreeLeaf.cpp" />
+    <ClCompile Include="UiItemTreeLeafCommon.cpp" />
+    <ClCompile Include="Stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_Editor|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Ui.cpp" />
+    <ClCompile Include="UiEditor.cpp" />
+    <ClCompile Include="UiShowWndTree.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UiWndButton.h" />
+    <ClInclude Include="UiWndButtonCommon.h" />
+    <ClInclude Include="UiWndCheckBox.h" />
+    <ClInclude Include="UiWndCheckBoxCommon.h" />
+    <ClInclude Include="UiWndData.h" />
+    <ClInclude Include="UiWndEdit.h" />
+    <ClInclude Include="UiWndEditCommon.h" />
+    <ClInclude Include="UiWndFrame.h" />
+    <ClInclude Include="UiWndFrameCommon.h" />
+    <ClInclude Include="UiWndFrameDragDrop.h" />
+    <ClInclude Include="UiWndFrameScript.h" />
+    <ClInclude Include="UiWndFrameTabControl.h" />
+    <ClInclude Include="UiWndImage.h" />
+    <ClInclude Include="UiWndImageCommon.h" />
+    <ClInclude Include="UiWndMinimap.h" />
+    <ClInclude Include="UiWndNewScrollbar.h" />
+    <ClInclude Include="UiWndNewScrollbarCommon.h" />
+    <ClInclude Include="UiWndPage.h" />
+    <ClInclude Include="UiWndPageSet.h" />
+    <ClInclude Include="UiWndPageSetCommon.h" />
+    <ClInclude Include="UiWndScene.h" />
+    <ClInclude Include="UiWndSceneCommon.h" />
+    <ClInclude Include="UiWndShowAnimate.h" />
+    <ClInclude Include="UiWndShowAnimateCommon.h" />
+    <ClInclude Include="UiWndWebPage.h" />
+    <ClInclude Include="UiWndWebPageCommon.h" />
+    <ClInclude Include="UiWndWindow.h" />
+    <ClInclude Include="UiWndWindowCommon.h" />
+    <ClInclude Include="ClientManage.h" />
+    <ClInclude Include="khotkeytable.h" />
+    <ClInclude Include="KTga.h" />
+    <ClInclude Include="UiClipboard.h" />
+    <ClInclude Include="UiColorManage.h" />
+    <ClInclude Include="UiFontManage.h" />
+    <ClInclude Include="UiGlobalStringValueMgr.h" />
+    <ClInclude Include="UiHotKeyManage.h" />
+    <ClInclude Include="UiProjectManage.h" />
+    <ClInclude Include="UiTex.h" />
+    <ClInclude Include="UiWindowManage.h" />
+    <ClInclude Include="UiWndSelAnimate.h" />
+    <ClInclude Include="UiWndSelTgaFram.h" />
+    <ClInclude Include="UiItemAnimate.h" />
+    <ClInclude Include="UiItemAnimateCommon.h" />
+    <ClInclude Include="UiItemBox.h" />
+    <ClInclude Include="UiItemBoxCommon.h" />
+    <ClInclude Include="UiItemCommon.h" />
+    <ClInclude Include="UiItemHandle.h" />
+    <ClInclude Include="UiItemHandleCommon.h" />
+    <ClInclude Include="UiItemImage.h" />
+    <ClInclude Include="UiItemImageCommon.h" />
+    <ClInclude Include="UiItemScene.h" />
+    <ClInclude Include="UiItemSceneCommon.h" />
+    <ClInclude Include="UiItemShadow.h" />
+    <ClInclude Include="UiItemShadowCommon.h" />
+    <ClInclude Include="UiItemText.h" />
+    <ClInclude Include="UiItemTextCommon.h" />
+    <ClInclude Include="UiItemTreeLeaf.h" />
+    <ClInclude Include="UiItemTreeLeafCommon.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Stdafx.h" />
+    <ClInclude Include="tstring.h" />
+    <ClInclude Include="Ui.h" />
+    <ClInclude Include="UiEditor.h" />
+    <ClInclude Include="UiShowWndTree.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UiEditor.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="UiEditor.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

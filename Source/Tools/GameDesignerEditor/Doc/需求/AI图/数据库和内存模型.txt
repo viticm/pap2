@@ -1,0 +1,191 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Collections;
+using System.Data;
+
+namespace AIDiagramPlugin
+{
+
+
+    //=====================================================================================================
+
+    //事件
+    [Serializable]
+    public class AI_Event : IReloadable
+	{
+        internal string DBID = "";					            //数据库 [AI_Event_Define].id
+	[NonSerialized]
+        public string Name = "";
+        [NonSerialized]
+        public string Ename = "";
+        [NonSerialized]
+        public string Info = "";
+
+        public void Reload()
+        {
+
+        }
+
+        public override bool Equals(object obj)
+        {
+        }
+
+        public override string ToString()
+        {
+        }
+	}
+
+    //Action
+    [Serializable]
+	public class AI_Action
+	{
+		internal int DBID;				        //数据库 [AI_Action_Define].id
+		[NonSerialized]
+        public string Name;
+        [NonSerialized]
+        public string Ename;
+        [NonSerialized]
+        public string Info;
+        [NonSerialized]
+		private string rettype;		            //返回值代表的含义，用字符串保存，逗号隔开
+        
+        public List<AI_Parm> Args;	            //保存动作输入的参数的值
+	}
+
+    //保存参数的值
+    [Serializable]
+    public class AI_Parm
+    {
+        public string Name;                     //参数名
+        private string m_Value;                 //参数真正存的值
+        private string m_defaultValue;          //参数的默认值
+        private int m_type;                     //记录参数允许存什么。强制规定-2 为 字符串,-1为数字，正数为枚举
+
+        public IAI_Arg Value
+        {
+            get
+            {
+                return null;
+            }
+        }
+    }
+
+    //数值/字符串
+    [Serializable]
+	public class AI_ArgValue : IAI_Arg
+	{
+		private string Value;				            //具体数字、字符串（字符串要+引号）。
+        public string  GetCode()
+        {
+            return Value == null ? "" : Value;
+        }
+	}
+
+    //模板参数
+    [Serializable]
+	public class AI_Const : IAI_Arg
+	{
+		string Name;				            //中文名
+		string Ename;				            //英文名
+        public string GetCode()
+        {
+            return Ename == null ? "" : Ename;
+        }
+	}
+
+    //枚举项，同时也可以是动作的参数
+    [Serializable]
+    public class EnumItem : IAI_Arg, IReloadable
+    {
+        private int m_parentDBID;                 //枚举类型的ID
+        private int m_asParentsPos;               //自己是枚举类型的第几个参数，从0开始
+        public string Name;
+        public string Ename;
+        public EnumType Parent                    //获取枚举类型
+        {
+            get { return null; }
+        }
+        public string GetCode()
+        {
+            return Ename == null ? "" : Ename;
+        }
+        public void Reload()
+        {
+
+        }
+    }
+
+    //==============================以下不参与序列化========================================================
+
+    //Action的参数值
+	public interface IAI_Arg
+	{
+        string GetCode();
+	}
+
+    public interface IReloadable
+    {
+        void Reload();
+    }
+
+    //枚举表，包含所有的枚举类型
+    public class EnumTable 
+    {
+        private static List<EnumType> m_enumTypes;
+        public static List<EnumType> EnumTypes
+        {
+            get
+            {
+                //自动初始化m_enumTypes再返回
+                return null;
+            }
+        }
+    }
+
+    //枚举类型，包含此类型所有的枚举项
+    public class EnumType
+    {
+        private int DBID;
+        public string Name;
+        public string Ename;
+        private string[] m_values;
+        private List<EnumItem> m_valueList;
+        public List<EnumItem> Items
+        {
+            get
+            {
+                //自动初始化m_valueList再返回
+                return null;
+            }
+        }
+    }
+
+    //事件列表
+    public class EventTable
+    {
+        private static List<AI_Event> g_events;
+        public static List<AI_Event> EventItems
+        {
+            get
+            {
+                //自动初始化m_events再返回
+                if (g_events == null)
+                {
+                    g_events = new List<AI_Event>();
+                    DataTable dt = DBManager.DataBaseManager.GetDataBaseManager().GetTable_AI_Event_Define();
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        AI_Event evt = new AI_Event();
+                        evt.DBID = dr["name"].ToString();
+                        evt.Name = dr["name"].ToString();
+                        evt.Ename = dr["ename"].ToString();
+                        evt.Info = dr["info"].ToString();
+                        g_events.Add(evt);
+                    }
+                }
+                return g_events;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+D/base////
+D/case////
+D/common////
+/SO3Represent.cpp/1.33/Tue Dec 15 22:13:28 2009//Tt_jx3_built_1-4-0-1834
+/SO3Represent.h/1.25/Tue Dec 15 22:13:28 2009//Tt_jx3_built_1-4-0-1834
+/krlcharacterresource.cpp/1.10/Fri Dec 11 14:32:32 2009//Tt_jx3_built_1-4-0-1834
+/krlcharacterresource.h/1.2/Fri Nov  6 10:42:21 2009//Tt_jx3_built_1-4-0-1834
+/krlcommand.cpp/1.13/Tue Dec 15 22:13:28 2009//Tt_jx3_built_1-4-0-1834
+/krlcommand.h/1.3/Tue Dec 15 22:13:28 2009//Tt_jx3_built_1-4-0-1834
+/krloptimization.cpp/1.7/Tue Dec 15 22:13:28 2009//Tt_jx3_built_1-4-0-1834
+/krloptimization.h/1.4/Tue Dec 15 22:13:28 2009//Tt_jx3_built_1-4-0-1834
+/krloption.cpp/1.1/Tue Nov 25 07:29:59 2008//Tt_jx3_built_1-4-0-1834
+/krloption.h/1.13/Tue Dec 15 22:13:28 2009//Tt_jx3_built_1-4-0-1834
+/krlprofile.cpp/1.2/Fri Oct 30 01:31:06 2009//Tt_jx3_built_1-4-0-1834
+/krlprofile.h/1.1/Thu Oct 29 03:09:51 2009//Tt_jx3_built_1-4-0-1834
+/krlresourcelimit.cpp/1.8/Fri Dec 11 14:32:32 2009//Tt_jx3_built_1-4-0-1834
+/krlresourcelimit.h/1.3/Thu Oct 29 03:09:51 2009//Tt_jx3_built_1-4-0-1834
+/krltracecharacter.cpp/1.1/Fri Dec 11 14:32:32 2009//Tt_jx3_built_1-4-0-1834
+/krltracecharacter.h/1.1/Fri Dec 11 14:32:32 2009//Tt_jx3_built_1-4-0-1834
+/krltracemsg.cpp/1.1/Fri Dec 11 14:32:32 2009//Tt_jx3_built_1-4-0-1834
+/krltracemsg.h/1.1/Fri Dec 11 14:32:32 2009//Tt_jx3_built_1-4-0-1834

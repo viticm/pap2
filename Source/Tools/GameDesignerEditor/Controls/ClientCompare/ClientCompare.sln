@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientCompare", "ClientCompare\ClientCompare.csproj", "{3572E620-D331-4E79-ACB6-C290C34C9611}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapLogicalCompare", "..\MapLogicCompare\MapLogicCompare\MapLogicalCompare.csproj", "{28988C13-DE92-4F39-88C1-CA45FB33D673}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientDiff", "..\ClientDiff\ClientDiff\ClientDiff.csproj", "{5D63BC09-744B-48DD-8D30-39DDEDDBC1F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3572E620-D331-4E79-ACB6-C290C34C9611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3572E620-D331-4E79-ACB6-C290C34C9611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3572E620-D331-4E79-ACB6-C290C34C9611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3572E620-D331-4E79-ACB6-C290C34C9611}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28988C13-DE92-4F39-88C1-CA45FB33D673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28988C13-DE92-4F39-88C1-CA45FB33D673}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28988C13-DE92-4F39-88C1-CA45FB33D673}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28988C13-DE92-4F39-88C1-CA45FB33D673}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D63BC09-744B-48DD-8D30-39DDEDDBC1F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D63BC09-744B-48DD-8D30-39DDEDDBC1F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D63BC09-744B-48DD-8D30-39DDEDDBC1F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D63BC09-744B-48DD-8D30-39DDEDDBC1F6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

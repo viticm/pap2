@@ -1,0 +1,97 @@
+﻿@title KCustomEquipInfo对象
+@obj KCustomEquipInfo
+@detail 定制装备对象
+
+
+
+@summary rw. 表现逻辑ID
+property nRepresentID as 整数 rw
+
+@summary rw. 品质
+property nQuality as 整数 rw
+
+@summary rw. 绑定类型
+property nBindType as 整数 rw
+
+@summary rw. 套装ID
+property nSetID as 整数 rw
+
+@summary rw. 物品ID
+property dwID as DWORD rw
+
+@summary rw. 大类
+property nGenre as 整数 rw
+
+@summary rw. 小类
+property nSub as 整数 rw
+
+@summary rw. 具体类别
+property nDetail as 整数 rw
+
+@summary rw. 等级
+property nLevel as 整数 rw
+
+@summary rw. 价格
+property nPrice as 整数 rw
+
+@summary rw. 脚本id
+property dwScriptID as DWORD rw
+
+@summary rw. 对于不可叠放物品，表示最大耐久度；对于可叠放物品，表示最大叠放数量
+property nMaxDurability as 整数 rw
+
+@summary rw. 最大存在数量
+property nMaxExistAmount 
+
+@summary rw. 是否可交易
+property bCanTrade as 布尔值 rw
+
+@summary rw. 物品名字
+property szName as 字符串 rw
+
+@summary rw. [仅客户端使用] UI的id
+property nUiId as 整数 rw
+
+@summary 获取装备基本属性
+@remarks 返回值是一个table，每一项又是一个包含3个字段的table：nID, nMin, nMax
+function GetBaseAttrib()
+
+@summary 获取装备的需求属性表
+@remarks 返回值是一个table，每一项又是一个包含以下字段的table：nID, nValue
+function GetRequireAttrib()
+
+@summary 获取装备的魔法属性表
+@param nVersion 可选。道具版本号
+@remarks 返回值是一个table，每一项又是一个包含以下字段的table：nID, nImportance, 
+@	Param0, Param1, Param2, Param3...，其中Param0表示第0个魔法属性的最小值，Param1
+@	表示第0个魔法属性的最大值，以次类推。实际返回的就是attrib.tab中的值
+function GetMagicAttrib([nVersion])
+
+@summary 获取套装的属性
+@remarks 获取道具所属套装的属性。如果本道具不属于某个套装，则返回nil。
+@n
+@n	如果道具属于某个套装，那么返回5个值：
+@n	1)套装的名字
+@
+@n	2)table: 这个table是一个下标从1开始的数组，每个数组元素又是一个table,
+@		这个table包含2个字段："nUiId"和"bEquiped", nUiId表示装备的ui id，
+@		bEquiped表示是否穿上了这件装备。
+@
+@n	3)套装所包含的装备数量
+@
+@n	4)套装中有几件穿在身上了
+@
+@n	5)table: 这个table包含套装特殊属性，下标从最小能够激活套装特殊属性的
+@		装备数量开始。例如，如果从2件开始能够激活套装属性，那么这个table中
+@		的元素从下标2开始。这个table的每个元素又是一个table,
+@		这个table包含5个字段："nID"(套装特殊属性的id), "nCount"（这是几件
+@		装备激活的属性），"nValue1"（属性的第一个值），"nValue2"（属性的第2个
+@		值，"bEquiped"（当前是否激活了这个属性）。
+function GetSetAttrib()
+
+@summary 获取装备CD时间
+@remarks 返回值为装备CD时间
+function GetCoolDown()
+
+@summary rw. 装备CD计时器ID
+property dwCoolDownID 

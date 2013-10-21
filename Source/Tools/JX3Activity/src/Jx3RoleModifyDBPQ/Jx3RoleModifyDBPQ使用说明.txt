@@ -1,0 +1,30 @@
+一. 工具使用方法：
+------------------------------------------------------------------------------------------------------------------------
+1. 配置文件ServerListAndStartTime.tab与应用程序同目录存放。
+2. 配置文件ServerListAndStartTime.tab,用Excel或ET打开,配置方法如下：
+第一行必须为:
+ZoneName	ServerName	IP	Account	Password	DBName	ModifyYear	ModifyMonth	ModifyDay
+
+之后对应填上区服,服务器名,角色库ip,账户名,密码,角色库名称,修改年,修改月,修改日
+例如:
+ZoneName	ServerName	IP	Account	Password	DBName	ModifyYear	ModifyMonth	ModifyDay
+测试区	长安5	10.20.86.7	role	role	jx3_changan_0831	2009	6	1
+测试区	长安4	10.20.86.7	role	role	jx3_changan_0921	2009	7	2
+测试区	长安8	10.20.86.7	role	role	jx3gc_changan_2009_09_28	2009	8	3
+测试区	长安9	10.20.86.7	role	role	jx3gc_changan_2009_09_29	2009	9	4
+
+3. 运行应用程序：Jx3RoleModifyDBPQ.exe
+4. 控制台输出“[Jx3RoleModifyDBPQ] Initializing ...”，表示程序正在运行
+5. 控制台输出“[Jx3RoleModifyDBPQ] Had Exit normal ...”，表示程序成功运行完毕
+6. 控制台输出“[Jx3RoleModifyDBPQ] Has Error, check the tab file and Log file...”, 表示 程序初始化失败,请确保配置文件填写正确;
+7. 控制台输出“[Jx3RoleModifyDBPQ] Connect Database Has Error, check the tab file...”, 表示所连接的数据库中,
+	有存在连接不上或操作失败的数据库,请查看程序运行目录下ErrorServerList为前缀的tab文件,
+	里面存在连接不上或操作失败的数据库列表,请修改,确认无误后,把文件另存为ServerListAndStartTime.tab, 
+	再次运行,直到没错误发生为止,如遇到错误,重复第6,第7步.
+
+二. 示例：
+------------------------------------------------------------------------------------------------------------------------
+转换失败，log记录中的出错信息如下：
+20091014-162120<ERROR:00000C5C>: xxxxxx
+
+如果出现任何ERROR的log,表示程序运行失败.请检查修改配置文件,重新运行本程序.

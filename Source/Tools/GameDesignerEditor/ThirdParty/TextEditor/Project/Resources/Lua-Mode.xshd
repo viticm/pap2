@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!-- syntaxdefinition for Lua 2007 by Alex Kwong -->
+
+<SyntaxDefinition name = "Lua" extensions = ".lua">
+
+  <Properties>
+    <Property name="LineComment" value="--"/>
+  </Properties>
+
+  <Digits name = "Digits" bold = "false" italic = "false" color = "DarkBlue"/>
+
+  <RuleSets>
+    <RuleSet ignorecase = "false">
+      <Delimiters>~!%^*()-+=|\#/{}[]:;"'&lt;&gt; , .?</Delimiters>
+      
+      <Span name = "BlockComment" bold = "false" italic = "false" color = "Green" stopateol = "false">
+        <Begin>--[[</Begin>
+        <End>--]]</End>
+      </Span>   
+      
+      <Span name = "LineComment" bold = "false" italic = "false" color = "Green" stopateol = "true">
+        <Begin>--</Begin>
+      </Span>
+
+      <Span name = "String" bold = "false" italic = "false" color = "Magenta" stopateol = "true">
+        <Begin>"</Begin>
+        <End>"</End>
+      </Span>
+      
+      <Span name = "String" bold = "false" italic = "false" color = "Magenta" stopateol = "true">
+        <Begin>'</Begin>
+        <End>'</End>
+      </Span>
+      
+      <Span name = "Char" bold = "false" italic = "false" color = "Magenta" stopateol = "true">
+        <Begin>&apos;</Begin>
+        <End>&apos;</End>
+      </Span>
+
+      <MarkPrevious bold = "false" italic = "false" color = "Brown">(</MarkPrevious>
+
+      <KeyWords name = "Punctuation" bold = "false" italic = "false" color = "DarkGreen">
+        <Key word = "?" />
+        <Key word = "," />
+        <Key word = "." />
+        <Key word = ";" />
+        <Key word = "(" />
+        <Key word = ")" />
+        <Key word = "[" />
+        <Key word = "]" />
+        <Key word = "{" />
+        <Key word = "}" />
+        <Key word = "+" />
+        <Key word = "-" />
+        <Key word = "/" />
+        <Key word = "%" />
+        <Key word = "*" />
+        <Key word = "&lt;" />
+        <Key word = "&gt;" />
+        <Key word = "^" />
+        <Key word = "=" />
+        <Key word = "~" />
+        <Key word = "!" />
+        <Key word = "|" />
+        <Key word = "&amp;" />
+      </KeyWords>
+
+      <KeyWords name = "OperatorKeywords" bold="false" italic="false" color="DarkCyan">
+        <Key word = "and" />
+        <Key word = "not" />
+        <Key word = "or" />
+      </KeyWords>
+
+      <KeyWords name = "Literals" bold="false" italic="false" color="Blue">
+        <Key word = "false" />
+        <Key word = "true" />
+        <Key word = "nil" />
+      </KeyWords>
+
+      <KeyWords name = "IterationStatements" bold="false" italic="false" color="Blue">
+        <Key word = "do" />
+        <Key word = "for" />
+        <Key word = "in" />
+        <Key word = "while" />
+        <Key word = "end" />
+        <Key word = "repeat" />
+        <Key word = "until" />
+      </KeyWords>
+
+      <KeyWords name = "JumpStatements" bold="false" italic="false" color="Blue">
+        <Key word = "break" />
+        <Key word = "return" />
+      </KeyWords>
+
+      <KeyWords name = "SelectionStatements" bold="false" italic="false" color="Blue">
+        <Key word = "else" />
+        <Key word = "if" />
+        <Key word = "then" />
+        <Key word = "elseif" />
+      </KeyWords>
+
+      <KeyWords name = "KEYWORD1" bold="false" italic="false" color="Blue">
+        <Key word = "local" />
+        <Key word = "function" />
+      </KeyWords>
+    </RuleSet>
+  </RuleSets>
+</SyntaxDefinition>
+

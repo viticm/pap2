@@ -1,0 +1,85 @@
+核心思想：
+   把网格对应的一组三角形，转换成BSP树，来映射对应的顶点组成的三角形间的关系，加速碰撞检测
+文件后缀：
+   ".bsp"
+
+*************************
+
+一、数据结构：
+struct PlaneInfo
+	{
+		int       nRef;	//和平面相交的三角形个数
+		DWORD     dwTriangleIndex;//这个没用，预留
+		D3DXPLANE MinPlane;
+		int       nUp;  //在平面上的三角形个数
+		int       nDown;//在平面下的三角形个数
+		int       Key;  //值为nRef - 1 + abs（nUp - nDown）
+	};
+
+struct BspNodeEx 
+	{
+		vector<DWORD>vecTriangles; //与plane相交的三角形索引
+		D3DXPLANE    plane;
+		BspNodeEx*   pSubNode[2];
+	};
+
+struct BspNodeSimple
+	{
+		int       nNumTriangles; //当前平面的相关三角形个数（正常情况下是与该平面相交的）
+		int       nTriangleStart;//起始的三角形
+		D3DXPLANE plane;
+
+		int  nSubNodeID[2];//记录是第几个nodeEx
+	};
+
+二、接口：
+
+KG3DBsp::PlaneRelateVertex：
+*判断顶点和平面的关系，
+*返回true：是在平面上或者平面内；
+ 返回false：是在平面下
+
+KG3DBsp::PlaneRelateTriangle：
+*判断三角形和平面的关系，
+*返回-1：相交
+ 返回1：在平面上
+ 返回0：在平面下
+ 
+KG3DBsp::IsPlaneFit：（为什么不是大于1的时候有相交，这样符合逻辑点吧。。。）
+*求和指定平面：相交的三角形数， 在该平面上的三角形数，在该平面下的三角形数  
+*返回相交的三角形数：大于等于0时，表示有相交
+
+KG3DBsp::RequesetNodeEx：
+*创建BspNode，放在m_vecRefBspNode中
+
+KG3DBsp::InputTranglesToNode：
+*获取与该节点的平面相交的三角形的索引，并且将与该平面不相交的三角形分发到树的左右两节点
+
+KG3DBsp::CreateBspTree：（为什么256行的是if(info.Key <= nMinKey)，而不是小于？）
+*挑选与顶点中组成的三角形的位置关系最不均衡的一个平面，并且获取和分配该平面对应节点的三角形的关系
+*pNode->pSubNode[0]放的是平面上或者平面内的三角形，pNode->pSubNode[1]放的是平面下的三角形
+
+KG3DBsp::RequesetNode：
+*从m_lpNodes中获得可用的node
+
+KG3DBsp::ConvertToSimpleFormat：
+*将nodeEx的信息（m_vecRefBspNode）转换成一组对应SimpleNode信息，记录在m_lpNodes，并且调整m_lpTriangles的顺序
+
+KG3DBsp::CreateFromMesh：
+*根据指定的mesh创建对应的bsp树和节点信息（KG3DMesh::CheckAndLoadBspFile中调用）
+
+KG3DBsp::LoadFromFile：
+*读".bsp"后缀的文件，解析加载数据
+
+KG3DBsp::GetRayIntersectNode：
+*求以指定节点为根节点的bsp的相交的交点和个数
+*1、求和指定节点的记录的三角形相交的交点
+ 2、求和指定的平面相交的交点
+ 3、如果指定的平面不相交，则寻找该节点的子节点继续找交点
+ 
+KG3DBsp::RayIntersection：
+*求相交的最短距离
+
+三、对象关系：
+1、默认情况g_bForceGenerateBspForMesh是false，不会进行bsp的创建和保存操作
+2、KG3DMesh允许没有bsp文件

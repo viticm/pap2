@@ -1,0 +1,859 @@
+﻿@title BaseFunction
+@obj 
+@detail 全局函数
+@catalogs 对象导出函数, 获取对象函数, 获取信息函数
+
+@summary 获取游戏世界的当前时间
+@catalog
+@remarks 
+function GetCurrentTime()
+
+@summary 计算原点到给定坐标的逻辑角度
+@param nX	X坐标
+@param nY	Y坐标
+@detail	计算(nX, nY)与原点的连线和X轴的夹角，并将其转换为256方向。即结果
+@	的单位是(360/256)度
+function GetLogicDirection(nX, nY)
+
+@summary 导出Scene对象的方法、属性
+@catalog 对象导出函数
+@remarks 
+function LoadScene()
+
+@summary 导出Cell对象的方法、属性
+@catalog 对象导出函数
+@remarks 
+function LoadCell()
+
+@summary 导出Player对象的方法、属性
+@catalog 对象导出函数
+@remarks 
+function LoadPlayer()
+
+@summary 导出Npc对象的方法、属性
+@catalog 对象导出函数
+@remarks 
+function LoadNpc()
+
+@summary 导出KNpcTemplate对象的方法、属性
+@catalog 对象导出函数
+@remarks 该函数无返回值
+function LoadNpcTemplate()
+
+@summary 导出Doodad对象的方法、属性
+@catalog 对象导出函数
+@remarks 
+function LoadDoodad()
+
+@summary 导出DoodadTemplate对象的方法、属性
+@catalog 对象导出函数
+@remarks 
+function LoadDoodadTemplate()
+
+@summary 导出Item对象的方法、属性
+@catalog 对象导出函数
+@remarks 
+function LoadItem()
+
+@summary 导出Skill对象的方法、属性
+@catalog 对象导出函数
+@remarks 
+function LoadSkill()
+
+
+# @summary 导出Recipe对象的方法、属性
+# @catalog 对象导出函数
+# @remarks 
+# function LoadRecipe()
+
+@summary 导出QuestInfo对象的方法、属性
+@catalog 对象导出函数
+@remarks 
+function LoadQuestInfo()
+
+@summary 导出ItemInfo对象的方法、属性
+@catalog 对象导出函数
+@remarks 
+function LoadItemInfo()
+
+@summary 导出Shop对象的方法、属性
+@catalog 对象导出函数
+@remarks 
+function LoadShop()
+
+@summary [仅服务器端使用] 
+@catalog
+@remarks
+function LoadAIEvent()
+
+@summary 导出生活技能相关的接口
+@catalog 对象导出函数
+@remarks 
+function LoadProfession()
+
+@summary 获取生活技能下技艺的列表
+@catalog
+@param dwProfessionID	生活技能id
+@remarks 如果函数执行成功，返回一个下标从1开始的table，每一项又是个table，包含：
+@n	"ID":	技艺id
+@n	"Name":	技艺名称
+@n	"CraftType":	技艺类型，取值参见[[see ALL_CRAFT_TYPE]]
+@n	"Hide":	是否隐藏
+function GetCraftList(dwProfessionID)
+
+@summary 获取技艺的信息
+@catalog
+@param dwCraftID	技艺id
+@remarks 如果函数执行成功，返回一个table，包含以下内容：
+@n	"ID":	技艺id
+@n	"ProfessionID":	所属生活技能的id
+@n	"Name":	技艺名称
+@n	"CraftType":	技艺类型
+function GetCraft(dwCraftID)
+
+@summary 获取当前的游戏循环帧数
+@catalog 获取信息函数
+@remarks 
+function GetLogicFrameCount()
+
+@summary 判断对象是否是Player
+@catalog 获取信息函数
+@param	dwID	对象ID
+@remarks 
+function IsPlayer(dwID)
+
+@summary 获取Scene对象
+@catalog 获取对象函数
+@param dwID Scene的ID
+@remarks 
+function GetScene(dwID)
+
+@summary 获取Player对象
+@catalog 获取对象函数
+@param dwID Player的ID
+@remarks 
+function GetPlayer(dwID)
+
+@summary 获取Npc对象
+@catalog 获取对象函数
+@param dwID Npc的id
+@remarks 
+function GetNpc(dwID)
+
+@summary 获取Doodad对象
+@catalog 获取对象函数
+@param dwID Doodad的id
+@remarks 
+function GetDoodad(dwID)
+
+@summary 获取Skill对象
+@catalog 获取对象函数
+@param dwID Skill的ID
+@remarks 
+function GetSkill(dwID)
+
+@summary 获取Item对象
+@catalog 获取对象函数
+@param dwItemID Item对象的ID
+@remarks 
+function GetItem(dwItemID)
+
+@summary 获取包含道具信息的KCustomEquipInfo对象
+@catalog 获取对象函数
+@param Version 可选，道具配置表版本号
+@param dwTabType 道具配置表，取值：[[get ITEM_TABLE_TYPE ]]
+@param dwIndex 道具在配置表中的id
+@remarks 如果执行成功，则返回对应的KCustomEquipInfo对象，否则返回nil
+function GetItemInfo([Version], dwTabType, dwIndex)
+
+@summary 获取QuestInfo对象
+@catalog 获取对象函数
+@param dwQuestID Quest的ID
+@remarks 
+function GetQuestInfo(dwQuestID)
+
+@summary 构造一个任务字符串
+@param dwQuestId  Quest id
+@param eTargetType 目标类型，取值：[[get TARGET]]
+@param dwTypeId 应该是目标的id
+@remarks 返回以下格式的字符串：("<O%d %d><Q%d>", eTargetType, dwTypeID, dwQuestID)
+function GetQuestString(dwQuestID, eTargetType, dwTypeID)
+
+@summary 获取Profession对象
+@catalog 获取对象函数
+@param dwProfessionID Profession id
+@remarks 
+function GetProfession(dwProfessionID)
+
+# @summary 获取技能书的名字
+# @catalog 获取对象函数
+# @param dwItemType	道具类型，对应RecipeBook.tab中的ItemType
+# @param dwItemIndex		道具索引，对应RecipeBook.tab中的ItemID
+# @remarks 如果函数执行成功，返回对应技能书的名字
+# function GetRecipeBookName(dwItemType, dwItemIndex)
+
+# @summary 获取技能书中的配方列表
+# @catalog 获取对象函数
+# @param dwItemType	类型，对应RecipeBook.tab中的ItemType
+# @param dwItemIndex	索引，对应RecipeBook.tab中的ItemID
+# @remarks 返回一个下标从1开始的table，它的每一个元素又是一个table。
+# @	这个talbe包含2个字段："nCraftID"(技艺id)，"nRecipeID"(配方id).
+# function GetRecipeListInBook(dwItemType, dwItemIndex)
+
+
+@summary 获取配方名字
+@catalog 获取对象函数
+@param dwCraftID	技艺的id
+@param dwRecipeID	配方的id
+@remarks 获取配方的名字
+function GetRecipeName(dwCraftID, dwRecipeID)
+
+@summary
+@catalog 获取对象函数
+@remarks
+function GetRecipe()
+
+# @summary 获取Recipe对象
+# @catalog 获取对象函数
+# @param dwRecipeID Recipe Id
+# @remarks 
+# function GetRecipe(dwRecipeID)
+
+@summary 获取角色升级数据
+@catalog 获取对象函数
+@param nType 角色体形，取值：[[get ROLE_TYPE]]
+@param nLevel 等级
+@remarks 取得角色升级的数据表，返回一个Lua的Table，包含以下字段："Experience", 
+@	"Strength", "Agility", "Vigor", "Spirit", "MaxLife", "MaxMana","MaxRage", 
+@	"MaxStamina", "MaxQi", "WalkSpeed", "RunSpeed", "Height", "LifeReplenish",
+@	"LifeReplenishPercent", "ManaReplenish", "ManaReplenishPercent",
+@	"RageReplenish", "RageReplenishPercent", "StaminaReplenish",
+@	"CriticalStrike", "NoneWeaponAttackSpeedBase"
+@	"MaxPhysicsDefense", "ExpPerMinute", "ExpPerEnergy", "MaxDoubleExp"
+function GetLevelUpData(nType, nLevel)
+
+@summary 加载lua脚本
+@catalog 
+@param pszFileName 脚本文件名
+@remarks 
+function LoadScript(pszFileName)
+
+@summary 
+@catalog 
+@remarks 
+function FormatString()
+
+@summary 检查武器类型是否匹配
+@catalog 
+@param dwType	类型id，对应WeaponType.tab表中的ID段
+@param nDetailType	武器细类，取值[[get WEAPON_DETAIL]]
+@remarks 如果dwType存在，nDetailType属于dwType大类，那么返回true；否则返回false
+function CheckWeaponType(dwType, nDetailType)
+
+@summary 获取doodad的模板对象
+@catalog 获取对象函数
+@param dwDoodadTemplateID	模板id
+@remarks 如果有这个id的doodad模板，那么返回对应的KDoodadTemplate对象；否则返回
+@	nil
+function GetDoodadTemplate(dwDoodadTemplateID)
+
+@summary [仅限客户端使用] 获取本客户端玩家的[[see KPlayer]]对象。
+@catalog 获取对象函数
+@remarks 
+function GetClientPlayer()
+
+
+@summary 获取两个角色之间的关系
+@catalog 获取信息函数
+@param dwSrcCharacterID 源角色id
+@param dwDstCharacterID 目标角色id
+@remarks 返回值是以下一个或多个值做“或”运算的结果：[[get RELATION_TYPE]]
+@n	例如如果想看是否是同一阵营，可以对返回值ret做如下运算：
+@	(ret & RELATION_TYPE.ALLY == RELATION_TYPE.ALLY), 如果结果为true，那么
+@	就是同一阵营。
+@n
+@n	更简单的办法是将返回值传递给IsAlly, IsNeutrality, IsEnemy, IsParty
+@	或IsSelf，用这些函数来判断是否是某个关系。
+function GetRelation(dwSrcCharacterID, dwDstCharacterID)
+
+@summary 判断某个关系是否是中立关系
+@catalog 获取信息函数
+@param eRelation	要判断的关系，取值：[[get RELATION_TYPE]]
+@remarks 如果是中立关系，返回true；否则返回false
+@n
+@n	可以将GetRelation的返回值传进来，判断是否是中立关系
+function IsNeutrality(eRelation)
+
+
+@summary 判断某个关系是否是同一阵营
+@catalog 获取信息函数
+@param eRelation	要判断的关系，取值：[[get RELATION_TYPE]]
+@remarks 如果是同一阵营，返回true；否则返回false	
+@
+@n	可以将GetRelation的返回值传进来，判断是否是同一阵营
+function IsAlly(eRelation)
+
+@summary 判断某个关系是否是敌对关系
+@catalog 获取信息函数
+@param eRelation	要判断的关系，取值：[[get RELATION_TYPE]]
+@remarks 如果是敌对关系，返回true；否则返回false
+@	
+@n	可以将GetRelation的返回值传进来，判断是否是敌对关系
+function IsEnemy(eRelation)
+
+@summary 判断某个关系是否是同一队伍
+@catalog 获取信息函数
+@param eRelation	要判断的关系，取值：[[get RELATION_TYPE]]
+@remarks 如果是同一队伍，返回true；否则返回false
+@	
+@n	可以将GetRelation的返回值传进来，判断是否是同一队伍
+function IsParty(eRelation)
+
+@summary 判断是否是自己
+@catalog 获取信息函数
+@param eRelation	要判断的关系，取值：[[get RELATION_TYPE]]
+@remarks 如果是自己，返回true；否则返回false
+@	
+@n	可以将GetRelation的返回值传进来，判断是否是自己
+function IsSelf(eRelation)
+
+@summary 生成一个随机数
+@remarks 如果仅给出1个参数，返回[1, m)的一个随机数。如果给出
+@	2个参数，返回[m, n)的一个随机数
+function Random(m, [n])
+
+@summary 取当前系统时间
+@catalog 获取信息函数
+@param eFormat	指定取哪个时间信息，取值[[DATE_FORMAT]]
+@remarks 返回当前系统时间指定的部分信息。
+function GetLocalTime(eFormat)
+
+@summary 获取2个角色之间的距离
+@catalog 获取信息函数
+@param dwSrcID	第1个角色的id
+@param dwDstID	第2个角色的id
+@remarks 如果函数执行成功，返回2个角色之间的距离，单位是点。如果函数执行
+@	失败，那么返回-1
+function GetCharacterDistance(dwSrcID, dwDstID)
+
+@summary 计算游戏逻辑中2点之间的距离的平方
+@catalog 获取信息函数
+@remarks 返回(nX1-nX2)^2 + (nY1-nY2)^2 + (nZ1-nZ2)^2
+function GetDistanceSq(nX1, nY1, nZ1, nX2, nY2, nZ2)
+
+@summary 拾取某物品或对某物品掷骰
+@catalog
+@param dwDoodadID 玩家打开的Doodad的id
+@param dwItemID 物品的id
+@param bCancel 是否放弃
+@remarks 在客户端：这个函数把玩家拾取或掷骰的对象和动作发送到服务器。
+@	服务器会先判断玩家能否能	拿到物品，如果能拿到，就就把物品放到玩家背包中；
+@	否则检查玩家能否对物品掷骰，如果能掷骰，就掷骰子。
+@n
+@n	服务器端也有这个函数，但是目前什么工作也不作。
+function LootOrRollItem(dwDoodadID, dwItemID, bCancel)
+
+@summary [仅服务器端使用] 获取npc模板
+@catalog 获取对象函数
+@param dwNpcTemplateID	模板id
+@remarks 函数执行成功，返回对应的KNpcTemplate对象；否则返回nil
+function GetNpcTemplate(dwNpcTemplateID)
+
+@summary [仅服务器端使用] 取全局定制数据
+@param dwIndex	数据的索引，取值范围[0, 99]
+@remarks 返回相应的定制数据，其类型为整数
+function GetCustomData(dwIndex)
+
+@summary [仅服务器端使用] 设置全局定制数据
+@param dwIndex	数据索引，取值范围[0, 99]
+@param dwData	数据的值
+@remarks 如果函数执行成功，返回true；否则返回false
+function SetCustomData(dwIndex, dwData)
+
+@summary [仅服务器端使用] 获取全局定制数据的某一位
+@param dwIndex	数据索引，取值范围[0, 99]
+@param dwBitIndex	第几位，取值[0, 31]
+@remarks 如果取那一位为1，返回true；否则返回false
+function GetCustomBitData(dwIndex, dwBitIndex)
+
+@summary [仅服务器端使用] 设置全局定制数据的某一位
+@param dwIndex	数据索引，取值范围[0, 99]
+@param dwBitIndex	第几位，取值[0, 31]
+@param dwBitData	新值，最好只取0或1
+@remarks 这个函数给某个定制数据的某一位赋值。如果执行成功，返回true；
+@	否则返回false
+function SetCustomBitData(dwIndex, dwBitIndex, dwBitData)
+
+@summary [仅服务器端使用] 取全局定制变量
+@param dwIndex	变量的索引，取值范围[0, 99]
+@remarks 返回相应的定制变量，其类型为整数
+function GetCustomValue(dwIndex)
+
+@summary [仅服务器端使用] 设置全局定制变量
+@param dwIndex	变量索引，取值范围[0, 99]
+@param dwValue	变量的值
+@remarks 如果函数执行成功，返回true；否则返回false
+function SetCustomValue(dwIndex, dwValue)
+
+@summary [仅服务器端使用] 获取全局定制变量的某一位
+@param dwIndex	变量索引，取值范围[0, 99]
+@param dwBitIndex	第几位，取值[0, 31]
+@remarks 如果取那一位为1，返回true；否则返回false
+function GetCustomBitValue(dwIndex, dwBitIndex)
+
+@summary [仅服务器端使用] 设置全局定制变量的某一位
+@param dwIndex	变量索引，取值范围[0, 99]
+@param dwBitIndex	第几位，取值[0, 31]
+@param dwBitValue	新值，最好只取0或1
+@remarks 这个函数给某个定制变量的某一位赋值。如果执行成功，返回true；
+@	否则返回false
+function SetCustomBitValue(dwIndex, dwBitIndex, dwBitValue)
+
+#@summary 控制是否输出技能Log
+#@param bLogSwitch true表示输出技能log，false表示不输出技能log
+#@remarks 执行成功返回true，否则返回false
+#function SkillLog(bLogSwitch)
+
+@summary [仅客户端使用] 获取某个npc模板的名字
+@catalog 获取信息函数
+@param dwNpcTemplateID	Npc模板id
+@return 函数执行成功，返回对应名字；否则返回nil
+function GetNpcName(dwNpcTemplateID)
+
+@summary [仅客户端使用] 拾取金钱
+@param dwDoodadID 玩家正在打开的Doodad的id
+@remarks 这个函数把玩家打开的Doodad的id发送到服务器，然后服务器判断玩家能否拾取
+@	Doodad中的金钱
+function LootMoney(dwDoodadID)
+
+@summary [仅客户端使用] 发送GM指令到服务端
+@param szCommand	要执行的gm指令
+@remarks 该函数无返回值。
+function SendGMCommand(szCommand)
+
+@summary [仅客户端使用] 获取地图参数
+@catalog 获取信息函数
+@param dwMapID	地图id
+@remarks 如果执行成功，会返回2个值，szMapName, szResourceFilePath。
+@	其中szMapName是地图名字，szResourceFilePath是地图的资源文件，对应
+@	MapList的ResourceFilePath列的值。
+function GetMapParams(dwMapID)
+
+@summary [仅客户端使用] 获取地图的id列表
+@catalog 获取信息函数
+@remarks 返回一个下标从1开始的table，每个项是一个地图的id
+function GetMapList()
+
+@summary [仅客户端使用] 请求服务器将客户端玩家加入到场景中
+@catalog
+@remarks 该函数没用返回值。
+@n
+@n	主要是同步玩家坐标、玩家数据、队伍、邮件、好友。
+function LoadingComplete()
+
+@summary [仅客户端使用] 获取技能的显示信息
+@catalog
+@param skillTable	一个table，里面记录要查询的技能的描述。包含以下字段：
+@n	"skill_id":	技能id
+@n	"skill_level":	技能等级
+@n	"recipe1" ~ "recipe4":	秘笈
+@remarks 如果函数执行成功，返回技能信息的一个table，包含：
+@n	"CastTime":	释放时间，
+@n	"CoolDown1":	计时器id
+@n	"CoolDown2":	计时器id
+@n	"CoolDown3":	计时器id
+@n	"CoolDown4":	计时器id
+@n	"AreaRadius":	作用半径，单位点
+@n	"MinRadius":	最小半径，单位点
+@n	"MaxRadius":	最大半径，单位点
+@n	"CostMana":	内力消耗
+@n	"MinPhysicsDamage":	最小外功伤害
+@n	"MaxPhysicsDamage":	最大外功伤害
+@n	"MinSolarDamage":	最小阳性内功伤害
+@n	"MaxSolarDamage":	最大阳性内功伤害
+@n	"MinNeutralDamage":	最小中性内功伤害
+@n	"MaxNeutralDamage":	最大中性内功伤害
+@n	"MinLunarDamage":	最小阴性内功伤害
+@n	"MaxLunarDamage":	最大阴性内功伤害
+@n	"MinPoisonDamage":	最小毒性伤害
+@n	"MaxPoisonDamage":	最大毒性伤害
+@n	"MinTherapy":		最小治疗量
+@n	"MaxTherapy":		最小治疗量
+@n	"BuffDurationFrame":	Buff持续帧数
+@n	"DebuffDurationFrame":	Debuff持续帧数
+@n	"DotCount":				dot作用次数
+@n	"DotIntervalFrame":		Dot作用间隔的帧数
+@n	"DotDamage":			dot一跳的伤害
+@n	"HotCount":				hot作用次数
+@n	"HotIntervalFrame":		hot作用间隔，单位是帧
+@n	"HotTherapy":			hot一跳的治疗量
+function GetSkillInfo(skillTable)
+
+@summary [仅在客户端使用]根据秘笈的key获取秘笈的id和等级
+@catalog
+@param dwRecipeKey	秘笈key
+@remarks 如果函数执行成功，返回2个值：
+@n	dwRecipeID		秘笈id
+@n	dwRecipeLevel	秘笈等级
+function SkillRecipeKeyToIDAndLevel(dwRecipeKey)
+
+@summary [仅在客户端使用] 将秘笈的id和等级合成秘笈的key
+@catalog
+@param dwRecipeID		秘笈id
+@param dwRecipeLevel	秘笈等级
+@remarks 如果函数执行成功，返回秘笈的key。类型是DWORD.
+function SkillRecipeIDAndLevelToKey(dwRecipeID, dwRecipeLevel)
+
+@summary [仅在客户端使用]获取buff,debuff,hot或dot的属性
+@catalog
+@param dwBuffType		buff类型，取值[[get BUFF_STYLE]]
+@param dwBuffID			buff的ID
+@param dwBuffLevel		buff等级
+@param data		要获取信息的table，每一项由"key=value"构成，其中key是一个字符串,
+@	会用在结果中。value是[[see ATTRIBYTE_TYPE]]中列举的项目。注意value只需要取
+@	字段名，前面不必加上表明。例如data一个可能为{["WalkSpeedBase"]="atWalkSpeedBase", 
+@	["CurrentMana"]="atCurrentMana"}
+@remarks 如果函数执行成功，返回一个table，内容是data参数中取出key对应实际的属性值。以
+@	上面那个data为例，返回值为：{["WalkSpeedBase"]=buff效果对WalkSpeedBase影响的值, 
+@	["CurrentMana"]=buff效果对当前mana影响的值}
+function GetBuffInfo(dwBuffType, dwBuffID, dwBuffLevel, data)
+
+@summary 是否是记录在WeaponMapSkill.tab中的技能
+@catalog 获取信息函数
+@param dwSkillID	技能id
+@remarks 返回2个值：bCommonSkill, bMeleeWeapon
+@n	
+@	如果是记录在settings/skill/WeaponMapSkill.tab中的技能，那么
+@	bCommonSkill为true；否则为false
+function IsCommonSkill(dwSkillID)
+
+@summary 获取购买银行背包的价格
+@catalog 获取信息函数
+@remarks nLevel	第几个银行背包，从1开始
+function GetBankPackagePrice(nLevel)
+
+@summary [仅客户端使用] 获取当前的ping值
+@catalog 获取信息函数
+@remarks 
+function GetPingValue()
+
+@summary [仅客户端使用] 根据玩家名字获取其对象
+@catalog 获取信息函数
+@param szName	玩家的名字
+@remarks 这个函数遍历当前所有的玩家，如果找到了这个名字的玩家，就
+@	返回这个玩家的KPlayer对象。否则返回nil
+function GetPlayerByName(szName)
+
+@summary [仅客户端使用] 设置用户偏好
+@catalog 获取信息函数
+@param nOffset	在偏好数据数组内的偏移
+@param szFormat	格式字符串，具体见remarks部分的描述
+@remarks 该函数没有返回值。
+@n
+@n	这个函数的参数个数必须大于2。
+@n
+@n	用户偏好保存在一个字节数组中，其中参数中的nOffset就是新数据在这个
+@	数组内的偏移，从0开始。
+@n
+@n	szFormat描述了后面参数的类型，例如szFormat为"nc",表示
+@	要向用户偏好中写入2个数据，n表示后面第1个参数是个整数，c表示后面
+@	第2个参数是个字符。最终结果是向用户偏好里写入了一个整数和一个字符。
+@n
+@n	szFormat中合法的格式字符包括：
+@n	d或D:	DWORD类型，无符号32位整数
+@n	n或N:	int类型，有符号32位整数
+@n	c或C:	char类型，单字节字符
+@n	w或W:	WORD类型，无符号16位整数
+@n	f或F:	float类型，单精度浮点数
+@n	s或S:	字符串类型
+function SetUserPreferences(nOffset, szFormat)
+
+@summary [仅客户端使用] 获取用户偏好数据
+@catalog 获取信息函数
+@param nOffset	数据的起始偏移
+@param cFormat	一个字符，代表要获取的数据的格式
+@remarks 如果函数执行成功，返回从指定偏移处，数据格式描述字符所代表的一个
+@	数据。合法的描述字符参见[[see SetUserPreferences]]的说明。
+@n
+@n	用户偏好保存在一个字节数组中，其中参数中的nOffset就是新数据在这个
+@	数组内的偏移，从0开始。
+function GetUserPreferences(nOffset, cFormat)
+
+@summary [仅客户端使用] 获取BUFF, DEBUFF, HOT或DOT的驱散类型
+@catalog 获取信息函数
+@param nType	表明是BUFF, DEBUFF, HOT还是DOT，取值[[get BUFF_STYLE]]
+@param dwID		BUFF, DEBUFF, HOT或是DOT的id
+@remarks 如果函数执行成功，返回驱散类型。
+function GetBuffDetachType(nType, dwID)
+
+@summary [仅客户端使用] 获取某个等级下最大的声望值
+@catalog 获取信息函数
+@param nLevel	等级
+@remarks 这个函数读取settings/ReputationLimit.tab表中的内容.
+function GetReputeLimit(nLevel)
+
+@summary [仅客户端使用] 发送邮件
+@catalog 邮件系统
+@param nRequestID	邮件的索引，用于标识一封邮件	
+@param szDestName	目标名称
+@param dwBox	附件所在背包索引，取值[[get INVENTORY_INDEX]]	
+@param dwX		附件在背包内的位置
+@param nMoney	附加金钱
+@param szMailTitle	邮件主题
+@param szText		邮件正文
+@remarks 该函数无返回值
+function SendMail(nRequestID, szDestName, dwBox, dwX, nMoney, szMailTitle, szText)
+
+@summary [仅客户端使用] 删除邮件
+@catalog 邮件系统
+@param dwMailID	邮件id
+@remarks 该函数无返回值
+function DeleteMail(dwMailID)
+
+@summary [仅客户端使用] 获取邮件数量
+@catalog 邮件系统
+@remarks 返回2个值:
+@n	nUnreadCount	未读邮件数量
+@n	nTotalCount		邮件总数量
+function CountMail()
+
+@summary [仅客户端使用] 向服务器请求获取邮件列表
+@catalog 邮件系统
+@remarks 如果函数执行成功，返回true；否则返回false
+function ApplyMailList()
+
+@summary [仅客户端使用] 获取邮件列表
+@catalog 邮件系统
+@remarks 返回一个下标从1开始的table，每一项包含以下内容:
+@n	MailID:		邮件Id
+@n	SenderName:	发送者名字
+@n	Title:		主题
+@n	LeftSeconds:	邮件剩余时间
+@n	UnReadFlag:	是否已读
+@n	MoneyFlag:	是否有金钱
+@n	TextFlag:	是否有正文
+@n	ItemFlag:	是否有附件
+@n	SystemFlag:	是否是系统邮件
+function GetMailList()
+
+@summary [仅客户端使用] 获取邮件内容
+@catalog 邮件系统
+@param dwMailID	邮件id
+@remarks 如果函数执行成功，那么第1个返回值是true或false，代表是否取到了邮件。
+@n
+@n	如果取到了邮件，那么还有4个返回值：
+@n	szSenderName:	发送者姓名
+@n	szTitle:	邮件主题
+@n	nMoney:	金钱数目
+@n	szText:	邮件正文
+@n	Item:	KItem对象，邮件的附件，如果没有附件，这个值为nil
+function GetMailContent(dwMailID)
+
+@summary [仅客户端使用] 判断邮件的某一部分是否存在
+@catalog 邮件系统
+@param dwMailID	邮件id
+@param bGetMoney	是否判断有金钱
+@param bGetText		是否判断有正文
+@param bGetItem		是否判断有附件
+@remarks 如果需要判断的部分都存在，那么返回true；如果至少有1个部分不存在，那么
+@	返回false
+function GetMailAttachment(dwMailID, bGetMoney, bGetText, bGetItem)
+
+@summary [仅客户端使用] 设置邮件设置为已读
+@catalog 邮件系统
+@param dwMailID	邮件id
+@remarks 如果函数执行成功，返回true；否则返回false
+function SetMailRead(dwMailID)
+
+@summary [仅客户端使用] 将邮件退还给发送者
+@catalog 邮件系统
+@param dwMailID	要退回的邮件id
+@remarks 如果函数执行成功，返回true；否则返回false
+function ReturnMail(dwMailID)
+
+@summary [仅服务器端使用] 把技能训练师的id帮定到npc上
+@catalog
+@param dwNpcID	npc的id
+@param dwMasterID	训练师的id
+@remarks 如果函数执行成功，返回true；否则返回false
+function BindNpcMasterID(dwNpcID, dwMasterID)
+
+@summary [仅服务器端使用] 获取npc对应的训练师id
+@catalog
+@remarks 
+function GetNpcMasterID(dwNpcID)
+
+@summary [仅服务器端使用] 把一个配方训练师绑定到一个npc身上
+@catalog
+@param dwNpcID	Npc id
+@param dwMasterID	训练师id
+@remarks 如果函数执行成功，返回true；否则返回false
+function BindRecipeMasterID(dwNpcID, dwMasterID)
+
+@summary [仅服务器端使用] 获取npc对应的配方训练师id
+@catalog
+@param dwNpcID	npc id
+@remarks
+function GetRecipeMasterID(dwNpc)
+
+@summary [仅服务器端使用] 给一个npc绑定邮箱功能
+@catalog
+@remarks 如果函数执行成功，返回true；否则返回false
+function BindNpcMailbox(dwNpcID)
+
+@summary [仅服务器端使用] 判断npc有没有邮箱功能
+@catalog
+@param dwNpcID	npc id
+@remarks 如果npc有邮箱功能，返回true；否则返回false
+function IsNpcMailbox(dwNpcID)
+
+@summary [仅客户端使用] 获取训练师身上可以教给玩家的技能列表
+@catalog
+@param dwMasterID	训练师id
+@param nHas	0或1，表示是否获取玩家已经学会的技能
+@param nCannot	0或1，表示是否获取玩家不能用的技能
+@remarks 返回一个下标从1开始的table，table的每一项对应一个武功套路，包含以下内容:
+@n	"dwID":	武功id
+@n	"dwLevel":	武功等级
+@n	"bHas":		玩家是否已经学会
+@n	"bCannot":	玩家是否能够学习
+@n	"aSkill":	武功下面具体的招式，又是一个table，每一项包含以下内容："dwID": 招式id; 
+@		"dwLevel": 招式等级; "bHas": 玩家是否已经学会；"bCannot": 玩家是否能够学习
+function GetMasterSkillList(dwMasterID, nHas, nCannot)
+
+@summary [仅客户端使用] 获取学习技能的需求
+@catalog
+@param dwMasterID	训练师id
+@param dwSkillID	技能id
+@param dwSkillLevel	技能等级
+@remarks 如果函数执行成功，返回以下5个值：
+@n	dwRequireExp:	需要的经验值
+@n	nRequirePlayerLevel:	玩家要达到的等级
+@n	dwReputationID:	相关需求声望的id
+@n	nReputationLevel:	相关声望需求的等级
+@n	nPrice:	学习技能的费用
+function GetSkillLearningInfo(dwMasterID, dwSkillID, dwSkillLevel)
+
+
+@summary [仅客户端使用] 获取学习配方相关的信息
+@catalog
+@param dwMasterID	训练师id
+@param dwCraftID	技艺id
+@param dwRecipeID	配方id
+@remarks 获取从某个训练师身上学习某个配方需要的条件信息。
+@
+@n	如果函数执行成功，返回一个table，包含一下内容：
+@n	"dwProfessionID":	所属生活技能id
+@n	"dwProfessionLevel":	需要生活技能的等级
+@n	"dwBranchID":	所属生活技能分支的id
+@n	"dwReputationID":	要求声望的id
+@n	"dwReputationLevel":	要求声望的等级
+@n	"nPrice":	学习需要的费用
+function GetRecipeLearnInfo(dwMasterId, dwCraftID, dwRecipeID)
+
+@summary [仅客户端使用] 获取训练师身上的配方列表
+@catalog
+@param dwMasterID	训练师id
+@param bHas			是否获取已经学会的配方
+@param bCannot		是否获取不能学习的配方
+@remarks 如果函数执行成功，返回一个table，每一项包括：
+@n	"dwCraftID":	技艺id
+@n	"dwRecipeID":	配方id
+@n	"bHas":			是否已经学会
+@n	"bCannot":		是否可以学习
+function GetMasterRecipeList(dwMasterID, bHas, bCannot)
+
+@summary [仅服务器端使用] 发送全局的系统消息
+@catalog
+@param szMessage	要发送的消息文本
+@remarks
+function SendGlobalSysMsg(szMessage)
+
+@summary [仅客户端使用] 向服务器请求查看其它玩家的装备信息
+@catalog 
+@param dwPlayerID	要查看的玩家的id
+@remarks 如果函数执行成功，返回true；否则返回false
+function PeekOtherPlayer(dwPlayerID)
+
+@summary [仅客户端使用] 
+@catalog
+@remarks 向服务器请求退出登陆。
+@n	
+@n	该函数没有返回值。
+function LogoutGame()
+
+@summary 重新加载任务配置表
+@remarks 该函数无返回值
+@n
+@n	注意这个函数不会同时重新加载服务器和客户端的任务配置表。即，在客户端执行时，
+@	只重新加载客户端的，在服务器断执行时，则只加载服务器端的。
+function ReloadQuestTable()
+
+@summary [仅仅服务器端使用] 设置交通点势力
+@catalog 
+@param     nRouteNode  交通点序号
+@param     nForce  势力
+@remarks 该函数无返回值
+function SetRouteNodeForce(nRouteNode, nForce)
+
+@summary [仅仅客户端使用] 设置交通点势力
+@catalog 
+@param     nFromNodeID  开始交通点
+@param     nToNodeID  结束交通点
+@remarks 该函数有2个返回值。第一个返回值为这条路是否因为没有开点而不通，第二个返回值为这条路是否因为势力冲突而不通
+function CheckRoadTrack(nFromNodeID, nToNodeID)
+
+@summary [仅仅客户端使用] 计算路径的费用
+@catalog 
+@param     nFromNodeID  开始交通点
+@param     nTargetCity  结束城市
+@remarks 该函数有2个返回值。第一个返回值为这条路是否开通，第二个返回值为需要花费多少钱。
+function CalculateTrackCost(nFromNodeID, nTargetCity)
+
+@summary [仅仅客户端使用] 按照指定的路径出发
+@catalog 
+@param     nFromNodeID  开始交通点
+@param     nTargetCity  结束城市
+@param     nCost  客户端计算的费用
+@remarks 如果函数执行成功，返回true；否则返回false
+function RoadTrackStartOut(nFromNodeID, nTargetCity, nCost)
+
+@summary [仅仅客户端使用] 请求服务端同步势力信息
+@catalog 
+@remarks 
+function RoadTrackForceRequest()
+
+@summary [仅仅客户端使用] 判断城市是否打开
+@catalog 
+@param     nCityID  城市点
+@remarks 如果城市打开，返回true；否则返回false
+function RoadTrackIsCityOpen(nCityID )
+
+@summary [仅在客户端使用]获取bind的buff,debuff,hot或dot的属性
+@catalog
+@param dwBuffType		buff类型，取值[[get BUFF_STYLE]]
+@param SkillRecipeKeyTable		一个table对应KSKILL_RECIPE_KEY包含的信息
+@param data		要获取信息的table，每一项由"key=value"构成，其中key是一个字符串,
+@	会用在结果中。value是[[see ATTRIBYTE_TYPE]]中列举的项目。注意value只需要取
+@	字段名，前面不必加上表明。例如data一个可能为{["WalkSpeedBase"]="atWalkSpeedBase", 
+@	["CurrentMana"]="atCurrentMana"}
+@remarks 如果函数执行成功，返回一个table，内容是data参数中取出key对应实际的属性值。以
+@	上面那个data为例，返回值为：{["WalkSpeedBase"]=buff效果对WalkSpeedBase影响的值, 
+@	["CurrentMana"]=buff效果对当前mana影响的值}
+function GetBindBuffInfo(dwBuffType, SkillRecipeKeyTable, data)
+
+@summary [仅在客户端使用]获取buff持续时间
+@catalog
+@param dwBuffType		buff类型，取值[[get BUFF_STYLE]]
+@param dwBuffID		buffID
+@param nBuffLevel		buff 等级
+@remarks 如果函数执行成功，返回buff持续时间，作用次数，间隔时间
+function GetBuffTime(dwBuffType, dwBuffID, data)
+
+@summary [仅在客户端使用]获取bind的buff持续时间
+@catalog
+@param dwBuffType		buff类型，取值[[get BUFF_STYLE]]
+@param dwBuffID		buffID
+@param nBuffLevel		buff 等级
+@remarks 如果函数执行成功，返回buff持续时间，作用次数，间隔时间
+function GetBindBuffTime(dwBuffType, dwBuffID, data)

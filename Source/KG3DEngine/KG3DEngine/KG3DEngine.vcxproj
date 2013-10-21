@@ -1,0 +1,3119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_AutoTest|Win32">
+      <Configuration>Debug_AutoTest</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_DevTest|Win32">
+      <Configuration>Debug_DevTest</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_AutoTest|Win32">
+      <Configuration>Release_AutoTest</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_DevTest|Win32">
+      <Configuration>Release_DevTest</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{90AF2153-D437-4727-BDAA-A324DF7E39E8}</ProjectGuid>
+    <RootNamespace>KG3DEngine</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\sword3-products\trunk\client\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\sword3-products\trunk\client\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">..\..\..\..\sword3-products\trunk\client\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">$(Configuration)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">..\..\..\..\sword3-products\trunk\client\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">$(Configuration)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">$(Configuration)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">$(Configuration)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./;./Scene/;../../../../Base/Include/;../../../../Base/Include/Common/;../../../../base/include\Engine;../../../Include\KG3DEngine;../../../../DevEnv/Include/freetype-2.3.5;../../../../DevEnv/Include/IPP;../../KG3DEngine\EditInterface;../../../../DevEnv/Include/pnglib;../../../../DevEnv/Include/zlib;../../../../DevEnv/Include/AGEIA PhysX SDK/Cooking/include;../../../../DevEnv/Include/AGEIA PhysX SDK/Foundation/include;../../../../DevEnv/Include/AGEIA PhysX SDK/NxCharacter/include;../../../../DevEnv/Include/AGEIA PhysX SDK/NxExtensions/include;../../../../DevEnv/Include/AGEIA PhysX SDK/Physics/include;../../../../DevEnv/Include/AGEIA PhysX SDK/PhysXLoader/include;./Render;./Helpers;./EnvEffect;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;PROFILE;_USRDLL;LUA_V_5;_WIN32_WINNT=0x501;KG3DENGINE_DLL_EXPORTS;_KG3D_DEBUG_SELF_ENABLE_OUTPUT=0;_KG3D_DEBUG_ENABLE_OUTPUT_DWGC=0;_KG_DEBUG_ENABLE_LEAK_TEST=0;D3D_DEBUG_INFO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <OpenMPSupport>false</OpenMPSupport>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnablePREfast>false</EnablePREfast>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/FIXED:NO /ignore:4099  %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>engine_Lua5D.lib;d3d9.lib;d3dx9.lib;winmm.lib;uuid.lib;kernel32.lib;commonD.lib;freetype235_D.lib;dxguid.lib;ddraw.lib;Dxguid.lib;pnglibd.lib;zlibd.lib;PhysXLoader.lib;JpegLibD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName)D.dll</OutputFile>
+      <AdditionalLibraryDirectories>../../../Lib/Win32;../../../Lib/Win32/Common;../../../../Base/Lib;../../../../DevEnv/Lib/debug/freetype-2.3.5;../../../../DevEnv/lib/Debug/XtremeToolkitProv9.60/vc80;../../../../DevEnv/Lib/Debug;../../../../DevEnv/Lib/Debug/pnglib;../../../../DevEnv/Lib/Debug/zlib;./Helpers;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcp.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <Profile>true</Profile>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(ProjectDir)shaders\*.* ..\..\..\..\sword3-products\trunk\client\data\public\shader\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>./;./Scene/;../../../../Base/Include/;../../../../Base/Include/Common/;../../../../base/include\Engine;..\..\..\Include\KG3DEngine;../../../../DevEnv/Include/freetype-2.3.5;../../../../DevEnv/Include/IPP;..\..\KG3DEngine\EditInterface;../../../../DevEnv/Include/pnglib;../../../../DevEnv/Include/zlib;../../../../DevEnv/Include/AGEIA PhysX SDK/Cooking/include;../../../../DevEnv/Include/AGEIA PhysX SDK/Foundation/include;../../../../DevEnv/Include/AGEIA PhysX SDK/NxCharacter/include;../../../../DevEnv/Include/AGEIA PhysX SDK/NxExtensions/include;../../../../DevEnv/Include/AGEIA PhysX SDK/Physics/include;../../../../DevEnv/Include/AGEIA PhysX SDK/PhysXLoader/include;./Helpers;./Render;./EnvEffect;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;LUA_V_5;_WIN32_WINNT=0x501;KG3DENGINE_DLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnablePREfast>false</EnablePREfast>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3dx9.lib;d3d9.lib;winmm.lib;uuid.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;advapi32.lib;shell32.lib;d3dxof.lib;dxguid.lib;common.lib;engine_lua5.lib;freetype235.lib;ddraw.lib;pnglib.lib;zlib.lib;NxCharacter.lib;NxCooking.lib;PhysXLoader.lib;JpegLib.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>../../../Lib/Win32;../../../Lib/Win32/Common;../../../../Base/Lib;../../../../DevEnv/Lib/Release/freetype-2.3.5;../../../../DevEnv/Lib/Release/XtremeToolkitProv9.60/vc80;../../../../DevEnv/Lib/Release;../../../../DevEnv/Lib/Release/pnglib;../../../../DevEnv/Lib/Release/zlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcp.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <Profile>true</Profile>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(ProjectDir)shaders\*.* ..\..\..\..\sword3-products\trunk\client\data\public\shader\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./;./Scene/;../../../../Base/Include/;../../../../Base/Include/Common/;../../../../base/include\Engine;../../../Include;../../../Include\KG3DEngine;../../../../DevEnv/Include/freetype-2.3.5;../../../../DevEnv/Include/IPP;../../KG3DEngine\EditInterface;../../../../DevEnv/Include/pnglib;../../../../DevEnv/Include/zlib;../../../../DevEnv/Include/AGEIA PhysX SDK/Cooking/include;../../../../DevEnv/Include/AGEIA PhysX SDK/Foundation/include;../../../../DevEnv/Include/AGEIA PhysX SDK/NxCharacter/include;../../../../DevEnv/Include/AGEIA PhysX SDK/NxExtensions/include;../../../../DevEnv/Include/AGEIA PhysX SDK/Physics/include;../../../../DevEnv/Include/AGEIA PhysX SDK/PhysXLoader/include;./Helpers;./Render;./EnvEffect;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;PROFILE;_USRDLL;LUA_V_5;_WIN32_WINNT=0x501;KG3DENGINE_DLL_EXPORTS;_KG3D_DEBUG_SELF_ENABLE_OUTPUT=0;_KG3D_DEBUG_ENABLE_OUTPUT_DWGC=0;_KG_DEBUG_ENABLE_LEAK_TEST=0;D3D_DEBUG_INFO;KG3D_DEV_TEST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnablePREfast>false</EnablePREfast>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>engine_Lua5D.lib;d3dx9.lib;d3d9.lib;winmm.lib;uuid.lib;kernel32.lib;commonD.lib;IPPVideoD.lib;freetype235_D.lib;dxguid.lib;ddraw.lib;Dxguid.lib;pnglibd.lib;zlibd.lib;NxCharacter.lib;NxCooking.lib;PhysXLoader.lib;JpegLibD.lib;KG3DSoundD.lib;Psapi.lib;KG3DShaderLibraryD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName)TestD.exe</OutputFile>
+      <AdditionalLibraryDirectories>../../../Lib/Win32;../../../Lib/Win32/Common;../../../../Base/Lib;../../../../DevEnv/Lib/debug/freetype-2.3.5;../../../../DevEnv/lib/Debug/XtremeToolkitProv9.60/vc80;../../../../DevEnv/Lib/Debug;../../../../DevEnv/Lib/Debug/pnglib;../../../../DevEnv/Lib/Debug/zlib;./Helpers;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcp;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>./;./Scene/;../../../../Base/Include/;../../../../Base/Include/Common/;../../../../base/include\Engine;../../../Include;..\..\..\Include\KG3DEngine;../../../../DevEnv/Include/freetype-2.3.5;../../../../DevEnv/Include/IPP;..\..\KG3DEngine\EditInterface;../../../../DevEnv/Include/pnglib;../../../../DevEnv/Include/zlib;../../../../DevEnv/Include/AGEIA PhysX SDK/Cooking/include;../../../../DevEnv/Include/AGEIA PhysX SDK/Foundation/include;../../../../DevEnv/Include/AGEIA PhysX SDK/NxCharacter/include;../../../../DevEnv/Include/AGEIA PhysX SDK/NxExtensions/include;../../../../DevEnv/Include/AGEIA PhysX SDK/Physics/include;../../../../DevEnv/Include/AGEIA PhysX SDK/PhysXLoader/include;./Helpers;./Render;./EnvEffect;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;LUA_V_5;_WIN32_WINNT=0x501;KG3DENGINE_DLL_EXPORTS;KG3D_DEV_TEST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnablePREfast>false</EnablePREfast>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3dx9.lib;d3d9.lib;winmm.lib;uuid.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;advapi32.lib;shell32.lib;d3dxof.lib;dxguid.lib;common.lib;engine_lua5.lib;freetype235.lib;IPPVideo.lib;ddraw.lib;pnglib.lib;zlib.lib;NxCharacter.lib;NxCooking.lib;PhysXLoader.lib;JpegLib.lib;KG3DSound.lib;Psapi.lib;KG3DShaderLibrary.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName)Test.exe</OutputFile>
+      <AdditionalLibraryDirectories>../../../Lib/Win32;../../../Lib/Win32/Common;../../../../Base/Lib;../../../../DevEnv/Lib/Release/freetype-2.3.5;../../../../DevEnv/Lib/Release/XtremeToolkitProv9.60/vc80;../../../../DevEnv/Lib/Release;../../../../DevEnv/Lib/Release/pnglib;../../../../DevEnv/Lib/Release/zlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcp.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <GenerateMapFile>false</GenerateMapFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <Profile>true</Profile>
+    </Link>
+    <PostBuildEvent>
+      <Command>rem copy $(TargetDir)$(TargetName).exe \\192.168.24.154\d$\Kingsoft\Game\Sword3-products\trunk\client\
+rem copy $(TargetDir)$(TargetName).pdb \\192.168.24.154\d$\Kingsoft\Game\Sword3-products\trunk\client\
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./;./Scene/;../../../../Base/Include/;../../../../Base/Include/Common/;../../../../base/include\Engine;../../../Include\KG3DEngine;../../../../DevEnv/Include/freetype-2.3.5;../../../../DevEnv/Include/IPP;../../KG3DEngine\EditInterface;../../../../DevEnv/Include/pnglib;../../../../DevEnv/Include/zlib;../../../../DevEnv/Include/AGEIA PhysX SDK/Cooking/include;../../../../DevEnv/Include/AGEIA PhysX SDK/Foundation/include;../../../../DevEnv/Include/AGEIA PhysX SDK/NxCharacter/include;../../../../DevEnv/Include/AGEIA PhysX SDK/NxExtensions/include;../../../../DevEnv/Include/AGEIA PhysX SDK/Physics/include;../../../../DevEnv/Include/AGEIA PhysX SDK/PhysXLoader/include;./Render;./Helpers;./EnvEffect;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;PROFILE;_USRDLL;LUA_V_5;_WIN32_WINNT=0x501;KG3DENGINE_DLL_EXPORTS;_KG3D_DEBUG_SELF_ENABLE_OUTPUT=0;_KG3D_DEBUG_ENABLE_OUTPUT_DWGC=0;_KG_DEBUG_ENABLE_LEAK_TEST=0;D3D_DEBUG_INFO;KG3D_AUTO_TEST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <OpenMPSupport>false</OpenMPSupport>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnablePREfast>false</EnablePREfast>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/FIXED:NO /ignore:4099  %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>engine_Lua5D.lib;d3dx9.lib;d3d9.lib;winmm.lib;uuid.lib;kernel32.lib;commonD.lib;dxerr9.lib;freetype235_D.lib;dxguid.lib;ddraw.lib;Dxguid.lib;pnglibd.lib;zlibd.lib;PhysXLoader.lib;JpegLibD.lib;KG3DSoundD.lib;KG3DShaderLibraryD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName)_AutoTestD.dll</OutputFile>
+      <AdditionalLibraryDirectories>../../../Lib/Win32;../../../Lib/Win32/Common;../../../../Base/Lib;../../../../DevEnv/Lib/debug/freetype-2.3.5;../../../../DevEnv/lib/Debug/XtremeToolkitProv9.60/vc80;../../../../DevEnv/Lib/Debug;../../../../DevEnv/Lib/Debug/pnglib;../../../../DevEnv/Lib/Debug/zlib;./Helpers;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcp.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <Profile>true</Profile>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(OutDir)$(ProjectName)_AutoTestD.pdb ..\..\..\..\sword3-products\trunk\client\DebugFiles\
+copy $(OutDir)$(ProjectName)_AutoTestD.dll ..\..\..\..\sword3-products\trunk\client\DebugFiles\
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>./;./Scene/;../../../../Base/Include/;../../../../Base/Include/Common/;../../../../base/include\Engine;..\..\..\Include\KG3DEngine;../../../../DevEnv/Include/freetype-2.3.5;../../../../DevEnv/Include/IPP;..\..\KG3DEngine\EditInterface;../../../../DevEnv/Include/pnglib;../../../../DevEnv/Include/zlib;../../../../DevEnv/Include/AGEIA PhysX SDK/Cooking/include;../../../../DevEnv/Include/AGEIA PhysX SDK/Foundation/include;../../../../DevEnv/Include/AGEIA PhysX SDK/NxCharacter/include;../../../../DevEnv/Include/AGEIA PhysX SDK/NxExtensions/include;../../../../DevEnv/Include/AGEIA PhysX SDK/Physics/include;../../../../DevEnv/Include/AGEIA PhysX SDK/PhysXLoader/include;./Helpers;./Render;./EnvEffect;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;LUA_V_5;_WIN32_WINNT=0x501;KG3DENGINE_DLL_EXPORTS;KG3D_AUTO_TEST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnablePREfast>false</EnablePREfast>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3dx9.lib;d3d9.lib;winmm.lib;uuid.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;advapi32.lib;shell32.lib;d3dxof.lib;dxguid.lib;dxerr9.lib;common.lib;engine_lua5.lib;freetype235.lib;ddraw.lib;pnglib.lib;zlib.lib;NxCharacter.lib;NxCooking.lib;PhysXLoader.lib;JpegLib.lib;KG3DSound.lib;KG3DShaderLibrary.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName)_AutoTest.dll</OutputFile>
+      <AdditionalLibraryDirectories>../../../Lib/Win32;../../../Lib/Win32/Common;../../../../Base/Lib;../../../../DevEnv/Lib/Release/freetype-2.3.5;../../../../DevEnv/Lib/Release/XtremeToolkitProv9.60/vc80;../../../../DevEnv/Lib/Release;../../../../DevEnv/Lib/Release/pnglib;../../../../DevEnv/Lib/Release/zlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcp.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <Profile>true</Profile>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(OutDir)$(ProjectName)_AutoTest.pdb ..\..\..\..\sword3-products\trunk\client\DebugFiles\
+copy $(OutDir)$(ProjectName)_AutoTest.dll ..\..\..\..\sword3-products\trunk\client\DebugFiles\
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="DLLBase.h" />
+    <ClInclude Include="IKG3DModifior.h" />
+    <ClInclude Include="KG3DAnimationEx.h" />
+    <ClInclude Include="KG3DAnimationTable.h" />
+    <ClInclude Include="KG3DClip.h" />
+    <ClInclude Include="KG3DClipTable.h" />
+    <ClInclude Include="KG3DDebugD3DDevice.h" />
+    <ClInclude Include="KG3DEffect.h" />
+    <ClInclude Include="KG3DEngineManager.h" />
+    <ClInclude Include="KG3DGraphiceEngine.h" />
+    <ClInclude Include="KG3DGraphicsTool.h" />
+    <ClInclude Include="KG3DKeyFrameControl.h" />
+    <ClInclude Include="KG3DMaterial.h" />
+    <ClInclude Include="KG3DMaterialEx.h" />
+    <ClInclude Include="KG3DMaterialTable.h" />
+    <ClInclude Include="KG3DMesh.h" />
+    <ClInclude Include="KG3DMeshTable.h" />
+    <ClInclude Include="KG3DModel.h" />
+    <ClInclude Include="KG3DModelTable.h" />
+    <ClInclude Include="KG3DObjectPropertyDefine.h" />
+    <ClInclude Include="KG3DRepresentNPC.h" />
+    <ClInclude Include="KG3DRepresentNPCEx.h" />
+    <ClInclude Include="KG3DRepresentNPCTemplate.h" />
+    <ClInclude Include="KG3DRepresentObject.h" />
+    <ClInclude Include="KG3DRepresentObjectTable.h" />
+    <ClInclude Include="KG3DRepresentSpeedTree.h" />
+    <ClInclude Include="KG3DRepresetObjectPropertyModifior.h" />
+    <ClInclude Include="Scene\KG3DScene.h" />
+    <ClInclude Include="Scene\KG3DSceneCameraMovement.h" />
+    <ClInclude Include="Scene\KG3DSceneSceneEditor.h" />
+    <ClInclude Include="KG3DSFXElement.h" />
+    <ClInclude Include="KG3DSFXFileDefine.h" />
+    <ClInclude Include="KG3DSFXParticleRenderTool.h" />
+    <ClInclude Include="KG3DSFXParticleTextureTool.h" />
+    <ClInclude Include="KG3DStructs.h" />
+    <ClInclude Include="KG3DTemplates.h" />
+    <ClInclude Include="KG3DTexture.h" />
+    <ClInclude Include="KG3DTextureTable.h" />
+    <ClInclude Include="KG3DVolumeFog.h" />
+    <ClInclude Include="KSceneModelEditor.h" />
+    <ClInclude Include="MathTool.h" />
+    <ClInclude Include="RInterface.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Scene\KG3DCamera.h" />
+    <ClInclude Include="KG3DCameraPreset.h" />
+    <ClInclude Include="Scene\KG3DEntity.h" />
+    <ClInclude Include="Scene\KG3DFrustum.h" />
+    <ClInclude Include="Scene\KG3DHOcclusion.h" />
+    <ClInclude Include="Scene\KG3DSceneClient.h" />
+    <ClInclude Include="Scene\KG3DSceneEntity.h" />
+    <ClInclude Include="Scene\KG3DSceneEntityGroup.h" />
+    <ClInclude Include="Scene\KG3DSceneEntityGroupTable.h" />
+    <ClInclude Include="Scene\KG3DSceneEntityMgr.h" />
+    <ClInclude Include="Scene\KG3DSceneFunctions.h" />
+    <ClInclude Include="Scene\KG3DSceneLayer.h" />
+    <ClInclude Include="Scene\KG3DSceneObjectEditor.h" />
+    <ClInclude Include="Scene\KG3DSceneOutputWnd.h" />
+    <ClInclude Include="Scene\KG3DSceneSFXEditor.h" />
+    <ClInclude Include="Scene\KG3DSceneTable.h" />
+    <ClInclude Include="Scene\KG3DSceneWndManager.h" />
+    <ClInclude Include="Scene\KG3DSnapTool.h" />
+    <ClInclude Include="Scene\KG3DTrackCamera.h" />
+    <ClInclude Include="Scene\KG3DTransformation.h" />
+    <ClInclude Include="KG3DAnimationStruct.h" />
+    <ClInclude Include="..\..\..\Include\KG3DEngine\KG3DInterface.h" />
+    <ClInclude Include="..\..\..\Include\KG3DEngine\KG3DTypes.h" />
+    <ClInclude Include="kg3dgrasspatterncontainer.h" />
+    <ClInclude Include="Terrain\KG3DSerpentine.h" />
+    <ClInclude Include="Terrain\KG3DTerrainRiver.h" />
+    <ClInclude Include="KG3DTerrainRoad.h" />
+    <ClInclude Include="..\EditInterface\IEClassMemberDescription.h" />
+    <ClInclude Include="..\EditInterface\IEEditor.h" />
+    <ClInclude Include="..\EditInterface\IEEditorTypes.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DAni.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DAnimation.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DAnimationController.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DAnimationTable.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DAnimationTag.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DAnimationWarper.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DBillboardCloudCreater.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DBip.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DCamera.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DClip.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DClipTable.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DCloud.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DCollocator.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DCommonContainer.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DCommonObject.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DEnvEffDynamicWeather.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DEnvEffFog.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DEnvEffLight.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DEnvEffLightSet.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DEnvEffStarryNight.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DEnvEffWind.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DEnvironment.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DLight.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DLogical.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DMaterial.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DMesh.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DMeshBone.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DMeshFarMountain.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DMeshLensFlare.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DMeshSkyBox.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DModelSet.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DModelSpeedTree.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DModelST.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DModelTable.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DPointLight.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DPointLightTable.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DRecPlayer.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DRegionInfoManager.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DRepresentObject.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DScene.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DSceneCamera.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DSceneCheckers.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DSceneEntity.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DSceneLayer.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DSceneObjectPlacementTool.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DSceneOutputWnd.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DSceneSelectionTool.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DSceneSFXEditor.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DSFX.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DSkySystem.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DTerrain.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DTexture.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DTextureTable.h" />
+    <ClInclude Include="..\EditInterface\IEKG3DTypes.h" />
+    <ClInclude Include="..\EditInterface\IEOther.h" />
+    <ClInclude Include="..\EditInterface\IETools.h" />
+    <ClInclude Include="..\EditInterface\IKG3DMessenger.h" />
+    <ClInclude Include="..\EditInterface\IKG3DObjectPropertyModifior.h" />
+    <ClInclude Include="KG3DFontDescr.h" />
+    <ClInclude Include="KG3DFontRenderer.h" />
+    <ClInclude Include="KG3DFontTexture.h" />
+    <ClInclude Include="..\Image\KBitmap16.h" />
+    <ClInclude Include="..\Image\KBmpFile24.h" />
+    <ClInclude Include="..\Image\KColors.h" />
+    <ClInclude Include="KG3DBaseCoord.h" />
+    <ClInclude Include="KG3DBaseCoordImp.h" />
+    <ClInclude Include="KG3DEditGridBase.h" />
+    <ClInclude Include="KG3DEditMoveGrid.h" />
+    <ClInclude Include="KG3DEditRotationGrid.h" />
+    <ClInclude Include="KG3DEditScaleGrid.h" />
+    <ClInclude Include="KG3DLocalMoveCoord.h" />
+    <ClInclude Include="KG3DLocalRotationCoord.h" />
+    <ClInclude Include="KG3DLocalScalCoord.h" />
+    <ClInclude Include="KG3DLocalTranslationCoord.h" />
+    <ClInclude Include="KG3DSceneCheckers.h" />
+    <ClInclude Include="Scene\KG3DSceneEditorBase.h" />
+    <ClInclude Include="KG3DSceneModelEditor.h" />
+    <ClInclude Include="KG3DSceneModelEditorPlayerTools.h" />
+    <ClInclude Include="KG3DSceneObjectPlacementTool.h" />
+    <ClInclude Include="KG3DSceneObjectTransformTool.h" />
+    <ClInclude Include="Scene\kg3dsceneselectbase.h" />
+    <ClInclude Include="KG3DSceneSelectionTool.h" />
+    <ClInclude Include="KG3DSceneSelectionToolImp.h" />
+    <ClInclude Include="KG3DSceneTopSnapTool.h" />
+    <ClInclude Include="KG3DToolsImpl.h" />
+    <ClInclude Include="KSceneLogicRegionCellBuf.h" />
+    <ClInclude Include="KG3DEngineOption.h" />
+    <ClInclude Include="KG3DPostRenderEffectAoe.h" />
+    <ClInclude Include="KG3DPostRenderEffectBase.h" />
+    <ClInclude Include="KG3DPostRenderEffectBloom.h" />
+    <ClInclude Include="KG3DPostRenderEffectBlur.h" />
+    <ClInclude Include="KG3DPostRenderEffectBump.h" />
+    <ClInclude Include="KG3DPostRenderEffectDOF.h" />
+    <ClInclude Include="KG3DPostRenderEffectHDR.h" />
+    <ClInclude Include="KG3DPostRenderEffectImageAdjust.h" />
+    <ClInclude Include="KG3DPostRenderEffectManager.h" />
+    <ClInclude Include="KG3DPostRenderEffectMisc.h" />
+    <ClInclude Include="KG3DPostRenderEffectShadow.h" />
+    <ClInclude Include="KG3DPostRenderEffectShockWave.h" />
+    <ClInclude Include="KG3DPostRenderEffectSSAO.h" />
+    <ClInclude Include="KG3DPostRenderEffectTwist.h" />
+    <ClInclude Include="KG3DPostRenderGodRay.h" />
+    <ClInclude Include="KG3DRepresentObjectBuilder.h" />
+    <ClInclude Include="KG3DRepresentObjectDummy.h" />
+    <ClInclude Include="KG3DRepresentObjectNode.h" />
+    <ClInclude Include="KG3DRepresentObjectSet.h" />
+    <ClInclude Include="KG3DRepresentObjectSoundBall.h" />
+    <ClInclude Include="KG3DRepresentObjectTemplate.h" />
+    <ClInclude Include="KG3DRepresentObjectTrans.h" />
+    <ClInclude Include="KG3DRepresentObjectVisibleEntitySet.h" />
+    <ClInclude Include="Helpers\KG3DKeyFrameDataBase.h" />
+    <ClInclude Include="KG3DNoise.h" />
+    <ClInclude Include="KG3DSFX.h" />
+    <ClInclude Include="KG3DSFXAnimationController.h" />
+    <ClInclude Include="KG3DSFXBillboard.h" />
+    <ClInclude Include="KG3DSfxBoxProjection.h" />
+    <ClInclude Include="KG3DSFXChannel.h" />
+    <ClInclude Include="KG3DSfxExp.h" />
+    <ClInclude Include="KG3DSFXMagicParpet.h" />
+    <ClInclude Include="KG3DSFXMeteor.h" />
+    <ClInclude Include="KG3DSfxMeteorParticle.h" />
+    <ClInclude Include="KG3DSFXParticle.h" />
+    <ClInclude Include="KG3DSFXParticleCommander.h" />
+    <ClInclude Include="KG3DSFXParticleContainer.h" />
+    <ClInclude Include="KG3DSFXParticleForceField.h" />
+    <ClInclude Include="KG3DSFXParticleLauncher.h" />
+    <ClInclude Include="KG3DSFXParticleLifeTimeLine.h" />
+    <ClInclude Include="KG3DSFXPointLightParticle.h" />
+    <ClInclude Include="KG3DSFXProjectionTextureMgr.h" />
+    <ClInclude Include="KG3DSFXSelectTexture.h" />
+    <ClInclude Include="KG3DSFXTrack.h" />
+    <ClInclude Include="KG3DBipTable.h" />
+    <ClInclude Include="KG3DFlexibleBody.h" />
+    <ClInclude Include="KG3DModelLightmapRenderTool.h" />
+    <ClInclude Include="KG3DModelSpeedTree.h" />
+    <ClInclude Include="KG3DModelSpeedTreeRender.h" />
+    <ClInclude Include="KG3DModelST.h" />
+    <ClInclude Include="KG3DSpeedTreeLeafGroup.h" />
+    <ClInclude Include="KG3DEffectFileTable.h" />
+    <ClInclude Include="KG3DMaterialEffectAmbient.h" />
+    <ClInclude Include="KG3DMaterialEffectSetter.h" />
+    <ClInclude Include="KG3DRuntimeMaterial.h" />
+    <ClInclude Include="KG3DBip.h" />
+    <ClInclude Include="KG3DBoneSet.h" />
+    <ClInclude Include="KG3DBoneSetEx.h" />
+    <ClInclude Include="KG3DInstanceBillboard.h" />
+    <ClInclude Include="KG3DInstanceHighDefGrass.h" />
+    <ClInclude Include="KG3DMeshBone.h" />
+    <ClInclude Include="KG3DAnimationController.h" />
+    <ClInclude Include="KG3DAnimationEventHandlerRepresentDummy.h" />
+    <ClInclude Include="KG3DAnimationSplitter.h" />
+    <ClInclude Include="KG3DAnimationWarper.h" />
+    <ClInclude Include="KG3DBipMapper.h" />
+    <ClInclude Include="KG3DClipTools.h" />
+    <ClInclude Include="KG3DRTSInfoCollector.h" />
+    <ClInclude Include="KG3DAnimationMotionTag.h" />
+    <ClInclude Include="KG3DAnimationSFXTag.h" />
+    <ClInclude Include="KG3DAnimationSoundTag.h" />
+    <ClInclude Include="KG3DAnimationTag.h" />
+    <ClInclude Include="KG3DAnimationTagContainer.h" />
+    <ClInclude Include="KG3DAnimationTagID.h" />
+    <ClInclude Include="KG3DFaceMotionSettings.h" />
+    <ClInclude Include="flash.h" />
+    <ClInclude Include="Jpegfile.h" />
+    <ClInclude Include="KG3DFlashTexture.h" />
+    <ClInclude Include="KG3DTextureAnimation.h" />
+    <ClInclude Include="tgalib.h" />
+    <ClInclude Include="PhysiscSystem\KG3DPhysiscManager.h" />
+    <ClInclude Include="PhysiscSystem\KG3DPhysiscScene.h" />
+    <ClInclude Include="Decompose.h" />
+    <ClInclude Include="KG3DBillboardCloud.h" />
+    <ClInclude Include="KG3DBillboardCloudCreater.h" />
+    <ClInclude Include="KG3DCaption.h" />
+    <ClInclude Include="KG3DCritDumper.h" />
+    <ClInclude Include="KG3DDataFlowArcTable.h" />
+    <ClInclude Include="KG3DEngine.h" />
+    <ClInclude Include="KG3DEngineTypes.h" />
+    <ClInclude Include="KG3DFileFinder.h" />
+    <ClInclude Include="KG3DHeightMap.h" />
+    <ClInclude Include="KG3DMeasureTool.h" />
+    <ClInclude Include="KG3DMemHeap.h" />
+    <ClInclude Include="KG3DMemoryFile.h" />
+    <ClInclude Include="KG3DModelBatchRender.h" />
+    <ClInclude Include="KG3DModelShadowRenderer.h" />
+    <ClInclude Include="KG3DRecorder.h" />
+    <ClInclude Include="KG3DRenderState.h" />
+    <ClInclude Include="KG3DRenderTargetTool.h" />
+    <ClInclude Include="KG3DRepresentObjectWall.h" />
+    <ClInclude Include="KG3DResourcePacker.h" />
+    <ClInclude Include="KG3DSceneShadowMap.h" />
+    <ClInclude Include="KG3DShareBuffer.h" />
+    <ClInclude Include="KG3DSkinModelRender.h" />
+    <ClInclude Include="KG3DStateBlock.h" />
+    <ClInclude Include="KG3DStaticModelRender.h" />
+    <ClInclude Include="KG3DSubSetRenderer.h" />
+    <ClInclude Include="KG3DTagSFXAnimationController.h" />
+    <ClInclude Include="KG3DTempleteMultiThead.h" />
+    <ClInclude Include="KG3DWaterEffect.h" />
+    <ClInclude Include="KOutputDebug.h" />
+    <ClInclude Include="ksmallobjectpool.h" />
+    <ClInclude Include="MathToolEx.h" />
+    <ClInclude Include="ocean_surface.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="KG3DUI.h" />
+    <ClInclude Include="KG3DUIMiniScene.h" />
+    <ClInclude Include="KG3DUITexture.h" />
+    <ClInclude Include="KG3DUIVBuffer.h" />
+    <ClInclude Include="Helpers\KG3DBaseHelpers.h" />
+    <ClInclude Include="Helpers\KG3DBlockTraverseData.h" />
+    <ClInclude Include="KG3DCollocator.h" />
+    <ClInclude Include="KG3DCommonContainer.h" />
+    <ClInclude Include="KG3DCommonObject.h" />
+    <ClInclude Include="KG3DCommonObjectBuilder.h" />
+    <ClInclude Include="KG3DCommonObjectContainerNode.h" />
+    <ClInclude Include="KG3DCommonObjectNode.h" />
+    <ClInclude Include="KG3DCommonObjectPool.h" />
+    <ClInclude Include="Helpers\KG3DDeviceHelpers.h" />
+    <ClInclude Include="Helpers\KG3DEngineCommandExecutor.h" />
+    <ClInclude Include="Helpers\KG3DEngineInterfaceGetter.h" />
+    <ClInclude Include="Helpers\KG3DGraphicsFunctions.h" />
+    <ClInclude Include="KG3DIntersection.h" />
+    <ClInclude Include="KG3DIntersectionBase.h" />
+    <ClInclude Include="KG3DLoopQueue.h" />
+    <ClInclude Include="Helpers\KG3DMeshHelpers.h" />
+    <ClInclude Include="Helpers\KG3DMessageBroadcasterGroup.h" />
+    <ClInclude Include="Helpers\KG3DMessageBroadcasterGroupImp.h" />
+    <ClInclude Include="KG3DMessageWMGListner.h" />
+    <ClInclude Include="Helpers\KG3DMessenger.h" />
+    <ClInclude Include="KG3DRTTIType.h" />
+    <ClInclude Include="KG3DSceneSettings.h" />
+    <ClInclude Include="KG3DStateInitializer.h" />
+    <ClInclude Include="Helpers\KG3DSystemEventListener.h" />
+    <ClInclude Include="KG3DTextureHelpers.h" />
+    <ClInclude Include="Helpers\KGStateMachine.h" />
+    <ClInclude Include="TemplateLibs\KG3DTemplateLibs\KG3DKeyConstainedMap.h" />
+    <ClInclude Include="Helpers\KG3DGraphicHelpers.h" />
+    <ClInclude Include="Helpers\KG3DLifeTimeDependedPointer.h" />
+    <ClInclude Include="Helpers\KG3DMathFunctions.h" />
+    <ClInclude Include="Helpers\KGArrayCompressor.h" />
+    <ClInclude Include="Helpers\KGBitSet.h" />
+    <ClInclude Include="Helpers\KGCommonBuffer.h" />
+    <ClInclude Include="Helpers\KGCommonWidgets.h" />
+    <ClInclude Include="Helpers\KGCustomAllocators.h" />
+    <ClInclude Include="Helpers\KGDesignPatternWidgets.h" />
+    <ClInclude Include="Helpers\KGHelperClasses.h" />
+    <ClInclude Include="Helpers\KGINIFileHelpers.h" />
+    <ClInclude Include="Helpers\KGINIFileHelpersEx.h" />
+    <ClInclude Include="Helpers\KGMathFunctions.h" />
+    <ClInclude Include="Helpers\KGPerformence.h" />
+    <ClInclude Include="Helpers\KGSTLWrappers.h" />
+    <ClInclude Include="Helpers\KGStringFunctions.h" />
+    <ClInclude Include="Helpers\KGStringFunctionsBase.h" />
+    <ClInclude Include="Helpers\KGStringFunctionsEx.h" />
+    <ClInclude Include="Helpers\KGTester.h" />
+    <ClInclude Include="Helpers\DummyInterfaces\KGDummyID3DXEffect.h" />
+    <ClInclude Include="Helpers\DummyInterfaces\KGDummyIFile.h" />
+    <ClInclude Include="KG3DDataFlowArc.h" />
+    <ClInclude Include="KG3DDataFlowConnectionNode.h" />
+    <ClInclude Include="KG3DDataFlowDataDefine.h" />
+    <ClInclude Include="KG3DDataFlowDataObject.h" />
+    <ClInclude Include="KG3DDataFlowDataObjectTable.h" />
+    <ClInclude Include="KG3DDataFlowProcessor.h" />
+    <ClInclude Include="KG3DDataFlowProcessorTable.h" />
+    <ClInclude Include="KG3DRepresentObjectDataFlowArc.h" />
+    <ClInclude Include="KG3DRepresentObjectDataFlowProcessor.h" />
+    <ClInclude Include="KG3DSceneDataFlowEditor.h" />
+    <ClInclude Include="KG3DSceneDataInterface.h" />
+    <ClInclude Include="fftw\config.h" />
+    <ClInclude Include="fftw\fftw-int.h" />
+    <ClInclude Include="fftw\fftw.h" />
+    <ClInclude Include="fftw\rfftw.h" />
+    <ClInclude Include="GraphicsStruct.h" />
+    <ClInclude Include="KG3DBBox.h" />
+    <ClInclude Include="Render\KG3DCuller.h" />
+    <ClInclude Include="Render\KG3DCullerTop.h" />
+    <ClInclude Include="Render\KG3DFrameDrawer.h" />
+    <ClInclude Include="KG3DGraphicsStructEx.h" />
+    <ClInclude Include="KG3DRect.h" />
+    <ClInclude Include="Render\KG3DRenderData.h" />
+    <ClInclude Include="Render\KG3DRenderDataDefault.h" />
+    <ClInclude Include="Render\KG3DRenderer.h" />
+    <ClInclude Include="Render\KG3DRendererDefault.h" />
+    <ClInclude Include="Render\KG3DRenderGlobalState.h" />
+    <ClInclude Include="Render\KG3DRenderSorterStratege.h" />
+    <ClInclude Include="Render\KG3DRenderSorterStrategeDefault.h" />
+    <ClInclude Include="Render\KG3DTextureFrameDrawer.h" />
+    <ClInclude Include="Render\KG3DDefaultShaderGroup.h" />
+    <ClInclude Include="Render\KG3DShaderCollocation.h" />
+    <ClInclude Include="Render\KG3DShaderHolder.h" />
+    <ClInclude Include="Render\KG3DShaderInclude.h" />
+    <ClInclude Include="Render\KG3DShaderIncludeForRC.h" />
+    <ClInclude Include="Render\KG3DShaderInfrastructure.h" />
+    <ClInclude Include="Render\KG3DShaderManager.h" />
+    <ClInclude Include="Render\KG3DShaderRCBridge.h" />
+    <ClInclude Include="shaders\ShaderDefinitions.h" />
+    <ClInclude Include="Terrain\KG3DGridHeightGetter.h" />
+    <ClInclude Include="Terrain\KG3DOutDoorAssistantFuncs.h" />
+    <ClInclude Include="KG3DSceneBlock.h" />
+    <ClInclude Include="KG3DSceneBlockLoader.h" />
+    <ClInclude Include="KG3DSceneOutDoorSpaceMgr.h" />
+    <ClInclude Include="Terrain\KG3DSceneSpaceNode.h" />
+    <ClInclude Include="KG3DTerrainBlock.h" />
+    <ClInclude Include="KG3DTerrainBlockGrass.h" />
+    <ClInclude Include="KG3DTerrainBlockModifier.h" />
+    <ClInclude Include="KG3DTerrainDetailTexture.h" />
+    <ClInclude Include="KG3DTerrainGrassesRender.h" />
+    <ClInclude Include="KG3DTerrainRegionInterface.h" />
+    <ClInclude Include="KG3DTerrainRender.h" />
+    <ClInclude Include="RecPlayer.h" />
+    <ClInclude Include="KG3DRepresentObjectPVS.h" />
+    <ClInclude Include="KG3DScenePvsEditor.h" />
+    <ClInclude Include="EnvEffect\KG3DCloud.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffCommonDef.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffDynamicWeather.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffect.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffFog.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffLight.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffLightSet.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffList.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffRenderer.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffStarryNight.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffWind.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvironment.h" />
+    <ClInclude Include="EnvEffect\KG3DMeshFarMountain.h" />
+    <ClInclude Include="EnvEffect\KG3DMeshLensFlare.h" />
+    <ClInclude Include="EnvEffect\KG3DMeshSkyBox.h" />
+    <ClInclude Include="EnvEffect\KG3DSkySystem.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffDW_BaseClasses.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffDW_HelperClasses.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffDW_KeyBase.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffDW_KeyTable.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffDW_KeyTableGenerator.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffDW_KeyTrack.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffDWController.h" />
+    <ClInclude Include="EnvEffect\KG3DEnvEffTimeInformer.h" />
+    <ClInclude Include="KG3DGPS.h" />
+    <ClInclude Include="KG3DRegionInfoManager.h" />
+    <ClInclude Include="KG3DRegionInformer.h" />
+    <ClInclude Include="KG3DTime.h" />
+    <ClInclude Include="KG3DAnimationSoundTagInfo.h" />
+    <ClInclude Include="KG3DAutoTestInterface.h" />
+    <ClInclude Include="KG3DBsp.h" />
+    <ClInclude Include="KG3DEngineOptionCaps.h" />
+    <ClInclude Include="KG3DFileLoader.h" />
+    <ClInclude Include="KG3DFuctionCommand.h" />
+    <ClInclude Include="KG3DLightMapBaker.h" />
+    <ClInclude Include="KG3DMeshLodGenerater.h" />
+    <ClInclude Include="KG3DMeshSkin.h" />
+    <ClInclude Include="KG3DModelLightMap.h" />
+    <ClInclude Include="KG3DModelPointLight.h" />
+    <ClInclude Include="KG3DMultiThreadLoader.h" />
+    <ClInclude Include="KG3DOutputWindowTable.h" />
+    <ClInclude Include="KG3DProfile.h" />
+    <ClInclude Include="KG3DRecPlayer.h" />
+    <ClInclude Include="KG3DRepresentNpcScreenRunner.h" />
+    <ClInclude Include="KG3DResourceDelayReleaseMgr.h" />
+    <ClInclude Include="KG3DScenePointLightRender.h" />
+    <ClInclude Include="KG3DSelector.h" />
+    <ClInclude Include="KG3DStateMachineBase.h" />
+    <ClInclude Include="KG3DTerrainRepresentInfo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Scene\KG3DCamera.cpp" />
+    <ClCompile Include="KG3DCameraPreset.cpp" />
+    <ClCompile Include="Scene\KG3DEntity.cpp" />
+    <ClCompile Include="Scene\KG3DFrustum.cpp" />
+    <ClCompile Include="Scene\KG3DHOcclusion.cpp" />
+    <ClCompile Include="Scene\KG3DScene.cpp" />
+    <ClCompile Include="Scene\KG3DSceneCameraMovement.cpp" />
+    <ClCompile Include="Scene\KG3DSceneClient.cpp" />
+    <ClCompile Include="Scene\KG3DSceneEditorBase.cpp" />
+    <ClCompile Include="Scene\KG3DSceneEntity.cpp" />
+    <ClCompile Include="Scene\KG3DSceneEntityGroup.cpp" />
+    <ClCompile Include="Scene\KG3DSceneEntityGroupTable.cpp" />
+    <ClCompile Include="Scene\KG3DSceneEntityMgr.cpp" />
+    <ClCompile Include="Scene\KG3DSceneFunctions.cpp" />
+    <ClCompile Include="Scene\KG3DSceneLayer.cpp" />
+    <ClCompile Include="KG3DSceneModelEditor.cpp" />
+    <ClCompile Include="Scene\KG3DSceneObjectEditor.cpp" />
+    <ClCompile Include="Scene\KG3DSceneOutputWnd.cpp" />
+    <ClCompile Include="Scene\KG3DSceneSceneEditor.cpp" />
+    <ClCompile Include="Scene\KG3DSceneSFXEditor.cpp" />
+    <ClCompile Include="Scene\KG3DSceneTable.cpp" />
+    <ClCompile Include="Scene\KG3DSceneWndManager.cpp" />
+    <ClCompile Include="Scene\KG3DSnapTool.cpp" />
+    <ClCompile Include="Scene\KG3DTrackCamera.cpp" />
+    <ClCompile Include="Scene\KG3DTransformation.cpp" />
+    <ClCompile Include="kg3dgrasspatterncontainer.cpp" />
+    <ClCompile Include="Terrain\KG3DSerpentine.cpp" />
+    <ClCompile Include="Terrain\KG3DTerrainRiver.cpp" />
+    <ClCompile Include="KG3DTerrainRoad.cpp" />
+    <ClCompile Include="KG3DFontRenderer.cpp" />
+    <ClCompile Include="KG3DFontTexture.cpp" />
+    <ClCompile Include="..\Image\IECapt.cpp" />
+    <ClCompile Include="..\Image\KBitmap16.cpp" />
+    <ClCompile Include="..\Image\KBmpFile24.cpp" />
+    <ClCompile Include="..\Image\KColors.cpp" />
+    <ClCompile Include="KG3DBaseCoord.cpp" />
+    <ClCompile Include="KG3DBaseCoordImp.cpp" />
+    <ClCompile Include="KG3DEditGridBase.cpp" />
+    <ClCompile Include="KG3DEditMoveGrid.cpp" />
+    <ClCompile Include="KG3DEditRotationGrid.cpp" />
+    <ClCompile Include="KG3DEditScaleGrid.cpp" />
+    <ClCompile Include="KG3DLocalMoveCoord.cpp" />
+    <ClCompile Include="KG3DLocalRotationCoord.cpp" />
+    <ClCompile Include="KG3DLocalScalCoord.cpp" />
+    <ClCompile Include="KG3DLocalTranslationCoord.cpp" />
+    <ClCompile Include="KG3DRepresentNPC.cpp" />
+    <ClCompile Include="KG3DRepresentNPCEx.cpp" />
+    <ClCompile Include="KG3DSceneCheckers.cpp" />
+    <ClCompile Include="KG3DSceneModelEditorPlayerTools.cpp" />
+    <ClCompile Include="KG3DSceneObjectPlacementTool.cpp" />
+    <ClCompile Include="KG3DSceneObjectTransformTool.cpp" />
+    <ClCompile Include="Scene\KG3DSceneSelectBase.cpp" />
+    <ClCompile Include="KG3DSceneSelectionTool.cpp" />
+    <ClCompile Include="KG3DSceneSelectionToolImp.cpp" />
+    <ClCompile Include="KG3DSceneTopSnapTool.cpp" />
+    <ClCompile Include="KG3DToolsImpl.cpp" />
+    <ClCompile Include="KSceneLogicRegionCellBuf.cpp" />
+    <ClCompile Include="KG3DEngineManager.cpp" />
+    <ClCompile Include="KG3DEngineOption.cpp" />
+    <ClCompile Include="KG3DGraphiceEngine.cpp" />
+    <ClCompile Include="KG3DGraphicsTool.cpp" />
+    <ClCompile Include="..\ViMD3DLib\source\ViMD3DLib9.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="KG3DPostRenderEffectAoe.cpp" />
+    <ClCompile Include="KG3DPostRenderEffectBase.cpp" />
+    <ClCompile Include="KG3DPostRenderEffectBloom.cpp" />
+    <ClCompile Include="KG3DPostRenderEffectBlur.cpp" />
+    <ClCompile Include="KG3DPostRenderEffectBump.cpp" />
+    <ClCompile Include="KG3DPostRenderEffectDOF.cpp" />
+    <ClCompile Include="KG3DPostRenderEffectHDR.cpp" />
+    <ClCompile Include="KG3DPostRenderEffectImageAdjust.cpp" />
+    <ClCompile Include="KG3DPostRenderEffectManager.cpp" />
+    <ClCompile Include="KG3DPostRenderEffectMisc.cpp" />
+    <ClCompile Include="KG3DPostRenderEffectShadow.cpp" />
+    <ClCompile Include="KG3DPostRenderEffectShockWave.cpp" />
+    <ClCompile Include="KG3DPostRenderEffectSSAO.cpp" />
+    <ClCompile Include="KG3DPostRenderEffectTwist.cpp" />
+    <ClCompile Include="KG3DPostRenderGodRay.cpp" />
+    <ClCompile Include="KG3DRepresentNPCTemplate.cpp" />
+    <ClCompile Include="KG3DRepresentObject.cpp" />
+    <ClCompile Include="KG3DRepresentObjectBuilder.cpp" />
+    <ClCompile Include="KG3DRepresentObjectDummy.cpp" />
+    <ClCompile Include="KG3DRepresentObjectNode.cpp" />
+    <ClCompile Include="KG3DRepresentObjectSet.cpp" />
+    <ClCompile Include="KG3DRepresentObjectSoundBall.cpp" />
+    <ClCompile Include="KG3DRepresentObjectTable.cpp" />
+    <ClCompile Include="KG3DRepresentObjectTemplate.cpp" />
+    <ClCompile Include="KG3DRepresentObjectTrans.cpp" />
+    <ClCompile Include="KG3DRepresentObjectVisibleEntitySet.cpp" />
+    <ClCompile Include="KG3DRepresentSpeedTree.cpp" />
+    <ClCompile Include="KG3DEffect.cpp" />
+    <ClCompile Include="KG3DKeyFrameControl.cpp" />
+    <ClCompile Include="KG3DNoise.cpp" />
+    <ClCompile Include="KG3DSFX.cpp" />
+    <ClCompile Include="KG3DSFXAnimationController.cpp" />
+    <ClCompile Include="KG3DSFXBillboard.cpp" />
+    <ClCompile Include="KG3DSfxBoxProjection.cpp" />
+    <ClCompile Include="KG3DSFXChannel.cpp" />
+    <ClCompile Include="KG3DSFXElement.cpp" />
+    <ClCompile Include="KG3DSfxExp.cpp" />
+    <ClCompile Include="KG3DSFXMagicParpet.cpp" />
+    <ClCompile Include="KG3DSFXMeteor.cpp" />
+    <ClCompile Include="KG3DSfxMeteorParticle.cpp" />
+    <ClCompile Include="KG3DSFXParticle.cpp" />
+    <ClCompile Include="KG3DSFXParticleCommander.cpp" />
+    <ClCompile Include="KG3DSFXParticleContainer.cpp" />
+    <ClCompile Include="KG3DSFXParticleForceField.cpp" />
+    <ClCompile Include="KG3DSFXParticleLauncher.cpp" />
+    <ClCompile Include="KG3DSFXParticleLifeTimeLine.cpp" />
+    <ClCompile Include="KG3DSFXParticleRenderTool.cpp" />
+    <ClCompile Include="KG3DSFXParticleTextureTool.cpp" />
+    <ClCompile Include="KG3DSFXPointLightParticle.cpp" />
+    <ClCompile Include="KG3DSFXProjectionTextureMgr.cpp" />
+    <ClCompile Include="KG3DSFXSelectTexture.cpp" />
+    <ClCompile Include="KG3DSFXTrack.cpp" />
+    <ClCompile Include="KG3DBipTable.cpp" />
+    <ClCompile Include="KG3DFlexibleBody.cpp" />
+    <ClCompile Include="KG3DModel.cpp">
+      <SubType>Designer</SubType>
+    </ClCompile>
+    <ClCompile Include="KG3DModelLightmapRenderTool.cpp" />
+    <ClCompile Include="KG3DModelSpeedTree.cpp" />
+    <ClCompile Include="KG3DModelSpeedTreeRender.cpp" />
+    <ClCompile Include="KG3DModelST.cpp" />
+    <ClCompile Include="KG3DModelTable.cpp" />
+    <ClCompile Include="KG3DSpeedTreeLeafGroup.cpp" />
+    <ClCompile Include="KG3DVolumeFog.cpp" />
+    <ClCompile Include="KG3DEffectFileTable.cpp" />
+    <ClCompile Include="KG3DMaterial.cpp" />
+    <ClCompile Include="KG3DMaterialEffectAmbient.cpp" />
+    <ClCompile Include="KG3DMaterialEffectSetter.cpp" />
+    <ClCompile Include="KG3DMaterialEx.cpp" />
+    <ClCompile Include="KG3DMaterialTable.cpp" />
+    <ClCompile Include="KG3DRuntimeMaterial.cpp" />
+    <ClCompile Include="KG3DBip.cpp" />
+    <ClCompile Include="KG3DBoneSet.cpp" />
+    <ClCompile Include="KG3DBoneSetEx.cpp" />
+    <ClCompile Include="KG3DInstanceBillboard.cpp" />
+    <ClCompile Include="KG3DInstanceHighDefGrass.cpp" />
+    <ClCompile Include="KG3DMesh.cpp" />
+    <ClCompile Include="KG3DMeshBone.cpp" />
+    <ClCompile Include="KG3DMeshLoader.cpp" />
+    <ClCompile Include="KG3DMeshTable.cpp" />
+    <ClCompile Include="KG3DAnimationController.cpp" />
+    <ClCompile Include="KG3DAnimationEventHandlerRepresentDummy.cpp" />
+    <ClCompile Include="KG3DAnimationSplitter.cpp" />
+    <ClCompile Include="KG3DAnimationWarper.cpp" />
+    <ClCompile Include="KG3DBipMapper.cpp" />
+    <ClCompile Include="KG3DClip.cpp" />
+    <ClCompile Include="KG3DClipTable.cpp" />
+    <ClCompile Include="KG3DClipTools.cpp" />
+    <ClCompile Include="KG3DRTSInfoCollector.cpp" />
+    <ClCompile Include="KG3DAnimationMotionTag.cpp" />
+    <ClCompile Include="KG3DAnimationSFXTag.cpp" />
+    <ClCompile Include="KG3DAnimationSoundTag.cpp" />
+    <ClCompile Include="KG3DAnimationTag.cpp" />
+    <ClCompile Include="KG3DAnimationTagContainer.cpp" />
+    <ClCompile Include="KG3DAnimationTagID.cpp" />
+    <ClCompile Include="KG3DFaceMotionSettings.cpp" />
+    <ClCompile Include="flash.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Jpegfile.cpp" />
+    <ClCompile Include="KG3DFlashTexture.cpp" />
+    <ClCompile Include="KG3DTexture.cpp" />
+    <ClCompile Include="KG3DTextureAnimation.cpp" />
+    <ClCompile Include="KG3DTextureTable.cpp" />
+    <ClCompile Include="tgalib.cpp" />
+    <ClCompile Include="PhysiscSystem\KG3DPhysiscManager.cpp" />
+    <ClCompile Include="PhysiscSystem\KG3DPhysiscScene.cpp" />
+    <ClCompile Include="Decompose.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="IKG3DModifior.cpp" />
+    <ClCompile Include="KG3DBillboardCloud.cpp" />
+    <ClCompile Include="KG3DBillboardCloudCreater.cpp" />
+    <ClCompile Include="KG3DCaption.cpp" />
+    <ClCompile Include="KG3DCritDumper.cpp" />
+    <ClCompile Include="KG3DDataFlowArcTable.cpp" />
+    <ClCompile Include="KG3DDebugD3DDevice.cpp" />
+    <ClCompile Include="KG3DEngine.cpp" />
+    <ClCompile Include="KG3DFileFinder.cpp" />
+    <ClCompile Include="KG3DHeightMap.cpp" />
+    <ClCompile Include="KG3DMeasureTool.cpp" />
+    <ClCompile Include="KG3DMemHeap.cpp" />
+    <ClCompile Include="KG3DMemoryFile.cpp" />
+    <ClCompile Include="KG3DModelBatchRender.cpp" />
+    <ClCompile Include="KG3DModelShadowRenderer.cpp" />
+    <ClCompile Include="KG3DRecorder.cpp" />
+    <ClCompile Include="KG3DRenderState.cpp" />
+    <ClCompile Include="KG3DRenderTargetTool.cpp" />
+    <ClCompile Include="KG3DRepresentObjectWall.cpp" />
+    <ClCompile Include="KG3DResourcePacker.cpp" />
+    <ClCompile Include="KG3DSceneShadowMap.cpp" />
+    <ClCompile Include="KG3DShareBuffer.cpp" />
+    <ClCompile Include="KG3DSkinModelRender.cpp" />
+    <ClCompile Include="KG3DStateBlock.cpp" />
+    <ClCompile Include="KG3DStaticModelRender.cpp" />
+    <ClCompile Include="KG3DSubSetRenderer.cpp" />
+    <ClCompile Include="KG3DTagSFXAnimationController.cpp" />
+    <ClCompile Include="KG3DWaterEffect.cpp" />
+    <ClCompile Include="KOutputDebug.cpp" />
+    <ClCompile Include="ksmallobjectpool.cpp" />
+    <ClCompile Include="MathTool.cpp" />
+    <ClCompile Include="MathToolEx.cpp" />
+    <ClCompile Include="ocean_surface.cpp" />
+    <ClCompile Include="RInterface.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="KG3DUI.cpp" />
+    <ClCompile Include="KG3DUIMiniScene.cpp" />
+    <ClCompile Include="KG3DUITexture.cpp" />
+    <ClCompile Include="KG3DUIVBuffer.cpp" />
+    <ClCompile Include="Helpers\KG3DBaseHelpers.cpp" />
+    <ClCompile Include="Helpers\KG3DBlockTraverseData.cpp" />
+    <ClCompile Include="KG3DCollocator.cpp" />
+    <ClCompile Include="KG3DCommonContainer.cpp" />
+    <ClCompile Include="KG3DCommonObject.cpp" />
+    <ClCompile Include="KG3DCommonObjectBuilder.cpp" />
+    <ClCompile Include="KG3DCommonObjectContainerNode.cpp" />
+    <ClCompile Include="KG3DCommonObjectNode.cpp" />
+    <ClCompile Include="KG3DCommonObjectPool.cpp" />
+    <ClCompile Include="Helpers\KG3DDeviceHelpers.cpp" />
+    <ClCompile Include="Helpers\KG3DEngineCommandExecutor.cpp" />
+    <ClCompile Include="Helpers\KG3DEngineInterfaceGetter.cpp" />
+    <ClCompile Include="Helpers\KG3DGraphicsFunctions.cpp" />
+    <ClCompile Include="KG3DIntersection.cpp" />
+    <ClCompile Include="Helpers\KG3DMeshHelpers.cpp" />
+    <ClCompile Include="Helpers\KG3DMessageBroadcasterGroupImp.cpp" />
+    <ClCompile Include="KG3DMessageWMGListner.cpp" />
+    <ClCompile Include="Helpers\KG3DMessenger.cpp" />
+    <ClCompile Include="KG3DRTTIType.cpp" />
+    <ClCompile Include="KG3DSceneSettings.cpp" />
+    <ClCompile Include="KG3DStateInitializer.cpp" />
+    <ClCompile Include="Helpers\KG3DSystemEventListener.cpp" />
+    <ClCompile Include="KG3DTextureHelpers.cpp" />
+    <ClCompile Include="Helpers\KGStateMachine.cpp" />
+    <ClCompile Include="Helpers\KG3DGraphicHelpers.cpp" />
+    <ClCompile Include="Helpers\KG3DMathFunctions.cpp" />
+    <ClCompile Include="Helpers\KGArrayCompressor.cpp" />
+    <ClCompile Include="Helpers\KGBitSet.cpp" />
+    <ClCompile Include="Helpers\KGCommonWidgets.cpp" />
+    <ClCompile Include="Helpers\KGCustomAllocators.cpp" />
+    <ClCompile Include="Helpers\KGHelperClasses.cpp" />
+    <ClCompile Include="Helpers\KGINIFileHelpers.cpp" />
+    <ClCompile Include="Helpers\KGINIFileHelpersEx.cpp" />
+    <ClCompile Include="Helpers\KGMathFunctions.cpp" />
+    <ClCompile Include="Helpers\KGPerformence.cpp" />
+    <ClCompile Include="Helpers\KGSTLWrappers.cpp" />
+    <ClCompile Include="Helpers\KGStringFunctions.cpp" />
+    <ClCompile Include="Helpers\KGStringFunctionsBase.cpp" />
+    <ClCompile Include="Helpers\KGTester.cpp" />
+    <ClCompile Include="KG3DDataFlowArc.cpp" />
+    <ClCompile Include="KG3DDataFlowConnectionNode.cpp" />
+    <ClCompile Include="KG3DDataFlowDataDefine.cpp" />
+    <ClCompile Include="KG3DDataFlowDataObject.cpp" />
+    <ClCompile Include="KG3DDataFlowDataObjectTable.cpp" />
+    <ClCompile Include="KG3DDataFlowProcessor.cpp" />
+    <ClCompile Include="KG3DDataFlowProcessorTable.cpp" />
+    <ClCompile Include="KG3DRepresentObjectDataFlowArc.cpp" />
+    <ClCompile Include="KG3DRepresentObjectDataFlowProcessor.cpp" />
+    <ClCompile Include="KG3DSceneDataFlowEditor.cpp" />
+    <ClCompile Include="KG3DSceneDataInterface.cpp" />
+    <ClCompile Include="fftw\config.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\executor.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_1.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_10.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_11.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_12.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_128.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_13.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_14.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_15.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_16.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_2.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_3.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_32.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_4.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_5.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_6.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_64.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_7.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_8.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_9.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fftwf77.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fftwnd.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_10.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_16.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_2.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_3.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_32.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_4.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_5.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_6.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_7.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_8.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_9.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_10.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_16.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_2.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_3.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_32.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_4.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_5.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_6.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_7.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_8.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_9.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_1.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_10.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_11.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_12.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_13.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_14.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_15.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_16.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_2.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_3.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_32.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_4.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_5.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_6.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_64.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_7.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_8.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_9.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_1.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_10.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_11.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_12.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_13.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_14.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_15.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_16.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_2.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_3.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_32.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_4.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_5.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_6.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_64.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_7.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_8.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_9.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_1.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_10.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_11.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_12.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_128.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_13.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_14.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_15.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_16.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_2.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_3.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_32.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_4.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_5.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_6.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_64.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_7.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_8.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_9.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_10.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_16.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_2.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_3.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_32.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_4.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_5.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_6.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_64.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_7.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_8.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_9.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_10.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_16.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_2.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_3.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_32.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_4.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_5.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_6.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_64.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_7.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_8.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_9.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\generic.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\malloc.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\planner.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\putils.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\rader.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\rconfig.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\rexec.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\rexec2.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\rfftwf77.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\rfftwnd.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\rgeneric.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\rplanner.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\timer.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\twiddle.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\wisdom.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="fftw\wisdomio.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AutoTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DevTest|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="GraphicsStruct.cpp" />
+    <ClCompile Include="KG3DBBox.cpp" />
+    <ClCompile Include="Render\KG3DCullerTop.cpp" />
+    <ClCompile Include="Render\KG3DFrameDrawer.cpp" />
+    <ClCompile Include="KG3DGraphicsStructEx.cpp" />
+    <ClCompile Include="Render\KG3DRenderDataDefault.cpp" />
+    <ClCompile Include="Render\KG3DRendererDefault.cpp" />
+    <ClCompile Include="Render\KG3DRenderGlobalState.cpp" />
+    <ClCompile Include="Render\KG3DRenderSorterStrategeDefault.cpp" />
+    <ClCompile Include="Render\KG3DTextureFrameDrawer.cpp" />
+    <ClCompile Include="Render\KG3DDefaultShaderGroup.cpp" />
+    <ClCompile Include="Render\KG3DShaderCollocation.cpp" />
+    <ClCompile Include="Render\KG3DShaderHolder.cpp" />
+    <ClCompile Include="Render\KG3DShaderInclude.cpp" />
+    <ClCompile Include="Render\KG3DShaderIncludeForRC.cpp" />
+    <ClCompile Include="Render\KG3DShaderInfrastructure.cpp" />
+    <ClCompile Include="Render\KG3DShaderManager.cpp" />
+    <ClCompile Include="Render\KG3DShaderRCBridge.cpp" />
+    <ClCompile Include="Terrain\KG3DGridHeightGetter.cpp" />
+    <ClCompile Include="Terrain\KG3DOutDoorAssistantFuncs.cpp" />
+    <ClCompile Include="KG3DSceneBlock.cpp" />
+    <ClCompile Include="KG3DSceneBlockLoader.cpp" />
+    <ClCompile Include="KG3DSceneOutDoorSpaceMgr.cpp" />
+    <ClCompile Include="Terrain\KG3DSceneSpaceNode.cpp" />
+    <ClCompile Include="KG3DTerrainBlock.cpp" />
+    <ClCompile Include="KG3DTerrainBlockGrass.cpp" />
+    <ClCompile Include="KG3DTerrainBlockModifier.cpp" />
+    <ClCompile Include="KG3DTerrainDetailTexture.cpp" />
+    <ClCompile Include="KG3DTerrainGrassesRender.cpp" />
+    <ClCompile Include="KG3DTerrainRegionInterface.cpp" />
+    <ClCompile Include="KG3DTerrainRender.cpp" />
+    <ClCompile Include="RecPlayer.cpp" />
+    <ClCompile Include="KG3DRepresentObjectPVS.cpp" />
+    <ClCompile Include="KG3DScenePvsEditor.cpp" />
+    <ClCompile Include="EnvEffect\KG3DCloud.cpp" />
+    <ClCompile Include="EnvEffect\KG3DEnvEffDynamicWeather.cpp" />
+    <ClCompile Include="EnvEffect\KG3DEnvEffect.cpp" />
+    <ClCompile Include="EnvEffect\KG3DEnvEffFog.cpp" />
+    <ClCompile Include="EnvEffect\KG3DEnvEffLight.cpp" />
+    <ClCompile Include="EnvEffect\KG3DEnvEffLightSet.cpp" />
+    <ClCompile Include="EnvEffect\KG3DEnvEffList.cpp" />
+    <ClCompile Include="EnvEffect\KG3DEnvEffRenderer.cpp" />
+    <ClCompile Include="EnvEffect\KG3DEnvEffStarryNight.cpp" />
+    <ClCompile Include="EnvEffect\KG3DEnvEffWind.cpp" />
+    <ClCompile Include="EnvEffect\KG3DEnvironment.cpp" />
+    <ClCompile Include="EnvEffect\KG3DMeshFarMountain.cpp" />
+    <ClCompile Include="EnvEffect\KG3DMeshLensFlare.cpp" />
+    <ClCompile Include="EnvEffect\KG3DMeshSkyBox.cpp" />
+    <ClCompile Include="EnvEffect\KG3DSkySystem.cpp" />
+    <ClCompile Include="EnvEffect\KG3DEnvEffDW_KeyTable.cpp" />
+    <ClCompile Include="EnvEffect\KG3DEnvEffDW_KeyTableGenerator.cpp" />
+    <ClCompile Include="EnvEffect\KG3DEnvEffDW_KeyTrack.cpp" />
+    <ClCompile Include="EnvEffect\KG3DEnvEffDWController.cpp" />
+    <ClCompile Include="EnvEffect\KG3DEnvEffTimeInformer.cpp" />
+    <ClCompile Include="KG3DGPS.cpp" />
+    <ClCompile Include="KG3DRegionInfoManager.cpp" />
+    <ClCompile Include="KG3DRegionInformer.cpp" />
+    <ClCompile Include="KG3DTime.cpp" />
+    <ClCompile Include="KG3DAnimationSoundTagInfo.cpp" />
+    <ClCompile Include="KG3DAutoTestInterface.cpp" />
+    <ClCompile Include="KG3DBsp.cpp" />
+    <ClCompile Include="KG3DEngineOptionCaps.cpp" />
+    <ClCompile Include="KG3DFileLoader.cpp" />
+    <ClCompile Include="KG3DFuctionCommand.cpp" />
+    <ClCompile Include="KG3DLightMapBaker.cpp" />
+    <ClCompile Include="KG3DMeshLodGenerater.cpp" />
+    <ClCompile Include="KG3DMeshSkin.cpp" />
+    <ClCompile Include="KG3DModelLightMap.cpp" />
+    <ClCompile Include="KG3DModelPointLight.cpp" />
+    <ClCompile Include="KG3DMultiThreadLoader.cpp" />
+    <ClCompile Include="KG3DOutputWindowTable.cpp" />
+    <ClCompile Include="KG3DProfile.cpp" />
+    <ClCompile Include="KG3DRecPlayer.cpp" />
+    <ClCompile Include="KG3DRepresentNpcScreenRunner.cpp" />
+    <ClCompile Include="KG3DResourceDelayReleaseMgr.cpp" />
+    <ClCompile Include="KG3DScenePointLightRender.cpp" />
+    <ClCompile Include="KG3DSelector.cpp" />
+    <ClCompile Include="KG3DStateMachineBase.cpp" />
+    <ClCompile Include="KG3DTerrainRepresentInfo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="KG3DEngine.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="KG3DEngine.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

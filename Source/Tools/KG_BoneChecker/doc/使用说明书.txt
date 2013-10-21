@@ -1,0 +1,25 @@
+!!!!使用前请拷贝客户端目录下的Engine_Lua5D.dll和Engine_Lua5D.dll到product目录下
+
+剑三模型骨架检查工具：
+用法1: 指定剑三客户端路径 
+参数:  -client 
+作用:  i>检查客户端下是否有相同的骨架文件, 结果写入BipCheckResult.txt 
+        ii>调整与骨架文件不匹配的动作文件, 结果写入AniCheckResult.txt 
+示例:  KG_BoneChecker.exe -client D:\Kingsoft\Game\Sword3-products\trunk\client 
+
+用法2: 指定一个骨架文件 
+参数:  -bip 
+作用:  调整与骨架文件不匹配的动作文件, 结果写入AniCheckResult.txt 
+示例1: 动作文件在骨架文件的相同目录下 
+        KG_BoneChecker.exe -bip d:\model\model.txt  (在d:\\model\\下有如model_st01.ani, model_st02.ani等动作文件) 
+示例2: 动作文件在NPC_Source和player的对应目录下 
+        KG_BoneChecker.exe -bip d:\client\data\source\NPC_source\A001\模型\A001.txt
+        KG_BoneChecker.exe -bip d:\client\data\source\player\M2\部件\Mdl\M2.txt
+
+!!!!需要注意的地方!!!!
+1. 检查AniCheckResult.txt
+   查看是否有 "ERROR !! bonenum dismatch!", 若有则表明动作文件有误;
+
+2. 检查BipCheckResult.txt
+   查看否有 "##ERROR", 若有则表明骨架文件有误;
+   查看是否有 "##WARNING same skeleton", 若有则表明两个骨架相同，需确认各自文件夹下的mdl文件中填的是本目录下的txt文件;

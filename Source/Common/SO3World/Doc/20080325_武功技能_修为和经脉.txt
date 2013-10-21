@@ -1,0 +1,82 @@
+======================================================================================
+修为、经脉                                                                           |
+======================================================================================
+
+评审时间：2008-3-25
+
+参与人员：汪淘 侯锐
+
+文档目的：实现武功技能的修为和经脉系统
+
+相关概念：
+--------------------------------------------------------------------------------------
+1. “修为 & 经脉”的关系：
+   玩家的修为点数可以用来打通经脉。
+
+2. 修为的改变：
+   2.1 每天给玩家增加固定的修为点数。
+   2.2 玩家登录时候，计算需增加的修为点数，增加修为。计算公式为(待定)：
+       (上次登录时间 - 本次登录时间) * 每天增加的修为点数 / 24
+   2.3 玩家打通经脉需要消耗修为。
+
+3. 玩家的修为有上限。
+
+4. 玩家修为上限可以修改，修改时机：
+   4.1 玩家第一次登录(只有一次)
+   4.2 应用魔法属性(穿上某种装备、或学习了某种技能)
+
+
+修改方案：
+--------------------------------------------------------------------------------------
+1. 提供增加修为的接口。
+
+2. 提供取上次登录时间、本次登录时间的接口。
+
+3. 玩家身上增加上次登录时间、本次登录时间、最大修为、当前修为的变量。
+
+4. 提供设置修为上限的接口。
+
+5. 玩家的上次登录时间需要存盘。
+
+6. 增加打通经脉相关的协议。
+
+
+本次修改涉及的代码：
+--------------------------------------------------------------------------------------
+1. 文件KLuaPlayer.cpp中，增加以下函数：
+   1.1 设置修为上限  ：int KPlayer::LuaSetMaxTrain(Lua_State* L)
+   1.2 增加修为      ：int KPlayer::LuaAddTrain(Lua_State* L)
+   1.3 取上次登录时间：int KPlayer::LuaGetLastLoginTime(Lua_State* L)
+   1.4 取本次登录时间：int KPlayer::LuaGetCurrentLoginTime(Lua_State* L)
+   1.5 打通经脉      ：int KPlayer::LuaOpenVenation(Lua_State* L)
+
+2. 文件KPlayer.h中，增加以下成员变量： 
+   2.1 上次登陆时间：time_t    m_nLastLoginTime;     
+   2.2 本次登陆时间：time_t    m_nCurrentLoginTime;   
+   2.3 当前修为值  ：int       m_nCurrentTrainValue;  
+   2.4 最大修为值  ：int       m_nMaxTrainValue;     
+
+3. 文件KPlayer.cpp中：
+   3.1 函数KPlayer::Init，增加对新增成员变量的初始化。
+   3.2 函数KPlayer::LoadBaseRoleData，增加对LastLoginTime、m_nCurrentTime的读取。
+   3.3 函数KPlayer::LoadStateInfo，增加对m_nCurrentTrainValue、m_nMaxTrainValue的读取。
+   3.4 函数KPlayer::SaveBaseRoleData，增加lLastLoginTime的存盘。
+
+4. 文件KPlayerClient.cpp中：
+   4.1 函数KPlayerClient::OnSyncPlayerStateData，增加对m_nCurrentTrainValue、
+       m_nMaxTrainValue的赋值。
+   4.2 增加函数：KPlayerClient::OnSyncPlayerTrain(char* pData, size_t nSize, int mFrame)
+       用于处理服务端发来的同步玩家修为状态的数据包。
+
+5. 文件KPlayerServer.cpp中：
+   5.1 函数KPlayerServer::DoSyncPlayerStateData，增加发送nCurrentTrainValue、
+       nMaxTrainValue至客户端。
+   5.2 增加函数：KPlayerServer::DoSyncPlayerTrain(KPlayer* pPlayer)
+       用于向客户端发送同步玩家修为状态的数据包。
+
+6. 文件KRoleDBDataDef.h中：
+   6.1 结构体KBaseData中，增加以下成员，用于角色存盘：
+       time_t	lLastSaveTime;
+       time_t  lLastLoginTime;
+
+7. 文件GS_Client_Protocol.h中，增加协议：g2c_sync_player_train。

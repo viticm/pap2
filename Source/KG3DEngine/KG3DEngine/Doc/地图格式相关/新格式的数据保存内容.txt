@@ -1,0 +1,70 @@
+RepresentObject的SaveToInformationBuffer操作会保存如下数据到缓冲中（不同的Object）：
+
+*KG3DRepresentObject
+  1、object的m_vecModel的个数
+  2、版本，默认为0
+  3、m_vecModel每个model的mesh文件名，mtl文件名,Ani文件名
+  4、并返回正确的type
+
+*KG3DRepresentObjectSoundBall
+  1、版本，默认为0
+  2、音效球的文件名
+  3、并返回正确的type
+
+*KG3DRepresentObjectSet
+  1、CurrentModel对应的索引
+  2、版本，默认为0
+  3、集合的文件名（配置文件名）
+
+************************************************
+KG3DSceneBlockData的保存数据
+
+*保存版本
+
+*保存m_bTerrainBlock（是否创建有地形）
+
+*保存m_mapData数目和具体数据
+
+************************************************
+
+数据层核心的SaveToFile会保存如下数据到文件中：
+假定文件名为FileName.ext（ext是后缀名）
+
+*会生成文件夹名为“FileNameFile"的文件夹
+
+*生成文件头信息保存，文件头信息有：
+   dwMask（文件类型，固定为0x10203040）、dwVersion、m_uCurrentEntityID、m_uCurrentEntityInformationID、m_uCurrentTerrainInformationID、m_mapEntity.size、m_mapEntityInformation.size、m_mapTerrainInformation.size、m_mapSceneBlockData[i].size，还有128个DWORD型的扩展信息
+
+*保存物件信息，包括
+  1、保存物件信息前，会先清除掉原来无用的物件信息
+  2、物件信息总数（m_mapEntityInformation.size）
+  3、每个物件信息的ID
+  4、每个物件的信息存储到指定路径为“FileNameFile”文件夹下的文件名为“物件信息ID号.EntityInfo”
+
+*保存地形信息，包括  
+  1、地形信息总数（m_mapTerrainInformation.size）
+  3、每个地形的ID
+  4、每个物件的信息存储到指定路径为“FileNameFile”文件夹下的文件名为“物件信息ID号.TerrainInfo”
+***注意：
+ 读取地形信息时，会有加载Terrain_Info_DetailMtlMgr或Terrain_Info_GrassSet类型数据的操作
+
+*保存场景数据，包括
+  1、每层场景数据总数（m_mapSceneBlockData[s].size）
+  2、每个场景数据所在的位置（或者说是索引，例如如果是Zone，则是该Zone对应的索引）
+  3、每个场景数据存储到指定路径为“FileNameFile”文件夹下的文件名为“物件所在的Level_物件所在索引的X坐标_物件所在索引的Z坐标.Block”
+***注意，保存场景数据的时候，可能存在重新加载的该场景数据的情况
+***注意，
+  （1）读取的时候会创建指定索引的对应数据放入到m_mapSceneBlockData的对应的level中，并且创建该对应level的场景数据（有outdoormgr管理通知创建）
+  （2）如果读到的该场景数据的m_bTerrainBlock为true时，即创建有对应的地形Block，那么会通知outdoormgr，由其进行对应的地形创建操作，并加载对应的地形信息
+  （3）在读取场景数据时，即LoadSceneBlockFromFile操作时，会计算BBox
+
+*保存物件（实体），包括
+  1、实体总数（m_mapEntity.size）
+  2、每个物件的ID
+  3、每个物件信息的ID
+  4、每个物件的变换信息
+
+***注意加载数据的时候，是会生成用来读数据和写回数据的两个文件夹
+***加载的时候会涉及到一些数据的创建操作，比保存的操作要复杂点
+
+

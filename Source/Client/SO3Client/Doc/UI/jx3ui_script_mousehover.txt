@@ -1,0 +1,40 @@
+MouseHover_IsHoverWndObj
+	说明：判断指定窗口对象是否为当前鼠标停留窗口对象；
+	参数：szTreePath		窗口树路径名，
+		  nObj				窗口对象索引，以后可能废弃；
+	返回：bIsHoverWndObj 	true为是当前窗口对象，false为不是当前窗口对象；
+		
+MouseHover_ShowInfo
+	说明：显示鼠标跟随信息；
+	参数：szTreePath		窗口树路径名，
+		  nObj				窗口对象索引，以后可能废弃；
+		  nX，nY			信息显示坐标，
+		  bFollowCursor		在信息显示过程中是非需要跟随鼠标；
+	返回：nil
+		
+MouseHover_SetInfo
+	说明：设置鼠标跟随信息；
+	参数：szInfo			鼠标跟随信息内容，
+		  nInfoLength		鼠标跟随信息长度；
+	返回：nil
+
+MouseHover_SetInfoShadowColor
+	说明：设置鼠标跟随信息阴影颜色；
+	参数：dwColor 			阴影颜色，目前没做可用性调整；
+	返回：nil
+
+MouseHover_HideInfo
+	说明：隐藏鼠标跟随信息；
+	参数：nil
+	返回：nil
+
+MouseHover_UpdateCursorPos
+	说明：更新鼠标跟随信息显示位置；
+	参数：nX，nY			鼠标跟随信息坐标，
+	返回：nil
+
+MouseHover_LoadScheme
+	说明：隐藏鼠标跟随信息；
+	参数：szScheme			鼠标跟随信息配置方案路径名，相对于游戏目录；
+	返回：nil
+

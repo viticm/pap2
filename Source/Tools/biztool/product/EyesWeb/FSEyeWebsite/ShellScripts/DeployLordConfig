@@ -1,0 +1,4 @@
+#/bin/bash
+#deploy lord.cfg
+
+mv -f {0} {1}/lord.cfg

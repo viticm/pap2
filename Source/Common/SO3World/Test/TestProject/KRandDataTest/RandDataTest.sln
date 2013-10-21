@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RandDataAutoTest", "RandDataAutoTest\RandDataAutoTest.vcproj", "{BC56C99F-4D0D-45A2-8BC6-F8E806D93FEF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RandDataExtTest", "RandDataExtTest\RandDataExtTest.vcproj", "{6DD85741-1822-4EDF-8068-9FBEBCBD0634}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC56C99F-4D0D-45A2-8BC6-F8E806D93FEF}.Debug|Win32.ActiveCfg = Release|Win32
+		{BC56C99F-4D0D-45A2-8BC6-F8E806D93FEF}.Debug|Win32.Build.0 = Release|Win32
+		{BC56C99F-4D0D-45A2-8BC6-F8E806D93FEF}.Release|Win32.ActiveCfg = Release|Win32
+		{BC56C99F-4D0D-45A2-8BC6-F8E806D93FEF}.Release|Win32.Build.0 = Release|Win32
+		{6DD85741-1822-4EDF-8068-9FBEBCBD0634}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6DD85741-1822-4EDF-8068-9FBEBCBD0634}.Debug|Win32.Build.0 = Debug|Win32
+		{6DD85741-1822-4EDF-8068-9FBEBCBD0634}.Release|Win32.ActiveCfg = Release|Win32
+		{6DD85741-1822-4EDF-8068-9FBEBCBD0634}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

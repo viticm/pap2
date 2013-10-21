@@ -1,0 +1,31 @@
+Color_AddScheme
+	说明：添加颜色方案，如果颜色方案已存在，那么不作改动；
+	参数：szSchemeName  	颜色方案名字，
+		  szColor 			待添加颜色，格式如255,0,0表示红；
+	返回：nil
+
+Color_HasColor
+	说明：根据索引判断是否存在颜色方案；
+	参数：nIndex  			颜色方案索引；
+	返回：bHas				如果为1表示存在，0表示不存在；			
+
+Color_GetColor
+	说明：根据颜色方案索引或者颜色方案名字取颜色；
+	参数：nIndex 			颜色方案索引，
+		| szSchemeName 		颜色方案名字；
+	返回：szColor			颜色，格式如255,0,0表示红；
+
+Color_GetCount
+	说明：取颜色方案个数；
+	参数：nil
+	返回：nCount			方案个数；			
+	
+Color_GetColorName(int nIndex, LPTSTR szColorName, int nColorNameBufferLength);
+	说明：根据颜色方案索引取÷颜色名字；
+	参数：nIndex 			颜色方案索引；
+	返回：szColorName		颜色名字；			
+
+Color_LoadScheme
+	说明：加载颜色方案，不会清空原来的方案；
+	参数：nil
+	返回：nil

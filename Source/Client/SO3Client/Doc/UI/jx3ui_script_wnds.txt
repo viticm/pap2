@@ -1,0 +1,78 @@
+Wnd_OpenOrCloseWindow
+	说明：如果窗口已经被打开，那么关闭；如果窗口没有被打开，则打开；
+	参数：szConfigFileName 窗口布局配置文件名字，不需要完整路径，不需要扩展名；
+	返回：nil
+	
+Wnd_OpenWindow
+	说明：如果窗口已经被打开，那么关闭；如果窗口没有被打开，则打开；
+	参数：szConfigFileName 窗口布局配置文件名字，不需要完整路径，不需要扩展名；
+	返回：nil
+	
+Wnd_CloseWindow
+	说明：如果窗口已经被打开，那么关闭；如果窗口没有被打开，则打开；
+	参数：szConfigFileName 窗口布局配置文件名字，不需要完整路径，不需要扩展名；
+	返回：nil
+	
+Wnd_ShowOrHideWindow
+	说明：如果窗口已经被打开，那么关闭；如果窗口没有被打开，则打开；
+	参数：szConfigFileName 窗口布局配置文件名字，不需要完整路径，不需要扩展名；
+	返回：nil
+	
+Wnd_ShowWindow
+	说明：如果窗口已经被打开，那么关闭；如果窗口没有被打开，则打开；
+	参数：szConfigFileName 窗口布局配置文件名字，不需要完整路径，不需要扩展名；
+	返回：nil
+	
+Wnd_HideWindow
+	说明：如果窗口已经被打开，那么关闭；如果窗口没有被打开，则打开；
+	参数：szConfigFileName 窗口布局配置文件名字，不需要完整路径，不需要扩展名；
+	返回：nil
+
+Wnd_GetCursorPos						
+	说明：取当前鼠标指针绝对坐标；
+	参数：nil
+	返回：nX，nY
+	
+Wnd_GetCursorRelativePos		
+	说明：取当前鼠标指针相对坐标，相对跟绝对的差别是相对坐标经过转化，因为目前界面系统默认是1024x768的，
+	      相对坐标是窗口大小跟1024x768的比例值；
+	      简单来说，相对x坐标的取值范围为0-1023，y坐标的取值范围为0-767；
+	参数：nil
+	返回：nX，nY
+	
+Wnd_GetCurrentCursor				
+	说明：取当前鼠标指针索引号；
+	参数：nil
+	返回：nIndex
+
+Wnd_ShowCursor	
+	说明：显示或者隐藏鼠标指针；
+	参数：bShow，true的时候显示，false的时候隐藏；
+	返回：nil
+
+Wnd_SetCursorPos						
+	说明：设置当前鼠标指针坐标；
+	参数：nX，nY，决对坐标
+	返回：nil
+
+Wnd_TransformCursorAbsPosToRelPos
+	说明：转换当前鼠标指针绝对坐标为相对坐标；
+	参数：nX，nY，决对坐标
+	返回：nX，nY，相对坐标
+
+Wnd_LoadCursor
+	说明：加载鼠标指针
+	参数：nIndex 			加载所有，目前还没做安全性处理，估计需要递增加载；
+	      szCursorFilePath	加载鼠标图片路径，配置方面是临时的；
+	返回：nil
+				
+Wnd_SwitchCursor					
+	说明：切换当前鼠标指针；
+	参数：nIndex 需要更改的鼠标指针索引；
+	返回：nIndex 原来的鼠标指针索引；
+
+Wnd_RestoreCursor					
+	说明：还原鼠标指针；
+	参数：nil
+	返回：nil
+

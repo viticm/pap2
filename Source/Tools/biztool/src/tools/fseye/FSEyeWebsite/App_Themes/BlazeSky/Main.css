@@ -1,0 +1,720 @@
+﻿body 
+{
+	padding: 0px;
+	margin: 0px;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+.TN
+{
+	border: solid 1px #808080;
+	width: 100%;
+}
+
+.TM
+{
+	border: solid 1px #808080;
+	width: 60%;
+}
+
+.TableInsidePanelNoScroll
+{
+	border: solid 1px #0D456E;
+	width: 100%;
+}
+
+.TableInsidePanelScroll
+{
+	border: solid 1px #0D456E;
+	width: 97%;
+}
+
+.TableMedium
+{
+	border: solid 1px #0D456E;
+	width: 60%;
+}
+
+.TableSection
+{
+	width: 100%;
+}
+
+.TableRowSectionTitle
+{
+	font-weight: bold;
+	color: #333333;
+}
+
+.TableCellList
+{
+	background-color: #DDDDDD;
+}
+
+.TableRowSpacing
+{
+	width: 100%;
+	height: 10px;
+}
+
+.TableCaption
+{
+	color: #333333;
+	width: 100%;
+	height: 20px;
+	font-weight: bold;	
+}
+
+.TableRowButton
+{
+	width: 100%;
+	height: 22px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.TRH
+{
+	height: 25px;
+}
+
+.TCH
+{
+	text-align: center;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #5099B3;
+	height: 20px;
+	border-bottom: solid 1px #808080;
+	border-right: solid 1px #808080;
+}
+
+.TRN
+{
+}
+
+.TCN
+{	
+	text-align: center;
+	height: 22px;
+	border: outset 1px #FFFFFF;
+}
+
+.Connected
+{
+	text-align: center;
+	background-color: #00CC00;
+	border: outset 1px #FFFFFF;
+}
+
+.Disconnected
+{
+	text-align: center;
+	background-color: #CC0000;
+	border: outset 1px #FFFFFF;
+}
+
+/*GameStateUnknown*/
+.GSUnknown
+{
+	text-align: center;
+	background-color: #CCCCCC;
+	border: outset 1px #FFFFFF;
+}
+
+/*GameStateStarting*/
+.GSStarting
+{
+	text-align: center;
+	background-color: #CCCC00;
+	border: outset 1px #FFFFFF;
+}
+
+/*GameStateRunning*/
+.GSRunning
+{
+	text-align: center;
+	background-color: #00CC00;
+	border: outset 1px #FFFFFF;
+}
+
+/*GameStateStopping*/
+.GSStopping
+{
+	text-align: center;
+	background-color: #CCCC00;
+	border: outset 1px #FFFFFF;
+}
+
+/*GameStateStopped*/
+.GSStopped
+{
+	text-align: center;
+	background-color: #CC0000;
+	border: outset 1px #FFFFFF;
+}
+
+.LowLoad
+{
+	color: #FFFFFF;
+	background-color: Green;
+}
+
+.MediumLoad
+{
+	color: #FFFFFF;
+	background-color: #FF6600;
+}
+
+.HighLoad
+{
+	color: #FFFFFF;
+	background-color: #FF0000;
+}
+
+.ButtonNormal
+{
+	width: 80px;
+	height: 25px;
+}
+
+.TableCaption
+{
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+ul, ul li 
+{
+	padding: 0;
+	margin: 0;
+	list-style: none;	
+}
+
+.TextButton
+{
+	text-align: center;
+	vertical-align: middle;
+	padding: 5px;
+	margin: 2px;
+	font-weight: bold;	
+	text-decoration: none;
+	display: block;
+	float: left;
+	background: #F5F5F5;
+	border: 1px solid #0D456E;
+	color: #0D456E;
+	cursor: hand;
+}
+
+.TextButton:hover
+{
+	background: #0D456E;
+	border: 1px solid #0D456E;
+	color: #FFF;
+}
+
+.TextButton_Small
+{
+	text-align: center;
+	vertical-align: middle;
+	padding: 2px;
+	margin: 1px;
+	font-weight: normal;	
+	text-decoration: none;
+	display: block;
+	float: left;
+	background: #F5F5F5;
+	border: 1px solid #0D456E;
+	color: #0D456E;
+	cursor: hand;
+}
+
+.TextButton_Small:hover
+{
+	background: #0D456E;
+	border: 1px solid #0D456E;
+	color: #FFF;
+}
+
+a.LB
+{
+	text-align: center;	
+	vertical-align: middle;
+	padding: 5px;
+	margin: 2px;
+	font-weight: bold;	
+	text-decoration: none;
+	display:inline;
+	zoom: 1;
+}
+
+
+a.LB:link, a.LB:visited
+{
+	background: #E9F5F7;
+	border: 1px outset #FFFFFF;
+	color: #0D456E;
+}
+
+a.LB:hover
+{
+	background: #5099B3;
+	border: 1px outset #FFFFFF;
+	color: #FFF;
+}
+
+a.LBSmall
+{
+	text-align: center;
+	vertical-align: middle;
+	padding: 2px;
+	margin: 1px;
+	font-weight: normal;
+	text-decoration: none;	
+	display: inline;
+	zoom: 1;
+}
+
+a.LBSmall:link, a.LBSmall:visited
+{
+	background: #E9F5F7;
+	border: 1px outset #FFFFFF;
+	color: #0D456E;
+}
+
+a.LBSmall:hover
+{
+	background: #5099B3;
+	border: 1px outset #FFFFFF;
+	color: #FFF;
+}
+
+a.LBLogin
+{
+	text-align: center;
+	vertical-align: middle;
+	padding: 5px;
+	margin: 2px;
+	font-weight: bold;	
+	text-decoration: none;	
+	display: block;
+}
+
+a.LinkTopBar
+{
+	color: #FFFFFF;
+}
+
+a.LinkTopBar:hover
+{
+	color: #FF0000;
+}
+
+a.LBLogin:link, a.LBLogin:visited
+{
+	background: #C3EBF9;
+	border: 2px outset #FFFFFF;
+	color: #000000;
+}
+
+a.LBLogin:hover
+{
+	background: #FFFFFF;
+	border: 2px outset #FFFFFF;
+	color: #000000;
+}
+
+input.TextBox
+{
+	color: #000000;
+	border: 1px solid #0D456E;
+	background-color: #CCFFCC;	
+	height: 17px;
+}
+
+input.Button
+{
+	padding: 3px;	
+	font-weight: bold;
+	text-decoration: none;	
+	background: #F5F5F5;
+	border: 1px solid #0D456E;
+	color: #0D456E;
+}
+
+.TopBar
+{
+	position: absolute;
+	color: #FFFFFF;
+	width:100%;
+	height: 30px;
+	background-color: #053679;
+	border-top: solid 1px #000000;
+	border-bottom: solid 1px #000000;
+	filter:alpha(opacity=85);
+	opacity:0.85;
+	top: 1px;
+	left: 0px;
+}
+
+.TopMessage
+{
+	position: absolute;	
+	left: 10px;
+	top: 10px;
+	margin: 0px;
+	text-align:	center;
+	filter: alpha(opacity=0);	
+	opacity: 0;
+}
+
+.MessageSuccess
+{
+	color: #00FF00;
+}
+
+.MessageFailure
+{
+	color: #FF0000;
+}
+
+.MessageAttention
+{
+	color: #FFFF00;
+}
+
+.MessageNormal
+{
+	color: #FFFFFF;
+}
+
+.SOC
+{
+	height: 22px;
+	color: #000000;
+	background-color: #00CC00;
+	border: outset 2px #FFFFFF;	
+}
+
+.SOD
+{
+	height: 22px;
+	color: #FFFFFF;
+	background-color: #CCCCCC;
+	border: outset 2px #FFFFFF;
+}
+
+.SONP
+{
+	height: 22px;
+	color: #000000;
+	background-color: #F2F1F1;
+	border: outset 2px #FFFFFF;
+}
+
+.SGOM
+{
+    height: 30px;
+    color: #000000;
+    border: outset 1px #000000;    
+}
+
+.ProgressBarProcessed
+{	
+	background-color: #0055FF;
+}
+
+.ProgressBarIndicator
+{
+	color: #000000;
+	font-size: 12px;
+}
+
+.ProgressBarCompleted
+{
+	background-color: #00FF00;
+}
+
+.ProgressBarBorder
+{
+	border: outset 2px #FFFFFF;
+	background-color: #DDDDDD;
+}
+
+.CpuLoadBarBorder
+{
+	border: solid 1px #000000;
+	background-color: #DDDDDD;
+}
+
+.CpuLoadBarLowLoad
+{
+	background-color: #6CFA2D;
+}
+
+.CpuLoadBarMidLoad
+{
+	background-color: #FBBE2D;
+}
+
+.CpuLoadBarHighLoad
+{
+	background-color: #FF0000;
+}
+
+.PleyerCountBarBorder
+{
+	border: solid 1px #000000;
+	background-color: #DDDDDD;
+}
+
+.PleyerCountBarLowLoad
+{
+	background-color: #6CFA2D;
+}
+
+.PleyerCountBarMidLoad
+{
+	background-color: #FBBE2D;
+}
+
+.PleyerCountBarHighLoad
+{
+	background-color: #FF0000;
+}
+
+.FrameTop
+{
+	background-color: #5099B3;
+	background-image: url(FrameTop.jpg);
+}
+
+.FrameLeft
+{
+	color: #FFFFFF;
+	background-color: #E9F5F7;	
+}
+
+.Copyright
+{
+	width: 100%;
+	height: 27px;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #666666;
+}
+
+.GameServerSummary
+{
+	width: 320px;
+	color: #FFFFFF; 
+	background-color: #000000;
+	visibility: hidden;
+	border: outset 2px #CCCCCC;
+	filter: alpha(opacity=85);
+	opacity: 0.85;
+}
+
+.ModuleNormal
+{
+	text-align: center;
+	background-color: #00CC00;
+	border: outset 1px #FFFFFF;
+}
+
+.ModuleError
+{
+	text-align: center;
+	background-color: #CC0000;
+	border: outset 1px #FFFFFF;
+}
+
+.ModuleUnknown
+{
+	text-align: center;
+	background-color: #CCCCCC;
+	border: outset 1px #FFFFFF;
+}
+
+.ButtonPlainText
+{
+	padding: 2px;
+	margin: 2px;
+}
+
+.CMD
+{
+	width:100%;
+	height:400px;
+	overflow:auto;
+	color:#FFD39C;
+	background-color:#293842;
+	border:	3px double #738A8C;	
+	padding:5px,12px,5px,5px;
+	text-align:left;
+}
+
+.CMR
+{
+	color:#63FF31;
+	text-decoration:none;
+}
+
+.CMS
+{
+	color:#FFFF00;
+}
+
+.ItemTitle
+{
+	font-size:14px;
+	text-align:center;
+}
+
+.ItemQuality
+{
+	color:#FFD39C;
+}
+
+.ItemDescInfo
+{
+	color:#D6B2FF;
+	font-size:12px;
+	text-align:center;
+}
+
+.ItemOtherInfo
+{
+	color:White;
+	font-size:12px;
+	text-align:left;
+}
+
+.ItemCell
+{
+    color:white;
+    background-repeat : no-repeat;
+    background-position: 4px 4px; 
+    font-size:14px;
+    text-indent:10px;
+    padding-top:0px;
+}
+
+.SkillInfo
+{
+	color:Yellow; 
+	font-size:14px;
+}
+
+
+.PasswordStrengthBarIndicator_weak
+{
+    color:Red;
+    background-color:Red;
+}
+.PasswordStrengthBarIndicator_average
+{
+    color:Blue;
+    background-color:Blue;
+}
+.PasswordStrengthBarIndicator_good
+{
+    color:Green;
+    background-color:Green;
+}
+.PasswordStrengthBarBorder
+{
+    border-style:solid;
+    border-width:1px;
+    padding:1px 1px 1px 1px;
+    width:90px;
+    vertical-align:middle;
+}
+
+.ValidatorCalloutText
+{
+    font-size: 12px
+}
+
+.autocomplete_completionListElement 
+{  
+	visibility : hidden;
+	margin : 0px!important;
+	background-color : inherit;
+	color : windowtext;
+	border : buttonshadow;
+	border-width : 1px;
+	border-style : solid;
+	cursor : 'default';
+	overflow : auto;
+	height : 200px;
+    text-align : left; 
+    list-style-type : none;
+}
+
+/* AutoComplete highlighted item */
+
+.autocomplete_highlightedListItem
+{
+	background-color: #ffff99;
+	color: black;
+	padding: 1px;
+}
+
+/* AutoComplete item */
+
+.autocomplete_listItem 
+{
+	background-color : window;
+	color : windowtext;
+	padding : 1px;
+}
+
+.roundedPanel
+{	
+	width:300px;
+	background-color:#5377A9;
+	color:white;
+	font-weight:bold;
+}
+
+.modalBackground {
+	background-color:Gray;
+	filter:alpha(opacity=70);
+	opacity:0.7;
+}
+
+.modalLogoutBackground {
+	background-color:White;
+	filter:alpha(opacity=0);
+	opacity:0;
+}
+
+.modalPopup {
+	background-color:#ffffdd;
+	border-width:3px;
+	border-style:solid;
+	border-color:Gray;
+	padding:3px;
+	width:250px;
+}
+
+.lbModalPopup
+{
+	text-align:center;
+	vertical-align:middle;
+	text-decoration:none;
+	padding:4px 15px 4px 15px; 
+	background-color:#DDDDDD; 
+	color:Black; 
+	border:solid 1px Gray; 
+	font-weight:normal;
+	display:inline;
+	zoom: 1;
+}

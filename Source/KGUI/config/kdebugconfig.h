@@ -1,0 +1,44 @@
+#ifndef UI_DEBUG_K_DEBUG_CONFIG_H
+#define UI_DEBUG_K_DEBUG_CONFIG_H
+
+namespace UI
+{
+
+	class KDebugConfig
+	{
+	public:
+		enum
+		{
+			BOOL_BEGIN,
+
+			BOOL_SHOW_MOUSE_OVER_WND			= BOOL_BEGIN,
+			BOOL_SHOW_FRAME,
+			BOOL_SHOW_NAME,
+			BOOL_SHOW_FRAME_DRAG_AREA_BODER,
+			BOOL_SHOW_TEXT_ATOM_BOUNDARY,
+			BOOL_RESIZE_WND_AND_ITEM_MODE,
+			BOOL_DRAG_WND_AND_ITEM_MODE,
+			BOOL_SELECT_WINDOW_IN_CLIENT,
+
+			BOOL_AUTO_SCREEN_SHOT,
+
+			BOOL_ENABLE_LOG_3D_DEBUG_INFO,
+
+			BOOL_EDIT_MODE,
+
+			BOOL_ENABLE_RENDER_UI,
+			BOOL_ENABLE_TIMER_MGR,
+			BOOL_ENABLE_GLOBAL_BACK_BUFFER,
+
+			BOOL_END,
+		};
+
+	public:
+		static int	ms_nResizeWindowHandleNodeHalfSize;
+
+		static bool ms_aBoolFlag[BOOL_END];
+	};
+
+}
+
+#endif // UI_DEBUG_K_DEBUG_CONFIG_H

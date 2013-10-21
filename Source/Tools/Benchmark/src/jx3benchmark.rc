@@ -1,0 +1,253 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON_MAIN           ICON                    "jx3.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPTION DIALOGEX 0, 0, 423, 222
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "JX3 Benchmark 选项"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "低配置",IDC_PRESET_OPTION_GROUP_LOW,"Button",BS_AUTORADIOBUTTON | WS_GROUP,20,22,40,10
+    CONTROL         "中配置",IDC_PRESET_OPTION_GROUP_MIDDLE,"Button",BS_AUTORADIOBUTTON,78,22,40,10
+    CONTROL         "高配置",IDC_PRESET_OPTION_GROUP_HIGH,"Button",BS_AUTORADIOBUTTON,136,22,40,10
+    CONTROL         "自定义配置",IDC_PRESET_OPTION_GROUP_CUSTOM,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,194,22,56,10
+    COMBOBOX        IDC_RESULTION,58,66,82,46,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_MUTISAMPLE_TYPE,200,66,50,38,CBS_DROPDOWNLIST | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_TEXTURE_FILTER,58,85,82,30,CBS_DROPDOWNLIST | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_CAMMERA_DISTANCE,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | TBS_TOOLTIPS | WS_DISABLED | WS_TABSTOP,40,126,201,15
+    CONTROL         "地表细节",IDC_ENABLE_RENDER_GRASS,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,21,149,45,10
+    CONTROL         "水面折射",IDC_ENABLE_WATER_REFRACTION,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,77,149,48,10
+    CONTROL         "水面反射",IDC_ENABLE_WATER_REFLECTION,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,136,149,48,10
+    CONTROL         "体积光",IDC_ENABLE_GODRAY,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,21,167,40,10
+    CONTROL         "全屏柔光",IDC_ENABLE_BLOOM,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,77,167,43,10
+    CONTROL         "屏幕扭曲",IDC_ENABLE_SHOCKWAVE,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,136,167,48,10
+    CONTROL         "实时阴影",IDC_ENABLE_CSM,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,200,167,48,10
+    DEFPUSHBUTTON   "取消测试",IDCANCEL,236,192,123,18
+    DEFPUSHBUTTON   "开始测试",IDOK,92,192,123,18
+    GROUPBOX        "选项",IDC_STATIC,7,49,256,135
+    GROUPBOX        "设置选择",IDC_STATIC,7,7,256,36
+    GROUPBOX        "说明",IDC_STATIC,273,7,143,177
+    LTEXT           "窗口大小",IDC_STATIC,21,68,33,8
+    LTEXT           "全屏抗锯齿",IDC_STATIC,153,68,41,8
+    LTEXT           "材质过滤",IDC_STATIC,21,87,33,8
+    LTEXT           "远景显示",IDC_STATIC,21,114,33,8
+    LTEXT           "近",IDC_STATIC,31,129,9,8
+    LTEXT           "远",IDC_STATIC,241,129,9,8
+    LTEXT           "感谢您同意参与我们的改善计划。\r\n\r\nJX3BenchMark将在您选定的窗口大小及设置下运行，模拟该设置下的运行效果。在运行结束后，JX3BenchMark将会进行评分，并提出改善意见。\r\n\r\n1、您可以根据自己的硬件情况，选择适合您的设置。\r\n\r\n2、如果您不清楚自己的硬件设置，请直接点击“开始测试”开始。\r\n\r\n3、如果无法正常运行程序，请尝试选择“低配置”。",IDC_STATIC,282,19,128,158
+END
+
+IDD_CONTACT DIALOGEX 0, 0, 347, 143
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "参与剑网3产品改善计划"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,95,111,60,20
+    GROUPBOX        "说明",IDC_STATIC,182,13,148,84
+    LTEXT           "        我们发现我们的产品与你的系统发生兼容性问题，我们诚恳地邀请您参与我们的产品改善计划，您的信息有助于我们不断改进，以便能够为您提供更好的产品及服务。",IDC_STATIC,190,28,133,43
+    GROUPBOX        "联系方式",IDC_STATIC,7,12,163,85
+    EDITTEXT        IDC_EDIT_NAME,67,20,89,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PHONE,67,39,89,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_QQ,67,58,89,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_EMAIL,68,76,89,14,ES_AUTOHSCROLL
+    CTEXT           "电话号码：",IDC_STATIC,18,40,50,12
+    RTEXT           "姓名：",IDC_STATIC,21,21,41,12
+    RTEXT           "QQ：",IDC_STATIC,12,60,50,12
+    RTEXT           "电子邮件：",IDC_STATIC,15,79,47,12
+    DEFPUSHBUTTON   "取消",IDCANCEL,196,111,60,20
+    LTEXT           "        请填写左边的联系信息，我们会尽快联系你。       ",IDC_STATIC,187,69,133,21
+END
+
+IDD_OPTIONNEW DIALOGEX 0, 0, 339, 231
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "JX3 Benchmark Option"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_RESULTION,220,42,82,46,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Quit",IDCANCEL,227,193,82,18
+    DEFPUSHBUTTON   "Start",IDOK,124,193,78,18
+    GROUPBOX        "Option",IDC_STATIC,105,15,224,163
+    LTEXT           "Resolution",IDC_STATIC,124,42,34,8
+    LTEXT           "MSAA",IDC_STATIC,124,70,20,8
+    COMBOBOX        IDC_MSAA,220,70,82,46,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Realtime Shadow",IDC_STATIC,124,95,56,8
+    COMBOBOX        IDC_SHADOW,220,95,82,46,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Post Effect",IDC_STATIC,124,120,36,8
+    COMBOBOX        IDC_POSTEFFECT,220,120,82,46,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Cuda Test",IDC_CUDATEST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,219,153,49,10
+    CONTROL         "Normal Test",IDC_NORMALTEST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,140,153,54,10
+    CONTROL         "",IDC_IMAGE,"Static",SS_BITMAP,1,0,15,13
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_OPTION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 416
+        VERTGUIDE, 21
+        VERTGUIDE, 58
+        VERTGUIDE, 140
+        VERTGUIDE, 153
+        VERTGUIDE, 250
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 215
+        HORZGUIDE, 27
+        HORZGUIDE, 72
+        HORZGUIDE, 91
+        HORZGUIDE, 133
+        HORZGUIDE, 154
+        HORZGUIDE, 172
+        HORZGUIDE, 184
+    END
+
+    IDD_CONTACT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 340
+        VERTGUIDE, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 135
+        HORZGUIDE, 108
+    END
+
+    IDD_OPTIONNEW, DIALOG
+    BEGIN
+        RIGHTMARGIN, 332
+        VERTGUIDE, 21
+        VERTGUIDE, 58
+        VERTGUIDE, 140
+        VERTGUIDE, 180
+        VERTGUIDE, 236
+        HORZGUIDE, 27
+        HORZGUIDE, 55
+        HORZGUIDE, 80
+        HORZGUIDE, 105
+        HORZGUIDE, 132
+        HORZGUIDE, 163
+        HORZGUIDE, 193
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,0,1
+ PRODUCTVERSION 1,1,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "Kingsoft Coporation"
+            VALUE "FileDescription", "JX3 Benchmark"
+            VALUE "FileVersion", "1, 1, 0, 1"
+            VALUE "InternalName", "JX3Benchmark.dll"
+            VALUE "LegalCopyright", "(c) Kingsoft Corporation 2008, All Rights Reserved."
+            VALUE "OriginalFilename", "JX3Benchmark.dll"
+            VALUE "ProductName", "JX3Benchmark"
+            VALUE "ProductVersion", "1, 1, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

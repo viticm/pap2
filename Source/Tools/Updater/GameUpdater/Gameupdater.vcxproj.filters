@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="更新客户端">
+      <UniqueIdentifier>{821ae416-c686-4e2d-89ac-cabf9ca62534}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="下载更新包">
+      <UniqueIdentifier>{8210398e-8985-43d5-ab6f-18798367d8d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{6273103d-ea2f-4220-bf1a-584fa3a2faa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="环境检查">
+      <UniqueIdentifier>{61ac8dca-9877-41d1-9a81-c736c01d72c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FlashWindow">
+      <UniqueIdentifier>{932d244f-26e3-4c87-a6a2-0d7885a6c4d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="公共定义">
+      <UniqueIdentifier>{6df428fb-dd39-4e6d-a7e9-22bbf3c56ce1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="KExtractUpdatePack.cpp">
+      <Filter>更新客户端</Filter>
+    </ClCompile>
+    <ClCompile Include="KSelfUpdater.cpp">
+      <Filter>更新客户端</Filter>
+    </ClCompile>
+    <ClCompile Include="updatepublic.cpp">
+      <Filter>更新客户端</Filter>
+    </ClCompile>
+    <ClCompile Include="bufsocket.cpp">
+      <Filter>下载更新包</Filter>
+    </ClCompile>
+    <ClCompile Include="httpdownload.cpp">
+      <Filter>下载更新包</Filter>
+    </ClCompile>
+    <ClCompile Include="KHttpDownloader.cpp">
+      <Filter>下载更新包</Filter>
+    </ClCompile>
+    <ClCompile Include="KHttpFile.cpp">
+      <Filter>下载更新包</Filter>
+    </ClCompile>
+    <ClCompile Include="sockspacket.cpp">
+      <Filter>下载更新包</Filter>
+    </ClCompile>
+    <ClCompile Include="KFileMD5Maker.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="KFileVersionInfo.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="KGameupdaterText.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\KGLog.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="KLastError.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="KMessageWindow.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\KProcess.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\KRegInfo.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="KThread.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="KUpdateGlobalEvent.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="KVersionNumber.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="KVersionParser.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="md5.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="mymd5.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemInfo.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="tinystr.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlerror.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlparser.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="toolhelp.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\unzip.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="KClientReport.cpp">
+      <Filter>环境检查</Filter>
+    </ClCompile>
+    <ClCompile Include="KGU_RemoveRedundantFiles.cpp">
+      <Filter>环境检查</Filter>
+    </ClCompile>
+    <ClCompile Include="KSystemCheck.cpp">
+      <Filter>环境检查</Filter>
+    </ClCompile>
+    <ClCompile Include="KFlashWindow.cpp">
+      <Filter>FlashWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="KConfig.cpp" />
+    <ClCompile Include="KDownloadUpdatePackage.cpp" />
+    <ClCompile Include="KGameUpdater.cpp" />
+    <ClCompile Include="KGU_GameUpdater.cpp" />
+    <ClCompile Include="KGU_Public.cpp" />
+    <ClCompile Include="KGU_SelfUpdater.cpp" />
+    <ClCompile Include="KUpdate.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="KExtractUpdatePack.h">
+      <Filter>更新客户端</Filter>
+    </ClInclude>
+    <ClInclude Include="KSelfUpdater.h">
+      <Filter>更新客户端</Filter>
+    </ClInclude>
+    <ClInclude Include="updatepublic.h">
+      <Filter>更新客户端</Filter>
+    </ClInclude>
+    <ClInclude Include="bufsocket.h">
+      <Filter>下载更新包</Filter>
+    </ClInclude>
+    <ClInclude Include="httpdownload.h">
+      <Filter>下载更新包</Filter>
+    </ClInclude>
+    <ClInclude Include="IDownloader.h">
+      <Filter>下载更新包</Filter>
+    </ClInclude>
+    <ClInclude Include="KHttpDownloader.h">
+      <Filter>下载更新包</Filter>
+    </ClInclude>
+    <ClInclude Include="KHttpFile.h">
+      <Filter>下载更新包</Filter>
+    </ClInclude>
+    <ClInclude Include="sockspacket.h">
+      <Filter>下载更新包</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KFileMD5Maker.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="KFileVersionInfo.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="KGameupdaterText.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KGError.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\kglog.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KGPublic.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="KLastError.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="KMessageWindow.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KProcess.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KRegInfo.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="KThread.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="KUpdateGlobalEvent.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="KVersionNumber.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="KVersionParser.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="md5.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="my_md5.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="mymd5.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemInfo.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="tinystr.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="toolhelp.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\unzip.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="KClientReport.h">
+      <Filter>环境检查</Filter>
+    </ClInclude>
+    <ClInclude Include="KGU_RemoveRedundantFiles.h">
+      <Filter>环境检查</Filter>
+    </ClInclude>
+    <ClInclude Include="KSystemCheck.h">
+      <Filter>环境检查</Filter>
+    </ClInclude>
+    <ClInclude Include="KFlashWindow.h">
+      <Filter>FlashWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="IUpdateEvent.h">
+      <Filter>公共定义</Filter>
+    </ClInclude>
+    <ClInclude Include="UpdateDefine.h">
+      <Filter>公共定义</Filter>
+    </ClInclude>
+    <ClInclude Include="KConfig.h" />
+    <ClInclude Include="KDownloadUpdatePackage.h" />
+    <ClInclude Include="KGameUpdater.h" />
+    <ClInclude Include="KGU_GameUpdater.h" />
+    <ClInclude Include="KGU_Public.h" />
+    <ClInclude Include="KGU_SelfUpdater.h" />
+    <ClInclude Include="KUpdate.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FlashContainer.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="small.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="update16bitback.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="FlashContainer.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

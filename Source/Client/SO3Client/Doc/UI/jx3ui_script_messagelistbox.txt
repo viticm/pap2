@@ -1,0 +1,94 @@
+MessageListBox_GetFirstShowLine
+	说明：取信息列表显示的第一行行号；
+	参数：szTreePath  		窗口树路径名；
+	返回：nFirstShowLine   	行号；
+		
+MessageListBox_GetCapability		
+	说明：取信息列表容量，也就是能放下多少条信息，超过了容量，最先放进去的信息会被删除；
+	参数：szTreePath  		窗口树路径名；
+	返回：nCapability   	容量；
+		
+MessageListBox_GetCurSel				
+	说明：取信息列表当前选中行；
+	参数：szTreePath  		窗口树路径名；
+	返回：nCurSelLine   	行号；
+		
+MessageListBox_GetMessageCount			
+	说明：取信息列表信息数量；
+	参数：szTreePath  		窗口树路径名；
+	返回：nMsgCount   		信息数量；
+
+MessageListBox_GetMaxShowLine		
+	说明：取信息列表最大显示行数；
+	参数：szTreePath  		窗口树路径名；
+	返回：nMaxShowLine   	信息行数；
+
+MessageListBox_GetItemLineCount
+	说明：取信息列表指定信息行数；
+	参数：szTreePath  		窗口树路径名，
+		  nMsgIndex			信息索引；
+	返回：nLineCount 	  	行数；
+
+MessageListBox_GetMessageLength
+	说明：取信息列表指定信息长度；
+	参数：szTreePath  		窗口树路径名，
+		  nMsgIndex			信息索引；
+	返回：nMsgLength 	  	信息长度；
+
+MessageListBox_GetMessage				
+	说明：取信息列表指定信息内容；
+	参数：szTreePath  		窗口树路径名，
+		  nMsgIndex			信息索引；
+	返回：szMsg 	  		信息内容；
+
+MessageListBox_SetFirstShowLine		
+	说明：设置信息列表显示的第一行；
+	参数：szTreePath  		窗口树路径名，
+		  nFirstShowLine 	待显示第一行行数；
+	返回：nil
+
+MessageListBox_SetCapability			
+	说明：设置信息列表容量；
+	参数：szTreePath  		窗口树路径名，
+		  nCapability		容量；
+	返回：nil
+
+MessageListBox_SetCurSel					
+	说明：设置当前选中信息列表项；
+	参数：szTreePath  		窗口树路径名，
+		  nLineIndex		待选中行数；
+	返回：nil
+
+MessageListBox_AddMessage			
+	说明：追加信息到信息列表列表；
+	参数：szTreePath  		窗口树路径名，
+		  szMsg				待追加的信息，
+		  [dwBkColor]		待追加文本背景颜色，默认为0，因此不能使用黑色，黑色这里表示没有背景颜色；
+		  dwColor   		背景颜色，目前没做可用性调整；
+	返回：nil
+
+MessageListBox_RemoveMessage	
+	说明：删除信息列表信息项；
+	参数：szTreePath  		窗口树路径名，
+		  nMsgIndex			待删除的信息项索引；
+	返回：nil
+
+MessageListBox_Clear					
+	说明：删除所有信息列表信息项；
+	参数：szTreePath  		窗口树路径名；
+	返回：nil
+
+MessageListBox_ClearHideLine	
+	说明：删除所有被隐藏的信息列表信息项；
+	参数：szTreePath  		窗口树路径名；
+	返回：nil
+
+MessageListBox_HideNextLine		
+	说明：隐藏下一条的信息列表信息项；
+	参数：szTreePath  		窗口树路径名；
+	返回：nil
+
+MessageListBox_HideAllLine		
+	说明：隐藏所有信息列表信息项；
+	参数：szTreePath  		窗口树路径名；
+	返回：nil

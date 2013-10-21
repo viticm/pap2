@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SO3GameCenter", "SO3GameCenter.vcproj", "{3AC2E2CD-DD8B-4999-8E95-8192E9C00756}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_Server_Lib|Win32 = Debug_Server_Lib|Win32
+		Debug_Server|Win32 = Debug_Server|Win32
+		Release_Server|Win32 = Release_Server|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AC2E2CD-DD8B-4999-8E95-8192E9C00756}.Debug_Server_Lib|Win32.ActiveCfg = Debug_Server_Lib|Win32
+		{3AC2E2CD-DD8B-4999-8E95-8192E9C00756}.Debug_Server_Lib|Win32.Build.0 = Debug_Server_Lib|Win32
+		{3AC2E2CD-DD8B-4999-8E95-8192E9C00756}.Debug_Server|Win32.ActiveCfg = Debug_Server|Win32
+		{3AC2E2CD-DD8B-4999-8E95-8192E9C00756}.Debug_Server|Win32.Build.0 = Debug_Server|Win32
+		{3AC2E2CD-DD8B-4999-8E95-8192E9C00756}.Release_Server|Win32.ActiveCfg = Release_Server|Win32
+		{3AC2E2CD-DD8B-4999-8E95-8192E9C00756}.Release_Server|Win32.Build.0 = Release_Server|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

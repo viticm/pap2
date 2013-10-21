@@ -1,0 +1,364 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\JX3Activator.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\JX3Activator.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAIN DIALOGEX 0, 0, 313, 206
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "剑网3极限封测激活申请 V1.0.0.2"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+END
+
+IDD_STEP1 DIALOGEX 0, 0, 314, 209
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+EXSTYLE WS_EX_TRANSPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "同意本协议",IDC_RADIO_ACCEPT,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,91,165,56,10
+    CONTROL         "不同意本协议",IDC_RADIO_REFUSE,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,165,165,64,10
+    PUSHBUTTON      "下一步 >",IDC_BUTTON_NEXT,194,186,50,14,WS_DISABLED
+    PUSHBUTTON      "取消",IDCANCEL,251,186,50,14
+    EDITTEXT        IDC_EDIT_CONFERENCE,10,56,293,102,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | NOT WS_BORDER | WS_VSCROLL,WS_EX_STATICEDGE
+    LTEXT           "申请玩家测试员前，请您仔细阅读《剑侠情缘网络版叁》测试协议。",IDC_STATIC,11,41,241,8
+    LTEXT           "金山软件 西山居",IDC_STATIC,9,177,58,8,WS_DISABLED
+    CONTROL         148,IDC_STATIC,"Static",SS_BITMAP,0,0,313,34
+    LTEXT           "",IDC_STATIC,78,180,229,1,SS_SUNKEN
+    LTEXT           "",IDC_STATIC,-8,34,329,1,SS_SUNKEN
+END
+
+IDD_STEP3 DIALOGEX 0, 0, 314, 209
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_PASSPORT,104,93,113,14,ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        IDC_EDIT_PASSPORT_CHECK,104,122,113,14,ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_STATICEDGE
+    PUSHBUTTON      "下一步 >",IDC_BUTTON_NEXT,193,186,50,14
+    PUSHBUTTON      "取消",IDCANCEL,251,186,50,14
+    PUSHBUTTON      "< 上一步",IDC_BUTTON_BACK,135,186,50,14
+    PUSHBUTTON      "注册帐号",IDC_BUTTON_REGISTER,225,93,50,14
+    LTEXT           "金山通行证帐号：",IDC_STATIC,38,96,65,8
+    LTEXT           "请确认通行证帐号：",IDC_STATIC,30,125,73,8
+    LTEXT           "金山软件 西山居",IDC_STATIC,9,177,58,8,WS_DISABLED
+    LTEXT           "",IDC_STATIC,78,180,229,1,SS_SUNKEN
+    CONTROL         150,IDC_STATIC,"Static",SS_BITMAP,0,0,313,34
+    LTEXT           "",IDC_STATIC,-6,33,329,1,SS_SUNKEN
+    LTEXT           "　　请输入金山通行证（如果还没有通行证，请点击[注册账号]），请注意，该通行证将作为登陆《剑网3》游戏的账号。",IDC_STATIC,37,52,239,27
+END
+
+IDD_STEP2 DIALOGEX 0, 0, 314, 209
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_PASSPORT,100,86,113,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PASSWORD,100,111,113,14,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_VERIFY_CODE,100,136,50,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "下一步 >",IDC_BUTTON_NEXT,193,186,50,14
+    PUSHBUTTON      "取消",IDCANCEL,251,186,50,14
+    PUSHBUTTON      "< 上一步",IDC_BUTTON_BACK,135,186,50,14
+    PUSHBUTTON      "注册帐号",IDC_BUTTON_REGISTER,222,86,50,14
+    PUSHBUTTON      "忘记密码",IDC_BUTTON_PASSWORD,222,111,50,14
+    PUSHBUTTON      "看不清楚",IDC_BUTTON_UPDATE_IMAGE,222,136,50,14
+    LTEXT           "金山通行证帐号：",IDC_STATIC,32,89,65,8
+    LTEXT           "金山通行证密码：",IDC_STATIC,32,114,65,8
+    LTEXT           "验证码：",IDC_STATIC,64,139,33,8
+    CONTROL         "",IDC_VERIFY_IMAGE,"Static",SS_BLACKFRAME,155,136,55,13
+    CONTROL         150,IDC_STATIC,"Static",SS_BITMAP,0,0,313,34
+    LTEXT           "金山软件 西山居",IDC_STATIC,9,177,58,8,WS_DISABLED
+    LTEXT           "",IDC_STATIC,78,180,229,1,SS_SUNKEN
+    LTEXT           "",IDC_STATIC,0,33,335,1,SS_SUNKEN
+    LTEXT           "　　请输入金山通行证（如果还没有通行证，请点击[注册账号]），请注意，该通行证将作为登陆《剑网3》游戏的账号。",IDC_STATIC,37,52,239,22
+END
+
+IDD_STEP4 DIALOGEX 0, 0, 314, 209
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_PHONE,119,80,113,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_EMAIL,119,105,113,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_QQ_OR_MSN,119,130,113,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "下一步 >",IDC_BUTTON_NEXT,193,186,50,14
+    PUSHBUTTON      "取消",IDCANCEL,251,186,50,14
+    PUSHBUTTON      "< 上一步",IDC_BUTTON_BACK,135,186,50,14
+    LTEXT           "QQ或MSN号码：",IDC_STATIC,58,133,58,8
+    LTEXT           "电子邮箱地址：",IDC_STATIC,59,108,57,8
+    LTEXT           "手机或电话号码：",IDC_STATIC,51,83,65,8
+    CONTROL         149,IDC_STATIC,"Static",SS_BITMAP,0,0,313,34
+    LTEXT           "金山软件 西山居",IDC_STATIC,9,177,58,8,WS_DISABLED
+    LTEXT           "",IDC_STATIC,78,180,229,1,SS_SUNKEN
+    LTEXT           "",IDC_STATIC,0,33,335,1,SS_SUNKEN
+    LTEXT           "为了更好地为您服务，请如实填写以下信息，以下皆为必填项。",IDC_STATIC,40,52,232,16
+END
+
+IDD_STEP6 DIALOGEX 0, 0, 314, 209
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "完成",IDC_BUTTON_FINISH,251,186,50,14
+    LTEXT           "金山软件 西山居",IDC_STATIC,9,177,58,8,WS_DISABLED
+    LTEXT           "",IDC_STATIC,78,180,229,1,SS_SUNKEN
+    CONTROL         147,IDC_STATIC,"Static",SS_BITMAP,0,0,313,34
+    LTEXT           "",IDC_STATIC,-7,33,335,1,SS_SUNKEN
+    LTEXT           "　　注意事项：\r　　1、如收到激活邮件，请在30天内及时激活。\r　　2、如果您觉得您的机器配置等同于或优于我们的推荐配置，请到官方论坛：http://jx3.bbs.xoyo.com/发表。\r　　3、如果五天后仍未收到激活邮件，您可以访问：http://tester.jx3.xoyo.com/query.php查询原因或批复状态。",IDC_STATIC,39,100,236,57
+    LTEXT           "　　对不起，由于您的机器配置低于《剑网3》的推荐配置（或由于我们收集的配置疏漏，您的机器配置可能不在列表内），您的申请不能立即通过。\r　　我们会在五个工作日内进行二次批复处理，如人工审批通过，我们将会把激活链接发送到您刚才所填写的邮箱，请注意查收！",IDC_STATIC,39,54,236,44
+END
+
+IDD_STEP5 DIALOGEX 0, 0, 314, 209
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "点击下载",IDC_BUTTON_DOWNLOAD,97,87,50,14
+    PUSHBUTTON      "完成",IDC_BUTTON_FINISH,251,186,50,14
+    LTEXT           "客户端下载：",IDC_STATIC,44,90,49,8
+    LTEXT           "金山软件 西山居",IDC_STATIC,9,177,58,8,WS_DISABLED
+    LTEXT           "",IDC_STATIC,78,180,229,1,SS_SUNKEN
+    CONTROL         147,IDC_STATIC,"Static",SS_BITMAP,0,0,313,34
+    LTEXT           "",IDC_STATIC,-16,33,335,1,SS_SUNKEN
+    LTEXT           "　　申请成功，恭喜您成为《剑侠情缘网络版叁》极限封测测试玩家。请使用您刚才所填写的通行证登录游戏。",IDC_STATIC,44,50,225,24
+END
+
+IDD_STEP7 DIALOGEX 0, 0, 314, 209
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "完成",IDC_BUTTON_FINISH,251,186,50,14
+    LTEXT           "金山软件 西山居",IDC_STATIC,9,177,58,8,WS_DISABLED
+    LTEXT           "",IDC_STATIC,78,180,229,1,SS_SUNKEN
+    CONTROL         147,IDC_STATIC,"Static",SS_BITMAP,0,0,313,34
+    LTEXT           "",IDC_STATIC,0,33,335,1,SS_SUNKEN
+    LTEXT           "　　非常抱歉，今日《剑侠情缘网络版叁》极限封测帐号已经完全发放完毕，请明日9:00后再行申请。\r　　活动详情或公告请留意官网：http://jx3.xoyo.com。",IDC_STATIC,44,50,225,47
+END
+
+IDD_STEP8 DIALOGEX 0, 0, 314, 209
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "完成",IDC_BUTTON_FINISH,251,186,50,14
+    LTEXT           "　　本次《剑侠情缘网络版叁》极限封测帐号已经全部发放完毕，申请活动已正式关闭。\r　　想了解其他活动请留意官网：http://jx3.xoyo.com。",IDC_STATIC,44,50,225,47
+    LTEXT           "金山软件 西山居",IDC_STATIC,9,177,58,8,WS_DISABLED
+    LTEXT           "",IDC_STATIC,78,180,229,1,SS_SUNKEN
+    CONTROL         147,IDC_STATIC,"Static",SS_BITMAP,0,0,313,34
+    LTEXT           "",IDC_STATIC,-15,33,335,1,SS_SUNKEN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,2
+ PRODUCTVERSION 1,0,0,2
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "Kingsoft Corporation"
+            VALUE "FileDescription", "JX3 Activator"
+            VALUE "FileVersion", "1.0.0.2"
+            VALUE "InternalName", "JX3Activator.exe"
+            VALUE "LegalCopyright", "(c) Kingsoft Corporation.  All rights reserved."
+            VALUE "OriginalFilename", "JX3Activator.exe"
+            VALUE "ProductName", "JX3 Activator"
+            VALUE "ProductVersion", "1.0.0.2"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_MAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 306
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+
+    IDD_STEP1, DIALOG
+    BEGIN
+        RIGHTMARGIN, 312
+        BOTTOMMARGIN, 201
+    END
+
+    IDD_STEP3, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 202
+    END
+
+    IDD_STEP2, DIALOG
+    BEGIN
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 200
+    END
+
+    IDD_STEP4, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 307
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+
+    IDD_STEP6, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 307
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+
+    IDD_STEP5, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 307
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+
+    IDD_STEP7, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 307
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+
+    IDD_STEP8, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 307
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 202
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP                  "res\\4.bmp"
+IDB_BITMAP2             BITMAP                  "res\\1.bmp"
+IDB_BITMAP3             BITMAP                  "res\\2.bmp"
+IDB_BITMAP4             BITMAP                  "res\\3.bmp"
+IDB_BITMAP7             BITMAP                  "res\\error.bmp"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

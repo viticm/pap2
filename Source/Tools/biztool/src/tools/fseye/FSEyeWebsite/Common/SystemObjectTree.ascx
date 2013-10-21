@@ -1,0 +1,2 @@
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="SystemObjectTree.ascx.cs" Inherits="Common_SystemObjectTree" %>
+<asp:TreeView ID="TreeViewSystemObject" runat="server" SkinID="ServerGroup" ExpandDepth="1" OnSelectedNodeChanged="TreeViewSystemObject_SelectedNodeChanged" ToolTip="<%$ Resources:StringDef,ClickToViewPrivilege%>" OnTreeNodeExpanded="TreeViewSystemObject_Expanded" OnTreeNodeCollapsed="TreeViewSystemObject_Collapsed" />

@@ -1,0 +1,100 @@
+object SoundTagDialog: TSoundTagDialog
+  Left = -867
+  Top = 190
+  Width = 450
+  Height = 205
+  Caption = #22768#38899#26631#31614
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object GroupBox1: TGroupBox
+    Left = 8
+    Top = 8
+    Width = 417
+    Height = 129
+    Caption = #26631#31614#20869#23481
+    TabOrder = 0
+    object Label_FilePath: TLabel
+      Left = 8
+      Top = 24
+      Width = 48
+      Height = 13
+      Caption = #22768#38899#25991#20214
+    end
+    object Edit_FilePath: TEdit
+      Left = 64
+      Top = 16
+      Width = 241
+      Height = 21
+      TabOrder = 0
+      Text = 'Edit_FilePath'
+    end
+    object Button_FilePath: TButton
+      Left = 312
+      Top = 16
+      Width = 75
+      Height = 25
+      Caption = #25171#24320#21015#34920
+      TabOrder = 1
+      OnClick = Button_FilePathClick
+    end
+    object Check_Loop: TCheckBox
+      Left = 8
+      Top = 48
+      Width = 97
+      Height = 17
+      Caption = #24490#29615#25773#25918
+      TabOrder = 2
+    end
+    object Check_MotionFinishKeep: TCheckBox
+      Left = 8
+      Top = 72
+      Width = 113
+      Height = 17
+      Caption = #21160#20316#23436#25104#26102#20445#25345
+      TabOrder = 3
+    end
+    object Check_Interruptable: TCheckBox
+      Left = 8
+      Top = 96
+      Width = 121
+      Height = 17
+      Caption = #34987#19979#19968#22768#38899#20013#26029
+      TabOrder = 4
+    end
+  end
+  object Button_Delete: TButton
+    Left = 8
+    Top = 144
+    Width = 75
+    Height = 25
+    Caption = #21024#38500
+    TabOrder = 1
+    OnClick = Button_DeleteClick
+  end
+  object Button_Copy: TButton
+    Left = 96
+    Top = 144
+    Width = 75
+    Height = 25
+    Caption = #22797#21046
+    TabOrder = 2
+    OnClick = Button_CopyClick
+  end
+  object Button_Paste: TButton
+    Left = 184
+    Top = 144
+    Width = 75
+    Height = 25
+    Caption = #31896#36148
+    TabOrder = 3
+    OnClick = Button_PasteClick
+  end
+end

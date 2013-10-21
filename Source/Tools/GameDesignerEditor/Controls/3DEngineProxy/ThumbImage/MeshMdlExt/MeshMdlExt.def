@@ -1,0 +1,11 @@
+; MeshMdlExt.def : Declares the module parameters.
+
+LIBRARY      "MeshMdlExt.DLL"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE
+	SetMaxMemory		PRIVATE
+	

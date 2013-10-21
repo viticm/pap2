@@ -1,0 +1,291 @@
+TreeList_GetDataLength				
+	说明：取树形文字列表列表项数据长度；
+	参数：szTreePath  		窗口树路径名，
+		  nRow		  		行号，从0开始；
+	返回：nLength     		文字长度；
+		
+TreeList_GetData							
+	说明：取树形文字列表列表项数据内容；
+	参数：szTreePath  		窗口树路径名，
+		  nRow		  		行号，从0开始；
+	返回：szData     		文字长度；
+		
+TreeList_GetExpandingRowCount	
+	说明：取树形文字列表完全展开后列表项数量，也就是行数；
+	参数：szTreePath  		窗口树路径名；
+	返回：nRowCount     	列表项数量；
+		
+TreeList_GetVisibleRowCount		
+	说明：取树形文字列表目前可见列表项数量，也就是行数；
+	参数：szTreePath  		窗口树路径名；
+	返回：nRowCount     	列表项数量；
+		
+TreeList_GetMaxVisibleRowCount					
+	说明：取树形文字列表目前最大可见列表项数量，也就是行数；
+	参数：szTreePath  		窗口树路径名；
+	返回：nRowCount     	列表项数量；
+		
+TreeList_GetCurSelIndex				
+	说明：取树形文字列表当前选中行索引；
+	参数：szTreePath  		窗口树路径名；
+	返回：nRowIndex     	行索引，是整棵树包括节点，展开后的行数；
+		
+TreeList_GetTopIndex					
+	说明：取树形文字列表当前显示的最顶行索引；
+	参数：szTreePath  		窗口树路径名；
+	返回：nRowIndex     	行索引，是整棵树包括节点，展开后的行数；
+		
+TreeList_GetCurSelRow					
+	说明：取树形文字列表当前选中行索引；
+	参数：szTreePath  		窗口树路径名；
+	返回：nRowIndex     	行索引，是整棵树包括节点，当前展开情况的行数；
+		
+TreeList_GetTopRow						
+	说明：取树形文字列表当前显示的最顶行索引；
+	参数：szTreePath  		窗口树路径名；
+	返回：nRowIndex     	行索引，是整棵树包括节点，当前展开情况的行数；
+		
+TreeList_GetNormalLeafFontScheme
+	说明：取一般状态树形文字列表叶子列表项字体方案索引；
+	参数：szTreePath  		窗口树路径名；
+	返回：nScheme 			字体方案索引；
+
+TreeList_GetNormalNodeFontScheme
+	说明：取一般状态树形文字列表节点列表项字体方案索引；
+	参数：szTreePath  		窗口树路径名；
+	返回：nScheme 			字体方案索引；
+
+TreeList_GetSelectLeafFontScheme
+	说明：取选中状态树形文字列表叶子列表项字体方案索引；
+	参数：szTreePath  		窗口树路径名；
+	返回：nScheme 			字体方案索引；
+
+TreeList_GetSelectNodeFontScheme
+	说明：取选中状态树形文字列表节点列表项字体方案索引；
+	参数：szTreePath  		窗口树路径名；
+	返回：nScheme 			字体方案索引；
+
+TreeList_GetOverLeafFontScheme
+	说明：取鼠标移过状态树形文字列表叶子列表项字体方案索引；
+	参数：szTreePath  		窗口树路径名；
+	返回：nScheme 			字体方案索引；
+
+TreeList_GetOverNodeFontScheme
+	说明：取鼠标移过状态树形文字列表节点列表项字体方案索引；
+	参数：szTreePath  		窗口树路径名；
+	返回：nScheme 			字体方案索引；
+
+TreeList_GetSelectLeafBgColor
+	说明：取鼠标移过状态树形文字列表叶子列表项背景颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwColor 			背景颜色，目前没做可用性调整；
+
+TreeList_GetSelectNodeBgColor
+	说明：取鼠标移过状态树形文字列表节点列表项背景颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwColor 			背景颜色，目前没做可用性调整；
+		
+TreeList_GetIconLineColor				
+	说明：取树形文字列表节点线颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwColor 			节点线颜色，目前没做可用性调整；
+
+TreeList_GetNodeLineColor				
+	说明：取树形文字列表节点间线颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwColor 			节点间线颜色，目前没做可用性调整；
+
+TreeList_GetFontSize						
+	说明：取树形文字列表列表项字体大小；
+	参数：szTreePath  		窗口树路径名；
+	返回：nFontSize 		字体大小；
+
+TreeList_GetRowSpacing					
+	说明：取树形文字列表列表项行间距；
+	参数：szTreePath  		窗口树路径名；
+	返回：nRowSpacing 		行间距是一行的底与下一行的顶之间的距离；
+
+TreeList_GetNodeIndent
+	说明：取树形文字列表节点行行首缩进；
+	参数：szTreePath  		窗口树路径名；
+	返回：nIndent 			行首缩进；
+
+TreeList_GetItemIndent
+	说明：取树形文字列表非节点行行首缩进；
+	参数：szTreePath  		窗口树路径名；
+	返回：nIndent 			行首缩进；
+
+TreeList_GetNodeIconWidth
+	说明：取树形文字列表节点图标宽度；
+	参数：szTreePath  		窗口树路径名；
+	返回：nWidth 			图标宽度；
+
+TreeList_GetNodeIconHeight
+	说明：取树形文字列表节点图标高度；
+	参数：szTreePath  		窗口树路径名；
+	返回：nHeight 			图标高度；
+
+TreeList_SetCurSelIndex
+	说明：设置树形文字列表当前选中行索引；
+	参数：szTreePath  		窗口树路径名，
+		  nRowIndex     	行索引，是整棵树包括节点，展开后的行数；
+	返回：nil
+		
+TreeList_SetTopIndex
+	说明：设置树形文字列表当前显示的最顶行索引；
+	参数：szTreePath  		窗口树路径名，
+		  nRowIndex     	行索引，是整棵树包括节点，展开后的行数；
+	返回：nil
+		
+TreeList_SetCurSelRow
+	说明：设置树形文字列表当前选中行索引；
+	参数：szTreePath  		窗口树路径名，
+		  nRowIndex     	行索引，是整棵树包括节点，当前展开情况的行数；
+	返回：nil
+		
+TreeList_SetTopRow
+	说明：设置树形文字列表当前显示的最顶行索引；
+	参数：szTreePath  		窗口树路径名，
+		  nRowIndex     	行索引，是整棵树包括节点，当前展开情况的行数；
+	返回：nil
+		
+TreeList_SetIconLineColor			
+	说明：设置树形文字列表节点线颜色；
+	参数：szTreePath  		窗口树路径名，
+		  dwColor 			节点线颜色，目前没做可用性调整；
+	返回：nil
+
+TreeList_SetNodeLineColor			
+	说明：设置树形文字列表节点间线颜色；
+	参数：szTreePath  		窗口树路径名，
+		  dwColor 			节点间线颜色，目前没做可用性调整；
+	返回：nil
+
+TreeList_SetRowSpacing				
+	说明：设置树形文字列表列表项行间距；
+	参数：szTreePath  		窗口树路径名，
+		  nRowSpacing 		行间距是一行的底与下一行的顶之间的距离；
+	返回：nil
+
+TreeList_SetRowCount					
+	说明：设置树形文字列表最大显示行数；
+	参数：szTreePath  		窗口树路径名，
+		  nRowCount 		行数；
+	返回：nil
+
+TreeList_SetNodeIndent				
+	说明：设置树形文字列表节点行行首缩进；
+	参数：szTreePath  		窗口树路径名，
+		  nIndent 			行首缩进；
+	返回：nil
+
+TreeList_SetItemIndent				
+	说明：设置树形文字列表非节点行行首缩进；
+	参数：szTreePath  		窗口树路径名，
+		  nIndent 			行首缩进；
+	返回：nil
+
+TreeList_SetNodeIconWidth			
+	说明：设置树形文字列表节点图标宽度；
+	参数：szTreePath  		窗口树路径名，
+		  nWidth 			图标宽度；
+	返回：nil
+
+TreeList_SetNodeIconHeight		
+	说明：设置树形文字列表节点图标高度；
+	参数：szTreePath  		窗口树路径名，
+		  nHeight 			图标高度；
+	返回：nil
+
+TreeList_GetNodeCount
+	说明：取树形文字列表节点个数；
+	参数：szTreePath  		窗口树路径名，
+		  [nParentIndex]	父节点节点缩进表索引；
+	返回：nNodeCount		节点个数；
+
+TreeList_GetLeafCount
+	说明：取树形文字列表节点和叶子个数；
+	参数：szTreePath  		窗口树路径名，
+		  [nParentIndex]	父节点节点缩进表索引；
+	返回：nLeafCount		节点和叶子个数；
+
+TreeList_SetContent
+	说明：设置树形文字列表内容；
+	参数：szTreePath  		窗口树路径名，
+		  szContent			制表符为缩进，回车为分割；
+	返回：nil
+
+TreeList_Append
+	说明：追加树形文字列表节点或叶子；
+	参数：szTreePath  		窗口树路径名，
+		  [nParentIndex]	父节点节点缩进表索引,
+		  szString			节点文字；
+	返回：nLeafIndex		追加节点或叶子索引；
+
+TreeList_Insert
+	说明：追加树形文字列表节点或叶子；
+	参数：szTreePath  		窗口树路径名，
+		  [nParentIndex]	父节点节点缩进表索引,
+		  nLeafIndex		待插入节点或叶子节点缩进表索引，
+		  szString			节点文字；
+	返回：nil
+
+TreeList_Remove(LPCTSTR szTreePath, int nNodeIndex)
+	说明：删除树形文字列表节点或叶子；
+	参数：szTreePath  		窗口树路径名，
+		  nLeafIndex		待删除节点缩进表索引；
+	返回：nil
+
+TreeList_Clear
+	说明：删除树形文字列表所有节点或叶子；
+	参数：szTreePath  		窗口树路径名；
+	返回：nil
+
+TreeList_SetNormalLeafFontScheme
+	说明：设一般状态树形文字列表叶子列表项字体方案索引；
+	参数：szTreePath  		窗口树路径名，
+		  nScheme 			字体方案索引；
+	返回：nil
+
+TreeList_SetNormalNodeFontScheme
+	说明：设一般状态树形文字列表节点列表项字体方案索引；
+	参数：szTreePath  		窗口树路径名，
+		  nScheme 			字体方案索引；
+	返回：nil
+
+TreeList_SetSelectLeafFontScheme
+	说明：设选中状态树形文字列表叶子列表项字体方案索引；
+	参数：szTreePath  		窗口树路径名，
+		  nScheme 			字体方案索引；
+	返回：nil
+
+TreeList_SetSelectNodeFontScheme
+	说明：设选中状态树形文字列表节点列表项字体方案索引；
+	参数：szTreePath  		窗口树路径名，
+		  nScheme 			字体方案索引；
+	返回：nil
+
+TreeList_SetOverLeafFontScheme
+	说明：取鼠标移过状态树形文字列表叶子列表项字体方案索引；
+	参数：szTreePath  		窗口树路径名，
+		  nScheme 			字体方案索引；
+	返回：nil
+
+TreeList_SetOverNodeFontScheme
+	说明：设鼠标移过状态树形文字列表节点列表项字体方案索引；
+	参数：szTreePath  		窗口树路径名，
+		  nScheme 			字体方案索引；
+	返回：nil
+
+TreeList_SetSelectLeafBgColor
+	说明：设鼠标移过状态树形文字列表叶子列表项背景颜色；
+	参数：szTreePath  		窗口树路径名，
+		  dwColor 			背景颜色，目前没做可用性调整；
+	返回：nil
+
+TreeList_SetSelectNodeBgColor
+	说明：设鼠标移过状态树形文字列表节点列表项背景颜色；
+	参数：szTreePath  		窗口树路径名，
+		  dwColor 			背景颜色，目前没做可用性调整；
+	返回：nil
+		

@@ -1,0 +1,20 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  FileName    : KG3DBaseHelpers.h
+//  Version     : 1.0
+//  Creator     : Chen Tianhong
+//  Create Date : 2009-3-13 17:34:30
+//  Comment     : 
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#ifndef _INCLUDE_KG3DBASEHELPERS_H_
+#define _INCLUDE_KG3DBASEHELPERS_H_
+
+////////////////////////////////////////////////////////////////////////////////
+namespace KG3DBASE
+{
+	BOOL GetFilePathFromFullPath(LPTSTR pBuffer, size_t uSize, LPCTSTR pFullPath);
+};
+
+#endif //_INCLUDE_KG3DBASEHELPERS_H_

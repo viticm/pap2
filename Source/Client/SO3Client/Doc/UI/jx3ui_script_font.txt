@@ -1,0 +1,53 @@
+Font_AddScheme
+	说明：添加字体方案，如果字体方案已存在，那么不作改动；
+	参数：nColorSchemeIndex			字体颜色方案索引，
+		  nBorderColorSchemeIndex	字体边缘颜色方案索引，
+		  bySize					字体大小，
+		  byBorderSize				字体边缘大小，
+		  byType					字体类型索引；
+	返回：nil
+
+Font_GetFontColor
+	说明：根据字体方案索引取字体颜色；
+	参数：nIndex 					字体方案索引；
+	返回：szColor					颜色，格式如255,0,0表示红；
+
+Font_GetFontBorderColor
+	说明：根据字体方案索引取字体边缘颜色；
+	参数：nIndex 					字体方案索引；
+	返回：szColor					颜色，格式如255,0,0表示红；
+
+Font_GetFontColorSchemeIndex
+	说明：根据字体方案索引取字体颜色方案索引；
+	参数：nIndex 					字体方案索引；
+	返回：nSchemeIndex				字体颜色方案索引；
+
+Font_GetFontBorderColorSchemeIndex(int nIndex, int& nSchemeIndex);
+	说明：根据字体方案索引取字体边缘颜色方案索引；
+	参数：nIndex 					字体方案索引；
+	返回：nSchemeIndex				字体颜色方案索引；
+
+Font_GetFontSize
+	说明：根据字体方案索引取字体大小；
+	参数：nIndex 					字体方案索引；
+	返回：nFontSize					字体大小；
+
+Font_GetFontBorderSize
+	说明：根据字体方案索引取字体边缘大小；
+	参数：nIndex 					字体方案索引；
+	返回：nBorderSize				字体边缘大小；
+
+Font_GetFontType
+	说明：根据字体方案索引取字体类型索引；
+	参数：nIndex 					字体方案索引；
+	返回：nFontType					字体类型索引；
+
+Font_GetCount
+	说明：取字体方案个数；
+	参数：nil
+	返回：nCount					方案个数；			
+	
+Font_LoadScheme
+	说明：加载字体方案，不会清空原来的方案；
+	参数：nil
+	返回：nil

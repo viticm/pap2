@@ -1,0 +1,83 @@
+==================================================================
+ExchangeItem功能点整理                                           |
+==================================================================
+
+评审时间：2008-01-03
+
+参与人员：赵纯峰 夏永 侯锐
+
+
+修改目的：
+------------------------------------------------------------------
+1. 保持原ExchangeItem函数功能不变
+2. 修改ExchangeItem函数的实现机制，使之更易于阅读和维护
+
+
+原ExchangeItem函数的功能点整理：
+------------------------------------------------------------------
+(一) 检查：
+1. 检查player不能为空，且当前的移动状态不能为死亡，否则返回失败
+2. 检查若“源item”和“目的item”为同一个包里面的同一个格子的item，
+   则不用交换，且返回失败
+3. 检查“源item”和“目的item”的Box及格子总数合理，否则返回失败
+4. 检查“源item”不为空，且“源item”的数量<=该物品的堆叠数量，否
+   则返回ircNotEnoughDurability
+5. 允许“目的item”为空
+6. “源item”和“目的item”必须同时打开才能交换，否则返回失败
+7. 调用CanPut函数，检查“源item”和“目的item”是否可以被放置在“
+   目的”、“源”格子上，否则返回ircCannotPutToThatPlace
+8. 检查参数dwAmount为0的情况下，GetStackNum重新设置dwAmount
+
+(二) 交换
+1. “目的item”为背包的情况：
+   在目的背包中找到一个空格子，将“源item”放进去，并切换目标为NULL。
+
+2. “源item”和“目的item”的box都不是ivtEquipment:
+(1)“目的item”不为NULL，且“源item”可以叠加到“目的item”上的情况：
+   将“源item”叠加到“目的item”上，多余的item返还给“源item”，若
+   “源item”无剩余，则摧毁“源item”；若不可摧毁，则写入日志。
+(2)“目的item”不为NULL，“源item”不能叠加到“目的item”上的情况：
+   将“源item”和“目的item”互换。
+(3)“目的item”为NULL，“源item”全部移动的情况：
+   直接将“源item”移动到“目的item”去。
+(4)“目的item”为NULL，“源item”需要拆分的情况：
+   服务端生成物品，并将数量和物品同步给客户端，(客户端不做操作)成功
+   后直接返回。
+
+3. “源item”和“目的item”的box最少有一个是ivtEquipment:
+(1) 检查参数dwAmount等于1或者“源item”是estArrow类型
+(2) “源item”和“目的item”所在box都是装备的包裹(或银行包)的情况：
+    直接调用ExchangePackageSlot交换
+(3) 只有“源item”所在box是装备的包裹(或银行包)的情况：
+    若“目的item”为空：对“源item”所在box调用DisablePackage函数
+    若“目的item”非空：调用EnablePackage函数，将两个包重排
+(4) 只有“目的item”所在box是装备的包裹(或银行包)的情况：
+    调用EnablePackage函数，将两个包重排
+(5) 对以上三种情况的返回ircSuccess的情况进行处理：
+   (a) “源item”所在box是装备的包裹(或银行包)，“目的item”不是：
+      将“源item”UnEquip，和“目的item”互换，若“目的item”
+      不为空，则将“目的item”Equip。
+   (b)“目的item”所在box是装备的包裹(或银行包)，“源item”不是：
+      将“目的item”UnEquip，和“源item”互换，将“源item”Equip。
+   (c)“源item”和“目的item”所在box都是装备的包裹(或银行包)：
+      将“源item”和“目的item”互换
+(6) “源item”和“目的item”都是装备：
+    直接交换“源item”和“目的item”的位置，不应用属性
+(7) “源item”是装备,“目的item”不是装备：
+   (a) “目的item”存在：
+       将“源item”UnEquip，把“源item”和“目的item”互换，将“目
+       的item”Equip。
+   (b) “目的item”不存在：
+       将“源item”UnEquip，把“源item”放到目标位置上去。
+(8) “目的item”是装备,“源item”不是装备：
+   (a) “目的item”存在：
+       将“目的item”UnEquip，把“源item”和“目的item”互换，将“
+       源item”Equip。
+   (b) “目的item”不存在：
+       把“源item”放到目标位置上去，将“源item”Equip。
+
+(三) 通知
+1. 通知客户端DoExchangeItem，函数返回
+2. nResult失败情况下，通知客户端DoMessageNotify
+
+

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jx3roleanalyser", "..\..\..\biztool\src\jx3roleanalyser\jx3roleanalyser.vcproj", "{73FFB44E-4887-4624-865B-49BF6FBB1DC2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Jx3RoleModifyDBPQ", "Jx3RoleModifyDBPQ.vcproj", "{4F36F4A1-64FB-48B5-AB8F-4D96EA0210F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73FFB44E-4887-4624-865B-49BF6FBB1DC2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{73FFB44E-4887-4624-865B-49BF6FBB1DC2}.Debug|Win32.Build.0 = Debug|Win32
+		{73FFB44E-4887-4624-865B-49BF6FBB1DC2}.Release|Win32.ActiveCfg = Release|Win32
+		{73FFB44E-4887-4624-865B-49BF6FBB1DC2}.Release|Win32.Build.0 = Release|Win32
+		{4F36F4A1-64FB-48B5-AB8F-4D96EA0210F2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4F36F4A1-64FB-48B5-AB8F-4D96EA0210F2}.Debug|Win32.Build.0 = Debug|Win32
+		{4F36F4A1-64FB-48B5-AB8F-4D96EA0210F2}.Release|Win32.ActiveCfg = Release|Win32
+		{4F36F4A1-64FB-48B5-AB8F-4D96EA0210F2}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

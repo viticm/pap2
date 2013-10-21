@@ -1,0 +1,106 @@
+// atlax.idl : IDL source for atlax
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (atlax.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(6AE8174C-9A77-4091-8FC2-68A3905F1D81),
+	dual,
+	nonextensible,
+	helpstring("ITest3DEngine Interface"),
+	pointer_default(unique)
+]
+interface ITest3DEngine : IDispatch{
+	[id(1), helpstring("method Init")] HRESULT Init(LONG hWnd, BSTR strEnginePath, BSTR strStartUpPath);
+	[id(2), helpstring("method Render")] HRESULT Render(void);
+	[id(3), helpstring("method FrameMove")] HRESULT FrameMove(void);
+	[id(4), helpstring("method UnInit")] HRESULT UnInit(void);
+	[id(5), helpstring("method OnResizeWindow")] HRESULT OnResizeWindow(void);
+	[propget, id(6), helpstring("property PlayMode")] HRESULT PlayMode([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(6), helpstring("property PlayMode")] HRESULT PlayMode([in] VARIANT_BOOL newVal);
+	[id(7), helpstring("method OnWndMsg")] HRESULT OnWndMsg([in] BSTR editor_name, [in] PMSG WndMsg, [out,retval] INT* pnRet);
+	[id(8), helpstring("method LoadFile")] HRESULT LoadFile(BSTR strFileName);
+	[id(9), helpstring("method UnloadFile")] HRESULT UnloadFile(BSTR strFileName);
+	[id(10), helpstring("method LoadPlayerModel")] HRESULT LoadPlayerModel(BSTR strFileName);
+	[id(11), helpstring("method BindPlayerModel")] HRESULT BindToPlayer(BSTR strFileName, DWORD dwType, BSTR strBindToObj);
+	[id(12), helpstring("method LoadAni")] HRESULT LoadAni(BSTR strFileName, BOOL bLoop);	
+	[id(13), helpstring("method ZoomView")] HRESULT ZoomView(LONG lDelta);	
+	[id(14), helpstring("method ChangeModelPart")] HRESULT ChangeModelPart(BSTR filename, INT PartID);
+	[id(15), helpstring("method LoadFace")] HRESULT LoadFace(BSTR strFileName);
+	[id(17), helpstring("method ItemsClear")] HRESULT ItemsClear(void);
+	[id(18), helpstring("method SaveMDLToFile")] HRESULT SaveMDLToFile(BSTR strFileName);
+    [id(19), helpstring("method LoadMaterial")] HRESULT LoadMaterial([in] BSTR strFileName);
+    [id(20), helpstring("method LoadAnimation")] HRESULT LoadAnimation([in] BSTR strFileName, BOOL bLoopPlay);
+    [id(22), helpstring("method LoadPluginModel")] HRESULT LoadPluginModel([in] BSTR strFileName, BSTR strBindDest);
+    [id(23), helpstring("method ClearPluginModel")] HRESULT ClearPluginModel([in] BSTR strBindDest);
+	[id(24), helpstring("method ActivateScene")] HRESULT ActivateScene([in] BSTR editor_name);
+	[id(25), helpstring("method RemoveScene")] HRESULT RemoveScene([in] BSTR editor_name);
+	[id(26), helpstring("method AddScene")] HRESULT AddScene([in] LONG hwndOutput, [in] BSTR editor_name, [in] LONG iOption);
+	[id(27), helpstring("method GetEditorSceneCount")] HRESULT GetEditorSceneCount([in] BSTR editor_name, [out] LONG* count);
+	[id(28), helpstring("method LoadSelectorSfxFile")] HRESULT LoadSelectorSfxFile([in] BSTR sfx_name);
+	[id(29), helpstring("method ScaleSelectorSfx")] HRESULT ScaleSelectorSfx([in] FLOAT x, [in] FLOAT y, [in] FLOAT z);
+	[id(30), helpstring("method LoadOneMap")] HRESULT LoadOneMap_NoOutputWindow([in] BSTR filename, [out] LONG* ptrScene);
+	[id(31), helpstring("method LoadBillboardSfx")] HRESULT LoadBillboardSfx([in] BSTR filename);
+	[id(32), helpstring("method SetBillboardHeight")] HRESULT SetBillboardHeight([in] INT npc_height, [in] INT head_top_adjust);
+	[id(33), helpstring("method ToggleRotateModelEditor")] HRESULT ToggleRotateModelEditor(void);
+	[id(34), helpstring("method SetCameraInfo")] HRESULT SetCameraInfo(LONG pX, LONG pY, LONG pZ, LONG lX, LONG lY, LONG lZ, LONG width, LONG height);
+	[id(35), helpstring("method GetCameraInfo")] HRESULT GetCameraInfo([out] LONG* pX, [out] LONG* pY, [out] LONG* pZ, [out] LONG* lX, [out] LONG* lY, [out] LONG* lZ, [out] LONG* width, [out] LONG* height);
+	[id(36), helpstring("method AdjustCameraOrthogonal")] HRESULT AdjustCameraOrthogonal([in] LONG iOffset);
+	[id(37), helpstring("method SetModelScale")] HRESULT SetModelScale([in] FLOAT fScale);
+	[id(38), helpstring("method SaveModelToImageFile")] HRESULT SaveModelToImageFile([in] BSTR fileName);
+	[id(39), helpstring("method LoadSkillSfx")] HRESULT LoadSkillSfx([in] BSTR filename, [in] FLOAT scale, [in] BSTR socketName, [in] LONG iIndex);
+	[id(40), helpstring("method ReadMapTerrainInfo")] HRESULT ReadMapTerrainInfo([in] LONG ptrScene, [out] LONG* width, [out] LONG* height);
+	[id(41), helpstring("method FileToImage")] HRESULT FileToImage([in] BSTR src3DFileName, [in] BSTR desImageFileName);
+	[id(42), helpstring("method GetCurSceneIndex")] HRESULT GetCurSceneIndex([out] LONG* index);
+	[id(43), helpstring("method ActivateSceneByIndex")] HRESULT ActivateSceneByIndex([in] LONG index);
+	[id(44), helpstring("method SaveMdlWithAniToImages")] HRESULT SaveMdlWithAniToImages([in] LONG ptrModel, [in] BSTR filename);
+	[id(45), helpstring("method SaveLogicScene")] HRESULT SaveLogicScene([in] BSTR iniFile, [in] LONG ptr3DScene);
+	[id(46), helpstring("method ShowProgressForm")] HRESULT ShowProgressForm([in] BOOL bShow);
+	[id(47), helpstring("method UnloadPlayerModel")] HRESULT UnloadPlayerModel(void);
+	[id(48), helpstring("method GetHeight")] HRESULT GetHeight([in] LONG ptrScene, [in] FLOAT x, [in] FLOAT z, [out] FLOAT* y);
+	[id(49), helpstring("method GetFileNameHash")] HRESULT GetFileNameHash([in] BSTR fileName, [out] DWORD* hashid);
+	[id(50), helpstring("method QuaternionRotationByNDir")] HRESULT QuaternionRotationByNDir(FLOAT* x, FLOAT* y, FLOAT* z, FLOAT* w, [in] LONG nDir);
+	[id(51), helpstring("method LoadPluginMaterial")] HRESULT LoadPluginMaterial([in] BSTR strSocketName, [in] BSTR strMtlFile);
+	[id(52), helpstring("method GetAniFrameCount")] HRESULT GetAniFrameCount([in] BSTR strAniFileName, [out,retval] LONG* count);
+	[id(53), helpstring("method LoadPlaneForSelector")] HRESULT LoadPlaneForSelector([in] BSTR strFileName);
+	[id(54), helpstring("method SetCaptionHeight")] HRESULT SetCaptionHeight([in] FLOAT fHeight);
+	[id(55), helpstring("method SetCaptionText")] HRESULT SetCaptionText([in] BSTR strName, [in] BSTR strTitle);
+	[id(56), helpstring("method GetBBoxXY")] HRESULT GetBBoxXY([in] BSTR mdl, [out] FLOAT* x, [out] FLOAT* y);
+	[id(57), helpstring("method GetMdlBBoxMax2DLength")] HRESULT GetMdlBBoxMax2DLength([in] BSTR mdl, [out, retval] FLOAT* pVal);
+	[id(58), helpstring("method GetEditorSceneSize")] HRESULT GetEditorSceneSize([in] LONG ptrScene, LONG* width, LONG* height);
+	[id(59), helpstring("method ToggleEngine")] HRESULT ToggleEngine(void);
+	[id(60), helpstring("method SetAllPluginModelScale")] HRESULT SetAllPluginModelScale([in] FLOAT fScale);
+	[id(61), helpstring("method LoadNPCMarkSfxFile")] HRESULT LoadNPCMarkSfxFile([in] BSTR sfx_name, [in] FLOAT fHeight);
+};
+[
+	uuid(6F9FD12F-5554-49D7-B144-9F52B812D84D),
+	version(1.0),
+	helpstring("atlax 1.0 Type Library")
+]
+library atlaxLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(F63BB8BC-6ACD-4271-900E-FA07F9FB8943),
+		helpstring("_ITest3DEngineEvents Interface")
+	]
+	dispinterface _ITest3DEngineEvents
+	{
+		properties:
+		methods:
+	};
+	[
+		uuid(D159A323-D278-475B-B556-57C064884B9B),
+		helpstring("Test3DEngine Class")
+	]
+	coclass Test3DEngine
+	{
+		[default] interface ITest3DEngine;
+		[default, source] dispinterface _ITest3DEngineEvents;
+	};
+};

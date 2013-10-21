@@ -1,0 +1,5 @@
+ActionID	Class	AllowableEvent	ActionFuncName	param
+1	输出文字		HelpPanel_AppendMessage()	"装备武器\n;g_tStrings.HELPER_MSG_GET_WEAPON,背包\n;g_tStrings.HELPER_MSG_GET_PACKAGE"
+2	弹出面板		OpenChannelsPanel()	
+3	设置为HasDo		Helper.SetHasDo()	"GetMeleeWeapon,GetPackage"
+4	设置为闪烁		box:SetObjectStaring()	"真;true,假;false"

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolUserManager", "ToolUserManager\ToolUserManager.csproj", "{FDE44340-D80A-429A-BED7-C17908F9E09C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDE44340-D80A-429A-BED7-C17908F9E09C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDE44340-D80A-429A-BED7-C17908F9E09C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDE44340-D80A-429A-BED7-C17908F9E09C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDE44340-D80A-429A-BED7-C17908F9E09C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

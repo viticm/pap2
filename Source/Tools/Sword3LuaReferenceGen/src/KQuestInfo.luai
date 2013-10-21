@@ -1,0 +1,612 @@
+﻿@title KQuestInfo对象
+@obj KQuestInfo
+
+@summary rw. 任务名称，最多31字节长
+property szName as string rw
+
+@summary rw. 任务分类名称，最多31字节长
+property szQuestClass as string rw
+
+@summary rw. 是否可共享
+property bShare as 布尔值 rw
+
+@summary rw. 是否可重复
+property bRepeat as 布尔值 rw
+
+@summary rw. 是否可协助
+property bAssist as 布尔值 rw
+
+@summary rw. 是否先接才能交
+property bAccept as 布尔值 rw
+
+@summary rw. 等级
+property nLevel as int rw
+
+@summary rw. 任务难度描述，最多31字节
+property szQuestDiff as string rw
+
+@summary rw. 接任务地点所在的地图id
+property dwStartMapID as DWORD rw
+
+@summary rw. 接任务的npc的模板id
+property dwStartNpcTemplateID as DWORD rw
+
+@summary rw. 接任务的道具类型，取值[[see ITEM_TABLE_TYPE]]
+property dwStartItemType as DWORD rw
+
+@summary rw. 接任务的道具在配置表中的索引
+property dwStartItemIndex as DWORD rw
+
+@summary rw. 任务目标。最多255字节
+property szObjective as string rw
+
+@summary rw. 任务描述。最多1023字节
+property szDescription as string rw
+
+@summary rw. 接任务闲谈类型
+property nStartGossipType as int rw
+
+@summary rw. 接任务时的对话1。最多255字节
+property szStartGossip1 as string rw
+
+@summary rw. 接任务时的对话2。最多255字节
+property szStartGossip2 as string rw
+
+@summary rw. 接任务时的对话3。最多255字节
+property szStartGossip3 as string rw
+
+@summary rw. 接任务时的对话4。最多255字节
+property szStartGossip4 as string rw
+
+@summary rw. 接任务的最小等级需求
+property nMinLevel as int rw
+
+@summary rw. 接任务的最高等级需求
+property nMaxLevel as int rw
+
+@summary rw. 接任务的最小道德值需求
+property nMinMoral as int rw
+
+@summary rw. 接任务的最大道德值需求
+property nMaxMoral as int rw
+
+@summary rw. 接任务的性别需求。取值[[see CHARACTER_GENDER]]
+@remarks 取值：[[get CHARACTER_GENDER]]
+property nRequireGender as int rw
+
+@summary rw. 接任务时的体形需求。取值[[see ROLE_TYPE]]
+@remarks 取值: [[get ROLE_TYPE]]
+property nRequireRoleType as int rw.
+
+@summary rw. cd计时器id
+property dwCoolDownID as DWORD rw
+
+@summary rw. 任务需求逻辑。
+@remarks true表示各个需求必须都满足，false表示各个需求满足一个就可以
+property bPrequestLogic as 布尔值 rw
+
+@summary rw. 前续任务id1
+property dwPrequestID1 as DWORD rw
+
+@summary rw. 前续任务id2
+property dwPrequestID2 as DWORD rw
+
+@summary rw. 前续任务id3
+property dwPrequestID3 as DWORD rw
+
+@summary rw. 前续任务id4
+property dwPrequestID4 as DWORD rw
+
+@summary rw. 开始时间，即Quests.tab中的StartTime
+property nStartTime as int rw
+
+@summary rw. 结束时间，即Quests.tab中的EndTime
+property nEndTime as int rw
+
+@summary rw. 后续任务id，即Quests.tab中的SubsequenceID
+property dwSubsequenceID as DWORD rw
+
+@summary rw. 需求技能id，即Quests.tab中的RequireSkillID
+property dwRequireSkillID as DWORD rw
+
+@summary rw. 需求技能最小等级，即Quests.tab中的MinSkillLevel
+property dwMinSkillLevel as DWORD rw
+
+@summary rw. 需求技能，即Quests.tab中的RequireLifeSkillID
+property dwRequireLifeSkillID as DWORD rw
+
+@summary rw. 需求技能最小等级，即Quests.tab中的MinLifeSkillID
+property dwMinLifeSkillLevel as DWORD rw
+
+@summary rw. 接任务时所需道具的类型，即Quests.tab中的StartRequireItemType1
+property dwStartRequireItemType1 as DWORD rw
+
+@summary rw. 接任务时所需道具的类型，即Quests.tab中的StartRequireItemIndex1
+property dwStartRequireItemIndex1 as DWORD rw
+
+@summary rw. 接任务时所需道具的数量，即Quests.tab中的StartRequireItemAmount1
+property dwStartRequireItemAmount1 as DWORD rw
+
+@summary rw. 接任务时所需道具的类型，即Quests.tab中的StartRequireItemType2
+property dwStartRequireItemType2 as DWORD rw
+
+@summary rw. 接任务时所需道具的类型，即Quests.tab中的StartRequireItemIndex2
+property dwStartRequireItemIndex2 as DWORD rw
+
+@summary rw. 接任务时所需道具的数量，即Quests.tab中的StartRequireItemAmount2
+property dwStartRequireItemAmount2 as DWORD rw
+
+@summary rw. 接任务时所需道具的类型，即Quests.tab中的StartRequireItemType3
+property dwStartRequireItemType3 as DWORD rw
+
+@summary rw. 接任务时所需道具的类型，即Quests.tab中的StartRequireItemIndex3
+property dwStartRequireItemIndex3 as DWORD rw
+
+@summary rw. 接任务时所需道具的数量，即Quests.tab中的StartRequireItemAmount3
+property dwStartRequireItemAmount3 as DWORD rw
+
+@summary rw. 接任务时所需道具的类型，即Quests.tab中的StartRequireItemType4
+property dwStartRequireItemType4 as DWORD rw
+
+@summary rw. 接任务时所需道具的类型，即Quests.tab中的StartRequireItemIndex4
+property dwStartRequireItemIndex4 as DWORD rw
+
+@summary rw. 接任务时所需道具的数量，即Quests.tab中的StartRequireItemAmount4
+property dwStartRequireItemAmount4 as DWORD rw
+
+@summary rw. 接任务时提供道具的类型，即Quests.tab中的OfferItemType1
+property dwOfferItemType1 as DWORD rw
+
+@summary rw. 接任务时提供的道具类型，即Quests.tab中的OfferItemIndex1
+property dwOfferItemIndex1 as DWORD rw
+
+@summary rw. 接任务时提供的道具数量，即Quests.tab中的OfferItemAmount1
+property dwOfferItemAmount1 as DWORD rw
+
+@summary rw. 接任务时提供道具的类型，即Quests.tab中的OfferItemType2
+property dwOfferItemType2 as DWORD rw
+
+@summary rw. 接任务时提供的道具类型，即Quests.tab中的OfferItemIndex2
+property dwOfferItemIndex2 as DWORD rw
+
+@summary rw. 接任务时提供的道具数量，即Quests.tab中的OfferItemAmount2
+property dwOfferItemAmount2 as DWORD rw
+
+@summary rw. 接任务时提供道具的类型，即Quests.tab中的OfferItemType3
+property dwOfferItemType3 as DWORD rw
+
+@summary rw. 接任务时提供的道具类型，即Quests.tab中的OfferItemIndex3
+property dwOfferItemIndex3 as DWORD rw
+
+@summary rw. 接任务时提供的道具数量，即Quests.tab中的OfferItemAmount3
+property dwOfferItemAmount3 as DWORD rw
+
+@summary rw. 接任务时提供道具的类型，即Quests.tab中的OfferItemType4
+property dwOfferItemType4 as DWORD rw
+
+@summary rw. 接任务时提供的道具类型，即Quests.tab中的OfferItemIndex4
+property dwOfferItemIndex4 as DWORD rw
+
+@summary rw. 接任务时提供的道具数量，即Quests.tab中的OfferItemAmount4
+property dwOfferItemAmount4 as DWORD rw
+
+@summary rw. 交任务npc所在地图id，即Quests.tab中的EndMapID
+property dwEndMapID as DWORD rw
+
+@summary rw. 交任务npc的模板id，即Quests.tab中的EndNpcTemplateID
+property dwEndNpcTemplateID as DWORD rw
+
+@summary rw. 交任务Doodad的ID
+property dwEndDoodadTemplateID as DWORD rw
+
+@summary rw. 交任务道具类型，即Quests.tab中的EndItemType
+property nEndItemType as int rw
+
+@summary rw. 交任务道具类型，即Quests.tab中的EndItemIndex
+property nEndItemIndex as int rw
+
+@summary rw. 即Quests.tab中的DunningDialog，最多511字节
+property szDunningDialogue as string rw
+
+@summary rw. 任务未完成时的对话，即Quests.tab中的UnfinishedDialogue，最多511字节
+property szUnfinishedDialogue as string rw
+
+@summary rw. 任务完成时的对话，即Quests.tab中的FinishedDialogue，最多1023字节
+property szFinishedDialogue as string rw
+
+@summary rw. 交任务时闲谈类型，即Quests.tab中的EndGossipType
+property nEndGossipType as int rw
+
+@summary rw. 交任务时闲谈内容，即Quests.tab中的EndGossip1
+property szEndGossip1 as string rw
+
+@summary rw. 交任务时闲谈内容，即Quests.tab中的EndGossip2
+property szEndGossip2 as string rw
+
+@summary rw. 交任务时闲谈内容，即Quests.tab中的EndGossip3
+property szEndGossip3 as string rw
+
+@summary rw. 交任务时闲谈内容，即Quests.tab中的EndGossip4
+property szEndGossip4 as string rw
+
+@summary rw. 任务结束时间，即Quests.tab中的FinishTime
+property nFinishTime as int rw
+
+@summary rw. 交任务时所需道具的类型，即Quests.tab中的EndRequireItemType1
+property dwEndRequireItemType1 as DWORD rw
+
+@summary rw. 交任务时所需道具的类型，即Quests.tab中的EndRequireItemIndex1
+property dwEndRequireItemIndex1 as DWORD rw
+
+@summary rw. 交任务时所需道具的数量，即Quests.tab中的EndRequireItemAmount1
+property dwEndRequireItemAmount1 as DWORD rw
+
+@summary rw. 是否删除道具
+property bIsDeleteEndRequireItem1 as bool rw
+
+@summary rw. 掉落任务物品的npc模板1，即Quests.tab中的DropNpcTemplateID1
+property dwDropItemNpcTemplateID1 as DWORD rw
+
+@summary rw. 掉落任务物品的doodad模板1，即Quests.tab中的DropDoodadTemplateID1
+property dwDropItemDoodadTemplateID1 as DWORD rw
+
+@summary rw. 掉落任务物品的几率，即Quests.tab中的DropItemRate1
+property dwDropItemRate1 as DWORD rw
+
+@summary rw. 是否每人掉一个，即Quests.tab中的IsDropForEach1
+property bDropForEach1 as 布尔值 rw
+
+@summary rw. 交任务时所需道具的类型，即Quests.tab中的EndRequireItemType2
+property dwEndRequireItemType2 as DWORD rw
+
+@summary rw. 交任务时所需道具的类型，即Quests.tab中的EndRequireItemIndex2
+property dwEndRequireItemIndex2 as DWORD rw
+
+@summary rw. 交任务时所需道具的数量，即Quests.tab中的EndRequireItemAmount2
+property dwEndRequireItemAmount2 as DWORD rw
+
+@summary rw. 是否删除道具
+property bIsDeleteEndRequireItem2 as bool rw
+
+@summary rw. 掉落任务物品的npc模版id，即Quests.tab中的DropNpcTemplateID2
+property dwDropItemNpcTemplateID2 as DWORD rw
+
+@summary rw. 掉落任务物品的doodad模板id，即Quests.tab中的DropDoodadTemplateID2
+property dwDropItemDoodadTemplateID2 as DWORD rw
+
+@summary rw. 掉落任务物品的几率，即Quests.tab中的DropItemRate2
+property dwDropItemRate2 as DWORD rw
+
+@summary rw. 是否每人掉一个，即Quests.tab中的IsDropForEach2
+property bDropForEach2 as 布尔值 rw
+
+@summary rw. 交任务时所需道具的类型，即Quests.tab中的EndRequireItemType3
+property dwEndRequireItemType3 as DWORD rw
+
+@summary rw. 交任务时所需道具的类型，即Quests.tab中的EndRequireItemIndex3
+property dwEndRequireItemIndex3 as DWORD rw
+
+@summary rw. 交任务时所需道具的数量，即Quests.tab中的EndRequireItemAmount3
+property dwEndRequireItemAmount3 as DWORD rw
+
+@summary rw. 是否删除道具
+property bIsDeleteEndRequireItem3 as bool rw
+
+@summary rw. 掉落任务物品的npc模版id，即Quests.tab中的DropNpcTemplateID3
+property dwDropItemNpcTemplateID3 as DWORD rw
+
+@summary rw. 掉落任务物品的doodad模板id，即Quests.tab中的DropDoodadTemplateID3
+property dwDropItemDoodadTemplateID3 as DWORD rw
+
+@summary rw. 掉落任务物品的几率，即Quests.tab中的DropItemRate3
+property dwDropItemRate3 as DWORD rw
+
+@summary rw. 是否每人掉一个，即Quests.tab中的IsDropForEach3
+property bDropForEach3 as 布尔值 rw
+
+@summary rw. 交任务时所需道具的类型，即Quests.tab中的EndRequireItemType4
+property dwEndRequireItemType4 as DWORD rw
+
+@summary rw. 交任务时所需道具的类型，即Quests.tab中的EndRequireItemIndex4
+property dwEndRequireItemIndex4 as DWORD rw
+
+@summary rw. 交任务时所需道具的数量，即Quests.tab中的EndRequireItemAmount4
+property dwEndRequireItemAmount4 as DWORD rw
+
+@summary rw. 是否删除道具
+property bIsDeleteEndRequireItem4 as bool rw
+
+@summary rw. 掉落任务物品的npc模版id，即Quests.tab中的DropNpcTemplateID4
+property dwDropItemNpcTemplateID4 as DWORD rw
+
+@summary rw. 掉落任务物品的doodad模板id，即Quests.tab中的DropDoodadTemplateID4
+property dwDropItemDoodadTemplateID4 as DWORD rw
+
+@summary rw. 掉落任务物品的几率，即Quests.tab中的DropItemRate4
+property dwDropItemRate4 as DWORD rw
+
+@summary rw. 是否每人掉一个，即Quests.tab中的IsDropForEach3
+property bDropForEach4 as 布尔值 rw
+
+@summary rw. 消耗的金钱
+property nCostMoney as int rw
+
+@summary rw. 任务要杀的npc模板id，即Quests.tab中的KillNpcTemplateID1
+property dwKillNpcTemplateID1 as DWORD rw
+
+@summary rw. 任务要杀的npc数量，即Quests.tab中的KillNpcAmount1
+property dwKillNpcAmount1 as DWORD rw
+
+@summary rw. 任务要杀的npc模板id，即Quests.tab中的KillNpcTemplateID2
+property dwKillNpcTemplateID2 as DWORD rw
+
+@summary rw. 任务要杀的npc数量，即Quests.tab中的KillNpcAmount2
+property dwKillNpcAmount2 as DWORD rw
+
+@summary rw. 任务要杀的npc模板id，即Quests.tab中的KillNpcTemplateID3
+property dwKillNpcTemplateID3 as DWORD rw
+
+@summary rw. 任务要杀的npc数量，即Quests.tab中的KillNpcAmount3
+property dwKillNpcAmount3 as DWORD rw
+
+@summary rw. 任务要杀的npc模板id，即Quests.tab中的KillNpcTemplateID4
+property dwKillNpcTemplateID4 as DWORD rw
+
+@summary rw. 任务要杀的npc数量，即Quests.tab中的KillNpcAmount4
+property dwKillNpcAmount4 as DWORD rw
+
+@summary rw. 任务变量，即Quests.tab中的QuestValue1
+property nQuestValue1 as int rw
+
+@summary rw. 任务变量，即Quests.tab中的QuestValue2
+property nQuestValue2 as int rw
+
+@summary rw. 任务变量，即Quests.tab中的QuestValue3
+property nQuestValue3 as int rw
+
+@summary rw. 任务变量，即Quests.tab中的QuestValue4
+property nQuestValue4 as int rw
+
+@summary rw. 任务变量，即Quests.tab中的QuestValue5
+property nQuestValue5 as int rw
+
+@summary rw. 任务变量，即Quests.tab中的QuestValue6
+property nQuestValue6 as int rw
+
+@summary rw. 任务变量，即Quests.tab中的QuestValue7
+property nQuestValue7 as int rw
+
+@summary rw. 任务变量，即Quests.tab中的QuestValue8
+property nQuestValue8 as int rw
+
+@summary rw. 最多255字节，即Quests.tab中的QuestValueStr1
+property szQuestValueStr1 as string rw
+
+@summary rw. 最多255字节，即Quests.tab中的QuestValueStr2
+property szQuestValueStr2 as string rw
+
+@summary rw. 最多255字节，即Quests.tab中的QuestValueStr3
+property szQuestValueStr3 as string rw
+
+@summary rw. 最多255字节，即Quests.tab中的QuestValueStr4
+property szQuestValueStr4 as string rw
+
+@summary rw. 最多255字节，即Quests.tab中的QuestValueStr5
+property szQuestValueStr5 as string rw
+
+@summary rw. 最多255字节，即Quests.tab中的QuestValueStr6
+property szQuestValueStr6 as string rw
+
+@summary rw. 最多255字节，即Quests.tab中的QuestValueStr7
+property szQuestValueStr7 as string rw
+
+@summary rw. 最多255字节，即Quests.tab中的QuestValueStr8
+property szQuestValueStr8 as string rw
+
+@summary rw. 即Quests.tab中的HidePresent
+property nHidePresent as int rw
+
+@summary rw. 第一组(KQuestInfo, 1-4)道具是否全给或者只给一件，即Quests.tab中的
+@	PresentAll1
+property nPresentAll1 as int rw
+
+@summary rw. 第二组(KQuestInfo, 5-8)道具是否全给或者只给一件，即Quests.tab中的
+@	PresentAll2
+property nPresentAll2 as int rw
+
+@summary rw. 交任务时奖励道具的类型，即Quests.tab中的PresentItemType1
+property dwPresentItemType1 as DWORD rw
+
+@summary rw. 交任务时奖励道具的类型，即Quests.tab中的PresentItemIndex1
+property dwPresentItemIndex1 as DWORD rw
+
+@summary rw. 交任务时奖励道具的数量，即Quests.tab中的PresentItemAmount1
+property dwPresentItemAmount1 as DWORD rw
+
+@summary rw. 交任务时奖励道具的类型，即Quests.tab中的PresentItemType2
+property dwPresentItemType2 as DWORD rw
+
+@summary rw. 交任务时奖励道具的类型，即Quests.tab中的PresentItemIndex2
+property dwPresentItemIndex2 as DWORD rw
+
+@summary rw. 交任务时奖励道具的数量，即Quests.tab中的PresentItemAmount2
+property dwPresentItemAmount2 as DWORD rw
+
+@summary rw. 交任务时奖励道具的类型，即Quests.tab中的PresentItemType3
+property dwPresentItemType3 as DWORD rw
+
+@summary rw. 交任务时奖励道具的类型，即Quests.tab中的PresentItemIndex3
+property dwPresentItemIndex3 as DWORD rw
+
+@summary rw. 交任务时奖励道具的数量，即Quests.tab中的PresentItemAmount3
+property dwPresentItemAmount3 as DWORD rw
+
+@summary rw. 交任务时奖励道具的类型，即Quests.tab中的PresentItemType4
+property dwPresentItemType4 as DWORD rw
+
+@summary rw. 交任务时奖励道具的类型，即Quests.tab中的PresentItemIndex4
+property dwPresentItemIndex4 as DWORD rw
+
+@summary rw. 交任务时奖励道具的数量，即Quests.tab中的PresentItemAmount4
+property dwPresentItemAmount4 as DWORD rw
+
+@summary rw. 交任务时奖励道具的类型，即Quests.tab中的PresentItemType5
+property dwPresentItemType5 as DWORD rw
+
+@summary rw. 交任务时奖励道具的类型，即Quests.tab中的PresentItemIndex5
+property dwPresentItemIndex5 as DWORD rw
+
+@summary rw. 交任务时奖励道具的数量，即Quests.tab中的PresentItemAmount5
+property dwPresentItemAmount5 as DWORD rw
+
+@summary rw. 交任务时奖励道具的类型，即Quests.tab中的PresentItemType6
+property dwPresentItemType6 as DWORD rw
+
+@summary rw. 交任务时奖励道具的类型，即Quests.tab中的PresentItemIndex6
+property dwPresentItemIndex6 as DWORD rw
+
+@summary rw. 交任务时奖励道具的数量，即Quests.tab中的PresentItemAmount6
+property dwPresentItemAmount6 as DWORD rw
+
+@summary rw. 交任务时奖励道具的类型，即Quests.tab中的PresentItemType7
+property dwPresentItemType7 as DWORD rw
+
+@summary rw. 交任务时奖励道具的类型，即Quests.tab中的PresentItemIndex7
+property dwPresentItemIndex7 as DWORD rw
+
+@summary rw. 交任务时奖励道具的数量，即Quests.tab中的PresentItemAmount7
+property dwPresentItemAmount7 as DWORD rw
+
+@summary rw. 交任务时奖励道具的类型，即Quests.tab中的PresentItemType8
+property dwPresentItemType8 as DWORD rw
+
+@summary rw. 交任务时奖励道具的类型，即Quests.tab中的PresentItemIndex8
+property dwPresentItemIndex8 as DWORD rw
+
+@summary rw. 交任务时奖励道具的数量，即Quests.tab中的PresentItemAmount8
+property dwPresentItemAmount8 as DWORD rw
+
+@summary rw. 奖励的经验值，即Quests.tab中的PresentExp
+property nPresentExp as int rw
+
+@summary rw. 奖励的金钱，即Quests.tab中的PresentMondy
+property nPresentMoney as int rw
+
+@summary rw. 奖励的道德值，即Quests.tab中的PresentMoral
+property nPresentMoral as int rw
+
+@summary rw. 交任务影响的势力，即Quests.tab中的AffectForceIndex1
+property dwAffectForceID1 as DWORD rw
+
+@summary rw. 交任务影响的势力友好度，即Quests.tab中的AffectForceValue1
+property nAffectForceValue1 as int rw
+
+@summary rw. 交任务影响的势力，即Quests.tab中的AffectForceIndex2
+property dwAffectForceID2 as DWORD rw
+
+@summary rw. 交任务影响的势力友好度，即Quests.tab中的AffectForceValue2
+property nAffectForceValue2 as int rw
+
+@summary rw. 交任务影响的势力，即Quests.tab中的AffectForceIndex3
+property dwAffectForceID3 as DWORD rw
+
+@summary rw. 交任务影响的势力友好度，即Quests.tab中的AffectForceValue3
+property nAffectForceValue3 as int rw
+
+@summary rw. 交任务影响的势力，即Quests.tab中的AffectForceIndex4
+property dwAffectForceID4 as DWORD rw
+
+@summary rw. 交任务影响的势力友好度，即Quests.tab中的AffectForceValue4
+property nAffectForceValue4 as int rw
+
+@summary rw. 技能id，即Quests.tab中的AffectSkillID1
+property dwAffectSkillID as DWORD rw
+
+@summary rw. 技能熟练度，即Quests.tab中的Proficiency
+property dwProficiency as DWORD rw
+
+@summary rw. 重复做任务时奖励的削减百分比，即Quests.tab中的RepeatCutPercent
+property nRepeatCutPercent as int rw
+
+@summary rw. 辅助做任务奖励的好感度，即Quests.tab中的PresentAssistIntimacy
+property nPresentAssistIntimacy as int rw
+
+@summary rw. 辅助做任务奖励的道德值，即Quests.tab中的PresentAssistMoral
+property nPresentAssistMoral as int rw
+
+@summary rw. 辅助做任务奖励的经验值，即Quests.tab中的PresentAssistExp
+property nPresentAssistExp as int rw
+
+@summary 获取任务完成后能够得到的结果
+@remarks 如果做完任务能够有一些结果，例如获得奖励，影响声望，那么会
+@	返回一个table，它可能包含以下内容：
+@n	
+@	{money=XXX, skill=nskillid, reputation={...}, itemgroup1={...}, itemgroup2={...}}。
+@	其中每一项的含义如下：
+@n
+@n	1) 如果奖励金钱，那么有一个"money"项，指示会奖励多少金钱
+@
+@n	2) 如果奖励技能，那么会有skill项，对应技能的id
+@
+@n	3) 如果影响声望，那么有一个"reputation"项，对应一个table，这个table
+@	中的项以从1开始的整数为索引，每个索引又对应一个table，包含"force"和"value"。
+@	例如：配置表里影响声望的配置中，AffectForceIndex1和AffectForceIndex2
+@	填写了内容，那么"reputation"这个项就是这样子的：
+@	{[1]={force=force1ID, value=value1}, [2]={force=force2ID, value=value2}}
+@n
+@n	4) 如果第一组物品奖励存在，那么有一个"itemgroup1"项，对应一个table，这个
+@	table包含以下内容："all"字段，表示是否全部奖励。其余就是奖励物品的内容。
+@	每个奖励物品以从1开始的数字为索引，对应一个table：
+@	包含"selectindex"(第几个奖励), "count"(奖励数量), "version"(道具版本号),
+@	"type"(道具配置表类型), "index"(道具在配置表中的id). 例如:
+@	{all=false, [1]={selectindex=1, count=2, version="000", type=3, index=1}}
+@n
+@n	但如果第一组物品奖励存在，并且设置了隐藏，那么itemgroup1中除了all字段，就
+@	只有一个物品table，而不是所有的奖励。这个唯一的奖励中，selectindex为0，
+@	count为1，version是道具版本号，type是7，index是106
+@n
+@n	5) 如果第二组物品奖励存在，那么有一个"itemgroup2"项，对应一个table，这个
+@	table的含义与"itemgroup1"一样
+function GetHortation()
+
+@summary rw. 接任务时的门派限制
+property dwRequireSchoolMask as DWOED rw
+
+@summary rw. 接任务时声望限制的逻辑关系(true: AND, false: OR)
+property bRequireReputeAll as BOOL rw
+
+@summary rw. 接任务时势力限制1
+property dwRequireForceID1 as DWOED rw
+
+@summary rw. 接任务时势力限制2
+property dwRequireForceID2 as DWOED rw
+
+@summary rw. 接任务时势力限制3
+property dwRequireForceID3 as DWOED rw
+
+@summary rw. 接任务时势力限制4
+property dwRequireForceID4 as DWOED rw
+
+@summary rw. 接任务时声望最小限制1
+property nReputeLevelMin1 as DWOED rw
+
+@summary rw. 接任务时声望最大限制1
+property nReputeLevelMax1 as DWOED rw
+
+@summary rw. 接任务时声望最小限制2
+property nReputeLevelMin2 as DWOED rw
+
+@summary rw. 接任务时声望最大限制2
+property nReputeLevelMax2 as DWOED rw
+
+@summary rw. 接任务时声望最小限制3
+property nReputeLevelMin3 as DWOED rw
+
+@summary rw. 接任务时声望最大限制3
+property nReputeLevelMax3 as DWOED rw
+
+@summary rw. 接任务时声望最小限制4
+property nReputeLevelMin4 as DWOED rw
+
+@summary rw. 接任务时声望最大限制4
+property nReputeLevelMax4 as DWOED rw

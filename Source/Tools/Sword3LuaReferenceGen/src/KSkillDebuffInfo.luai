@@ -1,0 +1,18 @@
+﻿@title	KSKILL_DEBUFF_INFO对象
+@obj	KSKILL_DEBUFF_INFO
+@detail
+@catalog
+
+@summary rw. Debuff等级
+property nLevel as int rw
+
+@summary rw. Debuff持续时间，单位帧
+property nDurationFrame
+
+# @summary [仅服务器端使用] rw. 策划专用
+# @remarks 这个字段本身对Debuff是无用的，主要是提供给策划保存一些数据用。
+# property nVoid 
+
+@summary 获取Debuff的所有属性
+@remarks 返回一个包含Debuff所有属性的table，table的每一项包括：{nID, nValue1, nValue2}
+function GetAttribute()

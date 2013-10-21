@@ -1,0 +1,1130 @@
+---------------------------------------------------------------------->
+-- 脚本名称:	SyncTest.lua
+-- 更新时间:	09/05/12
+-- 更新用户:	侯锐
+-- 脚本说明:	根据同步测试用例生成自动测试脚本，用例编号与文档中一一对应
+----------------------------------------------------------------------<
+
+local GAME_FPS   = 16
+local nSrcX      = 0.5 * 2048 -- 第一个region的正中心
+local nSrcY      = 0.5 * 2048 -- 第一个region的正中心
+local nPlayerID1 = 1
+local nPlayerID2 = 2
+local nTestIndex = 1
+local tTestCase = {}
+local SetPositionTimer = 1 -- SetPosition的延迟时间
+local scene1 = nil
+
+
+
+fSyncTest = function()
+	scene1 = nil
+	nTestIndex = 82
+	local player1, player2 = TestBegin()
+	scene1 = player2.GetScene()
+	scene1.SetTimer(GAME_FPS * 20, "scripts/Include/SyncTest.lh", 0, 0)
+end
+
+function GetDirection(nX, nY, nX1, nY1)
+    local nface = 0
+
+    if nX > nX1 and nY > nY1 then
+        nface = math.atan((nY1 - nY) / (nX1 - nX)) / math.pi * 128 + 128
+    elseif nX > nX1 and nY < nY1 then
+        nface = math.atan((nY1 - nY) / (nX1 - nX)) / math.pi * 128 + 128
+    elseif nX < nX1 and nY > nY1 then
+        nface = math.atan((nY1 - nY) / (nX1 - nX)) / math.pi * 128 + 256
+    elseif nX < nX1 and nY < nY1 then
+        nface = math.atan((nY1 - nY) / (nX1 - nX)) / math.pi * 128
+    elseif nX == nX1 and nY < nY1 then
+        nface = 64
+    elseif nY == nY1 and nX < nX1 then
+        nface = 0
+    elseif nX == nX1 and nY > nY1 then
+        nface = 192
+    elseif nY == nY1 and nX > nX1 then
+        nface = 128
+    end
+
+    return nface
+end
+
+
+function TestBegin()
+    local player1 = GetPlayer(nPlayerID1)
+    if not player1 then
+        return nil, nil
+    end
+
+    local player2 = GetPlayer(nPlayerID2)
+    if not player2 then
+        return nil, nil
+    end
+
+    player1.SetPosition(nSrcX, nSrcY, 0)
+    player2.SetPosition(nSrcX, nSrcY, 0)
+
+    return player1, player2
+end
+
+function TestEnd(player1, player2)
+    player1.Revive()
+    player2.Revive()
+    player1.SetPosition(nSrcX, nSrcY, 0)
+    player2.SetPosition(nSrcX, nSrcY, 0)
+end
+
+function OnTimer(scene, nParam1, nParam2)
+    local player1 = GetPlayer(nPlayerID1)
+    if not player1 then
+        return
+    end
+
+    local player2 = GetPlayer(nPlayerID2)
+    if not player2 then
+        return
+    end
+
+
+		if nParam2 == 0 then
+
+	    local string1 = "[SYNCTEST]Player1:(" .. player1.nX .. "," .. player1.nY .. ")"
+	    local string2 = "[SYNCTEST]Player2:(" .. player2.nX .. "," .. player2.nY .. ")"
+	    local string3 = "[SYNCTEST]TestCase " .. nTestIndex - 1 .. " end.."
+
+	    Log(string1)
+	    Log(string2)
+	    if nTestIndex > 1 then
+	        Log(string3)
+	    end
+
+	    TestEnd(player1, player2)
+
+	    TestBegin()
+
+	    if nTestIndex == #tTestCase + 1 then
+	    	return
+	    end
+	    if nTestIndex == 86 then
+				nTestIndex = nTestIndex + 1
+			end
+	    tTestCase[nTestIndex](player1, player2, 0)
+	  else
+	  	tTestCase[nTestIndex](player1, player2, 1)
+	  end
+end
+
+function RegionTest(player1, player2, nPlayer1DestX, nPlayer1DestY, bPlayer1Move, nPlayer2DestX, nPlayer2DestY, bPlayer2Move)
+    local nVelocityXY  = 50
+    local nDistance    = math.sqrt((player1.nX - nPlayer1DestX) ^ 2 + (player1.nY - nPlayer1DestY) ^ 2)
+    local nDirectionXY = GetDirection(player1.nX, player1.nY, nPlayer1DestX, nPlayer1DestY)
+    local nVelocityZ   = 0
+    local nFrame       = nDistance / nVelocityXY
+
+    if ((nDistance % nVelocityXY) ~= 0) then
+        nFrame = nFrame + 1
+    end
+
+    local string = "[SYNCTEST]TestCase " .. nTestIndex .. " begin.."
+    Log(string)
+
+
+    if bPlayer1Move then
+        player1.Dash(nFrame, nDirectionXY, nVelocityXY, nVelocityZ)
+    end
+
+    nVelocityXY  = 20
+    nDistance    = math.sqrt((player2.nX - nPlayer2DestX) ^ 2 + (player2.nY - nPlayer2DestY) ^ 2)
+    nDirectionXY = GetDirection(player2.nX, player2.nY, nPlayer2DestX, nPlayer2DestY)
+    nVelocityZ   = 0
+    nFrame       = nDistance / nVelocityXY
+
+    if ((nDistance % nVelocityXY) ~= 0) then
+        nFrame = nFrame + 1
+    end
+
+    if bPlayer2Move then
+        player2.Dash(nFrame, nDirectionXY, nVelocityXY, nVelocityZ)
+    end
+
+    nTestIndex = nTestIndex + 1
+    scene1.SetTimer(GAME_FPS * 12, "scripts/Include/SyncTest.lh", 0, 0)
+end
+
+-----------------------------------------------------------------------------------------------------------
+tTestCase[1] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+		else
+   	 	RegionTest(player1, player2, 0.5 * 2048, 0.7 * 2048, true, 0.5 * 2048, 0.5 * 2048, false)
+    -- SyncFlag:2
+   	end
+end
+
+tTestCase[2] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+		else
+   		RegionTest(player1, player2, 0.5 * 2048, 0.7 * 2048, true, 0.7 * 2048, 0.5 * 2048, true)
+   	end
+    -- SyncFlag:2
+end
+
+tTestCase[3] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 0.5 * 2048, false, 0.5 * 2048, 0.5 * 2048, false)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[4] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 1.5 * 2048, true, 0.5 * 2048, 0.5 * 2048, false)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[5] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 1.5 * 2048, true, 0.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[6] = function(player1, player2, nParam)
+		if nParam == 0 then
+			player1.SetPosition(1.5 * 2048, 0.5 * 2048, 0)
+    	player2.SetPosition(1.5 * 2048, 0.5 * 2048, 0)
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 0.5 * 2048, true, 2.5 * 2048, 0.5 * 2048, true)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[7] = function(player1, player2, nParam)
+		if nParam == 0 then
+		  player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 2.5 * 2048, true, 2.5 * 2048, 0.5 * 2048, true)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[8] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 1.5 * 2048, true, 1.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[9] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 0.5 * 2048, 0)
+    	player2.SetPosition(1.5 * 2048, 0.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 0.5 * 2048, true, 1.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[10] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(0.5 * 2048, 0.5 * 2048, 0)
+    	player2.SetPosition(1.5 * 2048, 0.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 0.5 * 2048, true, 1.5 * 2048, 0.5 * 2048, false)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[11] = function(player1, player2, nParam)
+		if nParam == 0 then
+			player1.SetPosition(0.5 * 2048, 0.5 * 2048, 0)
+    	player2.SetPosition(1.5 * 2048, 0.5 * 2048, 0)
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+		else
+    	RegionTest(player1, player2, 1.5 * 2048, 1.5 * 2048, true, 1.5 * 2048, 0.5 * 2048, false)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[12] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(0.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 0.5 * 2048, true, 1.5 * 2048, 1.5 * 2048, false)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[13] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 0.5 * 2048, true, 2.5 * 2048, 1.5 * 2048, false)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[14] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+    	player1.SetPosition(1.5 * 2048, 0.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 0.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 0.5 * 2048, true, 2.5 * 2048, 0.5 * 2048, false)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[15] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 0.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 0.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 2.5 * 2048, 1.5 * 2048, true, 2.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[16] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 0.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 0.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 1.5 * 2048, 1.5 * 2048, true, 2.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[17] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 0.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 0.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 1.5 * 2048, true, 2.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[18] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 2.5 * 2048, 2.5 * 2048, true, 1.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[19] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 1.5 * 2048, 0.5 * 2048, true, 1.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[20] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 2.5 * 2048, 2.5 * 2048, true, 3.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[21] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 1.5 * 2048, 2.5 * 2048, true, 3.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[22] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 2.5 * 2048, 1.5 * 2048, true, 3.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[23] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 2.5 * 2048, 2.5 * 2048, true, 2.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[24] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+   		player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 1.5 * 2048, 0.5 * 2048, true, 2.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[25] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 2.5 * 2048, 2.5 * 2048, true, 2.5 * 2048, 0.5 * 2048, true)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[26] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 3.5 * 2048, 2.5 * 2048, true, 2.5 * 2048, 0.5 * 2048, true)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[27] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 1.5 * 2048, 1.5 * 2048, true, 2.5 * 2048, 0.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[28] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 3.5 * 2048, 2.5 * 2048, true, 4.5 * 2048, 0.5 * 2048, true)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[29] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+		else
+   		RegionTest(player1, player2, 3.5 * 2048, 1.5 * 2048, true, 4.5 * 2048, 0.5 * 2048, true)
+   	end
+    -- SyncFlag:2
+end
+
+tTestCase[30] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 1.5 * 2048, true, 3.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[31] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 2.5 * 2048, 2.5 * 2048, true, 3.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[32] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 0.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 2.5 * 2048, 1.5 * 2048, true, 2.5 * 2048, 1.5 * 2048, false)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[33] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 0.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 1.5 * 2048, 1.5 * 2048, true, 2.5 * 2048, 1.5 * 2048, false)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[34] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 0.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 1.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 0.5 * 2048, true, 2.5 * 2048, 1.5 * 2048, false)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[35] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 2.5 * 2048, 2.5 * 2048, true, 1.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[36] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 1.5 * 2048, 2.5 * 2048, true, 1.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[37] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 1.5 * 2048, true, 1.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[38] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 0.5 * 2048, true, 1.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[39] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 2.5 * 2048, true, 1.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[40] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 1.5 * 2048, 2.5 * 2048, true, 1.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[41] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 0.5 * 2048, 1.5 * 2048, true, 2.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[42] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 1.5 * 2048, 2.5 * 2048, true, 2.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[43] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 2.5 * 2048, 2.5 * 2048, true, 2.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[44] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 1.5 * 2048, 0.5 * 2048, true, 3.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[45] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 2.5 * 2048, 1.5 * 2048, true, 3.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[46] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 2.5 * 2048, 2.5 * 2048, true, 3.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[47] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 1.5 * 2048, 2.5 * 2048, true, 3.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[48] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+			player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+    	player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+		else
+    	RegionTest(player1, player2, 2.5 * 2048, 2.5 * 2048, true, 3.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[49] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 1.5 * 2048, true, 3.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[50] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 1.5 * 2048, true, 3.5 * 2048, 3.5 * 2048, true)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[51] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 2.5 * 2048, true, 3.5 * 2048, 3.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[52] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+    else
+    	RegionTest(player1, player2, 1.5 * 2048, 2.5 * 2048, true, 2.5 * 2048, 3.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[53] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 2.5 * 2048, true, 2.5 * 2048, 3.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[54] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 1.5 * 2048, true, 2.5 * 2048, 3.5 * 2048, true)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[55] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 0.5 * 2048, 2.5 * 2048, true, 1.5 * 2048, 3.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[56] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 2.5 * 2048, true, 1.5 * 2048, 3.5 * 2048, true)
+   	end
+    -- SyncFlag:2
+end
+
+tTestCase[57] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(2.5 * 2048, 2.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 1.5 * 2048, true, 1.5 * 2048, 3.5 * 2048, true)
+    end
+    -- SyncFlag:3
+end
+
+tTestCase[58] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 1.5 * 2048, 2.5 * 2048, true, 3.5 * 2048, 1.5 * 2048, false)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[59] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 1.5 * 2048, true, 3.5 * 2048, 1.5 * 2048, false)
+   	end
+    -- SyncFlag:1
+end
+
+tTestCase[60] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 2.5 * 2048, true, 3.5 * 2048, 1.5 * 2048, false)
+    end
+    -- SyncFlag:1
+end
+
+tTestCase[61] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 2.5 * 2048, true, 3.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:1
+end
+
+tTestCase[62] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 1.5 * 2048, true, 3.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:1
+end
+
+tTestCase[63] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 0.5 * 2048, true, 3.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[64] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 0.5 * 2048, 0.5 * 2048, true, 2.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[65] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 1.5 * 2048, 2.5 * 2048, true, 2.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:1
+end
+
+tTestCase[66] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 2.5 * 2048, true, 2.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:1
+end
+
+tTestCase[67] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 0.5 * 2048, 0.5 * 2048, true, 2.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[68] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 1.5 * 2048, 0.5 * 2048, true, 2.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:1
+end
+
+tTestCase[69] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 1.5 * 2048, true, 2.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:1
+end
+
+tTestCase[70] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 0.5 * 2048, 1.5 * 2048, true, 2.5 * 2048, 0.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[71] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 1.5 * 2048, 0.5 * 2048, true, 2.5 * 2048, 0.5 * 2048, true)
+    end
+    -- SyncFlag:1
+end
+
+tTestCase[72] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 0.5 * 2048, true, 2.5 * 2048, 0.5 * 2048, true)
+   	end
+    -- SyncFlag:1
+end
+
+tTestCase[73] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 1.5 * 2048, 0.5 * 2048, true, 3.5 * 2048, 0.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[74] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 0.5 * 2048, true, 3.5 * 2048, 0.5 * 2048, true)
+    end
+    -- SyncFlag:1
+end
+
+tTestCase[75] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 1.5 * 2048, true, 3.5 * 2048, 0.5 * 2048, true)
+    end
+    -- SyncFlag:1
+end
+
+tTestCase[76] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 0.5 * 2048, true, 4.5 * 2048, 0.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[77] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 1.5 * 2048, true, 4.5 * 2048, 0.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[78] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 0.5 * 2048, true, 4.5 * 2048, 1.5 * 2048, true)
+   	end
+    -- SyncFlag:2
+end
+
+tTestCase[79] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 1.5 * 2048, true, 4.5 * 2048, 1.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[80] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 1.5 * 2048, true, 4.5 * 2048, 2.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+tTestCase[81] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(1.5 * 2048, 1.5 * 2048, 0)
+	    player2.SetPosition(3.5 * 2048, 1.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 2.5 * 2048, 2.5 * 2048, true, 4.5 * 2048, 2.5 * 2048, true)
+   	end
+    -- SyncFlag:2
+end
+
+tTestCase[82] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * 30, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SwitchMap(1, 0, 0, 0)
+	    player2.SetPosition(0.5 * 2048, 0.5 * 2048, 0)
+		else
+		  local string = "[SYNCTEST]TestCase " .. nTestIndex .. " begin.."
+    	Log(string)
+		  nTestIndex = nTestIndex + 1
+			player1.SwitchMap(36, 0.5 * 2048, 0.5 * 2048, 0)
+	    scene1.SetTimer(GAME_FPS * 30, "scripts/Include/SyncTest.lh", 0, 0)
+			--RegionTest(player1, player2, 0.5 * 2048, 0.5 * 2048, true, 0.5 * 2048, 0.5 * 2048, true)
+		end
+	-- AddSyncFlag:1
+    -- SyncFlag:1
+end
+
+tTestCase[83] = function(player1, player2, nParam)
+		if nParam == 0 then
+	    player1.SwitchMap(1, 0, 0, 0)
+	    player2.SetPosition(0.5 * 2048, 0.5 * 2048, 0)
+    	scene1.SetTimer(GAME_FPS * 30, "scripts/Include/SyncTest.lh", 0, 1)
+   	else
+		  local string = "[SYNCTEST]TestCase " .. nTestIndex .. " begin.."
+    	Log(string)
+   		player1.SwitchMap(36, 1.5 * 2048, 0.5 * 2048, 0)
+	    nTestIndex = nTestIndex + 1
+	    scene1.SetTimer(GAME_FPS * 30, "scripts/Include/SyncTest.lh", 0, 0)
+    	--RegionTest(player1, player2, 1.5 * 2048, 0.5 * 2048, true, 0.5 * 2048, 0.5 * 2048, true)
+    end
+    -- SyncFlag:1
+end
+
+tTestCase[84] = function(player1, player2, nParam)
+		if nParam == 0 then
+	    player1.SwitchMap(1, 0, 0, 0)
+	    player2.SetPosition(0.5 * 2048, 0.5 * 2048, 0)
+	    scene1.SetTimer(GAME_FPS * 30, "scripts/Include/SyncTest.lh", 0, 1)
+		else
+	    local string = "[SYNCTEST]TestCase " .. nTestIndex .. " begin.."
+	    Log(string)
+      player1.SwitchMap(36, 2.5 * 2048, 0.5 * 2048, 0)
+      nTestIndex = nTestIndex + 1
+      scene1.SetTimer(GAME_FPS * 30, "scripts/Include/SyncTest.lh", 0, 0)
+      -- RegionTest(player1, player2, 2.5 * 2048, 0.5 * 2048, true, 0.5 * 2048, 0.5 * 2048, true)
+    end
+    -- SyncFlag:2
+end
+
+-- 死亡region[13，16]从1开始编号
+tTestCase[85] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(11.5 * 2048, 15.5 * 2048, 0)
+	    player2.SetPosition(11.5 * 2048, 15.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 12.5 * 2048, 15.5 * 2048, true, 11.5 * 2048, 15.5 * 2048, false)
+   	end
+    -- SyncFlag:2
+end
+
+tTestCase[87] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(13.5 * 2048, 15.5 * 2048, 0)
+	    player2.SetPosition(11.5 * 2048, 15.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 12.5 * 2048, 15.5 * 2048, true, 11.5 * 2048, 15.5 * 2048, false)
+   	end
+    -- SyncFlag:2
+end
+
+tTestCase[88] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(13.5 * 2048, 15.5 * 2048, 0)
+	    player2.SetPosition(11.5 * 2048, 15.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 12.5 * 2048, 15.5 * 2048, true, 12.5 * 2048, 15.5 * 2048, true)
+    end
+    -- SyncFlag:1
+end
+
+-- 切地图region[16，13]从1开始编号
+tTestCase[89] = function(player1, player2, nParam)
+		if nParam == 0 then
+			scene1.SetTimer(GAME_FPS * SetPositionTimer, "scripts/Include/SyncTest.lh", 0, 1)
+	    player1.SetPosition(14.5 * 2048, 12.5 * 2048, 0)
+	    player2.SetPosition(14.5 * 2048, 12.5 * 2048, 0)
+	  else
+    	RegionTest(player1, player2, 15.5 * 2048, 12.5 * 2048, true, 14.5 * 2048, 12.5 * 2048, false)
+    end
+    -- SyncFlag:3
+end
+
+
+rawset(_G, "SyncTest", fSyncTest)

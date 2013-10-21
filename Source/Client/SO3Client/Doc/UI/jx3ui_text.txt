@@ -1,0 +1,100 @@
+转义符						意义
+<enter>						换行
+<<							输出<
+<color=colorname>			改变字体颜色
+</color>  					恢复字体颜色
+<border=bordercolorname>	改变字体边缘颜色
+</border>					设为默认字体边缘颜色
+<bordersize=bordersize>		设置字体边缘宽度
+</bordersize>				恢复字体边缘宽度
+<size=fontsize>				改变自己大小
+</size>						恢复字体大小
+<font=fonttype>				改变字体类型
+</font>						恢复字体类型
+<pic						嵌入式图片，name为图片名字，如":)",脚本里面如果需要处理输入事件，使用name，所以name需要唯一。
+ 	name=picname 
+	file=filepath			而file是相对与游戏目录的子目录路径，不能使用"./"、"../"。
+	group=groupno			动画序列的组号
+	frame=frameno			动画序列里面的初始帧号,目前都是从第0帧开始播放；
+	interval=ms				动画播放间隔，设为-1表示静止，未支持；
+	loop=loopcount			动画序列循环播放的次数，设为-1，表示一直循环播放，未支持；
+	width=pixel				多个pic的file可以相同，但name必须不同，如果name相同，而file不同，则多个pic共享同一个pic资源，
+	height=pixel			并把file更新到最后的值。如果name相同的图片，file可以省略。
+	align=aligntype
+	scale=scaletype
+>	
+<event 						跟lua脚本挂钩，可以响应相应消息并调用相应脚本，使用方式为<event></event>包起来的东西的区域。
+	name=eventname
+	file=luafile
+>						
+</event>	
+
+
+术语：
+1.rich text
+2.plain text
+3.encoded text
+
+
+原理：
+Text实际上只包含两种东西：
+1.控制符；
+	1.font color
+	2.font border color
+	3.font size
+	4.font border size
+	5.font type
+	6.event
+2.内容；
+	1.string
+	2.image
+	
+Text主要有两类操作：
+1.取特定内容以及其属性；
+	1.取指定位置，长度占据的大小；
+	2.取指定位置，长度的里面相同性质的内容块；
+2.给已有内容增减属性；
+
+
+问题：
+1.由于字体有了大小，因此不能再单独对取每个字的宽度；
+2.允许控制符嵌套，则需要使用stack方式或者属性表的方式保存属性；
+3.是按字的方式还是句的方式保存连续相同属性的文字。如果使用stack的方式保存属性，
+  可以不用考虑这个问题；
+4.处理<color>大<size>中</color>小</size>这种情况；
+5.处理<color>大<border>中</color>小</border>这种情况；
+6.处理<event><size>大<border>中</size>小</border><pic><t></event>这种情况；
+7.处理<size><event>大<border>中</size>小</border><pic><t></event>这种情况；
+
+
+KEncodedText sEncodedText;
+for (KEncodedTextIterator it(sEncodedText); it; ++it)
+{
+ 	it->fWidth;
+ 	it->fHeigth;
+ 	switch (it->byCode)
+ 	{
+ 	case KString:
+ 		break;
+ 	case KImage;
+ 	 	break;
+ 	case KCtrl:
+ 		break;
+ 	}
+ 	
+}
+
+text layout -> plain text
+rich text -> encoded text
+plain text -> encoded text
+
+encoded text -> encoded text render context
+encoded text render context 放到 text layout
+
+text layout 渲染或者处理事件
+
+out put encoded text -> text layout
+会一直停留直到被释放 ->  text layout 要作为 窗口控件的部件 -> 消息的处理也可以放在窗口控件
+
+layout 里面管理event table 的生存期
+

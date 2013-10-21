@@ -1,0 +1,29 @@
+EventID	CodeName	ShowName	Parm1	ParmInfo1	Parm2	ParmInfo2	Parm3	ParmInfo3	Parm4	ParmInfo4
+1	OnAcceptQuest	接任务事件	dwQuestID	所接任务ID						
+2	OnFinishQuest	完成任务事件	dwQuestID	完成的任务ID						
+3	OnEnterGame	进入游戏事件								
+4	OnHealthLow	血量低事件								
+5	OnLevelUp	升级事件								
+6	OnLearnSkill	学习技能事件	dwID		dwLevel					
+7	OnSkillLevelUp	技能升级事件	dwSkillID	升级的技能ID	nSkillLevel	升级后的技能等级				
+8	OnEnterFight	进入战斗事件								
+9	OnDeath	重伤事件								
+10	OnApplyFight	切磋事件								
+11	OnSlaughter	屠杀事件								
+12	OnVendetta	仇杀事件								
+13	OnReputationUpdate	荣誉值变更事件	dwForceID	势力ID						
+14	OnLearnCraft	学习生活技能事件	nProfessionID	生活技能ID						
+15	OnCraftLevelUp	生活技能升级	nProfessionID	生活技能ID	nLevel	生活技能级别				
+16	OnGetItem	获得装备事件	dwID	物品ID						
+17	OnSelectTarget	选中目标事件	dwType	目标类型	dwID	目标ID				
+18	OnOpenpanel	打开交易界面事件	szName	打开界面的名称						
+19	OnDragSkillToActionBar	将技能拖到快捷栏事件	dwSkillID	技能ID	dwSkillLevel	技能等级	box	目标快捷栏		
+20	OnAddBuff	获得debuff事件	dwBuffID	BuffID	dwBuffLevel	Buff等级				
+21	OnMakeParty	组队事件								
+22	OnDialogue	对话事件	dwTargetType	目标类型	dwTargetID	目标ID				
+23	OnEnterScene	切换场景事件	dwSceneID	切换后的场景ID						
+24	OnEquipItemUpdate	装备武器事件	dwBox	背包ID	dwX	背包中格数ID				
+25	OnStartAutoFly	开始坐马车事件								
+26	OnStartAutoChangeMap	马车上切换地图事件								
+30	OnEndAutoFly	结束坐马车事件								
+31	OnMountKungfu	装备内功事件	dwMountKungfuID	内功ID	dwMountKungfuLevel	内功等级				

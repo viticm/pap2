@@ -1,0 +1,112 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2B72E5CC-C7DE-449A-94F6-DEA65CD78EDB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AIEnumEditor</RootNamespace>
+    <AssemblyName>AIEnumEditor</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\..\..\..\自动导出\Plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=7.3.0.2, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AIArgumentsEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AIArgumentsEditor.Designer.cs">
+      <DependentUpon>AIArgumentsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AIChartSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AIChartSelector.Designer.cs">
+      <DependentUpon>AIChartSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AIFileWriter.cs" />
+    <Compile Include="CodeWriter.cs" />
+    <Compile Include="EnumValueSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnumValueSelector.Designer.cs">
+      <DependentUpon>EnumValueSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnumValuesEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnumValuesEditor.Designer.cs">
+      <DependentUpon>EnumValuesEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileFolderHelper.cs" />
+    <Compile Include="IniStructure.cs" />
+    <Compile Include="ParameterEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParameterEditor.Designer.cs">
+      <DependentUpon>ParameterEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SymmetricMethod.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AIArgumentsEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AIArgumentsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AIChartSelector.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AIChartSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnumValueSelector.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EnumValueSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnumValuesEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EnumValuesEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParameterEditor.resx">
+      <DependentUpon>ParameterEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

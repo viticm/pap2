@@ -1,0 +1,144 @@
+List2_GetStringLength				
+	说明：取文字列表列表项文字长度；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex  		列表项索引，从0开始；
+	返回：nLength     		文字长度；
+		
+List2_GetString							
+	说明：取文字列表列表项文字长度；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex  		列表项索引，从0开始；
+	返回：szString    		文字内容；
+		
+List2_GetVisibleLineCount		
+	说明：取文字列表可显示列表项数目；
+	参数：szTreePath  		窗口树路径名；
+	返回：nVisibleItemCount 列表项数目；
+
+List2_GetCount							
+	说明：取文字列表总列表项数目；
+	参数：szTreePath  		窗口树路径名；
+	返回：nItemCount 		列表项数目；
+
+List2_GetCurSel							
+	说明：取文字列表当前选中列表项索引；
+	参数：szTreePath  		窗口树路径名；
+	返回：nItemIndex 		列表项索引；
+
+List2_GetItemData						
+	说明：取文字列表列表项响应数值数据；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex  		列表项索引，从0开始；
+	返回：nItemData    		数值数据；
+
+List2_GetSelectItemBgColor			
+	说明：取文字列表选中列表项背景颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwColor 			背景颜色，目前没做可用性调整；
+
+List2_GetNormalItemFontScheme
+	说明：取文字列表列表项一般状态字体方案；
+	参数：szTreePath  		窗口树路径名；
+	返回：nScheme 			字体方案；
+
+List2_GetSelectItemFontScheme
+	说明：取文字列表列表项选中状态字体方案；
+	参数：szTreePath  		窗口树路径名；
+	返回：nScheme 			字体方案；
+
+List2_GetOverItemFontScheme
+	说明：取文字列表列表项鼠标移到上方字体方案；
+	参数：szTreePath  		窗口树路径名；
+	返回：nScheme 			字体方案；
+
+List2_GetRowHeight
+	说明：取文字列表行高；
+	参数：szTreePath  		窗口树路径名；
+	返回：nRowHeight 		列表行高；
+		
+List2_FindString						
+	说明：根据字符串在文字列查找表完全匹配列表项；
+	参数：szTreePath  		窗口树路径名，
+		  szString 			待查找字符串，
+		  [nStartItemIndex]	重指定的所有开始查找；
+	返回：nItemIndex		列表项索引，如果没找到，返回-1；
+	
+List2_FindItemData					
+	说明：根据数值数据在文字列查找表完全匹配列表项；
+	参数：szTreePath  		窗口树路径名，
+		  nItemData 		待查找数值数据，
+		  [nStartItemIndex]	重指定的所有开始查找；
+	返回：nItemIndex		列表项索引，如果没找到，返回-1；
+	
+List2_AddString							
+	说明：添加列表项到文字列表；
+	参数：szTreePath  		窗口树路径名，
+		  szString			待加入的文字，
+		  [nItemData] 		待加入数值数据，默认为0；
+	返回：nItemIndex		插入的列表项索引，如果失败，返回-1；
+	
+List2_DeleteString					
+	说明：删除文字列表列表项；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex		待删除的列表项索引；
+	返回：nil
+
+List2_ResetContent					
+	说明：删除文字列表所有列表项；
+	参数：szTreePath  		窗口树路径名；
+	返回：nil
+
+List2_SetStringData					
+	说明：设置列表项到文字列表项；
+	参数：szTreePath  		窗口树路径名，
+		  szString			待设置的文字，
+		  [nItemData] 		待设置数值数据，默认为0；
+	返回：nItemIndex		插入的列表项索引，如果失败，返回-1；
+
+List2_SetString
+	说明：设置列表项到文字列表项字串；
+	参数：szTreePath  		窗口树路径名，
+		  szString			待设置的文字，
+	返回：nItemIndex		插入的列表项索引，如果失败，返回-1；
+
+List2_SetItemData						
+	说明：设置列表项到文字列表项数值数据；
+	参数：szTreePath  		窗口树路径名，
+		  nItemData			待设置的数值数据，
+	返回：nItemIndex		插入的列表项索引，如果失败，返回-1；
+
+List2_SetTopItemIndex				
+	说明：设文字列表最顶列表项；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex		列表项索引；
+	返回：nil
+		
+List2_SetCurSel							
+	说明：选中文字列表指定列表项；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex		待选中列表项索引；
+	返回：nil
+
+List2_SetNormalFontScheme
+	说明：选中文字列表列表项一般字体方案；
+	参数：szTreePath  		窗口树路径名，
+		  nScheme			字体方案；
+	返回：nil
+
+List2_SetSelectFontScheme
+	说明：选中文字列表列表项选中字体方案；
+	参数：szTreePath  		窗口树路径名，
+		  nScheme			字体方案；
+	返回：nil
+
+List2_SetOverFontScheme
+	说明：选中文字列表列表项鼠标移到上方字体方案；
+	参数：szTreePath  		窗口树路径名，
+		  nScheme			字体方案；
+	返回：nil
+
+List2_SetSelectItemBgColor			
+	说明：设文字列表选中列表项背景颜色；
+	参数：szTreePath  		窗口树路径名；
+		  dwColor			背景颜色，目前未做可用性调整；
+	返回：nil

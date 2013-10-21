@@ -1,0 +1,19 @@
+2008-11-18
+关于Normal检查工具
+
+1.界面：
+如果是场景编辑器，在控制选项面板下面
+如果是模型编辑器，在杂项下面
+都叫做"启用Normal检查"
+
+2.细节：
+在2008-11-18能够检查Normal的是public下面的new light mode.fx和editor下面的shaderskin_2.fx
+分别在目录那复制了一份，然后命名为new light mode_checker.fx和shaderskin_2_checker.fx
+
+实现原理是
+1.利用g_GetDefaultShaderGroup得到KG3DDefaultShaderGroup
+2.用ReplaceDefaultShader接口改里面的Shader为用于检查的Shader，并保存原来的Shader
+3.Shader里面什么也不做，把Normal在Ps中输出
+4.当检查结束的时候还原保存的Shader。
+
+实现的类是KG3DSceneCheckers，以后用于检查的代码都可以放在里面

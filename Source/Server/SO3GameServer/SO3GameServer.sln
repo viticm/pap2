@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SO3GameServer", "SO3GameServer.vcxproj", "{F5CC7CC5-C0F1-4E40-9CF8-51405F58AE4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_Server|Win32 = Debug_Server|Win32
+		Release_Server|Win32 = Release_Server|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5CC7CC5-C0F1-4E40-9CF8-51405F58AE4A}.Debug_Server|Win32.ActiveCfg = Debug_Server|Win32
+		{F5CC7CC5-C0F1-4E40-9CF8-51405F58AE4A}.Debug_Server|Win32.Build.0 = Debug_Server|Win32
+		{F5CC7CC5-C0F1-4E40-9CF8-51405F58AE4A}.Release_Server|Win32.ActiveCfg = Release_Server|Win32
+		{F5CC7CC5-C0F1-4E40-9CF8-51405F58AE4A}.Release_Server|Win32.Build.0 = Release_Server|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

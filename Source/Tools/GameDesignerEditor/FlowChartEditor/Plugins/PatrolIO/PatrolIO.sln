@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatrolIO", "PatrolIO\PatrolIO.csproj", "{6A4247A3-7219-4422-9A20-F818CAE14C36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBManager", "..\..\DBManager\DBManager.csproj", "{F21D11C4-D6D4-448A-8C44-0BDDEB739396}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A4247A3-7219-4422-9A20-F818CAE14C36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A4247A3-7219-4422-9A20-F818CAE14C36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A4247A3-7219-4422-9A20-F818CAE14C36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A4247A3-7219-4422-9A20-F818CAE14C36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F21D11C4-D6D4-448A-8C44-0BDDEB739396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F21D11C4-D6D4-448A-8C44-0BDDEB739396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F21D11C4-D6D4-448A-8C44-0BDDEB739396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F21D11C4-D6D4-448A-8C44-0BDDEB739396}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

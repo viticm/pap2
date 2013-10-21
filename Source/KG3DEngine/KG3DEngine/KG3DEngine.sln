@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KG3DEngine", "KG3DEngine.vcproj", "{90AF2153-D437-4727-BDAA-A324DF7E39E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_AutoTest|Win32 = Debug_AutoTest|Win32
+		Debug_Client|Win32 = Debug_Client|Win32
+		Debug_DevTest|Win32 = Debug_DevTest|Win32
+		Debug_Server_Lib|Win32 = Debug_Server_Lib|Win32
+		Debug_Server|Win32 = Debug_Server|Win32
+		Debug|Win32 = Debug|Win32
+		Lua5_Debug|Win32 = Lua5_Debug|Win32
+		Lua5_Release|Win32 = Lua5_Release|Win32
+		Release_AutoTest|Win32 = Release_AutoTest|Win32
+		Release_Client|Win32 = Release_Client|Win32
+		Release_DevTest|Win32 = Release_DevTest|Win32
+		Release_Server|Win32 = Release_Server|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Debug_AutoTest|Win32.ActiveCfg = Release_DevTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Debug_AutoTest|Win32.Build.0 = Release_DevTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Debug_Client|Win32.ActiveCfg = Debug_AutoTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Debug_Client|Win32.Build.0 = Debug_AutoTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Debug_DevTest|Win32.ActiveCfg = Debug_DevTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Debug_DevTest|Win32.Build.0 = Debug_DevTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Debug_Server_Lib|Win32.ActiveCfg = Debug_AutoTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Debug_Server_Lib|Win32.Build.0 = Debug_AutoTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Debug_Server|Win32.ActiveCfg = Debug_AutoTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Debug_Server|Win32.Build.0 = Debug_AutoTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Debug|Win32.Build.0 = Debug|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Lua5_Debug|Win32.ActiveCfg = Debug|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Lua5_Debug|Win32.Build.0 = Debug|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Lua5_Release|Win32.ActiveCfg = Release|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Lua5_Release|Win32.Build.0 = Release|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Release_AutoTest|Win32.ActiveCfg = Release_AutoTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Release_AutoTest|Win32.Build.0 = Release_AutoTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Release_Client|Win32.ActiveCfg = Release_AutoTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Release_Client|Win32.Build.0 = Release_AutoTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Release_DevTest|Win32.ActiveCfg = Release_DevTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Release_DevTest|Win32.Build.0 = Release_DevTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Release_Server|Win32.ActiveCfg = Release_AutoTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Release_Server|Win32.Build.0 = Release_AutoTest|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Release|Win32.ActiveCfg = Release|Win32
+		{90AF2153-D437-4727-BDAA-A324DF7E39E8}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

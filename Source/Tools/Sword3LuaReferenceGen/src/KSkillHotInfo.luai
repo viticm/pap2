@@ -1,0 +1,14 @@
+﻿@title	KSKILL_HOT_INFO对象
+@obj	KSKILL_HOT_INFO
+@detail
+@catalog
+
+@summary rw. Hot等级
+property nLevel as int rw
+
+@summary rw. Hot持续时间，单位帧
+property nDurationFrame
+
+@summary 获取Hot的所有属性
+@remarks 返回一个包含Hot所有属性的table，table的每一项包括：{nID, nValue1, nValue2}
+function GetAttribute()

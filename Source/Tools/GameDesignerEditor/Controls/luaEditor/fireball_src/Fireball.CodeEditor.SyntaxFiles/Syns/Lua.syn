@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Language Name="Lua" Startblock="Lua Code">
+<FileTypes>
+	<FileType Extension=".lua" Name="Lua script file"/>
+</FileTypes>
+	<Block Name="Lua Code" Style="Lua Code" EscapeChar="" IsMultiline="true">
+		<Scope Start="{" End="}" Style="Lua Scope" Text="{...}" CauseIndent="true" />
+    <Scope Start="\bfunction\b" End="\bend\b" StartIsComplex="true" EndIsComplex="true" Style="Lua Keyword" Text="function...end" CauseIndent="true" />
+    <Scope Start="\bdo\b" End="\bend\b" StartIsComplex="true" EndIsComplex="true" Style="Lua Keyword" Text="do...end" CauseIndent="false" />
+    <Scope Start="\bwhile\b" End="\bend\b" StartIsComplex="true" EndIsComplex="true" Style="Lua Keyword" Text="while...end" CauseIndent="false" />
+    <Scope Start="\bif\b" End="\bend\b" StartIsComplex="true" EndIsComplex="true" Style="Lua Keyword" Text="if...end" CauseIndent="false" />
+
+    <!-- Keywords that can exist inside this block -->
+		<Keywords>
+			<PatternGroup Name="Keywords" Style="Lua Keyword" CaseSensitive="true">
+				<Patterns>
+        and or not 
+        true false 
+        nil 
+        do end 
+        for in while repeat until break return 
+        if then else elseif 
+        local function
+				</Patterns>
+			</PatternGroup>
+			<PatternGroup Name="Numbers" Style="Lua Number">
+				<Pattern Text="(0x[0-9a-fA-F]+)" IsComplex="true" />
+				<Pattern Text="([0-9]+)" IsComplex="true" />
+			</PatternGroup>
+		</Keywords>
+
+    <MarkPrevious bold = "false" italic = "false" color = "Brown">(</MarkPrevious>
+    
+		<!-- Operators that can exist inside this block -->
+		<Operators>
+			<PatternGroup name="Operators" Style="Lua Operator">
+				<Pattern Text="." />
+				<Pattern Text="!" />
+				<Pattern Text=":" />
+				<Pattern Text="^" />
+				<Pattern Text="*" />
+				<Pattern Text="/" />
+				<Pattern Text="+" />
+				<Pattern Text="-" />
+				<Pattern Text="=" />
+        <Pattern Text="~" />
+        <Pattern Text="[" />
+        <Pattern Text="]" />
+        <Pattern Text="(" />
+        <Pattern Text=")" />
+        <Pattern Text="," />
+        <Pattern Text=";" />
+        <Pattern Text="|" />
+        <Pattern Text="#"/>
+				<Pattern Text="&gt;" />
+				<Pattern Text="&lt;" />
+			</PatternGroup>
+		</Operators>
+		<!-- Blocks that can exist inside this block -->
+		<ChildBlocks>
+			<Child Name="Lua Multiline Comment" />
+			<Child Name="Lua Singleline Comment" />
+			<Child Name="Lua String" />
+			<Child Name="Lua Char" />
+			<Child Name="Lua Literal String" />
+			<Child Name="Lua Code" />
+		</ChildBlocks>
+	</Block>
+	<Block Name="Lua Multiline Comment" Style="Lua Comment" EscapeChar="" IsMultiline="true">
+		<Scope Start="--[[" End="--]]" Style="Lua Comment" Text="--[[...--]]"/>
+		<Operators>
+			<PatternGroup name="URL" Style="Lua URL">
+				<Pattern Text="http://([\w-]+\.)+[\w-]+(/[\w- ./?%&amp;=]*)?" IsComplex="true" />
+			</PatternGroup>
+		</Operators>
+	</Block>
+	<Block Name="Lua Singleline Comment" Style="Lua Comment" EscapeChar="" IsMultiline="false">
+		<Scope Start="--" End="" Style="Lua Comment" />
+	</Block>
+	<Block Name="Lua String" Style="Lua String" EscapeChar="\" IsMultiline="false">
+		<Scope Start="&quot;" End="&quot;" EscapeChar="\" Style="Lua String" />
+		<Operators>
+			<PatternGroup name="URL" Style="Lua URL">
+				<Pattern Text="http://([\w-]+\.)+[\w-]+(/[\w- ./?%&amp;=]*)?" IsComplex="true" />
+			</PatternGroup>
+		</Operators>
+	</Block>
+
+	<Block Name="Lua Char" Style="Lua String" EscapeChar="" IsMultiline="false">
+		<Scope Start="'" End="'"  EscapeChar="\" Style="Lua String" />
+	</Block>
+
+	<Block Name="Lua Literal String" Style="Lua String" EscapeChar="" IsMultiline="true" >
+		<Scope Start="[[" End="]]" Style="Lua String" Text="[[...]]" />
+	</Block>
+
+	<Style Name="Lua Code" ForeColor="Gray" BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="Lua Scope" ForeColor="" BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="Lua Comment" ForeColor="Green" BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="Lua String" ForeColor="Magenta" BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="Lua Number" ForeColor="Red" BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="Lua Operator" ForeColor="Black" BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="Lua Keyword" ForeColor="Blue" BackColor="" Bold="false" Italic="false" Underline="false" />
+  <Style Name="Lua URL" ForeColor="Blue" BackColor="" Bold="false" Italic="false" Underline="true" />
+</Language>

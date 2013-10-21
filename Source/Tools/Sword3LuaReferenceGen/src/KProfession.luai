@@ -1,0 +1,31 @@
+﻿@title KProfession对象
+@obj KProfession
+@detail 生活技能
+@catalogs 
+
+@summary 生活技能id
+@catalog
+@remarks
+property dwID
+
+@summary 雷达id
+@catalog
+@remarks
+property dwCraftRadarID
+
+@summary 名字
+@catalog
+@remarks
+property szProfessionName
+
+@summary 获取一个生活技能在某个等级所能达到的最高熟练度
+@catalog
+@param nLevel	技能等级
+@remarks 如果出错,会返回0
+function GetLevelProficiency(nLevel)
+
+@summary 获取生活技能下一个分支的名字
+@catalog
+@param dwBranchID	分支id
+@remarks
+function GetBranchName(dwBranchID)

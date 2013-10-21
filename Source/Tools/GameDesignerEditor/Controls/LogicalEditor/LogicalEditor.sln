@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicalEditor", "LogicalEditor.csproj", "{CC80334D-03FF-4030-A430-5283805AE538}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameDesignerTools", "..\..\GameDesignerTools\GameDesignerTools.csproj", "{4A2A6787-888F-4EF0-A2F0-DB057E49BFC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyGridEx", "C:\Documents and Settings\kuangsihao\桌面\PropertyGridEx.CS\PropertyGridEx\PropertyGridEx.csproj", "{B0BB47F2-21C4-41FC-B6E6-40757ADFC4A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapCutter", "..\MapCutter\MapCutter\MapCutter.csproj", "{6995EC6D-68E0-4D24-B2BF-89C5CFED5BD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameLuaEditor", "..\GameLuaEditor\GameLuaEditor\GameLuaEditor.csproj", "{6FDB1934-4CC5-49FB-B03B-4356EB146564}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_Design|Any CPU = Debug_Design|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC80334D-03FF-4030-A430-5283805AE538}.Debug_Design|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC80334D-03FF-4030-A430-5283805AE538}.Debug_Design|Any CPU.Build.0 = Debug|Any CPU
+		{CC80334D-03FF-4030-A430-5283805AE538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC80334D-03FF-4030-A430-5283805AE538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC80334D-03FF-4030-A430-5283805AE538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC80334D-03FF-4030-A430-5283805AE538}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A2A6787-888F-4EF0-A2F0-DB057E49BFC0}.Debug_Design|Any CPU.ActiveCfg = Debug_Design|Any CPU
+		{4A2A6787-888F-4EF0-A2F0-DB057E49BFC0}.Debug_Design|Any CPU.Build.0 = Debug_Design|Any CPU
+		{4A2A6787-888F-4EF0-A2F0-DB057E49BFC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A2A6787-888F-4EF0-A2F0-DB057E49BFC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A2A6787-888F-4EF0-A2F0-DB057E49BFC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A2A6787-888F-4EF0-A2F0-DB057E49BFC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0BB47F2-21C4-41FC-B6E6-40757ADFC4A1}.Debug_Design|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0BB47F2-21C4-41FC-B6E6-40757ADFC4A1}.Debug_Design|Any CPU.Build.0 = Debug|Any CPU
+		{B0BB47F2-21C4-41FC-B6E6-40757ADFC4A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0BB47F2-21C4-41FC-B6E6-40757ADFC4A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0BB47F2-21C4-41FC-B6E6-40757ADFC4A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0BB47F2-21C4-41FC-B6E6-40757ADFC4A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6995EC6D-68E0-4D24-B2BF-89C5CFED5BD3}.Debug_Design|Any CPU.ActiveCfg = Debug|Any CPU
+		{6995EC6D-68E0-4D24-B2BF-89C5CFED5BD3}.Debug_Design|Any CPU.Build.0 = Debug|Any CPU
+		{6995EC6D-68E0-4D24-B2BF-89C5CFED5BD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6995EC6D-68E0-4D24-B2BF-89C5CFED5BD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6995EC6D-68E0-4D24-B2BF-89C5CFED5BD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6995EC6D-68E0-4D24-B2BF-89C5CFED5BD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FDB1934-4CC5-49FB-B03B-4356EB146564}.Debug_Design|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FDB1934-4CC5-49FB-B03B-4356EB146564}.Debug_Design|Any CPU.Build.0 = Debug|Any CPU
+		{6FDB1934-4CC5-49FB-B03B-4356EB146564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FDB1934-4CC5-49FB-B03B-4356EB146564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FDB1934-4CC5-49FB-B03B-4356EB146564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FDB1934-4CC5-49FB-B03B-4356EB146564}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

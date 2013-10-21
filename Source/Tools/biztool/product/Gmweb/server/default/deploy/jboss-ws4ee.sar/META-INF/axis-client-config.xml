@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Id: axis-client-config.xml,v 1.1 2008/12/31 09:23:32 kuangsihao Exp $ -->
+
+<!--
+  JBoss Axis client configuration
+-->
+<deployment name="JBoss-Axis-Client"
+  targetNameSpace="http://webservice.jboss.org/client"
+  xmlns="http://xml.apache.org/axis/wsdd/"
+  xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <documentation> The default client configuration of the JBoss Axis engine. </documentation>
+
+  <globalConfiguration>
+    <requestFlow>
+      <!-- Add username/password from the SecurityAssociation as SOAP header elements -->
+      <handler name="ClientLoginHandler" type="java:org.jboss.webservice.handler.ClientLoginHandler"/>
+      <!--
+      <handler type="java:org.jboss.axis.handlers.SOAPMonitorHandler"/>
+      -->
+    </requestFlow>
+
+    <responseFlow>
+      <!-- uncomment this if you want the SOAP monitor
+      <handler type="java:org.jboss.axis.handlers.SOAPMonitorHandler"/>
+      -->
+    </responseFlow>
+  </globalConfiguration>
+
+  <transport name="http" pivot="java:org.jboss.axis.transport.http.HTTPSender"/>
+
+</deployment>

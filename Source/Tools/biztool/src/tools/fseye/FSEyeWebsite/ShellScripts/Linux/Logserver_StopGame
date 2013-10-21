@@ -1,0 +1,5 @@
+read path
+echo $path
+cd $path
+./kg_cslogserverd_linux stop
+

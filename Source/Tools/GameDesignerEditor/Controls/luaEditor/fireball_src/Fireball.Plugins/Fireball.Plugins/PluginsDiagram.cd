@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Fireball.Plugins.Dialogs.PluginConfigurationDialog">
+    <Position X="4.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>Plugins\Dialogs\PluginConfigurationDialog.cs</FileName>
+      <HashCode>AEAAgAAAACAAAAAACACEAACCgwAAQAAAAJEABBAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="btnBrowsePlugin" Hidden="true" />
+      <Field Name="btnClose" Hidden="true" />
+      <Field Name="btnLoadAtStart" Hidden="true" />
+      <Field Name="btnLoadNow" Hidden="true" />
+      <Field Name="btnSaveConfig" Hidden="true" />
+      <Field Name="columnHeader1" Hidden="true" />
+      <Field Name="columnHeader2" Hidden="true" />
+      <Field Name="columnHeader3" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="lstPlugins" Hidden="true" />
+    </Members>
+  </Class>
+  <Class Name="Fireball.Plugins.PluginApplication" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Plugins\PluginApplication.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAEAAQAABAAAAAAAAAAAAAM=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="_Objects" Hidden="true" />
+      <Field Name="istance" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Fireball.Plugins.PluginBase" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Plugins\PluginBase.cs</FileName>
+      <HashCode>AAAgAgAAAAAAABUAAAAQAAQAAAAAAAAAAAAAAgAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="menuItem" Hidden="true" />
+    </Members>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Fireball.Plugins.PluginInfo">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Plugins\PluginInfo.cs</FileName>
+      <HashCode>IAAAAAAAAKUAAAgQgIAAAAAAAAECAAAAAAAABAUgAAI=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="_Author" Hidden="true" />
+      <Field Name="_Company" Hidden="true" />
+      <Field Name="_Email" Hidden="true" />
+      <Field Name="_Version" Hidden="true" />
+      <Field Name="_WebSite" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Fireball.Plugins.PluginLoadInfo">
+    <Position X="2.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Plugins\PluginLoadInfo.cs</FileName>
+      <HashCode>AAAAAAAQAAGAQAAAAAAAAAAAAAAAAAQAAAAAAAEAAAA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="_ClassName" Hidden="true" />
+      <Field Name="_Filename" Hidden="true" />
+      <Field Name="_Loaded" Hidden="true" />
+    </Members>
+  </Class>
+  <Class Name="Fireball.Plugins.PluginManager" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <FileName>Plugins\PluginManager.cs</FileName>
+      <HashCode>EQAIJoAQAAAAAAAAIAAAAAAAIBCAQAQAAgAAAAIAAQA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="_Assemblies" Hidden="true" />
+      <Field Name="_AssemblySearchPath" Hidden="true" />
+      <Field Name="_ConfigFile" Hidden="true" />
+      <Field Name="_Plugins" Hidden="true" />
+      <Field Name="_PluginsLoaded" Hidden="true" />
+    </Members>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Fireball.Plugins.IPluginApplication" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Plugins\IPluginApplication.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Fireball.Plugins.IPluginManager">
+    <Position X="2.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Plugins\IPluginManager.cs</FileName>
+      <HashCode>AAAIAoAQAAAAAAAAIAAAAAAAIAAAAAAAAgAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Fireball.Plugins.IPluginObject" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Plugins\IPluginObject.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+</ClassDiagram>

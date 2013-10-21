@@ -1,0 +1,262 @@
+==================================================================
+副本重置机制                                                     |
+==================================================================
+
+评审时间：2008-01-29
+
+参与人员：夏永 赵纯峰 侯锐
+
+设计方案：
+------------------------------------------------------------------
+1. 副本重置分为两种方式：手动重置和定时重置
+(1) 手动重置：由玩家触发，客户端通知服务端重置副本信息。
+(2) 定时重置：由GameCenter触发，以基准时间为起始(代码中确定)，每隔一个周期(策
+    划填表确定)，自动重置副本信息。
+
+2. 手动重置的流程；
+(1) 客户端发送重置请求。
+(2) GS确认此地图可以手动重置，通过后向GC发送请求。
+(3) GC验证
+(4) GC检查副本中是否有人：
+    a：无人，执行步骤(9)
+    b：有人，执行步骤(5)
+(5) GC通知GS“副本中的玩家将在N秒内离开副本”。
+(6) GS向副本中玩家的客户端发送倒计时通知。
+(7) 倒计时时间到后，GS将本副本上的玩家传送至“上一个入口点”，并通知GC重置副本。
+(8) GC收到GS消息后，继续步骤(4)。
+(9) GC删除该副本，并删除数据库中相关记录(如果有的话)。
+(10) GC通知GS删除副本。
+(11) GS删除副本。
+
+3. 定时重置流程：
+(1) GC定时遍历所有副本，遇到“当前时间>副本下次重置时间”的情况。
+(2) 检查副本中是否有人：
+    a：无人，执行步骤(7)
+    b：有人，执行步骤(3)
+(3) GC通知GS“副本中的玩家将在N秒内离开副本”。
+(4) GS向副本中玩家的客户端发送倒计时通知。
+(5) 倒计时时间到后，GS将本副本上的玩家传送至“上一个入口点”，并通知GC重置副本。
+(6) GC收到GS消息后，继续步骤(3)。
+(7) 删除该副本，并删除数据库中相关记录(如果有的话)。
+(8) GC通知GS删除副本。
+
+4. 下次重置时间(t)需要存档，计算公式为：
+    t = ((a / T) + 1) * T
+   其中：t为重置时间，a为当前时间与基准时间的差值，T为重置周期。
+   注意：策划表中的T为0，表示本副本不用重置。
+
+
+5. 限制玩家一个小时内进入同一地图中的私有副本的次数。相关表每小时清空一次。
+
+
+特殊情况的考虑：
+------------------------------------------------------------------
+1. 玩家在副本中下线，副本被重置，再次上线时，则被传送至“上一个入口点”。
+
+2. 副本里，队伍中的玩家离开队伍时，GS通知本玩家倒计时开始，若玩家在倒计时间内
+   未主动离开副本，则倒计时到后，GS将玩家传送至“上一个入口点”。
+
+3. 副本里，队长解散队伍，则除队长外的所有队员被通知倒计时开始，若玩家在倒计时
+   间内未主动离开副本，则倒计时到后，GS将玩家传送至“上一个入口点”。
+
+4. 为避免“离开队伍的玩家在倒计时间内下线，重新上线的时候还在副本里面”的情况，
+   在玩家登录时候，增加对“副本进入权限”的检查。有权限的话，直接进入；无权限
+   的话，进入上一个入口点。
+
+5. 玩家再次上线的时候，“上一个入口点”被清除的情况下，目前只记录出错信息到日
+   志中，无特殊处理。
+
+
+本次修改涉及到的代码：
+------------------------------------------------------------------
+1. MapList.tab文件：
+(1) 增加2列：
+    ManualReset，表示这个地图副本可否手动重置。
+    ResetCycle，表示这个地图的定时重置的时间间隔(单位：小时。数值为0表示不自动
+    重置的地图)。
+
+(2) 删除1列：UseLastEntry
+
+
+2. 文件KMapManager.h中：
+(1) 结构体KMapInfo增加一个变量nNextResetTime，表示下一次重置的时间。
+
+(2) 增加成员函数BOOL KMapManager::ResetMapCopy(DWORD dwMapID, __int64
+    nMapCopyIndex)，重置地图副本。
+
+
+3. 文件KMapManager.cpp中：
+(1) 函数KMapManager::LoadMapList()，增加读取ManualReset,ResetCycle的操作。
+
+(2) 结构体KMAP_COPY_STATE中，新增一项：
+    eMapStateResetting // 副本重置状态
+
+(3) 函数KMapManager::Activate()的循环中，增加定时检查副本自动重置时间的操作。
+    for (遍历每一个副本)
+    {
+	if ((自动重置时间 < 当前游戏时间) 
+		&& ((MapState == eMapStateNormal) 
+		|| (MapState == eMapStateOffline) 
+		|| (MapState == eMapStateIdle)))
+  	{
+	   if (副本人数为0)
+	   {
+		ResetMapCopy(...);
+		通知GS删除该副本；
+	   }
+	   else
+	   {
+		通知GS某场景倒计时开始;
+		MapState = eMapStateResetting;
+	   }
+
+	}
+    }
+
+4. 文件relay_gs_protocol.h中：
+(1) 枚举型KG2R_PROTOCOL中，增加协议：g2r_reset_map_copy_request
+
+(2) 枚举型KR2G_PROTOCOL中，增加协议：r2g_banish_map_copy_player
+
+(3) 增加结构体：
+    struct G2R_RESET_MAP_COPY_REQUEST
+    {
+        DWORD   dwMapID;
+        __int64 nMapCopyIndex;
+	DWORD   dwPlayerID;
+    };
+
+    struct R2G_BANISH_PLAYER
+    {
+        DWORD   dwMapID;
+        __int64 nMapCopyIndex;
+    };
+
+
+5. 文件KPlayer.h中：
+(1) 增加结构体：
+  	struct KROLE_POSITION
+	{
+	    DWORD	dwMapID;
+	    __int64	nMapCopyIndex;
+	    int		nX;
+	    int		nY;
+	    int		nZ;
+	    int         nFaceDirection;
+	};
+
+(2) 增加成员变量：
+    KROLE_POSITION  m_LastEntry; // 上一个入口点，初始化为0
+    int m_nBanishTime;   // 玩家被传送至其他地图的倒计时时间，初始化为0
+
+
+6. 文件KPlayer.cpp中：
+(1) 函数KPlayer::SaveBaseRoleData()，增加保存上一个入口点的操作。
+
+(2) 函数KPlayer::LoadBaseRoleData()，增加读取上一个入口点的操作。
+
+(3) 函数BOOL KPlayer::Activate(void)，增加检查是否传送的操作。
+
+
+7. 文件KLuaPlayer.cpp中：
+(1) 增加函数int KPlayer::LuaSetLastEntry(Lua_State* L);
+    用于设置上一个入口点，即结构体KROLE_POSITION相关的6个参数。
+
+
+8. 文件KPlayerServer.cpp中：
+(1) 函数KPlayerServer::DoPartyDelMemberNotify，增加设置倒计时的操作。
+(2) 函数KPlayerServer::DoPartyDisbandNotify，增加设置倒计时的操作。
+
+
+9. 文件KGameServer.h中：
+(1) 增加函数：BOOL KGameServer::DoBanishPlayer(int nConnIndex, DWORD dwMapID, 
+    __int64 nMapCopyIndex); // GC通知GS，驱赶某地图上的玩家。
+
+(2) 增加函数：void KGameServer::OnResetMapCopyRequest(BYTE* pbyData, size_t   
+    uDataLen, int nConnIndex); // 协议g2r_reset_map_copy_request的处理函数。
+
+(3) 增加结构体，用于控制玩家每小时进入同一地图的副本的次数：
+    typedef struct PLAYER_ENTER_NEW_MAP_COPY_TIMES 
+    {
+        __int64 nMapCopyIndex;
+        int     nEnterNewMapCopyTimes;
+    } PLAYER_ENTER_NEW_MAP_COPY_TIMES;
+
+(4) 定义一个map，用于控制玩家每小时进入同一地图的副本的次数：
+    typedef map<__int64, PLAYER_ENTER_NEW_MAP_COPY_TIMES> 			PLAYER_ENTER_NEW_MAP_COPY_TIMES_MAP;
+    PLAYER_ENTER_NEW_MAP_COPY_TIMES_MAP m_PlayerEnterNewMapCopyTimes;
+
+(5) 增加成员变量，用于记录PLAYER_ENTER_NEW_MAP_COPY_TIMES_MAP的下次重置时间：
+    time_t m_nNextResetPlayerEnterNewMapCopyTime;
+
+(6) 增加成员函数，用于检查玩家每小时进入同张地图的副本次数：
+    BOOL CheckPlayerEnterNewMapCopyTimes(DWORD dwPlayerID, DWORD dwMapID,
+	 __int64 nNewMapCopyIndex);
+
+
+10. 文件KGameServer.cpp中：
+(1) 增加函数：KGameServer::DoBanishPlayer的实现。
+
+(2) 增加函数：KGameServer::OnResetMapCopyRequest的实现：
+
+    KGLOG_PROCESS_ERROR(ManualReset || ResetCycle > 0)
+
+    if ((MapState == eMapStateNormal) || (MapState == eMapStateOffline) 
+	|| (MapState == eMapStateIdle)))
+    {
+	if (人数 == 0)
+	{
+	   ResetMapCopy();
+           通知GS删该地图;
+	}
+	else
+	{
+	   通知GS某场景倒计时开始;
+	   MapState = eMapStateResetting;
+	}
+    }
+
+(3) 增加函数：KGameServer::CheckPlayerEnterNewMapCopyTimes的实现：
+
+    KG_PROCESS_SUCCESS(本副本不是私有的);
+
+    if (map中没有该玩家在本地图上的副本进入次数信息)
+    {
+	插入该玩家的副本进入次数信息至map；
+	计数器 = 1；
+    }
+    else
+    {
+	判断玩家的进入次数 <= 次数上限；
+        计数器++;
+    }
+
+(4) 函数KGameServer::OnSearchMapRequest中，增加对CheckPlayerEnterNewMapCopyTimes
+    的调用。
+
+
+11. 文件KRelayClient.h中：
+(1) 增加函数OnBanishPlayer，用于处理GC发送来的R2G_BANISH_PLAYER协议。
+
+
+12. 文件KRelayClient.cpp中：
+(1) 增加函数OnBanishPlayer的注册。
+
+(2) 增加函数OnBanishPlayer()：
+    	找到对应场景
+    	设置场景中玩家的倒计时
+    	设置场景的倒计时
+
+
+13. 文件KScene.h中，增加一个成员变量，标识场景的倒计时时间。
+
+
+14. 文件KScene.cpp中，函数Activate，增加检查倒计时的操作。若倒计时时间到，发
+    送重置副本的协议g2r_reset_map_copy_request。
+
+15. 文件KSO3World.h中，增加遍历玩家并设置倒计时时间的仿函数：
+
+    struct KTraverseMapCopyPlayerFunc
+    {
+	BOOL operator()(DWORD dwID,  __int64 nMapCopyIndex);
+    };

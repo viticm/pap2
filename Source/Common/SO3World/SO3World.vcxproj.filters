@@ -1,0 +1,1226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="09.游戏道具">
+      <UniqueIdentifier>{73b6e033-451d-4451-90a9-a86a9fc03aea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="09.游戏道具\道具生成器">
+      <UniqueIdentifier>{381d0e0e-7170-4ebc-bd57-a1004ad2cbd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="09.游戏道具\道具集合">
+      <UniqueIdentifier>{9829a716-79a2-49b5-8923-402a55b38d30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="09.游戏道具\道具表格">
+      <UniqueIdentifier>{49c3e4da-88b4-4090-84c9-2fee9482db73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="07.武功技能">
+      <UniqueIdentifier>{ed79cb02-9a7a-4342-9a9b-63da188cce6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="07.武功技能\调试信息">
+      <UniqueIdentifier>{82c2a589-f35e-4e1f-94c0-334d2c68b287}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="07.武功技能\Buff">
+      <UniqueIdentifier>{60b185a2-7bba-4488-8697-794068b3396a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="07.武功技能\Skill">
+      <UniqueIdentifier>{9556c2b7-4f0c-4c54-943a-ed9bd83377c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="22.Interface">
+      <UniqueIdentifier>{f6e82f33-5430-468d-bd8b-dfb9a4444264}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="06.网络连接">
+      <UniqueIdentifier>{4174cd8e-5324-4677-83da-92160780cf66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.场景世界">
+      <UniqueIdentifier>{01f2a238-0eb4-48ee-9166-b665a25f6224}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="25.配置参数">
+      <UniqueIdentifier>{df9f0e00-0d82-408f-a61b-45dee72dd3ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="25.配置参数\参数表">
+      <UniqueIdentifier>{042aa37e-ff8a-4da6-9aef-c91f51e9fa1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="13.魔法属性">
+      <UniqueIdentifier>{76009c42-39a8-4ba9-949a-f14620edda6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="11.生活技能">
+      <UniqueIdentifier>{9bae3a65-3017-4067-a568-73b0055ed6b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="11.生活技能\配方">
+      <UniqueIdentifier>{b745a12a-7597-458c-b72d-976140c678f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="20.Lua">
+      <UniqueIdentifier>{1cb042ee-9a3d-4139-8abb-30d6450df1d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="20.Lua\全局脚本接口">
+      <UniqueIdentifier>{4d546f45-2068-4589-8c43-d073386291ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="17.商店与交易">
+      <UniqueIdentifier>{d945bff7-bba0-4319-95a8-a250b783f52d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="08.任务系统">
+      <UniqueIdentifier>{58a34100-b6e1-4cdb-8d2b-6c6b10b30bda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="23.上帝模式">
+      <UniqueIdentifier>{515ed7f2-f58f-4939-b019-016cccfe8548}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="19.AI">
+      <UniqueIdentifier>{4c550c19-0d6c-49af-bdb0-1e08fd37b9d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="19.AI\Patrol &amp; Group">
+      <UniqueIdentifier>{772c1a1d-ef9a-43c1-86c0-0503974647ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="19.AI\AI Machine">
+      <UniqueIdentifier>{997ea5e2-e7e0-4d68-bb73-23e45645e0fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="19.AI\Threat &amp; Link">
+      <UniqueIdentifier>{4e93413c-f474-4b5f-8eb7-a674eea83394}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="21.基础代码">
+      <UniqueIdentifier>{58a242fc-af12-4b37-a01e-90c18133d274}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="12.重生管理">
+      <UniqueIdentifier>{14738154-b342-4f94-9549-120d380bb538}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="24.Misc">
+      <UniqueIdentifier>{dac2410f-e338-4e61-808f-741e9f8c8b08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="16.组队系统">
+      <UniqueIdentifier>{5fa8b4f5-98ea-425f-bb5d-85973761407c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="15.好友系统">
+      <UniqueIdentifier>{4c766f7b-64cd-42a4-9c1f-16a423c3aeca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Character">
+      <UniqueIdentifier>{daf72c68-b294-4461-9b74-4d820c166c1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Doodad">
+      <UniqueIdentifier>{c4f28fea-6bea-4531-87cc-82261f91829c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05.Player">
+      <UniqueIdentifier>{3b46cc79-0e77-4b54-b37a-f623310f8097}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04.NPC">
+      <UniqueIdentifier>{46c76e0d-8831-4e8e-a62a-29c5c02383c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="10.掉落相关">
+      <UniqueIdentifier>{32249fec-1392-40fc-ad0b-b5ea49d6fb0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="26.协议录像">
+      <UniqueIdentifier>{c310e8d7-2aec-413f-bf90-5546405ab7c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="26.协议录像\Normal">
+      <UniqueIdentifier>{6a87088a-6d23-483a-b3fa-9676c7bdb5a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="26.协议录像\Record">
+      <UniqueIdentifier>{54416854-a5cf-4d84-8ec3-2f02fbf40912}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="26.协议录像\Replay">
+      <UniqueIdentifier>{a719287f-938b-4817-8cd8-0ab282f47d82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="27.帮会">
+      <UniqueIdentifier>{d7756a85-a088-4ac2-ab64-91ae24afd38c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="28.阵营">
+      <UniqueIdentifier>{d420c5ff-c0cf-4318-b1be-7294c1b1b88e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="29.寄卖行">
+      <UniqueIdentifier>{54e9859f-4710-4cc3-bb3c-4688a32a6ba3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="30.全局参数">
+      <UniqueIdentifier>{20eaca4d-56c3-4ae9-b732-977c742ca990}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="31.成就系统">
+      <UniqueIdentifier>{c0c231aa-3d09-408b-bc35-e6d9f5c47801}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="32.统计数据">
+      <UniqueIdentifier>{4009e851-13cb-41ee-8f0c-e68d1ce9fec3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="34.邮件">
+      <UniqueIdentifier>{df9fa249-373a-4ebd-bd50-d764f7b560de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="33.反外挂Client">
+      <UniqueIdentifier>{4ce5789e-fb31-4a47-b0db-e38a8fa71ff3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="35.月卡寄售">
+      <UniqueIdentifier>{4b189924-9d95-4f3b-934f-d2e69a6d3b22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="36.反打钱">
+      <UniqueIdentifier>{e06bd32e-2b60-4cd2-a9b7-5c1fafda07c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="37.师徒">
+      <UniqueIdentifier>{0775e92d-8be9-4983-a542-24c5e6f46f39}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\KEnchantLib.cpp">
+      <Filter>09.游戏道具</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KItem.cpp">
+      <Filter>09.游戏道具</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLuaItem.cpp">
+      <Filter>09.游戏道具</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KTimeLimitationBindItemMgr.cpp">
+      <Filter>09.游戏道具</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KItemLib.cpp">
+      <Filter>09.游戏道具\道具生成器</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KItemManager.cpp">
+      <Filter>09.游戏道具\道具生成器</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KInventory.cpp">
+      <Filter>09.游戏道具\道具集合</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KItemList.cpp">
+      <Filter>09.游戏道具\道具集合</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KItemTransaction.cpp">
+      <Filter>09.游戏道具\道具集合</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KAttribGroup.cpp">
+      <Filter>09.游戏道具\道具表格</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KCustomEquipInfoList.cpp">
+      <Filter>09.游戏道具\道具表格</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KItemInfo.cpp">
+      <Filter>09.游戏道具\道具表格</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KItemInfoList.cpp">
+      <Filter>09.游戏道具\道具表格</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KSkillDebug.cpp">
+      <Filter>07.武功技能\调试信息</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KBuff.cpp">
+      <Filter>07.武功技能\Buff</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KBuffList.cpp">
+      <Filter>07.武功技能\Buff</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KBuffManager.cpp">
+      <Filter>07.武功技能\Buff</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KLuaSkill.cpp">
+      <Filter>07.武功技能\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KSkill.cpp">
+      <Filter>07.武功技能\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KSkillList.cpp">
+      <Filter>07.武功技能\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KSkillManager.cpp">
+      <Filter>07.武功技能\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KSkillRecipeList.cpp">
+      <Filter>07.武功技能\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KGSO3WorldClient.cpp">
+      <Filter>22.Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KGSO3WorldServer.cpp">
+      <Filter>22.Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KGatewayClient.cpp">
+      <Filter>06.网络连接</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLogClient.cpp">
+      <Filter>06.网络连接</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KPlayerClient.cpp">
+      <Filter>06.网络连接</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KPlayerServer.cpp">
+      <Filter>06.网络连接</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KPlayerServerBase.cpp">
+      <Filter>06.网络连接</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KRelayClient.cpp">
+      <Filter>06.网络连接</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KCell.cpp">
+      <Filter>01.场景世界</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLuaCell.cpp">
+      <Filter>01.场景世界</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLuaScene.cpp">
+      <Filter>01.场景世界</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLuaSceneObject.cpp">
+      <Filter>01.场景世界</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KRegion.cpp">
+      <Filter>01.场景世界</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KScene.cpp">
+      <Filter>01.场景世界</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KSceneObject.cpp">
+      <Filter>01.场景世界</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KSceneObjNode.cpp">
+      <Filter>01.场景世界</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KSO3World.cpp">
+      <Filter>01.场景世界</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KTerrainData.cpp">
+      <Filter>01.场景世界</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KWorldSettings.cpp">
+      <Filter>25.配置参数</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KCharacterActionList.cpp">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KCoolDownList.cpp">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KDesignationList.cpp">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KDoodadClassList.cpp">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KFightFlagList.cpp">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KGameCardInfoList.cpp">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KGMList.cpp">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KGWConstList.cpp">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLevelUpList.cpp">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KMapListFile.cpp">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KRelationList.cpp">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KReputationLimit.cpp">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KRoadManager.cpp">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KSmartDialogList.cpp">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KTransmissionList.cpp">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KWeaponTypeList.cpp">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KAttribute.cpp">
+      <Filter>13.魔法属性</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KAttrModifier.cpp">
+      <Filter>13.魔法属性</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KBookList.cpp">
+      <Filter>11.生活技能</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KCraft.cpp">
+      <Filter>11.生活技能</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KLuaProfession.cpp">
+      <Filter>11.生活技能</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KProfession.cpp">
+      <Filter>11.生活技能</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KProfessionList.cpp">
+      <Filter>11.生活技能</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KProfessionManager.cpp">
+      <Filter>11.生活技能</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KRecipeList.cpp">
+      <Filter>11.生活技能</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KLuaRecipe.cpp">
+      <Filter>11.生活技能\配方</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KRecipe.cpp">
+      <Filter>11.生活技能\配方</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KRecipeMaster.cpp">
+      <Filter>11.生活技能\配方</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KCenterRemote.cpp">
+      <Filter>20.Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLuaConstList.cpp">
+      <Filter>20.Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KScriptCenter.cpp">
+      <Filter>20.Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KScriptClient.cpp">
+      <Filter>20.Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KScriptServer.cpp">
+      <Filter>20.Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\luna.cpp">
+      <Filter>20.Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KBaseFuncList.cpp">
+      <Filter>20.Lua\全局脚本接口</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kLoginFuncList.cpp">
+      <Filter>20.Lua\全局脚本接口</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KShopFuncList.cpp">
+      <Filter>20.Lua\全局脚本接口</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KLuaShop.cpp">
+      <Filter>17.商店与交易</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KShop.cpp">
+      <Filter>17.商店与交易</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KShopCenter.cpp">
+      <Filter>17.商店与交易</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KTradingBox.cpp">
+      <Filter>17.商店与交易</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KEscortQuestManager.cpp">
+      <Filter>08.任务系统</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KGPQ.cpp">
+      <Filter>08.任务系统</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLuaQuestInfo.cpp">
+      <Filter>08.任务系统</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KQuestInfoList.cpp">
+      <Filter>08.任务系统</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KQuestList.cpp">
+      <Filter>08.任务系统</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KGod.cpp">
+      <Filter>23.上帝模式</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KGodClient.cpp">
+      <Filter>23.上帝模式</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KGodServer.cpp">
+      <Filter>23.上帝模式</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KAIPatrolGroupManager.cpp">
+      <Filter>19.AI\Patrol &amp; Group</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KPatrolPath.cpp">
+      <Filter>19.AI\Patrol &amp; Group</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KPatrolPathList.cpp">
+      <Filter>19.AI\Patrol &amp; Group</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KAIAction.cpp">
+      <Filter>19.AI\AI Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KAILogic.cpp">
+      <Filter>19.AI\AI Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KAIManager.cpp">
+      <Filter>19.AI\AI Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KAISearchTactics.cpp">
+      <Filter>19.AI\AI Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KAISkillSelector.cpp">
+      <Filter>19.AI\AI Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KAIState.cpp">
+      <Filter>19.AI\AI Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KAIVM.cpp">
+      <Filter>19.AI\AI Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KThreatList.cpp">
+      <Filter>19.AI\Threat &amp; Link</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KBaseObject.cpp">
+      <Filter>21.基础代码</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KCircleList.cpp">
+      <Filter>21.基础代码</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KIDCache.cpp">
+      <Filter>21.基础代码</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KMath.cpp">
+      <Filter>21.基础代码</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KDoodadReviveManager.cpp">
+      <Filter>12.重生管理</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KNpcReviveManager.cpp">
+      <Filter>12.重生管理</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Global.cpp">
+      <Filter>24.Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KCDTimerList.cpp">
+      <Filter>24.Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLuaTarget.cpp">
+      <Filter>24.Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KRandGenerator.cpp">
+      <Filter>24.Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KStartTimeEvaluation.cpp">
+      <Filter>24.Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KTarget.cpp">
+      <Filter>24.Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KUserPreferences.cpp">
+      <Filter>24.Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>24.Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KTeamClient.cpp">
+      <Filter>16.组队系统</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KTeamServer.cpp">
+      <Filter>16.组队系统</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KFellowship.cpp">
+      <Filter>15.好友系统</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KCharacter.cpp">
+      <Filter>02.Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLuaCharacter.cpp">
+      <Filter>02.Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KDoodad.cpp">
+      <Filter>03.Doodad</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KDoodadFile.cpp">
+      <Filter>03.Doodad</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KDoodadTemplateList.cpp">
+      <Filter>03.Doodad</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLuaDoodad.cpp">
+      <Filter>03.Doodad</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KLuaDoodadTemplate.cpp">
+      <Filter>03.Doodad</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KDesignation.cpp">
+      <Filter>05.Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLuaPlayer.cpp">
+      <Filter>05.Player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KPKController.cpp">
+      <Filter>05.Player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KPlayer.cpp">
+      <Filter>05.Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KReputation.cpp">
+      <Filter>05.Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLuaNpc.cpp">
+      <Filter>04.NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KNpc.cpp">
+      <Filter>04.NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KNpcClassList.cpp">
+      <Filter>04.NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KNpcFile.cpp">
+      <Filter>04.NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KNpcOrderList.cpp">
+      <Filter>04.NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KNpcTeamList.cpp">
+      <Filter>04.NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KNpcTemplateList.cpp">
+      <Filter>04.NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KDropCenter.cpp">
+      <Filter>10.掉落相关</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KDropList.cpp">
+      <Filter>10.掉落相关</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KIndividualDropList.cpp">
+      <Filter>10.掉落相关</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLevelDropList.cpp">
+      <Filter>10.掉落相关</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KLevelMoneyDropList.cpp">
+      <Filter>10.掉落相关</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLootList.cpp">
+      <Filter>10.掉落相关</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KProtocolRecorder.cpp">
+      <Filter>26.协议录像</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KProtocolReplayer.cpp">
+      <Filter>26.协议录像</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KRecorderFactory.cpp">
+      <Filter>26.协议录像</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KRecorderSceneLoaderNormal.cpp">
+      <Filter>26.协议录像\Normal</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KRecorderSocketClientNormal.cpp">
+      <Filter>26.协议录像\Normal</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KRecorderSocketServerNormal.cpp">
+      <Filter>26.协议录像\Normal</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KRecorderToolsNormal.cpp">
+      <Filter>26.协议录像\Normal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KRecorderSceneLoaderRecord.cpp">
+      <Filter>26.协议录像\Record</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KRecorderSocketClientRecord.cpp">
+      <Filter>26.协议录像\Record</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KRecorderSocketServerRecord.cpp">
+      <Filter>26.协议录像\Record</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KRecorderSocketStreamRecord.cpp">
+      <Filter>26.协议录像\Record</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KRecorderToolsRecord.cpp">
+      <Filter>26.协议录像\Record</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KRecorderSceneLoaderReplay.cpp">
+      <Filter>26.协议录像\Replay</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KRecorderSocketClientReplay.cpp">
+      <Filter>26.协议录像\Replay</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KRecorderSocketServerReplay.cpp">
+      <Filter>26.协议录像\Replay</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KRecorderSocketStreamReplay.cpp">
+      <Filter>26.协议录像\Replay</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KRecorderToolsReplay.cpp">
+      <Filter>26.协议录像\Replay</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLuaTongClient.cpp">
+      <Filter>27.帮会</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KTongClient.cpp">
+      <Filter>27.帮会</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KTongRepertoryCache.cpp">
+      <Filter>27.帮会</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KCampInfo.cpp">
+      <Filter>28.阵营</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLuaCampInfo.cpp">
+      <Filter>28.阵营</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KAuctionClient.cpp">
+      <Filter>29.寄卖行</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLuaAuctionClient.cpp">
+      <Filter>29.寄卖行</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KGlobalSystemValueCache.cpp">
+      <Filter>30.全局参数</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KAchievement.cpp">
+      <Filter>31.成就系统</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KAchievementInfoList.cpp">
+      <Filter>31.成就系统</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KStatDataServer.cpp">
+      <Filter>32.统计数据</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLuaMailClient.cpp">
+      <Filter>34.邮件</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KMailClient.cpp">
+      <Filter>34.邮件</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KApexClient.cpp">
+      <Filter>33.反外挂Client</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KGameCardClient.cpp">
+      <Filter>35.月卡寄售</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLuaGameCardClient.cpp">
+      <Filter>35.月卡寄售</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KAntiFarmer.cpp">
+      <Filter>36.反打钱</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KLuaMentorCache.cpp">
+      <Filter>37.师徒</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KMentorCache.cpp">
+      <Filter>37.师徒</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\KMentorClient.cpp">
+      <Filter>37.师徒</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Include\SO3World\KEnchantLib.h">
+      <Filter>09.游戏道具</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KItem.h">
+      <Filter>09.游戏道具</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KTimeLimitationBindItemMgr.h">
+      <Filter>09.游戏道具</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KItemLib.h">
+      <Filter>09.游戏道具\道具生成器</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KItemManager.h">
+      <Filter>09.游戏道具\道具生成器</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KInventory.h">
+      <Filter>09.游戏道具\道具集合</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KItemList.h">
+      <Filter>09.游戏道具\道具集合</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KItemTransaction.h">
+      <Filter>09.游戏道具\道具集合</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KAttribGroup.h">
+      <Filter>09.游戏道具\道具表格</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KCustomEquipInfoList.h">
+      <Filter>09.游戏道具\道具表格</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KItemInfo.h">
+      <Filter>09.游戏道具\道具表格</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KItemInfoList.h">
+      <Filter>09.游戏道具\道具表格</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KSkillDebug.h">
+      <Filter>07.武功技能\调试信息</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KBuff.h">
+      <Filter>07.武功技能\Buff</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KBuffList.h">
+      <Filter>07.武功技能\Buff</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KBuffManager.h">
+      <Filter>07.武功技能\Buff</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KSkill.h">
+      <Filter>07.武功技能\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\KSkillDef.h">
+      <Filter>07.武功技能\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KSkillList.h">
+      <Filter>07.武功技能\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KSkillManager.h">
+      <Filter>07.武功技能\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KSkillRecipeList.h">
+      <Filter>07.武功技能\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\IDoodadFile.h">
+      <Filter>22.Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\IKGSO3WorldClient.h">
+      <Filter>22.Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\IKGSO3WorldServer.h">
+      <Filter>22.Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\INpcFile.h">
+      <Filter>22.Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KGSO3WorldClient.h">
+      <Filter>22.Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KGSO3WorldServer.h">
+      <Filter>22.Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\GS_Client_Protocol.h">
+      <Filter>06.网络连接</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KConnectionData.h">
+      <Filter>06.网络连接</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KGatewayClient.h">
+      <Filter>06.网络连接</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KLogClient.h">
+      <Filter>06.网络连接</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KPlayerClient.h">
+      <Filter>06.网络连接</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KPlayerServer.h">
+      <Filter>06.网络连接</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KRelayClient.h">
+      <Filter>06.网络连接</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3ProtocolBasic.h">
+      <Filter>06.网络连接</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KCell.h">
+      <Filter>01.场景世界</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KRegion.h">
+      <Filter>01.场景世界</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KScene.h">
+      <Filter>01.场景世界</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KSceneObject.h">
+      <Filter>01.场景世界</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KSceneObjNode.h">
+      <Filter>01.场景世界</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KSO3World.h">
+      <Filter>01.场景世界</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KTerrainData.h">
+      <Filter>01.场景世界</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KWorldSettings.h">
+      <Filter>25.配置参数</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KCharacterActionList.h">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KCoolDownList.h">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KDesignationList.h">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KDoodadClassList.h">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KFightFlagList.h">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KGameCardInfoList.h">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KGMList.h">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KGWConstList.h">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KLevelUpList.h">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KMapListFile.h">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KRelationList.h">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KReputationLimit.h">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KRoadManager.h">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KSmartDialogList.h">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KTransmissionList.h">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KWeaponTypeList.h">
+      <Filter>25.配置参数\参数表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KAttribute.h">
+      <Filter>13.魔法属性</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KAttrModifier.h">
+      <Filter>13.魔法属性</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KBookList.h">
+      <Filter>11.生活技能</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KCraft.h">
+      <Filter>11.生活技能</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KProfession.h">
+      <Filter>11.生活技能</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KProfessionList.h">
+      <Filter>11.生活技能</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KProfessionManager.h">
+      <Filter>11.生活技能</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KRecipeList.h">
+      <Filter>11.生活技能</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KRecipe.h">
+      <Filter>11.生活技能\配方</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KRecipeMaster.h">
+      <Filter>11.生活技能\配方</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KCenterRemote.h">
+      <Filter>20.Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KScriptCenter.h">
+      <Filter>20.Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KScriptClient.h">
+      <Filter>20.Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KScriptFuncList.h">
+      <Filter>20.Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KScriptServer.h">
+      <Filter>20.Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Luna.h">
+      <Filter>20.Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KShop.h">
+      <Filter>17.商店与交易</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KShopCenter.h">
+      <Filter>17.商店与交易</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KTradingBox.h">
+      <Filter>17.商店与交易</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KEscortQuestManager.h">
+      <Filter>08.任务系统</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KGPQ.h">
+      <Filter>08.任务系统</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KQuestInfoList.h">
+      <Filter>08.任务系统</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KQuestList.h">
+      <Filter>08.任务系统</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\GE_Protocol.h">
+      <Filter>23.上帝模式</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KGod.h">
+      <Filter>23.上帝模式</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KGodClient.h">
+      <Filter>23.上帝模式</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KGodServer.h">
+      <Filter>23.上帝模式</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KAIPatrolGroupManager.h">
+      <Filter>19.AI\Patrol &amp; Group</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KPatrolPath.h">
+      <Filter>19.AI\Patrol &amp; Group</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KPatrolPathList.h">
+      <Filter>19.AI\Patrol &amp; Group</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KAIAction.h">
+      <Filter>19.AI\AI Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KAILogic.h">
+      <Filter>19.AI\AI Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KAIManager.h">
+      <Filter>19.AI\AI Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KAISearchTactics.h">
+      <Filter>19.AI\AI Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KAISkillSelector.h">
+      <Filter>19.AI\AI Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KAIState.h">
+      <Filter>19.AI\AI Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KAIVM.h">
+      <Filter>19.AI\AI Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KThreatList.h">
+      <Filter>19.AI\Threat &amp; Link</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KBaseObject.h">
+      <Filter>21.基础代码</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KCircleList.h">
+      <Filter>21.基础代码</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KCustomData.h">
+      <Filter>21.基础代码</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KIDCache.h">
+      <Filter>21.基础代码</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KMath.h">
+      <Filter>21.基础代码</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KObjectIndex.h">
+      <Filter>21.基础代码</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KDoodadReviveManager.h">
+      <Filter>12.重生管理</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KNpcReviveManager.h">
+      <Filter>12.重生管理</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\Global.h">
+      <Filter>24.Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KCDTimerList.h">
+      <Filter>24.Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KRandGenerator.h">
+      <Filter>24.Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KStartTimeEvaluation.h">
+      <Filter>24.Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KTarget.h">
+      <Filter>24.Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KUserPreferences.h">
+      <Filter>24.Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3GlobalDef.h">
+      <Filter>24.Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3Result.h">
+      <Filter>24.Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>24.Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KTeamClient.h">
+      <Filter>16.组队系统</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KTeamServer.h">
+      <Filter>16.组队系统</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KFellowship.h">
+      <Filter>15.好友系统</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KCharacter.h">
+      <Filter>02.Character</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KDoodad.h">
+      <Filter>03.Doodad</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KDoodadFile.h">
+      <Filter>03.Doodad</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KDoodadTemplateList.h">
+      <Filter>03.Doodad</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KDesignation.h">
+      <Filter>05.Player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KPKController.h">
+      <Filter>05.Player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KPlayer.h">
+      <Filter>05.Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KProbability.h">
+      <Filter>05.Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KReputation.h">
+      <Filter>05.Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\KRoleDBDataDef.h">
+      <Filter>05.Player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KNpc.h">
+      <Filter>04.NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KNpcClassList.h">
+      <Filter>04.NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KNpcFile.h">
+      <Filter>04.NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KNpcOrderList.h">
+      <Filter>04.NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KNpcTeamList.h">
+      <Filter>04.NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KNpcTemplateList.h">
+      <Filter>04.NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KDropCenter.h">
+      <Filter>10.掉落相关</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KDropList.h">
+      <Filter>10.掉落相关</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KIndividualDropList.h">
+      <Filter>10.掉落相关</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KLevelDropList.h">
+      <Filter>10.掉落相关</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KLevelMoneyDropList.h">
+      <Filter>10.掉落相关</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KLootList.h">
+      <Filter>10.掉落相关</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KProtocolRecorder.h">
+      <Filter>26.协议录像</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KProtocolRecorderBase.h">
+      <Filter>26.协议录像</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KProtocolReplayer.h">
+      <Filter>26.协议录像</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KRecorderFactory.h">
+      <Filter>26.协议录像</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KRecorderSceneLoaderNormal.h">
+      <Filter>26.协议录像\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KRecorderSocketClientNormal.h">
+      <Filter>26.协议录像\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KRecorderSocketServerNormal.h">
+      <Filter>26.协议录像\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KRecorderToolsNormal.h">
+      <Filter>26.协议录像\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KRecorderSceneLoaderRecord.h">
+      <Filter>26.协议录像\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KRecorderSocketClientRecord.h">
+      <Filter>26.协议录像\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KRecorderSocketServerRecord.h">
+      <Filter>26.协议录像\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KRecorderSocketStreamRecord.h">
+      <Filter>26.协议录像\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KRecorderToolsRecord.h">
+      <Filter>26.协议录像\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KRecorderSceneLoaderReplay.h">
+      <Filter>26.协议录像\Replay</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KRecorderSocketClientReplay.h">
+      <Filter>26.协议录像\Replay</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KRecorderSocketServerReplay.h">
+      <Filter>26.协议录像\Replay</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KRecorderSocketStreamReplay.h">
+      <Filter>26.协议录像\Replay</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KRecorderToolsReplay.h">
+      <Filter>26.协议录像\Replay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KTongClient.h">
+      <Filter>27.帮会</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\KTongDef.h">
+      <Filter>27.帮会</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KTongRepertoryCache.h">
+      <Filter>27.帮会</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KCampInfo.h">
+      <Filter>28.阵营</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KAuctionClient.h">
+      <Filter>29.寄卖行</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KGlobalSystemValueCache.h">
+      <Filter>30.全局参数</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KAchievement.h">
+      <Filter>31.成就系统</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3World\KAchievementInfoList.h">
+      <Filter>31.成就系统</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\KStatDataDef.h">
+      <Filter>32.统计数据</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KStatDataServer.h">
+      <Filter>32.统计数据</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KMailClient.h">
+      <Filter>34.邮件</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KApexClient.h">
+      <Filter>33.反外挂Client</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KGameCardClient.h">
+      <Filter>35.月卡寄售</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KAntiFarmer.h">
+      <Filter>36.反打钱</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KMentorCache.h">
+      <Filter>37.师徒</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KMentorClient.h">
+      <Filter>37.师徒</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SO3World.rc">
+      <Filter>24.Misc</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SO3World.prj" />
+  </ItemGroup>
+</Project>

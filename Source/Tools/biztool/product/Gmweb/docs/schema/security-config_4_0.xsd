@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   xmlns="http://www.jboss.org/j2ee/schema/jaas"
+   targetNamespace="http://www.jboss.org/j2ee/schema/jaas"
+   elementFormDefault="unqualified" attributeFormDefault="unqualified" version="4.0">
+   <xs:annotation>
+      <xs:documentation><![CDATA[
+   $Id: security-config_4_0.xsd,v 1.1 2008/12/31 09:22:58 kuangsihao Exp $
+	This is the XML Schema for the jboss 4.0 security configuration descriptor.
+	The default version of the descriptor is found in conf/login-config.xml
+   and this version of the schema is indicated using:
+
+	    <policy xmlns="http://www.jboss.org/j2ee/schema/jaas"
+	      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	      xsi:schemaLocation="http://www.jboss.org/j2ee/schema/security-config_4_0.xsd"
+	      version="4.0">
+	      ...
+	    </policy>
+
+	The instance documents may indicate the published version of
+	the schema using the xsi:schemaLocation attribute:
+	http://www.jboss.org/j2ee/schema/security-config_4_0.xsd
+
+   The outline of a policy/application-policy is:
+   <policy>
+    <application-policy name="security-domain-name">
+     <authentication>
+       <login-module code="login.module1.class.name" flag="control_flag">
+         <module-option name = "option1-name">option1-value</module-option>
+         <module-option name = "option2-name">option2-value</module-option>
+         ...
+       </login-module>
+   
+       <login-module code="login.module2.class.name" flag="control_flag">
+         ...
+       </login-module>
+       ...
+     </authentication>
+    </application-policy>
+   </policy>
+	]]></xs:documentation>
+   </xs:annotation>
+   <xs:element name="policy">
+      <xs:annotation>
+         <xs:documentation>The policy element is the root of the security
+            configuration descriptor.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" ref="application-policy"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="application-policy">
+      <xs:annotation>
+         <xs:documentation>The application-policy lists configuration for a
+            named policy. This currently only consists of the authentication
+            configuration. </xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="authentication"/>
+         </xs:sequence>
+         <xs:attribute name="name" use="required" type="xs:NCName">
+            <xs:annotation>
+               <xs:documentation>The name attribute defines the authentication
+                  configuration name. This is the name that would be passed to
+                  the JAAS LoginContext ctor to use the associated login module stack.</xs:documentation>
+            </xs:annotation>
+         </xs:attribute>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="authentication">
+      <xs:annotation>
+         <xs:documentation>The authentication element contains the login module
+            stack configuration. Each login module configuration is specified
+            using a login-module element.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" ref="login-module"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="login-module">
+      <xs:annotation>
+         <xs:documentation>The login-module element defines a JAAS login module
+            configuration entry. Each entry must have a code and flag attribute
+            along with zero or more login module options specified via the
+            module-option element. </xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="module-option"/>
+         </xs:sequence>
+         <xs:attribute name="code" use="required">
+            <xs:annotation>
+               <xs:documentation>The code attribute gives the fully qualifed class
+                  name of the javax.security.auth.spi.LoginModule interface implementation
+                  for the login module.
+               </xs:documentation>
+            </xs:annotation>
+         </xs:attribute>
+         <xs:attribute name="flag" use="required">
+            <xs:annotation>
+               <xs:documentation>The flag attribute controls how a login module
+                  participates in the overall authentication proceedure.
+                  Required - The LoginModule is required to succeed. If it
+                  succeeds or fails, authentication still continues to proceed
+                  down the LoginModule list.
+
+                  Requisite - The LoginModule is required to succeed. If it succeeds,
+                  authentication continues down the LoginModule list. If it fails,
+                  control immediately returns to the application (authentication does not proceed
+                  down the LoginModule list).
+
+                  Sufficient - The LoginModule is  not required to succeed. If it does
+                  succeed, control immediately returns to the application (authentication
+                  does not proceed down the LoginModule list). If it fails,
+                  authentication continues down the LoginModule list.
+                  
+                  Optional - The LoginModule is not required to succeed. If it succeeds or
+                  fails, authentication still continues to proceed down the
+                  LoginModule list.
+                  
+                  The overall authentication succeeds only if
+                  all required and requisite LoginModules succeed. If a
+                  sufficient LoginModule is configured and succeeds, then only
+                  the required and requisite LoginModules prior to that
+                  sufficient LoginModule need to have succeeded for the overall
+                  authentication to succeed. If no required or requisite
+                  LoginModules are configured for an application, then at least
+                  one sufficient or optional LoginModule must succeed. </xs:documentation>
+            </xs:annotation>
+         </xs:attribute>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="module-option">
+      <xs:annotation>
+         <xs:documentation>A module option defines a name, value pair that are
+         passed to a LoginModule when it is initialized during the login proceedure.
+         The name attribute defines the option name while the element value is the
+         option value. The type of the value can be anything from a string obtained
+         from the module-option body, to arbitary objects unmarshalled based on
+         the namespace associated with the module-option child element.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType mixed="true">
+         <xs:sequence>
+            <xs:any namespace="##any"/>
+         </xs:sequence>
+         <xs:attribute name="name" use="required" type="xs:NCName">
+            <xs:annotation>
+               <xs:documentation>The module option name. This is the key used to store
+               the module value in the LoginModule initalize options Map.</xs:documentation>
+            </xs:annotation>
+         </xs:attribute>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>
+

@@ -1,0 +1,265 @@
+<%@ master language="C#" autoeventwireup="true" inherits="Common_Main, App_Web_1ceayx6e" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+	<script type="text/javascript" src="../Script/core.js"></script>
+	<script type="text/javascript" src="../Script/bytefx.js"></script>
+	<script type="text/javascript" src="../Script/sack.js"></script>
+    <%--
+	<script type="text/javascript" src="../Script/calendar.js"></script>
+	<script type="text/javascript" src="../Script/calendar-en.js"></script>	
+	<link href="../App_Themes/BlazeSky/Calendar_aqua.css" rel="stylesheet" type="text/css">
+	--%>
+
+    <script type="text/javascript">
+    //设置tip内容
+    function settip(tipContent)
+    {
+    	document.getElementById("tooltip").innerHTML = tipContent;
+    }
+
+    //显示tip
+    function showtip() {
+    	isShowing = true;
+    	document.getElementById("tooltip").style.visibility = "visible";
+    }
+
+    //隐藏tip
+    function hidetip() {
+    	isShowing = false;
+    	document.getElementById("tooltip").style.visibility = "hidden";
+    }
+
+	function msgConfirm(msg)
+    {
+        return window.confirm(msg);
+    }   
+    </script>
+
+</head>
+<body onload="pageLoad();">
+
+<script type="text/javascript" src="../Script/wz_tooltip.js"></script> 
+<script type="text/javascript" src="../Script/tip_balloon.js"></script>
+<script type="text/javascript">
+function pageLoad() {
+	init();
+	
+	showPageCreateTime();
+}
+
+function showPageCreateTime() {
+    window.status = "<%= Resources.StringDef.PageCreateTime %>" + ": " + new Date().toLocaleString();
+}
+
+function showTopMessage(speed) {
+	if (speed == null) {
+		bytefx.fade(TopMessage, 0, 100, 10);
+	}
+	else {
+		bytefx.fade(TopMessage, 0, 100, speed);
+	}	
+}
+
+function hideTopMessage(speed) {	
+	if (speed == null) {
+		bytefx.fade(TopMessage, 100, 0, 10);
+	}
+	else {
+		bytefx.fade(TopMessage, 100, 0, speed);
+	}
+}
+
+function showAndBlinkTopMessage() {
+	blinkTopMessageTimes = 20;
+	blinkTopMessageFlag = 0;
+	blinkTopMessage();
+}
+
+var blinkTopMessageTimes;
+var blinkTopMessageFlag;
+
+function blinkTopMessage() {
+	if (blinkTopMessageTimes >0) {
+		blinkTopMessageTimes--;
+		if (blinkTopMessageFlag == 1) {
+			blinkTopMessageFlag = 0;
+			bytefx.fade(TopMessage, 100, 50, 2, blinkTopMessage);
+		}
+		else {
+			blinkTopMessageFlag = 1;
+			bytefx.fade(TopMessage, 50, 100, 2, blinkTopMessage);
+		}
+	}
+	else {
+		bytefx.alpha(TopMessage, 0);
+	}
+}
+</script>
+
+<form id="form1" runat="server">
+<ajax:ToolkitScriptManager runat="server" EnablePartialRendering="true" ID="ScriptManager1"  EnableScriptLocalization="true" EnableScriptGlobalization="true"/>
+
+		<!-- 顶部浮动栏 开始 -->
+		<table width="100%" height="100%" border="0" class="TopBar">
+			<tr valign="middle">
+				<td width="40%">
+					<div id="TopMessage" class="TopMessage">
+						<asp:ContentPlaceHolder ID="ContentPlaceHolderTopMessage" runat="server">
+						</asp:ContentPlaceHolder>
+					</div>
+				</td>
+				<td align="right">
+					<asp:Label ID="literal16" runat="server" Text="<%$ Resources:StringDef, User %>"
+						SkinID="TopBar" />:&nbsp;<asp:Label ID="LiteralUserName" runat="server" SkinID="TopBar" />
+					|
+					<asp:Label ID="LabelPageCreateTime" runat="server" SkinID="TopBar" />
+					|
+					<asp:HyperLink runat="server" ID="HyperLinkChangePassword" SkinID="TopBar" Text="<%$ Resources:StringDef,ChangePassword %>"
+						NavigateUrl="~/Security/ChangePassword.aspx" />
+					|
+					<asp:LinkButton ID="LinkButtonLogout" runat="server" Text="<%$ Resources:StringDef, Logout %>"
+						CausesValidation="false" SkinID="TopBar" ToolTip="<%$ Resources:StringDef, ToolTipLogout %>" />
+					|
+					<asp:HyperLink runat="server" ID="LinkSystemControl" NavigateUrl="~/Common/SystemControl.aspx"
+						Text="<%$ Resources:StringDef, SystemControl %>" SkinID="TopBar" ToolTip="<%$ Resources:StringDef, ToolTipSystemControl %>" />
+				</td>
+				<td width="10">
+				</td>
+			</tr>
+		</table>
+
+		<!-- 顶部浮动栏 结束 -->
+		<table width="100%" cellpadding="0" cellspacing="0" border="0">			
+			<tr>
+				<td>
+					<asp:Panel runat="server" SkinID="FrameTop">
+						<table>							
+							<tr>
+								<td width="150"></td>
+								<td align="left"><asp:Label ID="Label2" runat="server" Text="<%$ Resources:StringDef, SystemFullName %>" SkinID="SystemFullName" /></td>
+							</tr>
+						</table>
+					</asp:Panel>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="100%" cellpadding="0" cellspacing="0">					
+						<tr>
+							<asp:Panel ID="PanelSiteMap" runat="server">
+														<td width="150" valign="top" class="FrameLeft">
+								<table>
+									<tr>
+										<td align="right"><asp:LinkButton ID="ButtonHideSiteMap" runat="server" Text="<<" OnClick="ButtonHideSiteMap_Click" SkinID="PlainText" ToolTip="<%$ Resources:StringDef, HideSiteMap %>" /></td>
+									</tr>
+									<tr>
+										<td>											
+											<asp:TreeView ID="TreeView1" runat="server" DataSourceID="MySiteMapDataSource" ExpandDepth="1"  />
+											<asp:SiteMapDataSource ID="MySiteMapDataSource" runat="server" ShowStartingNode="false" />
+										</td>
+									</tr>
+								</table>								
+							</td>
+							</asp:Panel>
+							<td valign="top">
+								<table width="100%">									
+									<tr>
+										<td>
+											<asp:LinkButton ID="ButtonShowSiteMap" runat="server" Text=">>" OnClick="ButtonShowSiteMap_Click" SkinID="PlainText" ToolTip="<%$ Resources:StringDef, ShowSiteMap %>" />
+										</td>
+									</tr>						
+									<tr>
+										<td>
+											<asp:SiteMapPath runat="server"  />
+										</td>
+									</tr>
+									<tr class="TableRowSpacing" />
+									<tr>
+										<td>
+											<div>
+												<asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server" />
+											</div>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td valign="middle" class="Copyright">
+					<asp:Panel runat="server" ID="PanelCopyRight" SkinID="Copyright">
+						<table height="100%">
+							<tr>
+								<td>
+									<asp:Label ID="Label1" runat="server" Text='<%$ Resources:StringDef, CopyrightInfo %>' SkinID="Copyright" />
+									<asp:Image runat="server" SkinID="BlazeLogo" />
+									<asp:Label ID="Label3" runat="server" Text='<%$ Resources:StringDef, BlazeProduction %>' SkinID="Copyright" />
+								</td>
+							</tr>
+						</table>
+					</asp:Panel>
+				</td>
+			</tr>
+		</table>
+		
+		<asp:Panel runat="server" ID="PanelTip" Width="50" Height="10">
+			<div id="tooltip" class="GameServerSummary" />
+		</asp:Panel>
+		<ajax:AlwaysVisibleControlExtender ID="AlwaysVisibleControlExtender1" runat="server"
+			TargetControlID="PanelTip" VerticalSide="Top" VerticalOffset="50" HorizontalSide="Left"
+			HorizontalOffset="10" ScrollEffectDuration=".05" />			
+			
+        <ajax:ModalPopupExtender runat="server" ID="programmaticModalPopup"
+            TargetControlID="LinkButtonLogout"
+            PopupControlID="programmaticPopup" 
+            BackgroundCssClass="modalBackground"
+            CancelControlID="CancelButton"
+            DropShadow="True">
+        </ajax:ModalPopupExtender>
+        <asp:Panel runat="server" CssClass="modalPopup" ID="programmaticPopup" style="display:none;width:350px;padding:10px;text-align:center;">
+            <div style="background-color:#DDDDDD;border:solid 1px Gray;color:Black;text-align:center;vertical-align:middle;padding:10px;margin:10px;">
+                <asp:Literal ID="Literal1" runat="server" Text="<%$ Resources:StringDef,Logout %>" />
+            </div>
+            <br />
+            <br />
+            <asp:LinkButton ID="OkButton" SkinID="ModalPopup" runat="server" Text="<%$ Resources:StringDef, Ok %>" OnClick="ButtonLogout_Click" />
+            <asp:LinkButton ID="CancelButton" SkinID="ModalPopup" runat="server" Text="<%$ Resources:StringDef, Cancel %>" />
+        </asp:Panel>
+        
+        <%--<ajax:AnimationExtender ID="AnimationLogout" runat="server" TargetControlID="LinkButtonLogout">
+            <Animations>
+                <OnClick>
+                    <Parallel Duration="0.25" Fps="30" >
+                        <FadeOut AnimationTarget="form1" minimumOpacity=".5"/>
+                        <%--<Color AnimationTarget="form1"
+                            Duration="2"
+                            StartValue="#FFFFFF"
+                            EndValue="#CCCCCC"
+                            Property="style"
+                            PropertyKey="background" />
+                    </Parallel>
+                </OnClick>
+            </Animations>
+        </ajax:AnimationExtender>
+        <ajax:AnimationExtender ID="AnimationLogoutCancel" runat="server" TargetControlID="LinkButtonLogoutCancel">
+            <Animations>
+                <OnClick>
+                    <Parallel Duration="0" Fps="30">
+                        <FadeIn AnimationTarget="form1" maximumOpacity="1" />
+                        <%--<Color AnimationTarget="form1"
+                            Duration="0"
+                            StartValue="#7F7F7F"
+                            EndValue="#FFFFFF"
+                            Property="style"
+                            PropertyKey="backgroundColor" />
+                    </Parallel>
+                </OnClick>
+            </Animations>
+        </ajax:AnimationExtender>--%>
+	</form>
+</body>
+</html>

@@ -1,0 +1,1 @@
+For compiling FireEdit you only need to reset the fireball references.

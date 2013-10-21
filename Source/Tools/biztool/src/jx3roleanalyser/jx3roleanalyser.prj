@@ -1,0 +1,37 @@
+[Include]
+../../../../../../Base/Include
+../../../../../../Sword3/Include
+../../../../../../Sword3/Source/Common/SO3World/Src
+../../../../../../Sword3/Include/SO3World
+../../../../../../Sword3/Source/Server/SO3GameCenter
+
+[Config Debug]
+Product     Lib products/jx3roleanalyserD
+Options     Debug -mms-bitfields
+Defines
+ObjDir      LDebug
+LibDir      ../../../../../../Base/Lib;../../../../../../Devenv/lib/debug
+Libraries   
+
+[Config Release]
+Product     Lib products/jx3roleanalyser
+Options     Release -mms-bitfields
+Defines
+ObjDir      LRelease
+LibDir      ../../../../../../Base/Lib;../../../../../../Devenv/lib/debug
+Libraries   
+
+[Source]
+stdafx.cpp
+KMentorTableData.cpp
+KPQDBTableData.cpp
+KRoleDataAnalyse.cpp
+KAuctionData.cpp
+jx3roleanalyser.cpp
+KFellowShipData.cpp
+KMailBoxInfoData.cpp
+KQueryRoleData.cpp
+KRoleDataAnalyse.cpp
+KStatDataAnalyser.cpp
+KTongData.cpp
+KCommon.cpp

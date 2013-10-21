@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AtlKG3DEngineProxy", "AtlKG3DEngineProxy.vcproj", "{4D6C0656-0151-4108-8FA3-C983D76AAD6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D6C0656-0151-4108-8FA3-C983D76AAD6E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4D6C0656-0151-4108-8FA3-C983D76AAD6E}.Debug|Win32.Build.0 = Debug|Win32
+		{4D6C0656-0151-4108-8FA3-C983D76AAD6E}.Release|Win32.ActiveCfg = Release|Win32
+		{4D6C0656-0151-4108-8FA3-C983D76AAD6E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

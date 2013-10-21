@@ -1,0 +1,89 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{81018AA4-1197-4A96-8D9C-1B334EF1602D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Compiler_Sword3</RootNamespace>
+    <AssemblyName>Compiler_Sword3</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\FlowChartEditor\bin\Debug\Plugins\FlowChart\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EventNode, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="LuaInterface, Version=1.5.3.0, Culture=neutral, PublicKeyToken=1e1fb15b02227b8a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeProviderClass.cs" />
+    <Compile Include="CodeWriter.cs" />
+    <Compile Include="LuaEx.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeCompiler\CodeCompiler.csproj">
+      <Project>{23438242-5ADA-4B82-8CA5-F97D159F1AB7}</Project>
+      <Name>CodeCompiler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBManager\DBManager.csproj">
+      <Project>{F21D11C4-D6D4-448A-8C44-0BDDEB739396}</Project>
+      <Name>DBManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FlowChartDataLibrary\FlowChartDataLibrary.csproj">
+      <Project>{CF807FA4-C6B7-4880-AE94-AC15242F62E8}</Project>
+      <Name>FlowChartDataLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\ActionNode\ActionNode.csproj">
+      <Project>{EDB419B3-B026-413E-A2A1-8B9B89752143}</Project>
+      <Name>ActionNode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\BaseExp\BaseExp.csproj">
+      <Project>{4498196F-64F9-44B7-ACA1-BBF696143D9E}</Project>
+      <Name>BaseExp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\ConditionLine\ConditionLine.csproj">
+      <Project>{EE1929BF-4459-4E70-9F01-F35FFCEE57B1}</Project>
+      <Name>ConditionLine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\ConditionNode\ConditionNode.csproj">
+      <Project>{F07441ED-0FE5-405F-AA6B-695D84FF5329}</Project>
+      <Name>ConditionNode</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

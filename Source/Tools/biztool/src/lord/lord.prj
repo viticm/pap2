@@ -1,0 +1,27 @@
+[Include]
+./src
+/usr/include
+../Share/Header/FSEye
+../Share/Header
+../../../../base/include
+
+[Config Debug]
+Product		Exe ../../product/debug/lord
+Options		Debug
+Defines		__linux
+ObjDir		Debug
+LibDir		../../../../base/lib/debug; /usr/local/lib; /usr/lib/lib; /lib/
+Libraries	pthread; common; engine
+
+[Config Release]
+Product		Exe ../../product/release/guard
+Options		Release
+Defines		__linux
+ObjDir		Release
+LibDir		../../../../base/lib/release; /usr/local/lib; /usr/lib/lib; /lib/
+Libraries	pthread; common; engine
+
+[Source]
+klordguard.cpp
+lord.cpp
+main.cpp

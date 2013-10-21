@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameConfig", "GameConfig\GameConfig.vcproj", "{E5FC05BA-8F66-4D64-B761-F4E3C041831E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5FC05BA-8F66-4D64-B761-F4E3C041831E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E5FC05BA-8F66-4D64-B761-F4E3C041831E}.Debug|Win32.Build.0 = Debug|Win32
+		{E5FC05BA-8F66-4D64-B761-F4E3C041831E}.Release|Win32.ActiveCfg = Release|Win32
+		{E5FC05BA-8F66-4D64-B761-F4E3C041831E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

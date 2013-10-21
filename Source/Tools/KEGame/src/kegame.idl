@@ -1,0 +1,52 @@
+// kegame.idl : IDL source for kegame
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (kegame.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(57C7866D-BD22-4BA3-9F96-DD34FA82C6AF),
+	dual,
+	nonextensible,
+	helpstring("IGame Interface"),
+	pointer_default(unique)
+]
+interface IGame : IDispatch{
+    [id(1), helpstring("method GetSystemVersion")] HRESULT GetSystemVersion([out,retval] BSTR* bstrVersion);
+    [id(2), helpstring("method GetSystemMemInfo")] HRESULT GetSystemMemInfo([out,retval] BSTR* bstrMem);
+    [id(3), helpstring("method GetSystemCpuInfo")] HRESULT GetSystemCpuInfo([out,retval] BSTR* bstrCpu);
+	[id(4), helpstring("method GetDisplayInfo")] HRESULT GetDisplayInfo([out,retval] BSTR* bstrDisplay);
+	[id(5), helpstring("method GetHardDiskId")] HRESULT GetHardDiskId([out,retval] BSTR* bstrHardId);
+	[id(6), helpstring("method EncryptString")] HRESULT EncryptString([in] BSTR bstrSrc, [out,retval] BSTR* bstrDest);
+};
+[
+	uuid(97D67453-F400-4598-9DD2-9EACFC738C53),
+	version(1.0),
+	helpstring("kegame 1.0 Type Library")
+]
+library kegameLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(3EA707FF-C213-4248-AA20-0F1DCF65343D),
+		helpstring("_IGameEvents Interface")
+	]
+	dispinterface _IGameEvents
+	{
+		properties:
+		methods:
+	};
+	[
+		uuid(19CC8AC3-7B26-40FF-8389-AB2460E647A9),
+		helpstring("Game Class")
+	]
+	coclass Game
+	{
+		[default] interface IGame;
+		[default, source] dispinterface _IGameEvents;
+	};
+};

@@ -1,0 +1,194 @@
+﻿@title KCraftEnchant对象
+@obj KCraftEnchant
+@detail 附魔技能
+@catalogs 
+
+@summary 技能类型
+@catalog
+@remarks 取值[[get ALL_CRAFT_TYPE]]
+property nCraftType
+
+@summary 使用技能时所需要的"神"
+@catalog
+@remarks
+property nStamina
+
+@summary 所属生活技能id
+@catalog
+@remarks
+property dwProfessionID
+
+@summary 需要生活技能的等级
+@catalog
+@remarks
+property dwRequireProfessionLevel
+
+@summary 使用技能所需要的工具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]
+property dwToolItemType
+
+@summary 使用技能需要的道具索引
+@catalog
+@remarks
+property dwToolItemIndex
+
+@summary 技能作用的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]
+property nEquipmentType
+
+@summary 使用技能能够得到的生活技能经验
+@catalog
+@remarks
+property dwExp
+
+@summary 技能吟唱帧数
+@catalog
+@remarks
+property nPrepareFrame
+
+@summary 技能名称 
+@catalog
+@remarks
+property szName
+
+@summary 技能所属的部位
+@catalog
+@remarks 技能可能是应用于某个部位的，例如上装、下装之类
+property szBelong
+
+@summary 技能影响的属性id
+@catalog
+@remarks 取值：[[get ATTRIBUTE_ID]]
+property dwEnchantID
+
+@summary 需要生活分支的id
+@catalog
+@remarks
+property dwRequireBranchID
+
+@summary 使用技能所需要的doodad的id
+@catalog
+@remarks
+property dwRequireDoodadID
+
+@summary 使用技能所需要的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwRequireItemType1
+
+@summary 使用技能所需要的道具的索引
+@catalog
+@remarks
+property dwRequireItemIndex1
+
+@summary 使用技能所需要的道具的数量
+@catalog
+@remarks
+property dwRequireItemCount1
+
+@summary 使用技能所需要的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwRequireItemType2
+
+@summary 使用技能所需要的道具的索引
+@catalog
+@remarks
+property dwRequireItemIndex2
+
+@summary 使用技能所需要的道具的数量
+@catalog
+@remarks
+property dwRequireItemCount2
+
+@summary 使用技能所需要的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwRequireItemType3
+
+@summary 使用技能所需要的道具的索引
+@catalog
+@remarks
+property dwRequireItemIndex3
+
+@summary 使用技能所需要的道具的数量
+@catalog
+@remarks
+property dwRequireItemCount3
+
+@summary 使用技能所需要的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwRequireItemType4
+
+@summary 使用技能所需要的道具的索引
+@catalog
+@remarks
+property dwRequireItemIndex4
+
+@summary 使用技能所需要的道具的数量
+@catalog
+@remarks
+property dwRequireItemCount4
+
+@summary 使用技能所需要的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwRequireItemType5
+
+@summary 使用技能所需要的道具的索引
+@catalog
+@remarks
+property dwRequireItemIndex5
+
+@summary 使用技能所需要的道具的数量
+@catalog
+@remarks
+property dwRequireItemCount5
+
+@summary 使用技能所需要的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwRequireItemType6
+
+@summary 使用技能所需要的道具的索引
+@catalog
+@remarks
+property dwRequireItemIndex6
+
+@summary 使用技能所需要的道具的数量
+@catalog
+@remarks
+property dwRequireItemCount6
+
+@summary 使用技能所需要的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwRequireItemType7
+
+@summary 使用技能所需要的道具的索引
+@catalog
+@remarks
+property dwRequireItemIndex7
+
+@summary 使用技能所需要的道具的数量
+@catalog
+@remarks
+property dwRequireItemCount7
+
+@summary 使用技能所需要的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwRequireItemType8
+
+@summary 使用技能所需要的道具的索引
+@catalog
+@remarks
+property dwRequireItemIndex8
+
+@summary 使用技能所需要的道具的数量
+@catalog
+@remarks
+property dwRequireItemCount8

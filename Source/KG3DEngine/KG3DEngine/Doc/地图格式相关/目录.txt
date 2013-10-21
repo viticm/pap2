@@ -1,0 +1,6 @@
+Engine_KG3DSceneDataInterface.doc：记录有关数据核心层的相关类
+Engine_KG3DSceneDataInterfaceCore.doc：记录数据核心层提供的功能
+Engine_KG3DSceneOutDoorSpaceMgr相关类.doc：记录有关室外空间管理器交互的相关类
+Engine_KG3DSceneOutDoorSpaceMgr.doc：记录有关室外空间管理器的基本功能
+Engine_KG3DSceneBlock.doc：地图的场景数据相关，分为Zone、Section、Region，三者成包含关系
+Engine_KG3DSceneRegionMgr.doc: Region管理，场景创建时被创建，每个场景都有一个RegionMgr

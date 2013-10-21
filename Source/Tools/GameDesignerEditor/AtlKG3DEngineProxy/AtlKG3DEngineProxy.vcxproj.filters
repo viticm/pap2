@@ -1,0 +1,1793 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{ed9ff596-b221-4cb8-bb75-7b81622edfa2}</UniqueIdentifier>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Stolen">
+      <UniqueIdentifier>{1f5898f1-aa3f-476e-98c8-a301744c175c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IndeHeader">
+      <UniqueIdentifier>{682ca54a-7a9a-4697-b403-1e456b666b49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IndeHeader\SO3Represent">
+      <UniqueIdentifier>{cebeef21-7a14-48e6-9f75-7f767878e209}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IndeHeader\SO3World">
+      <UniqueIdentifier>{f9b460ec-0ca4-4fcc-987c-bb04446f2f1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IndeSource">
+      <UniqueIdentifier>{be91d1a4-9f2c-462a-950e-d4a65f89ce87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IndeSource\SO3World">
+      <UniqueIdentifier>{31263645-be80-45c6-920a-1029032a5082}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IndeSource\SO3Represent">
+      <UniqueIdentifier>{da934d16-01de-459f-b56c-052573cd1bf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IndeSource\SO3Represent\base">
+      <UniqueIdentifier>{0475a01a-1020-47df-992f-cb402f1f411f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IndeSource\SO3Represent\base\missile">
+      <UniqueIdentifier>{56e28d1e-9154-40a2-8977-57df2a81dd07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IndeSource\SO3Represent\base\File">
+      <UniqueIdentifier>{ce3f6453-cead-4df1-ae01-05ce2167d38f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IndeSource\SO3Represent\case">
+      <UniqueIdentifier>{b519a718-6ffe-4d1c-841e-222c620362f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IndeSource\SO3Represent\case\actionobject">
+      <UniqueIdentifier>{fc7cdf11-4844-4a29-802b-5be0fa96575b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IndeSource\SO3Represent\case\actionobject\missile">
+      <UniqueIdentifier>{c074d6bc-1a13-4188-90f9-288ccaac732b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IndeSource\SO3Represent\case\gameworld">
+      <UniqueIdentifier>{58756376-59e2-45b3-a9d1-5c39b5b5e1f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IndeSource\SO3Represent\case\render">
+      <UniqueIdentifier>{f1874e42-c6e6-40c9-a28c-91098755966a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IndeSource\SO3Represent\common">
+      <UniqueIdentifier>{388e29f8-cc3f-449c-979c-fdeb43f86f7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AtlKG3DEngine">
+      <UniqueIdentifier>{53c55836-09a8-45c2-ad57-ad32425a3988}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AtlBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AtlInputProxy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AtlKG3DEngineProxy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AtlOld3DEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseLib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsStruct.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputProxy_Impl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadLogicalObj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MathTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveLogicalObj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SO3World.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TopViewForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AtlKG3DEngineProxy_i.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Stolen\KG3DBBox.cpp">
+      <Filter>Stolen</Filter>
+    </ClCompile>
+    <ClCompile Include="Stolen\KG3DSceneLogicalEditorBase.cpp">
+      <Filter>Stolen</Filter>
+    </ClCompile>
+    <ClCompile Include="Stolen\KGMathFunctions.cpp">
+      <Filter>Stolen</Filter>
+    </ClCompile>
+    <ClCompile Include="Stolen\KGTester.cpp">
+      <Filter>Stolen</Filter>
+    </ClCompile>
+    <ClCompile Include="Stolen\KLogicalSceneConnection.cpp">
+      <Filter>Stolen</Filter>
+    </ClCompile>
+    <ClCompile Include="Stolen\KLogicObstacleGenerator.cpp">
+      <Filter>Stolen</Filter>
+    </ClCompile>
+    <ClCompile Include="Stolen\KSceneEditorDocLogical.cpp">
+      <Filter>Stolen</Filter>
+    </ClCompile>
+    <ClCompile Include="Stolen\KSceneHelperFuncs.cpp">
+      <Filter>Stolen</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\Global.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAchievementInfoList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAI_Critter.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAI_Monk.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAI_Negative.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAI_Positive.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAI_Retardate.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAI_Wolf.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAI_WolfKing.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAI_Wood.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAIAction.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAIEvent.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAIFlowGraph.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAILogic.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAIManager.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAIParamTemplateList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAIPatrolGroupManager.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAISearchTactics.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAISkillSelect.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAISkillSelector.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAIState.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAIVM.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAttribGroup.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAttribInfoList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAttribLib.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAttribute.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAttrModifier.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KAuctionClient.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KBaseFuncList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KBaseObject.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KBookList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KBuff.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KBuffList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KBuffManager.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KCampInfo.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KCDTimerList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KCell.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KCenterRemote.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KCharacter.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KCharacterActionList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KCircleList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KCoolDownList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KCraft.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KCustomEquipInfoList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KDoodad.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KDoodadClassList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KDoodadFile.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KDoodadReviveManager.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KDoodadTemplateList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KDropCenter.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KDropList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KEnchantLib.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KEntryList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KEscortQuestManager.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KFellowship.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KFightFlagList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KGatewayClient.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KGlobalSystemValueCache.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KGMList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KGod.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KGodClient.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KGodServer.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KGPQ.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KGSO3WorldClient.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KGSO3WorldServer.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KGWConstList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KIDCache.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KIndividualDropList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KInfoGather.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KInventory.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KItem.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KItemInfo.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KItemInfoList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KItemLib.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KItemList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KItemManager.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KItemTransaction.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLevelDropList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLevelMoneyDropList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLevelUpList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLogClient.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\kLoginFuncList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLootList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaAIEvent.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaAuctionClient.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaCampInfo.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaCell.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaCharacter.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaConstList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaDoodad.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaDoodadTemplate.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaItem.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaNpc.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaPlayer.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaProfession.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaQuestInfo.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaRecipe.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaScene.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaSceneObject.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaShop.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaSkill.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaTarget.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KLuaTongClient.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KMapListFile.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KMath.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KNpc.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KNpcClassList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KNpcFile.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KNpcOrderList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KNpcReviveManager.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KNpcTeam.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KNpcTeamList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KNpcTemplateList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KPatrolPath.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KPatrolPathList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KPKController.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KPlayer.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KPlayerClient.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KPlayerServer.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KPlayerServerBase.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KProfession.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KProfessionList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KProfessionManager.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KProtocolRecorder.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KProtocolReplayer.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KQuestInfoList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KQuestList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRandGenerator.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecipe.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecipeList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecipeMaster.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecorderFactory.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecorderSceneLoaderNormal.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecorderSceneLoaderRecord.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecorderSceneLoaderReplay.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecorderSocketClientNormal.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecorderSocketClientRecord.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecorderSocketClientReplay.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecorderSocketServerNormal.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecorderSocketServerRecord.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecorderSocketServerReplay.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecorderSocketStreamRecord.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecorderSocketStreamReplay.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecorderToolsNormal.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecorderToolsRecord.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRecorderToolsReplay.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRegion.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRelationList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRelayClient.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KReputation.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KReputationLimit.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KRoadManager.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KScene.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KSceneObject.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KSceneObjNode.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KScriptCenter.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KScriptClient.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KScriptServer.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KShop.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KShopCenter.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KShopFuncList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KSkill.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KSkillDebug.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KSkillList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KSkillManager.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KSkillRecipeList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KSmartDialogList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KSO3World.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KSO3WorldInterface.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KTarget.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KTeamClient.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KTeamServer.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KTerrainData.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KThreatList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KTongClient.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KTradingBox.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KTransmissionList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KUserPreferences.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KWeaponTypeList.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\KWorldSettings.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3World\luna.cpp">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\krlcommand.cpp">
+      <Filter>IndeSource\SO3Represent</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\krloptimization.cpp">
+      <Filter>IndeSource\SO3Represent</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\krloption.cpp">
+      <Filter>IndeSource\SO3Represent</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\SO3Represent.cpp">
+      <Filter>IndeSource\SO3Represent</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\base\missile\krepresentmissile.cpp">
+      <Filter>IndeSource\SO3Represent\base\missile</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\base\missile\krepresentmissilephase.cpp">
+      <Filter>IndeSource\SO3Represent\base\missile</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\base\missile\krepresentmissileprocessor.cpp">
+      <Filter>IndeSource\SO3Represent\base\missile</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\base\File\kbintab.cpp">
+      <Filter>IndeSource\SO3Represent\base\File</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\base\File\kfilepath.cpp">
+      <Filter>IndeSource\SO3Represent\base\File</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlcamera.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlcharacter.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlcharactercamera.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlcharacterturning.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlcursor.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krldoodad.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krldoodadmgr.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlgodcamera.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krllocalcharacter.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlmissile.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlmissilemgr.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlremotecharacter.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlremotecharactermgr.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlrides.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlridesmgr.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlscene.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlscenemgr.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlsceneobject.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlskilleffectresult.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlskillsequence.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krltarget.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krltrackcamera.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\kcirclemissileprocessor.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\kcompositemissileprocessor.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\kfixedtrackmissileprocessor.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\khomingmissileprocessor.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\klightningmissileprocessor.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\klinemissileprocessor.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\kmodelmissileprocessor.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\ktimelinemissileprocessor.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\kyaxismissileprocessor.cpp">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\gameworld\kgameworldcharactercontroller.cpp">
+      <Filter>IndeSource\SO3Represent\case\gameworld</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\gameworld\kgameworldhandler.cpp">
+      <Filter>IndeSource\SO3Represent\case\gameworld</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\gameworld\krlanimationtable.cpp">
+      <Filter>IndeSource\SO3Represent\case\gameworld</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\gameworld\krlcharacterframedata.cpp">
+      <Filter>IndeSource\SO3Represent\case\gameworld</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\gameworld\krldoodadframedata.cpp">
+      <Filter>IndeSource\SO3Represent\case\gameworld</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\gameworld\ktabledefine.cpp">
+      <Filter>IndeSource\SO3Represent\case\gameworld</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\gameworld\ktablelist.cpp">
+      <Filter>IndeSource\SO3Represent\case\gameworld</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\gameworld\ktabletransform.cpp">
+      <Filter>IndeSource\SO3Represent\case\gameworld</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\render\kanimationmodel.cpp">
+      <Filter>IndeSource\SO3Represent\case\render</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\render\kmodel.cpp">
+      <Filter>IndeSource\SO3Represent\case\render</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\render\kmodelgcmgr.cpp">
+      <Filter>IndeSource\SO3Represent\case\render</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\render\kmodelmgr.cpp">
+      <Filter>IndeSource\SO3Represent\case\render</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\case\render\krlloadingmodel.cpp">
+      <Filter>IndeSource\SO3Represent\case\render</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\common\kmathtools.cpp">
+      <Filter>IndeSource\SO3Represent\common</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\common\kmovementcontroller.cpp">
+      <Filter>IndeSource\SO3Represent\common</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\common\ksmallobjectpool.cpp">
+      <Filter>IndeSource\SO3Represent\common</Filter>
+    </ClCompile>
+    <ClCompile Include="IndeSource\SO3Represent\common\tblock.cpp">
+      <Filter>IndeSource\SO3Represent\common</Filter>
+    </ClCompile>
+    <ClCompile Include="AtlTest3DEngine\Functions.cpp">
+      <Filter>AtlKG3DEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="AtlTest3DEngine\InputProxy.cpp">
+      <Filter>AtlKG3DEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="AtlTest3DEngine\ProgressForm.cpp">
+      <Filter>AtlKG3DEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="AtlTest3DEngine\SceneEditorCommon.cpp">
+      <Filter>AtlKG3DEngine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AtlKG3DEngineProxy.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="AnimationTable.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AtlBase.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AtlEngineManager.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AtlIEKG3DScene.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AtlIEKG3DSceneEditorBase.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AtlIEKG3DSceneSceneEditor.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AtlIEKG3DSceneSelectBase.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AtlIEKG3DTexture.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AtlIELogicalSceneConnection.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AtlIKG3DResourceBase.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AtlIKG3DScene.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AtlIKG3DScene1.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AtlInputProxy.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AtlKG3DEngineProxy.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AtlLogicData.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AtlOld3DEngine.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AtlScene.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AtlTest3DEngine\AtlTest3DEngine.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="BaseLib.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="D3DDevice91.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="EngineOption.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="GraphicsTool.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="InputProxy.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Light.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="LogicalScene.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Material.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="MeshBase.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Model.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ModelTable.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Npc_Property.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Obj_Property.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RegionInfoManager.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RegionInfoManagerTable.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RepresentHandler.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RepresentHandler1.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RepresentObject.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RepresentObjectSet.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RepresentObjectSoundBall.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ResourceMgr.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RTTITypeManager.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Scene.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="SceneEditor.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="SceneLogicalEditorBase.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="SceneSceneEditor.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="SO3World.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="TextureTable.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="AtlKG3DEngineProxy.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AtlBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AtlInputProxy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AtlOld3DEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseLib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtraStructDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputProxy_Impl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadLogicalObj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveLogicalObj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneEditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SO3World.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TopViewForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AtlKG3DEngineProxy.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Stolen\KG3DSceneLogicalEditorBase.h">
+      <Filter>Stolen</Filter>
+    </ClInclude>
+    <ClInclude Include="Stolen\KLogicalSceneConnection.h">
+      <Filter>Stolen</Filter>
+    </ClInclude>
+    <ClInclude Include="Stolen\KLogicObstacleGenerator.h">
+      <Filter>Stolen</Filter>
+    </ClInclude>
+    <ClInclude Include="Stolen\KSceneEditorDocLogical.h">
+      <Filter>Stolen</Filter>
+    </ClInclude>
+    <ClInclude Include="Stolen\KSceneHelperFuncs.h">
+      <Filter>Stolen</Filter>
+    </ClInclude>
+    <ClInclude Include="Stolen\KSceneInterfaceGetters.h">
+      <Filter>Stolen</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3Represent\SO3GameWorldRepresentHandler.h">
+      <Filter>IndeHeader\SO3Represent</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3Represent\SO3RepresentHandler.h">
+      <Filter>IndeHeader\SO3Represent</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3Represent\SO3RepresentInterface.h">
+      <Filter>IndeHeader\SO3Represent</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\Global.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\IDoodadFile.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\IKGSO3WorldClient.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\IKGSO3WorldServer.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\INpcFile.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KAIAction.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KAIEvent.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KAILogic.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KAIManager.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KAIParamTemplateList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KAIPatrolGroupManager.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KAIState.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KAttribute.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KAuctionClient.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KBaseObject.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KCell.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KCenterRemote.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KCharacterActionList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KCircleList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KCoolDownList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KCustomData.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KDoodadClassList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KDoodadTemplateList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KDropCenter.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KEnchantLib.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KEntryList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KFellowship.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KFightFlagList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KGatewayClient.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KGMList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KGodClient.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KGPQ.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KGWConstList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KIDCache.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KIndividualDropList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KItemManager.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KLevelDropList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KLevelUpList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KMapListFile.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KNpcClassList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KNpcOrderList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KNpcTeam.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KNpcTeamList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KNpcTemplateList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KObjectIndex.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KPartyCache.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KPatrolPath.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KPatrolPathList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KPlayerClient.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KProfessionManager.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KQuestInfoList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KRecorderFactory.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KRegion.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KRelationList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KReputationLimit.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KRoadManager.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KScene.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KScriptCenter.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KScriptClient.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KScriptFuncList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KScriptServer.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KScriptTimerList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KShopCenter.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KSkillManager.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KSmartDialogList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KSO3World.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KTarget.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KTeamClient.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KTongClient.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KTrackList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KWeaponTypeList.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeHeader\SO3World\KWorldSettings.h">
+      <Filter>IndeHeader\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KAI_Player.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KAI_Wood.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KAIBase.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KAIControl.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KAIFlowGraph.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KAISearchTactics.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KAISkillSelector.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KAIVM.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KAttribGroup.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KAttribInfoList.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KAttribLib.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KAttrModifier.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KBookList.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KBuff.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KBuffList.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KBuffManager.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KCampInfo.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KCDTimerList.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KCharacter.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KConnectionData.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KCraft.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KCustomEquipInfoList.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KDoodad.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KDoodadFile.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KDoodadReviveManager.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KDropList.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KEscortQuestManager.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KGlobalSystemValueCache.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KGod.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KGodServer.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KGSO3WorldClient.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KGSO3WorldServer.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KInfoGather.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KInventory.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KItem.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KItemInfo.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KItemInfoList.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KItemLib.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KItemList.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KItemTransaction.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KLevelMoneyDropList.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KLogClient.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KLootList.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KMath.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KMissile.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KNpc.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KNpcFile.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KNpcReviveManager.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KPathFinder.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KPKController.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KPlayer.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KPlayerServer.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KProfession.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KProfessionList.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KProtocolRecorder.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KProtocolRecorderBase.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KProtocolReplayer.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KQuestList.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRandGenerator.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRecipe.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRecipeList.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRecipeMaster.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRecorderSceneLoaderNormal.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRecorderSceneLoaderRecord.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRecorderSceneLoaderReplay.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRecorderSocketClientNormal.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRecorderSocketClientRecord.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRecorderSocketClientReplay.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRecorderSocketServerNormal.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRecorderSocketServerRecord.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRecorderSocketServerReplay.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRecorderSocketStreamRecord.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRecorderSocketStreamReplay.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRecorderToolsNormal.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRecorderToolsRecord.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRecorderToolsReplay.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KRelayClient.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KReputation.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KSceneObject.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KSceneObjNode.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KShop.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KSkill.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KSkillDebug.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KSkillList.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KSkillRecipeList.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KSO3WorldInterface.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KTeamServer.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KTerrainData.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KThreatList.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KTradingBox.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KTransmissionList.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3World\KUserPreferences.h">
+      <Filter>IndeSource\SO3World</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\krlcommand.h">
+      <Filter>IndeSource\SO3Represent</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\krloptimization.h">
+      <Filter>IndeSource\SO3Represent</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\krloption.h">
+      <Filter>IndeSource\SO3Represent</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\SO3Represent.h">
+      <Filter>IndeSource\SO3Represent</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\base\missile\krepresentmissile.h">
+      <Filter>IndeSource\SO3Represent\base\missile</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\base\missile\krepresentmissiledefine.h">
+      <Filter>IndeSource\SO3Represent\base\missile</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\base\missile\krepresentmissilephase.h">
+      <Filter>IndeSource\SO3Represent\base\missile</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\base\missile\krepresentmissileprocessor.h">
+      <Filter>IndeSource\SO3Represent\base\missile</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\base\File\kbintab.h">
+      <Filter>IndeSource\SO3Represent\base\File</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\base\File\kfilepath.h">
+      <Filter>IndeSource\SO3Represent\base\File</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\ikgrlcamera.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlcamera.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlcharacter.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlcharactercamera.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlcharacterturning.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlcursor.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krldoodad.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krldoodadmgr.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlgodcamera.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krllocalcharacter.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlmissile.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlmissilemgr.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlremotecharacter.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlremotecharactermgr.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlrides.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlridesmgr.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlscene.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlscenemgr.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlsceneobject.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlskilleffectresult.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlskillsequence.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krltarget.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krltrackcamera.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\kcirclemissileprocessor.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\kcompositemissileprocessor.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\kfixedtrackmissileprocessor.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\khomingmissileprocessor.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\klightningmissileprocessor.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\klinemissileprocessor.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\kmodelmissileprocessor.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\ktimelinemissileprocessor.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\kyaxismissileprocessor.h">
+      <Filter>IndeSource\SO3Represent\case\actionobject\missile</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\gameworld\kgameworldcharactercontroller.h">
+      <Filter>IndeSource\SO3Represent\case\gameworld</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\gameworld\kgameworldhandler.h">
+      <Filter>IndeSource\SO3Represent\case\gameworld</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\gameworld\krlanimationtable.h">
+      <Filter>IndeSource\SO3Represent\case\gameworld</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\gameworld\krlcharacterframedata.h">
+      <Filter>IndeSource\SO3Represent\case\gameworld</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\gameworld\krldoodadframedata.h">
+      <Filter>IndeSource\SO3Represent\case\gameworld</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\gameworld\ktabledefine.h">
+      <Filter>IndeSource\SO3Represent\case\gameworld</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\gameworld\ktablelist.h">
+      <Filter>IndeSource\SO3Represent\case\gameworld</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\gameworld\ktabletransform.h">
+      <Filter>IndeSource\SO3Represent\case\gameworld</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\render\irlmodel.h">
+      <Filter>IndeSource\SO3Represent\case\render</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\render\kanimationmodel.h">
+      <Filter>IndeSource\SO3Represent\case\render</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\render\kmodel.h">
+      <Filter>IndeSource\SO3Represent\case\render</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\render\kmodelgcmgr.h">
+      <Filter>IndeSource\SO3Represent\case\render</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\render\kmodelmgr.h">
+      <Filter>IndeSource\SO3Represent\case\render</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\render\krlloadingmodel.h">
+      <Filter>IndeSource\SO3Represent\case\render</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\case\render\krlresource.h">
+      <Filter>IndeSource\SO3Represent\case\render</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\common\kmathtools.h">
+      <Filter>IndeSource\SO3Represent\common</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\common\kmovementcontroller.h">
+      <Filter>IndeSource\SO3Represent\common</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\common\ksmallobjectpool.h">
+      <Filter>IndeSource\SO3Represent\common</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\common\tblock.h">
+      <Filter>IndeSource\SO3Represent\common</Filter>
+    </ClInclude>
+    <ClInclude Include="IndeSource\SO3Represent\common\tstring.h">
+      <Filter>IndeSource\SO3Represent\common</Filter>
+    </ClInclude>
+    <ClInclude Include="AtlTest3DEngine\Functions.h">
+      <Filter>AtlKG3DEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="AtlTest3DEngine\InputProxy.h">
+      <Filter>AtlKG3DEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="AtlTest3DEngine\ProgressForm.h">
+      <Filter>AtlKG3DEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="AtlTest3DEngine\SceneEditorCommon.h">
+      <Filter>AtlKG3DEngine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="AtlKG3DEngineProxy.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

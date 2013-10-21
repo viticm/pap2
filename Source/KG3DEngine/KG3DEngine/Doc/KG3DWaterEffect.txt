@@ -1,0 +1,109 @@
+一、KG3DWaterEffect
+A、功能：水面
+
+B、资源文件：
+1、"data\\source\\maps_source\\texture\\水波纹\\001_001.anitexture"（属性TEXOP_RELOAD）
+2、"data\\public\\defaultscene\\wavesbump.dds"（属性TEXOP_DISABLEDTX）
+3、"Data\\public\\shader\\water.fx"
+4、"data\\source\\other\\特效\\系统\\SFX\\水晕.Sfx"
+5、"data\\source\\other\\特效\\系统\\SFX\\其他\\S_水花01.Sfx",
+6、"data\\source\\other\\特效\\系统\\SFX\\其他\\S_水花03.Sfx"
+
+C、特点：
+*detail划分为5个级别，
+ 1、WD_LOWER级：
+    创建m_lpWaterSurfaceTexture（AniTexture类型，资源"data\\source\\maps_source\\texture\\水波纹\\001_001.anitexture"）
+ 2、WD_MEDIUM级：
+    创建m_lpWaterSurfaceTexture（AniTexture类型，资源"data\\source\\maps_source\\texture\\水波纹\\001_001.anitexture"）
+    创建m_lpRefractTexture
+    创建m_lpWaterBumpTexture1（Texture类型，资源"data\\public\\defaultscene\\wavesbump.dds"）
+ 3、WD_HIGH和WD_VERY_HIGH级：
+    创建m_lpReflectTexture
+    创建m_lpRefractTexture
+    创建m_lpWaveTexture
+    创建m_lpWaterBumpTexture1（Texture类型，资源"data\\public\\defaultscene\\wavesbump.dds"）
+ 4、WD_FULL_EFFECTIVE级：
+    创建m_lpReflectTexture
+    创建m_lpRefractTexture
+    创建m_lpWaveTexture
+    创建m_lpWaterBumpTexture1（Texture类型，资源"data\\public\\defaultscene\\wavesbump.dds"）
+
+*m_mapWaveSFX和m_SFXConPool的关系
+
+
+D、成员结构：
+*SFX_Container：
+ 功能：记录一组sfx，提供功能framemove、render和UnInit
+ 函数：
+ **framemove：清除播放完成的sfx，未完成的则执行framemove
+
+*SFXControler：
+ 功能：设置和拥有SFX_Container，m_lpSFX
+
+*m_nDetail：初始值为WD_COUNT，WD_COUNT是非法值，
+            一共有5个级别
+
+E、功能函数：
+*PrepareTexture：
+ 功能：创建和设置指定detail的资源
+
+*Init：
+ 功能：创建shader（"Data\\public\\shader\\water.fx"）
+
+*UnInit：
+ 功能：释放所有的资源
+
+*OnLostDevice和OnResetDevice：
+ 功能：设备丢失和恢复
+
+*LoadFromFile和SaveToFile:
+ 功能：对配置文件读取（保存）贴图资源的路径，一些参数和颜色等
+
+*GetWaterSurfaceTextureName:
+ 功能：获得m_lpWaterSurfaceTexture贴图的名称
+
+*GetWaterBumpTextureName:
+ 功能：获得m_lpWaterBumpTexture1贴图的名称
+
+*SetWaterSurfaceTexture:
+ 功能：设置m_lpWaterSurfaceTexture贴图的名称，并重新创建m_lpWaterSurfaceTexture
+
+*SetWaterBumpTexture:
+ 功能：设置m_lpWaterBumpTexture1贴图的名称，并重新创建m_lpWaterBumpTexture1
+
+*ReloadEffect：
+ 功能：重载Shader（m_lpEffectWater）
+
+*CheckEntityAndWater：
+ 功能：更新指定entity对应的的SFXControler信息（包括：物件的位置，上次更新时间，Y方向和XZ方向速度）
+       创建水晕的特效并进行对应的设置（资源："data\\source\\other\\特效\\系统\\SFX\\水晕.Sfx"）
+       每300毫秒根据Y方向或XZ方向的速度，来添加对应的特效
+       超过指定时间就删除特效
+
+*RenderWaveSFX：
+ 功能：bOnce为true时，则执行每个水纹的m_SFXOnce的渲染；bWave为true时，执行每个水纹的m_lpSFX渲染
+
+*FrameMove：
+ 功能：清除过时的SFXControler
+
+*DeleteSFX和DeleteAllSFX：删除特效
+
+*BeginEffect和EndEffect：水面的一些shader的设置
+
+
+*一些获取参数的接口：
+ GetTextParamPtr，GetWaveParamPtr，GetWaveParam2Ptr，GetWaterColorPtr，GetSpecColorPtr，GetFogColorPtr，SetFogInfo，GetFogInfo
+
+**********************
+
+注意每个KG3DAnimationController的生命周期，在他结束的时候是不是会把自己从事件注册中心给删掉。。。
+
+注意Model的command会不会有该model的引用计数
+
+注意g_cEngineManager.GetSound的判断
+
+
+注意pControl->m_lpUser一定要被复制
+
+m_lpRefractTexture，m_lpReflectTexture，m_lpWaveTexture需要设备丢失和恢复处理
+

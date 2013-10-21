@@ -1,0 +1,26 @@
+-----------------------------------------------------------
+NPC技能动作帧数自动填表工具_需求文档.txt
+--NPC接口：焦维琳
+-----------------------------------------------------------
+1、NpcTemplate.tab新加表项
+skillaniframe1
+skillaniframe2
+skillaniframe3
+skillaniframe4
+
+2、编辑器需要自动填写skillaniframe1~skillaniframe4
+
+过程描述：
+1、策划在NpcTemplate.tab（策划工具-NPC编辑器-AI相关）中填入一个skillid1为28, skilllevel为1
+2、策划在skill_caster_npc.tab(策划工具-NPC编辑器-技能)中填入一行为RepresentID为1，skillid为28，castskillanimationid0为54
+3、根据RepresentID：1和animationid：54 在npc_animation.txt（策划工具-NPC动作编辑器）中取得表现id为1，动作id为54的行对应的资源
+4、取得资源的帧长度
+5、将帧长度填入NpcTemplate.tab中的skillaniframe1
+
+特殊判断：
+当上述过程第2步，策划在skill_caster_npc.txt中填入的同一行技能对应了多个castskillanimationid时，则取动作对应资源帧数最长的值填入NpcTemplate.tab中
+（npc允许同一技能按序列播放最多4种表现动作的情况）
+
+3、在NpcTemplate.tab中，skillid与skillaniframe一一对应，一共四组。
+当skillid被填入非0的数值时，才需要计算对应的skillaniframe的帧长度
+当skillid为默认值0时，则不需要计算skillaniframe。

@@ -1,0 +1,38 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  FileName    : ShaderID.h
+//  Version     : 1.0
+//  Creator     : Chen Tianhong
+//  Create Date : 2009-8-5 10:42:27
+//  Comment     : 
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#ifndef _INCLUDE_SHADERID_H_
+#define _INCLUDE_SHADERID_H_
+
+////////////////////////////////////////////////////////////////////////////////
+
+//<InsertPoint>
+
+#define SHADER_RC_TYPE				SHADER
+#define SHADER_RC_TYPE_STRING		"SHADER"
+
+#ifdef _IN_CPP_FILE_
+struct  shaderRC
+{
+	DWORD uID;
+	//LPCSTR	strResourceType;	//useless
+	LPCSTR	strFilePath;	
+};
+#endif
+
+#ifdef _IN_CPP_FILE_
+static shaderRC g_shaderRCArray[] = 
+{	
+//<InsertPoint>
+	{0, NULL},
+};
+#endif
+
+#endif //_INCLUDE_SHADERID_H_

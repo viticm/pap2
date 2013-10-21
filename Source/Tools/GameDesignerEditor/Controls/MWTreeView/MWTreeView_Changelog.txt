@@ -1,0 +1,713 @@
+Changes made to v2.0.0.0
+
+MWTreeView
+==================================================
+Added support for custom selection colors.
+	Added override to the OnAfterSelect EventHandler.
+	Added the following properties with EventHandlers:
+		SelectedTreeNodeBackColor
+		SelectedTreeNodeForeColor
+		UseExtendedSelectionColors
+	Changed the following EventHandlers:
+		OnKeyDown (F2 key should use the HotTracked TreeNode if the HotTracking property is set to true)
+		OnMouseDown
+		OnMouseMove
+		OnMouseWheel
+	Changed property SelNodes.
+	Changed the following methods:
+		SelNodesAdd
+		HighlightNode
+	Added new methods:
+		IsPointOnTreeNode
+		IsPointOnTreeNodeText
+		IsPointOnTreeNodeTextExact
+		IsPointOnTreeNodeRow
+		IsPointOnTreeNodeImage
+		IsPointOnTreeNodeImageExact
+		IsPointOnTreeNodeCheckBox
+		IsPointOnTreeNodeCheckBoxExact
+		IsPointLeftOfTreeNode
+		IsPointRightOfTreeNode
+		ChangeSelNodesColors
+Provide information pertaining to which direction the rubberband selection is moving.
+	Changed EventHandler OnMouseMove.
+Fixed slight error in selecting a TreeNode when NWTreeView is disabled.
+	Changed method SelectNode so that DeactivateSelNode is only called when MWTreeView is enabled.
+Fixed error when changing the UseExtendedSelectionColors property.
+	Changed EventHandler OnAfterSelect.
+	Changed the following methods:
+		HighlightNode
+		DeactivateSelNodes
+		ChangeSelNodesColors
+Rubberband is no longer painted if a TreeNode is being dragged.
+	Changed EventHandler OnItemDrag.
+MouseClearSelNodes is now handled more in-depth.
+	Changed bool property MouseClearSelNodes into MouseClearSelNodes property MouseClearSelNodes.
+	Changed the following EventHandlers:
+		OnMouseDown
+		OnMouseUp
+		OnMouseMove
+	Added new method AllowMouseClearSelNodes.
+
+
+
+MWTreeNodeWrapper
+==================================================
+Changed constructor
+		MWTreeNodeWrapper(TreeNode tn)
+	into
+		MWTreeNodeWrapper(TreeNode tn, bool bUseExtendedSelectionColors, Color cSelectedTreeNodeBackColor, Color cSelectedTreeNodeForeColor)
+	The new one is now always used. The old one is still there but should not be used if the UseExtendedSelectionColors property of the MWTreeView
+		is set to true.
+	Added method SelectionConstructorMethod.
+
+
+
+MWRubberbandPaintEventHandler
+==================================================
+Provide information pertaining to which direction the rubberband selection is moving.
+	Changed constructor so that the StartPoint and EndPoint have to be passed in to it.
+	Added the following properties:
+		StartPoint
+		EndPoint
+
+
+
+MWTreeViewEnums
+==================================================
+MouseClearSelNodes is now handled more in-depth.
+	Added new enum MouseClearSelNodes.
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Changes made to v1.0.5.0
+
+MWTreeView
+==================================================
+Moved the whole MWTreeView and all its dependencies into its own project.
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Changes made to v1.0.4.0
+
+MWTreeView
+==================================================
+When a TreeNode is selected/deselected by calling SelectNode/DeselectNode and the MWTreeView is not active and the
+	HideSelection property is set to true, the highlighting/lowlighting is now done properly.
+	Changed methods:
+		SelNodesAdd (highlighting is now done here)
+		SelNodesRemove (lowlighting is now done here)
+		SelectNode (highlighting/lowlighting is no longer done here)
+		DeselectNode (lowlighting is no longer done here)
+Enabled MWTreeView to have various colors for its TreeNodes and proper disabling of the MWTreeView.
+	Added the following properties with EventHandlers:
+		DisabledTreeNodeBackColor
+		DisabledTreeNodeForeColor
+		UseExtendedDisabledColors
+	Added help variables:
+		htDisabledTreeNodes
+		cBackColorTNDown
+		cForeColorTNDown
+		tnTNDown
+	Added newed property Enabled.
+	Added new methods:
+		GetSelectedMWTreeNodeWrapper
+		GetDisabledMWTreeNodeWrapper
+		IsTreeNodeDisabled
+		DisableNode
+		DisableNodes
+		EnableNode (2 overloads)
+		EnableNodes
+		IsPlainColoredTreeNode
+	Changed properties HideSelection and SelNodes.
+	Changed methods:
+		SetSelNodeInt
+		ClearSelBranch
+		ClearSelNodes (3 methods)
+		ClearSelNodesForce
+		HighlightNode
+		LowlightNode
+		SelectNode
+		DeselectNode
+		DeactivateSelNodes
+		ForceDeactivateSelNodes
+		OnMouseDown
+		OnMouseUp
+Made MWTreeView with MultiSelect set to Classic behave a bit more like a normal TreeView.
+	Added newed property SelectedNode.
+	Changed properties:
+		Enabled
+		HideSelection
+Added new overloads to methods:
+	CheckNode
+	UncheckNode
+	ToggleCheckNode
+Added new methods:
+	CountTreeNodes (3 overloads)
+Added methods:
+	GetBackColor (2 overloads)
+	GetForeColor (2 overloads)
+Added methods:
+	ChangeBackColor
+	ChangeForeColor
+	ChangeColors
+Added a lot of rubberband selection styles:
+	Removed property AllowRubberbandSelect and added property RubberbandSelection instead.
+	Added using statements for the following:
+		System.ComponentModel.Design
+		System.ComponentModel.Design.Serialization
+		System.Drawing.Design
+		System.Drawing.Drawing2D
+		System.Drawing.Imaging
+	Newed method Update and added a help-method Update that takes one argument.
+	Added help variables:
+		ptMouseDownClient
+		ptMouseMoveClient
+		bUpdated
+		bRubberbandStartMoved
+		rctRubberbandArea
+	Changed EventHandlers:
+		OnMouseUp
+		OnMouseMove (here is where most of the work for rubberband selection is done)
+		OnMouseLeave
+	Changed methods:
+		MoveRubberbandStart
+	Added the following EventHandlers (and delegates):
+		OnRubberbandClear (MWRubberbandClearEventHandler)
+		OnRubberbandPaint (MWRubberbandPaintEventHandler)
+	Added Properties and their EventHandlers:
+		Behavior, MW - Rubberband-Selection Border
+			RubberbandBorderColor
+			RubberbandBorderColorAlpha
+			RubberbandBorderThickness
+			UseRubberbandBorder
+		Behavior, MW - Rubberband-Selection Fill
+			RubberbandFillColor
+			RubberbandFillColorAlpha
+		Behavior, MW - Rubberband-Selection Gradient
+			RubberbandGradientAngle
+			RubberbandGradientBlend
+			RubberbandGradientColorBlend
+			RubberbandGradientColor1
+			RubberbandGradientColor1Alpha
+			RubberbandGradientColor2
+			RubberbandGradientColor2Alpha
+			RubberbandGradientLinearGradientMode
+			RubberbandGradientPaintMode
+			RubberbandGradientShape
+			RubberbandGradientShapeFocus
+			RubberbandGradientShapeScale
+		Behavior, MW - Rubberband-Selection Hatch
+			RubberbandHatchBackColor
+			RubberbandHatchBackColorAlpha
+			RubberbandHatchForeColor
+			RubberbandHatchForeColorAlpha
+			RubberbandHatchStyle
+		Behavior, MW - Rubberband-Selection Image
+			RubberbandImage
+			RubberbandImageScaleCorrection
+			RubberbandImageTransparency
+		Behavior, MW - Rubberband-Selection Selection Frame
+			RubberbandSelectionFrameActive
+Implemented extended temporary marking.
+	Added property ExtendedTemporaryMarking.
+	Added override to EventHandler OnItemDrag.
+	Changed the following EventHandlers:
+		OnMouseDown
+		OnMouseUp
+		OnMouseMove
+Added support for rubberband when MWTreeView is out of focus.
+	Added the following properties:
+		AllowOutOfFocusRubberbandSelection
+	Changed the following EventHandlers:
+		OnMouseMove
+		OnMouseLeave
+Added more rigorous checking for whether the rubberband needs updating or not.
+	Changed constructor.
+	Added Timer tRubberbandUpdate.
+	Added EventHandler tRubberbandUpdate_Tick.
+	Added new overrides to the following EventHandlers:
+		OnMouseHover
+		OnMouseWheel (Note that not all mice with wheel(s) generate this event (e.g. mine doesn't, my keyboard does however).)
+	Added the following properties:
+		RubberbandUpdateTimeout
+		UseRubberbandUpdateMouseHover
+		UseRubberbandUpdateTimer
+	Changed the following EventHandlers:
+		OnMouseUp
+		OnMouseMove
+Changed property RubberbandSelection so that the whole MWTreeView.ClientRectangle is invalidated and updated when the RubberbandSelection changes.
+Made sure that when TreeNodes are selected they get the correct appearance even when the MWTreeView is out of focus.
+	Changed method SelectNode.
+	Added method DeactivateSelNode (2 overrides).
+Added the following properties:
+		CollapseTreeNodeOnDeselect
+		CollapseTreeNodeOnSelect
+		ExpandTreeNodeOnDeselect
+		ExpandTreeNodeOnSelect
+	Changed the following methods:
+		DeselectNode
+		SelectNode
+EventHandler OnMouseLeave now properly sets the SelNode property when rubberband selecting.
+Added option to clear all SelNodes by clicking on the blank area below all TreeNodes.
+	Added property MouseClearSelNodes.
+	Changed EventHandler OnMouseUp.
+Changed method SelNodesAdd so that when the HideSelection property is false, the MWTreeView is out of focus and a TreeNode is selected the correct
+	BackColor and ForeColor are used.
+Changed property MultiSelect so that when changing to TreeViewMultiSelect.MultiAllDescendants SelectBranch is called instead of SelectNode.
+
+
+
+MWTreeNodeWrapper
+==================================================
+Enabled MWTreeView to have various colors for its TreeNodes and proper disabling of the MWTreeView.
+	Added new properties with variables:
+		BackColor
+		ForeColor
+	Added constructor:
+		MWTreeNodeWrapper(TreeNode tn, Color cDisabledTreeNodeBackColor, Color cDisabledTreeNodeForeColor)
+	Changed constructor:
+		MWTreeNodeWrapper(TreeNode tn)
+	Added method:
+		Enable
+	Changed methods:
+		Select (both static and non-static)
+		Deselect (both static and non-static)
+
+
+
+EventArgs
+==================================================
+Added a lot of rubberband selection styles:
+	Added class MWHatchStyleEventArgs and delegate MWHatchStyleEventHandler.
+	Added class MWRubberbandPaintEventArgs and delegate MWRubberbandPaintEventHandler.
+	Added class MWRubberbandClearEventArgs and delegate MWRubberbandClearEventHandler.
+	Added using statements to the following:
+		System.Drawing
+		System.Drawing.Drawing2D
+
+
+
+MWEnums
+==================================================
+Added a lot of rubberband selection styles:
+	Added the following Enums:
+		RubberbandSelectionMode
+		GradientPaintMode
+		GradientShape
+
+
+
+MWCommon
+==================================================
+Added a lot of rubberband selection styles:
+	Added the following methods:
+		GetRectangleOneSmaller
+		GetPositiveRectangle (2 overloads)
+		GetPositiveRectangleOneSmaller
+		GetPositiveRectangleSmaller
+		GetPositiveRectangleInside
+	Added the following classes:
+		MWRubberbandGradientBlend
+		MWRubberbandGradientColorBlend
+
+
+
+EditorTextDirUI
+==================================================
+Enabled EditorTextDirUI to run as a normal Control, not just in the Visual Studio Property window:
+	Changed the Property TextDir.
+	Changed the EventHandler mwlblTDN_MouseUp.
+
+
+
+EditorHatchStyle
+==================================================
+Added this class to provide a UITypeEditor for the RubberbandHatchStyle property of the MWTreeView.
+
+
+
+EditorHatchStyleUI
+==================================================
+Added this class to provide a UITypeEditor for the RubberbandHatchStyle property of the MWTreeView.
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Changes made to v1.0.3.5
+
+MWTreeView
+==================================================
+EventHandler OnKeyDown: For Keys.F2: LabelEditing is not allowed if the rubberband has been painted (i.e. if bRubberbandHasBeenPainted).
+Added another overload for RemoveNodes taking a Hashtable as an argument.
+Added method RemoveSelectedNodes.
+Added property TreeNodeMouseDown (public and get only).
+Added property TreeNodeMouseDownInt (private) to allow for OnAfterTreeNodeMouseDownChanged being raised.
+Added Event AfterTreeNodeMouseDownChanged and EventHandler OnAfterTreeNodeMouseDownChanged. (Before Event/EventHandler is not added since setting the
+	tnMouseDown variable should not be cancelable.)
+Modified method IsLabelEditRegExSatisfied.
+Modified the SelNode property. Thanks to Jason W Farrell for finding the bug.
+Added new variable bRubberbandIsOnScreen that helps in determining whether or not to start LabelEditing from mouse clicks (OnMouseUp).
+Modified EventHandler OnMouseUp: Changed if-statement before a LabelEdit (tn.BeginEdit()) is started on a TreeNode and setting new variable
+	bRubberbandIsOnScreen to false at the end.
+Modified EventHandler OnMouseMove: Setting new variable bRubberbandIsOnScreen to true if rubberband painting should start.
+Modified EventHandler OnKeyDown: LabelEdit can now be initiated even if the rubberband is on screen as long as no mouse button is pressed.
+Property SelNodes: Calling MWTreeNodeWrapper.Deselect instead of the member method Reset which was removed.
+Static methods ChangeTreeNodeImageIndex, ChangeTreeNodeSelectedImageIndex and ChangeTreeNodeImageIndices added. Use these when changin the ImageIndex
+	and/or the SelectedImageIndex of TreeNodes.
+Events have been fixed up.
+	An MWCancelEventHandler delegate was added so that EventHandlers using MWCancelEventArgs are now actually using MWCancelEventArgs as opposed to
+	plain EventArgs. The following events had their types changed from EventHandler to MWCancelEventHandler:
+		BeforeMultiSelectChanged
+		BeforeAllowMultiCheckChanged
+		BeforeAllowNoSelNodeChanged
+		BeforeAllowBlankNodeTextChanged
+		BeforeSelNodesChanged
+		BeforeSelNodeChanged
+		BeforeCheckedNodesChanged
+		BeforeScrollToSelNodeChanged
+		BeforeAllowRubberbandSelectChanged
+		BeforeLabelEditRegExChanged
+		BeforeDisallowLabelEditRegExChanged
+		BeforeSelectNodeRegExChanged
+		BeforeCheckNodeRegExChanged
+	AfterSelNodeChanged and AfterTreeNodeMouseDownChanged are now of type MWPropertyEventHandler.
+	Changed SelNodeInt and TreeNodeMouseDownInt.
+	Changed OnAfterSelNodeChanged and OnAfterTreeNodeMouseDownChanged so that they now take an MWPropertyEventArgs argument.
+CheckedNodes now have events being raised when TreeNodes are added and removed. Changes were made to:
+		OnBeforeCheck
+		CheckNode
+		UncheckNode
+		ClearCheckedNodes
+	Added:
+		CheckedNodesAdd
+		BeforeCheckedNodesAdd
+		OnBeforeCheckedNodesAdd
+		AfterCheckedNodesAdd
+		OnAfterCheckedNodesAdd
+		CheckedNodesRemove
+		BeforeCheckedNodesRemove
+		OnBeforeCheckedNodesRemove
+		AfterCheckedNodesRemove
+		OnAfterCheckedNodesRemove
+SelNodes now have events being raised when MWTreeNodeWrappers are added and removed. Changes were made to:
+		OnMouseUp
+		OnMouseMove (way to many events were being fired unnecessarily)
+		MultiSelect
+		SelectNode
+		DeselectNode
+		ClearSelNodes
+		ClearSelNodes(TreeNode tn)
+		ClearSelNodes(TreeNode tnFrom, TreeNode tnTo, bool bOnlyVisible)
+		ClearSelBranch
+	Added:
+		ClearSelNodesForce
+		SelNodesAdd
+		BeforeSelNodesAdd
+		OnBeforeSelNodesAdd
+		AfterSelNodesAdd
+		OnAfterSelNodesAdd
+		SelNodesRemove
+		BeforeSelNodesRemove
+		OnBeforeSelNodesRemove
+		AfterSelNodesRemove
+		OnAfterSelNodesRemove
+Added methods AddNode and AddNodeInt to allow VB6-style adding of TreeNodes. The need for a method like this was expressed by Jonatan Rullman.
+Changed methods CheckNode and UncheckNode. TreeNodes can now be checked and unchecked programmatically.
+Added new TreeViewMultiSelect MultiAllDescendants.
+Changed the following methods to handle TreeViewMultiSelect.MultiAllDescendants:
+	BeforeSelectMethod
+	OnKeyDown
+	OnMouseMove
+	SelectNode
+Changed method OnBeforeSelect so that FullRowSelect works properly when deselecting TreeNodes.
+Changes made so that BeforeSelNodeChanged and AfterSelNodeChanged events are only triggered for the TreeNode that is selected/deselected, not all
+	child TreeNodes when e.g. alt-clicking or when using TreeViewMultiSelect.MultiAllDescendants.
+	This change is made as a step towards having different events being triggered when a bunch of TreeNodes are selected/deselected from e.g. alt-clicking on
+		a TreeNode with child TreeNodes.
+	Added method SelectBranchIterative (internal method meant to be called from method SelectBranch).
+	Methods changed:
+		BeforeSelectMethod (4 places)
+		OnKeyDown
+		OnMouseMove
+		SelectNode
+		SelectBranch
+	Changed method OnMouseMove so that ClearSelNodes is called with an argument of tn in one place.
+	Changed methods SelNodesAdd, SelNodesRemove, CheckedNodesAdd and CheckedNodesRemove.
+Fixed LabelEditing/NodeEditing.
+	Added variables:
+		Timer tLabelEdit
+		Timer tLabelEditAllowed
+		TreeNode tnLabelEdit
+		int iLabelEditTimeout (with min-value 0ms, max-value 10000ms and default-value 200ms)
+	Changed variable components from Container to IContainer.
+	Changed constructor:
+		MWTreeView
+	Added methods:
+		BeginEditMethod
+		BeginAllowLabelEditing
+		StartLabelEdit
+		tLabelEdit_Tick
+		tLabelEditAllowed_Tick
+	Changed methods:
+		InitializeComponent
+		OnGotFocus
+		OnEnter
+		OnBeforeSelect
+		BeforeSelectMethod
+		MoveRubberbandStart
+	Added new events:
+		BeforeLabelEditTimeoutChanged
+		AfterLabelEditTimeoutChanged
+	New overridden EventHandlers:
+		OnAfterCheck
+		OnDoubleClick
+	Added new EventHandlers:
+		OnBeforeLabelEditTimeoutChanged
+		OnAfterLabelEditTimeoutChanged
+	Changed EventHandlers:
+		OnMouseDown
+		OnMouseUp
+	Added new property:
+		LabelEditTimeout
+	Changed property:
+		SelNodeInt
+Fixed TreeViewMultiSelect.NoMulti so that it works the way it is supposed to - it was working like TreeViewMultiSelect.Classic (not much of a point to have
+	a Classic then is it).
+	Changed methods, EventHandlers and properties:
+		OnBeforeSelect
+		OnKeyDown, for the following keys:
+			Keys.Down
+			Keys.Up
+			Keys.Right
+			Keys.Left
+			Keys.Home
+			Keys.End
+			Keys.PageUp
+			Keys.PageDown
+			Keys.Escape
+			Keys.Q
+			Keys.E
+		OnMouseDown
+		OnMouseUp
+		OnMouseMove
+		AllowNoSelNode
+		SelNodeInt
+		ScrollToSelNode
+		IsTreeNodeSelected
+		SelectNode
+Added option to not let escape key deselect TreeNodes (property AllowEscapeDeselectAll).
+	Added variable:
+		bAllowEscapeDeselectAll
+	Added property:
+		AllowEscapeDeselectAll
+	Added events:
+		BeforeAllowEscapeDeselectAllChanged
+		AfterAllowEscapeDeselectAllChanged
+	Added EventHandlers:
+		OnBeforeAllowEscapeDeselectAllChanged
+		OnAfterAllowEscapeDeselectAllChanged
+	Changed EventHandler:
+		OnKeyDown for the key Keys.Escape
+Fixed: When rubberband selecting and FullRowSelect is ON (it works for OFF!) e.g. TreeNode L0N4Child11 to L0N4Child20. First time the TreeNodes get selected.
+	The second time (without doing anything else in between) ONLY TreeNode L0N4Child11 and TreeNode L0N4Child20 are selected, i.e. TreeNodes L0N4Child12 to
+	L0N4Child19 are DESELECTED.
+	Changed EventHandler:
+		OnMouseUp
+Changed MWTreeView so that it is optional whether the modifier-keys execute extended functionality or not.
+	Added properties (and their variables and EventHandlers):
+		AllowKeyboardModKeyAlt
+		AllowKeyboardModKeyControl
+		AllowKeyboardModKeyShift
+		AllowMouseModKeyAlt
+		AllowMouseModKeyControl
+		AllowMouseModKeyShift
+	Changed all calls from the following (to calls to new properties) (done in methods OnBeforeSelect, BeforeSelectMethod, BeforeCheckMethod & OnMouseMove):
+		from '(Control.ModifierKeys & Keys.Alt) == 0' to '!MouseModKeyAlt'
+		from '(Control.ModifierKeys & Keys.Alt) != 0' to 'MouseModKeyAlt'
+		from '(Control.ModifierKeys & Keys.Control) == 0' to '!MouseModKeyControl'
+		from '(Control.ModifierKeys & Keys.Control) != 0' to 'MouseModKeyControl'
+		from '(Control.ModifierKeys & Keys.Shift) == 0' to '!MouseModKeyShift'
+		from '(Control.ModifierKeys & Keys.Shift) != 0' to 'MouseModKeyShift'
+	Changed most calls from the following (to calls to new methods) (done in method OnKeyDown):
+			from '(e.Modifiers & Keys.Alt) == 0' to '!KeyboardModKeyAlt(e.Modifiers)'
+			from '(e.Modifiers & Keys.Alt) != 0' to 'KeyboardModKeyAlt(e.Modifiers)'
+			from '(e.Modifiers & Keys.Control) == 0' to '!KeyboardModKeyControl(e.Modifiers)'
+			from '(e.Modifiers & Keys.Control) != 0' to 'KeyboardModKeyControl(e.Modifiers)'
+			from '(e.Modifiers & Keys.Shift) == 0' to '!KeyboardModKeyShift(e.Modifiers)'
+			from '(e.Modifiers & Keys.Shift) != 0' to 'KeyboardModKeyShift(e.Modifiers)'
+		The ones that were not changed according to above were changed from '(e.Modifiers & Keys.Control) == 0)' to new method
+			'!KeyboardModKeyNavigation(e.Modifiers)' in order to enable the new property AllowControlKeyNavigation (and variable and EventHandlers) to
+			function (see comment below).
+Added property AllowControlKeyNavigation (and variable and EventHandlers) that enables/disables the navigation/scrolling that is achieved by the normal
+		TreeView by holding down the Control key and then pressing the Down, Up, Right, Left, Home, End, PageUp or PageDown keys (see comment above).
+	Changed the OnKeyDown EventHandler for this.
+Changed the way TreeNodes are rubberband selected when in MultiSelect modes MultiSameBranch and MultiSameBranchAndLevel so they function more like
+	MultiSameLevel.
+	Changed the following methods to achieve this:
+		BeforeSelectMethod
+		OnMouseMove
+	Added new property ConstrainedRubberbandSelection (and variable and EventHandlers) that enables/disables this behavior.
+		Changed EventHandlers OnMouseUp and OnMouseMove for this.
+	Added new property ConstrainedShiftKeySelection (and variable and EventHandlers) that does the same for the keyboard.
+		Changed method BeforeSelectMethod for this.
+Added new property AllowMultipleExpandedPaths (and variable and EventHandlers) that lets you decide whether only one path can be expanded at a time or the
+		standard (default) behavior which allows multiple paths to be expanded at once.
+	Note that when one path is already expanded and another is being expanded the first one collapses.
+	Added overrides to the following EventHandlers to maintain this behavior while the MWTreeView is running:
+		OnBeforeExpand
+		OnAfterExpand
+Added new property ExpandBeforeCollapse (and variable and EventHandlers) that decides whether the newly expanding TreeNode expands before or after the
+	previously expanded TreeNode collapses
+Added the following new properties:
+		AllowKeyASelectAll
+		AllowKeyEExpandAll
+		AllowKeyEscapeDeselectAll
+		AllowKeyF2LabelEditing
+		AllowKeyQCollapseAll
+	that decide whether the MWTreeView handles extended behavior or not.
+	Changed the OnKeyDown EventHandler for this.
+Added property RubberbandSelectionExpandCollapseTimeout (with min-value 0ms, max-value 10000ms and default-value 1000ms) (and variable and EventHandlers)
+		and Timers tRubberbandSelectionAllowedExpand and tRubberbandSelectionAllowedCollapse that handle when rubberband selection should start while
+		still holding the left mouse button down after expanding/collapsing a TreeNode.
+	This uses the variables bExpandInProgress and bCollapseInProgress in the following methods:
+		OnMouseDown
+		OnMouseMove
+		OnBeforeExpand (newly overridden EventHandler)
+		OnBeforeCollapse (newly overridden EventHandler)
+		tRubberbandSelectionAllowedExpand_Tick
+		tRubberbandSelectionAllowedCollapse_Tick
+		BeginAllowRubberbandSelectionExpand
+		BeginAllowRubberbandSelectionCollapse
+	Added 'LowlightNode(tnMouseDown)' to EventHandler OnMouseUp to disable the TreeNode which is expanded(/collapsed) to be accidentally highlighted.
+Some changes to property MultiSelect to enable TreeNodes to still be selected while changing the MultiSelect mode.
+	Added property SelNodeIntSilent and method SetSelNodeInt for this.
+Changed the categories of a lot of properties from 'Behavior' to:
+	Behavior, MW - Checking
+	Behavior, MW - Expanding/Collapsing
+	Behavior, MW - Keys
+	Behavior, MW - Label Editing
+	Behavior, MW - Mouse-Selection
+	Behavior, MW - Rubberband-Selection
+	Behavior, MW - Selection
+Rearranged (put regions around them and ordered them) all new and old variables, properties, methods, eventhandlers etc.
+
+
+
+MWTreeNodeWrapper
+==================================================
+Static Method Deselect: Removed comment that was accidentally left in the code in front of line of code that should be called
+	(mwtnw.Node.SelectedImageIndex = mwtnw.SelectedImageIndex).
+Removed method Reset (use static Deselect instead).
+Removed method Reselect.
+
+
+
+MWPropertyEventArgs
+==================================================
+Added this new class.
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Changes made to v1.0.3.0
+
+MWTreeView
+==================================================
+Added new TreeViewMultiSelect members
+	Classic
+	MultiPathToParent
+	MultiPathToParents
+	SinglePathToParent
+	SinglePathToParents
+Removed unused variable iDefaultItemHeight.
+Added variables
+	bAllowRubberbandSelect
+	tnMouseDown
+	ptMouseDown
+	ptMouseDownOrig
+	ptMouseDownScreen
+	ptMouseMoveScreen
+	bRubberbandHasBeenPainted
+	bPaintFocusRectAndHottracking
+	strLabelEditRegEx
+	strDisallowLabelEditRegEx
+Changed method BeforeSelectMethod so that TreeViewMultiSelect.MultiSameLevel works better.
+Changed method OnMouseDown so that HighlightNode is called for all MouseButtons not just non-Left but not for TreeViewMultiSelect.NoMulti.
+Added new overridden EventHandlers OnMouseMove and OnMouseLeave.
+Added property AllowRubberbandSelect and its EventHandlers.
+New method MoveRubberbandStart to help OnMouseMove paint the rubberband properly.
+Changed method SelectNode for TreeViewMultiSelect.NoMulti so that a bug was fixed where TreeNodes were Highlighted without being selected.
+Changed method ChangeSelNode so that TreeNodes are not made visible while rubberband selecting even if they are selected.
+Added three new overloads to the ClearSelNodes method where all TreeNodes are cleared but the one passed in or the range passed in.
+Changed EventHandlers OnBeforeSelect and OnMouseMove to deal with Hottracking.
+New methods IsTreeNodeSelected and IsTreeNodeChecked used throughout.
+Property SelNodes changed to handle switching from TreeViewMultiSelect.Multi to another multi select method. Images were not retained before.
+Property SelNodeInt changed to fix label editing being broken.
+Property SelNodeInt changed to add painting of the focus rectangle.
+Added new property IsMouseMoveSelect to help determine if a mouse move should start selecting TreeNodes or if the mouse move is too small.
+	This property is used for rubberband selections.
+Modified EventHandler OnAfterLabelEdit to handle LabelEditRegEx.
+Added new overridden EventHandler OnBeforeLabelEdit.
+Added new browsable properties and their EventHandlers: LabelEditRegEx and DisallowLabelEditRegEx.
+Added new help methods IsLabelEditRegExSatisfied and IsDisallowLabelEditRegExSatisfied.
+Changed EventHandler OnMouseUp to call LowLightNode on tnMouseDown, not tn.
+Methods HighlightNode and LowlightNode changed so that colors are only set if they are different to present colors.
+Added 'overridden' (new with calls to base) property HideSelection.
+Added new method ActivateOrDeactivateSelNodes.
+Added new method ForceDeactivateSelNodes to help the HideSelection property.
+Changed EventHandler OnMouseMove and methods BeforeSelectMethod, SelectNode and DeselectNode to handle TreeViewMultiSelect.MultiPathToParent,
+	TreeViewMultiSelect.MultiPathToParents, TreeViewMultiSelect.SinglePathToParent and TreeViewMultiSelect.SinglePathToParents.
+Modified property MultiSelect: added support for TreeViewMultiSelect.Classic, TreeViewMultiSelect.MultiPathToParent,
+	TreeViewMultiSelect.MultiPathToParents, TreeViewMultiSelect.SinglePathToParent and TreeViewMultiSelect.SinglePathToParents.
+Modified property MultiSelect so that if SelNode gets deselected by changing the MultiSelect property another selected TreeNode becomes SelNode.
+Modified property SelNodeInt to handle TreeViewMultiSelect.Classic.
+Added method IsAnyChildTreeNodeSelected.
+Methods HighlightNode and LowlightNode now only sets the colors if they are different to what is already there.
+Modified method DeselectNode so that the last TreeNode cannot be deselected if the AllowNoSelNode property is set to false (instead of picking
+	the topmost TreeNode as before).
+Added new method DeselectAllParentNodes (not really used though).
+Added new method ClearSelBranch that only clears one branch of selected TreeNodes not all selected TreeNodes.
+Modified EventHandlers OnBeforeCheck and OnKeyDown and method BeforeCheckMethod: fixed keyboard checking (space key).
+Modified property AllowMultiCheck and methods CheckNode, UncheckNode, ToggleCheckNode, CheckBranch (both), UncheckBranch (both),
+	ToggleCheckBranch (both), CheckAllNodes (both) to fix keyboard checking.
+New properties strSelectNodeRegEx, strCheckNodeRegEx and bForceCheckNode.
+Modified EventHandler OnBeforeCheck and method CheckNode to handle CheckNodeRegEx
+Modified Property SelNodeInt and method SelectNode to handle SelectNodeRegEx
+Added new browsable Properties and their EventHandlers: SelectNodeRegEx and CheckNodeRegEx.
+Added new help methods IsSelectNodeRegExSatisfied and IsCheckNodeRegExSatisfied.
+Added new help methods EnsureAllSelectedNodesAreAllowed and EnsureAllCheckedNodesAreAllowed.
+Modified Properties CheckedNodes and SelNodes to handle SelectNodeRegEx and CheckNodeRegEx.
+Modified the following methods etc to handle nulls: OnBeforeCheck, OnMouseDown, AllowMultiCheck, SelNodes, CheckedNodes, IsTreeNodeSelected,
+	IsTreeNodeChecked, EnsureSelNodeNotNull, SelectNode, ClearSelNodes, EnsureAllSelectedNodesAreAllowed and EnsureAllCheckedNodesAreAllowed.
+Added new methods RemoveNode, DeleteNode and RemoveNodes.

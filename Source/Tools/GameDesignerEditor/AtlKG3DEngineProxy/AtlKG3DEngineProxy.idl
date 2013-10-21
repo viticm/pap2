@@ -1,0 +1,385 @@
+// AtlKG3DEngineProxy.idl : IDL source for AtlKG3DEngineProxy
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (AtlKG3DEngineProxy.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "ExtraStructDef.h";
+#define MAX_PATH 260
+
+interface ISO3World;
+interface IAtlIEKG3DEngineManager;
+interface IAtlIEKG3DTextureTable;
+interface IAtlIEKG3DSceneLogicalEditorBase;
+interface IAtlIEKG3DSceneEditorBase;
+interface IAtlIEKG3DSceneSceneEditor;
+interface IAtlIELogicalSceneConnection;
+interface IAtlIEKSceneEditorDocLogical;
+
+
+[
+	object,
+	uuid(9218D1CF-1B03-4677-8904-6F7116467A43),
+	dual,
+	nonextensible,
+	helpstring("IAtlOld3DEngine Interface"),
+	pointer_default(unique)
+]
+interface IAtlOld3DEngine : IDispatch{
+	[id(1), helpstring("method Init")] HRESULT Init(LONG hwndBase, BSTR strEnginePath, BSTR strStartUpPath);
+	[id(2), helpstring("method Render")] HRESULT Render(void);
+	[id(3), helpstring("method FrameMove")] HRESULT FrameMove(void);
+	[id(4), helpstring("method UnInit")] HRESULT UnInit(void);
+	[id(5), helpstring("method OnResizeWindow")] HRESULT OnResizeWindow(void);
+	[propget, id(6), helpstring("property PlayMode")] HRESULT PlayMode([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(6), helpstring("property PlayMode")] HRESULT PlayMode([in] VARIANT_BOOL newVal);
+	[id(7), helpstring("method OnWndMsg")] HRESULT OnWndMsg([in] BSTR editor_name, [in] PMSG WndMsg, [out,retval] INT* pnRet);
+	[id(8), helpstring("method LoadFile")] HRESULT LoadFile(BSTR strFileName);
+	[id(9), helpstring("method UnloadFile")] HRESULT UnloadFile(BSTR strFileName);
+	[id(10), helpstring("method LoadPlayerModel")] HRESULT LoadPlayerModel(BSTR strFileName);
+	[id(11), helpstring("method BindPlayerModel")] HRESULT BindToPlayer(BSTR strFileName, DWORD dwType, BSTR strBindToObj);
+	[id(12), helpstring("method LoadAni")] HRESULT LoadAni(BSTR strFileName, BOOL bLoop);	
+	[id(13), helpstring("method ZoomView")] HRESULT ZoomView(LONG lDelta);	
+	[id(14), helpstring("method ChangeModelPart")] HRESULT ChangeModelPart(BSTR filename, INT PartID);
+	[id(15), helpstring("method LoadFace")] HRESULT LoadFace(BSTR strFileName);
+	[id(17), helpstring("method ItemsClear")] HRESULT ItemsClear(void);
+	[id(18), helpstring("method SaveMDLToFile")] HRESULT SaveMDLToFile(BSTR strFileName);
+    [id(19), helpstring("method LoadMaterial")] HRESULT LoadMaterial([in] BSTR strFileName);
+    [id(20), helpstring("method LoadAnimation")] HRESULT LoadAnimation([in] BSTR strFileName, BOOL bLoopPlay);
+    [id(22), helpstring("method LoadPluginModel")] HRESULT LoadPluginModel([in] BSTR strFileName, BSTR strBindDest);
+    [id(23), helpstring("method ClearPluginModel")] HRESULT ClearPluginModel([in] BSTR strBindDest);
+	[id(24), helpstring("method ActivateScene")] HRESULT ActivateScene([in] BSTR editor_name);
+	[id(25), helpstring("method RemoveScene")] HRESULT RemoveScene([in] BSTR editor_name);
+	[id(26), helpstring("method AddScene")] HRESULT AddScene([in] LONG hwndOutput, [in] BSTR editor_name, [in] LONG iOption);
+	[id(27), helpstring("method GetEditorSceneCount")] HRESULT GetEditorSceneCount([in] BSTR editor_name, [out] LONG* count);
+	[id(28), helpstring("method LoadSelectorSfxFile")] HRESULT LoadSelectorSfxFile([in] BSTR sfx_name);
+	[id(29), helpstring("method ScaleSelectorSfx")] HRESULT ScaleSelectorSfx([in] FLOAT x, [in] FLOAT y, [in] FLOAT z);
+	[id(30), helpstring("method LoadOneMap")] HRESULT LoadOneMap_NoOutputWindow([in] BSTR filename, [out] LONG* ptrScene);
+	[id(31), helpstring("method LoadBillboardSfx")] HRESULT LoadBillboardSfx([in] BSTR filename);
+	[id(32), helpstring("method SetBillboardHeight")] HRESULT SetBillboardHeight([in] INT npc_height, [in] INT head_top_adjust);
+	[id(33), helpstring("method ToggleRotateModelEditor")] HRESULT ToggleRotateModelEditor(void);
+	[id(34), helpstring("method SetCameraInfo")] HRESULT SetCameraInfo(LONG pX, LONG pY, LONG pZ, LONG lX, LONG lY, LONG lZ, LONG width, LONG height);
+	[id(35), helpstring("method GetCameraInfo")] HRESULT GetCameraInfo([out] LONG* pX, [out] LONG* pY, [out] LONG* pZ, [out] LONG* lX, [out] LONG* lY, [out] LONG* lZ, [out] LONG* width, [out] LONG* height);
+	[id(36), helpstring("method AdjustCameraOrthogonal")] HRESULT AdjustCameraOrthogonal([in] LONG iOffset);
+	[id(37), helpstring("method SetModelScale")] HRESULT SetModelScale([in] FLOAT fScale);
+	[id(38), helpstring("method SaveModelToImageFile")] HRESULT SaveModelToImageFile([in] BSTR fileName);
+	[id(39), helpstring("method LoadSkillSfx")] HRESULT LoadSkillSfx([in] BSTR filename, [in] FLOAT scale, [in] BSTR socketName, [in] LONG iIndex);
+	[id(40), helpstring("method ReadMapTerrainInfo")] HRESULT ReadMapTerrainInfo([in] LONG ptrScene, [out] LONG* width, [out] LONG* height);
+	[id(41), helpstring("method FileToImage")] HRESULT FileToImage([in] BSTR src3DFileName, [in] BSTR desImageFileName);
+	[id(42), helpstring("method GetCurSceneIndex")] HRESULT GetCurSceneIndex([out] LONG* index);
+	[id(43), helpstring("method ActivateSceneByIndex")] HRESULT ActivateSceneByIndex([in] LONG index);
+	[id(44), helpstring("method SaveMdlWithAniToImages")] HRESULT SaveMdlWithAniToImages([in] LONG ptrModel, [in] BSTR filename);
+	[id(45), helpstring("method SaveLogicScene")] HRESULT SaveLogicScene([in] BSTR iniFile, [in] LONG ptr3DScene);
+	[id(46), helpstring("method ShowProgressForm")] HRESULT ShowProgressForm([in] BOOL bShow);
+	[id(47), helpstring("method UnloadPlayerModel")] HRESULT UnloadPlayerModel(void);
+	[id(48), helpstring("method GetHeight")] HRESULT GetHeight([in] LONG ptrScene, [in] FLOAT x, [in] FLOAT z, [out] FLOAT* y);
+	[id(49), helpstring("method GetFileNameHash")] HRESULT GetFileNameHash([in] BSTR fileName, [out] DWORD* hashid);
+	[id(50), helpstring("method QuaternionRotationByNDir")] HRESULT QuaternionRotationByNDir(FLOAT* x, FLOAT* y, FLOAT* z, FLOAT* w, [in] LONG nDir);
+	[id(51), helpstring("method LoadPluginMaterial")] HRESULT LoadPluginMaterial([in] BSTR strSocketName, [in] BSTR strMtlFile);
+	[id(52), helpstring("method GetAniFrameCount")] HRESULT GetAniFrameCount([in] BSTR strAniFileName, [out,retval] LONG* count);
+	[id(53), helpstring("method LoadPlaneForSelector")] HRESULT LoadPlaneForSelector([in] BSTR strFileName);
+	[id(54), helpstring("method SetCaptionHeight")] HRESULT SetCaptionHeight([in] FLOAT fHeight);
+	[id(55), helpstring("method SetCaptionText")] HRESULT SetCaptionText([in] BSTR strName, [in] BSTR strTitle);
+	[id(56), helpstring("method GetBBoxXY")] HRESULT GetBBoxXY([in] BSTR mdl, [out] FLOAT* x, [out] FLOAT* y);
+	[id(57), helpstring("method GetMdlBBoxMax2DLength")] HRESULT GetMdlBBoxMax2DLength([in] BSTR mdl, [out, retval] FLOAT* pVal);
+	[id(58), helpstring("method GetEditorSceneSize")] HRESULT GetEditorSceneSize([in] LONG ptrScene, LONG* width, LONG* height);
+	[id(59), helpstring("method ToggleEngine")] HRESULT ToggleEngine(void);
+	[id(60), helpstring("method SetAllPluginModelScale")] HRESULT SetAllPluginModelScale([in] FLOAT fScale);
+	[id(61), helpstring("method LoadNPCMarkSfxFile")] HRESULT LoadNPCMarkSfxFile([in] BSTR sfx_name, [in] FLOAT fHeight);
+	[id(62), helpstring("method GetInitInfo")] HRESULT GetInitInfo(LONG* hwndBase, BSTR* strEnginePath, BSTR* strStartUpPath);
+};
+[
+	object,
+	uuid(C5B1C478-FD08-400A-834E-D466ED75F316),
+	helpstring("IAtlIEKSceneEditorDocLogical Interface"),
+	pointer_default(unique)
+]
+interface IAtlIEKSceneEditorDocLogical : IUnknown{
+	[helpstring("method GetObjCount")] HRESULT GetObjCount([in] BSTR ObjType, [in] LONG fatherindex, LONG* ObjCount);
+	[helpstring("method GetObjDisplayInfo")] HRESULT GetObjDisplayInfo([in] BSTR ObjType, [in] LONG index, [in] LONG fatherindex, BSTR* name, BSTR* nickname, LONG* hasscript, LONG* representObjPtr, LONG* logicObjPtr, LONG* templateID);	
+	[helpstring("method GetSelectedLogicObjPtr")] HRESULT GetSelectedLogicObjPtr([in] LONG index, LONG* logicObjPtr, BSTR* ObjType);	
+	[helpstring("method GetObjInfo")] HRESULT GetSetObjInfo([in] BSTR ObjType, AtlObjInfo* objInfo, [in] LONG logicObj, [in] LONG bGet);
+	[helpstring("method UpdateObjRepresentByLogicObj")] HRESULT UpdateObjRepresentByLogicObj(AtlObjInfo* objInfo, [in] LONG logicObj);
+	[helpstring("method AddOneWayPointSet")] HRESULT DecoratedAddOneWayPointSet(LONG* ppNewSet, BSTR pName);
+	[helpstring("method DeleteWayPointSet")] HRESULT DecoratedDeleteWayPointSet(LONG pSet);
+	[helpstring("method AddOneWayPoint")] HRESULT AddOneWayPoint(LONG wayPointSetID, BSTR pName);
+	[helpstring("method RefreshWayPoint")] HRESULT RefreshWayPoint(LONG wayPointPtr, INT nType);
+	[helpstring("method AddOneBigTrafficPoint")] HRESULT AddOneBigTrafficPoint();
+	[helpstring("method DecoratedAddOneTrafficPointSet")] HRESULT DecoratedAddOneTrafficPointSet(int trafficID, INT bAddPoint);
+	[helpstring("method DeleteTrafficPointAndSet")] HRESULT DeleteTrafficPointAndSet(LONG pSelectedObject, INT bDeletePoint);
+	[helpstring("method InsertTrafficPoint")] HRESULT InsertTrafficPoint();
+	//[helpstring("method SelectLogicObject")] HRESULT SelectLogicObject(LONG pSelectedObject, BSTR objectType);
+	[helpstring("method RefreshTraffic")] HRESULT RefreshTraffic();
+	[helpstring("method RefreshWay")] HRESULT RefreshWay();
+	[helpstring("method DecoratedNewOneNpcReviveGroup")] HRESULT DecoratedNewOneNpcReviveGroup(LONG* dwID, BSTR pName, int nMin, int nMax);
+	[helpstring("method DecoratedNewOneDoodadReviveGroup")] HRESULT DecoratedNewOneDoodadReviveGroup(LONG* dwID, BSTR pName, int nMin, int nMax);	
+	[helpstring("method DecoratedDeleteNpcReviveGroup")] HRESULT DecoratedDeleteNpcReviveGroup(LONG dwID);
+	[helpstring("method DecoratedDeleteDoodadReviveGroup")] HRESULT DecoratedDeleteDoodadReviveGroup(LONG dwID);
+	[helpstring("method DeleteSelectedObject")] HRESULT DeleteSelectedObject();	
+	//[helpstring("method NewOneLogicalBrush")] HRESULT NewOneLogicalBrush(LONG dwColor, LONG nID, BSTR strName, BSTR strScriptName, LONG dwModifyState);
+	//[helpstring("method DeleteLogicalBrush")] HRESULT DeleteLogicalBrush(LONG nID);
+	[helpstring("method AddOneNewLogicalBrush")] HRESULT AddOneNewLogicalBrush(LONG* nID);
+	[helpstring("method EditOneLogicalBrush")] HRESULT EditOneLogicalBrush(LONG nID, LONG color, BSTR name, BSTR script, LONG modifyState, AtlVector3* pos);
+	[helpstring("method DeleteOneLogicalBrush")] HRESULT DeleteOneLogicalBrush(LONG nID);
+	[helpstring("method DeleteAllLogicalBrush")] HRESULT DeleteAllLogicalBrush(void);
+	[helpstring("method DeleteSelectedPoly")] HRESULT DeleteSelectedPoly(void);
+	[helpstring("method GetNpcAIParameterInfo")] HRESULT GetNpcAIParameterInfo(int npcIndex, BSTR* infoString);
+	[helpstring("method UpdateNpcAIParameter")] HRESULT UpdateNpcAIParameter(int npcIndex, BSTR parameterName, int parameterValue);	
+	[helpstring("method SetMainViewHwnd")] HRESULT SetMainViewHwnd(LONG iHwnd);
+	[helpstring("method ResortNpcOrderInPatrolPath")] HRESULT ResortNpcOrderInPatrolPath(INT patrolPathID);
+	[helpstring("method DecoratedNewOneRandomGroup")] HRESULT DecoratedNewOneRandomGroup(BSTR groupName, BSTR templateInfo);
+	[helpstring("method DecoratedDeleteRandomGroup")] HRESULT DecoratedDeleteRandomGroup(INT groupID);
+	[helpstring("method DecoratedAddOneAIGroup")] HRESULT DecoratedAddOneAIGroup(BSTR groupName, BSTR groupInfo);
+	[helpstring("method GetAIGroupInfo")] HRESULT GetAIGroupInfo(INT groupID, BSTR* infoString);
+	[helpstring("method AddNpcToAIGroup")] HRESULT AddNpcToAIGroup(INT npcIndex, INT groupID);
+	[helpstring("method DecoratedRemoveNPCFromAIGroup")] HRESULT DecoratedRemoveNPCFromAIGroup(INT npcIndex);
+	[helpstring("method DecoratedDeleteAIGroup")] HRESULT DecoratedDeleteAIGroup(INT groupID);
+	[helpstring("method GetRandomGroupInfo")] HRESULT GetRandomGroupInfo(INT groupID, BSTR* groupInfo);
+	[helpstring("method GetAIParameterGroupInfo")] HRESULT GetAIParameterGroupInfo(BSTR* info);
+	[helpstring("method DecoratedSetDoodadReviveGroup")] HRESULT DecoratedSetDoodadReviveGroup(INT groupID, BSTR groupName, INT minCount, INT maxCount);
+	[helpstring("method DecoratedSetNpcReviveGroup")] HRESULT DecoratedSetNpcReviveGroup(INT groupID, BSTR groupName, INT minCount, INT maxCount);
+	[helpstring("method DecoratedSetRandomGroup")] HRESULT DecoratedSetRandomGroup(INT groupID, BSTR groupName, BSTR groupInfo);
+	[helpstring("method DecoratedSetAIGroup")] HRESULT DecoratedSetAIGroup(INT groupID, BSTR groupName);
+	[helpstring("method GetAIParameterSetInfo")] HRESULT GetAIParameterSetInfo(INT setID, BSTR* info);	
+	[helpstring("method ReplaceNpcTemplate")] HRESULT ReplaceNpcTemplate(INT templateID, BOOL replaceAll);
+	[helpstring("method ReplaceDoodadTemplate")] HRESULT ReplaceDoodadTemplate(INT templateID, BOOL replaceAll);
+};
+[
+	object,
+	uuid(C5B1C478-FD08-400A-834E-D466ED75F315),
+	helpstring("IAtlBase Interface"),
+	pointer_default(unique)
+]
+interface IAtlBase : IUnknown{
+	[helpstring("method Init3DEngineManager")] HRESULT Init3DEngineManager(BSTR strStartUpPath, LONG ihWnd);
+	[helpstring("method UnInitEngine")] HRESULT UnInitEngine(void);
+	[helpstring("method FrameMove")] HRESULT FrameMove(void);
+	[helpstring("method Render")] HRESULT Render(void);	
+	[helpstring("method ProcessMessage")] HRESULT ProcessMessage(ULONG message, LONG wParam, LONG lParam);	
+	[helpstring("method GetSO3World")] HRESULT GetSO3World(ISO3World** ptr);
+	[helpstring("method InitGlobalVars")] HRESULT InitGlobalVars();
+	[helpstring("method ShowProgressForm")] HRESULT ShowProgressForm(LONG bShow);
+	[helpstring("method ShowTopViewForm")] HRESULT ShowTopViewForm(LONG bShow);
+	[helpstring("method InitLogicalEditorBase")] HRESULT InitLogicalEditorBase(void);
+	[helpstring("method InitKeyStateBuf")] HRESULT InitKeyStateBuf(void);
+	[helpstring("method UpdateKeyState")] HRESULT UpdateKeyState(void);
+	[helpstring("method SetFocusScene")] HRESULT SetFocusScene(LONG pScene);	
+	[helpstring("method MsgOnMouseWheel")] HRESULT MsgOnMouseWheel(SHORT nDelta);
+	[helpstring("method SetDefWorkingDir")] HRESULT SetDefWorkingDir([in] BSTR strDir);
+	[helpstring("method GetSceneEditorCameraTopScale")] HRESULT GetSceneEditorCameraTopScale([out, retval] FLOAT* fScale);
+	[helpstring("method SetCurDir")] HRESULT SetCurDir(void);
+	[helpstring("method QuaternionRotationByNDir")] HRESULT QuaternionRotationByNDir(FLOAT* x, FLOAT* y, FLOAT* z, FLOAT* w, LONG nDir);
+	[helpstring("method GetRepresentObjTranslation")] HRESULT GetRepresentObjTranslation([in] LONG representObjPtr, AtlVector3* vec);
+	// ahpho suntao
+	[helpstring("method LoadNpcScene")] HRESULT LoadNpcScene(LONG hwndOutput);
+	[helpstring("method LoadDoodadScene")] HRESULT LoadDoodadScene(LONG hwndOutput);
+	[helpstring("method FocusNpcScene")] HRESULT FocusNpcScene(void);
+	[helpstring("method FocusDoodadScene")] HRESULT FocusDoodadScene(void);
+	[helpstring("method LoadNpcModel")] HRESULT LoadNpcModel(BSTR fileName);
+	[helpstring("method LoadFace")] HRESULT LoadFace(BSTR meshFileName);
+	[helpstring("method LoadPluginModel")] HRESULT LoadPluginModel(BSTR strFileName, BSTR strBindDest);
+	[helpstring("method LoadPluginMaterial")] HRESULT LoadPluginMaterial(BSTR strSocketName, BSTR strMtlFile);
+	[helpstring("method LoadDoodadModel")] HRESULT LoadDoodadModel(BSTR fileName);
+	[helpstring("method OnWndMsg")] HRESULT OnWndMsg(PMSG WndMsg, INT* pnRet, BSTR preViewType);
+	[helpstring("method OnResizeNpcWindow")] HRESULT OnResizeNpcWindow(void);
+	[helpstring("method OnResizeDoodadWindow")] HRESULT OnResizeDoodadWindow(void);
+	[helpstring("method ModelPlayAnimation")] HRESULT ModelPlayAnimation(BSTR fileName);
+	[helpstring("method SwitchNpcBrush")] HRESULT SwitchNpcBrush(LONG nTemplateID, BSTR szNpcName, LONG dwDefaultReliveID, LONG dwDefaultRandomID, LONG dwDefaultAISet);
+	[helpstring("method SwitchDoodadBrush")] HRESULT SwitchDoodadBrush(LONG nTemplateID, BSTR szDoodadName, LONG dwDefaultReliveID);
+	[helpstring("method QuaternionNDirByRotation")] HRESULT QuaternionNDirByRotation(FLOAT x, FLOAT y, FLOAT z, FLOAT w, LONG* nDir);
+	[helpstring("method SetRootPath")] HRESULT SetRootPath([in] BSTR str3DEngineDir);
+	// end ahpho
+	[helpstring("method SetShowProfile")] HRESULT SetShowProfile([in] BOOL bShow);
+};
+[
+	object,
+	uuid(04063539-583C-4CD9-A168-60E2A9B72428),
+	helpstring("IBaseLib Interface"),
+	pointer_default(unique)
+]
+interface IBaseLib : IUnknown{
+	[helpstring("method InitLog")] HRESULT InitLog([in] BSTR szIdentity, [in] LONG nMaxlineEachFile, [in] LONG Options, [in] BSTR szPath);
+	[helpstring("method InitMemory")] HRESULT InitMemory([in] BSTR memoryName);
+	[helpstring("method UnInitMemory")] HRESULT UnInitMemory(void);
+};
+[
+	object,
+	uuid(BE4E2494-48B3-4F0B-A86A-06298C945D7F),
+	helpstring("ISO3World Interface"),
+	pointer_default(unique)
+]
+interface ISO3World : IUnknown{
+	[helpstring("method Init")] HRESULT Init([in] LONG nWorldIndex);
+	[helpstring("method UnInit")] HRESULT UnInit(void);
+	[helpstring("method Activate")] HRESULT Activate(void);
+	[helpstring("method NewEditorScene")] HRESULT NewEditorScene([in] LONG nRegionWidth, [in] LONG nRegionHeight, [out,retval] LONG* pKScene);
+	[helpstring("method LoadEditorScene")] HRESULT LoadEditorScene(BSTR cszFileName);
+	[helpstring("method NewClientScene")] HRESULT NewClientScene([in] ULONG dwMapID, [in] LONGLONG nMapCopyIndex, [out,retval] LONG* pKScene);
+	[helpstring("method DeleteScene")] HRESULT DeleteScene([in] LONG* pScene);
+	[helpstring("method GetScene")] HRESULT GetScene([in] LONG dwMapID, [in] LONGLONG nMapCopyIndex, [out,retval] LONG* pScene);
+	[helpstring("method NewNpc")] HRESULT NewNpc([in] LONG dwNpcID, [out,retval] LONG* pNpc);
+	[helpstring("method DeleteNpc")] HRESULT DeleteNpc([in] LONG* pNpc);
+	[helpstring("method AddNpc")] HRESULT AddNpc([in] LONG* pNpc, [in] LONG* pScene, [in] LONG nX, [in] LONG nY, [in] LONG nZ);
+	[helpstring("method RemoveNpc")] HRESULT RemoveNpc([in] LONG* pNpc, [in] LONG bKilled);
+	[helpstring("method NewDoodad")] HRESULT NewDoodad([in] LONG dwDoodadID, [out,retval] LONG* pDoodad);
+	[helpstring("method DelDoodad")] HRESULT DelDoodad(BYTE* pDoodad);
+	[helpstring("method AddDoodad")] HRESULT AddDoodad([in] LONG* pDoodad, [in] LONG* pScene, [in] LONG nX, [in] LONG nY, [in] LONG nZ);
+	[helpstring("method RemoveDoodad")] HRESULT RemoveDoodad([in] LONG* pDoodad);
+	[helpstring("method NewPlayer")] HRESULT NewPlayer([in] LONG dwPlayerID, [out,retval] LONG* pPlayer);
+	[helpstring("method DelPlayer")] HRESULT DelPlayer([in] LONG* pPlayer);
+	[helpstring("method AddPlayer")] HRESULT AddPlayer([in] LONG* pPlayer, [in] LONG* pScene, [in] LONG nX, [in] LONG nY, [in] LONG nZ);
+	[helpstring("method RemovePlayer")] HRESULT RemovePlayer([in] LONG* pPlayer);
+	[helpstring("method AttachLogicalSceneTo3DScene")] HRESULT AttachLogicalSceneTo3DScene();
+	[helpstring("method NewLogicSceneConnectionAndBindLogicalSceneAndSceneEditor")] HRESULT NewLogicSceneConnectionAndBindLogicalSceneAndSceneEditor(void);
+	[helpstring("method NewLogicalDataAndAdviseWithSceneEditor")] HRESULT NewLogicalDataAndAdviseWithSceneEditor();
+	[helpstring("method LoadLogicalData")] HRESULT LoadLogicalData([in] BSTR fileName);
+	[helpstring("method SaveEditorIni")] HRESULT SaveEditorIni([in] BSTR relaPath);
+	[helpstring("method SaveCalcCollision")] HRESULT SaveCalcCollision([in] LONG bOnlyAppointCell, [in] LONG bClearCell);
+	[helpstring("method UpdateAllRest")] HRESULT UpdateAllRest([in] LONG bRest);
+	[helpstring("method SaveLogicalScene")] HRESULT SaveLogicalScene([in] BSTR fileName);
+	[helpstring("method GetLogicalDataPtr")] HRESULT GetLogicalDataPtr(IAtlIEKSceneEditorDocLogical** ppLogicalData);
+};
+[
+	object,
+	uuid(C3A159AE-862B-40F1-9C27-1F562FE2D176),
+	helpstring("IAtlInputProxy Interface"),
+	pointer_default(unique)
+]
+interface IAtlInputProxy : IUnknown{
+	[helpstring("method Init")] HRESULT Init(LONG hWnd);
+	[helpstring("method CheckInput")] HRESULT CheckInput(PMSG pMsg, LONG* pnRet);
+};
+[
+	object,
+	uuid(31B2DA9E-0A7C-4B9A-A7D4-F76F94B7FBDD),
+	dual,
+	nonextensible,
+	helpstring("ISceneEditor Interface"),
+	pointer_default(unique)
+]
+interface ISceneEditor : IUnknown{
+	[helpstring("method AddWindowing")] HRESULT AddWindowing(BSTR szName, LONG ihWnd, LONG iWindowType, LONG* windowid, ULONG editState);
+	[helpstring("method UpdateTopPosAsMainPos")] HRESULT UpdateTopPosAsMainPos(void);
+	[helpstring("method RemoveWindowing")] HRESULT RemoveWindowing(LONG iWindowID);
+	[helpstring("method GetCameraTopScale")] HRESULT GetCameraTopScale([out,retval] FLOAT* scale);
+	[helpstring("method SetCameraTopScale")] HRESULT SetCameraTopScale(FLOAT scale);
+	[helpstring("method SetCameraTopPos")] HRESULT SetCameraTopPos(FLOAT x, FLOAT z);
+	[helpstring("method GetCameraTopPos")] HRESULT GetCameraTopPos(AtlVector3* pos);
+	[helpstring("method SetNPCPosition")] HRESULT SetNPCPosition(void);
+	[helpstring("method GetCameraPosLookat")] HRESULT GetCameraPosLookat(AtlVector3* pos, AtlVector3* lookat);
+	[helpstring("method SetCameraPosLookat")] HRESULT SetCameraPosLookat(AtlVector3* pos, AtlVector3* lookat);
+	[helpstring("method SetCameraLocation")] HRESULT SetCameraLocation(FLOAT camerax, FLOAT cameray, FLOAT cameraz, FLOAT lookatx, FLOAT lookaty, FLOAT lookatz);
+	[helpstring("method GetSelectedEntityCount")] HRESULT GetSelectedEntityCount(LONG* count);
+	[helpstring("method SetFullScreen")] HRESULT SetFullScreen(BOOL bFullScreen);	
+	[helpstring("method TogglePMode")] HRESULT TogglePMode(void);
+	[helpstring("method IsPMode")] HRESULT IsPMode([out,retval] BOOL* isPMode);
+	[helpstring("method OnResizeWindow")] HRESULT OnResizeWindow(void);
+	[helpstring("method RotateSelectedObject")] HRESULT RotateSelectedObject(BSTR* newRotation);
+	[helpstring("method SetCameraSpeed")] HRESULT SetCameraSpeed(FLOAT fPercent);
+	[helpstring("method NpcPlayNextAction")] HRESULT NpcPlayNextAction(void);
+	[helpstring("method NpcPlayPreviousAction")] HRESULT NpcPlayPreviousAction(void);
+	[helpstring("method UpdateSelectableEntityList")] HRESULT UpdateSelectableEntityList(LONG doCount);
+	[helpstring("method ClearSelectedEntityList")] HRESULT ClearSelectedEntityList(void);
+	[helpstring("method AddSelectedRepresentObject")] HRESULT AddSelectedRepresentObject(LONG representObjPtr, LONG bAdd);
+	[helpstring("method BeginAddPolyVertex")] HRESULT BeginAddPolyVertex(void);
+	[helpstring("method EndAddPolyVertex")] HRESULT EndAddPolyVertex(ULONG dwType);
+	[helpstring("method SetPolyHeight")] HRESULT SetPolyHeight(FLOAT fHeight);
+	[helpstring("method EnableRenderPoly")] HRESULT EnableRenderPoly(LONG bEnable);
+	[helpstring("method SetFocus")] HRESULT SetFocus(void);
+	[helpstring("method SetRenderBlockEdge")] HRESULT SetRenderBlockEdge(BOOL bRenderEdge);
+	[helpstring("method SetCameraDis")] HRESULT SetCameraDis(FLOAT fDis);
+	[helpstring("method SetFirstSelectedKing")] HRESULT SetFirstSelectedKing(void);
+	[helpstring("method DropSelectedEntity")] HRESULT DropSelectedEntity(void);
+	[helpstring("method ZoomToObj")] HRESULT ZoomToObj(void);
+	[helpstring("method GetEditorSceneSize")] HRESULT GetEditorSceneSize(LONG* width, LONG* height);
+	[helpstring("method SetObjectSelectMask")] HRESULT SetObjectSelectMask(DWORD nMask);
+	[helpstring("method SetCurrentOutputWindow")] HRESULT SetCurrentOutputWindow(LONG nWindowID);
+	[helpstring("method GetEditState")] HRESULT GetEditState([out, retval] LONG* nState);
+	[helpstring("method SetEditState")] HRESULT SetEditState(LONG nState);
+	[helpstring("method EnableShowAppointLogicalRegion")] HRESULT EnableShowAppointLogicalRegion(LONG bEnable);
+	[helpstring("method SetAppointLogicalRegion")] HRESULT SetAppointLogicalRegion(LONG xStart, LONG zStart, LONG xCount, LONG zCount);
+	[helpstring("method GetAppointLogicalRegion")] HRESULT GetAppointLogicalRegion(LONG* xStart, LONG* zStart, LONG* xCount, LONG* zCount);
+	[helpstring("method GetSetLogicDisplayParams")] HRESULT GetSetLogicDisplayParams(LONG bGet, LONG* bShowCell, LONG* bShowTerrainCell, LONG* bShowItemCell, LONG* bShowSelectedCell);
+	[helpstring("method ClearLogicModifyState")] HRESULT ClearLogicModifyState(void);	
+	[helpstring("method SetLogicModifyState")] HRESULT SetLogicModifyState(LONG lstate, BSTR scriptName);
+	[helpstring("method SetLogicCurrentColor")] HRESULT SetLogicCurrentColor(LONG color);
+	[helpstring("method SetLogicBrushParams")] HRESULT SetLogicBrushParams(LONG brushwidth, LONG brushtype, LONG displaywidth, LONG brushheight);
+	[helpstring("method SetCurrentEditBrushIndex")] HRESULT SetCurrentEditBrushIndex(LONG nIndex);
+	[helpstring("method DeleteCurrentCellInfo")] HRESULT DeleteCurrentCellInfo(void);
+	[helpstring("method DeleteSelectedEntity")] HRESULT DeleteSelectedEntity(void);
+	[helpstring("method ModifyCurrentCellInfo")] HRESULT ModifyCurrentCellInfo(LONG oldInfo, LONG newInfo, BSTR oldScript, BSTR newScript);
+	[helpstring("method TransToEngineFormat")] HRESULT TransToEngineFormat(LONG inMask, [out, retval] LONG* outMask);
+	[helpstring("method BuildPolyAndSetInHand")] HRESULT BuildPolyAndSetInHand(LONG VergeNum, FLOAT Radius, FLOAT Height, FLOAT Degree);
+	[id(1), helpstring("method SetSnapToolScale")] HRESULT SetSnapToolScale(FLOAT fScale);
+	[id(2), helpstring("method SetSpeedTreeLeafScale")] HRESULT SetSpeedTreeLeafScale(FLOAT fScale);
+	[id(3), helpstring("method RenderSceneSnap")] HRESULT RenderSceneSnap(BSTR fileName);
+	[id(4), helpstring("method SetRenderTreeFlag")] HRESULT SetRenderTreeFlag(LONG bFlag);
+	[id(5), helpstring("method AddRegionInfoManager")] HRESULT AddRegionInfoManager(BSTR fileName, LONG nPixelTolerance, LONG nSampleTimes, LONG nEliminateIsoDataCount, LONG nTotalValue, ULONG uHowManyPixelsInOneRegion, ULONG* dwHandle);
+	[id(6), helpstring("method ShowRegionInfoMap")] HRESULT ShowRegionInfoMap(LONG ihWnd, ULONG dwHandle, LONG bShow);
+	[id(7), helpstring("method DelRegionInfoManager")] HRESULT DelRegionInfoManager(ULONG dwHandle);
+	[id(8), helpstring("method EnableRegionMask")] HRESULT EnableRegionMask(ULONG dwHandle, LONG nEnable);
+	[id(9), helpstring("method GetRegionMapInfo")] HRESULT GetRegionMapInfo(ULONG dwHandle, ULONG* puHeight, ULONG* puWidth, ULONG* puPixelPerRegion, ULONG* puRegionCount, ULONG* puMemorySize);
+	[id(10), helpstring("method GetRegionDiffValue")] HRESULT GetRegionDiffValue(ULONG dwHandle, ULONG uIndex, LONG* pnValue);
+	[id(11), helpstring("method SaveRegionMap")] HRESULT SaveRegionMap(BSTR filePath, ULONG dwHandle);
+};
+
+[
+	uuid(F77619C9-C039-4EDF-AB63-A7BEE4D1E75A),
+	version(1.0),
+	helpstring("AtlKG3DEngineProxy 1.0 Type Library")
+]
+library AtlKG3DEngineProxyLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(AE07AEF9-DF57-4D4C-82A4-B9E32457B914),
+		helpstring("AtlBase Class")
+	]
+	coclass AtlBase
+	{
+		[default] interface IAtlBase;
+	};
+	[
+		uuid(D30453C5-96C6-4C64-90B9-81A9155BDF99),
+		helpstring("BaseLib Class")
+	]
+	coclass BaseLib
+	{
+		[default] interface IBaseLib;
+	};
+	[
+		uuid(8AD282F9-2BD4-4782-B4B7-44F872ED7326),
+		helpstring("SO3World Class")
+	]
+	coclass SO3World
+	{
+		[default] interface ISO3World;
+	};
+	[
+		uuid(DE6DA5FC-0382-4ABB-B9C6-FDA14C68DEF6),
+		helpstring("AtlInputProxy Class")
+	]
+	coclass AtlInputProxy
+	{
+		[default] interface IAtlInputProxy;
+	};
+	[
+		uuid(7EACDC7C-452D-4963-AF03-E0437A5F29E2),
+		helpstring("SceneEditor Class")
+	]
+	coclass SceneEditor
+	{
+		[default] interface ISceneEditor;
+	};
+
+	[
+		uuid(80B73C62-93C8-441C-9D52-F3DAC3B0D6C6),
+		helpstring("AtlOld3DEngine Class")
+	]
+	coclass AtlOld3DEngine
+	{
+		[default] interface IAtlOld3DEngine;
+	};
+};

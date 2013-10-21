@@ -1,0 +1,356 @@
+﻿@title KCraftRecipe对象
+@obj KCraftRecipe
+@detail 生活技能配方
+@catalogs 
+
+@summary 配方类型
+@catalog
+@remarks 取值[[get ALL_CRAFT_TYPE]]
+property nCraftType
+
+@summary 使用配方时所需要的"神"
+@catalog
+@remarks
+property nStamina
+
+@summary 所属生活技能的id
+@catalog
+@remarks
+property dwProfessionID
+
+@summary 需要的生活技能等级
+@catalog
+@remarks
+property dwRequireProfessionLevel
+
+@summary 使用配方需要的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]
+property dwToolItemType
+
+@summary 使用配方需要的主手武器类型
+@catalog
+@remarks 取值[[get WEAPON_DETAIL]]
+property nEquipmentType
+
+@summary 使用配方需要的道具索引
+@catalog
+@remarks
+property dwToolItemIndex
+
+@summary 使用配方能够得到的生活技能经验
+@catalog
+@remarks
+property dwExp
+
+@summary 使用配方需要吟唱的帧数
+@catalog
+@remarks
+property nPrepareFrame
+
+@summary 配方名字 
+@catalog
+@remarks
+property szName
+
+@summary 配方所属的部位
+@catalog
+@remarks 配方可能是应用于某个部位的，例如上装、下装之类
+property szBelong
+
+@summary 配方是否收到等级差别的影响
+@catalog
+@remarks 这里的等级差是(玩家生活技能等级 - 需求生活技能等级)
+property bResultOnLevel
+
+@summary 学习配方所需要的生活技能分支id 
+@catalog
+@remarks
+property dwRequireBranchID
+
+@summary 使用配方所需要的doodad的id
+@catalog
+@remarks
+property dwRequireDoodadID
+
+@summary 使用配方所需要的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwRequireItemType1
+
+@summary 使用配方所需要的道具的索引
+@catalog
+@remarks
+property dwRequireItemIndex1
+
+@summary 使用配方所需要的道具的数量
+@catalog
+@remarks
+property dwRequireItemCount1
+
+@summary 使用配方所需要的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwRequireItemType2
+
+@summary 使用配方所需要的道具的索引
+@catalog
+@remarks
+property dwRequireItemIndex2
+
+@summary 使用配方所需要的道具的数量
+@catalog
+@remarks
+property dwRequireItemCount2
+
+@summary 使用配方所需要的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwRequireItemType3
+
+@summary 使用配方所需要的道具的索引
+@catalog
+@remarks
+property dwRequireItemIndex3
+
+@summary 使用配方所需要的道具的数量
+@catalog
+@remarks
+property dwRequireItemCount3
+
+@summary 使用配方所需要的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwRequireItemType4
+
+@summary 使用配方所需要的道具的索引
+@catalog
+@remarks
+property dwRequireItemIndex4
+
+@summary 使用配方所需要的道具的数量
+@catalog
+@remarks
+property dwRequireItemCount4
+
+@summary 使用配方所需要的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwRequireItemType5
+
+@summary 使用配方所需要的道具的索引
+@catalog
+@remarks
+property dwRequireItemIndex5
+
+@summary 使用配方所需要的道具的数量
+@catalog
+@remarks
+property dwRequireItemCount5
+
+@summary 使用配方所需要的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwRequireItemType6
+
+@summary 使用配方所需要的道具的索引
+@catalog
+@remarks
+property dwRequireItemIndex6
+
+@summary 使用配方所需要的道具的数量
+@catalog
+@remarks
+property dwRequireItemCount6
+
+@summary 使用配方所需要的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwRequireItemType7
+
+@summary 使用配方所需要的道具的索引
+@catalog
+@remarks
+property dwRequireItemIndex7
+
+@summary 使用配方所需要的道具的数量
+@catalog
+@remarks
+property dwRequireItemCount7
+
+@summary 使用配方所需要的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwRequireItemType8
+
+@summary 使用配方所需要的道具的索引
+@catalog
+@remarks
+property dwRequireItemIndex8
+
+@summary 使用配方所需要的道具的数量
+@catalog
+@remarks
+property dwRequireItemCount8
+
+@summary 配方所生成的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwCreateItemType1
+
+@summary 配方所生成的道具的索引
+@catalog
+@remarks
+property dwCreateItemIndex1
+
+@summary 配方所生成的道具的数量，最小值
+@catalog
+@remarks
+property dwCreateItemMinCount1
+
+@summary 配方所生成的道具的数量，最大值
+@catalog
+@remarks
+property dwCreateItemMaxCount1
+
+
+@summary 配方所生成的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwCreateItemType2
+
+@summary 配方所生成的道具的索引
+@catalog
+@remarks
+property dwCreateItemIndex2
+
+@summary 配方所生成的道具的数量，最小值
+@catalog
+@remarks
+property dwCreateItemMinCount2
+
+@summary 配方所生成的道具的数量，最大值
+@catalog
+@remarks
+property dwCreateItemMaxCount2
+
+@summary 配方所生成的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwCreateItemType3
+
+@summary 配方所生成的道具的索引
+@catalog
+@remarks
+property dwCreateItemIndex3
+
+@summary 配方所生成的道具的数量，最小值
+@catalog
+@remarks
+property dwCreateItemMinCount3
+
+@summary 配方所生成的道具的数量，最大值
+@catalog
+@remarks
+property dwCreateItemMaxCount3
+
+@summary 配方所生成的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwCreateItemType4
+
+@summary 配方所生成的道具的索引
+@catalog
+@remarks
+property dwCreateItemIndex4
+
+@summary 配方所生成的道具的数量，最小值
+@catalog
+@remarks
+property dwCreateItemMinCount4
+
+@summary 配方所生成的道具的数量，最大值
+@catalog
+@remarks
+property dwCreateItemMaxCount4
+
+@summary 配方所生成的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwCreateItemType5
+
+@summary 配方所生成的道具的索引
+@catalog
+@remarks
+property dwCreateItemIndex5
+
+@summary 配方所生成的道具的数量，最小值
+@catalog
+@remarks
+property dwCreateItemMinCount5
+
+@summary 配方所生成的道具的数量，最大值
+@catalog
+@remarks
+property dwCreateItemMaxCount5
+
+@summary 配方所生成的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwCreateItemType6
+
+@summary 配方所生成的道具的索引
+@catalog
+@remarks
+property dwCreateItemIndex6
+
+@summary 配方所生成的道具的数量，最小值
+@catalog
+@remarks
+property dwCreateItemMinCount6
+
+@summary 配方所生成的道具的数量，最大值
+@catalog
+@remarks
+property dwCreateItemMaxCount6
+
+@summary 配方所生成的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwCreateItemType7
+
+@summary 配方所生成的道具的索引
+@catalog
+@remarks
+property dwCreateItemIndex7
+
+@summary 配方所生成的道具的数量，最小值
+@catalog
+@remarks
+property dwCreateItemMinCount7
+
+@summary 配方所生成的道具的数量，最大值
+@catalog
+@remarks
+property dwCreateItemMaxCount7
+
+@summary 配方所生成的道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwCreateItemType8
+
+@summary 配方所生成的道具的索引
+@catalog
+@remarks
+property dwCreateItemIndex8
+
+@summary 配方所生成的道具的数量，最小值
+@catalog
+@remarks
+property dwCreateItemMinCount8
+
+@summary 配方所生成的道具的数量，最大值
+@catalog
+@remarks
+property dwCreateItemMaxCount8
+

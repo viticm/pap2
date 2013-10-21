@@ -1,0 +1,157 @@
+DropDownList_GetItemTextLength
+	说明：取下拉文字列表列表项文字长度；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex  		列表项索引，从0开始；
+	返回：nLength     		文字长度；
+		
+DropDownList_GetItemText			
+	说明：取下拉文字列表列表项文字长度；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex  		列表项索引，从0开始；
+	返回：szString    		文字内容；
+		
+DropDownList_GetItemData			
+	说明：取下拉文字列表列表项响应数值数据；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex  		列表项索引，从0开始；
+	返回：nItemData    		数值数据；
+		
+DropDownList_GetSelectedItemIndex			
+	说明：取下拉文字列表当前选中列表项索引；
+	参数：szTreePath  		窗口树路径名；
+	返回：nItemIndex 		列表项索引；
+
+DropDownList_GetItemCount					
+	说明：取下拉文字列表总列表项数目；
+	参数：szTreePath  		窗口树路径名；
+	返回：nItemCount 		列表项数目；
+
+DropDownList_GetFontSize					
+	说明：取下拉文字列表列表字体大小；
+	参数：szTreePath  		窗口树路径名；
+	返回：nFontSize			字体大小；
+
+DropDownList_GetTipColor					
+	说明：取下拉文字列表下拉按钮字体颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwFontColor		字体颜色，目前未做可用性调整；
+
+DropDownList_GetListBGColor				
+	说明：取下拉文字列表列表背景字体颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwColor			背景颜色，目前未做可用性调整；
+
+DropDownList_GetListSLColor				
+	说明：取下拉文字列表列表分割线颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwColor			分割线颜色，目前未做可用性调整；
+
+DropDownList_GetListFLColor				
+	说明：取下拉文字列表列表边框线颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwColor			边框线颜色，目前未做可用性调整；
+
+DropDownList_IsEditable				
+	说明：判断下拉文字列表能否被编辑，可编辑控件需要绑定一个文字编辑框；
+	参数：szTreePath  		窗口树路径名；
+	返回：bIsEditable		true为可编辑，false为不可编辑；
+
+DropDownList_IsEnableTip			
+	说明：判断下拉文字列表禁止或者激活下拉按钮提示；
+	参数：szTreePath  		窗口树路径名；
+	返回：bIsEnableTip		true为激活，false为禁止；
+
+DropDownList_IsListExtend			
+	说明：判断下拉文字列表是否处于展开状态；
+	参数：szTreePath  		窗口树路径名；
+	返回：bIsListExtend		true为展开，false为收起；
+
+DropDownList_AddItem					
+	说明：追加下拉列表项到文字列表；
+	参数：szTreePath  		窗口树路径名，
+		  szString			待加入的文字，
+		  [nItemData] 		待加入数值数据，默认为0；
+	返回：nil
+	
+DropDownList_InsertItem				
+	说明：插入下拉列表项到文字列表；
+	参数：szTreePath  		窗口树路径名，
+		  nInsertIndex		待插入的位置，前插，
+		  szString			待加入的文字，
+		  [nItemData] 		待加入数值数据，默认为0；
+	返回：nil
+	
+DropDownList_DeleteItem				
+	说明：删除下拉文字列表列表项；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex		待删除的列表项索引；
+	返回：nil
+
+DropDownList_DeleteAllItem		
+	说明：删除下拉文字列表所有列表项；
+	参数：szTreePath  		窗口树路径名；
+	返回：nil
+
+DropDownList_SetItemTextData	
+	说明：设置下拉列表项到文字列表项；
+	参数：szTreePath  		窗口树路径名，
+		  szString			待设置的文字，
+		  [nItemData] 		待设置数值数据，默认为0；
+	返回：nItemIndex		插入的列表项索引，如果失败，返回-1；
+
+DropDownList_SetItemText			
+	说明：设置下拉列表项到文字列表项字串；
+	参数：szTreePath  		窗口树路径名，
+		  szString			待设置的文字，
+	返回：nItemIndex		插入的列表项索引，如果失败，返回-1；
+
+DropDownList_SetItemData			
+	说明：设置下拉列表项到文字列表项数值数据；
+	参数：szTreePath  		窗口树路径名，
+		  nItemData			待设置的数值数据，
+	返回：nItemIndex		插入的列表项索引，如果失败，返回-1；
+
+DropDownList_SelectItem				
+	说明：选中下拉文字列表指定列表项；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex		待选中列表项索引；
+	返回：nil
+	
+DropDownList_SearchItem		
+	说明：根据字符串或者数值数据在下拉文字列查找表完全匹配列表项；
+	参数：szTreePath  			窗口树路径名，
+		  szString|nItemData	待查找字符串或者数值数据，
+		  [nStartItemIndex]		重指定的所有开始查找；
+	返回：nItemIndex			列表项索引，如果没找到，返回-1；
+			
+DropDownList_SetFontSize		
+	说明：设下拉列表项列表字体大小；
+	参数：szTreePath  		窗口树路径名，
+		  nFontSize			文字大小；
+	返回：nil
+	
+DropDownList_SetTipColor			
+	说明：设下拉文字列表下拉按钮提示字体颜色；
+	参数：[szTreePath] 	窗口树路径名，
+		  dwFontColor	字体颜色，目前未做可用性调整；
+	返回：nil
+
+DropDownList_SetListBGColor		
+	说明：设下拉文字列表列表背景颜色；
+	参数：[szTreePath] 	窗口树路径名，
+		  dwColor		字体颜色，目前未做可用性调整；
+	返回：nil
+
+DropDownList_SetListSLColor		
+	说明：设下拉文字列表列表分割线颜色；
+	参数：[szTreePath] 	窗口树路径名，
+		  dwColor		分割线颜色，目前未做可用性调整；
+	返回：nil
+
+DropDownList_SetListFLColor		
+	说明：设下拉文字列表列表边框线颜色；
+	参数：[szTreePath] 	窗口树路径名，
+		  dwColor		边框线颜色，目前未做可用性调整；
+	返回：nil
+
+

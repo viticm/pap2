@@ -1,0 +1,182 @@
+// Microsoft Visual C++ generated resource script.
+//
+
+#include"resource.h"
+//<InsertPoint>
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// SHADER
+//
+
+SHADER_RC_AMBIENT_ONLY	SHADER	"../../KG3DEngine/shaders/ambient only.fx"
+SHADER_RC_AOE	SHADER	"../../KG3DEngine/shaders/aoe.fx"
+SHADER_RC_BILLBOARDCLOUD	SHADER	"../../KG3DEngine/shaders/billboardcloud.fx"
+SHADER_RC_BLOOM	SHADER	"../../KG3DEngine/shaders/bloom.fx"
+SHADER_RC_BOXFRAME	SHADER	"../../KG3DEngine/shaders/boxframe.fx"
+SHADER_RC_BOX_PROJ_EFFECT	SHADER	"../../KG3DEngine/shaders/box_proj_effect.fx"
+SHADER_RC_BRUSH	SHADER	"../../KG3DEngine/shaders/brush.fx"
+SHADER_RC_CLOUD	SHADER	"../../KG3DEngine/shaders/cloud.fx"
+SHADER_RC_COMMONPARAMS	SHADER	"../../KG3DEngine/shaders/commonparams.h"
+SHADER_RC_DETAIL	SHADER	"../../KG3DEngine/shaders/detail.fx"
+SHADER_RC_DETAILS	SHADER	"../../KG3DEngine/shaders/details.h"
+SHADER_RC_DOF	SHADER	"../../KG3DEngine/shaders/dof.fx"
+SHADER_RC_FANFRAME	SHADER	"../../KG3DEngine/shaders/fanframe.fx"
+SHADER_RC_FARMOUNTAIN	SHADER	"../../KG3DEngine/shaders/farmountain.fx"
+SHADER_RC_GRASS	SHADER	"../../KG3DEngine/shaders/grass.fx"
+SHADER_RC_GRAY	SHADER	"../../KG3DEngine/shaders/gray.fx"
+SHADER_RC_HDR	SHADER	"../../KG3DEngine/shaders/hdr.fx"
+SHADER_RC_LENSFLARE	SHADER	"../../KG3DEngine/shaders/lensflare.fx"
+SHADER_RC_LIBRARY	SHADER	"../../KG3DEngine/shaders/library.fx"
+SHADER_RC_LIGHTMAP	SHADER	"../../KG3DEngine/shaders/lightmap.fx"
+SHADER_RC_LIGHTMAPBAKEDIRECTION	SHADER	"../../KG3DEngine/shaders/lightmapbakedirection.fx"
+SHADER_RC_LIGHTMAPBAKEENV	SHADER	"../../KG3DEngine/shaders/lightmapbakeenv.fx"
+SHADER_RC_LIGHTMAPBAKEPOINT	SHADER	"../../KG3DEngine/shaders/lightmapbakepoint.fx"
+SHADER_RC_LIGHTMAPBAKE_INDIRECTION	SHADER	"../../KG3DEngine/shaders/lightmapbake_indirection.fx"
+SHADER_RC_LINEARDEPTHOUTPUT	SHADER	"../../KG3DEngine/shaders/lineardepthoutput.fx"
+SHADER_RC_MODELSHADOW	SHADER	"../../KG3DEngine/shaders/modelshadow.fx"
+SHADER_RC_MULTITEXTURE	SHADER	"../../KG3DEngine/shaders/multitexture.fx"
+SHADER_RC_MULTITEXTURESKIN	SHADER	"../../KG3DEngine/shaders/multitextureskin.fx"
+SHADER_RC_MULTITEXTURESKIN_NORMALMAP	SHADER	"../../KG3DEngine/shaders/multitextureskin_normalmap.fx"
+SHADER_RC_MULTITEXTURE_NORMALMAP	SHADER	"../../KG3DEngine/shaders/multitexture_normalmap.fx"
+SHADER_RC_NEW_LIGHT_MODE_V3	SHADER	"../../KG3DEngine/shaders/new light mode v3.fx"
+SHADER_RC_NEW_LIGHT_MODE	SHADER	"../../KG3DEngine/shaders/new light mode.fx"
+SHADER_RC_NEW_LIGHT_MODE_CHECKER	SHADER	"../../KG3DEngine/shaders/new light mode_checker.fx"
+SHADER_RC_NEW_LIGHT_MODE_DETAIL	SHADER	"../../KG3DEngine/shaders/new light mode_detail.fx"
+SHADER_RC_NEW_LIGHT_MODE_DETAIL_2_0	SHADER	"../../KG3DEngine/shaders/new light mode_detail_2_0.fx"
+SHADER_RC_NEW_LIGHT_MODE_DETAIL_CHECKER	SHADER	"../../KG3DEngine/shaders/new light mode_detail_checker.fx"
+SHADER_RC_NORMAL_MAP_WITHOUT_SKIN_BUT_WITH_EDGE	SHADER	"../../KG3DEngine/shaders/normal map without skin but with edge.fx"
+SHADER_RC_NORMAL_MAP_WITHOUT_SKIN	SHADER	"../../KG3DEngine/shaders/normal map without skin.fx"
+SHADER_RC_NORMALOUTPUT	SHADER	"../../KG3DEngine/shaders/normaloutput.fx"
+SHADER_RC_OCEAN_SURFACE	SHADER	"../../KG3DEngine/shaders/ocean_surface.fx"
+SHADER_RC_POINTLIGHT	SHADER	"../../KG3DEngine/shaders/pointlight.h"
+SHADER_RC_POSTRENDERFINALPASS	SHADER	"../../KG3DEngine/shaders/postrenderfinalpass.fx"
+SHADER_RC_RAIN	SHADER	"../../KG3DEngine/shaders/rain.fx"
+SHADER_RC_RAIN	SHADER	"../../KG3DEngine/shaders/rain.h"
+SHADER_RC_RAINENVIRONMENT	SHADER	"../../KG3DEngine/shaders/rainenvironment.h"
+SHADER_RC_ROAD	SHADER	"../../KG3DEngine/shaders/road.fx"
+SHADER_RC_ROAD_2_0	SHADER	"../../KG3DEngine/shaders/road_2_0.fx"
+SHADER_RC_SCALEOUTPUT	SHADER	"../../KG3DEngine/shaders/scaleoutput.fx"
+SHADER_RC_SFX_EDITOR	SHADER	"../../KG3DEngine/shaders/sfx_editor.fx"
+SHADER_RC_SHADERBILLBOARD	SHADER	"../../KG3DEngine/shaders/shaderbillboard.fx"
+SHADER_RC_SHADERDEFINITIONS	SHADER	"../../KG3DEngine/shaders/shaderdefinitions.h"
+SHADER_RC_SHADERSKIN	SHADER	"../../KG3DEngine/shaders/shaderskin.fx"
+SHADER_RC_SHADERSKIN_2	SHADER	"../../KG3DEngine/shaders/shaderskin_2.fx"
+SHADER_RC_SHADERSKIN_2_CHECKER	SHADER	"../../KG3DEngine/shaders/shaderskin_2_checker.fx"
+SHADER_RC_SHADERSKIN_3	SHADER	"../../KG3DEngine/shaders/shaderskin_3.fx"
+SHADER_RC_SHADERTYPEDEFINITIONS	SHADER	"../../KG3DEngine/shaders/shadertypedefinitions.h"
+SHADER_RC_SHADOWMAP	SHADER	"../../KG3DEngine/shaders/shadowmap.h"
+SHADER_RC_SIMPLECOLOR	SHADER	"../../KG3DEngine/shaders/simplecolor.fx"
+SHADER_RC_SKYBOX	SHADER	"../../KG3DEngine/shaders/skybox.fx"
+SHADER_RC_SPEEDTREE_V3	SHADER	"../../KG3DEngine/shaders/speedtree v3.fx"
+SHADER_RC_SPEEDTREE	SHADER	"../../KG3DEngine/shaders/speedtree.fx"
+SHADER_RC_SPEEDTREE_NORMALMAP	SHADER	"../../KG3DEngine/shaders/speedtree_normalmap.fx"
+SHADER_RC_TERRAINGRASS_V3	SHADER	"../../KG3DEngine/shaders/terraingrass v3.fx"
+SHADER_RC_TERRAINGRASS	SHADER	"../../KG3DEngine/shaders/terraingrass.fx"
+SHADER_RC_TERRAINRENDER	SHADER	"../../KG3DEngine/shaders/terrainrender.fx"
+SHADER_RC_TERRAINRENDER_2_0	SHADER	"../../KG3DEngine/shaders/terrainrender_2_0.fx"
+SHADER_RC_TERRAINRENDER_CHECKER	SHADER	"../../KG3DEngine/shaders/terrainrender_checker.fx"
+SHADER_RC_TERRAINRENDER_NORMALMAP	SHADER	"../../KG3DEngine/shaders/terrainrender_normalmap.fx"
+SHADER_RC_TERRAINSHADOW	SHADER	"../../KG3DEngine/shaders/terrainshadow.fx"
+SHADER_RC_TEXFRAME	SHADER	"../../KG3DEngine/shaders/texframe.fx"
+SHADER_RC_WATER	SHADER	"../../KG3DEngine/shaders/water.fx"
+SHADER_RC_ZPOSTRENDER	SHADER	"../../KG3DEngine/shaders/zpostrender.fx"
+//<InsertPoint>
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    	"resource.h\0"//<InsertPoint>
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "CompanyName", "Kingsoft Coporation"
+            VALUE "FileDescription", "ShaderLibrary"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "KG3DShaderLibrary.dll"
+            VALUE "LegalCopyright", "(c) Kingsoft Corporation 2003-2009, All Rights Reserved."
+            VALUE "OriginalFilename", "KG3DShaderLibrary.dll"
+            VALUE "ProductName", "KG3DShaderLibrary Dynamic Link Library"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

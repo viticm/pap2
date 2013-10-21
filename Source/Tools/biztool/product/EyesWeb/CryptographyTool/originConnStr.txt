@@ -1,0 +1,1 @@
+server=192.168.24.124; user id=root; password=123456; connect timeout=30;port=3306; database=fseye; pooling=true; min pool size=2; max pool size=10;

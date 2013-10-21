@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KMathStressTest", "KMathStressTest\KMathStressTest.vcproj", "{4FDA2A26-6AF6-479F-ABFF-74DC1B51DF2E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KMathFunctionTest", "KMathFunctionTest\KMathTest.vcproj", "{5319D125-7EC9-4EEE-A580-444FFABCC32D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KMathStressTestControl", "KMathStressTestControl\KMathStressTestControl.vcproj", "{34CB471F-C55D-4863-BE84-FD88F140C379}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FDA2A26-6AF6-479F-ABFF-74DC1B51DF2E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4FDA2A26-6AF6-479F-ABFF-74DC1B51DF2E}.Debug|Win32.Build.0 = Debug|Win32
+		{4FDA2A26-6AF6-479F-ABFF-74DC1B51DF2E}.Release|Win32.ActiveCfg = Release|Win32
+		{4FDA2A26-6AF6-479F-ABFF-74DC1B51DF2E}.Release|Win32.Build.0 = Release|Win32
+		{5319D125-7EC9-4EEE-A580-444FFABCC32D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5319D125-7EC9-4EEE-A580-444FFABCC32D}.Debug|Win32.Build.0 = Debug|Win32
+		{5319D125-7EC9-4EEE-A580-444FFABCC32D}.Release|Win32.ActiveCfg = Release|Win32
+		{5319D125-7EC9-4EEE-A580-444FFABCC32D}.Release|Win32.Build.0 = Release|Win32
+		{34CB471F-C55D-4863-BE84-FD88F140C379}.Debug|Win32.ActiveCfg = Debug|Win32
+		{34CB471F-C55D-4863-BE84-FD88F140C379}.Debug|Win32.Build.0 = Debug|Win32
+		{34CB471F-C55D-4863-BE84-FD88F140C379}.Release|Win32.ActiveCfg = Release|Win32
+		{34CB471F-C55D-4863-BE84-FD88F140C379}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

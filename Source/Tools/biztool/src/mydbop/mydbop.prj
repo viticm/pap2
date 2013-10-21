@@ -1,0 +1,28 @@
+[Include]
+./src
+/usr/include
+../Share/Header/FSEye
+../Share/Header
+../../../../../../Base/Include
+../../../../../../Sword3/Include/FSEyes
+../../../../../../DevEnv/Include
+
+[Config Debug]
+Product		Dll ../../product/debug/plug/mydbop
+Options		Debug
+Defines		__linux
+ObjDir		obj
+LibDir		../../../../../../Base/Lib/Linux; ../../../../../../DevEnv/Lib/Linux; /usr/local/lib; /usr/lib/lib; /lib/
+Libraries	pthread; EngineD; MySQLClientD; z
+
+[Config Release]
+Product		Dll ../../product/release/plug/mydbop
+Options		Release
+Defines		__linux
+ObjDir		obj
+LibDir		../../../../../../Base/Lib/Linux; ../../../../../../DevEnv/Lib/Linux; /usr/local/lib; /usr/lib/lib; /lib/
+Libraries	pthread; Engine; MySQLClient; z
+
+[Source]
+src/mydbop.cpp
+src/kdatabaseplugin.cpp

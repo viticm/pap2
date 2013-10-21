@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="8" virtualPath="/FSEyeWebsite/global.asax" hash="4099f202" filehash="ffffdb7a25a70dbd" flags="150000" assembly="App_global.asax" type="ASP.global_asax">
+    <filedeps>
+        <filedep name="/FSEyeWebsite/global.asax" />
+    </filedeps>
+</preserve>

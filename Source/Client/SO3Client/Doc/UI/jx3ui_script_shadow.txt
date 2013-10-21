@@ -1,0 +1,13 @@
+Shadow_SetColor							
+	说明：设文半透明窗口颜色；
+	参数：szTreePath  		窗口树路径名；
+		  dwColor			颜色，目前未做可用性调整；
+	返回：nil
+
+Shadow_SetExactWnd					
+	说明：设置是否如平常窗口一样判断点是否在半透明窗口内；
+	参数：szTreePath  		窗口树路径名；
+		  bExactWnd			true为不判断，false判断；
+	返回：nil
+
+

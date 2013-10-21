@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE server>
+
+<server>
+
+	<!--
+		Defines the HAR (Hibernate ARchive) deployer service.  See the javadocs for
+		org.jboss.hibernate.har.HARDeployer for more info.
+	-->
+    <mbean code="org.jboss.hibernate.har.HARDeployer" name="jboss.har:service=HARDeployer">
+        <attribute name="ValidateDTDs">false</attribute>
+    </mbean>
+
+</server>
+

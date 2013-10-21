@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is an Ant build script that creates a minimal jbossmq
+configuration based on the default configuration
+-->
+<project name="Mininal JBossMQ configuration script" default="config">
+
+   <!-- Override if the script is not run from within the
+   dist/docs/examples/jms/standalone directory.
+   -->
+   <property name="jboss.dist" value="../../../.."/>
+
+   <target name="config">
+ 
+     <!-- We are mainly based on the minimal configuration -->
+      <copy todir="${jboss.dist}/server/jbossmq">
+         <fileset dir="${jboss.dist}/server/minimal">
+            <exclude name="conf/jboss-service.xml"/>
+            <exclude name="lib/jboss-minimal.jar"/>
+         </fileset>
+      </copy>
+ 
+     <!-- We need the following from the default configuration -->
+      <copy todir="${jboss.dist}/server/jbossmq">
+         <fileset dir="${jboss.dist}/server/default">
+            <!-- configuration -->
+            <include name="conf/login-config.xml"/>
+            <include name="conf/xmdesc/*"/>
+            <!-- the main jboss jar -->
+            <include name="lib/jboss.jar"/>
+            <!-- jaas -->
+            <include name="lib/jbosssx.jar"/>
+            <!-- transactions -->
+            <include name="lib/jboss-transaction.jar"/>
+            <!-- jms interfaces -->
+            <include name="lib/jboss-j2ee.jar"/>
+            <!-- local db support -->
+            <include name="lib/jboss-common-jdbc-wrapper.jar"/>
+            <include name="lib/xalan.jar"/>
+            <include name="lib/jboss-jca.jar"/>
+            <include name="deploy/jbossjca-service.xml"/>
+            <include name="deploy/jboss-local-jdbc.rar"/>
+            <include name="conf/standardjbosscmp-jdbc.xml"/>
+            <!-- hypersonic -->
+            <include name="lib/hsqldb*"/>
+            <include name="deploy/hsqldb-ds.xml"/>
+            <include name="deploy/jms/hsqldb-jdbc2-service.xml"/>
+            <include name="deploy/jms/hsqldb-jdbc-state-service.xml"/>
+            <!-- jbossmq -->
+            <include name="lib/jbossmq.jar"/>
+            <include name="deploy/jms/jbossmq-service.xml"/>
+            <include name="deploy/jms/jbossmq-destinations-service.xml"/>
+            <include name="deploy/jms/uil2-service.xml"/>
+         </fileset>
+      </copy>
+
+      <!-- This is our main configuration -->
+      <copy todir="${jboss.dist}/server/jbossmq/conf/">
+         <fileset dir="${jboss.dist}/docs/examples/jms/standalone">
+            <include name="jboss-service.xml"/>
+         </fileset>
+      </copy>
+
+   </target>
+</project>

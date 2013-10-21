@@ -1,0 +1,44 @@
+ScrollTreeList_GetCurSel				
+	说明：取滚动树形文字列表当前选中行索引；
+	参数：szTreePath		窗口树路径名；
+	返回：nRowIndex 		行索引，是整棵树包括节点，展开后的行数；
+		
+ScrollTreeList_GetTopItemIndex	
+	说明：取滚动树形文字列表首行索引；
+	参数：szTreePath		窗口树路径名；
+	返回：nRowIndex 		行索引，是整棵树包括节点，展开后的行数；
+		
+ScrollTreeList_GetCurSelRow			
+	说明：取滚动树形文字列表当前选中行索引；
+	参数：szTreePath		窗口树路径名；
+	返回：nRowIndex 		行索引，是整棵树包括节点，当前展开情况的行数；
+		
+ScrollTreeList_GetTopItemRow		
+	说明：取滚动树形文字列表首行索引；
+	参数：szTreePath		窗口树路径名；
+	返回：nRowIndex 		行索引，是整棵树包括节点，当前展开情况的行数；
+		
+ScrollTreeList_SetCurSel				
+	说明：设置滚动树形文字列表当前选中行索引；
+	参数：szTreePath		窗口树路径名，
+		  nRowIndex 		行索引，是整棵树包括节点，展开后的行数；
+	返回：nil
+		
+ScrollTreeList_SetTopItemIndex	
+	说明：设置滚动树形文字列表首行索引；
+	参数：szTreePath		窗口树路径名，
+		  nRowIndex 		行索引，是整棵树包括节点，展开后的行数；
+	返回：nil
+		
+ScrollTreeList_SetCurSelRow			
+	说明：设置滚动树形文字列表当前选中行索引；
+	参数：szTreePath		窗口树路径名，
+		  nRowIndex 		行索引，是整棵树包括节点，当前展开情况的行数；
+	返回：nil
+		
+ScrollTreeList_SetTopItemRow		
+	说明：设置滚动树形文字列表首行索引；
+	参数：szTreePath		窗口树路径名，
+		  nRowIndex 		行索引，是整棵树包括节点，当前展开情况的行数；
+	返回：nil
+		

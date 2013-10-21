@@ -1,0 +1,13 @@
+ShowAnimate_SetAllMoveSpeed
+	说明：设置所有动画显示窗口的移动速度，即将废弃；
+	参数：szTreePath  		窗口树路径名，
+		  nMoveSpeed		分子，
+		  nFullSpeed 		分母；
+	返回：nil
+	
+ShowAnimate_SetAllInterval
+	说明：设置所有动画显示窗口的移动间隔，即将废弃；
+	参数：szTreePath  		窗口树路径名，
+		  nInterval 		移动间隔；
+	返回：nil
+	

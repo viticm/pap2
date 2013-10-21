@@ -1,0 +1,765 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4D6C0656-0151-4108-8FA3-C983D76AAD6E}</ProjectGuid>
+    <RootNamespace>AtlKG3DEngineProxy</RootNamespace>
+    <Keyword>AtlProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>NotSet</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Program Files\Microsoft DirectX SDK %28February 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Program Files\Microsoft DirectX SDK %28February 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)AtlKG3DEngineProxy.tlb</TypeLibraryName>
+      <HeaderFileName>AtlKG3DEngineProxy.h</HeaderFileName>
+      <DllDataFileName>
+      </DllDataFileName>
+      <InterfaceIdentifierFileName>AtlKG3DEngineProxy_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>AtlKG3DEngineProxy_p.c</ProxyFileName>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\IndeHeader\;.\IndeHeader\SO3Represent\;.\IndeHeader\SO3World\;..\..\..\..\..\Base\Include;..\..\..\..\..\Base\Include\Engine;..\..\..\..\..\DevEnv\Include\XtremToolkitProv9.60\;..\..\..\KG3DEngine\EditInterface;..\..\..\KG3DEngine\Include;..\..\..\KG3DEngine\KG3DEngine\;..\..\..\KG3DEngine\KG3DEngine\Helpers\;..\..\..\KG3DEngine\KG3DEngine\Scene\;..\..\..\KG3DEngine\KG3DEngine\Render\;..\..\..\KG3DEngine\KG3DEngine\EnvEffect\;..\..\..\..\Include\KG3DEngine;..\..\..\..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USRDLL;_EDITOR;_CLIENT;LUA_V_5;_DESIGN;FILTERTEXT_STATICLIB;_KG3D_DEBUG_SELF_ENABLE_OUTPUT=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <RegisterOutput>false</RegisterOutput>
+      <AdditionalDependencies>comsuppw.lib;commonD.lib;Lua5D.lib;d3dx9.lib;d3d9.lib;winmm.lib;uuid.lib;kernel32.lib;engine_Lua5D.lib;gdiplus.lib;IPPVideoD.lib;freetype235_D.lib;dxguid.lib;odbc32.lib;odbccp32.lib;kg3dsoundd.lib;atlsd.lib;Engine_lua5D.lib;KG3DSoundD.lib;FilterTextD.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../../../../sword3-products/trunk/Tools/DesignerSceneEditor/$(ProjectName)D.dll</OutputFile>
+      <AdditionalLibraryDirectories>../../../../Lib/Win32;../../../../../Base/Lib;../../../../../DevEnv/Lib/Debug/FreeType-2.3.5;../../../../../DevEnv/lib/debug/XtremeToolkitProv9.60/vc80;../../../../../DevEnv/Lib/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>nafxcwd.lib;libcp.lib;libc.lib;libci.lib;LIBCD.lib;libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile>.\AtlKG3DEngineProxy.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Manifest>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)AtlKG3DEngineProxy.tlb</TypeLibraryName>
+      <HeaderFileName>AtlKG3DEngineProxy.h</HeaderFileName>
+      <DllDataFileName>
+      </DllDataFileName>
+      <InterfaceIdentifierFileName>AtlKG3DEngineProxy_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>AtlKG3DEngineProxy_p.c</ProxyFileName>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>.\IndeHeader\;.\IndeHeader\SO3Represent\;.\IndeHeader\SO3World\;..\..\..\..\..\Base\Include;..\..\..\..\..\Base\Include\Engine;..\..\..\..\..\DevEnv\Include\XtremToolkitProv9.60\;..\..\..\KG3DEngine\EditInterface;..\..\..\KG3DEngine\Include;..\..\..\KG3DEngine\KG3DEngine\;..\..\..\KG3DEngine\KG3DEngine\Helpers\;..\..\..\KG3DEngine\KG3DEngine\Scene\;..\..\..\KG3DEngine\KG3DEngine\Render\;..\..\..\KG3DEngine\KG3DEngine\EnvEffect\;..\..\..\..\Include\KG3DEngine;..\..\..\..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;_EDITOR;_CLIENT;LUA_V_5;_DESIGN;FILTERTEXT_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <RegisterOutput>false</RegisterOutput>
+      <AdditionalDependencies>comsuppw.lib;common.lib;Lua5.lib;StrmBase.lib;d3dx9.lib;d3d9.lib;winmm.lib;uuid.lib;kernel32.lib;gdiplus.lib;IPPVideo.lib;freetype235.lib;dxguid.lib;odbc32.lib;odbccp32.lib;kg3dsound.lib;Engine_lua5.lib;KG3DSound.lib;FilterText.lib;SO3WorldClient.lib;ws2_32.lib;atls.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../../../../sword3-products/trunk/Tools/DesignerSceneEditor/$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>../../../../Lib/Win32;../../../../../Base/Lib;../../../../../DevEnv/Lib/Release/FreeType-2.3.5;../../../../../DevEnv/lib/Release/XtremeToolkitProv9.60/vc80;../../../../../DevEnv/Lib/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>nafxcw.lib;libcp.lib;libc.lib;libci.lib;LIBC.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile>.\AtlKG3DEngineProxy.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AtlBase.cpp" />
+    <ClCompile Include="AtlInputProxy.cpp" />
+    <ClCompile Include="AtlKG3DEngineProxy.cpp" />
+    <ClCompile Include="AtlOld3DEngine.cpp" />
+    <ClCompile Include="BaseLib.cpp" />
+    <ClCompile Include="GraphicsStruct.cpp" />
+    <ClCompile Include="InputProxy_Impl.cpp" />
+    <ClCompile Include="LoadLogicalObj.cpp" />
+    <ClCompile Include="MathTool.cpp" />
+    <ClCompile Include="ProgressForm.cpp" />
+    <ClCompile Include="SaveLogicalObj.cpp" />
+    <ClCompile Include="SceneEditor.cpp" />
+    <ClCompile Include="SO3World.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TopViewForm.cpp" />
+    <ClCompile Include="AtlKG3DEngineProxy_i.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Stolen\KG3DBBox.cpp" />
+    <ClCompile Include="Stolen\KG3DSceneLogicalEditorBase.cpp" />
+    <ClCompile Include="Stolen\KGMathFunctions.cpp" />
+    <ClCompile Include="Stolen\KGTester.cpp" />
+    <ClCompile Include="Stolen\KLogicalSceneConnection.cpp" />
+    <ClCompile Include="Stolen\KLogicObstacleGenerator.cpp" />
+    <ClCompile Include="Stolen\KSceneEditorDocLogical.cpp" />
+    <ClCompile Include="Stolen\KSceneHelperFuncs.cpp" />
+    <ClCompile Include="IndeSource\SO3World\Global.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAchievementInfoList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAI_Critter.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAI_Monk.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAI_Negative.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAI_Positive.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAI_Retardate.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAI_Wolf.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAI_WolfKing.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAI_Wood.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAIAction.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAIEvent.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAIFlowGraph.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAILogic.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAIManager.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAIParamTemplateList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAIPatrolGroupManager.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAISearchTactics.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAISkillSelect.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAISkillSelector.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAIState.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAIVM.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAttribGroup.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAttribInfoList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAttribLib.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAttribute.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAttrModifier.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KAuctionClient.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KBaseFuncList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KBaseObject.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KBookList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KBuff.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KBuffList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KBuffManager.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KCampInfo.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KCDTimerList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KCell.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KCenterRemote.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KCharacter.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KCharacterActionList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KCircleList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KCoolDownList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KCraft.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KCustomEquipInfoList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KDoodad.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KDoodadClassList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KDoodadFile.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KDoodadReviveManager.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KDoodadTemplateList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KDropCenter.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KDropList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KEnchantLib.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KEntryList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KEscortQuestManager.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KFellowship.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KFightFlagList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KGatewayClient.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KGlobalSystemValueCache.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KGMList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KGod.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KGodClient.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KGodServer.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KGPQ.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KGSO3WorldClient.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KGSO3WorldServer.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KGWConstList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KIDCache.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KIndividualDropList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KInfoGather.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KInventory.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KItem.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KItemInfo.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KItemInfoList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KItemLib.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KItemList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KItemManager.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KItemTransaction.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLevelDropList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLevelMoneyDropList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLevelUpList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLogClient.cpp" />
+    <ClCompile Include="IndeSource\SO3World\kLoginFuncList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLootList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaAIEvent.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaAuctionClient.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaCampInfo.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaCell.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaCharacter.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaConstList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaDoodad.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaDoodadTemplate.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaItem.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaNpc.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaPlayer.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaProfession.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaQuestInfo.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaRecipe.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaScene.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaSceneObject.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaShop.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaSkill.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaTarget.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KLuaTongClient.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KMapListFile.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KMath.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KNpc.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KNpcClassList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KNpcFile.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KNpcOrderList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KNpcReviveManager.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KNpcTeam.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KNpcTeamList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KNpcTemplateList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KPatrolPath.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KPatrolPathList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KPKController.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KPlayer.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KPlayerClient.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KPlayerServer.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KPlayerServerBase.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KProfession.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KProfessionList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KProfessionManager.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KProtocolRecorder.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KProtocolReplayer.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KQuestInfoList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KQuestList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRandGenerator.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecipe.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecipeList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecipeMaster.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecorderFactory.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecorderSceneLoaderNormal.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecorderSceneLoaderRecord.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecorderSceneLoaderReplay.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecorderSocketClientNormal.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecorderSocketClientRecord.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecorderSocketClientReplay.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecorderSocketServerNormal.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecorderSocketServerRecord.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecorderSocketServerReplay.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecorderSocketStreamRecord.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecorderSocketStreamReplay.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecorderToolsNormal.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecorderToolsRecord.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRecorderToolsReplay.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRegion.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRelationList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRelayClient.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KReputation.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KReputationLimit.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KRoadManager.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KScene.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KSceneObject.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KSceneObjNode.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KScriptCenter.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KScriptClient.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KScriptServer.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KShop.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KShopCenter.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KShopFuncList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KSkill.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KSkillDebug.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KSkillList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KSkillManager.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KSkillRecipeList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KSmartDialogList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KSO3World.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KSO3WorldInterface.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KTarget.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KTeamClient.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KTeamServer.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KTerrainData.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KThreatList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KTongClient.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KTradingBox.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KTransmissionList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KUserPreferences.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KWeaponTypeList.cpp" />
+    <ClCompile Include="IndeSource\SO3World\KWorldSettings.cpp" />
+    <ClCompile Include="IndeSource\SO3World\luna.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\krlcommand.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\krloptimization.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\krloption.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\SO3Represent.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\base\missile\krepresentmissile.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\base\missile\krepresentmissilephase.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\base\missile\krepresentmissileprocessor.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\base\File\kbintab.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\base\File\kfilepath.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlcamera.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlcharacter.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlcharactercamera.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlcharacterturning.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlcursor.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krldoodad.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krldoodadmgr.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlgodcamera.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krllocalcharacter.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlmissile.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlmissilemgr.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlremotecharacter.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlremotecharactermgr.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlrides.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlridesmgr.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlscene.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlscenemgr.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlsceneobject.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlskilleffectresult.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krlskillsequence.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krltarget.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\krltrackcamera.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\kcirclemissileprocessor.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\kcompositemissileprocessor.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\kfixedtrackmissileprocessor.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\khomingmissileprocessor.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\klightningmissileprocessor.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\klinemissileprocessor.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\kmodelmissileprocessor.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\ktimelinemissileprocessor.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\actionobject\missile\kyaxismissileprocessor.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\gameworld\kgameworldcharactercontroller.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\gameworld\kgameworldhandler.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\gameworld\krlanimationtable.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\gameworld\krlcharacterframedata.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\gameworld\krldoodadframedata.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\gameworld\ktabledefine.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\gameworld\ktablelist.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\gameworld\ktabletransform.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\render\kanimationmodel.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\render\kmodel.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\render\kmodelgcmgr.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\render\kmodelmgr.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\case\render\krlloadingmodel.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\common\kmathtools.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\common\kmovementcontroller.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\common\ksmallobjectpool.cpp" />
+    <ClCompile Include="IndeSource\SO3Represent\common\tblock.cpp" />
+    <ClCompile Include="AtlTest3DEngine\Functions.cpp" />
+    <ClCompile Include="AtlTest3DEngine\InputProxy.cpp" />
+    <ClCompile Include="AtlTest3DEngine\ProgressForm.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="AtlTest3DEngine\SceneEditorCommon.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AtlKG3DEngineProxy.def" />
+    <None Include="AnimationTable.rgs" />
+    <None Include="AtlBase.rgs" />
+    <None Include="AtlEngineManager.rgs" />
+    <None Include="AtlIEKG3DScene.rgs" />
+    <None Include="AtlIEKG3DSceneEditorBase.rgs" />
+    <None Include="AtlIEKG3DSceneSceneEditor.rgs" />
+    <None Include="AtlIEKG3DSceneSelectBase.rgs" />
+    <None Include="AtlIEKG3DTexture.rgs" />
+    <None Include="AtlIELogicalSceneConnection.rgs" />
+    <None Include="AtlIKG3DResourceBase.rgs" />
+    <None Include="AtlIKG3DScene.rgs" />
+    <None Include="AtlIKG3DScene1.rgs" />
+    <None Include="AtlInputProxy.rgs" />
+    <None Include="AtlKG3DEngineProxy.rgs" />
+    <None Include="AtlLogicData.rgs" />
+    <None Include="AtlOld3DEngine.rgs" />
+    <None Include="AtlScene.rgs" />
+    <None Include="AtlTest3DEngine\AtlTest3DEngine.rgs" />
+    <None Include="BaseLib.rgs" />
+    <None Include="D3DDevice91.rgs" />
+    <None Include="EngineOption.rgs" />
+    <None Include="GraphicsTool.rgs" />
+    <None Include="InputProxy.rgs" />
+    <None Include="Light.rgs" />
+    <None Include="LogicalScene.rgs" />
+    <None Include="Material.rgs" />
+    <None Include="MeshBase.rgs" />
+    <None Include="Model.rgs" />
+    <None Include="ModelTable.rgs" />
+    <None Include="Npc_Property.rgs" />
+    <None Include="Obj_Property.rgs" />
+    <None Include="RegionInfoManager.rgs" />
+    <None Include="RegionInfoManagerTable.rgs" />
+    <None Include="RepresentHandler.rgs" />
+    <None Include="RepresentHandler1.rgs" />
+    <None Include="RepresentObject.rgs" />
+    <None Include="RepresentObjectSet.rgs" />
+    <None Include="RepresentObjectSoundBall.rgs" />
+    <None Include="ResourceMgr.rgs" />
+    <None Include="RTTITypeManager.rgs" />
+    <None Include="Scene.rgs" />
+    <None Include="SceneEditor.rgs" />
+    <None Include="SceneLogicalEditorBase.rgs" />
+    <None Include="SceneSceneEditor.rgs" />
+    <None Include="SO3World.rgs" />
+    <None Include="TextureTable.rgs" />
+    <None Include="UI.rgs" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="AtlKG3DEngineProxy.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AtlBase.h" />
+    <ClInclude Include="AtlInputProxy.h" />
+    <ClInclude Include="AtlOld3DEngine.h" />
+    <ClInclude Include="BaseLib.h" />
+    <ClInclude Include="ExtraStructDef.h" />
+    <ClInclude Include="InputProxy_Impl.h" />
+    <ClInclude Include="LoadLogicalObj.h" />
+    <ClInclude Include="ProgressForm.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SaveLogicalObj.h" />
+    <ClInclude Include="SceneEditor.h" />
+    <ClInclude Include="SO3World.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TopViewForm.h" />
+    <ClInclude Include="AtlKG3DEngineProxy.h" />
+    <ClInclude Include="Stolen\KG3DSceneLogicalEditorBase.h" />
+    <ClInclude Include="Stolen\KLogicalSceneConnection.h" />
+    <ClInclude Include="Stolen\KLogicObstacleGenerator.h" />
+    <ClInclude Include="Stolen\KSceneEditorDocLogical.h" />
+    <ClInclude Include="Stolen\KSceneHelperFuncs.h" />
+    <ClInclude Include="Stolen\KSceneInterfaceGetters.h" />
+    <ClInclude Include="IndeHeader\SO3Represent\SO3GameWorldRepresentHandler.h" />
+    <ClInclude Include="IndeHeader\SO3Represent\SO3RepresentHandler.h" />
+    <ClInclude Include="IndeHeader\SO3Represent\SO3RepresentInterface.h" />
+    <ClInclude Include="IndeHeader\SO3World\Global.h" />
+    <ClInclude Include="IndeHeader\SO3World\IDoodadFile.h" />
+    <ClInclude Include="IndeHeader\SO3World\IKGSO3WorldClient.h" />
+    <ClInclude Include="IndeHeader\SO3World\IKGSO3WorldServer.h" />
+    <ClInclude Include="IndeHeader\SO3World\INpcFile.h" />
+    <ClInclude Include="IndeHeader\SO3World\KAIAction.h" />
+    <ClInclude Include="IndeHeader\SO3World\KAIEvent.h" />
+    <ClInclude Include="IndeHeader\SO3World\KAILogic.h" />
+    <ClInclude Include="IndeHeader\SO3World\KAIManager.h" />
+    <ClInclude Include="IndeHeader\SO3World\KAIParamTemplateList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KAIPatrolGroupManager.h" />
+    <ClInclude Include="IndeHeader\SO3World\KAIState.h" />
+    <ClInclude Include="IndeHeader\SO3World\KAttribute.h" />
+    <ClInclude Include="IndeHeader\SO3World\KAuctionClient.h" />
+    <ClInclude Include="IndeHeader\SO3World\KBaseObject.h" />
+    <ClInclude Include="IndeHeader\SO3World\KCell.h" />
+    <ClInclude Include="IndeHeader\SO3World\KCenterRemote.h" />
+    <ClInclude Include="IndeHeader\SO3World\KCharacterActionList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KCircleList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KCoolDownList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KCustomData.h" />
+    <ClInclude Include="IndeHeader\SO3World\KDoodadClassList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KDoodadTemplateList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KDropCenter.h" />
+    <ClInclude Include="IndeHeader\SO3World\KEnchantLib.h" />
+    <ClInclude Include="IndeHeader\SO3World\KEntryList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KFellowship.h" />
+    <ClInclude Include="IndeHeader\SO3World\KFightFlagList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KGatewayClient.h" />
+    <ClInclude Include="IndeHeader\SO3World\KGMList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KGodClient.h" />
+    <ClInclude Include="IndeHeader\SO3World\KGPQ.h" />
+    <ClInclude Include="IndeHeader\SO3World\KGWConstList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KIDCache.h" />
+    <ClInclude Include="IndeHeader\SO3World\KIndividualDropList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KItemManager.h" />
+    <ClInclude Include="IndeHeader\SO3World\KLevelDropList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KLevelUpList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KMapListFile.h" />
+    <ClInclude Include="IndeHeader\SO3World\KNpcClassList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KNpcOrderList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KNpcTeam.h" />
+    <ClInclude Include="IndeHeader\SO3World\KNpcTeamList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KNpcTemplateList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KObjectIndex.h" />
+    <ClInclude Include="IndeHeader\SO3World\KPartyCache.h" />
+    <ClInclude Include="IndeHeader\SO3World\KPatrolPath.h" />
+    <ClInclude Include="IndeHeader\SO3World\KPatrolPathList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KPlayerClient.h" />
+    <ClInclude Include="IndeHeader\SO3World\KProfessionManager.h" />
+    <ClInclude Include="IndeHeader\SO3World\KQuestInfoList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KRecorderFactory.h" />
+    <ClInclude Include="IndeHeader\SO3World\KRegion.h" />
+    <ClInclude Include="IndeHeader\SO3World\KRelationList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KReputationLimit.h" />
+    <ClInclude Include="IndeHeader\SO3World\KRoadManager.h" />
+    <ClInclude Include="IndeHeader\SO3World\KScene.h" />
+    <ClInclude Include="IndeHeader\SO3World\KScriptCenter.h" />
+    <ClInclude Include="IndeHeader\SO3World\KScriptClient.h" />
+    <ClInclude Include="IndeHeader\SO3World\KScriptFuncList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KScriptServer.h" />
+    <ClInclude Include="IndeHeader\SO3World\KScriptTimerList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KShopCenter.h" />
+    <ClInclude Include="IndeHeader\SO3World\KSkillManager.h" />
+    <ClInclude Include="IndeHeader\SO3World\KSmartDialogList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KSO3World.h" />
+    <ClInclude Include="IndeHeader\SO3World\KTarget.h" />
+    <ClInclude Include="IndeHeader\SO3World\KTeamClient.h" />
+    <ClInclude Include="IndeHeader\SO3World\KTongClient.h" />
+    <ClInclude Include="IndeHeader\SO3World\KTrackList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KWeaponTypeList.h" />
+    <ClInclude Include="IndeHeader\SO3World\KWorldSettings.h" />
+    <ClInclude Include="IndeSource\SO3World\KAI_Player.h" />
+    <ClInclude Include="IndeSource\SO3World\KAI_Wood.h" />
+    <ClInclude Include="IndeSource\SO3World\KAIBase.h" />
+    <ClInclude Include="IndeSource\SO3World\KAIControl.h" />
+    <ClInclude Include="IndeSource\SO3World\KAIFlowGraph.h" />
+    <ClInclude Include="IndeSource\SO3World\KAISearchTactics.h" />
+    <ClInclude Include="IndeSource\SO3World\KAISkillSelector.h" />
+    <ClInclude Include="IndeSource\SO3World\KAIVM.h" />
+    <ClInclude Include="IndeSource\SO3World\KAttribGroup.h" />
+    <ClInclude Include="IndeSource\SO3World\KAttribInfoList.h" />
+    <ClInclude Include="IndeSource\SO3World\KAttribLib.h" />
+    <ClInclude Include="IndeSource\SO3World\KAttrModifier.h" />
+    <ClInclude Include="IndeSource\SO3World\KBookList.h" />
+    <ClInclude Include="IndeSource\SO3World\KBuff.h" />
+    <ClInclude Include="IndeSource\SO3World\KBuffList.h" />
+    <ClInclude Include="IndeSource\SO3World\KBuffManager.h" />
+    <ClInclude Include="IndeSource\SO3World\KCampInfo.h" />
+    <ClInclude Include="IndeSource\SO3World\KCDTimerList.h" />
+    <ClInclude Include="IndeSource\SO3World\KCharacter.h" />
+    <ClInclude Include="IndeSource\SO3World\KConnectionData.h" />
+    <ClInclude Include="IndeSource\SO3World\KCraft.h" />
+    <ClInclude Include="IndeSource\SO3World\KCustomEquipInfoList.h" />
+    <ClInclude Include="IndeSource\SO3World\KDoodad.h" />
+    <ClInclude Include="IndeSource\SO3World\KDoodadFile.h" />
+    <ClInclude Include="IndeSource\SO3World\KDoodadReviveManager.h" />
+    <ClInclude Include="IndeSource\SO3World\KDropList.h" />
+    <ClInclude Include="IndeSource\SO3World\KEscortQuestManager.h" />
+    <ClInclude Include="IndeSource\SO3World\KGlobalSystemValueCache.h" />
+    <ClInclude Include="IndeSource\SO3World\KGod.h" />
+    <ClInclude Include="IndeSource\SO3World\KGodServer.h" />
+    <ClInclude Include="IndeSource\SO3World\KGSO3WorldClient.h" />
+    <ClInclude Include="IndeSource\SO3World\KGSO3WorldServer.h" />
+    <ClInclude Include="IndeSource\SO3World\KInfoGather.h" />
+    <ClInclude Include="IndeSource\SO3World\KInventory.h" />
+    <ClInclude Include="IndeSource\SO3World\KItem.h" />
+    <ClInclude Include="IndeSource\SO3World\KItemInfo.h" />
+    <ClInclude Include="IndeSource\SO3World\KItemInfoList.h" />
+    <ClInclude Include="IndeSource\SO3World\KItemLib.h" />
+    <ClInclude Include="IndeSource\SO3World\KItemList.h" />
+    <ClInclude Include="IndeSource\SO3World\KItemTransaction.h" />
+    <ClInclude Include="IndeSource\SO3World\KLevelMoneyDropList.h" />
+    <ClInclude Include="IndeSource\SO3World\KLogClient.h" />
+    <ClInclude Include="IndeSource\SO3World\KLootList.h" />
+    <ClInclude Include="IndeSource\SO3World\KMath.h" />
+    <ClInclude Include="IndeSource\SO3World\KMissile.h" />
+    <ClInclude Include="IndeSource\SO3World\KNpc.h" />
+    <ClInclude Include="IndeSource\SO3World\KNpcFile.h" />
+    <ClInclude Include="IndeSource\SO3World\KNpcReviveManager.h" />
+    <ClInclude Include="IndeSource\SO3World\KPathFinder.h" />
+    <ClInclude Include="IndeSource\SO3World\KPKController.h" />
+    <ClInclude Include="IndeSource\SO3World\KPlayer.h" />
+    <ClInclude Include="IndeSource\SO3World\KPlayerServer.h" />
+    <ClInclude Include="IndeSource\SO3World\KProfession.h" />
+    <ClInclude Include="IndeSource\SO3World\KProfessionList.h" />
+    <ClInclude Include="IndeSource\SO3World\KProtocolRecorder.h" />
+    <ClInclude Include="IndeSource\SO3World\KProtocolRecorderBase.h" />
+    <ClInclude Include="IndeSource\SO3World\KProtocolReplayer.h" />
+    <ClInclude Include="IndeSource\SO3World\KQuestList.h" />
+    <ClInclude Include="IndeSource\SO3World\KRandGenerator.h" />
+    <ClInclude Include="IndeSource\SO3World\KRecipe.h" />
+    <ClInclude Include="IndeSource\SO3World\KRecipeList.h" />
+    <ClInclude Include="IndeSource\SO3World\KRecipeMaster.h" />
+    <ClInclude Include="IndeSource\SO3World\KRecorderSceneLoaderNormal.h" />
+    <ClInclude Include="IndeSource\SO3World\KRecorderSceneLoaderRecord.h" />
+    <ClInclude Include="IndeSource\SO3World\KRecorderSceneLoaderReplay.h" />
+    <ClInclude Include="IndeSource\SO3World\KRecorderSocketClientNormal.h" />
+    <ClInclude Include="IndeSource\SO3World\KRecorderSocketClientRecord.h" />
+    <ClInclude Include="IndeSource\SO3World\KRecorderSocketClientReplay.h" />
+    <ClInclude Include="IndeSource\SO3World\KRecorderSocketServerNormal.h" />
+    <ClInclude Include="IndeSource\SO3World\KRecorderSocketServerRecord.h" />
+    <ClInclude Include="IndeSource\SO3World\KRecorderSocketServerReplay.h" />
+    <ClInclude Include="IndeSource\SO3World\KRecorderSocketStreamRecord.h" />
+    <ClInclude Include="IndeSource\SO3World\KRecorderSocketStreamReplay.h" />
+    <ClInclude Include="IndeSource\SO3World\KRecorderToolsNormal.h" />
+    <ClInclude Include="IndeSource\SO3World\KRecorderToolsRecord.h" />
+    <ClInclude Include="IndeSource\SO3World\KRecorderToolsReplay.h" />
+    <ClInclude Include="IndeSource\SO3World\KRelayClient.h" />
+    <ClInclude Include="IndeSource\SO3World\KReputation.h" />
+    <ClInclude Include="IndeSource\SO3World\KSceneObject.h" />
+    <ClInclude Include="IndeSource\SO3World\KSceneObjNode.h" />
+    <ClInclude Include="IndeSource\SO3World\KShop.h" />
+    <ClInclude Include="IndeSource\SO3World\KSkill.h" />
+    <ClInclude Include="IndeSource\SO3World\KSkillDebug.h" />
+    <ClInclude Include="IndeSource\SO3World\KSkillList.h" />
+    <ClInclude Include="IndeSource\SO3World\KSkillRecipeList.h" />
+    <ClInclude Include="IndeSource\SO3World\KSO3WorldInterface.h" />
+    <ClInclude Include="IndeSource\SO3World\KTeamServer.h" />
+    <ClInclude Include="IndeSource\SO3World\KTerrainData.h" />
+    <ClInclude Include="IndeSource\SO3World\KThreatList.h" />
+    <ClInclude Include="IndeSource\SO3World\KTradingBox.h" />
+    <ClInclude Include="IndeSource\SO3World\KTransmissionList.h" />
+    <ClInclude Include="IndeSource\SO3World\KUserPreferences.h" />
+    <ClInclude Include="IndeSource\SO3Represent\krlcommand.h" />
+    <ClInclude Include="IndeSource\SO3Represent\krloptimization.h" />
+    <ClInclude Include="IndeSource\SO3Represent\krloption.h" />
+    <ClInclude Include="IndeSource\SO3Represent\SO3Represent.h" />
+    <ClInclude Include="IndeSource\SO3Represent\base\missile\krepresentmissile.h" />
+    <ClInclude Include="IndeSource\SO3Represent\base\missile\krepresentmissiledefine.h" />
+    <ClInclude Include="IndeSource\SO3Represent\base\missile\krepresentmissilephase.h" />
+    <ClInclude Include="IndeSource\SO3Represent\base\missile\krepresentmissileprocessor.h" />
+    <ClInclude Include="IndeSource\SO3Represent\base\File\kbintab.h" />
+    <ClInclude Include="IndeSource\SO3Represent\base\File\kfilepath.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\ikgrlcamera.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlcamera.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlcharacter.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlcharactercamera.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlcharacterturning.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlcursor.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krldoodad.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krldoodadmgr.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlgodcamera.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krllocalcharacter.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlmissile.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlmissilemgr.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlremotecharacter.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlremotecharactermgr.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlrides.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlridesmgr.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlscene.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlscenemgr.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlsceneobject.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlskilleffectresult.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krlskillsequence.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krltarget.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\krltrackcamera.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\kcirclemissileprocessor.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\kcompositemissileprocessor.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\kfixedtrackmissileprocessor.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\khomingmissileprocessor.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\klightningmissileprocessor.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\klinemissileprocessor.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\kmodelmissileprocessor.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\ktimelinemissileprocessor.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\actionobject\missile\kyaxismissileprocessor.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\gameworld\kgameworldcharactercontroller.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\gameworld\kgameworldhandler.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\gameworld\krlanimationtable.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\gameworld\krlcharacterframedata.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\gameworld\krldoodadframedata.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\gameworld\ktabledefine.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\gameworld\ktablelist.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\gameworld\ktabletransform.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\render\irlmodel.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\render\kanimationmodel.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\render\kmodel.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\render\kmodelgcmgr.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\render\kmodelmgr.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\render\krlloadingmodel.h" />
+    <ClInclude Include="IndeSource\SO3Represent\case\render\krlresource.h" />
+    <ClInclude Include="IndeSource\SO3Represent\common\kmathtools.h" />
+    <ClInclude Include="IndeSource\SO3Represent\common\kmovementcontroller.h" />
+    <ClInclude Include="IndeSource\SO3Represent\common\ksmallobjectpool.h" />
+    <ClInclude Include="IndeSource\SO3Represent\common\tblock.h" />
+    <ClInclude Include="IndeSource\SO3Represent\common\tstring.h" />
+    <ClInclude Include="AtlTest3DEngine\Functions.h" />
+    <ClInclude Include="AtlTest3DEngine\InputProxy.h" />
+    <ClInclude Include="AtlTest3DEngine\ProgressForm.h" />
+    <ClInclude Include="AtlTest3DEngine\SceneEditorCommon.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="AtlKG3DEngineProxy.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="AtlKG3DEngineProxy.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

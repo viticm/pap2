@@ -1,0 +1,65 @@
+// atlax.idl : IDL source for atlax
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (atlax.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(6AE8174C-9A77-4091-8FC2-68A3905F1D81),
+	dual,
+	nonextensible,
+	helpstring("ITest3DEngine Interface"),
+	pointer_default(unique)
+]
+interface ITest3DEngine : IDispatch{
+	[id(1), helpstring("method Init")] HRESULT Init(LONG hWnd);
+	[id(2), helpstring("method Render")] HRESULT Render(void);
+	[id(3), helpstring("method FrameMove")] HRESULT FrameMove(void);
+	[id(4), helpstring("method UnInit")] HRESULT UnInit(void);
+	[id(5), helpstring("method OnResizeWindow")] HRESULT OnResizeWindow(void);
+	[propget, id(6), helpstring("property PlayMode")] HRESULT PlayMode([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(6), helpstring("property PlayMode")] HRESULT PlayMode([in] VARIANT_BOOL newVal);
+	[id(7), helpstring("method OnWndMsg")] HRESULT OnWndMsg([in] PMSG WndMsg, [out,retval] INT* pnRet);
+	[id(8), helpstring("method LoadFile")] HRESULT LoadFile(BSTR strFileName);
+	[id(9), helpstring("method UnloadFile")] HRESULT UnloadFile(BSTR strFileName);
+	[id(10), helpstring("method LoadPlayerModel")] HRESULT LoadPlayerModel(BSTR strFileName);
+	[id(11), helpstring("method BindPlayerModel")] HRESULT BindToPlayer(BSTR strFileName, DWORD dwType, BSTR strBindToObj);
+	[id(12), helpstring("method LoadAni")] HRESULT LoadAni(BSTR strFileName);	
+	[id(13), helpstring("method ZoomView")] HRESULT ZoomView(LONG lDelta);	
+	[id(14), helpstring("method ChangeModelPart")] HRESULT ChangeModelPart(BSTR filename, INT PartID);
+	[id(15), helpstring("method LoadFace")] HRESULT LoadFace(BSTR strFileName);
+	[id(16), helpstring("method LoadSocket")] HRESULT LoadSocket(BSTR strBindToObj, BSTR strFileName);
+	[id(17), helpstring("method ItemsClear")] HRESULT ItemsClear(void);
+	[id(18), helpstring("method SaveMDLToFile")] HRESULT SaveMDLToFile(BSTR strFileName);
+};
+[
+	uuid(6F9FD12F-5554-49D7-B144-9F52B812D84D),
+	version(1.0),
+	helpstring("atlax 1.0 Type Library")
+]
+library atlaxLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(F63BB8BC-6ACD-4271-900E-FA07F9FB8943),
+		helpstring("_ITest3DEngineEvents Interface")
+	]
+	dispinterface _ITest3DEngineEvents
+	{
+		properties:
+		methods:
+	};
+	[
+		uuid(D159A323-D278-475B-B556-57C064884B9B),
+		helpstring("Test3DEngine Class")
+	]
+	coclass Test3DEngine
+	{
+		[default] interface ITest3DEngine;
+		[default, source] dispinterface _ITest3DEngineEvents;
+	};
+};

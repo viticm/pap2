@@ -1,0 +1,30 @@
+[Include]
+../../../../Include
+../../../../../Base/Include
+../../../../../DevEnv/Include/mysql
+
+[Config Debug]
+Product		EXE ../product/KG_GameStatisticsD
+Options		Debug
+Defines		__linux; _STANDALONE; _SERVER; C_C_VERSION; LUA_V_5;
+ObjDir		LDebug
+LibDir		../../../../../Base/Lib/Linux; ../../../../../DevEnv/Lib/Linux
+Libraries	EngineD; Lua5D; CommonD; MySQLClientD
+
+[Config Release]
+Product		EXE ../product/KG_GameStatistics
+Options		Release
+Defines		__linux; _STANDALONE; _SERVER; C_C_VERSION; LUA_V_5;
+ObjDir		LRelease
+LibDir		../../../../../Base/Lib/Linux; ../../../../../DevEnv/Lib/Linux
+Libraries	Engine; Lua5; Common; MySQLClient
+
+[Source]
+Stdafx.cpp
+main.cpp
+KG_TongInfo.cpp
+KG_RoleInfo.cpp
+KG_PostDatabase.cpp
+KG_MySQLDatabase.cpp
+KG_GameStatistics.cpp
+KG_GameDatabase.cpp

@@ -1,0 +1,153 @@
+==================================================================
+骑马相关                                                         |
+==================================================================
+
+评审时间：2008-02-25
+
+参与人员：夏永 赵纯峰 侯锐
+
+修改目的：增加玩家骑马相关的逻辑。
+
+
+功能点：
+------------------------------------------------------------------
+1. 骑马是对玩家而言，NPC不能骑马。
+
+2. 玩家骑马的流程：
+(1) 玩家在装备栏里装备“马”。
+(2) 玩家通过释放技能，应用BUFF，触发“上马”。
+(3) 玩家通过点击取消BUFF，触发“下马”。
+
+3. 玩家成功释放骑马技能的条件：
+(1) 玩家必须已经在装备栏里装备了马,否则不能释放骑马技能。
+(2) 玩家当前不是骑马状态，否则不能释放骑马技能。
+(3) 玩家的移动状态为stand状态，否则不能释放骑马技能。
+
+4. 玩家成功下马的条件：玩家当前是骑马状态。
+
+5. 骑马状态的维持：
+(1) 玩家进入骑马标志位为false的cell，骑马BUFF结束。
+(2) 玩家切换为某些移动状态(如：击飞)，骑马BUFF结束。
+(3) 玩家受到某些技能的攻击(如：下马)，骑马BUFF概率性的结束。
+
+6. 玩家在骑马过程中，不允许将“马”从装备栏里拿出或更换为别的马。
+
+7. 玩家在骑马状态下死亡重生后，是骑马状态(待定)。
+
+8. 骑马标志不存盘，再次上线后玩家是否骑马由buff是否保存决定。
+
+
+修改方案：
+------------------------------------------------------------------
+1. 在玩家的装备类型中增加马。
+
+2. 玩家装备马的时候，不应用物品属性(属性在上马的LUA函数中应用)，修改马的表
+   现ID。
+
+3. 玩家卸掉马的时候，不反应用物品属性，修改表现ID为0。
+
+4. 在ExchangeItem的时候，拦截骑马过程中，将“马”从装备栏里拿出或更换为别
+   的马的行为。
+
+5. 技能释放的相关代码中，增加对骑马相关的支持。
+
+6. 增加上马、下马相关的Lua接口，方便调试及测试使用。
+
+
+本次修改涉及到的代码：
+------------------------------------------------------------------
+1. 文件SO3GlobalDef.h，枚举EQUIPMENT_INVENTORY_TYPE增加马相关的：eitHorse。
+
+2. 文件KItem.h，枚举EQUIPMENT_SUB_TYPE增加马相关的分类：estHorse。
+
+3. 文件KItemList.cpp中：
+
+(1) 数组g_CanEquipList[eitTotal][estTotal]增加马相关的规则项。
+
+(2) 函数KItemList::Equip，在作用魔法属性相关的条件判断中，增加Item不为马的
+    约束。伪代码如下：
+
+    // 作用魔法属性
+    if (pItem->m_nCurrentDurability > 0 
+	&& (m_pPlayer->m_nUnarmCounter == 0 || dwX != eitMeleeWeapon)
+	&& dwX != eitHorse
+    )
+    {
+	ApplyAttrib(pItem);
+    }
+    ...(其余部分不变！)
+
+(3) 函数KItemList::UnEquip，在反作用魔法属性的条件判断中，增加Item不为马的
+    约束。伪代码如下：
+
+    // 反作用魔法属性
+    if (pItem->m_bApplyed)
+    {
+	UnApplyAttrib(pItem);
+    }
+    ...(其余部分不变！)
+
+4. 文件KPlayer.cpp中:
+
+(1) 增加函数KPlayer::RideHorse，主要功能有：马的属性应用、修改玩家骑马
+    标志为true、广播。
+
+(2) 增加函数KPlayer::DownHorse，主要功能有：马的属性反应用、修改玩家骑
+    马标志为false、广播。
+
+(3) 函数KPlayer::Activate中，增加对玩家骑马状态下，是否进入骑马标志为
+    false的cell检查。伪代码如下：
+
+    if (玩家是骑马状态 && 当前cell不允许骑马)
+    {
+	执行下马操作；
+    }
+
+5. 文件SO3ProtocolBasic.h中：
+(1) 枚举GS_CLIENT_PROTOCOL中，增加骑马广播的协议：
+    g2c_sync_horse_flag
+
+(2) 增加骑马相关的结构体：
+    struct G2C_SYNC_HORSE_FLAG : DOWNWARDS_PROTOCOL_HEADER
+    {
+  	  DWORD dwPlayerID;
+  	  bool  bOnHorse;
+    };
+
+6. 文件KPlayerClient.cpp中，增加函数KPlayerClient::OnSyncHorseFlag，用
+   来广播骑马标志位。
+
+7. 文件GS_Client_Protocol.h中：
+(1) 结构体G2C_SYNC_NEW_PLAYER中，增加骑马的标志位。
+
+(2) 结构体G2C_SYNC_REGION_PLAYER中，增加骑马的标志位。
+
+8. 文件KPlayerServer.cpp，函数KPlayerServer::OnApplyExchangeItem中，增
+   加对“玩家骑马过程中将马从装备栏里拿出、或更换为别的马的行为”拦截。
+   伪代码如下：
+   KG_PROCESS_ERROR_RET_CODE(!(玩家当前是骑马状态 && (源物品是背包中的马
+   || 目的物品是背包中的马)), ircNeedDownHorse);
+
+9. 文件KLuaPlayer.cpp中：
+(1) 增加函数LuaRideHorse，提供上马的接口函数。
+(2) 增加函数LuaDownHorse，提供下马的接口函数。
+
+10. 文件SO3Result.h中，枚举型ITEM_RESULT_CODE增加一项：ircNeedDownHorse。
+
+11. 文件KAttribute.h中，枚举型ATTRIBUTE_TYPE增加一项：atRideHorse
+
+12. 文件KAttrModifier.cpp中：
+(1) 函数BOOL InitAttributeFunctions()，增加骑马相关的魔法属性。
+    g_AttributeProcessFunctions[atRideHorse] = ProcessRideHorse；
+
+(2) 增加函数BOOL ProcessRideHorse(
+    KCharacter* pDstCharacter, BOOL bApply, int nValue1, int nValue2)。
+    用于提供魔法属性的应用和反应用。
+    
+    
+
+需要其他系统支持的部分：
+------------------------------------------------------------------
+1. 武功技能系统，BUFF的维持条件中，增加对骑马状态的判断。
+2. 武功技能系统，伤害流程中，增加特殊技能攻击后，概率性下马的代码。
+3. 武功技能系统，技能释放时候增加对马的检查，以及技能表的相关修改。

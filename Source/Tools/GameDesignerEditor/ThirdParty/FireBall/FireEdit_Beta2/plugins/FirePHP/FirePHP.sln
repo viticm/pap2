@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirePHP", "FirePHP\FirePHP.csproj", "{34AEAC1E-C84C-4044-A5D5-032FEE92C3AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fireball.Communication", "..\..\..\..\libs\Fireball.Communication\Fireball.Communication\Fireball.Communication.csproj", "{96017179-D655-4487-BF89-B6BE802267D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34AEAC1E-C84C-4044-A5D5-032FEE92C3AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34AEAC1E-C84C-4044-A5D5-032FEE92C3AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34AEAC1E-C84C-4044-A5D5-032FEE92C3AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34AEAC1E-C84C-4044-A5D5-032FEE92C3AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96017179-D655-4487-BF89-B6BE802267D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96017179-D655-4487-BF89-B6BE802267D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96017179-D655-4487-BF89-B6BE802267D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96017179-D655-4487-BF89-B6BE802267D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

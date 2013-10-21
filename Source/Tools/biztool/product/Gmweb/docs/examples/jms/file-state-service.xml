@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Id: file-state-service.xml,v 1.1 2008/12/31 09:22:50 kuangsihao Exp $ -->
+
+<server>
+
+  <!-- ==================================================================== -->
+  <!-- State management using the file system                               -->
+  <!--                                                                      -->
+  <!-- IMPORTANT OTHER CONFIGURATION INSTRUCTIONS                           -->
+  <!--                                                                      -->
+  <!-- 1) Remove hsqldb-jdbc-state-service.xml                              -->
+  <!-- 2) Replace the jbossmq configuration with the following              -->
+  <!--    login module in conf/login-config.xml                             -->
+  <!--
+    <application-policy name = "jbossmq">
+       <authentication>
+          <login-module code = "org.jboss.mq.sm.file.DynamicLoginModule"
+             flag = "required">
+             <module-option name = "unauthenticatedIdentity">guest</module-option>
+             <module-option name = "sm.objectname">jboss.mq:service=StateManager</module-option>
+          </login-module>
+       </authentication>
+    </application-policy>
+  -->
+  <!-- ==================================================================== -->
+
+  <!--
+     | The StateManager is used to keep JMS persistent state data.
+     | For example: what durable subscriptions are active.
+   -->
+  <mbean code="org.jboss.mq.sm.file.DynamicStateManager"
+	 name="jboss.mq:service=StateManager">
+    <!-- This file is pulled from the configuration URL of the server -->
+    <attribute name="StateFile">jbossmq-state.xml</attribute>
+  </mbean>
+  
+</server>

@@ -1,0 +1,2 @@
+24/04/2006 - Replaced List<Language> with Dictonary because is need to check if another language with same name is already loaded 
+28/02/2006 - LanguageList now use internally a List<Language> instead of ArrayList

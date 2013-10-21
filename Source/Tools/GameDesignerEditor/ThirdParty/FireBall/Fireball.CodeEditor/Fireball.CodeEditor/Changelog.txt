@@ -1,0 +1,4 @@
+26/09/2006 - Patch: Applied patch https://sourceforge.net/support/tracker.php?aid=1538916
+25/09/2006 - Fixed: Changed the dispose system of RenderItems now it dispose it self,and added Dispose on other classes
+23/09/2006 - Fixed: When setting AutoListVisible to false doesn't hide the autolist
+28/05/2006 - CodeEditorControl Save method now use Encoding.Default

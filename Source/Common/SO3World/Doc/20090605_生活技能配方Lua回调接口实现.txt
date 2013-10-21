@@ -1,0 +1,85 @@
+======================================================================================
+  生活技能配方Lua回调接口实现：                                                       |
+======================================================================================
+	作者：叶帆 
+	时间：2009年6月5日
+--------------------------------------------------------------------------------------	
+需求描述:
+	服务端在【附魔】【合成】2中生活技能的释放过程中可选的调用外部Lua脚本函数
+	共有3个调用函数：
+		OnBeginCastCraft(player, dwCraftID, dwRecipeID)
+		在生活技能释放前调用（如需读进度条，该Lua函数会在进度条开始之前调用）
+		
+		OnBreakCastCraft(player, dwCraftID, dwRecipeID)
+		在非瞬发生活技能释放过程中（进度条）被打断时调用
+		
+		OnEndCastCraft(player, dwCraftID, dwRecipeID, Item)
+		生活技能正常释放完毕时调用
+		注： 第四个参数可选，合成技能为产出道具，如未产出任何道具则为空
+			附魔不需要道具,即:
+			OnEndCastCraft(player, dwCraftID, dwRecipeID)
+		
+	注:之所以传入RecipeID是因为存在多个配方共用一个脚本的可能，传入配方ID可以帮助进行细节特判
+--------------------------------------------------------------------------------------		
+配置信息:
+
+	tab表存放路径:
+		settings\Craft\Enchant\ -->附魔配方
+		settings\Craft\Recipe\  -->合成配方
+	
+	对应字段
+		【ScriptName】字段指明了脚本从客户端目录开始的相对路径
+		脚本推荐放置在scripts\Craft\下，暂时未进行分类，需要依照今后的使用量进行评估	
+--------------------------------------------------------------------------------------		
+逻辑实现细节:
+
+1.内部调用代码结构
+	以下是三个接口的逻辑内部调用处理函数
+	// 调用 OnBeginCastCraf(player, dwRecipeID)
+	void KCraft::CallBeginScriptFunction(KPlayer* pPlayer, DWORD dwRecipeID); 
+	
+	// 调用 OnBreakCastCraft(player, dwRecipeID)
+	void KCraft::CallBreakScriptFunction(KPlayer* pPlayer, DWORD dwRecipeID);
+	
+	// 调用 OnEndCastCraft(player, dwRecipeID, Item)
+	void KCraft::CallEndScriptFunction(KPlayer* pPlayer, DWORD dwRecipeID, KItem* pItem = NULL);
+
+	KPlayer::CastProfessionSkill为生活技能释放动作的调用入口
+	CallBeginScriptFunction 在技能释放条件检查完后立即调用
+
+	非瞬发技能释放时会读进度条（OTAction）
+	服务端调用DoRecipePrepare，记录技能释放完成时间，然后定时查询
+	如到期则进行释放技能
+	该过程中如出现打断条件成立，会执行OTAction打断流程，将OTAction的标志位置为otActionIdle
+	KCharacter::m_OTActionParam.eActionType = otActionIdle
+
+2.打断的情况分析
+	CallBreakScriptFunction的调用有4种情况,很复杂，需要特别注意
+	角色重伤：
+	KCharacter::CheckDie()
+
+	调用栈:
+	读条过程中定期检查角色是否有移动
+		KCharacter::Activate()
+			KCharacter::ProcessOTAction() 
+				KCharacter::OnRecipePrepare()
+
+	玩家主动打断（ESC按键）
+	调用栈:
+	通过协议响应函数
+		协议:c2s_stop_current_action
+		调用:KPlayerServer.OnStopCurrentAction
+
+	被击：
+	调用栈:
+	Character::ApplyBullet(KSKILL_BULLET *pBullet)
+		KCharacter::CheckBeatBack()
+			KCharacter::OnOTActionBeatBack(int nFrame)
+
+3.脚本ID的绑定
+	KRecipeBase.dwScriptID 为脚本路径Hash值
+	由于该ID绑定在生活技能配方基类上，被Server上的所有生活技能共享
+	但目前只有【附魔】【合成】2中技能进行了调用，其他技能配方的dwScriptID 做为预留
+	注意！！添加新的配方类型时应注意初始化该变量
+	脚本允许同时被多个生活技能配方共享
+	（注意，配方绑定的脚本函数是可选的，当未配置脚本或脚本中未实现相应函数时，配方依然能正常应用）

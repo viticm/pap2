@@ -1,0 +1,20 @@
+赵纯峰随便整理的:
+
+1. Doodad能不能点选是由脚本结合Doodad kind,自身状态以及任务状态等决定的
+   脚本文件: D:\Kingsoft\Game\sword3-products\trunk\client\ui\Script\doodad.lua
+   参见脚本函数: ChangeCursorWhenOverDoodad
+   
+2. 操作Doodad由客户端调用脚本函数: int KCharacter::LuaOpen(Lua_State* L) 开始.
+   然后走上行协议: C2G_CHARACTER_OPEN,玩家进入PickPrepare状态, 参见函数: BOOL KCharacter::OnPickPrepare();
+   Doodad操作后的行为,参见: BOOL KDoodad::PerOpen(KCharacter *pCharacter)
+   在这里可以决定Doodad操作后是否消失,参见:
+   KDoodadTemplate::m_nRemoveDelay;
+   void KDoodad::SetDisappearFrames(int nDisappearFrames, BOOL bDisappearToReviveList);
+   
+
+3. NPC能不能选中是由模板表里面决定的,参见: struct KNpcTemplate::bSelectable
+   鼠标放上去变成什么图标是由脚本判断的
+   脚本文件: D:\Kingsoft\Game\sword3-products\trunk\client\ui\Script\doodad.lua
+   参见脚本函数: ChangeCursorWhenOverNpc决定
+
+4. NPC操作参见上行协议: C2G_CHARACTER_ACTION

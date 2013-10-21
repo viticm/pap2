@@ -1,0 +1,8 @@
+..\..\..\bin\Debug\plugins\FirePHP.dll
+..\..\..\bin\Debug\plugins\FirePHP.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\FirePHP.phpfunctions.ini
+obj\Debug\FirePHP.Properties.Resources.resources
+obj\Debug\FirePHP.csproj.GenerateResource.Cache
+obj\Debug\FirePHP.dll
+obj\Debug\FirePHP.pdb

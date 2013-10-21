@@ -1,0 +1,4 @@
+#/bin/sh
+#create by zuolizhi
+
+service mysql restart

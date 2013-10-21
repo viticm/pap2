@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Id: axis-server-config.xml,v 1.1 2008/12/31 09:23:06 kuangsihao Exp $ -->
+
+<!--
+  JBoss Axis server configuration
+-->
+<deployment name="JBoss-Axis-Server"
+  targetNamespace="http://webservice.jboss.org/server"
+  xmlns="http://xml.apache.org/axis/wsdd/"
+  xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <documentation> The default server configuration of the JBoss Axis engine. </documentation>
+
+  <globalConfiguration>
+    <requestFlow>
+      <!-- Add username/password from the SOAP header elements to the SecurityAssociation  -->
+      <handler name="ServerLoginHandler" type="java:org.jboss.webservice.handler.ServerLoginHandler"/>
+      <!-- uncomment this if you want the SOAP monitor
+      <handler type="java:org.jboss.axis.handlers.SOAPMonitorHandler"/>
+      -->
+    </requestFlow>
+
+    <responseFlow>
+      <!-- uncomment this if you want the SOAP monitor
+      <handler type="java:org.jboss.axis.handlers.SOAPMonitorHandler"/>
+      -->
+    </responseFlow>
+  </globalConfiguration>
+
+  <!-- url-to-service mapping should be enabled for every incoming http traffic -->
+  <transport name="http">
+    <!-- handlers invoked immediately after an incoming http request -->
+    <requestFlow>
+      <!-- if soapaction is empty (""), we try the legacy URLMapper -->
+      <handler type="java:org.jboss.axis.handlers.http.URLMapper"/>
+      <!-- http basic authentication is mapped to the axis message context -->
+      <handler type="java:org.jboss.axis.handlers.http.HTTPAuthHandler"/>
+    </requestFlow>
+  </transport>
+
+  <!-- The Axis version service  -->
+  <service name="Version" provider="java:RPC">
+    <parameter name="allowedMethods" value="getVersion"/>
+    <parameter name="className" value="org.jboss.axis.Version"/>
+  </service>
+
+</deployment>

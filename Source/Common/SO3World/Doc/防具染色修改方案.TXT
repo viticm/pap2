@@ -1,0 +1,148 @@
+1,PLAYER_EQUIP_REPRESENT
+
+
+// 玩家装备表现
+enum PLAYER_EQUIP_REPRESENT
+{
+    perFaceStyle,          // 脸型              5
+    
+    perHairStyle,          // 发型              6
+    
+    perHelmStyle,          // 头盔外形          8
+    perHelmColor,          // 头盔颜色          4
+    perHelmEnchant,        // 头盔附魔效果      5    
+
+    perChestStyle,         // 上装样式          8
+    perChestColor,         // 上装颜色          6
+    perChestEnchant,       // 上装附魔效果      5
+
+    perWaistStyle,         // 腰带外形          8  
+    perWaistColor,         // 腰带颜色          4
+    perWaistEnchant,       // 腰带附魔          5     +=64
+
+    perBangleStyle,        // 护腕外形          8
+    perBangleColor,        // 护腕颜色          6
+    perBangleEnchant,      // 护腕附魔          5       
+
+    perBootsStyle,         // 鞋子外形          7
+    perBootsColor,         // 鞋子颜色          4       
+
+    perWeaponStyle,        // 武器外形          10
+    perWeaponEnchant1,     // 武器附魔1         5
+    perWeaponEnchant2,     // 武器附魔2         5       
+
+    perBackExtend,         // 背部扩展          7
+    perWaistExtend,        // 腰部扩展          7    128
+
+    perHorseStyle,         // 马
+    perHorseAdornment1,    // 马的装饰1
+    perHorseAdornment2,    // 马的装饰2
+    perHorseAdornment3,    // 马的装饰3
+    perHorseAdornment4,    // 马的装饰4
+    perReserved,           // 保留  
+    perRepresentCount
+};
+
+
+2，
+struct S2C_PLAYER_DISPLAY_DATA : DOWNWARDS_PROTOCOL_HEADER
+{
+    DWORD	    dwPlayerID;
+    char	    szRoleName[_NAME_LEN];
+    BYTE	    byRoleType;
+    BYTE        byLevel;
+	BYTE        byForceID;
+    WORD        wModelID;
+
+    uint64_t    uFaceStyle      : 5;
+    uint64_t    uHairStyle      : 6;
+    
+    uint64_t    uHelmStyle      : 8;     
+    uint64_t    uHelmColor      : 4;     
+    uint64_t    uHelmEnchant    : 5;
+    
+    uint64_t    uChestStyle     : 8;
+    uint64_t    uChestColor     : 6;
+    uint64_t    uChestEnchant   : 5;
+    
+    uint64_t    uWaistStyle     : 8;    
+    uint64_t    uWaistColor     : 4;    
+    uint64_t    uWaistEnchant   : 5;
+    // <---------- 64 bits
+     
+    uint64_t    uBangleStyle    : 8;
+    uint64_t    uBangleColor    : 6;   
+    uint64_t    uBangleEnchant  : 5; 
+    
+    uint64_t    uBootsStyle     : 7;    
+    uint64_t    uBootsColor     : 4;
+       
+    uint64_t    uWeaponStyle    : 10;    
+    uint64_t    uWeaponEnchant1 : 5;
+    uint64_t    uWeaponEnchant2 : 5;
+    
+    uint64_t    uBackExtend     : 7;
+    uint64_t    uWaistExtend    : 7;
+    // <--- 64 bits--
+    
+    uint32_t    uHorseStyle         : 5;   
+    uint32_t    uHorseAdornment1    : 5;
+    uint32_t    uHorseAdornment2    : 5;
+    uint32_t    uHorseAdornment3    : 5;
+    uint32_t    uHorseAdornment4    : 5;
+    uint32_t    uSchoolID           : 4;
+    uint32_t    uReserve            : 3;
+    // <--- 32 bits--
+};
+
+结构体大小与原来一致。
+
+3,KPORTRAIT_INFO
+
+struct KPORTRAIT_INFO
+{
+    DWORD   dwFaceStyle : 5;
+    DWORD   dwHairStyle : 6;
+    DWORD   dwHelmStyle : 8;
+    DWORD   dwHelmColor : 3;
+    
+    DWORD   dwReserve   : 2;    // 对齐
+    // <-- 24 bits --
+
+    BOOL operator != (const KPORTRAIT_INFO& crOther)
+    {
+        return memcmp(this, &crOther, sizeof(KPORTRAIT_INFO)) != 0;
+    }
+};
+
+4，LUA_CONST_EQUIPMENT_REPRESENT去掉已经删除的枚举
+
+5，Custom_Armor.tab，Custom_Trinket.tab，Custom_Weapon.tab 
+    Armor.tab，Trinket.tab，Weapon.tab
+表增加一列“ColorID”， 默认值0
+   KCustomEquipInfo结构增加一变量“int nColorID”，读表的时候要读入。
+   
+6，KItem 增加变量int m_nColorID；
+   ExpandCustomItemAttrib
+   ExpandItemAttrib
+   函数中增加对该变量的赋值。
+   
+   KItemList增加接口：
+    SetColorID：Item必须是自定义道具的一种；如果是穿在身上的，还要修改表现ID，并广播，SetRepresentID。
+    
+   Player对象提供lua接口
+    
+7，保存ColorID：
+   KCUSTOM_EQUI_DATA结构增加变量BYTE byColorID。GetBinaryData函数中要对其赋值。
+   
+8，加载：
+   GenerateItemFromBinaryData函数中要对Item中的m_nColorID进行赋值。
+   
+9，装备或反装备的时候：
+   增加应用装备偏色表现ID的操作。用原有SetRepresentID即可
+   
+10,DoPlayerDisplayData修改同步
+   
+   
+   
+   

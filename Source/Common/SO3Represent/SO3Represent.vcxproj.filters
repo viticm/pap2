@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Src">
+      <UniqueIdentifier>{de69bd37-f5cd-44a1-a96a-11cfd5bcf03a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Base">
+      <UniqueIdentifier>{f9a57fda-989c-4cfb-8dcd-ad750abc9770}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Base\File">
+      <UniqueIdentifier>{6adbc36a-8199-40f5-8df9-bab76dfec66d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Base\Missile">
+      <UniqueIdentifier>{fe228f84-284a-43ed-8ac1-05366cef17ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Common">
+      <UniqueIdentifier>{e696f7b4-3882-442d-a0e5-93e9d41f1066}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Case">
+      <UniqueIdentifier>{4c4f1ba2-c0dd-4527-a9bd-05d3c36763e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Case\ActionObject">
+      <UniqueIdentifier>{d58110b9-ea07-4019-82a8-68cfece4896d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Case\ActionObject\Missile">
+      <UniqueIdentifier>{a608419b-57ca-48cd-9157-21168e71c41e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Case\GameWorld">
+      <UniqueIdentifier>{aced9d4f-80af-4306-86d5-66d8fc117f6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Case\GameWorld\FrameData">
+      <UniqueIdentifier>{29bba946-23af-4740-b7b3-6699b9fb8314}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Case\Render">
+      <UniqueIdentifier>{26ef65a8-425d-49bd-8f5b-b3ec528e31cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\optimization">
+      <UniqueIdentifier>{fd7065a7-f1d1-4b42-b983-4a1e54f897e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Table">
+      <UniqueIdentifier>{5efc22a0-5ea2-4839-9ef1-c366077d6ec8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\krlcharacterresource.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\krlcommand.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\krloption.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SO3Represent.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\File\kbintab.cpp">
+      <Filter>Src\Base\File</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\File\kfilepath.cpp">
+      <Filter>Src\Base\File</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\base\File\KG_TabFile.cpp">
+      <Filter>Src\Base\File</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\missile\krepresentmissile.cpp">
+      <Filter>Src\Base\Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\missile\krepresentmissilephase.cpp">
+      <Filter>Src\Base\Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\missile\krepresentmissileprocessor.cpp">
+      <Filter>Src\Base\Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\kmathtools.cpp">
+      <Filter>Src\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\kmovementcontroller.cpp">
+      <Filter>Src\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\ksmallobjectpool.cpp">
+      <Filter>Src\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\tblock.cpp">
+      <Filter>Src\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krlcamera.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krlcharacter.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\case\actionobject\krlcharactercamera.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\case\actionobject\krlcharacterturning.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krlcursor.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krldoodad.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krldoodadmgr.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\case\actionobject\krlgodcamera.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krllocalcharacter.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krlmissile.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krlmissilemgr.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krlremotecharacter.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krlremotecharactermgr.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krlrides.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krlridesmgr.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krlscene.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krlscenemgr.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krlsceneobject.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krlskilleffectresult.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krlskillsequence.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\krltarget.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\case\actionobject\krltrackcamera.cpp">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\missile\kcirclemissileprocessor.cpp">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\case\actionobject\missile\kcompositemissileprocessor.cpp">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\missile\kfixedtrackmissileprocessor.cpp">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\missile\khomingmissileprocessor.cpp">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\case\actionobject\missile\klightningmissileprocessor.cpp">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\actionobject\missile\klinemissileprocessor.cpp">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\case\actionobject\missile\kmodelmissileprocessor.cpp">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\case\actionobject\missile\ktimelinemissileprocessor.cpp">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\case\actionobject\missile\kyaxismissileprocessor.cpp">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\gameworld\kgameworldcharactercontroller.cpp">
+      <Filter>Src\Case\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\gameworld\kgameworldhandler.cpp">
+      <Filter>Src\Case\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\gameworld\krlcharacterframedata.cpp">
+      <Filter>Src\Case\GameWorld\FrameData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\gameworld\krldoodadframedata.cpp">
+      <Filter>Src\Case\GameWorld\FrameData</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\case\gameworld\krllocalcharacterframedata.cpp">
+      <Filter>Src\Case\GameWorld\FrameData</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\case\gameworld\krlremotecharacterframedata.cpp">
+      <Filter>Src\Case\GameWorld\FrameData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\render\kanimationmodel.cpp">
+      <Filter>Src\Case\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\render\kmodel.cpp">
+      <Filter>Src\Case\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\render\kmodelgcmgr.cpp">
+      <Filter>Src\Case\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\render\kmodelmgr.cpp">
+      <Filter>Src\Case\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\case\render\krlloadingmodel.cpp">
+      <Filter>Src\Case\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\krloptimization.cpp">
+      <Filter>Src\optimization</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\krlprofile.cpp">
+      <Filter>Src\optimization</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\krlresourcelimit.cpp">
+      <Filter>Src\optimization</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\krltracecharacter.cpp">
+      <Filter>Src\optimization</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\krltracemsg.cpp">
+      <Filter>Src\optimization</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\gameworld\krlanimationtable.cpp">
+      <Filter>Src\Table</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\gameworld\ktabledefine.cpp">
+      <Filter>Src\Table</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\gameworld\ktablelist.cpp">
+      <Filter>Src\Table</Filter>
+    </ClCompile>
+    <ClCompile Include="src\case\gameworld\ktabletransform.cpp">
+      <Filter>Src\Table</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\krlcharacterresource.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\krlcommand.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\krloption.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SO3Represent.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\base\File\IKG_TabFile.h">
+      <Filter>Src\Base\File</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\File\kbintab.h">
+      <Filter>Src\Base\File</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\File\kfilepath.h">
+      <Filter>Src\Base\File</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\base\File\KG_TabFile.h">
+      <Filter>Src\Base\File</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\missile\krepresentmissile.h">
+      <Filter>Src\Base\Missile</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\base\missile\krepresentmissiledefine.h">
+      <Filter>Src\Base\Missile</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\missile\krepresentmissilephase.h">
+      <Filter>Src\Base\Missile</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\missile\krepresentmissileprocessor.h">
+      <Filter>Src\Base\Missile</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\kmathtools.h">
+      <Filter>Src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\kmovementcontroller.h">
+      <Filter>Src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\ksmallobjectpool.h">
+      <Filter>Src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\tblock.h">
+      <Filter>Src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\tstring.h">
+      <Filter>Src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\case\actionobject\ikgrlcamera.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krlcamera.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krlcharacter.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\case\actionobject\krlcharactercamera.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\case\actionobject\krlcharacterturning.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krlcursor.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krldoodad.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krldoodadmgr.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\case\actionobject\krlgodcamera.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krllocalcharacter.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krlmissile.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krlmissilemgr.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krlremotecharacter.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krlremotecharactermgr.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krlrides.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krlridesmgr.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krlscene.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krlscenemgr.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krlsceneobject.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krlskilleffectresult.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krlskillsequence.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\krltarget.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\case\actionobject\krltrackcamera.h">
+      <Filter>Src\Case\ActionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\missile\kcirclemissileprocessor.h">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\case\actionobject\missile\kcompositemissileprocessor.h">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\missile\kfixedtrackmissileprocessor.h">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\missile\khomingmissileprocessor.h">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\case\actionobject\missile\klightningmissileprocessor.h">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\actionobject\missile\klinemissileprocessor.h">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\case\actionobject\missile\kmodelmissileprocessor.h">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\case\actionobject\missile\ktimelinemissileprocessor.h">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\case\actionobject\missile\kyaxismissileprocessor.h">
+      <Filter>Src\Case\ActionObject\Missile</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\gameworld\kgameworldcharactercontroller.h">
+      <Filter>Src\Case\GameWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\gameworld\kgameworldhandler.h">
+      <Filter>Src\Case\GameWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\gameworld\krlcharacterframedata.h">
+      <Filter>Src\Case\GameWorld\FrameData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\gameworld\krldoodadframedata.h">
+      <Filter>Src\Case\GameWorld\FrameData</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\case\gameworld\krllocalcharacterframedata.h">
+      <Filter>Src\Case\GameWorld\FrameData</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\case\gameworld\krlremotecharacterframedata.h">
+      <Filter>Src\Case\GameWorld\FrameData</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\case\render\irlmodel.h">
+      <Filter>Src\Case\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\render\kanimationmodel.h">
+      <Filter>Src\Case\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\render\kmodel.h">
+      <Filter>Src\Case\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\render\kmodelgcmgr.h">
+      <Filter>Src\Case\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\render\kmodelmgr.h">
+      <Filter>Src\Case\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\case\render\krlloadingmodel.h">
+      <Filter>Src\Case\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\render\krlresource.h">
+      <Filter>Src\Case\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\krloptimization.h">
+      <Filter>Src\optimization</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\krlprofile.h">
+      <Filter>Src\optimization</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\krlresourcelimit.h">
+      <Filter>Src\optimization</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\krltracecharacter.h">
+      <Filter>Src\optimization</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\krltracemsg.h">
+      <Filter>Src\optimization</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\gameworld\krlanimationtable.h">
+      <Filter>Src\Table</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\gameworld\ktabledefine.h">
+      <Filter>Src\Table</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\gameworld\ktablelist.h">
+      <Filter>Src\Table</Filter>
+    </ClInclude>
+    <ClInclude Include="src\case\gameworld\ktabletransform.h">
+      <Filter>Src\Table</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3Represent\SO3GameWorldRepresentHandler.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3Represent\SO3RepresentHandler.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3Represent\SO3RepresentInterface.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SO3Represent.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

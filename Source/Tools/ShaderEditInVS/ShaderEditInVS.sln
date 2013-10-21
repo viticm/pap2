@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShaderEditInVS", "ShaderEditInVS\ShaderEditInVS.vcproj", "{E92BA09C-48D5-4BDB-8CF1-83391E844453}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EffectCompiler", "EffectCompiler\EffectCompiler.vcproj", "{DD64FD84-6CFE-4A4F-AD36-4B39BEB07473}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestCmdLine", "CommandLineParser\TestCmdLine.vcproj", "{47A0E982-B32C-4C54-8AE0-D1B99301FF84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E92BA09C-48D5-4BDB-8CF1-83391E844453}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E92BA09C-48D5-4BDB-8CF1-83391E844453}.Debug|Win32.Build.0 = Debug|Win32
+		{E92BA09C-48D5-4BDB-8CF1-83391E844453}.Release|Win32.ActiveCfg = Release|Win32
+		{E92BA09C-48D5-4BDB-8CF1-83391E844453}.Release|Win32.Build.0 = Release|Win32
+		{DD64FD84-6CFE-4A4F-AD36-4B39BEB07473}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DD64FD84-6CFE-4A4F-AD36-4B39BEB07473}.Debug|Win32.Build.0 = Debug|Win32
+		{DD64FD84-6CFE-4A4F-AD36-4B39BEB07473}.Release|Win32.ActiveCfg = Release|Win32
+		{DD64FD84-6CFE-4A4F-AD36-4B39BEB07473}.Release|Win32.Build.0 = Release|Win32
+		{47A0E982-B32C-4C54-8AE0-D1B99301FF84}.Debug|Win32.ActiveCfg = Debug|Win32
+		{47A0E982-B32C-4C54-8AE0-D1B99301FF84}.Debug|Win32.Build.0 = Debug|Win32
+		{47A0E982-B32C-4C54-8AE0-D1B99301FF84}.Release|Win32.ActiveCfg = Release|Win32
+		{47A0E982-B32C-4C54-8AE0-D1B99301FF84}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

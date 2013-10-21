@@ -1,0 +1,146 @@
+unit TDlgSoundTag;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, AnimationSeekBarImpl1, TDlgSourceTree;
+var
+  m_nFrame : Integer;
+  m_AnimationSeekBar : TAnimationSeekBar;
+type
+  TSoundTagDialog = class(TForm)
+    GroupBox1: TGroupBox;
+    Label_FilePath: TLabel;
+    Edit_FilePath: TEdit;
+    Button_FilePath: TButton;
+    Check_Loop: TCheckBox;
+    Check_MotionFinishKeep: TCheckBox;
+    Check_Interruptable: TCheckBox;
+    Button_Delete: TButton;
+    Button_Copy: TButton;
+    Button_Paste: TButton;
+    procedure Button_DeleteClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Button_PasteClick(Sender: TObject);
+    procedure Button_CopyClick(Sender: TObject);
+    procedure Button_FilePathClick(Sender: TObject);
+  private
+    { Private declarations }
+    procedure UpdateaUI(strSoundFileName : WideString;
+      nLoop : Integer;
+      nKeep : Integer;
+      nInterruptable : Integer);
+  public
+    { Public declarations }
+    procedure OnInitDialog(nFrame : Integer);
+  end;
+
+var
+  SoundTagDialog: TSoundTagDialog;
+
+implementation
+
+{$R *.dfm}
+
+procedure TSoundTagDialog.UpdateaUI(strSoundFileName : WideString;
+  nLoop : Integer;
+  nKeep : Integer;
+  nInterruptable : Integer);
+begin
+  Edit_FilePath.Text := strSoundFileName;
+  Check_Interruptable.Checked := boolean(nInterruptable);
+  Check_MotionFinishKeep.Checked := boolean(nKeep);
+  Check_Loop.Checked := boolean(nLoop);
+end;
+
+procedure TSoundTagDialog.Button_DeleteClick(Sender: TObject);
+var
+  strSoundFileName : WideString;
+  nLoop, nKeep, nInterruptable : Integer;
+begin
+  nLoop := 0;
+  nKeep := 0;
+  nInterruptable := 0;
+  if m_AnimationSeekBar.FEvents <> nil then
+    m_AnimationSeekBar.FEvents.OnSoundTagSave(m_nFrame,
+      strSoundFileName,
+      nLoop,
+      nKeep,
+      nInterruptable);
+  Close();
+end;
+
+procedure TSoundTagDialog.OnInitDialog(nFrame : Integer);
+var
+  strSoundFileName : WideString;
+  nLoop, nKeep, nInterruptable : Integer;
+begin
+  nLoop := 0;
+  nKeep := 0;
+  nInterruptable := 0;
+  m_nFrame := nFrame;
+  m_AnimationSeekBar := TAnimationSeekBar(Owner);
+  if m_AnimationSeekBar.FEvents <> nil then
+  begin
+    m_AnimationSeekBar.FEvents.OnSoundTagLoad(m_nFrame,
+      strSoundFileName,
+      nLoop,
+      nKeep,
+      nInterruptable);
+    UpdateaUI(strSoundFileName,
+      nLoop,
+      nKeep,
+      nInterruptable);
+  end
+end;
+
+procedure TSoundTagDialog.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+var
+  strSoundFileName : WideString;
+  nLoop, nKeep, nInterruptable : Integer;
+begin
+  nLoop := 0;
+  nKeep := 0;
+  nInterruptable := 0;
+  if m_AnimationSeekBar.FEvents <> nil then
+    m_AnimationSeekBar.FEvents.OnSoundTagSave(m_nFrame,
+      strSoundFileName,
+      nLoop,
+      nKeep,
+      nInterruptable);
+end;
+
+procedure TSoundTagDialog.Button_PasteClick(Sender: TObject);
+begin
+  if m_AnimationSeekBar.FEvents <> nil then
+    m_AnimationSeekBar.FEvents.OnSoundTagCopy(m_AnimationSeekBar.m_nSoundTagSrcFrame,
+      m_nFrame);
+end;
+
+procedure TSoundTagDialog.Button_CopyClick(Sender: TObject);
+begin
+  m_AnimationSeekBar.m_nSoundTagSrcFrame := m_nFrame;
+end;
+
+procedure TSoundTagDialog.Button_FilePathClick(Sender: TObject);
+var
+strSuffix : string;
+dlgSoundFileTree : TDlgSourceView;
+SoundFileSuffixList : TList;
+begin
+  strSuffix := '.wav';
+  SoundFileSuffixList := TList.Create();
+  SoundFileSuffixList.Add(Pointer(strSuffix));
+  dlgSoundFileTree := TDlgSourceView.Create(Self);
+  {dlgSoundFileTree.OnInitDialog(m_AnimationSeekBar,
+    m_strSoundFileStartPath,
+    SoundFileSuffixList);}
+  if dlgSoundFileTree.ShowModal() = mrOK then
+  begin
+
+  end;
+
+end;
+end.

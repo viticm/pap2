@@ -1,0 +1,107 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F43BAB0-22B4-4FD6-9655-8BA214A093A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fireball</RootNamespace>
+    <AssemblyName>Fireball.SyntaxDocument</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>fireball.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\FireEdit_Beta2\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\FireEdit_Beta2\bin\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AutoAssemblyInfo.cs">
+      <Link>AutoAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Syntax\BlockType\BlockType.cs" />
+    <Compile Include="Syntax\BlockType\BlockTypeCollection.cs" />
+    <Compile Include="Syntax\CollectionBase.cs" />
+    <Compile Include="Syntax\Document\Formatting\FormatRange.cs" />
+    <Compile Include="Syntax\Document\Formatting\FormatRangeCollection.cs" />
+    <Compile Include="Syntax\Document\Pattern\Pattern.cs" />
+    <Compile Include="Syntax\Document\Pattern\PatternCollection.cs" />
+    <Compile Include="Syntax\Document\Pattern\PatternList.cs" />
+    <Compile Include="Syntax\Document\Pattern\PatternListList.cs" />
+    <Compile Include="Syntax\Document\Print\SourceCodePrintDocument.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Syntax\Document\Row\Row.cs" />
+    <Compile Include="Syntax\Document\Row\RowCollection.cs" />
+    <Compile Include="Syntax\Document\Row\Scope\Scope.cs" />
+    <Compile Include="Syntax\Document\Row\Scope\ScopeCollection.cs" />
+    <Compile Include="Syntax\Document\Segment\Segment.cs" />
+    <Compile Include="Syntax\Document\Segment\SegmentCollection.cs" />
+    <Compile Include="Syntax\Document\Structs.cs" />
+    <Compile Include="Syntax\Document\SyntaxDocument.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Syntax\Document\TextRange.cs" />
+    <Compile Include="Syntax\Document\TextStyle\TextStyle.cs" />
+    <Compile Include="Syntax\Document\TextStyle\TextStyleDesignerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Syntax\Document\TextStyle\TextStyleUIEditor.cs" />
+    <Compile Include="Syntax\Document\Undo\UndoBlock.cs" />
+    <Compile Include="Syntax\Document\Undo\UndoBlockCollection.cs" />
+    <Compile Include="Syntax\Document\Undo\UndoBuffer.cs" />
+    <Compile Include="Syntax\Document\Word\Word.cs" />
+    <Compile Include="Syntax\Document\Word\WordCollection.cs" />
+    <Compile Include="Syntax\Export\HTMLExporter.cs" />
+    <Compile Include="Syntax\IntCollection.cs" />
+    <Compile Include="Syntax\Language\Language.cs" />
+    <Compile Include="Syntax\Language\LanguageList.cs" />
+    <Compile Include="Syntax\Language\LanguageReader.cs" />
+    <Compile Include="Syntax\Parser\DefaultParser.cs" />
+    <Compile Include="Syntax\Parser\IParser.cs" />
+    <Compile Include="Syntax\Parser\ParseTools.cs" />
+    <EmbeddedResource Include="Syntax\Document\SyntaxDocument.resx">
+      <DependentUpon>SyntaxDocument.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Syntax\Document\TextStyle\TextStyleDesignerDialog.resx">
+      <DependentUpon>TextStyleDesignerDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="fireball.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Changelog.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) ..\..\..\..\..\GameDesignerTools\bin\$(ConfigurationName)</PostBuildEvent>
+  </PropertyGroup>
+</Project>

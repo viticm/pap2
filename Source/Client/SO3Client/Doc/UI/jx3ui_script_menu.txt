@@ -1,0 +1,230 @@
+Menu_GetItemCount
+	说明：取菜单项数量；
+	参数：szTreePath		窗口树路径名；
+	返回：nCount 			菜单项数量；
+		
+Menu_GetItemLength
+	说明：取菜单项数据长度；
+	参数：szTreePath		窗口树路径名,
+		  nItemIndex		菜单项数据索引；
+	返回：nLength 			菜单项数据长度；
+		
+Menu_GetItem
+	说明：取菜单项数据内容；
+	参数：szTreePath		窗口树路径名,
+		  nItemIndex		菜单项数据索引；
+	返回：szBuffer 			菜单项数据内容；
+		
+Menu_GetItemBgColor
+	说明：取菜单项背景颜色；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex		菜单项数据索引；
+	返回：dwColor 			背景颜色背景；
+
+Menu_GetItemID
+	说明：取菜单项数值ID；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex		菜单项数据索引；
+	返回：nID				数值ID；
+
+Menu_GetPosition
+	说明：取菜单左上角坐标；
+	参数：szTreePath  		窗口树路径名；
+	返回：nX，nY			左上角坐标；
+	
+Menu_GetOriginPosition
+	说明：取菜单左上角原始坐标；
+	参数：szTreePath  		窗口树路径名；
+	返回：nX，nY			左上角原始坐标；
+	
+Menu_GetItemWidth
+	说明：取菜单项宽度；
+	参数：szTreePath  		窗口树路径名；
+	返回：nWidth			菜单项宽度；
+	
+Menu_GetItemHeight
+	说明：取菜单项高度；
+	参数：szTreePath  		窗口树路径名；
+	返回：nHeight			菜单项高度；
+
+Menu_GetItemRightHitRegionWidth
+	说明：取菜单项右部可点击区域宽度；
+	参数：szTreePath  		窗口树路径名；
+	返回：nWidth			菜单项宽度；
+	
+Menu_GetSelectedItem
+	说明：取当前选中菜单项索引；
+	参数：szTreePath  		窗口树路径名；
+	返回：nItemIndex		菜单项索引；
+
+Menu_GetMenuFlag
+	说明：取菜单项风格参数；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwFlag			风格参数；
+
+Menu_GetFontSize
+	说明：取菜单项字体大小；
+	参数：szTreePath  		窗口树路径名；
+	返回：nFontSize			字体大小；
+
+Menu_GetItemTitleUpSpace
+	说明：取菜单标题上部高度；
+	参数：szTreePath  		窗口树路径名；
+	返回：nSpace			标题上部高度；
+
+Menu_GetItemTitleIndent
+	说明：取菜单标题文字缩进；
+	参数：szTreePath  		窗口树路径名；
+	返回：nIndent			文字缩进；
+
+Menu_GetBorderLineColor
+	说明：取菜单边线颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwColor 			边线颜色，目前没做可用性调整；
+
+Menu_GetSelItemBgColor
+	说明：取选中菜单项背景颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwColor 			背景颜色，目前没做可用性调整；
+
+Menu_GetTextColor
+	说明：取菜单项文字字体颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwFontColor 		字体颜色，目前没做可用性调整；
+
+Menu_GetTextBorderColor
+	说明：取菜单项文字字体边缘颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwFontBorderColor 字体边缘颜色，目前没做可用性调整；
+
+Menu_GetSelTextColor
+	说明：取选中菜单项文字字体颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwFontColor 		字体颜色，目前没做可用性调整；
+
+Menu_GetSelTextBorderColor
+	说明：取选中菜单项文字字体边缘颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwFontBorderColor 字体边缘颜色，目前没做可用性调整；
+
+Menu_Append
+	说明：追加菜单项；
+	参数：szTreePath  		窗口树路径名，
+		  szData			菜单项内容，
+		  [nID]				菜单项ID，默认为0；
+	返回：nil
+
+Menu_Remove
+	说明：删除菜单项；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex		菜单项索引，以0开始；
+	返回：nil
+
+Menu_Clear
+	说明：删除所有菜单项；
+	参数：szTreePath  		窗口树路径名；
+	返回：nil
+
+Menu_SetItemBgColor
+	说明：取菜单项背景颜色；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex		菜单项数据索引，
+		  dwColor 			背景颜色背景；
+	返回：nil
+
+Menu_SetPosition
+	说明：设置菜单左上角坐标；
+	参数：szTreePath  		窗口树路径名，
+		  nX，nY			左上角坐标；
+	返回：nil
+	
+Menu_SetOriginPosition
+	说明：设置菜单左上角原始坐标；
+	参数：szTreePath  		窗口树路径名，
+	      nX，nY			左上角原始坐标；
+	返回：nil
+
+Menu_SetItemWidth
+	说明：设置菜单项宽度；
+	参数：szTreePath  		窗口树路径名，
+		  nWidth			菜单项宽度；
+	返回：nil
+
+Menu_SetItemHeight
+	说明：设置菜单项高度；
+	参数：szTreePath  		窗口树路径名，
+		  nHeight			菜单项高度；
+	返回：nil
+
+Menu_SetItemRightHitRegionWidth
+	说明：设置菜单项右部可点击区域宽度；
+	参数：szTreePath  		窗口树路径名，
+		  nWidth			菜单项宽度；
+	返回：nil
+	
+Menu_SetSelectedItem
+	说明：设置当前选中菜单项索引；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex		菜单项索引；
+	返回：nil
+
+Menu_SetMenuFlag
+	说明：设置菜单项风格参数；
+	参数：szTreePath  		窗口树路径名，
+		  dwFlag			风格参数；
+	返回：nil
+
+Menu_SetFontSize
+	说明：设置菜单项字体大小；
+	参数：szTreePath  		窗口树路径名，
+		  nFontSize			字体大小；
+	返回：nil
+
+Menu_SetItemTitleUpSpace
+	说明：设置菜单标题上部高度；
+	参数：szTreePath  		窗口树路径名，
+		  nSpace			标题上部高度；
+	返回：nil
+
+Menu_SetItemTitleIndent
+	说明：设置菜单标题文字缩进；
+	参数：szTreePath  		窗口树路径名，
+		  nIndent			文字缩进；
+	返回：nil
+
+Menu_SetBorderLineColor
+	说明：设置菜单边线颜色；
+	参数：szTreePath  		窗口树路径名，
+		  dwColor 			边线颜色，目前没做可用性调整；
+	返回：nil
+
+Menu_SetSelItemBgColor
+	说明：设置选中菜单项背景颜色；
+	参数：szTreePath  		窗口树路径名,
+		  dwColor 			背景颜色，目前没做可用性调整；
+	返回：nil
+
+Menu_SetTextColor
+	说明：设置菜单项文字字体颜色；
+	参数：szTreePath  		窗口树路径名，
+		  dwFontColor 		字体颜色，目前没做可用性调整；
+	返回：nil
+
+Menu_SetTextBorderColor
+	说明：设置菜单项文字字体边缘颜色；
+	参数：szTreePath  		窗口树路径名，
+		  dwFontBorderColor 字体边缘颜色，目前没做可用性调整；
+	返回：nil
+
+Menu_SetSelTextColor
+	说明：设置选中菜单项文字字体颜色；
+	参数：szTreePath  		窗口树路径名，
+		  dwFontColor 		字体颜色，目前没做可用性调整；
+	返回：nil
+
+Menu_SetSelTextBorderColor
+	说明：设置选中菜单项文字字体边缘颜色；
+	参数：szTreePath  		窗口树路径名，
+		  dwFontBorderColor 字体边缘颜色，目前没做可用性调整；
+	返回：nil
+

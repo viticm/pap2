@@ -1,0 +1,54 @@
+﻿@title KCraftCollection对象
+@obj KCraftCollection
+@detail 采集技能用的采集物集合
+
+@summary 所属生活技能类型
+@catalog
+@remarks 取值[[get ALL_CRAFT_TYPE]]
+property nCraftType
+
+@summary 使用技能需要花费的体力
+@catalog
+@remarks
+property nThew
+
+@summary 所属生活技能id
+@catalog
+@remarks
+property dwProfessionID
+
+@summary 所需生活技能等级
+@catalog
+@remarks
+property dwRequireProfessionLevel
+
+@summary 使用技能所需道具类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property dwToolItemType
+
+@summary 使用技能所需道具索引
+@catalog
+@remarks
+property dwToolItemIndex
+
+@summary 使用技能所需主手武器类型
+@catalog
+@remarks 取值[[get ITEM_TABLE_TYPE]]
+property nEquipmentType
+
+@summary 使用技能可以获得的经验
+@catalog
+@remarks
+property dwExp
+
+@summary 使用技能需要吟唱的帧数
+@catalog
+@remarks
+property nPrepareFrame
+
+
+@summary 
+@catalog
+@remarks
+property dwDoodadTemplateID

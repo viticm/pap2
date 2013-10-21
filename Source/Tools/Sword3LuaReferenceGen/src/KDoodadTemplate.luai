@@ -1,0 +1,59 @@
+﻿@title KDoodadTemplate对象
+@obj KDoodadTemplate
+
+@summary rw. Doodad的id
+property dwTemplateID as DWORD rw
+
+@summary rw. doodad的名字
+property szName as string rw
+
+#@summary rw. doodad的最大生命
+#property dwMaxLife as DWORD rw
+#
+#@summary rw. doodad每帧的生命回复点数
+#property dwLifeReplenish as DWORD rw
+#
+#@summary rw. 外功防御值
+#property dwPhysicsDefence as DWORD rw
+#
+#@summary rw. 内功防御值
+#property dwMagicDefence as DWORD rw
+#
+#@summary rw. 是否可攻击
+#property bAttackable as bool rw
+
+@summary rw. 是否可选中
+property bSelectable as bool rw
+
+#@summary rw. 死亡状态
+#property nDeathType as int rw
+
+@summary rw. 重生间隔，单位是帧
+property nReviveDelay as int rw
+
+@summary rw. 打开该doodad需要的帧数
+property dwOpenPrepareFrame as DWORD rw
+
+@summary rw. Doodad类型，取值[[see DOODAD_KIND]]
+@remarks 取值[[get DOODAD_KIND]]
+property nKind as int rw
+
+@summary rw. Doodad的ClassID 
+property dwClassID as DWORD rw
+
+@summary rw. 等级
+property nLevel as int rw
+
+@summary rw. 是否可以多人同时对其操作
+property bCanOperateEach as bool rw
+
+@summary rw. 能够对doodad操作的技艺的id
+@remarks 只有该doodad的类型是可以被作为技艺操作对象时该属性才有意义
+property dwCraftID
+
+@summary rw. [仅客户端或编辑器使用] 表现逻辑id
+property dwRepresentID as DWORD rw
+
+
+@summary rw. [仅客户端或编辑器使用] Doodad打开的进度条上面显示的文字
+property szBarText

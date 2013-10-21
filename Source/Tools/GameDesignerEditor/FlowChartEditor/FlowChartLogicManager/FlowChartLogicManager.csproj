@@ -1,0 +1,108 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{215CF711-5946-4964-A619-60ACA810686C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FlowChartLogicManager</RootNamespace>
+    <AssemblyName>FlowChartLogicManager</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\FlowChartEditor\bin\Debug\Plugins\FlowChart\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=7.3.0.2, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LogicCheck.cs" />
+    <Compile Include="LogicManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeCompiler\CodeCompiler.csproj">
+      <Project>{23438242-5ADA-4B82-8CA5-F97D159F1AB7}</Project>
+      <Name>CodeCompiler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Compiler_Sword3\Compiler_Sword3.csproj">
+      <Project>{81018AA4-1197-4A96-8D9C-1B334EF1602D}</Project>
+      <Name>Compiler_Sword3</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataElementLibrary\DataElementLibrary.csproj">
+      <Project>{0A330BD8-2628-44F5-B637-69AE567BF808}</Project>
+      <Name>DataElementLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataInteractor\DataInteractor.csproj">
+      <Project>{FA95E7EE-F48E-4779-85A4-8073F86773E9}</Project>
+      <Name>DataInteractor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBManager\DBManager.csproj">
+      <Project>{F21D11C4-D6D4-448A-8C44-0BDDEB739396}</Project>
+      <Name>DBManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FlowChartDataLibrary\FlowChartDataLibrary.csproj">
+      <Project>{CF807FA4-C6B7-4880-AE94-AC15242F62E8}</Project>
+      <Name>FlowChartDataLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FlowChartEditor\FlowChartEditor.csproj">
+      <Project>{C3EE1F61-E073-476C-83CA-752D0CAAB56E}</Project>
+      <Name>FlowChartEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GraphElementLibrary\GraphElementLibrary.csproj">
+      <Project>{EAC5D52B-4722-4FCC-B0C3-02655575953B}</Project>
+      <Name>GraphElementLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\ActionNode\ActionNode.csproj">
+      <Project>{EDB419B3-B026-413E-A2A1-8B9B89752143}</Project>
+      <Name>ActionNode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\BaseExp\BaseExp.csproj">
+      <Project>{4498196F-64F9-44B7-ACA1-BBF696143D9E}</Project>
+      <Name>BaseExp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\ConditionNode\ConditionNode.csproj">
+      <Project>{F07441ED-0FE5-405F-AA6B-695D84FF5329}</Project>
+      <Name>ConditionNode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\EventNode\EventNode.csproj">
+      <Project>{07FC9BDF-0C37-4C12-9C38-37BBF5DE2FED}</Project>
+      <Name>EventNode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\VarManager\VarManager\VarManager.csproj">
+      <Project>{70A5BBCC-ED9D-4938-917D-C04D1B17A548}</Project>
+      <Name>VarManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

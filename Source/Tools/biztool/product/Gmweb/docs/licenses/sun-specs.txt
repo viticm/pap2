@@ -1,0 +1,43 @@
+$Id: sun-specs.txt,v 1.1 2008/12/31 09:22:57 kuangsihao Exp $
+PURPOSE:
+The following XML documents defined by the J2EE specification and used 
+by JBoss Application Server in support of its J2EE compliant services
+are restributable under the terms specified in the J2EE specification available
+at:
+java.sun.com/j2ee/j2ee-1_4-fr-spec.pdf
+
+The list of XML Files by J2EE version number includes:
+
+For J2EE Version 1.2
+java.sun.com/j2ee/dtds/application-client_1_2.dtd
+java.sun.com/j2ee/dtds/application_1_2.dtd
+java.sun.com/j2ee/dtds/ejb-jar_1_1.dtd
+java.sun.com/j2ee/dtds/web-app_2_2.dtd
+java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd
+
+For J2EE Version 1.3
+java.sun.com/dtd/connector_1_0.dtd
+java.sun.com/dtd/jspxml.xsd
+java.sun.com/dtd/jspxml.dtd
+java.sun.com/dtd/web-jsptaglibrary_1_2.dtd
+java.sun.com/dtd/web-app_2_3.dtd
+java.sun.com/dtd/application-client_1_3.dtd
+java.sun.com/dtd/application_1_3.dtd
+java.sun.com/dtd/ejb-jar_2_0.dtd
+
+For J2EE Version 1.4
+java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd
+java.sun.com/xml/ns/j2ee/ejb-jar_2_1.xsd
+java.sun.com/xml/ns/j2ee/connector_1_5.xsd
+java.sun.com/xml/ns/j2ee/web-app_2_4.xsd
+java.sun.com/xml/ns/j2ee/jsp_2_0.xsd
+java.sun.com/xml/ns/j2ee/j2ee_1_4.xsd
+java.sun.com/xml/ns/j2ee/application-client_1_4.xsd
+java.sun.com/xml/ns/j2ee/application_1_4.xsd
+java.sun.com/xml/ns/j2ee/j2ee_jaxrpc_mapping_1_1.xsd
+java.sun.com/xml/ns/j2ee/j2ee_web_services_1_1.xsd
+java.sun.com/xml/ns/j2ee/j2ee_web_services_client_1_1.xsd
+
+
+More details on using these J2EE Schemas are available at:
+java.sun.com/xml/ns/j2ee/#usage

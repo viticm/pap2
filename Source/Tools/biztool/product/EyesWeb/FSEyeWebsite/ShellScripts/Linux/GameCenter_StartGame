@@ -1,0 +1,13 @@
+#add by zuolizhi
+#start game
+read path
+echo $path
+cd $path
+ulimit -c unlimited
+pid='pgrep gamecenterd_l'
+$pid
+if [ $? -eq 1 ]; then
+./gamecenterd_linux &> gc_output.txt &
+else
+echo 'process already exist! gamecenterd_l'
+fi

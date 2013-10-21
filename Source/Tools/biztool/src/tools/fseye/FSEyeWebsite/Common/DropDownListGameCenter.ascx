@@ -1,0 +1,2 @@
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="DropDownListGameCenter.ascx.cs" Inherits="Common_DropDownListGameCenter" %>
+<asp:DropDownList ID="GameCenterList" runat="server" OnSelectedIndexChanged="GameCenterList_SelectedIndexChanged"></asp:DropDownList>

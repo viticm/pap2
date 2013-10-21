@@ -1,0 +1,16 @@
+#/bin/bash
+#add by zuolizhi
+#start game
+read path
+cd $path
+ulimit -c unlimited
+exefile='jx3'${path:3:12}
+echo>test_result
+ln -s ./SO3GameServerD $exefile
+pid='pgrep $exefile'
+$pid
+if [ $? -eq 1 ]; then
+(ulimit -c unlimited;'./'$exefile; ulimit -c;) &> jxex_output.txt &
+else
+echo "process exist:"$exefile
+fi

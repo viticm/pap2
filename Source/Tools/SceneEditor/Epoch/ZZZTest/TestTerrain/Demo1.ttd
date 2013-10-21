@@ -1,0 +1,62 @@
+[TreeInfo]
+FNs = 4
+QLs = 64
+XSpan = 512
+ZSpan = 512
+Variant = 25
+Factor = 20
+MaxLOD = 5
+TerrainBaseColor_R = 255
+TerrainBaseColor_G = 255
+TerrainBaseColor_B = 255
+CPX = 0
+CPY = 1800
+CPZ = 0
+
+[TerrainLOD]
+NumOfRanks = 2
+0 = 1500
+1 = 1600
+2 = 1150
+4 = 1250
+
+[Textures]
+NumOfTextures = 9
+0 = TerrainTextureFilename
+1 = TerrainTextureFilename
+2 = TerrainTextureFilename
+.
+.
+.
+8 = TerrainTextureFilename
+
+[AlphaMap]
+NumOfAlphaMap = 36
+0 = AlphaMapFilename
+1 = AlphaMapFilename
+2 = AlphaMapFilename
+.
+.
+.
+35 = AlphaMapFilename
+
+[LightMap]
+Filename = LightMapFilename
+
+[TexturedBNLs]
+0 = 1
+1 = 4
+2 = 8
+.
+.
+.
+16383 = 5
+
+[AlphaBlendedBNLs]
+0 = 3, 5
+2 = 35, 8
+70 = 21, 3
+.
+.
+.
+16383 = 23, 7

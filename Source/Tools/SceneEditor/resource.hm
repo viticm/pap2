@@ -1,0 +1,4 @@
+// Microsoft Visual C++ generated Help ID include file.
+// Used by SceneEditor.rc
+//
+#define HIDC_OBJECT_PROPERTY_TREE       0x81170611    // IDD_OBJECTMANAGE_SHEET

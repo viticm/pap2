@@ -1,0 +1,27 @@
+HKCR
+{
+	kegame.Game.1 = s 'Game Class'
+	{
+		CLSID = s '{19CC8AC3-7B26-40FF-8389-AB2460E647A9}'
+	}
+	kegame.Game = s 'Game Class'
+	{
+		CLSID = s '{19CC8AC3-7B26-40FF-8389-AB2460E647A9}'
+		CurVer = s 'kegame.Game.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {19CC8AC3-7B26-40FF-8389-AB2460E647A9} = s 'Game Class'
+		{
+			ProgID = s 'kegame.Game.1'
+			VersionIndependentProgID = s 'kegame.Game'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{97D67453-F400-4598-9DD2-9EACFC738C53}'
+		}
+	}
+}

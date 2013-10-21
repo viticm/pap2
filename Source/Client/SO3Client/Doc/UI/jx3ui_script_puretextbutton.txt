@@ -1,0 +1,47 @@
+PureTextButton_SetText						
+	说明：设纯文字按钮文字内容；
+	参数：szTreePath 	窗口树路径名，
+	 	  szText		文字内容，
+	 	  [nTextLength]	如果设置了，使用nTextLength，否则把szText当作plain text处理；
+	返回：nil
+		
+PureTextButton_CheckButton				
+	说明：选中按钮，如果按钮不是选中性按钮，则此函数行为未确定；
+	参数：szTreePath 窗口树路径名，
+		  bCheck	 true为选中，false为未选中；
+	返回：nil；
+		
+PureTextButton_GetFontSize				
+	说明：取纯文字按钮字体大小；
+	参数：szTreePath  窗口树路径名；
+	返回：nFontSize   字体大小；
+		
+PureTextButton_GetToolTipInfoLength	
+	说明：取纯文字按钮提示长度；
+	参数：szTreePath  窗口树路径名；
+	返回：nTipLength  提示长度；
+		
+PureTextButton_GetToolTipInfo				
+	说明：取纯文字按钮提示内容；
+	参数：szTreePath  窗口树路径名；
+	返回：szTip		  提示内容；
+		
+PureTextButton_SetToolTipInfo				
+	说明：设纯文字按钮提示内容；
+	参数：szTreePath 	窗口树路径名，
+	 	  szTip			提示内容，
+	 	  [nTipLength]	如果设置了，使用nTipLength，否则把szTip当作plain text处理；
+	返回：nil
+		
+PureTextButton_SetAllButtonTipTextColor
+	说明：设所有纯文本按钮提示字体颜色；
+	参数：[szTreePath] 	窗口树路径名，
+		  dwFontColor	字体颜色，目前未做可用性调整；
+	返回：nil
+
+PureTextButton_EnableAllButtonTip			
+	说明：禁止或者激活所有纯文本按钮提示；
+	参数：[szTreePath] 	窗口树路径名，
+		  bEnable		true为激活，false为禁止；
+	返回：nil
+

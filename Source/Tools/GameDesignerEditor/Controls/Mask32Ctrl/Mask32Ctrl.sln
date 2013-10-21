@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mask32Ctrl", "Mask32Ctrl\Mask32Ctrl.csproj", "{A019AC3D-60FF-4CDF-9E84-FDDEE31D025A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomLoadTree", "..\CustomLoadTree\CustomLoadTree\CustomLoadTree.csproj", "{5C676375-218C-4387-A0A2-85CD858C4B11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A019AC3D-60FF-4CDF-9E84-FDDEE31D025A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A019AC3D-60FF-4CDF-9E84-FDDEE31D025A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A019AC3D-60FF-4CDF-9E84-FDDEE31D025A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A019AC3D-60FF-4CDF-9E84-FDDEE31D025A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C676375-218C-4387-A0A2-85CD858C4B11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C676375-218C-4387-A0A2-85CD858C4B11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C676375-218C-4387-A0A2-85CD858C4B11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C676375-218C-4387-A0A2-85CD858C4B11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

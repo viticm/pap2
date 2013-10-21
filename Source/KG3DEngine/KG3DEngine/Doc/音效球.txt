@@ -1,0 +1,56 @@
+基本结构：SoundBallData，文件类型后缀：".SoundBall"
+
+数据结构：
+
+1、管理器：g_cSoundBallTable，管理SoundBallData
+
+   管理器类型为KG3DSoundBallDataTable：提供保存，读取和刷新操作，增加了反初始化，释放指定ID的音效球，查找和加载对应ID的音效球
+
+   注：
+   1、读取ini文件来初始化SoundBallData数据，读取的字段是"MAIN"和"Sound0"对应的内容
+   2、兼容旧版本时，如果读取的播放几率值fRation为1.0，则认为是循环播放，bLoop要为1
+   3、管理SoundBallData时，是根据文件的hash值管理的
+   4、管理SoundBallData是，对其使用了引用计数机制管理
+   5、反初始化时，用来清除泄露的soundball
+
+
+2、调用者：
+   KG3DRepresentObjectSoundBall，控制SoundBallData进行一些声音的操作
+   
+   提供操作：
+   1、加载指定文件的音效球；获取音效球的配置文件名称
+   2、对缓冲区进行保存和读取音效球的信息；拷贝指定的音效球的信息
+   3、计算bbox，根据y轴的缩放比调整bbox的大小；绘制选中的BBox
+   4、判断是否在音效球的范围内
+   5、FrameMove：检测是在否在观察坐标系的可听范围内，可听范围内，则播放音乐，否则停止音乐播放
+   6、渲染：作用是给编辑器用的
+   7、设置位置和缩放大小时，都要停止音乐的播放
+   8、Stop和Start（编辑器中使用）  
+   
+      
+   注：
+   1、m_szSoundBallDataFileName和m_lpSoundBallData记录的音效球的文件名相同
+   2、可听范围，分为循环播放和几率播放两种情况处理；
+   3、几率播放时，
+      *播放条件为：
+       **本次检测的时间 - 上次播放的时间 > 检测的间隔时间
+       **且播放频率 > 随机值（(rand() % 100 / 100.0f)）
+   4、Play3DSound的坐标要转换成米，需要除以100
+   5、m_uFileHash是m_szSoundBallDataFileName的hash值
+   6、m_bHalt在客户端中应该始终为false
+
+
+3、相关数据：
+   g_bRenderSoundBall：KG3DSceneSceneEditor::VisiableSceneSound会提供置位的操作  
+   g_cSoundBallRender：渲染音效球（编辑器中使用）
+   KG3DSceneOutDoorSpaceMgr：管理当前位置可以听到的KG3DRepresentObjectSoundBall 
+
+   注：
+   1、g_bRenderSoundBall在客户端下，应该始终为false
+   2、g_cSoundBallRender通过KG3DRepresentObjectSoundBall::Render压入到g_cSoundBallRender的m_SoundBalls中
+AddVisibleSet
+   3、编辑器通过调用g_cSoundBallRender.Render来对每个音效球进行相关的渲染
+   4、注意音效球的处理涉及到KG3DSceneOutDoorSpaceMgr的m_setObjectSoundBall，此处有多线程处理- -
+      相关函数ProcessSoundBallMultiThread和FindSoundBall,KG3DSceneOutDoorSpaceMgr::GetLoadingProcess这些另外整理
+
+附注：多线程一块另外整理,目前修改了机制，相关的还不是很熟悉

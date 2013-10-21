@@ -1,0 +1,196 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script language=javascript src="dialog.js"></script>
+
+<script Language=javascript>
+document.write ("<link href='../language/" + AvailableLangs["Active"] + ".css' type='text/css' rel='stylesheet'>");
+document.write ("<link href='dialog.css' type='text/css' rel='stylesheet'>");
+
+document.write ("<title>"+lang["DlgHylnk"]+"</title>");
+
+var sAction = URLParams['action'];
+var sTitle = lang["DlgComInsert"];
+
+var objWindow;
+
+var oRange;
+var sType;
+var oSel;
+
+var sUrl = "http://";
+var sProtocol = "http://";
+var sTarget = "";
+
+switch (sAction){
+case "other":
+	sUrl = dialogArguments.objLink.Href;
+	sTarget = dialogArguments.objLink.Target;
+	sProtocol = getProtocol(sUrl);
+	objWindow = dialogArguments.opener;
+	break;
+default:
+	oRange = dialogArguments.eWebEditor.document.selection.createRange();
+	sType = dialogArguments.eWebEditor.document.selection.type;
+
+	if (sType == "Control") {
+		oSel = oRange(0).parentNode;
+	}else{
+		oSel = oRange.parentElement();
+	}
+
+	if (oSel.tagName.toUpperCase() == "A"){
+		sTarget = oSel.target;
+		sUrl = oSel.getAttribute("href",2);
+		sProtocol = getProtocol(sUrl);
+	}
+	objWindow = dialogArguments;
+	break;
+}
+
+function getProtocol(url){
+	var re=/(.+:\/*)(.*)/gi;
+	return url.replace(re,"$1");
+}
+
+function changeProtocol(index){
+	sProtocol=d_protocol.options[index].value;
+	sUrl = d_url.value;
+	var re = /(.+:\/*)/gi;
+	sUrl = sUrl.replace(re, "");
+	d_url.value = sProtocol + sUrl;
+}
+
+function InitDocument(){
+	AvailableLangs.TranslatePage(document);
+	SearchSelectValue(d_protocol, sProtocol.toLowerCase());
+	SearchSelectValue(d_target, sTarget.toLowerCase());
+	getAnchors();
+	d_url.value = sUrl;
+
+	adjustDialog();
+}
+
+function getAnchors() {
+	d_anchor.options.length = 1;
+	var allLinks = objWindow.eWebEditor.document.body.getElementsByTagName("A");
+	for (i=0; i < allLinks.length; i++) {
+		if (allLinks[i].href.toUpperCase() == "") {
+			d_anchor.options[d_anchor.options.length] = new Option(allLinks[i].name,"#"+allLinks[i].name);
+		}
+	}
+}
+
+function ok(){
+	sUrl = d_url.value;
+	sProtocol = d_protocol.options[d_protocol.selectedIndex].value;
+	sTarget = d_target.options[d_target.selectedIndex].value;
+
+	if (sUrl != ""){
+		switch (sAction){
+		case "other":
+			var arr = new Array();
+			arr[0] = sUrl;
+			arr[1] = sTarget;
+			window.returnValue = arr;
+			break;
+		default:
+			oRange.execCommand("CreateLink",false,sUrl);
+
+			oRange = dialogArguments.eWebEditor.document.selection.createRange();
+			sType = dialogArguments.eWebEditor.document.selection.type;
+
+			if (sType == "Control") {
+				oSel = oRange(0).parentNode;
+			}else{
+				oSel = oRange.parentElement();
+			}
+
+			if (sTarget != ""){
+				oSel.target = sTarget;
+			}else{
+				oSel.removeAttribute("target");
+			}
+			window.returnValue = null;
+			break;
+		}
+	} else {
+		alert(lang["DlgHylnkNoUrl"]);
+		d_url.focus();
+		return;
+	}
+	window.close();
+}
+
+</script>
+
+</HEAD>
+
+<body onload="InitDocument()">
+<table border=0 cellpadding=0 cellspacing=5 id=tabDialogSize><tr><td>
+
+
+<table border=0 cellpadding=0 cellspacing=0 align=center>
+<tr>
+	<td>
+	<fieldset>
+	<legend><span lang=DlgHylnkLegend></span></legend>
+	<table border=0 cellpadding=5 cellspacing=0 width="100%">
+	<tr><td>
+
+		<table border=0 cellpadding=0 cellspacing=2 width="100%">
+		<tr>
+			<td noWrap width="20%"><span lang=DlgHylnkProtocol></span>:</td>
+			<td noWrap width="29%">
+				<select id=d_protocol onchange="changeProtocol(this.selectedIndex)" size=1 style="width:80px">
+				<option value='' lang=DlgComOther></option>
+				<option value='file://'>file:</option>
+				<option value='ftp://'>ftp:</option>
+				<option value='gopher://'>gopher:</option>
+				<option value='http://'>http:</option>
+				<option value='https://'>https:</option>
+				<option value='mailto:'>mailto:</option>
+				<option value='news:'>news:</option>
+				<option value='telnet:'>telnet:</option>
+				<option value='wais:'>wais:</option>
+				</select>			
+			</td>
+			<td width="2%">&nbsp;</td>
+			<td noWrap width="20%"><span lang=DlgHylnkTarget></span>:</td>
+			<td noWrap width="29%">
+				<select id=d_target size=1 style="width:80px">
+				<option value='' lang=DlgHylnkTargetNone></option>
+				<option value='_self' lang=DlgHylnkTargetSelf></option>
+				<option value='_top' lang=DlgHylnkTargetTop></option>
+				<option value='_blank' lang=DlgHylnkTargetBlank></option>
+				<option value='_parent' lang=DlgHylnkTargetParent></option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td noWrap width="20%"><span lang=DlgHylnkUrl></span>:</td>
+			<td noWrap width="80%" colspan=4><input type=text id=d_url size=10 value="" style="width:100%"></td>
+		</tr>
+		<tr>
+			<td noWrap width="20%"><span lang=DlgHylnkAnchor></span>:</td>
+			<td noWrap width="80%" colspan=4>
+				<select id=d_anchor onchange="d_url.value=this.options[this.selectedIndex].value" size=1 style="width:100%">
+				<option value='' lang=DlgHylnkAnchorNone></option>
+				</select>
+			</td>
+		</tr>
+		</table>
+
+	</td></tr>
+	</table>
+	</fieldset>
+	</td>
+</tr>
+<tr><td height=5></td></tr>
+<tr><td noWrap align=right><input type=submit class="dlgBtnCommon" value='' id=Ok onclick="ok()" lang=DlgBtnOK>&nbsp;&nbsp;<input type=button class="dlgBtnCommon" value='' onclick="window.close();" lang=DlgBtnCancel></td></tr>
+</table>
+
+
+</td></tr></table>
+</BODY>
+</HTML>

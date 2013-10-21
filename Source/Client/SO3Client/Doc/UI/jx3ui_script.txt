@@ -1,0 +1,308 @@
+剑网三界面脚本系统简述：
+    剑网三的界面脚本系统使用的脚本语言为lua4.0。单继承。
+    脚本主要有两大部分：主动型的属性类函数；被动回调事件型的函数；
+    前者目前的命名规则为“窗口控件名”+“_”+属性函数名；
+    后者目前的命名规则为“窗口SectionName”+“_”+事件响应函数名。
+
+文件布局：
+    界面相关的文件，目前为以下种类：
+        界面布局用的ini；
+        界面布局响应的事件脚本lua；
+        界面图片资源UITex；
+    每一个界面布局用的ini，需要跟一个文件名相同，扩展名为lua的脚本文件。
+
+具体例子：
+    jx3_chatwithplayer.ini
+    jx3_chatwithplayer.lua
+
+    jx3_chatwithplayer.ini由UiEditor生成，内容为：
+		[ImgJx3ChatWithPlayer]
+		._WndType=WndImage
+		._Parent=Topmost
+		Left=400
+		Top=200
+		Width=208
+		Height=39
+		Frame=0
+		Image=UI\Image\JOJO1\02二级界面\Npc对话框\Npc最小对话框.UITex
+		Moveable=0
+		TopLow=338
+		LeftLow=106
+		
+		[TxtInfo]
+		._WndType=WndRichText
+		._Parent=[ImgJx3ChatWithPlayer]
+		TextLength=256
+		Left=12
+		Top=7
+		Width=180
+		Height=14
+		Moveable=0
+		Font=12
+		HAlign=1
+		VAlign=1
+		MultiLine=1
+		Color=202,230,171
+
+		[Cancel]
+		._WndType=WndButton
+		._Parent=[EscDlg]
+		Left=92
+		Top=236
+		Width=117
+		Height=20
+		DisableFrame=-1
+		Over=1
+		Image=UI\Image\JOJO1\07╣?╙├?┤┼?\┤≤╣╪?╒?┤┼?.UITex
+		Frame=0
+
+	界面布局配置文件的具体说明参看UiEditor。从配置文件我们可以看出有三个窗口控件：
+	    ImgJx3ChatWithPlayer 是底图；
+	    TxtInfo 是文字；
+	    Cancel 是一个按钮；
+	
+	jx3_chatwithplayer.lua目前需要手工书写，内容为：
+		function Cancel_OnLButtonClick()
+				Wnd_CloseWindow("jx3_chatwithplayer")
+		end
+		
+		function ImgJx3ChatWithPlayer_OnCreate()
+				g_tmImgJx3ChatWithPlayerCreate = GetTime()
+		end
+		
+		function ImgJx3ChatWithPlayer_OnBreathe()
+				local tmNow = GetTime()
+				if tmNow - g_tmImgJx3ChatWithPlayerCreate >= 2 then
+						Wnd_CloseWindow("jx3_chatwithplayer")
+				end
+		end
+		
+	这里面有三个函数，两个跟ImgJx3ChatWithPlayer相关，一个跟Cancel相关。
+		Cancel_OnLButtonClick()
+		ImgJx3ChatWithPlayer_OnCreate()
+		ImgJx3ChatWithPlayer_OnBreathe()
+		这种就是被动回调事件型的函数；
+		Wnd_CloseWindow("jx3_chatwithplayer")
+		这种是主动型的设值、取值函数；
+	
+界面系统有继承关系，因此脚本也有类似情况，如一个Button是一个Image，一个Image是一个Window，那么一个Button具有Button、
+	Image、Window的事件类以及属性量脚本，界面系统目前只支持单继承；
+	
+界面控件类继承关系：
+	Window
+		Image
+			Button
+				LabeledButton
+				RichLabeledButton
+			MovingImage
+				ShowAnimate
+					PageSet
+			Page
+			ValueImage
+			ShadowMaskValueImage
+			ToolBar
+			ScrollBar
+			DropDownList
+		Edit
+		ImagePart
+		List
+		List2
+		PureTextButton
+		MessageListBox
+		TreeList
+		ObjectBox
+		ObjectMatrix
+		Effect
+		Text
+			PrefixText32
+		RichText
+		ScrollList
+		ScrollTreeList
+		ScrollMessageListBox
+		ScrollRichText
+		Shadow
+		PicFrameShadow
+		PureTextButton
+				
+
+窗口控件绑定关系：
+	有部分控件为复合控件，如带滚动条的控件，是有几个窗口控件组成，因此除了有层次关系外还有绑定关系。
+	ScrollBar
+		Button
+	ScrollList
+		List
+		ScrollBar
+	ScrollTreeList
+		TreeList
+		ScrollBar
+	ScrollMessageListBox
+		MessageListBox
+		ScrollBar
+	ScrollRichText
+		RichText
+		ScrollBar
+	PageSet
+		Button
+		Page
+		
+		
+事件型脚本函数：
+	OnMouseEnter
+		说明：当鼠标指针进入Window；
+		参数：nil
+		返回：nil
+		适用：Window以及其派生类；
+		
+	OnMouseLeave
+		说明：当鼠标指针离开Window；
+		参数：nil
+		返回：nil
+		适用：Window以及其派生类；
+		
+	OnMouseHover
+		说明：当鼠标指针停留Window一段时间，此事件目前为400ms；
+		参数：nil
+		返回：nil
+		适用：Window以及其派生类；
+
+	OnCreate
+		说明：当Window创建，目前只有父窗口会产生此事件；
+		参数：nil
+		返回：nil
+		适用：Window以及其派生类；
+
+	OnDestroy
+		说明：当Window销毁，目前只有父窗口会产生此事件；
+		参数：nil
+		返回：nil
+		适用：Window以及其派生类；
+
+	OnBreathe
+		说明：当Window空闲，目前只有父窗口会产生此事件；
+		参数：nil
+		返回：nil
+		适用：Window以及其派生类；
+
+	OnLButtonClick
+		说明：当Button被鼠标左键单击；
+		参数：nil
+		返回：nil
+		适用：Button、LabeledButton、PureTextButton以及其派生类；
+		
+	OnLButtonDBClick
+		说明：当Button被鼠标左键双击；
+		参数：nil
+		返回：nil
+		适用：Button、LabeledButton、PureTextButton以及其派生类；
+
+	OnLButtonHold
+		说明：当Button被持续按下，需要配置文件打开相应选项；
+		参数：nil
+		返回：nil
+		适用：Button、LabeledButton、PureTextButton以及其派生类；
+
+	OnButtonCheck
+		说明：当Button被选中，单选Button才有的事件；
+		参数：nil
+		返回：nil
+		适用：Button、LabeledButton、PureTextButton以及其派生类；
+
+	OnButtonUncheck
+		说明：当Button被取消选中，单选Button才有的事件；
+		参数：nil
+		返回：nil
+		适用：Button、LabeledButton、PureTextButton以及其派生类；
+
+	OnScorllBarPosChagned
+		说明：当滚动条滑动按钮位置被改变，实际上不建议使用，因为滚动条的功能已经被封装好；
+		参数：nCurrentValue 为当前滚动按钮的位置；
+		      nMaxValue     为最大值，最小值为0；
+		返回：nil
+		适用：ScrollBar及其派生类；
+
+	OnSetFocus
+		说明：当可编辑控件取得输入焦点；
+		参数：nil
+		返回：nil
+		适用：ScrollBar及其派生类；
+
+	OnKillFocus
+		说明：当可编辑控件失去输入焦点；
+		参数：nil
+		返回：nil
+		适用：Edit及其派生类；
+
+	OnEditChanged
+		说明：当Edit内容改变；
+		参数：nil
+		返回：nil
+		适用：Edit及其派生类；
+
+	OnEditSpecialKeyDown
+		说明：当特殊按钮被按下；
+		参数：strKey为被按下的按键的名字，如"ESC","Enter"，按键名字跟快捷键名字相同；
+		返回：nil
+		适用：Edit及其派生类；
+		
+	OnMenuItemSelect
+		说明：当MenuItem被鼠标左键选中；
+		参数：nSeletMenuID  为被选中按钮ID；
+		      nSelectMenuID 为Menu_Append(strItem, nMenuID)的nMenuID；
+		返回：nil
+		适用：Menu及其派生类；
+		
+	OnMenuItemRightSelect
+		说明：当MenuItem被鼠标右键选中；
+		参数：nSeletMenuID  为被选中按钮ID；
+		      nSelectMenuID 为Menu_Append(strItem, nMenuID)的nMenuID；
+		返回：nil
+		适用：Menu及其派生类；
+		
+	OnPopupMenuCancel
+		说明：当PopupMenu被取消，也就是关闭；
+		参数：nil
+		返回：nil
+		适用：Menu及其派生类；
+		
+	OnListItemSelect
+		说明：当ListItem被鼠标左键选中；
+		参数：nIndex为被选中的ListItem的索引，从0开始计算；
+		返回：nil
+		适用：List、List2、TreeList、MessageListBox及其派生类；
+		
+	OnListItemActive
+		说明：当ListItem被按下鼠标左键，处于Active状态，目前只有MessageListBox有，估计以后废弃；
+		参数：nIndex为被选中的ListItem的索引，从0开始计算；
+		返回：nil
+		适用：MessageListBox及其派生类；
+		
+	OnListItemDBClick
+		说明：当ListItem被鼠标左键双击；
+		参数: nIndex为被双击的ListItem的索引，从0开始计算；
+		返回：nil
+		适用：List、List2、TreeList、MessageListBox及其派生类；
+
+	OnListItemRClick
+		说明：当ListItem被鼠标右键单击；
+		参数：nIndex为被单击的ListItem的索引，从0开始计算；
+		返回：nil
+		适用：List、List2、TreeList、MessageListBox及其派生类；
+
+	OnListItemHighLight
+		说明：当ListItem被高亮；
+		参数：nIndex为高亮的ListItem的索引，从0开始计算；
+		返回：nil
+		适用：List、List2、TreeList、MessageListBox及其派生类；
+		
+	OnItemDrag
+		目前还没实现；
+	OnItemDrop
+		目前还没实现；
+
+
+属性类脚本：
+	由于数量众多，现在按类型分开保存，所在文件为"jx3ui_script_"+模块名+".txt"。
+
+
+
+

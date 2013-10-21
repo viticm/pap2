@@ -1,0 +1,61 @@
+D/Properties////
+D/bin////
+D/Tools////
+D/WinForms////
+/ClassDiagram1.cd/1.3/Mon Jan 21 01:47:52 2008//Tt_jx3_built_1-4-0-1834
+/ClearLSForm.Designer.cs/1.4/Tue Dec 15 22:14:11 2009//Tt_jx3_built_1-4-0-1834
+/ClearLSForm.cs/1.5/Tue Dec 15 22:14:11 2009//Tt_jx3_built_1-4-0-1834
+/ClearLSForm.resx/1.1/Wed Dec 26 01:26:23 2007//Tt_jx3_built_1-4-0-1834
+/DFATable.cs/1.8/Tue Dec 15 22:14:11 2009//Tt_jx3_built_1-4-0-1834
+/DataBaseManager.cs/1.26/Mon Dec 21 22:06:14 2009//Tt_jx3_built_1-4-0-1834
+/EditForm.Designer.cs/1.1/Thu Jul  9 08:44:03 2009//Tt_jx3_built_1-4-0-1834
+/EditForm.cs/1.10/Thu Dec 17 22:06:09 2009//Tt_jx3_built_1-4-0-1834
+/EditForm.resx/1.1/Thu Jul  9 08:44:03 2009//Tt_jx3_built_1-4-0-1834
+/Encrypt.cs/1.1/Thu Apr 10 02:07:49 2008//Tt_jx3_built_1-4-0-1834
+/ExportForm.Designer.cs/1.2/Thu Nov 26 03:48:28 2009//Tt_jx3_built_1-4-0-1834
+/ExportForm.cs/1.2/Thu Nov 26 03:48:28 2009//Tt_jx3_built_1-4-0-1834
+/ExportForm.resx/1.1/Thu Jul  9 08:44:03 2009//Tt_jx3_built_1-4-0-1834
+/FileFolderHelper.cs/1.1/Thu Apr 10 02:07:49 2008//Tt_jx3_built_1-4-0-1834
+/GameLuaEditor.csproj/1.21/Mon Dec 21 22:06:14 2009//Tt_jx3_built_1-4-0-1834
+/GameLuaEditor.sln/1.4/Thu Nov 26 03:48:28 2009//Tt_jx3_built_1-4-0-1834
+/GameLuaEditor.suo/1.17/Tue Dec 22 22:05:54 2009/-kb/Tt_jx3_built_1-4-0-1834
+/Helper.cs/1.12/Tue Dec 15 22:14:11 2009//Tt_jx3_built_1-4-0-1834
+/HistoryForm.Designer.cs/1.7/Fri Nov  9 04:55:19 2007//Tt_jx3_built_1-4-0-1834
+/HistoryForm.cs/1.8/Mon Oct  6 01:20:17 2008//Tt_jx3_built_1-4-0-1834
+/HistoryForm.resx/1.2/Thu Nov  8 09:16:30 2007//Tt_jx3_built_1-4-0-1834
+/HistoryTotalForm.Designer.cs/1.3/Thu Oct 30 06:44:27 2008//Tt_jx3_built_1-4-0-1834
+/HistoryTotalForm.cs/1.2/Thu Oct 23 07:06:38 2008//Tt_jx3_built_1-4-0-1834
+/ImportForm.Designer.cs/1.1/Thu Jul  9 08:44:03 2009//Tt_jx3_built_1-4-0-1834
+/ImportForm.cs/1.1/Thu Jul  9 08:44:03 2009//Tt_jx3_built_1-4-0-1834
+/ImportForm.resx/1.1/Thu Jul  9 08:44:03 2009//Tt_jx3_built_1-4-0-1834
+/IniHandler.cs/1.1/Thu Apr 10 02:21:36 2008//Tt_jx3_built_1-4-0-1834
+/IniIO.cs/1.1/Mon Nov  5 01:11:11 2007//Tt_jx3_built_1-4-0-1834
+/IntelligentSenseManager.cs/1.8/Tue Dec 22 22:05:54 2009//Tt_jx3_built_1-4-0-1834
+/Lua Project.ico/1.1/Mon Nov  5 01:11:11 2007/-kb/Tt_jx3_built_1-4-0-1834
+/MainForm.Designer.cs/1.18/Mon Sep 28 07:43:01 2009//Tt_jx3_built_1-4-0-1834
+/MainForm.cs/1.21/Thu Dec 17 22:06:09 2009//Tt_jx3_built_1-4-0-1834
+/MainForm.resx/1.12/Mon Sep 28 07:43:01 2009//Tt_jx3_built_1-4-0-1834
+/ModelForm.Designer.cs/1.7/Wed Aug  6 08:41:07 2008//Tt_jx3_built_1-4-0-1834
+/ModelForm.cs/1.7/Wed Nov 21 04:44:21 2007//Tt_jx3_built_1-4-0-1834
+/ModelForm.resx/1.1/Mon Nov 19 11:29:11 2007//Tt_jx3_built_1-4-0-1834
+/NetworkManager.cs/1.6/Sat Aug 22 09:57:26 2009//Tt_jx3_built_1-4-0-1834
+/NewsForm.Designer.cs/1.3/Thu Sep 25 07:11:36 2008//Tt_jx3_built_1-4-0-1834
+/NewsForm.cs/1.1/Fri Aug 22 02:04:35 2008//Tt_jx3_built_1-4-0-1834
+/NewsForm.resx/1.1/Fri Aug 22 02:04:35 2008//Tt_jx3_built_1-4-0-1834
+/Program.cs/1.7/Mon Dec 21 22:06:14 2009//Tt_jx3_built_1-4-0-1834
+/ProgressForm.Designer.cs/1.1/Wed Aug 19 01:56:47 2009//Tt_jx3_built_1-4-0-1834
+/ProgressForm.cs/1.1/Wed Aug 19 01:56:47 2009//Tt_jx3_built_1-4-0-1834
+/ProgressForm.resx/1.1/Wed Aug 19 01:56:47 2009//Tt_jx3_built_1-4-0-1834
+/RecordForm.Designer.cs/1.1/Thu Nov  8 09:16:30 2007//Tt_jx3_built_1-4-0-1834
+/RecordForm.cs/1.1/Thu Nov  8 09:16:30 2007//Tt_jx3_built_1-4-0-1834
+/RecordForm.resx/1.1/Thu Nov  8 09:16:30 2007//Tt_jx3_built_1-4-0-1834
+/RecordLock.cs/1.1/Mon Nov  5 01:11:11 2007//Tt_jx3_built_1-4-0-1834
+/SettingForm.Designer.cs/1.3/Sun Jul 26 09:58:16 2009//Tt_jx3_built_1-4-0-1834
+/SettingForm.cs/1.4/Sat Aug 22 09:57:26 2009//Tt_jx3_built_1-4-0-1834
+/SettingForm.resx/1.1/Thu Jul  9 08:44:03 2009//Tt_jx3_built_1-4-0-1834
+/StringReplaceForm.Designer.cs/1.2/Wed Aug 19 01:55:35 2009//Tt_jx3_built_1-4-0-1834
+/StringReplaceForm.cs/1.4/Wed Aug 19 01:55:35 2009//Tt_jx3_built_1-4-0-1834
+/StringReplaceForm.resx/1.1/Thu Jul  9 08:44:03 2009//Tt_jx3_built_1-4-0-1834
+/app.config/1.1/Mon Dec 21 09:07:56 2009//Tt_jx3_built_1-4-0-1834
+/codeConvert.cs/1.11/Tue Dec 15 22:14:11 2009//Tt_jx3_built_1-4-0-1834
+/treeOpera.cs/1.6/Tue Dec 15 22:14:11 2009//Tt_jx3_built_1-4-0-1834

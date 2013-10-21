@@ -1,0 +1,37 @@
+#/bin/sh
+#create by zuolizhi
+
+DBNAME=C#P1
+DBUSER=C#P2
+DBPWD=C#P3
+BKFILE=C#P4
+
+if [ ! -r $BKFILE ] 
+then 
+echo $BKFILE not found!
+exit 0
+fi
+
+CURPWD=`pwd`
+
+cd /tmp
+rm -rf *.sql  > /dev/null 2>&1
+tar -xzvf $BKFILE -C /tmp/  > /dev/null 2>&1
+
+SQLFILE=`ls *.sql`
+
+if [ ! -r $SQLFILE ] 
+then 
+echo $SQLFILE not found!
+exit 0
+fi
+
+if [ -z $DBPWD ]; then
+mysql -u $DBUSER $DBNAME  < $SQLFILE
+else
+mysql -u $DBUSER -p$DBPWD $DBNAME  < $SQLFILE
+fi
+
+rm -rf *.sql > /dev/null 2>&1
+
+cd $CURPWD

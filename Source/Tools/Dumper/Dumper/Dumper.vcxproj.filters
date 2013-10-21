@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Dumper">
+      <UniqueIdentifier>{93f0c2a6-8816-4af7-877a-f3542b86541e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Dumper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\KProcess.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\KSG_MD5_String.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\md5.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\toolhelp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KCrashReporter.cpp">
+      <Filter>Dumper</Filter>
+    </ClCompile>
+    <ClCompile Include="KDumper.cpp">
+      <Filter>Dumper</Filter>
+    </ClCompile>
+    <ClCompile Include="KDumpFile.cpp">
+      <Filter>Dumper</Filter>
+    </ClCompile>
+    <ClCompile Include="KFileVersionInfo.cpp">
+      <Filter>Dumper</Filter>
+    </ClCompile>
+    <ClCompile Include="KPrivilege.cpp">
+      <Filter>Dumper</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="easycrypt.h">
+      <Filter>Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="KCrashReporter.h">
+      <Filter>Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="KDumper.h">
+      <Filter>Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="KDumpFile.h">
+      <Filter>Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\KDumpType.h">
+      <Filter>Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="KFileVersionInfo.h">
+      <Filter>Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="KMutex.h">
+      <Filter>Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="KPrivilege.h">
+      <Filter>Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="Dumper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KDumpType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KProcess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KSG_MD5_String.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\md5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\toolhelp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Dumper.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

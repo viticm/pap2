@@ -1,0 +1,67 @@
+Window_GetPosition	
+	说明：取窗口坐标；
+	参数：szTreePath		窗口树路径名；
+	返回：nLeft，nTop 		左上角坐标；
+		
+Window_GetStyle						
+	说明：取窗口风格参数，目前没做可用性处理，为简单封装；
+	参数：szTreePath 		窗口树路径名；
+	返回：dwStyle 	 		风格参数；
+
+Window_GetAbsolutePos		
+	说明：取窗口绝对坐标，这里的绝对坐标跟Wnd_系列函数的绝对坐标不是相同的概念，这里的绝对坐标都是Wnd_所说的相对坐标；
+	参数：szTreePath  		窗口树路径名；
+	返回：nLeft, nTop 		左上角绝对坐标；
+
+Window_GetSize						
+	说明：取窗口大小；
+	参数：szTreePath      	窗口树路径名；
+	返回：nWidth, nHeight 	窗口长、宽；
+
+Window_IsVisible					
+	说明：判断窗口是否可见；
+	参数：szTreePath  		窗口树路径名；
+	返回：bVisible    		true为可见，false为不可见；
+
+Window_IsDisable					
+	说明：判断窗口是否被允许操作，也就是窗口能否接收鼠标消息，如果为Disable，则鼠标消息会直接传给下面的窗口；
+	参数：szTreePath 		窗口树路径名；
+	返回：bDisable   		true为禁止，false为允许；
+
+Window_SetPosition				
+	说明：设窗口相对坐标，这里的绝对坐标跟Wnd_系列函数的绝对坐标不是相同的概念，这里的绝对坐标都是Wnd_所说的相对坐标；
+	参数：szTreePath 		窗口树路径名，
+		  nLeft，nTop 		左上角相对父窗口坐标；
+	返回：nil
+
+Window_SetCursorAbove			
+	说明：使鼠标指针移动到悬浮在此窗口中的位置上;
+	参数：szTreePath 		窗口树路径名；
+	返回：nil
+
+Window_SetStyle						
+	说明：设窗口风格参数，目前没做可用性处理，为简单封装；
+	参数：szTreePath 		窗口树路径名，
+	      dwStyle 	 		左上角坐标；
+	返回：nil
+
+Window_Enable							
+	说明：禁止或者允许窗口被操作；
+	参数：szTreePath 		窗口树路径名，
+	      bEnable    		true为允许，false为禁止；
+	返回：nil
+
+Window_Show								
+	说明：显示窗口;
+	参数：szTreePath 		窗口树路径名；
+	返回：nil
+	
+Window_Hide								
+	说明：隐藏窗口;
+	参数：szTreePath 		窗口树路径名；
+	返回：nil
+	
+Window_BringToTop					
+	说明：把窗口置顶;
+	参数：szTreePath 		窗口树路径名；
+	返回：nil

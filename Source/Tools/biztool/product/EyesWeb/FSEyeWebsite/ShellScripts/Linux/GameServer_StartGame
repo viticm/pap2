@@ -1,0 +1,17 @@
+#/bin/bash
+#add by zuolizhi
+#start game
+read path
+echo $path
+cd $path
+ulimit -c unlimited
+exefile='js_'${path:3:12}
+echo $exefile
+ln -s ./gameserverd_linux $exefile
+pid='pgrep $exefile'
+$pid
+if [ $? -eq 1 ]; then
+(ulimit -c unlimited;'./'$exefile; ulimit -c;) &> jxex_output.txt &
+else
+echo "process exist:"$exefile
+fi

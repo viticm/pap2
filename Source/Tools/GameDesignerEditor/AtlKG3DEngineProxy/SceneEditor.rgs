@@ -1,0 +1,27 @@
+HKCR
+{
+	AtlKG3DEngineProxy.SceneEditor.1 = s 'SceneEditor Class'
+	{
+		CLSID = s '{7EACDC7C-452D-4963-AF03-E0437A5F29E2}'
+	}
+	AtlKG3DEngineProxy.SceneEditor = s 'SceneEditor Class'
+	{
+		CLSID = s '{7EACDC7C-452D-4963-AF03-E0437A5F29E2}'
+		CurVer = s 'AtlKG3DEngineProxy.SceneEditor.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {7EACDC7C-452D-4963-AF03-E0437A5F29E2} = s 'SceneEditor Class'
+		{
+			ProgID = s 'AtlKG3DEngineProxy.SceneEditor.1'
+			VersionIndependentProgID = s 'AtlKG3DEngineProxy.SceneEditor'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{F77619C9-C039-4EDF-AB63-A7BEE4D1E75A}'
+		}
+	}
+}

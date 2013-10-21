@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ToolUsers>
+  <ConnectionString>Server = 192.168.27.31; Uid = s3design; Password = davidbowie;</ConnectionString>
+  <dataTables>
+    <table>
+      <name>[s3design_rtm]..sys_useracl</name>
+      <discribe>剑三HEAD库</discribe>
+      <subof>
+      </subof>
+      <has>[s3design-1-0-8-1380]..sys_useracl</has>
+    </table>
+    <table>
+      <name>[s3design-1-0-8-1380]..sys_useracl</name>
+      <discribe>剑三1-0-8-1380</discribe>
+      <subof>[s3design_rtm]..sys_useracl</subof>
+      <has>
+      </has>
+    </table>
+    <table>
+      <name>[j1_design]..sys_useracl</name>
+      <discribe>剑侠世界</discribe>
+      <subof>
+      </subof>
+      <has>
+      </has>
+    </table>
+  </dataTables>
+</ToolUsers>

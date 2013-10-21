@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Id: jboss-service.xml,v 1.1 2008/12/31 09:23:06 kuangsihao Exp $ -->
+
+<server>
+
+  <!-- ==================================================================== -->
+  <!-- JBoss Webservice                                                     -->
+  <!-- ==================================================================== -->
+
+  <!--
+    The main WS4EE service, which manages the deployed service endpoints
+  -->
+  <mbean code="org.jboss.webservice.AxisService"
+    name="jboss.ws4ee:service=AxisService">
+    <depends>jboss:service=WebService</depends>
+    <!--
+       The WSDL that is a required deployment artifact for an endpoint has a <soap:address>
+       element which points to the location of the endpoint. JBoss supports rewriting of that soap address.
+
+       If the content of <soap:address> is a valid URL, JBoss will not rewrite it unless AlwaysModifySOAPAddress=true
+       If the content of <soap:address> is not a valid URL, JBoss will rewrite it using the attribute values given below.
+    -->
+    <attribute name="WebServiceHost">${jboss.bind.address}</attribute>
+    <attribute name="WebServiceSecurePort">8443</attribute>
+    <attribute name="WebServicePort">8080</attribute>
+    <attribute name="AlwaysModifySOAPAddress">true</attribute>
+
+    <attribute name="InvokerProviderEJB">org.jboss.webservice.server.InvokerProviderEJB</attribute>
+    <attribute name="InvokerProviderJSE">org.jboss.webservice.server.InvokerProviderJSE</attribute>
+  </mbean>
+
+  <!--
+    A deployer service for EJB endpoints.
+  -->
+  <mbean code="org.jboss.webservice.ServiceDeployerEJB"
+    name="jboss.ws4ee:service=ServiceDeployerEJB">
+    <depends optional-attribute-name="EJBDeployer">jboss.ejb:service=EJBDeployer</depends>
+    <depends optional-attribute-name="MainDeployer">jboss.system:service=MainDeployer</depends>
+  </mbean>
+
+  <!--
+    A deployer service for POJO endpoints.
+  -->
+  <mbean code="org.jboss.webservice.ServiceDeployerJSE"
+    name="jboss.ws4ee:service=ServiceDeployerJSE">
+    <depends optional-attribute-name="WARDeployer">jboss.web:service=WebServer</depends>
+  </mbean>
+
+  <!--
+    A deployer service for web service clients.
+  -->
+  <mbean code="org.jboss.webservice.ServiceClientDeployer"
+    name="jboss.ws4ee:service=ServiceClientDeployer">
+  </mbean>
+
+  <mbean code="org.jboss.webservice.jaf.JAFConfigService"
+    name="jboss.ws4ee:service=JAFConfigService"
+    xmbean-dd="">
+    <xmbean>
+      <description>A Service which installs JAF mailcap strings into the
+            default MailcapCommandMap. The default behavior adds mappings for
+            text/xml, application/xml content types.
+      </description>
+      <operation>
+        <description>The service start lifecycle method</description>
+        <name>start</name>
+      </operation>
+      <operation>
+        <description>The service stop lifecycle method</description>
+        <name>stop</name>
+      </operation>
+    </xmbean>
+  </mbean>
+</server>

@@ -1,0 +1,59 @@
+===========================================================================
+角色基本数据增加游戏历程的修改方案                                        |
+===========================================================================
+
+评审时间：
+
+参与人员：夏永 燕睿
+
+修改目的：
+---------------------------------------------
+  在角色基本数据KBaseData中增加角色的游戏历程时间，即该角色在游戏中玩的总时间，要求能兼容旧的数据。
+
+
+修改方案：
+---------------------------------------------
+1. 在KBaseData末尾增加成员变量time_t lTotalGameTime;在KPlayer类中增加成员变量time_t m_nTotalGameTime;
+   在存盘时计算它的值，lTotalGameTime = m_nTotalGameTime + 当前时间 - max(m_nCurrentLoginTime, m_nLastSaveTime);
+
+2. 角色数据和角色基本数据的读存过程如下：
+   角色基本数据是角色数据的一部分，在数据库的Role表中，角色基本数据单独做为一个字段ListItem，存储的过程是和角色数据同时存储，读取的过程是分开的
+
+   角色基本数据读取过程：
+    KRoleDB::QueryRoleBaseDataInDB()
+    
+    在Gateway中是以一段二进制数据存储的。在角色进入游戏时从网关再同步到服务器。
+
+    角色数据存储过程：
+    KRoleDB::SaveRoleData()
+    存储时，角色基本数据做为一个区块存储，区块可以改变大小，不会影响到旧数据。
+
+    因此，做如下改动：将旧的KBaseData改为KBaseData_Old，将增加了新的lTotalGameTime成员的记为KBaseData，在从Role表的ListItem中读取数据时，
+    判断长度只能是sizeof(KBaseData_Old)或者sizeof(KBaseData)，再读取之前将KBaseData结构的lTotalGameTime置0。
+
+    另外在KRoleDB::LoadRoleTable()中须修改
+	if (pulFieldLength[0] != (unsigned long)sizeof(KBaseData) && pulFieldLength[0] != (unsigned long)sizeof(KBaseData_Old))
+        {
+            KGLogPrintf(
+                KGLOG_ERR, 
+                "[KRoleDB] Unmatched field size: sizeof(KBaseData) = %u, sizeof(Role::ListItem) = %u\n",
+                sizeof(KBaseData), pulFieldLength[0]
+            );
+            goto Exit0;
+        }
+    以上对长度的检查为临时代码，等外网的角色库清空后，将删掉KBaseData_Old及相关代码。
+
+3.客户端修改结构 UI_ROLE_LIST_ITEM，增加time_t lTotalGameTime;，在KGatewayClient::AddRoleToRoleList()中从pBaseInfo中取出。
+  对应UI脚本修改：
+  将int LuaGetRoleInfo(Lua_State* L)中增加传出参数(第38个，lLastSaveTime之后)lTotalGameTime，脚本LoginRoleList.lua UpdateRoleList=function()中做相应修改。
+
+
+本次修改涉及到的代码：
+---------------------------------------------
+1.KRoleDBDataDef.h 中的 KBaseData结构定义
+2.KPlayer.h 中的 KPlayer类定义
+3.KRoleDB::QueryRoleBaseDataInDB()
+4.KRoleDB::LoadRoleTable()
+5.KPlayer::LoadBaseRoleData()
+6.KPlayer::SaveBaseRoleData()
+ 

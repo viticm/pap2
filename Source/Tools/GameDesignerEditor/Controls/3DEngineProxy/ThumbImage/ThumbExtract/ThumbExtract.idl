@@ -1,0 +1,51 @@
+// ThumbExtract.idl : IDL source for ThumbExtract.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ThumbExtract.tlb) and marshalling code.
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(A1B8E7E1-2B2E-46D2-B60F-993028A58182),
+		dual,
+		helpstring("IFileThumbExtract Interface"),
+		pointer_default(unique)
+	]
+	interface IFileThumbExtract : IDispatch
+	{
+		[id(1), helpstring("Set Path of the file")] HRESULT SetPath([in] BSTR Path);
+		[id(2), helpstring("Set base directory")] HRESULT SetDir([in] BSTR Dir);
+		[id(3), helpstring("Set filename")] HRESULT SetFile([in] BSTR File);
+		[id(4), helpstring("Set Thumbnail Size")] HRESULT SetThumbnailSize([in] long Width,[in] long Height);
+		[id(5), helpstring("Get Path")] HRESULT GetPath([out,retval] BSTR* Path);
+		[id(6), helpstring("Get Dir")] HRESULT GetDir([out,retval] BSTR *Dir);
+		[id(7), helpstring("Get File")] HRESULT GetFile([out,retval] BSTR* File);
+		[id(8), helpstring("Extract Thumbnail")] 
+		   HRESULT ExtractThumbnail([out,retval] long *phBitmap); // SAFEARRAY(BYTE) *ppBits);
+		[id(9), helpstring("Erase Thumbnail"),hidden] HRESULT FreeThumbnail();
+		[id(10), helpstring("Save To File (BMP or JPG)")] HRESULT SaveToFile([in] BSTR FilePath);
+		[propget, id(11), helpstring("property Stride")] HRESULT Stride([out, retval] long *pVal);
+		[propget, id(12), helpstring("property Version")] HRESULT Version([out, retval] BSTR *pVal);
+		[propget, id(13), helpstring("property ThumbJpgData")] HRESULT ThumbJpgData([in,defaultvalue(75)] long JpegQuality, [out, retval] VARIANT *pVal);
+	};
+
+[
+	uuid(7B85F162-5B0E-4F2A-A8AB-ACBF8F724190),
+	version(1.0),
+	helpstring("ThumbExtract 1.0 Type Library")
+]
+library THUMBEXTRACTLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(FC9850E3-9FC3-4C1F-8EE7-28F51EC014E1),
+		helpstring("FileThumbExtract Class")
+	]
+	coclass FileThumbExtract
+	{
+		[default] interface IFileThumbExtract;
+	};
+};

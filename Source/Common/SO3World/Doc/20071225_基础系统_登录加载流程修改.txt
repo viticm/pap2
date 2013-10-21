@@ -1,0 +1,54 @@
+===========================================================================
+登录加载流程修改方案                                                      |
+===========================================================================
+
+评审时间：2007.12.25
+
+参与人员：赵纯峰 陈杰 侯锐
+
+修改目的：
+---------------------------------------------
+以前的实现机制是待客户端加载完毕后，GameServer才将play指针添加到场景中去，
+这样会造成load玩家数据的时候，需要用到场景指针的地方无法获取。因此，考虑
+将play指针添加到场景中的操作放在load玩家数据之前做。
+
+修改方案：
+---------------------------------------------
+1. 修改后的完整登录流程(只涉及gameserver相关的步骤)：
+(1)  GC将玩家登录的请求及角色基本信息发给GS                    <不变>
+(2)  GS创建player对象，并将生成的GUID传回GC                    <不变>
+(3)  GC将GUID发送给客户端                                      <不变>
+(4)  客户端链接GS                                              <不变>
+(5)  GS验证客户端发上来的GUID等信息，通过后，向GC请求进入游戏  <不变>
+(6)  GC验证通过后，通知GS                                      <不变>
+(7)  GS向客户端同步基本角色数据                                <改变>
+(8)  客户端加载完毕后，通知GS                                  <改变>
+(9)  GS向GODDESS请求玩家的全部角色数据                         <改变>
+(10) GS收到GODDESS发来的全部角色数据后，将player加入到场景中去，再load
+     角色的全部角色数据 <改变>
+2.  玩家的游戏状态切换顺序要做适当调整
+3.  玩家在不同状态下的异常处理要做适当调整（考虑）
+
+存在的风险：
+---------------------------------------------
+1. 修改后的实现机制下，客户端基本数据加载完成的以后，要等待同步服务端的
+   全部角色数据，这个过程中的客户端操作发到服务端后将不被处理。因此，这
+   段时间的客户端行为存在一定的无法预料的风险。
+2. 是否影响到出错情况下的处理
+3. 是否影响到跨服流程中的加载
+
+本次修改涉及到的代码：
+---------------------------------------------
+1. 函数KRelayClient::OnConfirmPlayerLoginRespond(BYTE* pbyData, size_t uDataLen)，
+   将“向GODDESS请求角色数据”的操作改为“向客户端发送基本角色数据”（DoSyncPlayerBaseInfo），
+   设置当前玩家状态为：gsWaitForLoginLoading
+2. 函数KPlayerServer::OnApplyEnterScene(char* pData, size_t nSize, int nConnIndex, int nFrame)，
+   将本函数内登录、跨服的“GetScene、AddPlayer、同步邮件列表、同步队伍信息、
+   调用登录脚本”操作去掉（跨地图的仍保留），改为“向GODDESS请求角色全部数
+   据”（DoRequestRoleData），设置当前玩家状态为：gsWaitForRoleData
+3. 函数KGoddessClient::OnReplyRoleData(BYTE* pbyData, size_t uSize)，
+   将原KPlayerServer::OnApplyEnterScene函数中删除掉的“GetScene、AddPlayer、
+   调用登录脚本”操作加至本函数中，顺序为“先GetScene、AddPlayer”、再
+   “pPlayer->Load”，最后，设置玩家状态为gsPlaying
+4. 函数KPlayer::Load(BYTE* pbyData, size_t uDataLen)中，增加“邮件列表、
+   队伍信息、死亡、朝向等的同步”

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: jboss-service.xml,v 1.1 2008/12/31 09:23:05 kuangsihao Exp $ -->
+
+<!-- ===================================================================== -->
+<!--  JBoss Server Configuration                                           -->
+<!-- ===================================================================== -->
+
+<server>
+
+   <mbean code="org.jboss.aop.deployment.AspectManagerService"
+      name="jboss.aop:service=AspectManager">
+      <attribute name="EnableTransformer">false</attribute>
+      <!-- only relevant when Enabletransformer is true.  
+           When transformer is on, every loaded class gets 
+           transformed.  If AOP can't find the class, then it 
+           throws an exception.  Sometimes, classes may not have 
+           all the classes they reference.  So, the Suppressing 
+           is needed.  (i.e. Jboss cache in the default configuration -->
+      <attribute name="SuppressTransformationErrors">true</attribute>
+      <attribute name="Optimized">true</attribute>
+      <attribute name="Verbose">false</attribute>
+   </mbean>
+
+   <mbean code="org.jboss.aop.deployment.AspectDeployer"
+      name="jboss.aop:service=AspectDeployer">
+   </mbean>
+
+</server>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configUpdater>
+	<configswf>http://jx3.autoupdate.kingsoft.com/jx3/zhcn/login_web/JX3Patch.txt</configswf>
+	<configswf>http://kefu.xoyo.com/officialssi/jx3/j3_severs.xml</configswf>
+	<configswf>http://jx3.xoyo.com/khd/j3_news.xml</configswf>
+	<configswf>0</configswf>
+</configUpdater>

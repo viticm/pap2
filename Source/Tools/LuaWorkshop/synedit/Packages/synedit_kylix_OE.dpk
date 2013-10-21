@@ -1,0 +1,136 @@
+package synedit_kylix_OE;
+
+{$R *.res}
+{$R '../Source/SynEditReg.dcr'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'SynEdit package for Kylix OE'}
+{$IMPLICITBUILD OFF}
+{$DEFINE SYN_DELPHI_PE}
+
+requires
+  rtl,
+  visualclx,
+  designide,
+  vcl;
+
+contains
+  QSynEdit in '../Source/QSynEdit.pas',
+  QSynAutoCorrect in '../Source/QSynAutoCorrect.pas',
+  QSynAutoCorrectEditor in '../Source/QSynAutoCorrectEditor.pas',
+  QSynHighlighterCpp in '../Source/QSynHighlighterCpp.pas',
+  QSynHighlighterPas in '../Source/QSynHighlighterPas.pas',
+  QSynCompletionProposal in '../Source/QSynCompletionProposal.pas',
+  QSynEditAutoComplete in '../Source/QSynEditAutoComplete.pas',
+  QSynEditHighlighter in '../Source/QSynEditHighlighter.pas',
+  QSynEditKeyCmds in '../Source/QSynEditKeyCmds.pas',
+  QSynEditKeyCmdsEditor in '../Source/QSynEditKeyCmdsEditor.pas' {SynEditKeystrokesEditorForm},
+  QSynEditMiscClasses in '../Source/QSynEditMiscClasses.pas',
+  QSynEditMiscProcs in '../Source/QSynEditMiscProcs.pas',
+  QSynEditPropertyReg in '../Source/QSynEditPropertyReg.pas',
+  QSynEditPythonBehaviour in '../Source/QSynEditPythonBehaviour.pas',
+  QSynEditReg in '../Source/QSynEditReg.pas',
+  QSynEditSearch in '../Source/QSynEditSearch.pas',
+  QSynEditStrConst in '../Source/QSynEditStrConst.pas',
+  QSynEditTextBuffer in '../Source/QSynEditTextBuffer.pas',
+  QSynEditTypes in '../Source/QSynEditTypes.pas',
+  QSynExportHTML in '../Source/QSynExportHTML.pas',
+  QSynExportRTF in '../Source/QSynExportRTF.pas',
+  QSynHighlighterADSP21xx in '../Source/QSynHighlighterADSP21xx.pas',
+  QSynHighlighterAWK in '../Source/QSynHighlighterAWK.pas',
+  QSynHighlighterAsm in '../Source/QSynHighlighterAsm.pas',
+  QSynHighlighterBaan in '../Source/QSynHighlighterBaan.pas',
+  QSynHighlighterBat in '../Source/QSynHighlighterBat.pas',
+  QSynHighlighterCAC in '../Source/QSynHighlighterCAC.pas',
+  QSynHighlighterCache in '../Source/QSynHighlighterCache.pas',
+  QSynHighlighterCPM in '../Source/QSynHighlighterCPM.pas',
+  QSynHighlighterCss in '../Source/QSynHighlighterCss.pas',
+  QSynHighlighterDfm in '../Source/QSynHighlighterDfm.pas',
+  QSynHighlighterDml in '../Source/QSynHighlighterDml.pas',
+  QSynHighlighterFortran in '../Source/QSynHighlighterFortran.pas',
+  QSynHighlighterFoxpro in '../Source/QSynHighlighterFoxpro.pas',
+  QSynHighlighterGalaxy in '../Source/QSynHighlighterGalaxy.pas',
+  QSynHighlighterGeneral in '../Source/QSynHighlighterGeneral.pas',
+  QSynHighlighterGWS in '../Source/QSynHighlighterGWS.pas',
+  QSynHighlighterHC11 in '../Source/QSynHighlighterHC11.pas',
+  QSynHighlighterHP48 in '../Source/QSynHighlighterHP48.pas',
+  QSynHighlighterHashEntries in '../Source/QSynHighlighterHashEntries.pas',
+  QSynHighlighterHtml in '../Source/QSynHighlighterHtml.pas',
+  QSynHighlighterIni in '../Source/QSynHighlighterIni.pas',
+  QSynHighlighterIDL in '../Source/QSynHighlighterIDL.pas',
+  QSynHighlighterInno in '../Source/QSynHighlighterInno.pas',
+  QSynHighlighterJScript in '../Source/QSynHighlighterJScript.pas',
+  QSynHighlighterJava in '../Source/QSynHighlighterJava.pas',
+  QSynHighlighterKix in '../Source/QSynHighlighterKix.pas',
+  QSynHighlighterM3 in '../Source/QSynHighlighterM3.pas',
+  QSynHighlighterModelica in '../Source/QSynHighlighterModelica.pas',
+  QSynHighlighterMsg in '../Source/QSynHighlighterMsg.pas',
+  QSynHighlighterMulti in '../Source/QSynHighlighterMulti.pas',
+  QSynHighlighterPHP in '../Source/QSynHighlighterPHP.pas',
+  QSynHighlighterPerl in '../Source/QSynHighlighterPerl.pas',
+  QSynHighlighterProgress in '../Source/QSynHighlighterProgress.pas',
+  QSynHighlighterPython in '../Source/QSynHighlighterPython.pas',
+  QSynHighlighterSDD in '../Source/QSynHighlighterSDD.pas',
+  QSynHighlighterSQL in '../Source/QSynHighlighterSQL.pas',
+  QSynHighlighterSml in '../Source/QSynHighlighterSml.pas',
+  QSynHighlighterST in '../Source/QSynHighlighterST.pas',
+  QSynHighlighterTclTk in '../Source/QSynHighlighterTclTk.pas',
+  QSynHighlighterUnreal in '../Source/QSynHighlighterUnreal.pas',
+  QSynHighlighterVB in '../Source/QSynHighlighterVB.pas',
+  QSynHighlighterVBScript in '../Source/QSynHighlighterVBScript.pas',
+  QSynHighlighterXML in '../Source/QSynHighlighterXML.pas',
+  QSynMacroRecorder in '../Source/QSynMacroRecorder.pas',
+  QSynMemo in '../Source/QSynMemo.pas',
+  QSynRegExpr in '../Source/QSynRegExpr.pas',
+  kTextDrawer in '../Source/kTextDrawer.pas',
+  QSynEditKbdHandler in '../Source/QSynEditKbdHandler.pas',
+  QSynEditKeyCmdEditor in '../Source/QSynEditKeyCmdEditor.pas' {SynEditKeystrokeEditorForm},
+  QSynEditKeyConst in '../Source/QSynEditKeyConst.pas',
+  QSynEditPlugins in '../Source/QSynEditPlugins.pas',
+  QSynEditPrinterInfo in '../Source/QSynEditPrinterInfo.pas',
+  QSynEditPrintHeaderFooter in '../Source/QSynEditPrintHeaderFooter.pas',
+  QSynEditPrintMargins in '../Source/QSynEditPrintMargins.pas',
+  QSynEditPrintTypes in '../Source/QSynEditPrintTypes.pas',
+  QSynEditPrint in '../Source/QSynEditPrint.pas',
+  QSynEditPrintMarginsDialog in '../Source/QSynEditPrintMarginsDialog.pas' {SynEditPrintMarginsDlg},
+  QSynEditPrintPreview in '../Source/QSynEditPrintPreview.pas',
+  QSynEditRegexSearch in '../Source/QSynEditRegexSearch.pas',
+  QSynEditExport in '../Source/QSynEditExport.pas',
+  QSynHighlighterCobol in '../Source/QSynHighlighterCobol.pas',
+  QSynHighlighterTeX in '../Source/QSynHighlighterTeX.pas',
+  QSynHighlighterManager in '../Source/QSynHighlighterManager.pas',
+  QSynEditOptionsDialog in '../Source/QSynEditOptionsDialog.pas',
+  QSynHighlighterLDraw in '../Source/QSynHighlighterLDraw.pas',
+  QSynHighlighterCS in '../Source/QSynHighlighterCS.pas',
+  QSynHighlighterHaskell in '../Source/QSynHighlighterHaskell.pas',
+  QSynHighlighterUNIXShellScript in '../Source/QSynHighlighterUNIXShellScript.pas',
+  QSynHighlighterRC in '../Source/QSynHighlighterRC.pas',
+  QSynHighlighterRuby in '../Source/QSynHighlighterRuby.pas',
+  QSynExportTeX in '../Source/QSynExportTeX.pas',
+  QSynHighlighterURI in '../Source/QSynHighlighterURI.pas',
+  QSynEditWordWrap in '../Source/QSynEditWordWrap.pas',
+  QSynHighlighterDOT in '../Source/QSynHighlighterDOT.pas',
+  QSynHighlighterEiffel in '../Source/QSynHighlighterEiffel.pas',
+  QSynHighlighterVrml97 in '../Source/QSynHighlighterVrml97.pas',
+  QSynURIOpener in '../Source/QSynURIOpener.pas';
+
+end.

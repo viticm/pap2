@@ -1,0 +1,5 @@
+﻿body,a,table,div,span,td,th,input,select,p,li,textarea{font-size:9pt;font-family:宋体, Verdana, Arial, Helvetica, sans-serif}
+
+input.dlgBtnCommon {width:60px}
+input.dlgBtnBrowse {width:63px;height:18px;margin-left:2px;padding-top:0px;}
+input.dlgBtnFind {width:80px}

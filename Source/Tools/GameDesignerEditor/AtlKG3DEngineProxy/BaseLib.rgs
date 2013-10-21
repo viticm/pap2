@@ -1,0 +1,26 @@
+HKCR
+{
+	AtlKG3DEngineProxy.BaseLib.1 = s 'BaseLib Class'
+	{
+		CLSID = s '{D30453C5-96C6-4C64-90B9-81A9155BDF99}'
+	}
+	AtlKG3DEngineProxy.BaseLib = s 'BaseLib Class'
+	{
+		CLSID = s '{D30453C5-96C6-4C64-90B9-81A9155BDF99}'
+		CurVer = s 'AtlKG3DEngineProxy.BaseLib.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {D30453C5-96C6-4C64-90B9-81A9155BDF99} = s 'BaseLib Class'
+		{
+			ProgID = s 'AtlKG3DEngineProxy.BaseLib.1'
+			VersionIndependentProgID = s 'AtlKG3DEngineProxy.BaseLib'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{}'
+		}
+	}
+}

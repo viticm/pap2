@@ -1,0 +1,26 @@
+HKCR
+{
+	AtlKGRecordeOperator.BaseLib.1 = s 'BaseLib Class'
+	{
+		CLSID = s '{6951EF60-C91E-408D-B468-4F62F3C67A81}'
+	}
+	AtlKGRecordeOperator.BaseLib = s 'BaseLib Class'
+	{
+		CLSID = s '{6951EF60-C91E-408D-B468-4F62F3C67A81}'
+		CurVer = s 'AtlKGRecordeOperator.BaseLib.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {6951EF60-C91E-408D-B468-4F62F3C67A81} = s 'BaseLib Class'
+		{
+			ProgID = s 'AtlKGRecordeOperator.BaseLib.1'
+			VersionIndependentProgID = s 'AtlKGRecordeOperator.BaseLib'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Both'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{1EFD303F-CA43-4418-8BCA-5E18F5793F0E}'
+		}
+	}
+}

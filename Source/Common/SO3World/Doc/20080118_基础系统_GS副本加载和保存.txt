@@ -1,0 +1,120 @@
+==================================================================
+GameServer副本加载和保存修改                                     |
+==================================================================
+
+评审时间：2008-1-18
+
+参与人员：夏永 赵纯峰 侯锐
+
+设计方案：
+------------------------------------------------------------------
+1. 将GameServer原来的“加载和保存直接操作数据库”修改成为“GameServer向
+   GameCenter”发送数据包，由GameCenter操作数据库。
+
+2. GameServer的加载场景任务列表（m_LoadingList）仍保留，加载的流程为：
+(1) 将加载任务push到m_LoadingList中
+(2) 加载的线程处理函数从m_LoadingList中读取加载任务
+(4) 加载文件数据
+(5) 设置本场景的状态为“加载文件数据完毕”
+(6) GameServer主线程中，检测到地图的场景状态为“加载文件数据完毕”，则
+    向GameCenter发送数据包，请求地图的MapData，然后将场景状态设置为“等
+    待GameCenter的MapData”
+(7) 待GameServer收到GameCenter的返回数据包后，加载保存的地图信息MapData
+
+
+3. GameServer的保存场景任务列表（m_SavingList）删除，新的保存流程为：
+(1) 将“原先保存的时候先向m_SavingList中push任务”的操作去掉，换成“向
+    GameCenter发送保存地图数据包，请求保存”
+
+
+本次修改涉及到的代码：
+------------------------------------------------------------------
+1. 文件relay_gs_protocol.h中：
+(1) enum KG2R_PROTOCOL中，增加两个协议和相关的结构体声明：
+      g2r_apply_map_data_request
+      g2r_save_map_data_request
+(2) enum KR2G_PROTOCOL中，增加一个协议和相关的结构体声明：
+      r2g_apply_map_data_respond
+
+2. 文件KGameServer.cpp中，增加协议g2r_apply_map_data_request、
+   g2r_save_map_data_request的注册代码。
+
+3. 文件KRelayClient.cpp中，增加协议r2g_apply_map_data_respond的注册代码。
+
+4. 文件KScene.h，SCENE_STATE中增加以下两个枚举型：
+    ssFileDataLoaded,       // 文件数据加载完毕
+    ssWaitMapData,          // 等待MapData数据
+
+
+5. 文件KRelayClient.cpp中，增加协议r2g_apply_map_data_respond的处理函数，
+   函数实现的伪代码如下：
+
+    pPak = (R2G_APPLY_MAP_DATA_RESPOND*)pbyData;
+
+    判断返回数据包中DataSize的大小
+	 为0，退出；
+         不为0，继续下面的操作
+   
+    pScene = KSO3World::GetScene();
+
+    //加载地图数据
+    pbyNextData = pScene->m_CustomDataList.Load(pbyNextData);
+    if (pbyNextData == NULL)
+    {
+	 //加载数据出错
+	 KGLOG_CHECK_ERROR(FALSE);
+	 break;
+    }
+						
+    pbyNextData = pScene->m_CustomStringData.Load(pbyNextData);
+    if (pbyNextData == NULL)
+    {
+	 //加载数据出错
+	 KGLOG_CHECK_ERROR(FALSE);
+	 break;
+    }
+
+    if (pbyNextData != pbyDataEnd)
+    {
+	 //地图数据没加载完
+	 KGLOG_CHECK_ERROR(FALSE);
+    }
+
+    pScene->m_eSceneState = ssLoaded；
+
+
+6. 文件KSO3World.cpp中：
+(1) 函数LoadThreadFunction()里面：
+ a. 去掉枚举SAVE_OR_LOAD的定义。
+ b. 去掉while循环中的for循环，修改后的伪代码如下：
+    while(!m_bQuit)
+    {
+	Sleep(100);
+
+        bRetCode = m_LoadingList.Pop(&LoadTaskInfo);
+	if (!bRetCode)
+	   break;
+
+	pScene = LoadTaskInfo.pScene;
+	if (!pScene)
+	   break;
+
+	bRetCode = pScene->ServerLoad(LoadTaskInfo.bLoadTerrain);
+
+	pScene->m_eSceneState = bRetCode ? ssFileDataLoaded : ssLoadFailed;
+    }
+
+(2) 函数SaveServerScene(DWORD dwMapID, __int64 dwMapCopyIndex)里面：
+    将代码：	
+        bRetCode = m_SavingList.Push(SavingTask);
+	KG_PROCESS_ERROR(bRetCode);
+    修改成：
+        向GameCenter发送“保存地图数据”的数据包
+
+(3) 函数KTraverseSceneFunc::operator()(DWORD dwID, KScene* pScene)里面，增加
+    对ssFileDataLoaded情况的处理，伪代码如下：
+
+     	向GameCenter发送g2r_apply_map_data_request的请求
+	pScene->m_eSceneState = ssWaitMapData;
+	
+   

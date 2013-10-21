@@ -1,0 +1,263 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\GameConfig.rc2""  // ????????????ì??????????????ì????? Microsoft Visual C++ ???????????¨???????????????§?????????????§???????????????§????????????????ì??????????????ì?????-|??????????¨??????????????????¨???????????????§????|???????????§?????o???\r\n"
+    "#include ""afxres.rc""     // ???????????¨???????????????§?????????????§???????????????§?????o???????????¨???????????????§????|????????????¨???????????????§????|???????????§?????|?t\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\GameConfig.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_GAMECONFIG_DIALOG DIALOGEX 0, 0, 371, 348
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "游戏设置"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TAB,"SysTabControl32",0x0,7,7,357,317
+    PUSHBUTTON      "确定",IDC_BTN_OK,201,327,50,14
+    PUSHBUTTON      "取消",IDC_BTN_QUIT,258,327,50,14
+    PUSHBUTTON      "应用",IDC_BTN_APPLY,315,327,50,14
+    PUSHBUTTON      "更多配置信息",IDC_BTN_SYSINFO,7,327,71,14,NOT WS_VISIBLE
+END
+
+IDD_CONFIG_DLG DIALOGEX 0, 0, 357, 281
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "配置选择",IDC_STATIC,14,8,327,32
+    CONTROL         "低配置",IDC_RADIO_LOW,"Button",BS_AUTORADIOBUTTON | WS_GROUP,37,24,40,10
+    CONTROL         "中配置",IDC_RADIO_MID,"Button",BS_AUTORADIOBUTTON,114,24,40,10
+    CONTROL         "高配置",IDC_RADIO_HIGH,"Button",BS_AUTORADIOBUTTON,200,24,40,10
+    CONTROL         "自定义配置",IDC_RADIO_CUSTOM,"Button",BS_AUTORADIOBUTTON,272,24,56,10
+    GROUPBOX        "选项",IDC_STATIC,14,43,327,172
+    CONTROL         "窗口模式最大化",IDC_CHECK_FULL_SCREEN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,59,72,10
+    CONTROL         "全屏模式",IDC_CHECK_EXCLUSIVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,114,59,48,10
+    CONTROL         "宽屏模式",IDC_CHECK_PANAUISION,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,200,59,48,10
+    CONTROL         "静音",IDC_CHECK_QUIET,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,272,59,32,10
+    CTEXT           "分辨率",IDC_STATIC,39,78,32,8
+    COMBOBOX        IDC_COMBO_RESOLUTION,75,76,80,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "全屏抗锯齿",IDC_STATIC,200,78,41,8
+    COMBOBOX        IDC_COMBO_MULTISAMPL,244,76,80,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "材质过滤",IDC_STATIC,35,98,33,8
+    COMBOBOX        IDC_COMBO_SAMPMIPFILTER,75,96,80,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "阴影选项",IDC_STATIC_SHADOW_OPATION,207,98,33,8
+    COMBOBOX        IDC_COMBO_MODEL_SHADOW_TYPE,244,96,80,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "远景显示",IDC_STATIC,36,116,33,8
+    CONTROL         "",IDC_SLIDER_CAMMERAdISTANCE,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | WS_TABSTOP,41,127,112,22
+    LTEXT           "近",IDC_STATIC,33,134,9,8
+    LTEXT           "远",IDC_STATIC,154,133,9,8
+    LTEXT           "水面精度",IDC_STATIC,200,116,33,8
+    CONTROL         "",IDC_SLIDER_WATER_DETAIL,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | WS_TABSTOP,213,127,107,22
+    LTEXT           "低",IDC_STATIC,205,134,9,8
+    LTEXT           "高",IDC_STATIC,322,135,9,8
+    LTEXT           "地形精度",IDC_STATIC,36,154,33,8,WS_DISABLED
+    CONTROL         "",IDC_SLIDER_TERRAIN_DETAIL,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | WS_DISABLED | WS_TABSTOP,42,166,112,21
+    LTEXT           "低",IDC_STATIC,34,174,9,8,WS_DISABLED
+    LTEXT           "高",IDC_STATIC,155,174,9,8,WS_DISABLED
+    LTEXT           "贴图精度",IDC_STATIC,200,154,33,8
+    CONTROL         "",IDC_SLIDER_TEXTURE_SCALE,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | WS_TABSTOP,214,166,107,22
+    LTEXT           "低",IDC_STATIC,205,174,9,8
+    LTEXT           "高",IDC_STATIC,322,175,9,8
+    CONTROL         "体积光",IDC_CHECK_GODRAY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,196,40,10
+    CONTROL         "全屏柔光",IDC_CHECK_BLOOMENABLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,114,196,48,10
+    CONTROL         "屏幕扭曲",IDC_CHECK_SHOCKWAVEENABLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,200,196,48,10
+    CONTROL         "地表细节",IDC_CHECK_RENDERGRASS,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,273,196,48,10
+    GROUPBOX        "3D眼镜模式",IDC_STATIC,15,218,326,56
+    CONTROL         133,IDC_STATIC,"Static",SS_BITMAP,27,227,111,42
+    CONTROL         "3D眼镜模式",IDC_CHECK_3D_VISION,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,150,234,57,10
+    LTEXT           "（必需VISTA或WIN7操作系统下开启全屏模式才有效）",IDC_STATIC,150,253,190,8
+END
+
+IDD_INFORMATON_DLG DIALOGEX 0, 0, 357, 281
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "CPU",IDC_STATIC,37,23,15,8
+    LTEXT           "内存",IDC_STATIC,35,54,17,8
+    LTEXT           "显卡",IDC_STATIC,35,85,17,8
+    LTEXT           "显存",IDC_STATIC,35,116,17,8
+    LTEXT           "操作系统",IDC_STATIC,19,147,33,8
+    LTEXT           "浏览器",IDC_STATIC,27,178,25,8
+    LTEXT           "DirectX版本",IDC_STATIC,12,209,40,8
+    LTEXT           "本机IP地址",IDC_STATIC,12,240,40,8
+    CTEXT           "Static",IDC_INFO_CPU,60,23,264,8
+    CTEXT           "Static",IDC_INFO_MEMORY,60,54,264,8
+    CTEXT           "sdafasdfasdfasdfasdfas",IDC_INFO_DISPLAY_CARD,60,85,264,8,NOT WS_GROUP
+    CTEXT           "Static",IDC_INFO_DISPLAY_MEMORY,60,116,264,8
+    CTEXT           "Static",IDC_INFO_OS,60,147,264,8
+    CTEXT           "Static",IDC_INFO_BROWSER,60,178,264,8
+    CTEXT           "Static",IDC_INFO_DX,60,209,264,8
+    CTEXT           "Static",IDC_INFO_IP,60,240,264,8
+    CTEXT           "",IDC_INFO_DISPLAY_CARD2,60,74,264,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,622
+ PRODUCTVERSION 1,4,0,1834
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "Kingsoft Corporation"
+            VALUE "FileDescription", "GameConfig"
+            VALUE "FileVersion", "1,0,0,622"
+            VALUE "InternalName", "GameConfig.exe"
+            VALUE "LegalCopyright", "(c) Kingsoft Corporation 2003-2009, All Rights Reserved."
+            VALUE "OriginalFilename", "GameConfig.exe"
+            VALUE "ProductName", "GameConfig.exe"
+            VALUE "ProductVersion", "1,4,0,1834"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_GAMECONFIG_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 364
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 341
+    END
+
+    IDD_CONFIG_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 350
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 274
+    END
+
+    IDD_INFORMATON_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 350
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 274
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_3D_VISION    BITMAP                  "res\\NV_3DVision_3D.bmp"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\GameConfig.rc2"  // ????????????ì??????????????ì????? Microsoft Visual C++ ???????????¨???????????????§?????????????§???????????????§????????????????ì??????????????ì?????-|??????????¨??????????????????¨???????????????§????|???????????§?????o???
+#include "afxres.rc"     // ???????????¨???????????????§?????????????§???????????????§?????o???????????¨???????????????§????|????????????¨???????????????§????|???????????§?????|?t
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

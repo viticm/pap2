@@ -1,0 +1,3 @@
+#/bin/bash
+#stop game
+killall -9 kg_goddessd_linux 

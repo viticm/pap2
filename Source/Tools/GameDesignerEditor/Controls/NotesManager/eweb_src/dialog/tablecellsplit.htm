@@ -1,0 +1,99 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script language=javascript src="dialog.js"></script>
+
+<script language="javascript">
+document.write ("<link href='../language/" + AvailableLangs["Active"] + ".css' type='text/css' rel='stylesheet'>");
+document.write ("<link href='dialog.css' type='text/css' rel='stylesheet'>");
+
+document.write("<title>"+lang["DlgCelSpt"]+"</title>");
+
+function MoreThanOne(obj, sErr){
+	var b=false;
+	if (obj.value!=""){
+		obj.value=parseFloat(obj.value);
+		if (obj.value!="0"){
+			b=true;
+		}
+	}
+	if (b==false){
+		BaseAlert(obj,sErr);
+		return false;
+	}
+	return true;
+}
+
+function doView(opt){
+	if (opt=="col"){
+		d_col.checked=true;
+		d_row.checked=false;
+	}else{
+		d_col.checked=false;
+		d_row.checked=true;
+	}
+	if (d_col.checked){
+		d_view.innerHTML = "<table border=1 cellpadding=0><tr><td width=25>&nbsp;</td><td width=25>&nbsp;</td></tr></table>";
+		d_label.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;"+lang["DlgCelSptCols"]+":";
+	}
+	if (d_row.checked){
+		d_view.innerHTML = "<table border=1 cellpadding=0 width=50><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr></table>";
+		d_label.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;"+lang["DlgCelSptRows"]+":";
+	}
+}
+
+function ok(){
+	if (!MoreThanOne(d_num,lang["DlgCelSptErrRowCol"])) return;
+
+	if (d_row.checked){
+		dialogArguments.TableRowSplit(parseInt(d_num.value));
+	}
+	if (d_col.checked){
+		dialogArguments.TableColSplit(parseInt(d_num.value));
+	}
+
+	window.returnValue = null;
+	window.close();
+}
+
+function InitDocument(){
+	AvailableLangs.TranslatePage(document);
+	adjustDialog();
+}
+
+</script>
+
+</head>
+<body onload="InitDocument()">
+<table border=0 cellpadding=0 cellspacing=5 id=tabDialogSize><tr><td>
+
+
+<table border=0 cellpadding=0 cellspacing=0 align=center width=180 height=150>
+<tr>
+	<td>
+	<table border=0 cellpadding=0 cellspacing=0>
+	<tr><td colspan=3 height=5></td></tr>
+	<tr><td noWrap><input type=radio id=d_col checked onclick="doView('col')"><label for="d_col"><span lang=DlgCelSptSplitCol></span></label></td><td rowspan=3 width=30>&nbsp;</td><td width=60 rowspan=3 id=d_view valign=middle align=center></td></tr>
+	<tr><td height=5></td></tr>
+	<tr><td noWrap><input type=radio id=d_row onclick="doView('row')"><label for="d_row"><span lang=DlgCelSptSplitRow></span></label></td></tr>
+	<tr><td height=5 colspan=3></td></tr>
+	<tr>
+		<td noWrap id=d_label></td>
+		<td></td>
+		<td><input type=text id=d_num size=8 value="1" ONKEYPRESS="event.returnValue=IsDigit();" maxlength=3></td>
+	</tr>
+	</table>
+</tr>
+<tr><td height=5></td></tr>
+<tr><td noWrap align=right><input type=submit class="dlgBtnCommon" value='' id=Ok onclick="ok()" lang=DlgBtnOK>&nbsp;&nbsp;<input type=button class="dlgBtnCommon" value='' onclick="window.close();" lang=DlgBtnCancel></td></tr>
+</table>
+
+
+</td></tr></table>
+
+<Script Language=JavaScript>
+doView('col');
+</Script>
+
+</body>
+</html>

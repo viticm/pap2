@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Server_Lib|Win32">
+      <Configuration>Debug_Server_Lib</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_Server|Win32">
+      <Configuration>Debug_Server</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Server|Win32">
+      <Configuration>Release_Server</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3AC2E2CD-DD8B-4999-8E95-8192E9C00756}</ProjectGuid>
+    <RootNamespace>SO3GameCenter</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Server_Lib|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Server_Lib|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Server_Lib|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_Server_Lib|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug_Server_Lib|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug_Server_Lib|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug_Server_Lib|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../Include;../../../../Base/Include;../../../../DevEnv/Include/mysql;../../../../DevEnv/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;LUA_V_5;FILTERTEXT_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnablePREfast>false</EnablePREfast>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Engine_lua5D.lib;commonD.lib;Ws2_32.lib;libmysql.lib;Lua5D.lib;lzoD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName)D.exe</OutputFile>
+      <AdditionalLibraryDirectories>../../../../Base/Lib;../../../../DevEnv/Lib/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>md ..\..\..\..\sword3-products
+md ..\..\..\..\sword3-products\trunk
+md ..\..\..\..\sword3-products\trunk\client
+md ..\..\..\..\sword3-products\trunk\server
+copy $(TargetDir)$(TargetName).exe ..\..\..\..\sword3-products\trunk\server
+copy $(TargetDir)$(TargetName).pdb ..\..\..\..\sword3-products\trunk\server
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../../../Include;../../../../Base/Include;../../../../DevEnv/Include/mysql;../../../../DevEnv/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;LUA_V_5;FILTERTEXT_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Engine_lua5.lib;common.lib;Ws2_32.lib;libmysql.lib;Lua5.lib;lzo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>../../../../Base/Lib;../../../../DevEnv/Lib/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>md ..\..\..\..\sword3-products
+md ..\..\..\..\sword3-products\trunk
+md ..\..\..\..\sword3-products\trunk\client
+md ..\..\..\..\sword3-products\trunk\server
+copy $(TargetDir)$(TargetName).exe ..\..\..\..\sword3-products\trunk\server
+copy $(TargetDir)$(TargetName).pdb ..\..\..\..\sword3-products\trunk\server
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Server_Lib|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../Include;../../../../Base/Include;../../../../DevEnv/Include/mysql;../../../../DevEnv/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;LUA_V_5;FILTERTEXT_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnablePREfast>false</EnablePREfast>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)D.lib</OutputFile>
+    </Lib>
+    <PostBuildEvent>
+      <Command>md ..\..\..\Lib\Win32
+copy "$(TargetDir)$(TargetName).lib" ..\..\..\Lib\Win32
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="KOvertimeQueue.h" />
+    <ClInclude Include="KSO3GameCenter.h" />
+    <ClInclude Include="KTong.h" />
+    <ClInclude Include="..\..\..\Include\KTongDB.h" />
+    <ClInclude Include="KTongHistory.h" />
+    <ClInclude Include="KTongManager.h" />
+    <ClInclude Include="KTongRepertory.h" />
+    <ClInclude Include="KGPQCenter.h" />
+    <ClInclude Include="KGameCenterEyes.h" />
+    <ClInclude Include="KGameServer.h" />
+    <ClInclude Include="KGatewayAgency.h" />
+    <ClInclude Include="KLogServerAgency.h" />
+    <ClInclude Include="KBattleFieldManager.h" />
+    <ClInclude Include="KMapCopy.h" />
+    <ClInclude Include="KMapInfo.h" />
+    <ClInclude Include="KMapManager.h" />
+    <ClInclude Include="KHometownList.h" />
+    <ClInclude Include="KSO3GameCenterSettings.h" />
+    <ClInclude Include="KTeamCenter.h" />
+    <ClInclude Include="KMailBox.h" />
+    <ClInclude Include="..\..\..\Include\KMailDef.h" />
+    <ClInclude Include="KMailManager.h" />
+    <ClInclude Include="KMailOperation.h" />
+    <ClInclude Include="KRole.h" />
+    <ClInclude Include="KRoleManager.h" />
+    <ClInclude Include="KFellowshipCenter.h" />
+    <ClInclude Include="KRemoteScript.h" />
+    <ClInclude Include="KScriptFuncList.h" />
+    <ClInclude Include="KScriptManager.h" />
+    <ClInclude Include="..\..\..\Include\Luna.h" />
+    <ClInclude Include="KDBBase.h" />
+    <ClInclude Include="KDBTools.h" />
+    <ClInclude Include="KIDSequence.h" />
+    <ClInclude Include="KMiscDB.h" />
+    <ClInclude Include="KRoleDB.h" />
+    <ClInclude Include="..\..\..\Include\KAuctionDef.h" />
+    <ClInclude Include="KAuctionManager.h" />
+    <ClInclude Include="KAuctionOperation.h" />
+    <ClInclude Include="KCampManager.h" />
+    <ClInclude Include="KGlobalCustomDataManager.h" />
+    <ClInclude Include="KGlobalSystemValueManager.h" />
+    <ClInclude Include="KStatDataManager.h" />
+    <ClInclude Include="KRoadCenter.h" />
+    <ClInclude Include="KActivityManager.h" />
+    <ClInclude Include="KApexProxy.h" />
+    <ClInclude Include="..\..\..\Include\KGameCardDef.h" />
+    <ClInclude Include="KGameCardManager.h" />
+    <ClInclude Include="KGameCardOperation.h" />
+    <ClInclude Include="KAntiFarmerManager.h" />
+    <ClInclude Include="KMentorCenter.h" />
+    <ClInclude Include="..\..\..\Include\KMentorDef.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="KOvertimeQueue.cpp" />
+    <ClCompile Include="KSO3GameCenter.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="KLuaTong.cpp" />
+    <ClCompile Include="KTong.cpp" />
+    <ClCompile Include="KTongHistory.cpp" />
+    <ClCompile Include="KTongManager.cpp" />
+    <ClCompile Include="KTongRepertory.cpp" />
+    <ClCompile Include="KGPQCenter.cpp" />
+    <ClCompile Include="KGameCenterEyes.cpp" />
+    <ClCompile Include="KGameServer.cpp" />
+    <ClCompile Include="KGatewayAgency.cpp" />
+    <ClCompile Include="KLogServerAgency.cpp" />
+    <ClCompile Include="KBattleFieldManager.cpp" />
+    <ClCompile Include="KMapCopy.cpp" />
+    <ClCompile Include="KMapInfo.cpp" />
+    <ClCompile Include="KMapManager.cpp" />
+    <ClCompile Include="KHometownList.cpp" />
+    <ClCompile Include="KSO3GameCenterSettings.cpp" />
+    <ClCompile Include="KTeamCenter.cpp" />
+    <ClCompile Include="KMailBox.cpp" />
+    <ClCompile Include="KMailManager.cpp" />
+    <ClCompile Include="KRole.cpp" />
+    <ClCompile Include="KRoleManager.cpp" />
+    <ClCompile Include="KFellowshipCenter.cpp" />
+    <ClCompile Include="KLuaCenterConstList.cpp" />
+    <ClCompile Include="KRemoteScript.cpp" />
+    <ClCompile Include="KScriptFuncList.cpp" />
+    <ClCompile Include="KScriptManager.cpp" />
+    <ClCompile Include="KDBBase.cpp" />
+    <ClCompile Include="KDBTools.cpp" />
+    <ClCompile Include="KIDSequence.cpp" />
+    <ClCompile Include="KMiscDB.cpp" />
+    <ClCompile Include="KMiscDBThread.cpp" />
+    <ClCompile Include="KRoleDB.cpp" />
+    <ClCompile Include="KRoleDBThread.cpp" />
+    <ClCompile Include="KAuctionManager.cpp" />
+    <ClCompile Include="KCampManager.cpp" />
+    <ClCompile Include="KGlobalCustomDataManager.cpp" />
+    <ClCompile Include="KGlobalSystemValueManager.cpp" />
+    <ClCompile Include="KStatDataManager.cpp" />
+    <ClCompile Include="KRoadCenter.cpp" />
+    <ClCompile Include="KActivityManager.cpp" />
+    <ClCompile Include="KLuaActivityManager.cpp" />
+    <ClCompile Include="KApexProxy.cpp" />
+    <ClCompile Include="KGameCardManager.cpp" />
+    <ClCompile Include="KAntiFarmerManager.cpp" />
+    <ClCompile Include="KLuaMentorCenter.cpp" />
+    <ClCompile Include="KMentorCenter.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_Server_Lib|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="SO3GameCenter.prj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SO3GameCenter.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

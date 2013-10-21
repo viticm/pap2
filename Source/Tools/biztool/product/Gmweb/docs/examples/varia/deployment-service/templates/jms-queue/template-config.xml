@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Example template configuration that produces a JMS-Queue
+  deployment descriptor.
+  
+  Documentation for the deployment service can be found at: 
+  http://www.jboss.org/wiki/Wiki.jsp?page=DeploymentService
+-->
+<template-config template="vm/jms-queue.xml.vm" extension="-service.xml">
+
+  <property-list>
+    <!-- if type not specified, java.lang.String is assumed -->
+    <!-- a value must be supplied at runtime, or an exception will be thrown -->
+    <property name="QueueName"/>
+    
+    <!-- if a value is not supplied at runtime, the default will be used -->
+    <property name="DestinationManager" type="javax.management.ObjectName">
+      <default-value>jboss.mq:service=DestinationManager</default-value>
+    </property>
+    
+    <!-- mark a property with optional=true so that a value is not required -->
+    <!-- any specified default will be ignored in this case -->
+    <property name="SecurityManager" type="javax.management.ObjectName" optional="true">
+      <default-value>jboss.mq:service=SecurityManager</default-value>
+    </property>
+    
+    <!-- arrays and generally any valid java/user class is permitted -->
+    <property name="SecurityRoles" type="[Ljava.lang.String;" optional="true"/>
+  </property-list>
+  
+</template-config>

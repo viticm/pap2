@@ -1,0 +1,74 @@
+<asp:TextBox runat="server" BackColor="#CCFFCC" BorderColor="#0D456E" BorderStyle="Solid" BorderWidth="1px" ForeColor="#000000" Width="150px" Height="17px" />
+<asp:TextBox SkinID="Short" runat="server" BackColor="#CCFFCC" BorderColor="#0D456E" BorderStyle="Solid" BorderWidth="1px" ForeColor="#000000" Width="50px" Height="17px" />
+<asp:TextBox SkinID="Long" runat="server" BackColor="#CCFFCC" BorderColor="#0D456E" BorderStyle="Solid" BorderWidth="1px" ForeColor="#000000" Width="300px" Height="17px" />
+<asp:TextBox SkinID="Multiline" runat="server" BackColor="#CCFFCC" BorderColor="#0D456E" BorderStyle="Solid" BorderWidth="1px" ForeColor="#000000" Width="300px" Height="75px" />
+<asp:TextBox SkinID="Custom" runat="server" BackColor="#CCFFCC" BorderColor="#0D456E" BorderStyle="Solid" BorderWidth="1px" ForeColor="#000000"  />
+
+<asp:Label runat="server" ForeColor="#333333" />
+<asp:Label SkinID="Success" runat="server" ForeColor="#00FF00" />
+<asp:Label SkinID="Failure" runat="server" ForeColor="#FF0000" />
+<asp:Label SkinID="Alert" runat="server" ForeColor="#FF0000" />
+<asp:Label SkinID="Copyright" runat="server" ForeColor="#000000" />
+<asp:Label SkinID="SystemFullName" runat="server" Font-Size="X-Large" Font-Bold="true" ForeColor="#FFFFFF" />
+<asp:Label SkinID="TopBar" runat="server" ForeColor="#FFFFFF" />
+<asp:Label SkinID="TopMessage" runat="server" ForeColor="#FFFFFF" />
+<asp:Label SkinID="Title" runat="server" ForeColor="#333333" Font-Size="14px" Font-Bold="true" />
+<asp:Label SkinID="Operating" runat="server" ForeColor="#0000DD" />
+<asp:Label SkinID="MessageSuccess" runat="server" ForeColor="#00DD00" />
+<asp:Label SkinID="MessageFailure" runat="server" ForeColor="#DD0000" />
+<asp:Label SkinID="Attention" runat="server" ForeColor="#DDDD00" />
+<asp:Label SkinID="MessageNormal" runat="server" ForeColor="#DDDDDD" />
+<asp:Label SkinID="LoginSystemName" runat="server" ForeColor="#FFFFFF" Font-Size="X-Large" Font-Bold="true" />
+<asp:Label SkinID="WelcomeLogin" runat="server" ForeColor="#FFFFFF" Font-Size="Medium" />
+
+
+<asp:LinkButton runat="server" CssClass="LB" />
+<asp:LinkButton SkinID="PlainText" runat="server" CssClass="ButtonPlainText" />
+<asp:LinkButton SkinID="SmallButton" runat="server" CssClass="LBSmall" />
+<asp:LinkButton SkinID="Login" runat="server" CssClass="LBLogin" />
+<asp:LinkButton SkinID="TopBar" runat="server" CssClass="LinkTopBar" />
+<asp:LinkButton SkinID="ModalPopup" runat="server" CssClass="lbModalPopup" />
+
+<asp:ImageButton runat="server" SkinID="SmallSearch" ImageUrl="~/Image/Search_small.gif" />
+
+<asp:HyperLink runat="server" CssClass="LB" />
+<asp:HyperLink SkinID="SmallButton" runat="server" CssClass="LBSamll" />
+<asp:HyperLink SkinID="TopBar" runat="server" CssClass="LinkTopBar" />
+<asp:HyperLink SkinID="PlainText" runat="server" CssClass="ButtonPlainText" />
+
+<asp:TreeView runat="server" ImageSet="Simple">
+	<ParentNodeStyle Font-Bold="False" />
+	<HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+	<SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px" VerticalPadding="0px" />
+	<NodeStyle ForeColor="#000000" HorizontalPadding="0px" NodeSpacing="0px" VerticalPadding="0px" Font-Size="9pt" />
+</asp:TreeView>
+<asp:TreeView SkinID="ServerGroup" runat="server" ImageSet="Arrows">
+	<ParentNodeStyle Font-Bold="False" />
+	<HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+	<SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px" VerticalPadding="0px" />
+	<NodeStyle Font-Size="9pt" ForeColor="#000000" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+</asp:TreeView>
+
+<asp:SiteMapPath runat="server" PathSeparator=" / ">
+	<PathSeparatorStyle Font-Bold="True" ForeColor="#5D7B9D" />
+	<CurrentNodeStyle ForeColor="#333333" />
+	<NodeStyle Font-Bold="True" ForeColor="#7C6F57" />
+	<RootNodeStyle Font-Bold="True" ForeColor="#5D7B9D" />
+</asp:SiteMapPath>
+
+<asp:Panel SkinID="LoginTop" runat="server" BackImageUrl="Images/LoginBgTop.jpg" Height="100%" />
+<asp:Panel SkinID="LoginWelcome" runat="server" BackImageUrl="Images/LoginBgWelcome.jpg" Width="363" Height="79" />
+<asp:Panel SkinID="Copyright" runat="server" BackImageUrl="Images/BgCopyright.jpg" Height="100%" />
+<asp:Panel SkinID="FrameTop" runat="server" BackImageUrl="" Height="100%" />
+
+<asp:Image SkinID="LoginSeparator" runat="server" ImageUrl="Images/LoginSeparator.jpg" ImageAlign="middle" />
+<asp:Image SkinID="BlazeLogo" runat="server" ImageUrl="Images/jx.ico" />
+<asp:Image SkinID="PleaseWait" runat="server" ImageUrl="Images/PleaseWait.gif" ImageAlign=Middle />
+
+<asp:Table runat="server" CssClass="TN" CellSpacing="1" />
+<asp:Table SkinID="Medium" runat="server" CssClass="TM" CellSpacing="1" />
+
+<asp:TableHeaderRow runat="server" CssClass="TRH" />
+<asp:TableHeaderCell runat="server" CssClass="TCH" />
+<asp:TableHeaderCell runat="server" SkinID="Custom" />
+<asp:TableCell runat="server" CssClass="TCN" />

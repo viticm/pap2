@@ -1,0 +1,146 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script language=javascript src="dialog.js"></script>
+
+<script language="javascript">
+document.write ("<link href='../language/" + AvailableLangs["Active"] + ".css' type='text/css' rel='stylesheet'>");
+document.write ("<link href='dialog.css' type='text/css' rel='stylesheet'>");
+
+document.write ("<TITLE>" + lang["DlgWord"] + "</TITLE>");
+
+var bInstalled = true;
+
+function ok(){
+	if (!bInstalled){
+		alert(lang["MsgNoClient"]);
+		return;
+	}
+	
+	var s_File = d_file.value;
+	var s_PostUrl = getSitePath() + getWebEditorRootPath() + "/" + config.ServerExt + "/upload." + config.ServerExt + "?action=local&type=local&style=" + config.StyleName + "&language=" + AvailableLangs["Active"] + "&cusdir=" + config.CusDir;
+	var b_VML = d_yes.checked;
+
+	divProcessing.style.display="";
+	eWebEditorClient.ImportWord(s_File, s_PostUrl, b_VML);
+	divProcessing.style.display="none";
+
+	var s_Error = eWebEditorClient.Error;
+	if (s_Error!=""){
+		var s_ErrorCode = s_Error.substring(0,s_Error.indexOf(":"));
+		switch(s_ErrorCode){
+		case "InvalidFile":
+			alert(lang["DlgWordInvalidFile"]);
+			break;
+		default:
+			alert(s_Error);
+		}
+		return;
+	}
+
+	var s_StyleVML = "\n"
+			+"<STYLE id=eWebEditor_Style_VML>\n"
+			+"v\\:* {behavior: url(#default#VML);}\n"
+			+"o\\:* {behavior: url(#default#VML);}\n"
+			+"w\\:* {behavior: url(#default#VML);}\n"
+			+"x\\:* {behavior: url(#default#VML);}\n"
+			+".shape{behavior: url(#default#VML);}\n"
+			+"</STYLE>\n";
+
+	var s_Style = eWebEditorClient.Style;
+	if (b_VML){
+		s_Style = s_StyleVML + s_Style;
+	}
+	var s_Body = eWebEditorClient.Body;
+
+	var s_OriginalFiles = eWebEditorClient.OriginalFiles;
+	var s_SavedFiles = eWebEditorClient.SavedFiles;
+	if (s_OriginalFiles){
+		var a_Original = s_OriginalFiles.split("|");
+		var a_Saved = s_SavedFiles.split("|");
+		for (var i=0; i<a_Original.length; i++){
+			if (a_Saved[i]){
+				var s_OriginalFileName = a_Original[i];
+				var s_SaveFileName = a_Saved[i].substr(a_Saved[i].lastIndexOf("/")+1);
+				var s_SavePathFileName = a_Saved[i];
+				dialogArguments.addUploadFile(s_OriginalFileName, s_SaveFileName, s_SavePathFileName);
+			}
+		}
+	}
+	
+	dialogArguments.setHTML(s_Style + s_Body, true);
+	
+
+	window.returnValue = null;
+	window.close();
+}
+
+function RadioClick(s_Flag){
+	if (s_Flag=="1"){
+		d_yes.checked=true;
+		d_no.checked=false;
+	}else{
+		d_yes.checked=false;
+		d_no.checked=true;
+	}
+}
+
+function InitDocument(){
+	AvailableLangs.TranslatePage(document);
+
+	try{
+		if(eWebEditorClient.Test()!="eWebEditor"){
+			bInstalled = false;
+		}
+	}catch(e){
+		bInstalled = false;
+	}
+	
+	adjustDialog();
+}
+
+</script>
+
+
+<BODY onload="InitDocument()">
+
+
+
+<table border=0 cellpadding=0 cellspacing=5 id=tabDialogSize><tr><td>
+
+<table border=0 cellpadding=0 cellspacing=0 align=center>
+<tr>
+	<td>
+	<fieldset>
+	<legend><span lang=DlgWordFile></span>:</legend>
+	<table border=0 cellpadding=5 cellspacing=0 width="100%">
+	<tr><td>
+
+		<table border=0 cellpadding=0 cellspacing=2 width="100%">
+		<tr>
+			<td noWrap><input type=file id="d_file" size=30></td>
+		</tr>
+		<tr>
+			<td noWrap><span lang=DlgWordVML></span>: <input type=radio id=d_yes onclick="RadioClick('1')"><label for=d_yes><span lang=DlgComYes></span></label>&nbsp; <input type=radio id=d_no onclick="RadioClick('0')" checked><label for=d_no><span lang=DlgComNo></span></label></td>
+		</tr>
+		</table>
+
+	</td></tr>
+	</table>
+	</fieldset>
+	</td>
+</tr>
+<tr><td height=5></td></tr>
+<tr><td noWrap align=right><input type=submit class="dlgBtnCommon" value='' id=Ok onclick="ok()" lang=DlgBtnOK>&nbsp;&nbsp;<input type=button class="dlgBtnCommon" value='' onclick="window.close();" lang=DlgBtnCancel></td></tr>
+</table>
+
+</td></tr></table>
+
+<div id=divProcessing style="width:200px;height:30px;position:absolute;left:50px;top:30px;display:none">
+<table border=0 cellpadding=0 cellspacing=1 bgcolor="#000000" width="100%" height="100%"><tr><td bgcolor=#3A6EA5 align=center><marquee align="middle" behavior="alternate" scrollamount="5"><font color=#FFFFFF><span lang=DlgWordImporting></span></font></marquee></td></tr></table>
+</div>
+
+<OBJECT ID="eWebEditorClient" CLASSID="CLSID:D39A5EBE-F907-4EC2-BCDF-A72F58DA01F4" width=0 height=0 CODEBASE="eWebEditorClient.CAB#version=1,2,0,3"></OBJECT>
+
+</body>
+</html>

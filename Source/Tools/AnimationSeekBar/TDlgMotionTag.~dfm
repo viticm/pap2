@@ -1,0 +1,63 @@
+object MotionTagDialog: TMotionTagDialog
+  Left = -416
+  Top = 25
+  Width = 328
+  Height = 191
+  Caption = #21160#20316#31867#26631#31614
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label_TagType: TLabel
+    Left = 8
+    Top = 11
+    Width = 48
+    Height = 13
+    Caption = #26631#31614#31867#22411
+  end
+  object Combo_TagType: TComboBox
+    Left = 72
+    Top = 8
+    Width = 145
+    Height = 21
+    Style = csDropDownList
+    ItemHeight = 13
+    TabOrder = 0
+    Items.Strings = (
+      #20934#22791#21160#20316#32467#26463
+      #25915#20987#21160#20316#32467#26463
+      #29992#25143#23450#20041#31867#22411)
+  end
+  object Button_Delete: TButton
+    Left = 8
+    Top = 104
+    Width = 75
+    Height = 25
+    Caption = #21024#38500
+    TabOrder = 1
+  end
+  object Button_Copy: TButton
+    Left = 96
+    Top = 104
+    Width = 75
+    Height = 25
+    Caption = #22797#21046
+    TabOrder = 2
+    OnClick = Button_CopyClick
+  end
+  object Button_Paste: TButton
+    Left = 184
+    Top = 104
+    Width = 75
+    Height = 25
+    Caption = #31896#36148
+    TabOrder = 3
+    OnClick = Button_PasteClick
+  end
+end

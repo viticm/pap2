@@ -1,0 +1,23 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  FileName    : KG3DRendererDefault.h
+//  Version     : 1.0
+//  Creator     : Chen Tianhong
+//  Create Date : 2008-8-14 16:27:50
+//  Comment     : 
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#ifndef _INCLUDE_KG3DRENDERERDEFAULT_H_
+#define _INCLUDE_KG3DRENDERERDEFAULT_H_
+
+#include "KG3DRenderer.h"
+////////////////////////////////////////////////////////////////////////////////
+
+class KG3DRendererDefault : public KG3DRenderer
+{
+public:
+	
+};
+
+#endif //_INCLUDE_KG3DRENDERERDEFAULT_H_

@@ -1,0 +1,14 @@
+ShadowMaskValueImage_SetValue				
+	说明：设置百分比阴影条的百分比；
+	参数：szTreePath  		窗口树路径名，
+		  nCurrentValue		分子，
+		  nFullValue 		分母；
+	返回：nil
+	
+ShadowMaskValueImage_SetDrawStyle		
+	说明：设置百分比阴影条的类型；
+	参数：szTreePath  		窗口树路径名，
+		  nStyle 			目前可以设的值为0,1,2,3，分别表示向右、向左、向下、向上四种类型；
+	返回：nil
+	
+

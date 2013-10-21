@@ -1,0 +1,223 @@
+Include('scripts/flowlib/api.lua')
+using('API')
+using('comgr')
+using('Event')
+
+<%
+--生成动作节点代码
+fmt = string.format
+print = function(str)
+	if str == nil then
+		log('发现一个空的引用被 print')
+	else
+		out:println(str)
+	end
+end
+
+function _GetNexNodeName(i, j, k)
+	--log(fmt('i:%d, j:%d, k:%d \r\n %s', i, j, k, debug.traceback()))
+	return GetNextNodeName(i, j, k)
+end
+
+function TabedText(s)
+	local str = s
+	str = string.gsub(str..'\n', '(.-)(\n)', '\t%1\n')
+	return str
+end
+
+function GenActionNode(i, j)
+	out:print(TabedText(fmt('--[[	动作节点\n%s\n--]]', GetNodeText(i, j))))
+	out:println(fmt('\t%s = function(context, parentcontext)', GetNodeName(i, j)))
+	<!1.动作节点!>
+	out:print(GetNodeCode(i, j)) --输出节点代码
+	local ConnectionCount = GetNextConnetionCount(i, j) 
+	if ConnectionCount <= 1 then
+	<!1.1正常节点!>				
+		if IsNextNodeFinish(i, j, 1) then
+			out:println('\t\treturn finishnode(parentcontext)')
+			out:println('\tend')
+		else
+			out:println(fmt('\t\treturn %s(context, parentcontext)', _GetNexNodeName(i, j, 1) ))
+			out:println('\tend')
+		end
+	else
+	<!1.2会创建多线程的节点!>
+		local k
+		for k = 1, GetNextConnetionCount(i, j) do
+			out:println(fmt('\t\tcreate_subflow(%s, context)', _GetNexNodeName(i, j, k) ))
+		end			    
+		for k = 1, GetNextConnetionCount(i, j) do
+			out:println('\t\tcoroutine.yield()')
+		end --end threadcount
+		out:println('\tend')
+	end -- if ConnectionCount
+end
+
+<!2.分支节点!>		
+function GenSwitchNode(i, j)
+	out:print(TabedText(fmt('--[[	条件节点\n%s\n--]]', GetNodeText(i, j))))
+	out:println(fmt('\t%s = function(context, parentcontext)', GetNodeName(i, j) ))
+	--预处理
+	local nSwitchCount = GetNodeSwitchCount(i, j) --获取本节点的分支出去多少条执行流程
+	--重新排序，将else排在最后
+	local tcondition = {}
+	local tempbranch, elsebranch
+	for k = 1, nSwitchCount do
+		tempbranch = GetConditionResult(i, j, k)	--拿到线上的表达式
+		if tempbranch and string.len(tempbranch) > 0 then
+			table.insert(tcondition, tempbranch)
+		else
+			elsebranch = 1 --tempbranch
+		end
+	end
+	--if elsebranch == 1 then
+	--	table.insert(tcondition, elsebranch)
+	--end
+	
+	--如果只有一个出线，并且是没有条件的，就直接跳到下一个节点
+	if nSwitchCount == 1 and tcondition[1] == nil then
+		if IsNextNodeFinish(i, j, 1) then
+			out:println('\t\t\treturn finishnode(parentcontext)')
+		else
+			out:println(fmt('\t\t\treturn %s(context, parentcontext)', _GetNexNodeName(i, j, 1)))
+		end
+		out:println('\tend')
+		return
+	end
+	--
+	
+	--out:print(fmt('\t\tlocal ret = %s\n', GetNodeCode(i, j) )) --记录分支节点表达式结果
+	--改动1:由于返回值用户需要在界面上选择使用，因此返回值由分支节点内部生成
+	out:print(fmt('\t\t%s\n', GetNodeCode(i, j) )) --记录分支节点表达式结果
+	
+	local k --遍历所有的分支条件连线,无条件的线作为 else 处理
+	
+	--生成 if else 语句	
+	
+	for k = 1, nSwitchCount do
+		local BranchCondition = tcondition[k]
+		if k == 1 then
+			out:print('\t\tif ')
+		elseif BranchCondition then
+			out:print('\t\telseif ')
+		end
+		--out:print('BranchCondition='..tostring(BranchCondition))
+		if BranchCondition then	--如果不是else情况
+			--out:println(BranchCondition..' == ret then')
+			--由于 改动1 原因作出修改
+			out:println(BranchCondition..' then') 
+		else
+			out:println('\t\telse')
+		end
+		if IsNextNodeFinish(i, j, k) then
+			out:println('\t\t\treturn finishnode(parentcontext)')
+		else
+			out:println(fmt('\t\t\treturn %s(context, parentcontext)', _GetNexNodeName(i, j, k)))
+		end
+	end --end nSwitchCount for				
+	out:println('\t\tend')
+	out:println('\tend')
+end
+
+%>
+<%
+function MainEntry()
+	local i
+	for i = 1, GetEventCount() do
+		out:println('--'..string.rep('=', 80))
+		out:println(fmt('--[[*事件节点\n%s\n--]]', GetEventText(i)))
+		out:println(fmt('function %s(envcontext, ...)', GetEventFunctionName(i)))
+		out:println(fmt('\tlocal %s', GetNodeNames(i)))
+		local j
+		local nNodeCount = GetNodeCount(i)
+		for j = 1, nNodeCount do
+			local nodetype = GetNodeType(i, j)
+			
+			if nodetype == 'ActionNode' then
+				out:println('\t'..string.rep('-', 80))
+				GenActionNode(i, j)
+			elseif nodetype == 'ConditionNode' then
+				out:println('\t'..string.rep('-', 80))
+				GenSwitchNode(i, j)
+			end
+		end --end GetNodeCount For
+		if nNodeCount > 1 then 
+			out:println('\t'..string.rep('-', 80)) 
+		end
+		
+		--本事件入口节点
+		if nNodeCount > 0 then
+			local nEventNextNodeCount = GetNextConnetionCount(i, 0)
+			if nEventNextNodeCount == 1 then
+				out:println('\t--本事件主入口')
+				out:println(fmt('\t%s(envcontext, nil)', GetNodeName(i, 1)))
+			elseif nEventNextNodeCount > 0 then
+				--当事件结节直接连接多个后续节点时，使用分支线程来作流程的启动
+				out:println('\t--有多个后续执行流程')
+				local k
+				for k = 1, nEventNextNodeCount do
+					out:println(fmt('\tcreate_subflow(%s, envcontext)', _GetNexNodeName(i, 0, k) ))
+				end			    
+				for k = 1, nEventNextNodeCount do
+					out:println('\tcoroutine.yield()')
+				end				
+			else
+				out:println('\t没有事件入口结点，请检查流程图是否正确...')
+			end
+		end
+		
+		out:println('end')
+		out:println('')
+	end --End GetEventCount For
+end
+
+function Main()
+	local bok, err = pcall(MainEntry)
+	if bok == false then
+		log('LUA内部错误:'..tostring(err))
+		--log(debug.traceback())
+		--error(err)
+		return false
+	else
+		return true
+	end
+end
+
+MainEntry()
+
+%>
+
+
+--注册事件
+<%
+for i = 1, GetEventCount() do
+	local data = GetEventData(i)
+	local argValues = data:GetEventAPI().ArgValues
+	local id = data.DBID
+	local mainclass = ExpToString(argValues[data.mainClassIndex - 1])
+	--自动挂脚本
+	if argValues[data.mainClassIndex - 1] then
+		SetScript(argValues[data.mainClassIndex - 1])
+	end
+	
+	local parms = ""
+	for j = 0, argValues.Count - 1 do
+		local t = ""
+		if argValues[j] == nil then
+			t = "null"
+		else
+			t = ExpToString(argValues[j])
+		end
+		parms = parms .. t
+		if j ~= argValues.Count - 1 then
+			parms = parms .. ", "
+		end
+	end
+%>
+if Event[<%=id%>].FunList[tostring(<%=mainclass%>)] == nil then
+	Event[<%=id%>].FunList[tostring(<%=mainclass%>)] = {}
+end
+Event[<%=id%>].FunList[tostring(<%=mainclass%>)][<%=GetEventFunctionName(i)%>]	= {<%=parms%>}
+<%
+end
+%>

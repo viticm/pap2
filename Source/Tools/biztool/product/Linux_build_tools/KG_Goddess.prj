@@ -1,0 +1,32 @@
+[Include]
+/usr/include
+../../../Include
+../../../../DevEnv/Include
+../../../../DevEnv/Include/mysql
+
+[Config Debug]
+Product		EXE ../../../Product/linuxd/kg_goddessd_linux
+Options		Debug
+Defines		__linux; _STANDALONE; C_C_VERSION; KG_USE_LARGER_PACKAGE; FILTERTEXT_STATICLIB
+ObjDir		LDebug
+LibDir		../../../lib/linuxd; ../../../../DevEnv/Lib/linuxd
+Libraries	KGD_Local; KGD_Sequence; Common; Engine; FilterText; mysqlclient; z; pthread
+
+[Config Release]
+Product		Exe ../../../Product/linux/kg_goddess_linux
+Options		Release
+Defines		__linux; _STANDALONE; C_C_VERSION; KG_USE_LARGER_PACKAGE; FILTERTEXT_STATICLIB
+ObjDir		LRelease
+LibDir		../../../lib/linux; ../../../../DevEnv/Lib/linux
+Libraries	KGD_Local; KGD_Sequence; Common; Engine; FilterText; mysqlclient; z; pthread
+
+[Source]
+KG_Goddess.cpp
+KG_GoddessServer.cpp
+KG_RoleDatabase.cpp
+KG_LogServer.cpp
+KG_RoleStatistic.cpp
+stdafx.cpp
+KG_RoleNameFilter.cpp
+KG_Database.cpp
+KG_NameServer.cpp

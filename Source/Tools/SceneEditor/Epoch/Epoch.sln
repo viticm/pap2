@@ -1,0 +1,61 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Common", "Common\Common.vcproj", "{5B88029B-8965-4ED4-B88F-40FFEFE8937C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Maths", "Maths\Maths.vcproj", "{1F6572D1-5C79-41D7-B07D-E27FB1EC8EDE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Render", "Render\Render.vcproj", "{EC358D0F-426E-4DE3-B211-3B82A189F989}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Terrain", "Terrain\Terrain.vcproj", "{E4793C73-5440-4FBC-906D-1BE73F7D67BE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestCreateHeightMap", "ZZZTEST\TestCreateHeightMap\TestCreateHeightMap.vcproj", "{66588552-0897-4C0F-8B0B-F56E6DED6C97}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestTerrain", "ZZZTEST\TestTerrain\TestTerrain.vcproj", "{28E607EC-9671-429F-A640-1CE31BA3BCBA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{5B88029B-8965-4ED4-B88F-40FFEFE8937C}.Debug.ActiveCfg = Debug|Win32
+		{5B88029B-8965-4ED4-B88F-40FFEFE8937C}.Debug.Build.0 = Debug|Win32
+		{5B88029B-8965-4ED4-B88F-40FFEFE8937C}.Release.ActiveCfg = Release|Win32
+		{5B88029B-8965-4ED4-B88F-40FFEFE8937C}.Release.Build.0 = Release|Win32
+		{1F6572D1-5C79-41D7-B07D-E27FB1EC8EDE}.Debug.ActiveCfg = Debug|Win32
+		{1F6572D1-5C79-41D7-B07D-E27FB1EC8EDE}.Debug.Build.0 = Debug|Win32
+		{1F6572D1-5C79-41D7-B07D-E27FB1EC8EDE}.Release.ActiveCfg = Release|Win32
+		{1F6572D1-5C79-41D7-B07D-E27FB1EC8EDE}.Release.Build.0 = Release|Win32
+		{EC358D0F-426E-4DE3-B211-3B82A189F989}.Debug.ActiveCfg = Debug|Win32
+		{EC358D0F-426E-4DE3-B211-3B82A189F989}.Debug.Build.0 = Debug|Win32
+		{EC358D0F-426E-4DE3-B211-3B82A189F989}.Release.ActiveCfg = Release|Win32
+		{EC358D0F-426E-4DE3-B211-3B82A189F989}.Release.Build.0 = Release|Win32
+		{E4793C73-5440-4FBC-906D-1BE73F7D67BE}.Debug.ActiveCfg = Debug|Win32
+		{E4793C73-5440-4FBC-906D-1BE73F7D67BE}.Debug.Build.0 = Debug|Win32
+		{E4793C73-5440-4FBC-906D-1BE73F7D67BE}.Release.ActiveCfg = Release|Win32
+		{E4793C73-5440-4FBC-906D-1BE73F7D67BE}.Release.Build.0 = Release|Win32
+		{66588552-0897-4C0F-8B0B-F56E6DED6C97}.Debug.ActiveCfg = Debug|Win32
+		{66588552-0897-4C0F-8B0B-F56E6DED6C97}.Debug.Build.0 = Debug|Win32
+		{66588552-0897-4C0F-8B0B-F56E6DED6C97}.Release.ActiveCfg = Release|Win32
+		{66588552-0897-4C0F-8B0B-F56E6DED6C97}.Release.Build.0 = Release|Win32
+		{28E607EC-9671-429F-A640-1CE31BA3BCBA}.Debug.ActiveCfg = Debug|Win32
+		{28E607EC-9671-429F-A640-1CE31BA3BCBA}.Debug.Build.0 = Debug|Win32
+		{28E607EC-9671-429F-A640-1CE31BA3BCBA}.Release.ActiveCfg = Release|Win32
+		{28E607EC-9671-429F-A640-1CE31BA3BCBA}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <service name="urn:uddi-org:api_v3" provider="Handler">
+    <parameter name="handlerClass" value="org.jboss.jaxr.juddi.axis.JBossJuddiAxisHandler"/>
+  </service>
+  
+  <service name="urn:uddi-org:api_v2" provider="Handler">
+    <parameter name="handlerClass" value="org.jboss.jaxr.juddi.axis.JBossJuddiAxisHandler"/>
+  </service>  
+  
+  <service name="urn:uddi-org:api" provider="Handler">
+    <parameter name="handlerClass" value="org.jboss.jaxr.juddi.axis.JBossJuddiAxisHandler"/>
+  </service>
+  
+  <service name="urn:juddi-org:api_v1" provider="Handler">
+    <parameter name="handlerClass" value="org.jboss.jaxr.juddi.axis.JBossJuddiAxisHandler"/>
+  </service>
+
+</deployment>

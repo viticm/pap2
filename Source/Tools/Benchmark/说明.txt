@@ -1,0 +1,107 @@
+1. 工程概述
+   用于nvidia帮助测试显卡兼容性, 以及用户测试客户端显示效率
+2. 原理
+   播放客户端的录像, 并记录相关信息.
+3. 使用方法
+   编译生成的exe文件放到client目录下, 预先录制好的录像文件benchmark01.rec, benchmark02.rec, benchmark03.rec也需要放在client目录.然后直接运行jx3benchmark.exe
+4. 如果有问题, 和剑3 3D组黄衫联系
+
+
+rec 文件说明
+1.除了第一个[Global]字段设定全局属性之外，别的都是必须从[1]开始顺序排序的事件。顺序排序可以使用recFileSorter来进行
+2.注意rec文件实际上是ini文件，=附近不能空格。字段后面也不要加空格
+3.字段说明，以兔子舞为例
+
+[Global]
+Playtype=1	//1是循环整个rec，循环标志从Type=62的事件开始，到下一个Type=62的事件结束
+PreLoadFileName=	//预处理加载文件，最后再加上。弥补自动预加载的不足
+
+[1]
+Type=20		//事件20，加载场景，对应事件19
+Path=DebugFiles\BenchMark\maps\万花\万花.map
+CamAni=DebugFiles\BenchMark\万花兔子舞.CameraAni	//rec用的CameraAni，场景的预加载由这个文件里面的摄像机扫过的范围决定
+EnvEff=DebugFiles\BenchMark\万花_Setting.ini
+OffsetPos=0.000000,0.000000,0.000000			//摄像机的偏移
+OffsetAnimation=121619.000000,10735.000000,48935.000000		//动画的偏移
+SceneID=59	//场景标记，下面用到场景的地方必须对应
+
+[2]
+Type=8		//事件8，mdl加载。必须和事件9释放mdl对应。加载多少个，就要释放多少个
+ActorID=60-94,Step:2	//mdl生成id，id的多少决定加载多少个实例。如ActorID=55,56的话，则创建2个。如果ActorID=60-94,Step:2的话，创建18个ID，分别是60，62，64....每2个生成一个
+ActorPath=DebugFiles\BenchMark\Mdl\F2_4101_纯阳benchmark.mdl	//mdl路径
+DetailIndex=3	//偏色方案
+BindNum=2	//绑定多少个插槽。注意如果这里是2，下面必须有2个对应的Path和Socket
+BindPath0=data\source\player\F2\部件\F2_1012_face.mesh	//注意第一个是BindPath0下面类推
+BindSocket0=s_face
+BindPath1=data\source\player\F2\部件\F2_2203_hat.mesh
+BindSocket1=s_hat
+
+[3]
+Type=8
+ActorID=61-95,Step:2
+ActorPath=DebugFiles\BenchMark\Mdl\F2_4202_纯阳benchmark.mdl
+DetailIndex=3
+BindNum=2
+BindPath0=data\source\player\F2\部件\F2_1010_face.mesh
+BindSocket0=s_face
+BindPath1=data\source\player\F2\部件\F2_3014_hat.mesh
+BindSocket1=s_hat
+
+[4]
+Type=62	//循环标志。rec本身的循环从这里开始到下一个62事件结束
+
+[5]
+Type=23	//渲染开始标记
+WindowName="Mywindow"
+RenderSceneID=59	//对应上面的事件20，加载场景的标记
+
+[6]
+Type=21		//把Model放入场景的标记，对应22.有21就要有22
+ActorID=60-94,Step:2	//ID的意义一样
+SceneID=59	
+ModelGap=200.000000	//如果放多个模型，模型之间的间距
+Offset=50.0,0,50.0	//模型最终的间距 = 指定的OffsetAnimation + Offset + Modelgap指定的每个模型组之间的间距
+
+[7]
+Type=21
+ActorID=61-95,Step:2
+SceneID=59
+ModelGap=200.000000
+Offset=-50.0,0,-50.0
+
+[8]
+Type=14		//事件14，播放动画
+ActorID=60-95	//这里全部ID播放同一个动画
+AniNum=1	//这个和下面的AniPath组成动画播放序列
+AniPath0=data\source\player\F2\动作\F2b02dj高兴.ani
+ControllerPriority=0
+OffsetTime=0
+Speed=1.000000
+TweenIn=0
+TweenOut=0
+TweenWeigth=1.000000
+Loop=1		//动画是否循环，如果不循环就一个个接一个播放
+
+[9]
+Type=60		//摄像机动画播放。其它事件除了加载之类的事件，都是一次一起执行的，唯有摄像机动画必须播完才会有下一个事件。所以摄像机动画事件是用来分隔各个段的
+StartAni=-1	//从哪个子动画开始播放，-1表示默认的0
+EndAni=-1	//播放到哪个动画，-1即最后一个。如果StartAni=0而EndAni=2，则一共播放3个摄像机动画，0，1，2
+
+[10]
+Type=22		//把物件从场景中移除，对应事件21
+ActorID=60-95
+SceneID=59
+
+[11]
+Type=62		//到这里循环结束
+
+[12]
+Type=9		//事件8，释放模型，对应事件9
+ActorID=60-75
+
+[13]
+Type=19		//事件19，释放场景，对应事件20
+RemoveSceneID=59
+
+
+

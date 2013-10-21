@@ -1,0 +1,12 @@
+void ExchangeLogicalData(LPCTSTR pFileName, KScene* lpLogicalScene, KSceneEditorDocLogical* pLogicalData);
+void BeforeChange(KSceneEditorDocLogical* pLogicalData);
+void ExchangeNpc(KScene *pLogicalScene, KSceneEditorDocLogical* pLogicalData, LPCTSTR pFileName);
+void ExchangeDoodad(KScene *pLogicalScene, KSceneEditorDocLogical* pLogicalData);
+void ExchaneNpcRefreshPointSet(LPCTSTR pFileName,LPCTSTR pMapName,KSceneEditorDocLogical* pLogicalData);
+void ExchaneDoodadRefreshPointSet(LPCTSTR pFileName,LPCTSTR pMapName,KSceneEditorDocLogical* pLogicalData);
+void ExchangeAIGroup(LPCTSTR pFileName,LPCTSTR pMapName,KSceneEditorDocLogical* pLogicalData);
+void ExchangeWayPointSet(LPCTSTR pFileName,LPCTSTR pMapName,KSceneEditorDocLogical* pLogicalData);
+void ExchangeTrafficPointSet(LPCTSTR pFileName,KSceneEditorDocLogical* pLogicalData);
+HRESULT ExchangeNpcReliveSetting(LPTSTR pFileName,KSceneEditorDocLogical* pLogicalData);
+HRESULT ExchangeDoodadReliveSetting(LPTSTR pFileName,KSceneEditorDocLogical* pLogicalData);
+HRESULT ExchangeNpcRandomSetting(LPTSTR pFileName,LPTSTR pDir,KSceneEditorDocLogical* pLogicalData);

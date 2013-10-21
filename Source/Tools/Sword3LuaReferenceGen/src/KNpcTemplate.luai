@@ -1,0 +1,24 @@
+﻿@title KNpcTemplate对象
+@obj KNpcTemplate
+
+@summary rw. 模板id
+property dwTemplateID as dword rw
+
+@summary rw. 模板名字
+property szName as string rw
+
+@summary rw. 种类，[[see CHARACTER_KIND]]
+@remarks 取值[[get CHARACTER_KIND]]
+property nKind as int rw
+
+@summary rw. 势力id
+property dwForceID as dword rw
+
+@summary rw. Npc物种，[[see KNPC_SPECIES]]
+property nSpecies as int rw
+
+@summary rw. 等级
+property nLevel as int rw
+
+@summary rw. 高度
+property nHeight

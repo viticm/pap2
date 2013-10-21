@@ -1,0 +1,4 @@
+// File: FileError.cpp
+// Desc: ≤‚ ‘FileError.h£¨«Î…æ≥˝
+
+#include"FileError.h"

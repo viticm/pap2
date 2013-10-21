@@ -1,0 +1,2 @@
+25/07/2006 - Added AutoIt Syntax File Thanks to Kuppelwieser Hannes
+24/04/2006 - Added a new method called GetLanguageFrom

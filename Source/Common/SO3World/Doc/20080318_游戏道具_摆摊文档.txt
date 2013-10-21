@@ -1,0 +1,119 @@
+摆摊系统文档
+
+参与人员：赵纯峰 夏永 周诚
+
+一、摆摊流程
+1、玩家点击摆摊doodad，由服务端检查玩家是否可进入摆摊状态和玩家是否有允许摆摊的buffer，如果没有则消耗一个摆摊道具，让玩家获得摆摊buffer，
+	设置玩家状态为摆摊状态，通知客户端可以摆摊，客户端玩家进入摆摊状态。
+
+2、玩家处于摆摊状态时，不能进行其他操作，不可以受到攻击，并且摆摊背包处于锁定状态，不能改变物品价格，位置等， 只可交易。
+
+3、当买家需要浏览卖家摊位信息时，服务端先通知清除客户端卖家摊位信息缓存，客户端收到同步后通知UI更新摊位信息。
+	
+4、玩家需要购买卖家物品时，客户端检查相关条件后，由客户端发送此物品的卖家id，卖包ID，格子位置，物品ID等信息给服务器，服务器检查买卖双方
+条件匹配后，由服务器把物品从卖家转移到买家身上，服务器计算物品价格和所需税率后，扣买家的钱，把钱加给卖家。
+
+5、当服务器检查到玩家摆摊buffer时间到了或收到玩家结束摆摊信息时，服务器转变玩家状态为站立，同步玩家状态。
+
+二 、摆摊相关
+1、摆摊背包
+	 玩家最大可拥有1个24格背包.
+	 玩家摆摊物品只可是玩家其他背包中的物品。 并且摆摊背包中的物品不计入快捷栏物品和生产其他物品的材料。
+	 物品默认定价为商店出售的价格。不能卖店的物品默认价格为1铜
+	 绑定过的和耐久度不满的物品不能放入摆摊背包（目前书籍不能摆摊）
+	 放入与摆摊背包中相同的可叠加物品，直接放入新的一个，不做叠加处理。
+	 
+2、摆摊道具
+	 摆摊道具通过Npc获取，每个玩家最多可拥有3个，并且由摆摊道具确定可摆摊时间。
+	 
+3、交易税金
+   	 不同城市税金的差异，以地图分类 划分物品类型,区别税率。
+   	 
+   	 税率配置表：
+   	 
+   	 物品分类  城市A  城市B
+   	 草药      0.5   0.8
+   	 矿物      0.6   0.9
+   	 
+4、摊位名称等
+	 玩家自己设定摊位名：默认“XXX的小摊”玩家在非摆摊状态下也可设置摊位名称。
+	 摊位信息：卖家可以写一段介绍的文字。默认“欢迎光临”。//保留
+	 交易信息：记录了截至目前的交易信息。 包括出售物品的名称，数量，价格和买家名称。//保留
+	 留言板：记录其他玩家给摊主的留言。//保留
+	 
+	 
+5、摊位
+	摊位使用Doodad。由Doodad确定某点是否可以摆摊。
+
+6、摆摊状态
+	摆摊不属于移动状态。当玩家处于摆摊状态时离开游戏世界时，需把此状态设置为False。
+
+7、玩家缓存卖家摊位信息
+	玩家同步的卖家摊位信息，缓存在卖家KPlayer对象上。
+
+8、摊位物品出售价格
+	放入摆摊背包中物品，先查找背包中是否有同类物品，如果有设置新放入物品价格为已有物品价格，
+	如果没有设置为商店出售价格，如果不能卖商店，则设置为1个铜板。	
+   
+ 三、 代码改动
+ 1、KPlayer增加变量
+	m_bStall表示摆摊状态，这种状态下玩家不进行其他能操作。
+ 	m_pszStallName表示摊位名称。
+
+ 2，ITEM_BOX增加一种类型类(ibStallPackage)摆摊背包。
+   	
+3、增加数据库保存字段
+	char*                         m_pszPlayerShopName; 
+   	char*                         m_pszSellerMessage;//保留
+   	char*                         m_pszTradeInfo;//保留
+   	char*                         m_pszBuyerMessage;   //保留
+
+
+4、KPlayer对象增加函数：
+	 LuaStartStall(), 当前状态必须是可以转成摆摊的状态。
+	LuaGetStallTitle() 获取摊位名
+	LuaSetStallTitle() 设置摊位名
+	LuaSetItemPrice()	设置物品出售价格
+	LuaApplyStallItem() 获取摊位信息
+	LuaBuyStallItem() 买入物品
+	LuaEndStall() 结束摆摊
+	
+5、KPlayerClient增加函数
+	DoSetStallName() 请求设置摊位名称
+	DoApplyStallName()请求同步卖家摊位名称
+	DoSetStallItemPrice()请求设置摆摊物品出售价格
+	DoApplyStallItem()请求同步卖家摊位信息
+	DoBuyStallItem()请求交易
+	DoApplyEndStall()请求结束摆摊
+
+	OnSyncStallState() 同步卖家摆摊状态
+	OnSyncStallItem() 同步卖家摊位信息
+	OnSyncStallTitle() 同步卖家摊位名称
+	
+8、KPlayerServer增加函数
+	OnSetStallTitle() 处理设置摊位名称
+	OnApplyStallTitle() 请求卖家摊位名称
+	OnSetItemPrice() 设置摆摊物品出售价格
+	OnApplyStallItem() 处理玩家请求同步卖家摊位信息
+	OnBuyStallItem() 处理交易请求
+	OnApplyEndStall() 处理结束摆摊请求
+
+
+	DoSyncStallState() 同步卖家摆摊状态
+	DoSyncStallItem() 同步卖家摊位信息
+	DoSyncStallTitle() 同步卖家摊位名称
+	
+9、增加或者重用协议
+	   c2g_set_stall_title,
+	   c2g_apply_stall_title,
+	   c2g_set_item_price,
+	   c2g_apply_stall_item,
+	  c2g_buy_stall_item,
+	  c2g_apply_end_stall,
+
+    	g2c_sync_stall_state,
+	    g2c_sync_stall_title,
+	 
+10、KItem
+	Kitem增加一个变量 dwstallPrice；玩家摆摊出售价格。
+	KItem增加一个函数setPrice；设置玩家摆摊出售价格。

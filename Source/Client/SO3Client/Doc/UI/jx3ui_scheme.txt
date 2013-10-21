@@ -1,0 +1,214 @@
+界面配置方案
+	
+简述：
+	为了日后更改配置方案的时候能够比较快速，并且无遗漏的目的，界面系统以及界面编辑器需要提供跟配置方案相关的功能。
+
+原理：
+	把相同属性的选项规类，统一管理。
+	
+配置方案配置文件路径：
+	UI/Scheme/Elem/color.txt				颜色名字——值对应表；
+	UI/Scheme/Elem/font.ini					文字方案表；
+	UI/Scheme/Case/list.ini					列表方案；
+	UI/Scheme/Case/list2.ini				列表二方案；
+	UI/Scheme/Case/puretextbutton.ini		纯文字按钮方案；
+	UI/Scheme/Case/edit.ini					文字输入框方案；
+	UI/Scheme/Case/messagelistbox.ini		信息列表方案；
+	UI/Scheme/Case/treelist.ini				树形文字列表方案；
+	UI/Scheme/Case/prefixtext.ini			带前缀文字方案；
+	UI/Scheme/Case/shadow.ini				半透明窗口方案；
+	UI/Scheme/Case/picframeshadow.ini		带边框半透明窗口方案；
+	UI/Scheme/Case/shadowmaskvalueimage.ini	半透明图片方案；
+	
+	
+具体文件格式：
+	Elem/color.txt
+		格式：
+			颜色名字+'\t'+'\t'分割rgb值；颜色名字长度小于32字节；
+		例子：
+			red	255	0	0
+			green	0	255	0
+			blue	0	0	255
+	
+	Elem/font.ini
+		格式：
+			SectionName为0开始的正整数，每个Section包含文字的各种属性：
+			._Comment 			注释
+			Color				字体颜色名字
+			BorderColor			字体边缘颜色名字
+			Size				字体大小
+			BorderSize			字体边缘大小
+			Type				字体类型索引			
+			
+		例子：
+			[0]
+			._Comment=一般正文
+			Color=dark
+			BorderColor=grey
+			Size=12
+			BorderSize=1
+			Type=0
+			
+			[1]
+			._Comment=标题
+			Color=yellow
+			BorderColor=grey
+			Size=14
+			BorderSize=1
+			Type=0
+		
+	Case/puretextbutton.ini
+		格式：
+			._Comment			注释
+			NormalText			正常字体方案索引
+			SelectText			选中字体方案索引
+			OverText			鼠标滑过字体方案索引
+		
+		例子：
+			[0]
+			._Comment=任务专用按钮
+			NormalText=0
+			SelectText=1
+			OverText=2
+			
+	Case/list.ini
+		格式：
+			._Comment			注释
+			NormalText			正常文字方案索引
+			SelectText			选中文字方案索引
+			OverText			鼠标滑过字体方案索引，相对于原来的HighLight
+			SelectBgColor		选中文字背景颜色
+		
+		例子：
+			[0]
+			._Comment=好友列表
+			NormalText=0
+			SelectText=1
+			OverText=2
+			SelectBgColor=yellow
+			
+	Case/list2.ini
+		格式：
+			._Comment			注释
+			NormalText			正常字体方案索引
+			SelectText			选中字体方案索引
+			OverText			鼠标滑过字体方案索引，相对于原来的HighLight
+		
+		例子：
+			[0]
+			._Comment=选服务器列表
+			NormalText=0
+			SelectText=1
+			OverText=2
+			
+	Case/edit.ini
+		格式：
+			._Comment			注释
+			NormalText			正常字体方案索引
+			FocusBgColor		输入焦点背景颜色
+			FocusBgColorAlpha	输入焦点背景透明度
+		
+		例子：
+			[0]
+			._Comment=聊天输入
+			NormalText=0
+			FocusBgColor=red
+			FocusBgColorAlpha=128
+			
+	Case/messagelistbox.ini
+		格式：
+			._Comment			注释
+			NormalText			正常文字方案索引，相对于原来的Msg
+			SelectText			选中文字方案索引
+			OverText			鼠标滑过文字方案索引，相对于原来的HighLight
+			NormalTextBgColor	正常文字背景颜色，相对于原来的TextLineShadow
+			NormalTextBgAlpha	正常文字背景透明度，相对于原来的TextLineShadowAlpha
+			SelectTextBgColor	选中文字背景颜色，相对于原来的SelBgColor
+			SelectTextBgAlpha	选中文字背景透明度，相对于原来的SelBgColorAlpha
+		
+		例子：
+			[0]
+			._Comment=聊天信息列表
+			NormalText=0
+			SelectText=1
+			OverText=2
+			NormalTextBgColor=yellow
+			NormalTextBgAlpha=128
+			SelectTextBgColor=red
+			SelectTextBgAlpha=128
+
+	Case/treelist.ini
+		格式：
+			._Comment				注释
+			ItemNormalText			非节点正常字体方案索引
+			ItemSelectText			非节点选中字体方案索引
+			ItemOverText			非节点鼠标滑过字体方案索引，相对于原来的HighLight
+			NodeNormalText			节点正常字体方案索引
+			NodeSelectText			节点选中字体方案索引
+			NodeOverText			节点鼠标滑过字体方案索引，相对于原来的HighLight
+			IconLineColor			节点图标线框颜色名字
+			NodeLineColor			节点间连线颜色名字
+			ItemSelectTextBgColor	非节点选中文字背景颜色名字
+			NodeSelectTextBgColor	节点选中文字背景颜色名字
+					
+		例子：
+			[0]
+			._Comment=聊天信息列表
+			ItemNormalText=0
+			ItemSelectText=1
+			ItemOverText=2
+			NodeNormalText=0
+			NodeSelectText=1
+			NodeOverText=2
+			IconLineColor=grey
+			NodeLineColor=grey
+			ItemSelectTextBgColor=yellow
+			NodeSelectTextBgColor=yellow
+			
+	Case/prefixtext.ini
+		格式：
+			._Comment			注释
+			Text				字体方案索引
+			PrefixText			前缀字体方案索引
+		
+		例子：
+			[0]
+			._Comment=人物属性
+			Text=0
+			PrefixText=1
+
+	Case/shadow.ini
+		格式：
+			._Comment			注释
+			ShadowColor			半透明颜色
+			ShadowColorAlpha	透明度
+		
+		例子：
+			[0]
+			._Comment=信息窗口
+			ShadowColor=dark
+			ShadowColorAlpha=128
+
+	Case/picframeshadow.ini
+		格式：
+			._Comment			注释
+			ShadowColor			半透明颜色
+			ShadowColorAlpha	透明度
+		
+		例子：
+			[0]
+			._Comment=鼠标跟随提示窗口
+			ShadowColor=dark
+			ShadowColorAlpha=128
+
+	Case/shadowmaskvalueimage.ini
+		格式：
+			._Comment			注释
+			ShadowColor			半透明颜色
+			ShadowColorAlpha	透明度
+		
+		例子：
+			[0]
+			._Comment=血条
+			ShadowColor=dark
+			ShadowColorAlpha=128

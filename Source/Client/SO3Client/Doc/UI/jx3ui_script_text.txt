@@ -1,0 +1,67 @@
+Text_GetTextLength				
+	说明：取文字条文字长度；
+	参数：szTreePath  		窗口树路径名；
+	返回：nLength     		文字长度；
+		
+Text_GetText							
+	说明：取文字条文字；
+	参数：szTreePath  		窗口树路径名；
+	返回：szText      		文字内容；
+		
+Text_GetFontScheme					
+	说明：取文字条字体大小；
+	参数：szTreePath  		窗口树路径名；
+	返回：nFontScheme 		字体方案；
+		
+Text_GetFontSize					
+	说明：取文字条字体大小；
+	参数：szTreePath  		窗口树路径名；
+	返回：nFontSize   		字体大小；
+		
+Text_GetFontColorName
+	说明：取文字条文字颜色名字；
+	参数：szTreePath  		窗口树路径名；
+	返回：szFontColor 		字体颜色名字；
+		
+Text_GetFontBorderColorName
+	说明：取文字条文字边缘颜色名字；
+	参数：szTreePath  		窗口树路径名；
+	返回：szFontBorderColor 字体边缘颜色名字；
+		
+Text_GetLineCount					
+	说明：取文字条文字行数；
+	参数：szTreePath 		窗口树路径名；
+	返回：nLineCount 		文字行数；
+		
+Text_SetText							
+	说明：设文字条文字内容；
+	参数：szTreePath 		窗口树路径名，
+	 	  szText			文字内容，
+	 	  [nTextLength]		如果设置了，使用nTextLength，否则把szText当作plain text处理；
+	返回：nil
+		
+Text_SetFontScheme					
+	说明：设文字条字体方案；
+	参数：szTreePath  		窗口树路径名，
+		  nFontScheme		字体方案索引；
+	返回：nil
+
+Text_SetIntText						
+	说明：设置文本条的内容为整数的字符串；
+	参数：szTreePath  		窗口树路径名，
+		  nNumber			需要显示的数字；
+	返回：nil
+	
+Text_Set2IntText					
+	说明：设置文本条的内容为两个整数的字符串，中间使用指定间隔符；
+	参数：szTreePath  		窗口树路径名，
+		  nNumber1			需要显示的第一个数字，
+		  nNumber2			需要显示的第二个数字，
+		  szSeparator		间隔符，只取这个字符串的第一个字母作为间隔符；
+	返回：nil
+	
+Text_SetTopLine						
+	说明：取文字条文字边缘颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwFontBorderColor 字体边缘颜色，目前没做可用性调整；
+

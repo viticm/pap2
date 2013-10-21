@@ -1,0 +1,64 @@
+排名类型
+array('money'=>'财富金钱', 'exercise'=>'修为高手', 'prestige'=>'势力声望', 'achievement'=>'江湖成就', 'armor'=>'兵甲装备', 'organization'=>'帮会神兵');
+
+
+//若提供接口 表[xsj_articles_rice]  可以忽略
+CREATE TABLE xsj_articles_rice (
+	aid INT NOT NULL AUTO_INCREMENT  PRIMARY KEY  COMMENT '自增ID' ,  
+	article_name  VARCHAR(60)  NOT NULL  COMMENT '物品名称' ,
+	article_nums INT(3)  NOT NULL  COMMENT '物品数量' ,
+	kinds_bid INT(5)  NOT NULL  COMMENT '所属大类ID' , 
+	kinds_sid INT(5)  NOT NULL  COMMENT '所属小类ID' ,
+	high_sell_price INT(11)  DEFAULT NULL  COMMENT '售价最高价--单位铜' , 
+	low_sell_price INT(11)  DEFAULT NULL  COMMENT '售价最低价--单位铜' , 
+	average_sell_price INT(11)  DEFAULT NULL  COMMENT '售价均价--单位铜' ,
+	high_nobargin_price INT(11)  DEFAULT NULL  COMMENT '一口价最高价--单位铜' , 	
+	low_nobargin_price INT(11)  DEFAULT NULL  COMMENT '一口价最低价-单位铜' , 
+	average_nobargin_price INT(11)  DEFAULT NULL  COMMENT '一口价均价--单位铜' ,
+	server_k TINYINT(1)  NOT NULL DEFAULT 0 COMMENT '服务器所属 0:电信   1:网通' , 
+	server_name VARCHAR(60)  NOT NULL COMMENT '服务器名称',
+	operatetime TIMESTAMP(14)  NOT NULL  COMMENT '操作时间' 
+)
+
+
+
+
+//排名表  命名规范  [xsj_rank_][排名类型]  例：xsj_rank_money; xsj_rank_exercise; xsj_rank_prestige; xsj_rank_achievement
+
+xsj_rank_money
+xsj_rank_exercise
+xsj_rank_prestige
+xsj_rank_achievement
+xsj_rank_armor
+xsj_rank_organization
+
+//角色信息（金钱，修为，势力，江湖成就，装备）
+CREATE TABLE xsj_rank_money(
+	rid INT NOT NULL AUTO_INCREMENT  PRIMARY KEY  COMMENT '自增ID' , 
+	rank INT(3)  NOT NULL  COMMENT '座次' , 
+	nick_name VARCHAR(60)  NOT NULL  COMMENT '玩家角色名称' , 
+        factions INT(3)  NOT NULL  COMMENT '玩家门派ID  以西山居门派ID为准' ,
+	level INT(2)  NOT NULL  COMMENT '玩家等级' , 
+	groups_id INT(3)  NOT NULL  COMMENT '玩家阵营ID 以西山居的阵营ID为准' , 
+	quantity INT(8)  NOT NULL  COMMENT '对应不同表中的金钱，修为，势力，江湖成就，装备' , 
+	server_k TINYINT(1)  NOT NULL DEFAULT 0 COMMENT '服务器所属 0:电信   1:网通' , 
+	server_name VARCHAR(60)  NOT NULL COMMENT '服务器名称' ,
+	operatetime TIMESTAMP(14)  NOT NULL  COMMENT '操作时间' 
+)
+
+
+CREATE TABLE xsj_rank_organization(
+	rid INT NOT NULL AUTO_INCREMENT  PRIMARY KEY  COMMENT '自增ID' , 
+	rank INT(3)  NOT NULL  COMMENT '座次' , 
+	groups_name VARCHAR(60)  NOT NULL  COMMENT '帮派名称' , 
+        groups_master VARCHAR(60)  NOT NULL  COMMENT '帮主名称' , 
+	groups_id INT(3)  NOT NULL  COMMENT '帮会阵营 以西山居的阵营ID为准' , 
+        maxmembermount INT(4)  NOT NULL  COMMENT '帮会成员人数上限' , 
+	quantity INT(8)  NOT NULL  COMMENT '装备总分' , 
+	server_k TINYINT(1)  NOT NULL DEFAULT 0 COMMENT '服务器所属 0:电信   1:网通' , 
+	server_name VARCHAR(60)  NOT NULL COMMENT '服务器名称' ,
+	operatetime TIMESTAMP(14)  NOT NULL  COMMENT '操作时间' 
+)
+
+
+

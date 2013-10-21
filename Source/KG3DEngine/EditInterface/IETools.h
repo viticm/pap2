@@ -1,0 +1,88 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  FileName    : IETools.h
+//  Version     : 1.0
+//  Creator     : Chen Tianhong
+//  Create Date : 2007-9-29 16:11:02
+//  Comment     : 
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#ifndef _INCLUDE_IETOOLS_H_
+#define _INCLUDE_IETOOLS_H_
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////////////////
+//	用于一些杂项的帮助类
+//	邓志辉 2006.11.1
+//
+//
+//
+#define EVENTPLACEDOBJECT   100
+
+#define EVENTEDITORNPCPLACED    200
+#define EVENTEDITORNPCMOVED     201
+#define EVENTEDITORNPCROTATED   202
+#define EVENTEDITORNPCSCALED    203
+#define EVENTEDITORNPCDELETED   204
+#define EVENTEDITORNPCCOPYED    206
+#define EVENTEDITORNPCADDTOSET  207
+#define EVENTEDITORNPCREMOVEFROMESET  208
+#define EVENTEDITORNPCADDTOAIGROUP  209
+#define EVENTEDITORNPCREMOVEFROMEAIGROUP  210
+#define EVENTEDITORNPCHIDEATTACKRANGE   211
+
+#define EVENTEDITORDOODADPLACED    300
+#define EVENTEDITORDOODADMOVED     301
+#define EVENTEDITORDOODADROTATED   302
+#define EVENTEDITORDOODADSCALED    303
+#define EVENTEDITORDOODADDELETED   304
+#define EVENTEDITORDOODADCOPYED    306
+#define EVENTEDITORDOODADADDTOSET  307
+#define EVENTEDITORDOODADREMOVEFROMESET  308
+
+#define EVENTEDITORWAYPOINTPLACED    400
+#define EVENTEDITORWAYPOINTMOVED     401
+#define EVENTEDITORWAYPOINTROTATED   402
+#define EVENTEDITORWAYPOINTSCALED    403
+#define EVENTEDITORWAYPOINTDELETED   404
+#define EVENTEDITORWAYPOINTCOPYED    406
+
+#define EVENTEDITORREFRESHPOINTPLACED    500
+#define EVENTEDITORREFRESHPOINTMOVED     501
+#define EVENTEDITORREFRESHPOINTROTATED   502
+#define EVENTEDITORREFRESHPOINTSCALED    503
+#define EVENTEDITORREFRESHPOINTDELETED   504
+#define EVENTEDITORREFRESHPOINTCOPYED    506
+
+#define	EVENTEDITORPOLYPLACED  600
+#define	EVENTEDITORPOLYMOVED   601
+#define	EVENTEDITORPOLYDELETED 602
+#define	EVENTEDITORPOLYCOPYED  603
+
+#define EVENT_ROADNODE_SELECTED 700
+#define EVENT_RIVERNODE_SELECTED 701
+
+#define EVENTEDITORTRAFFICPOINTPLACED 800
+#define EVENTEDITORTRAFFICPOINTMOVED 801
+#define EVENTEDITORTRAFFICPOINTDELETED 802
+
+#define EVENTEDITORLOGICALCELLUPDATEPOS 850
+
+// 观察者
+interface IEKG3DSimpleSink
+{
+	virtual void SinkFunc(INT nSinkID) = 0;
+	virtual void SinkFunc2(INT nSinkID,INT nsubSinkID,DWORD dwValue,PVOID pPoint) = 0;
+};
+
+// 被观察者
+interface IEKG3DConnectionPoint
+{
+	virtual HRESULT Advise(IEKG3DSimpleSink* pNewSink) = 0; //增加一个观察者
+	virtual HRESULT Unadvise(IEKG3DSimpleSink* const pNewSink) = 0;   //删除一个观察者
+};
+
+#endif //_INCLUDE_IETOOLS_H_

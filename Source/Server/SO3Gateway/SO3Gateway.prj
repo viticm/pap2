@@ -1,0 +1,32 @@
+[Include]
+../../../Include
+../../../../Base/Include
+
+[Config Debug]
+Product     Exe ../../../../Sword3-products/trunk/server/SO3GatewayD
+Options     Debug -mms-bitfields
+Defines
+ObjDir      LDebug
+LibDir      ../../../../Base/Lib/Linux
+Libraries   CommonD; EngineD; pthread
+
+[Config Release]
+Product     Exe ../../../../Sword3-products/trunk/server/SO3Gateway
+Options     Release -mms-bitfields
+Defines
+ObjDir      LRelease
+LibDir      ../../../../Base/Lib/Linux
+Libraries   Common; Engine; pthread
+
+[Source]
+stdafx.cpp
+KQueueManager.cpp
+KPaysysAgency.cpp
+KPlayerManager.cpp
+KRelayAgency.cpp
+KSO3Gateway.cpp
+KGatewayEyes.cpp
+Main.cpp
+KSndaAgency.cpp
+
+

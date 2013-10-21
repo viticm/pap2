@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Jx3RoleItemCompensateToActivityTable", "Jx3RoleItemCompensateToActivityTable.vcproj", "{F6AB1B4F-5223-41DB-9A5D-68C331303CF8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KGD_BackupFileBrowser", "..\..\..\..\..\..\Base\SourceCode\DatabaseFamily\KGD_BackupFileBrowser\KGD_BackupFileBrowser.vcproj", "{66CFCF9E-9133-4A8F-B474-AF9C52173F74}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jx3roleanalyser", "..\..\..\biztool\src\jx3roleanalyser\jx3roleanalyser.vcproj", "{73FFB44E-4887-4624-865B-49BF6FBB1DC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6AB1B4F-5223-41DB-9A5D-68C331303CF8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F6AB1B4F-5223-41DB-9A5D-68C331303CF8}.Debug|Win32.Build.0 = Debug|Win32
+		{F6AB1B4F-5223-41DB-9A5D-68C331303CF8}.Release|Win32.ActiveCfg = Release|Win32
+		{F6AB1B4F-5223-41DB-9A5D-68C331303CF8}.Release|Win32.Build.0 = Release|Win32
+		{66CFCF9E-9133-4A8F-B474-AF9C52173F74}.Debug|Win32.ActiveCfg = Debug|Win32
+		{66CFCF9E-9133-4A8F-B474-AF9C52173F74}.Debug|Win32.Build.0 = Debug|Win32
+		{66CFCF9E-9133-4A8F-B474-AF9C52173F74}.Release|Win32.ActiveCfg = Release|Win32
+		{66CFCF9E-9133-4A8F-B474-AF9C52173F74}.Release|Win32.Build.0 = Release|Win32
+		{73FFB44E-4887-4624-865B-49BF6FBB1DC2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{73FFB44E-4887-4624-865B-49BF6FBB1DC2}.Debug|Win32.Build.0 = Debug|Win32
+		{73FFB44E-4887-4624-865B-49BF6FBB1DC2}.Release|Win32.ActiveCfg = Release|Win32
+		{73FFB44E-4887-4624-865B-49BF6FBB1DC2}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

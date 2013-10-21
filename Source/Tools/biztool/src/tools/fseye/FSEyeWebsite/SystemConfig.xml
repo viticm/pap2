@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SystemConfig>
+	<Config attribute="MaxConnectionCount" value="0"></Config>
+  <Config attribute="AdminServerListenIP" value="192.168.24.236"></Config>
+  <Config attribute="DBDefaultIP" value="192.168.24.236"></Config>
+	<Config attribute="AdminServerListenPort" value="5678"></Config>
+	<Config attribute="SecondaryAdminServerListenPort" value="7777"></Config>
+	<Config attribute="ConfigGuardPort" value="9999"></Config>
+	<Config attribute="ListenForConfigGuardReturnPort" value="9999"></Config>
+	<Config attribute="AdminServerUploadFileRootPath" value="E:\fseye\fseyeupload\"></Config>
+  <!-- 20.182 -->                                          
+  <!--Config attribute="DbConnectionString" value="nE0zJyLGlA8t9ahyJ1uZUkEW8gHv3/LS+qES0iavasTkq7BFKTTcBcSHXh8HvO5OoWi03ezCL2v5/4vUMJxPkeZh+PjPNIp7ZmqUJf2JEZatKkslYN4ogosnjzD39aEChwqSUeVGb4PCp5Hjfkw/zXPflB2LVz6xG1zFE8EZ4ePtIhTwVcZziHrObgit0xweoBiqJdTg/7I="></Config-->
+  <!-- 20.198 -->
+  <!--Config attribute="DbConnectionString" value="nE0zJyLGlA8t9ahyJ1uZUt7ZU/i4N1VdDSWOGzF6xmvUhRtxEXDX8f8wKGW8GmZfq0LlU3D1F5FR/xxtRJkEQdfcKX45OQE8Ep+s/TXpX2ww/VNvVSf97h02IHgmd3H8asuDUK+e+WFRXmmH1M4MwOjweWCbaY5Fp0BPpKAvykxbbt6UK/UnxoNDiaIVP2hfFYbmPZfL3zk="></Config-->
+ <!-- swtest2-->
+  <Config attribute="DbConnectionString" value="nE0zJyLGlA+Ebf3BhgVj2p3CpD9OUp8t+mZ6KMVJCglv5D7bvyaYynye/Rm4oNBtscnNUwtHDq42tb57FRqnqpNL72fA5IgMD27Pw7zm8klDqinCyWqlDMbM2WXOzOlQk6ZD0+IUP7TUQujCJAxEZxbbX3NuT0TprP4KLCy8QvVEX71PLSIaGi1i4p+f4eVJ1rjSmCAx1kg="></Config>
+<!-- 22.57 -->
+  <!-- Config attribute="DbConnectionString" value="nE0zJyLGlA8t9ahyJ1uZUuQ8nojRm2pmAghFgGBA/OqyvyHXWgbO+Dt8mqzHyW67G/SqLjLy4kz+tmHc/SwPuZZmL/ZJjChUIAXwKUvM6ra4VsVnyGTADC8OSl9cVb1CnL0xDXwNDdD2Cliuv2is7yBk7p7Zzt6fxYQHpYAC3KnqsgPcwsPJw77i7ZL45CRa8OF4BD/sTDADp7mqXA43mFRNm+jzhVvR"></Config-->
+  <Config attribute="DefaultDbName" value="fseye"></Config>
+  <Config attribute="DefaultGameDbName" value="fsonline2"></Config>
+	<Config attribute="DefaultEncoding" value="GB2312"></Config>	
+	<Config attribute="DefaultNewLine" value="\r\n"></Config>
+	<Config attribute="LogDir" value="E:\fseye\fseyelog\"></Config>
+	<Config attribute="LogEnabled" value="true"></Config>
+	<Config attribute="NeedGuardAuthorization" value="false"></Config>
+	<Config attribute="GameSettingDir" value="E:\fseye\fs2settings\"></Config>
+	<Config attribute="GuardAuthorizationTimeout" value="30000"></Config>
+	<Config attribute="EnablePaysys" value="false"></Config>
+	<Config attribute="PaySysDbConnectionString" value=""></Config>
+	<Config attribute="PreloadGameData" value="false"></Config>
+  <Config attribute="SMSUrl" value="http://218.206.94.138/passportserv/default.aspx"></Config>
+  <Config attribute="SMSCommand" value="JXWDEV"></Config>
+  <Config attribute="ServerListFileDir" value="d:\project\yunying\serverlistfile\"></Config>
+  <Config attribute="ServerListFileName" value="serverlist.ini"></Config>
+  <Config attribute="PakFileName" value="serverlist.ini"></Config>
+  <Config attribute="ServerListCRCFileName" value="serverlist.ini.crc"></Config>
+  <Config attribute="ServerListServerGroupMaxPlayer" value="5600"></Config>
+  <Config attribute="WebSiteVersion" value="1-2-3-4"></Config>
+  <Config attribute="GroupPlayerCountDir" value="E:\fseye\fseyelog\"></Config>
+  <Config attribute="GroupPlayerCountFileName" value="playerCount.tab"></Config>
+  <Config attribute="GroupPlayerCountKickInterval" value="6000"></Config>
+</SystemConfig>

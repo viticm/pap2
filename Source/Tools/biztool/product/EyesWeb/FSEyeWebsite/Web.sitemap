@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" enableLocalization="true">
+  <siteMapNode url="~/Common/HomePage.aspx" title="$resources: Web.Sitemap, HomePage, ''">
+    <siteMapNode url="~/GameServer/ServerList.aspx" title="$resources: Web.Sitemap, GameServer, GameServer">
+      <siteMapNode url="~/GameServer/ServerOverviewAndMonitor.aspx" title="$resources: Web.Sitemap, ServerOverviewAndMonitor, ServerOverviewAndMonitor" />
+      <siteMapNode url="~/GameServer/ServerListConfig.aspx" title="$resources: Web.Sitemap, ServerListConfig, ServerListConfig" />
+      <siteMapNode url="~/GameServer/ServerOverview.aspx" title="$resources: Web.Sitemap, GameServerOverview, GameServerOverview" />
+      <siteMapNode url="~/GameServer/ServerOverviewPlayerCount.aspx" title="$resources: Web.Sitemap, GameServerPlayerCountOverview, GameServerPlayerCountOverview" />
+      <siteMapNode url="~/GameServer/ControlGame.aspx" title="$resources: Web.Sitemap, ControlAndUpdate, ControlAndUpdate" />
+      <siteMapNode url="~/GameServer/PlayerCount.aspx" title="$resources: Web.Sitemap, PlayerCount, PlayerCount" />
+      <siteMapNode url="~/GameServer/AddAndDelete.aspx" title="$resources: Web.Sitemap, AddAndDelete, AddAndDelete">
+      <siteMapNode url="~/GameServer/AddServerGroupSimplified.aspx" title="$resources: Web.Sitemap, AddServerGroupSimplified, AddServerGroupSimplified" />
+        <siteMapNode url="~/GameServer/EditServerGroup.aspx?op=add" title="$resources: Web.Sitemap, AddOneGroup, AddOneGroup" />
+        <!-- siteMapNode url="~/GameServer/AddServerSameType.aspx?op=add" title="$resources: Web.Sitemap, AddServerSameType, AddServerSameType" / -->
+        <!-- siteMapNode url="~/GameServer/EditServer.aspx?op=add" title="$resources: Web.Sitemap, AddServer, AddServer" / -->
+        <siteMapNode url="~/GameServer/DeleteServer.aspx" title="$resources: Web.Sitemap, DeleteServer, DeleteServer" />
+      </siteMapNode>
+      <siteMapNode url="~/GameServer/ServerGroupManagement.aspx" title="$resources: Web.Sitemap, ServerGroupManagement, ServerGroupManagement" />
+    
+        
+        <siteMapNode url="~/GameServer/AlertConfig.aspx" title="$resources: Web.Sitemap, AlertConfig, AlertConfig" />
+        <!-- siteMapNode url="~/GameServer/Console.aspx" title="$resources: Web.Sitemap, Console, Console" /> -->
+        <siteMapNode url="~/GameServer/ServerOperationHistory.aspx" title="$resources: Web.Sitemap, ServerOperationHistory, ServerOperationHistory" />
+      </siteMapNode>
+    
+    <!-- 游戏管理  -->
+      <siteMapNode url="~/GameMaster/GameMaster.aspx" title="$resources: Web.Sitemap, GameMaster, GameMaster">
+        <siteMapNode url="~/GameMaster/GMCommand.aspx" title="$resources: Web.Sitemap, Command, Command" />
+        <siteMapNode url="~/GameMaster/GMCommandAdvanced.aspx" title="$resources: Web.Sitemap, CommandAdvanced, CommandAdvanced" />
+        <siteMapNode url="~/GameMaster/OperationQuery.aspx" title="$resources: Web.Sitemap, GMOperationQuery, GMOperationQuery" />
+
+      </siteMapNode>
+
+      <!-- siteMapNode url="~/GameInfo/GameInfo.aspx" title="$resources: Web.Sitemap, GameInfo, GameInfo" -->
+        <!--<siteMapNode url="~/GameInfo/TopPlayer.aspx" title="$resources: Web.Sitemap, TopPlayer, TopPlayer" />-->
+        <!--<siteMapNode url="~/GameInfo/Statistic.aspx" title="$resources: Web.Sitemap, Statistic, Statistic">-->
+        <!--<siteMapNode url="~/GameInfo/ActivePlayerStatistic.aspx" title="$resources: Web.Sitemap, ActivePlayer, ActivePlayer" />-->
+        <!-- siteMapNode url="~/GameInfo/ProfessionalSexStatistic.aspx" title="$resources: Web.Sitemap, ProfessionalSex, ProfessionalSex" />
+        <siteMapNode url="~/GameInfo/LevelDistribution.aspx" title="$resources: Web.Sitemap, LevelDistribution, LevelDistribution" / -->
+        <!--<siteMapNode url="~/GameInfo/SocialRelationStatistic.aspx" title="$resources: Web.Sitemap, SocialRelation, SocialRelation" />-->
+        <!--<siteMapNode url="~/GameInfo/AuctionRooms.aspx" title="$resources: Web.Sitemap, AuctionRooms, AuctionRooms" />-->
+        <!--<siteMapNode url="~/GameInfo/ItemStatistic.aspx" title="$resources: Web.Sitemap, Item, Item" />-->
+        <!--<siteMapNode url="~/GameInfo/AuctionStatistic.aspx" title="$resources: Web.Sitemap, Auction, Auction" />-->
+        <!--<siteMapNode url="~/GameInfo/MailStatistic.aspx" title="$resources: Web.Sitemap, Mail, Mail" />-->
+        <!--<siteMapNode url="~/GameInfo/TaiSuiStatistic.aspx" title="$resources: Web.Sitemap, TaiSui, TaiSui" />-->
+        <!--<siteMapNode url="~/GameInfo/NpcDropItemStatistic.aspx" title="$resources: Web.Sitemap, NpcDropItem, NpcDropItem" />-->
+        <!--<siteMapNode url="~/GameInfo/NpcDeathStatistic.aspx" title="$resources: Web.Sitemap, NpcDeath, NpcDeath" />-->
+        <!--<siteMapNode url="~/GameInfo/ExpStatistic.aspx" title="$resources: Web.Sitemap, ExpStatistic, ExpStatistic" />-->
+        <!--
+        <siteMapNode url="~/GameInfo/RoleCountStatistic.aspx" title="$resources: Web.Sitemap, RoleCountStatistic, RoleCountStatistic" />
+        <siteMapNode url="~/GameInfo/EasyStatistic.aspx" title="$resources: Web.Sitemap, EasyStatistic, EasyStatistic" />
+        -->
+        <!--<siteMapNode url="~/GameInfo/AdvancedStatistic.aspx" title="$resources: Web.Sitemap, AdvancedStatistic, AdvancedStatistic" />-->
+      <!-- /siteMapNode -->
+
+      <siteMapNode url="~/UpdateServer/UpdateManagement.aspx" title="$resources: Web.Sitemap, UpdateManagement, UpdateManagement">
+        <siteMapNode url="~/UpdateServer/GroupStatus.aspx" title="$resources: Web.Sitemap, GroupStatus, GroupStatus" />
+        <siteMapNode url="~/UpdateServer/UpdateServerConfig.aspx" title="$resources: Web.Sitemap, UpdateServerConfig, UpdateServerConfig" />
+        <siteMapNode url="~/GameServer/FileManagement.aspx" title="$resources: Web.Sitemap, FileManagement, FileManagement">
+          <siteMapNode url="~/GameServer/UploadFile.aspx" title="$resources: Web.Sitemap, UploadFilesToWeb, UploadFilesToWeb" />          
+          <siteMapNode url="~/UpdateServer/UploadFiles.aspx" title="$resources: Web.Sitemap, UploadFiles, UploadFiles" />
+          <siteMapNode url="~/UpdateServer/DispenseFiles2.aspx" title="$resources: Web.Sitemap, DispenseFiles, DispenseFiles" />
+          <siteMapNode url="~/GameServer/FileList.aspx" title="$resources: Web.Sitemap, FileList, FileList" />
+          <siteMapNode url="~/UpdateServer/DispenseFiles.aspx" title="$resources: Web.Sitemap, FtpFileList, FtpFileList" />
+          <siteMapNode url="~/UpdateServer/MD5.aspx" title="MD5" />
+        </siteMapNode>
+        <siteMapNode url="~/UpdateServer/UploadHistory.aspx" title="$resources: Web.Sitemap, UploadHistory, UploadHistory" />
+      </siteMapNode>
+      <siteMapNode url="~/Automation/Automation.aspx" title="$resources: Web.Sitemap, Automation, Automation">
+        <siteMapNode url="~/Automation/ScheduledTaskList.aspx" title="$resources: Web.Sitemap, ScheduledTask, ScheduledTask">
+          <siteMapNode url="~/Automation/AddScheduledTask.aspx" title="$resources: Web.Sitemap, AddScheduledTask, AddScheduledTask" />
+        </siteMapNode>
+        <siteMapNode url="~/Automation/StrategyList.aspx" title="$resources: Web.Sitemap, StrategyConfig, StrategyConfig">
+          <siteMapNode url="~/Automation/AddStrategy.aspx" title="$resources: Web.Sitemap, AddStrategy, AddStrategy" />
+        </siteMapNode>
+        <siteMapNode url="~/Automation/BatchTask.aspx" title="$resources: Web.Sitemap, BatchTask, BatchTask">
+          <siteMapNode url="~/Automation/EditBatchTask.aspx" title="$resources: Web.Sitemap, AddBatchTask, AddBatchTask" />
+        </siteMapNode>
+        <siteMapNode url="~/Common/SystemConfig.aspx" title="$resources: Web.Sitemap, SystemConfig, SystemConfig" />
+      </siteMapNode>
+      <siteMapNode url="~/Security/Security.aspx" title="$resources: Web.Sitemap, Security, Security">
+        <siteMapNode url="~/Security/Who.aspx" title="$resources: Web.Sitemap, Who, Who" />
+        <siteMapNode url="~/Security/ListUser.aspx" title="$resources: Web.Sitemap, User, User">
+          <siteMapNode url="~/Security/AddUser.aspx" title="$resources: Web.Sitemap, AddUser, AddUser" />
+        </siteMapNode>
+        <siteMapNode url="~/Security/ListGroup.aspx" title="$resources: Web.Sitemap, Group, Group">
+          <siteMapNode url="~/Security/AddGroup.aspx" title="$resources: Web.Sitemap, AddGroup, AddGroup" />
+        </siteMapNode>
+        <siteMapNode url="~/Security/Log.aspx" title="$resources: Web.Sitemap, Log, Log" />
+      </siteMapNode>
+    <siteMapNode url="~/Customization/Customization.aspx" title="$resources: Web.Sitemap, Customization, Customization">
+      <siteMapNode url="~/Customization/Cabinet.aspx" title="$resources: Web.Sitemap, Cabinet, Cabinet" />
+    </siteMapNode>
+
+    </siteMapNode>
+  
+</siteMap>

@@ -1,0 +1,59 @@
+PrefixText_GetPrefixTextLength
+	说明：取带前缀文本条的前缀文字长度；
+	参数：szTreePath  		窗口树路径名；
+	返回：nLength			前缀字符串长度；
+
+PrefixText_GetPrefixText
+	说明：取带前缀文本条的前缀文字内容；
+	参数：szTreePath  		窗口树路径名；
+	返回：szText			前缀字符串内容；
+
+PrefixText_GetPrefixFontScheme
+	说明：取带前缀文本条的前缀文字字体方案；
+	参数：szTreePath  		窗口树路径名；
+	返回：nScheme			前缀文字字体方案；
+
+PrefixText_GetPrefixFontColorName
+	说明：设置带前缀文本条的前缀字体颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwFontColor		前缀字体颜色名字；
+	
+PrefixText_GetPrefixFontBorderColorName
+	说明：设置带前缀文本条的前缀字体边缘颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwFontColor		前缀字体边缘颜色名字；
+	
+PrefixText_SetPrefixFontScheme
+	说明：设置带前缀文本条的前缀文字字体方案；
+	参数：szTreePath  		窗口树路径名，
+		  nScheme			前缀文字字体方案；
+	返回：nil
+
+PrefixText_SetText		
+	说明：设带前缀文本条文字内容;
+	参数：szTreePath 	窗口树路径名，
+		  szText	 	文字内容；
+		  [nTextLength]	如果设置了，使用nTextLength，否则把szText当作plain text处理；
+	返回：nil
+		
+PrefixText_SetIntText			
+	说明：设置带前缀文本条的内容为整数的字符串；
+	参数：szTreePath  		窗口树路径名，
+		  nNumber			需要显示的数字；
+	返回：nil
+	
+PrefixText_Set2IntText		
+	说明：设置带前缀文本条的内容为两个整数的字符串，中间使用指定间隔符；
+	参数：szTreePath  		窗口树路径名，
+		  nNumber1			需要显示的第一个数字，
+		  nNumber2			需要显示的第二个数字，
+		  szSeparator		间隔符，只取这个字符串的第一个字母作为间隔符；
+	返回：nil
+	
+PrefixText_SetPrefixText				
+	说明：设带前缀文本条前缀文字内容;
+	参数：szTreePath 	窗口树路径名，
+		  szText	 	前缀文字内容；
+	返回：nil
+		
+

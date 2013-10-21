@@ -1,0 +1,4 @@
+#/bin/bash
+#delete file
+
+rm -rf {0}

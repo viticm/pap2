@@ -1,0 +1,2768 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header File">
+      <UniqueIdentifier>{03a39c93-8e3d-4139-9206-df94459b5ad3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{c26fdfd0-563e-45cd-9200-40976921e28a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{a4c8fee4-6148-43ef-b80e-3dde6d366ca6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Terrain">
+      <UniqueIdentifier>{734cbbe5-aeb7-4c4a-b24f-1200a2be5a84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditInterface">
+      <UniqueIdentifier>{e8fc3b70-8830-450a-8d00-185f18855b9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Font">
+      <UniqueIdentifier>{6469c0e3-fc6a-4371-8cd5-c5c47f04dd1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Image">
+      <UniqueIdentifier>{d5bbeff4-79b6-4580-9e7d-69c15373bba3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor">
+      <UniqueIdentifier>{6e9d4daa-279f-4d19-958a-2c54ce99d715}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineManager">
+      <UniqueIdentifier>{2aa28801-1e28-4dcf-9c01-34e8df082cc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PostRender">
+      <UniqueIdentifier>{064a0398-0fc3-46aa-a7a0-942d9b328985}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj">
+      <UniqueIdentifier>{ce84fa5e-dd03-4f5d-9a8a-91f84cfa025d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sfx">
+      <UniqueIdentifier>{90a43d6d-a0bf-4287-902e-494a41a3a38b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{973001ed-56ce-4604-ad23-bf3a0d71b025}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model\Mtl">
+      <UniqueIdentifier>{8810e2e4-00fd-43ac-b335-2af174592709}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model\Mesh">
+      <UniqueIdentifier>{efb6e5a7-fcd6-4b24-b5ec-6a33fad92058}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model\Ani">
+      <UniqueIdentifier>{b0e60567-c139-43a4-917f-75f927d3e149}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model\AnimationTag">
+      <UniqueIdentifier>{0ded9ed3-4bc9-48ad-83cc-37e2611bb427}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Texture">
+      <UniqueIdentifier>{98d08ce7-83c3-4d52-8b01-6c57d5b2b786}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysiscSystem">
+      <UniqueIdentifier>{ad8582f6-9d67-4042-b0f0-11e477daf017}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Z杂项">
+      <UniqueIdentifier>{ce5a0712-a7c4-450d-9882-2ecd3b8efb24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{b0fa2797-e4f6-4b87-a20e-5d864921341c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HelperClasses">
+      <UniqueIdentifier>{c4f0e5a2-15ca-434d-9e63-d7b8bf03e635}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HelperClasses\TemplateLibs">
+      <UniqueIdentifier>{3b5c02b6-42ae-49f9-8619-37c86dc5bb4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HelperClasses\TemplateLibs\KG3DTemplateLibs">
+      <UniqueIdentifier>{6accfd84-c354-46a8-9c9f-7c96186a7e93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HelperClasses\Helpers">
+      <UniqueIdentifier>{046ae50e-5614-48f2-9955-f32feec89774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HelperClasses\DummyInterfaces">
+      <UniqueIdentifier>{5fb7af7a-a223-49ef-a01b-ffab3c5162af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataFlow">
+      <UniqueIdentifier>{61c61818-312d-4198-b841-7a550a6d903e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FFTW">
+      <UniqueIdentifier>{0fdf1ec4-f37e-417c-a654-f1b1237ef01d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{bba9d82e-d197-48ff-b792-1aaff12f0749}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\Shader">
+      <UniqueIdentifier>{21a94b7a-1a08-423b-b121-8243fbf35ec1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OutDoor">
+      <UniqueIdentifier>{273ad66a-7eda-4491-9224-d334000ce479}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Record">
+      <UniqueIdentifier>{0828be77-c360-42dc-87c6-27ccbb3c239c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pvs">
+      <UniqueIdentifier>{153c6216-be14-4270-bce3-d5e59761354f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EnvEffect">
+      <UniqueIdentifier>{760e707e-cc6e-4b0c-a0ac-5a36084316ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EnvEffect\DynamicWeather_Related">
+      <UniqueIdentifier>{993f9df7-21eb-43eb-bf4f-6e8754805fb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EnvEffect\ControllersAndHelpers">
+      <UniqueIdentifier>{e24ce832-d40d-46c4-93b1-5c2a6e1693a7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DLLBase.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="IKG3DModifior.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DAnimationEx.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DAnimationTable.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DClip.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DClipTable.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DDebugD3DDevice.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DEffect.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DEngineManager.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DGraphiceEngine.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DGraphicsTool.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DKeyFrameControl.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DMaterial.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DMaterialEx.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DMaterialTable.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DMesh.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DMeshTable.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DModel.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DModelTable.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DObjectPropertyDefine.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentNPC.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentNPCEx.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentNPCTemplate.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentObject.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentObjectTable.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentSpeedTree.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresetObjectPropertyModifior.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DScene.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DSceneCameraMovement.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DSceneSceneEditor.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXElement.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXFileDefine.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXParticleRenderTool.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXParticleTextureTool.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DStructs.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DTemplates.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DTexture.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DTextureTable.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DVolumeFog.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="KSceneModelEditor.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="MathTool.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="RInterface.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DCamera.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DCameraPreset.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DEntity.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DFrustum.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DHOcclusion.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DSceneClient.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DSceneEntity.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DSceneEntityGroup.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DSceneEntityGroupTable.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DSceneEntityMgr.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DSceneFunctions.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DSceneLayer.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DSceneObjectEditor.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DSceneOutputWnd.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DSceneSFXEditor.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DSceneTable.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DSceneWndManager.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DSnapTool.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DTrackCamera.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DTransformation.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DAnimationStruct.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\KG3DEngine\KG3DInterface.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\KG3DEngine\KG3DTypes.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="kg3dgrasspatterncontainer.h">
+      <Filter>Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="Terrain\KG3DSerpentine.h">
+      <Filter>Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="Terrain\KG3DTerrainRiver.h">
+      <Filter>Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DTerrainRoad.h">
+      <Filter>Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEClassMemberDescription.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEEditor.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEEditorTypes.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DAni.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DAnimation.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DAnimationController.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DAnimationTable.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DAnimationTag.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DAnimationWarper.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DBillboardCloudCreater.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DBip.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DCamera.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DClip.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DClipTable.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DCloud.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DCollocator.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DCommonContainer.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DCommonObject.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DEnvEffDynamicWeather.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DEnvEffFog.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DEnvEffLight.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DEnvEffLightSet.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DEnvEffStarryNight.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DEnvEffWind.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DEnvironment.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DLight.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DLogical.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DMaterial.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DMesh.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DMeshBone.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DMeshFarMountain.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DMeshLensFlare.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DMeshSkyBox.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DModelSet.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DModelSpeedTree.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DModelST.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DModelTable.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DPointLight.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DPointLightTable.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DRecPlayer.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DRegionInfoManager.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DRepresentObject.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DScene.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DSceneCamera.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DSceneCheckers.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DSceneEntity.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DSceneLayer.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DSceneObjectPlacementTool.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DSceneOutputWnd.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DSceneSelectionTool.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DSceneSFXEditor.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DSFX.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DSkySystem.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DTerrain.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DTexture.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DTextureTable.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEKG3DTypes.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IEOther.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IETools.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IKG3DMessenger.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EditInterface\IKG3DObjectPropertyModifior.h">
+      <Filter>EditInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DFontDescr.h">
+      <Filter>Font</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DFontRenderer.h">
+      <Filter>Font</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DFontTexture.h">
+      <Filter>Font</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Image\KBitmap16.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Image\KBmpFile24.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Image\KColors.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DBaseCoord.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DBaseCoordImp.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DEditGridBase.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DEditMoveGrid.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DEditRotationGrid.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DEditScaleGrid.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DLocalMoveCoord.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DLocalRotationCoord.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DLocalScalCoord.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DLocalTranslationCoord.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSceneCheckers.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\KG3DSceneEditorBase.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSceneModelEditor.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSceneModelEditorPlayerTools.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSceneObjectPlacementTool.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSceneObjectTransformTool.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\kg3dsceneselectbase.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSceneSelectionTool.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSceneSelectionToolImp.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSceneTopSnapTool.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DToolsImpl.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KSceneLogicRegionCellBuf.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DEngineOption.h">
+      <Filter>EngineManager</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DPostRenderEffectAoe.h">
+      <Filter>PostRender</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DPostRenderEffectBase.h">
+      <Filter>PostRender</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DPostRenderEffectBloom.h">
+      <Filter>PostRender</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DPostRenderEffectBlur.h">
+      <Filter>PostRender</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DPostRenderEffectBump.h">
+      <Filter>PostRender</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DPostRenderEffectDOF.h">
+      <Filter>PostRender</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DPostRenderEffectHDR.h">
+      <Filter>PostRender</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DPostRenderEffectImageAdjust.h">
+      <Filter>PostRender</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DPostRenderEffectManager.h">
+      <Filter>PostRender</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DPostRenderEffectMisc.h">
+      <Filter>PostRender</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DPostRenderEffectShadow.h">
+      <Filter>PostRender</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DPostRenderEffectShockWave.h">
+      <Filter>PostRender</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DPostRenderEffectSSAO.h">
+      <Filter>PostRender</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DPostRenderEffectTwist.h">
+      <Filter>PostRender</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DPostRenderGodRay.h">
+      <Filter>PostRender</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentObjectBuilder.h">
+      <Filter>Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentObjectDummy.h">
+      <Filter>Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentObjectNode.h">
+      <Filter>Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentObjectSet.h">
+      <Filter>Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentObjectSoundBall.h">
+      <Filter>Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentObjectTemplate.h">
+      <Filter>Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentObjectTrans.h">
+      <Filter>Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentObjectVisibleEntitySet.h">
+      <Filter>Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KG3DKeyFrameDataBase.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DNoise.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFX.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXAnimationController.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXBillboard.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSfxBoxProjection.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXChannel.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSfxExp.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXMagicParpet.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXMeteor.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSfxMeteorParticle.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXParticle.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXParticleCommander.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXParticleContainer.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXParticleForceField.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXParticleLauncher.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXParticleLifeTimeLine.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXPointLightParticle.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXProjectionTextureMgr.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXSelectTexture.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSFXTrack.h">
+      <Filter>sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DBipTable.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DFlexibleBody.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DModelLightmapRenderTool.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DModelSpeedTree.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DModelSpeedTreeRender.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DModelST.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSpeedTreeLeafGroup.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DEffectFileTable.h">
+      <Filter>Model\Mtl</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DMaterialEffectAmbient.h">
+      <Filter>Model\Mtl</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DMaterialEffectSetter.h">
+      <Filter>Model\Mtl</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRuntimeMaterial.h">
+      <Filter>Model\Mtl</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DBip.h">
+      <Filter>Model\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DBoneSet.h">
+      <Filter>Model\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DBoneSetEx.h">
+      <Filter>Model\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DInstanceBillboard.h">
+      <Filter>Model\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DInstanceHighDefGrass.h">
+      <Filter>Model\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DMeshBone.h">
+      <Filter>Model\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DAnimationController.h">
+      <Filter>Model\Ani</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DAnimationEventHandlerRepresentDummy.h">
+      <Filter>Model\Ani</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DAnimationSplitter.h">
+      <Filter>Model\Ani</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DAnimationWarper.h">
+      <Filter>Model\Ani</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DBipMapper.h">
+      <Filter>Model\Ani</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DClipTools.h">
+      <Filter>Model\Ani</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRTSInfoCollector.h">
+      <Filter>Model\Ani</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DAnimationMotionTag.h">
+      <Filter>Model\AnimationTag</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DAnimationSFXTag.h">
+      <Filter>Model\AnimationTag</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DAnimationSoundTag.h">
+      <Filter>Model\AnimationTag</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DAnimationTag.h">
+      <Filter>Model\AnimationTag</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DAnimationTagContainer.h">
+      <Filter>Model\AnimationTag</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DAnimationTagID.h">
+      <Filter>Model\AnimationTag</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DFaceMotionSettings.h">
+      <Filter>Model\AnimationTag</Filter>
+    </ClInclude>
+    <ClInclude Include="flash.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Jpegfile.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DFlashTexture.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DTextureAnimation.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="tgalib.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysiscSystem\KG3DPhysiscManager.h">
+      <Filter>PhysiscSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysiscSystem\KG3DPhysiscScene.h">
+      <Filter>PhysiscSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Decompose.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DBillboardCloud.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DBillboardCloudCreater.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DCaption.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DCritDumper.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DDataFlowArcTable.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DEngine.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DEngineTypes.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DFileFinder.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DHeightMap.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DMeasureTool.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DMemHeap.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DMemoryFile.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DModelBatchRender.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DModelShadowRenderer.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRecorder.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRenderState.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRenderTargetTool.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentObjectWall.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DResourcePacker.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSceneShadowMap.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DShareBuffer.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSkinModelRender.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DStateBlock.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DStaticModelRender.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSubSetRenderer.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DTagSFXAnimationController.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DTempleteMultiThead.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DWaterEffect.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KOutputDebug.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="ksmallobjectpool.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="MathToolEx.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="ocean_surface.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Z杂项</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DUI.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DUIMiniScene.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DUITexture.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DUIVBuffer.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KG3DBaseHelpers.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KG3DBlockTraverseData.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DCollocator.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DCommonContainer.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DCommonObject.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DCommonObjectBuilder.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DCommonObjectContainerNode.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DCommonObjectNode.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DCommonObjectPool.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KG3DDeviceHelpers.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KG3DEngineCommandExecutor.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KG3DEngineInterfaceGetter.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KG3DGraphicsFunctions.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DIntersection.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DIntersectionBase.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DLoopQueue.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KG3DMeshHelpers.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KG3DMessageBroadcasterGroup.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KG3DMessageBroadcasterGroupImp.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DMessageWMGListner.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KG3DMessenger.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRTTIType.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSceneSettings.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DStateInitializer.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KG3DSystemEventListener.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DTextureHelpers.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KGStateMachine.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplateLibs\KG3DTemplateLibs\KG3DKeyConstainedMap.h">
+      <Filter>HelperClasses\TemplateLibs\KG3DTemplateLibs</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KG3DGraphicHelpers.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KG3DLifeTimeDependedPointer.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KG3DMathFunctions.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KGArrayCompressor.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KGBitSet.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KGCommonBuffer.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KGCommonWidgets.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KGCustomAllocators.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KGDesignPatternWidgets.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KGHelperClasses.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KGINIFileHelpers.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KGINIFileHelpersEx.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KGMathFunctions.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KGPerformence.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KGSTLWrappers.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KGStringFunctions.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KGStringFunctionsBase.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KGStringFunctionsEx.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\KGTester.h">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\DummyInterfaces\KGDummyID3DXEffect.h">
+      <Filter>HelperClasses\DummyInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\DummyInterfaces\KGDummyIFile.h">
+      <Filter>HelperClasses\DummyInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DDataFlowArc.h">
+      <Filter>DataFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DDataFlowConnectionNode.h">
+      <Filter>DataFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DDataFlowDataDefine.h">
+      <Filter>DataFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DDataFlowDataObject.h">
+      <Filter>DataFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DDataFlowDataObjectTable.h">
+      <Filter>DataFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DDataFlowProcessor.h">
+      <Filter>DataFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DDataFlowProcessorTable.h">
+      <Filter>DataFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentObjectDataFlowArc.h">
+      <Filter>DataFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentObjectDataFlowProcessor.h">
+      <Filter>DataFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSceneDataFlowEditor.h">
+      <Filter>DataFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSceneDataInterface.h">
+      <Filter>DataFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="fftw\config.h">
+      <Filter>FFTW</Filter>
+    </ClInclude>
+    <ClInclude Include="fftw\fftw-int.h">
+      <Filter>FFTW</Filter>
+    </ClInclude>
+    <ClInclude Include="fftw\fftw.h">
+      <Filter>FFTW</Filter>
+    </ClInclude>
+    <ClInclude Include="fftw\rfftw.h">
+      <Filter>FFTW</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsStruct.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DBBox.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DCuller.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DCullerTop.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DFrameDrawer.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DGraphicsStructEx.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRect.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DRenderData.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DRenderDataDefault.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DRenderer.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DRendererDefault.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DRenderGlobalState.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DRenderSorterStratege.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DRenderSorterStrategeDefault.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DTextureFrameDrawer.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DDefaultShaderGroup.h">
+      <Filter>Render\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DShaderCollocation.h">
+      <Filter>Render\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DShaderHolder.h">
+      <Filter>Render\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DShaderInclude.h">
+      <Filter>Render\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DShaderIncludeForRC.h">
+      <Filter>Render\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DShaderInfrastructure.h">
+      <Filter>Render\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DShaderManager.h">
+      <Filter>Render\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\KG3DShaderRCBridge.h">
+      <Filter>Render\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="shaders\ShaderDefinitions.h">
+      <Filter>Render\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Terrain\KG3DGridHeightGetter.h">
+      <Filter>OutDoor</Filter>
+    </ClInclude>
+    <ClInclude Include="Terrain\KG3DOutDoorAssistantFuncs.h">
+      <Filter>OutDoor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSceneBlock.h">
+      <Filter>OutDoor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSceneBlockLoader.h">
+      <Filter>OutDoor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DSceneOutDoorSpaceMgr.h">
+      <Filter>OutDoor</Filter>
+    </ClInclude>
+    <ClInclude Include="Terrain\KG3DSceneSpaceNode.h">
+      <Filter>OutDoor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DTerrainBlock.h">
+      <Filter>OutDoor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DTerrainBlockGrass.h">
+      <Filter>OutDoor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DTerrainBlockModifier.h">
+      <Filter>OutDoor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DTerrainDetailTexture.h">
+      <Filter>OutDoor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DTerrainGrassesRender.h">
+      <Filter>OutDoor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DTerrainRegionInterface.h">
+      <Filter>OutDoor</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DTerrainRender.h">
+      <Filter>OutDoor</Filter>
+    </ClInclude>
+    <ClInclude Include="RecPlayer.h">
+      <Filter>Record</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRepresentObjectPVS.h">
+      <Filter>Pvs</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DScenePvsEditor.h">
+      <Filter>Pvs</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DCloud.h">
+      <Filter>EnvEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffCommonDef.h">
+      <Filter>EnvEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffDynamicWeather.h">
+      <Filter>EnvEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffect.h">
+      <Filter>EnvEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffFog.h">
+      <Filter>EnvEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffLight.h">
+      <Filter>EnvEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffLightSet.h">
+      <Filter>EnvEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffList.h">
+      <Filter>EnvEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffRenderer.h">
+      <Filter>EnvEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffStarryNight.h">
+      <Filter>EnvEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffWind.h">
+      <Filter>EnvEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvironment.h">
+      <Filter>EnvEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DMeshFarMountain.h">
+      <Filter>EnvEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DMeshLensFlare.h">
+      <Filter>EnvEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DMeshSkyBox.h">
+      <Filter>EnvEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DSkySystem.h">
+      <Filter>EnvEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffDW_BaseClasses.h">
+      <Filter>EnvEffect\DynamicWeather_Related</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffDW_HelperClasses.h">
+      <Filter>EnvEffect\DynamicWeather_Related</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffDW_KeyBase.h">
+      <Filter>EnvEffect\DynamicWeather_Related</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffDW_KeyTable.h">
+      <Filter>EnvEffect\DynamicWeather_Related</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffDW_KeyTableGenerator.h">
+      <Filter>EnvEffect\DynamicWeather_Related</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffDW_KeyTrack.h">
+      <Filter>EnvEffect\DynamicWeather_Related</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffDWController.h">
+      <Filter>EnvEffect\DynamicWeather_Related</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvEffect\KG3DEnvEffTimeInformer.h">
+      <Filter>EnvEffect\DynamicWeather_Related</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DGPS.h">
+      <Filter>EnvEffect\ControllersAndHelpers</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRegionInfoManager.h">
+      <Filter>EnvEffect\ControllersAndHelpers</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DRegionInformer.h">
+      <Filter>EnvEffect\ControllersAndHelpers</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DTime.h">
+      <Filter>EnvEffect\ControllersAndHelpers</Filter>
+    </ClInclude>
+    <ClInclude Include="KG3DAnimationSoundTagInfo.h" />
+    <ClInclude Include="KG3DAutoTestInterface.h" />
+    <ClInclude Include="KG3DBsp.h" />
+    <ClInclude Include="KG3DEngineOptionCaps.h" />
+    <ClInclude Include="KG3DFileLoader.h" />
+    <ClInclude Include="KG3DFuctionCommand.h" />
+    <ClInclude Include="KG3DLightMapBaker.h" />
+    <ClInclude Include="KG3DMeshLodGenerater.h" />
+    <ClInclude Include="KG3DMeshSkin.h" />
+    <ClInclude Include="KG3DModelLightMap.h" />
+    <ClInclude Include="KG3DModelPointLight.h" />
+    <ClInclude Include="KG3DMultiThreadLoader.h" />
+    <ClInclude Include="KG3DOutputWindowTable.h" />
+    <ClInclude Include="KG3DProfile.h" />
+    <ClInclude Include="KG3DRecPlayer.h" />
+    <ClInclude Include="KG3DRepresentNpcScreenRunner.h" />
+    <ClInclude Include="KG3DResourceDelayReleaseMgr.h" />
+    <ClInclude Include="KG3DScenePointLightRender.h" />
+    <ClInclude Include="KG3DSelector.h" />
+    <ClInclude Include="KG3DStateMachineBase.h" />
+    <ClInclude Include="KG3DTerrainRepresentInfo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Scene\KG3DCamera.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DCameraPreset.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DEntity.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DFrustum.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DHOcclusion.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DSceneCameraMovement.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DSceneClient.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DSceneEditorBase.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DSceneEntity.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DSceneEntityGroup.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DSceneEntityGroupTable.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DSceneEntityMgr.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DSceneFunctions.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DSceneLayer.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSceneModelEditor.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DSceneObjectEditor.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DSceneOutputWnd.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DSceneSceneEditor.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DSceneSFXEditor.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DSceneTable.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DSceneWndManager.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DSnapTool.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DTrackCamera.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DTransformation.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="kg3dgrasspatterncontainer.cpp">
+      <Filter>Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain\KG3DSerpentine.cpp">
+      <Filter>Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain\KG3DTerrainRiver.cpp">
+      <Filter>Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DTerrainRoad.cpp">
+      <Filter>Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DFontRenderer.cpp">
+      <Filter>Font</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DFontTexture.cpp">
+      <Filter>Font</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Image\IECapt.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Image\KBitmap16.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Image\KBmpFile24.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Image\KColors.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DBaseCoord.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DBaseCoordImp.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DEditGridBase.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DEditMoveGrid.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DEditRotationGrid.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DEditScaleGrid.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DLocalMoveCoord.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DLocalRotationCoord.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DLocalScalCoord.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DLocalTranslationCoord.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentNPC.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentNPCEx.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSceneCheckers.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSceneModelEditorPlayerTools.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSceneObjectPlacementTool.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSceneObjectTransformTool.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\KG3DSceneSelectBase.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSceneSelectionTool.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSceneSelectionToolImp.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSceneTopSnapTool.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DToolsImpl.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KSceneLogicRegionCellBuf.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DEngineManager.cpp">
+      <Filter>EngineManager</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DEngineOption.cpp">
+      <Filter>EngineManager</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DGraphiceEngine.cpp">
+      <Filter>EngineManager</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DGraphicsTool.cpp">
+      <Filter>EngineManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ViMD3DLib\source\ViMD3DLib9.cpp">
+      <Filter>EngineManager</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DPostRenderEffectAoe.cpp">
+      <Filter>PostRender</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DPostRenderEffectBase.cpp">
+      <Filter>PostRender</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DPostRenderEffectBloom.cpp">
+      <Filter>PostRender</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DPostRenderEffectBlur.cpp">
+      <Filter>PostRender</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DPostRenderEffectBump.cpp">
+      <Filter>PostRender</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DPostRenderEffectDOF.cpp">
+      <Filter>PostRender</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DPostRenderEffectHDR.cpp">
+      <Filter>PostRender</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DPostRenderEffectImageAdjust.cpp">
+      <Filter>PostRender</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DPostRenderEffectManager.cpp">
+      <Filter>PostRender</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DPostRenderEffectMisc.cpp">
+      <Filter>PostRender</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DPostRenderEffectShadow.cpp">
+      <Filter>PostRender</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DPostRenderEffectShockWave.cpp">
+      <Filter>PostRender</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DPostRenderEffectSSAO.cpp">
+      <Filter>PostRender</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DPostRenderEffectTwist.cpp">
+      <Filter>PostRender</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DPostRenderGodRay.cpp">
+      <Filter>PostRender</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentNPCTemplate.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentObject.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentObjectBuilder.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentObjectDummy.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentObjectNode.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentObjectSet.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentObjectSoundBall.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentObjectTable.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentObjectTemplate.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentObjectTrans.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentObjectVisibleEntitySet.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentSpeedTree.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DEffect.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DKeyFrameControl.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DNoise.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFX.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXAnimationController.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXBillboard.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSfxBoxProjection.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXChannel.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXElement.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSfxExp.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXMagicParpet.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXMeteor.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSfxMeteorParticle.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXParticle.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXParticleCommander.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXParticleContainer.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXParticleForceField.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXParticleLauncher.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXParticleLifeTimeLine.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXParticleRenderTool.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXParticleTextureTool.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXPointLightParticle.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXProjectionTextureMgr.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXSelectTexture.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSFXTrack.cpp">
+      <Filter>sfx</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DBipTable.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DFlexibleBody.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DModel.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DModelLightmapRenderTool.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DModelSpeedTree.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DModelSpeedTreeRender.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DModelST.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DModelTable.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSpeedTreeLeafGroup.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DVolumeFog.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DEffectFileTable.cpp">
+      <Filter>Model\Mtl</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DMaterial.cpp">
+      <Filter>Model\Mtl</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DMaterialEffectAmbient.cpp">
+      <Filter>Model\Mtl</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DMaterialEffectSetter.cpp">
+      <Filter>Model\Mtl</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DMaterialEx.cpp">
+      <Filter>Model\Mtl</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DMaterialTable.cpp">
+      <Filter>Model\Mtl</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRuntimeMaterial.cpp">
+      <Filter>Model\Mtl</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DBip.cpp">
+      <Filter>Model\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DBoneSet.cpp">
+      <Filter>Model\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DBoneSetEx.cpp">
+      <Filter>Model\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DInstanceBillboard.cpp">
+      <Filter>Model\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DInstanceHighDefGrass.cpp">
+      <Filter>Model\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DMesh.cpp">
+      <Filter>Model\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DMeshBone.cpp">
+      <Filter>Model\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DMeshLoader.cpp">
+      <Filter>Model\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DMeshTable.cpp">
+      <Filter>Model\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DAnimationController.cpp">
+      <Filter>Model\Ani</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DAnimationEventHandlerRepresentDummy.cpp">
+      <Filter>Model\Ani</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DAnimationSplitter.cpp">
+      <Filter>Model\Ani</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DAnimationWarper.cpp">
+      <Filter>Model\Ani</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DBipMapper.cpp">
+      <Filter>Model\Ani</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DClip.cpp">
+      <Filter>Model\Ani</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DClipTable.cpp">
+      <Filter>Model\Ani</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DClipTools.cpp">
+      <Filter>Model\Ani</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRTSInfoCollector.cpp">
+      <Filter>Model\Ani</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DAnimationMotionTag.cpp">
+      <Filter>Model\AnimationTag</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DAnimationSFXTag.cpp">
+      <Filter>Model\AnimationTag</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DAnimationSoundTag.cpp">
+      <Filter>Model\AnimationTag</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DAnimationTag.cpp">
+      <Filter>Model\AnimationTag</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DAnimationTagContainer.cpp">
+      <Filter>Model\AnimationTag</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DAnimationTagID.cpp">
+      <Filter>Model\AnimationTag</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DFaceMotionSettings.cpp">
+      <Filter>Model\AnimationTag</Filter>
+    </ClCompile>
+    <ClCompile Include="flash.c">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpegfile.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DFlashTexture.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DTexture.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DTextureAnimation.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DTextureTable.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="tgalib.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysiscSystem\KG3DPhysiscManager.cpp">
+      <Filter>PhysiscSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysiscSystem\KG3DPhysiscScene.cpp">
+      <Filter>PhysiscSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Decompose.c">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="IKG3DModifior.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DBillboardCloud.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DBillboardCloudCreater.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DCaption.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DCritDumper.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DDataFlowArcTable.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DDebugD3DDevice.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DEngine.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DFileFinder.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DHeightMap.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DMeasureTool.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DMemHeap.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DMemoryFile.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DModelBatchRender.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DModelShadowRenderer.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRecorder.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRenderState.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRenderTargetTool.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentObjectWall.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DResourcePacker.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSceneShadowMap.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DShareBuffer.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSkinModelRender.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DStateBlock.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DStaticModelRender.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSubSetRenderer.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DTagSFXAnimationController.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DWaterEffect.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KOutputDebug.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="ksmallobjectpool.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="MathTool.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="MathToolEx.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="ocean_surface.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="RInterface.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Z杂项</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DUI.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DUIMiniScene.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DUITexture.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DUIVBuffer.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KG3DBaseHelpers.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KG3DBlockTraverseData.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DCollocator.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DCommonContainer.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DCommonObject.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DCommonObjectBuilder.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DCommonObjectContainerNode.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DCommonObjectNode.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DCommonObjectPool.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KG3DDeviceHelpers.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KG3DEngineCommandExecutor.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KG3DEngineInterfaceGetter.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KG3DGraphicsFunctions.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DIntersection.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KG3DMeshHelpers.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KG3DMessageBroadcasterGroupImp.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DMessageWMGListner.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KG3DMessenger.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRTTIType.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSceneSettings.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DStateInitializer.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KG3DSystemEventListener.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DTextureHelpers.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KGStateMachine.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KG3DGraphicHelpers.cpp">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KG3DMathFunctions.cpp">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KGArrayCompressor.cpp">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KGBitSet.cpp">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KGCommonWidgets.cpp">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KGCustomAllocators.cpp">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KGHelperClasses.cpp">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KGINIFileHelpers.cpp">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KGINIFileHelpersEx.cpp">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KGMathFunctions.cpp">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KGPerformence.cpp">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KGSTLWrappers.cpp">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KGStringFunctions.cpp">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KGStringFunctionsBase.cpp">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\KGTester.cpp">
+      <Filter>HelperClasses\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DDataFlowArc.cpp">
+      <Filter>DataFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DDataFlowConnectionNode.cpp">
+      <Filter>DataFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DDataFlowDataDefine.cpp">
+      <Filter>DataFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DDataFlowDataObject.cpp">
+      <Filter>DataFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DDataFlowDataObjectTable.cpp">
+      <Filter>DataFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DDataFlowProcessor.cpp">
+      <Filter>DataFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DDataFlowProcessorTable.cpp">
+      <Filter>DataFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentObjectDataFlowArc.cpp">
+      <Filter>DataFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentObjectDataFlowProcessor.cpp">
+      <Filter>DataFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSceneDataFlowEditor.cpp">
+      <Filter>DataFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSceneDataInterface.cpp">
+      <Filter>DataFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\config.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\executor.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_1.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_10.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_11.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_12.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_128.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_13.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_14.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_15.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_16.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_2.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_3.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_32.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_4.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_5.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_6.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_64.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_7.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_8.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fcr_9.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fftwf77.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fftwnd.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_10.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_16.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_2.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_3.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_32.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_4.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_5.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_6.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_7.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_8.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhb_9.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_10.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_16.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_2.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_3.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_32.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_4.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_5.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_6.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_7.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_8.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fhf_9.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_1.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_10.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_11.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_12.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_13.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_14.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_15.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_16.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_2.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_3.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_32.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_4.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_5.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_6.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_64.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_7.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_8.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fn_9.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_1.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_10.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_11.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_12.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_13.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_14.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_15.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_16.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_2.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_3.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_32.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_4.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_5.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_6.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_64.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_7.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_8.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\fni_9.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_1.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_10.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_11.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_12.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_128.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_13.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_14.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_15.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_16.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_2.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_3.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_32.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_4.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_5.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_6.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_64.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_7.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_8.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\frc_9.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_10.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_16.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_2.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_3.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_32.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_4.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_5.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_6.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_64.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_7.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_8.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftw_9.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_10.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_16.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_2.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_3.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_32.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_4.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_5.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_6.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_64.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_7.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_8.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\ftwi_9.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\generic.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\malloc.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\planner.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\putils.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\rader.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\rconfig.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\rexec.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\rexec2.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\rfftwf77.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\rfftwnd.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\rgeneric.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\rplanner.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\timer.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\twiddle.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\wisdom.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="fftw\wisdomio.c">
+      <Filter>FFTW</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsStruct.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DBBox.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\KG3DCullerTop.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\KG3DFrameDrawer.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DGraphicsStructEx.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\KG3DRenderDataDefault.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\KG3DRendererDefault.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\KG3DRenderGlobalState.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\KG3DRenderSorterStrategeDefault.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\KG3DTextureFrameDrawer.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\KG3DDefaultShaderGroup.cpp">
+      <Filter>Render\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\KG3DShaderCollocation.cpp">
+      <Filter>Render\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\KG3DShaderHolder.cpp">
+      <Filter>Render\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\KG3DShaderInclude.cpp">
+      <Filter>Render\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\KG3DShaderIncludeForRC.cpp">
+      <Filter>Render\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\KG3DShaderInfrastructure.cpp">
+      <Filter>Render\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\KG3DShaderManager.cpp">
+      <Filter>Render\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\KG3DShaderRCBridge.cpp">
+      <Filter>Render\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain\KG3DGridHeightGetter.cpp">
+      <Filter>OutDoor</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain\KG3DOutDoorAssistantFuncs.cpp">
+      <Filter>OutDoor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSceneBlock.cpp">
+      <Filter>OutDoor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSceneBlockLoader.cpp">
+      <Filter>OutDoor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DSceneOutDoorSpaceMgr.cpp">
+      <Filter>OutDoor</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain\KG3DSceneSpaceNode.cpp">
+      <Filter>OutDoor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DTerrainBlock.cpp">
+      <Filter>OutDoor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DTerrainBlockGrass.cpp">
+      <Filter>OutDoor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DTerrainBlockModifier.cpp">
+      <Filter>OutDoor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DTerrainDetailTexture.cpp">
+      <Filter>OutDoor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DTerrainGrassesRender.cpp">
+      <Filter>OutDoor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DTerrainRegionInterface.cpp">
+      <Filter>OutDoor</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DTerrainRender.cpp">
+      <Filter>OutDoor</Filter>
+    </ClCompile>
+    <ClCompile Include="RecPlayer.cpp">
+      <Filter>Record</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRepresentObjectPVS.cpp">
+      <Filter>Pvs</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DScenePvsEditor.cpp">
+      <Filter>Pvs</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DCloud.cpp">
+      <Filter>EnvEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DEnvEffDynamicWeather.cpp">
+      <Filter>EnvEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DEnvEffect.cpp">
+      <Filter>EnvEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DEnvEffFog.cpp">
+      <Filter>EnvEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DEnvEffLight.cpp">
+      <Filter>EnvEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DEnvEffLightSet.cpp">
+      <Filter>EnvEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DEnvEffList.cpp">
+      <Filter>EnvEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DEnvEffRenderer.cpp">
+      <Filter>EnvEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DEnvEffStarryNight.cpp">
+      <Filter>EnvEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DEnvEffWind.cpp">
+      <Filter>EnvEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DEnvironment.cpp">
+      <Filter>EnvEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DMeshFarMountain.cpp">
+      <Filter>EnvEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DMeshLensFlare.cpp">
+      <Filter>EnvEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DMeshSkyBox.cpp">
+      <Filter>EnvEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DSkySystem.cpp">
+      <Filter>EnvEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DEnvEffDW_KeyTable.cpp">
+      <Filter>EnvEffect\DynamicWeather_Related</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DEnvEffDW_KeyTableGenerator.cpp">
+      <Filter>EnvEffect\DynamicWeather_Related</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DEnvEffDW_KeyTrack.cpp">
+      <Filter>EnvEffect\DynamicWeather_Related</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DEnvEffDWController.cpp">
+      <Filter>EnvEffect\DynamicWeather_Related</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvEffect\KG3DEnvEffTimeInformer.cpp">
+      <Filter>EnvEffect\DynamicWeather_Related</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DGPS.cpp">
+      <Filter>EnvEffect\ControllersAndHelpers</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRegionInfoManager.cpp">
+      <Filter>EnvEffect\ControllersAndHelpers</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DRegionInformer.cpp">
+      <Filter>EnvEffect\ControllersAndHelpers</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DTime.cpp">
+      <Filter>EnvEffect\ControllersAndHelpers</Filter>
+    </ClCompile>
+    <ClCompile Include="KG3DAnimationSoundTagInfo.cpp" />
+    <ClCompile Include="KG3DAutoTestInterface.cpp" />
+    <ClCompile Include="KG3DBsp.cpp" />
+    <ClCompile Include="KG3DEngineOptionCaps.cpp" />
+    <ClCompile Include="KG3DFileLoader.cpp" />
+    <ClCompile Include="KG3DFuctionCommand.cpp" />
+    <ClCompile Include="KG3DLightMapBaker.cpp" />
+    <ClCompile Include="KG3DMeshLodGenerater.cpp" />
+    <ClCompile Include="KG3DMeshSkin.cpp" />
+    <ClCompile Include="KG3DModelLightMap.cpp" />
+    <ClCompile Include="KG3DModelPointLight.cpp" />
+    <ClCompile Include="KG3DMultiThreadLoader.cpp" />
+    <ClCompile Include="KG3DOutputWindowTable.cpp" />
+    <ClCompile Include="KG3DProfile.cpp" />
+    <ClCompile Include="KG3DRecPlayer.cpp" />
+    <ClCompile Include="KG3DRepresentNpcScreenRunner.cpp" />
+    <ClCompile Include="KG3DResourceDelayReleaseMgr.cpp" />
+    <ClCompile Include="KG3DScenePointLightRender.cpp" />
+    <ClCompile Include="KG3DSelector.cpp" />
+    <ClCompile Include="KG3DStateMachineBase.cpp" />
+    <ClCompile Include="KG3DTerrainRepresentInfo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="KG3DEngine.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt">
+      <Filter>Z杂项</Filter>
+    </None>
+  </ItemGroup>
+</Project>

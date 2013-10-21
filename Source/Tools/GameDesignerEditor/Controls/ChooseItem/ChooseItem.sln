@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChooseItem", "ChooseItem\ChooseItem.csproj", "{EF0317D3-7044-4C2E-B404-BDECBD4B2F9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF0317D3-7044-4C2E-B404-BDECBD4B2F9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF0317D3-7044-4C2E-B404-BDECBD4B2F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF0317D3-7044-4C2E-B404-BDECBD4B2F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF0317D3-7044-4C2E-B404-BDECBD4B2F9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

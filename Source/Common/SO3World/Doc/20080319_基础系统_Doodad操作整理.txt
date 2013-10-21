@@ -1,0 +1,172 @@
+======================================================================================
+Doodad操作整理                                                                       |
+======================================================================================
+
+评审时间：
+
+参与人员：
+
+文档目的：整理玩家对Doodad的操作和Doodad消失的流程。
+
+约定：
+--------------------------------------------------------------------------------------
+1. 玩家操作Doodad的合理范围：8 * CELL_LENGTH。
+
+2. 不同类型Doodad的可操作规则：
+   2.1  普通类型(dkNormal)       : 不能操作
+   2.2  装饰类型(dkOrnament)     : 不能操作
+   2.3  尸体类型(dkCorpse)       : 被拾取完毕、且能被生活技能操作，可以操作
+   2.4  任务类型(dkQuest)        : 接了相关任务、且未完成，可以操作
+   2.5  阅读类型(dkRead)         : 可以操作
+   2.6  对话类型(dkDialog)       : 可以操作
+   2.7  接任务类型(dkAcceptQuest): 可以操作
+   2.8  宝箱类型(dkTreasure)     : 可以操作
+   2.9  椅子类型(dkChair)        : 可以操作 
+   2.10 采集物类型(dkCraftTarget): 能被生活技能操作，可以操作
+
+3. Doodad能否打开的检查内容：
+   3.1 玩家距离Doodad是否在合理范围内
+   3.2 玩家的移动状态为cmsOnStand或cmsOnFloat
+   3.3 根据Doodad类型，判断能否被操作
+   3.4 不能被多人操作的Doodad是否已经被别人操作
+   3.5 调用Doodad打开脚本(有的话)
+   3.6 椅子类型Doodad情况下，玩家执行DoSitDown
+
+4. 物品分配的模式：
+   4.1 plmAbsoluteFree,	// 绝对自由
+   4.2 plmFreeForAll,	// 自由拾取
+   4.3 plmRoundRobin,	// 轮流拾取
+   4.4 plmLeaderLoot,	// 队长分配
+   4.5 plmGroupLoot,	// 队伍拾取
+
+
+Doodad操作流程：
+--------------------------------------------------------------------------------------
+1 玩家拾取操作流程：
+  1.1 玩家打开Doodad，客户端检查该Doodad可以打开，将请求发送给服务端。
+  1.2 客户端收到服务端可以打开的协议后，玩家进入拾取状态。这个时候，玩家的移动状态可以
+      是站立状态，也可以是水中漂浮状态。在拾取结束时间到之前，玩家移动状态不能改变，否
+      则，拾取结束。
+  1.3 拾取时间到后，客户端收到服务端同步过来的拾取列表，开始选择拾取的物品。
+  1.4 玩家拾取物品：
+      1.4.1 非组队状态下，玩家直接拾取
+      1.4.2 组队状态下，玩家拾取方式由队伍物品分配模式决定，可能直接拾取、可能要轮流拾取、
+            可能要参与掷骰子、可能由队长分配，也可能与队友平分金钱
+  1.5 拾取完毕后，拾取列表消失
+
+
+2 代码处理流程：
+  2.1 KCharacter::LuaOpen
+      2.1.1 客户端调用脚本函数
+      2.1.2 判断Doodad在可对话范围内
+      2.1.3 判断Doodad可以被打开
+      2.1.4 向服务端发送协议c2g_character_open。
+
+  2.2 KPlayerServer::OnCharacterOpen
+      服务端协议处理函数，执行Open操作。
+
+  2.3 KCharacter::Open
+      2.3.1 服务端检查Doodad可以被打开(检查内容同客户端KDoodad::CheckOpen)
+      2.3.2 计算打开Doodad的时间(dkCorpse、dkCraftTarget两种类型的时间随生活技能等级衰减)
+      2.3.3 设置玩家状态为otActionRecipePrepare、拾取的结束时间，
+      2.3.4 向客户端广播拾取动作
+      2.3.5 设置Doodad状态为dsBeHit
+      2.3.6 向客户端广播Doodad的状态
+
+  2.4 KCharacter::Activate
+      调用KCharacter::OnPickPrepare，处理otActionRecipePrepare状态
+      2.4.1 玩家当前是cmsOnStand或cmsOnFloat状态，且拾取结束时间还未到达，则继续以后的
+            游戏循环
+      2.4.2 玩家当前不是cmsOnStand或cmsOnFloat状态，拾取被打断：
+            2.4.2.1 若Doodad不是尸体，则先调用打断脚本
+            2.4.2.2 设置Doodad状态为dsIdle
+            2.4.2.3 设置玩家状态为otActionIdle
+      2.4.3 玩家当前是cmsOnStand或cmsOnFloat状态，且拾取结束时间到：
+            2.4.3.1 若Doodad不能被多人操作，或已经被拾取，则结束拾取
+            2.4.3.2 若拾取列表为空：
+                    2.4.3.2.1 脚本函数存在：调用脚本函数OnPick，设置Doodad的消失时间
+                    2.4.3.2.2 脚本函数不存在
+                              2.4.3.2.2.1 如果是dkCorpse或dkCraftTarget类型的Doodad，掉
+                                          用KCraft::Cast，释放采集类的生活技能
+                              2.4.3.2.2.2 生成拾取列表(KDoodad::GenerateLootList)
+            2.4.3.3 调用KPlayerServer::DoSyncLootList，向客户端同步拾取列表。
+            2.4.3.4 调用KLootList::OnOpen，打开Doodad。
+                    2.4.3.4.1 队伍拾取模式下，掷骰子相关的设置，以及向参与掷骰子的客户
+                              端发送掷骰子开始的协议。
+                    2.4.3.4.2 非尸体类型的Doodad被打开后,设置删除时间
+                    2.4.3.4.3 设置Doodad的打开标志为true
+            2.4.3.5 通知客户端打开拾取面板
+            2.4.3.6 设置Doodad状态为dsAfterHit，并广播Doodad的状态同步
+            2.4.3.7 调用函数KCharacter::DoPicking，设置玩家状态为otActionPicking
+            2.4.3.8 向客户端广播拾取动作
+            2.4.3.9 设置Doodad状态为dsBeHit
+
+  2.5 KCharacter::Activate
+      调用KCharacter::OnPicking，处理otActionPicking状态
+      2.5.1 玩家当前移动状态不是cmsOnStand和cmsOnFloat的时候，Doodad关闭：
+            2.5.1.1 无剩余拾取次数的情况下，调用KDoodad::Remove，删除Doodad
+            2.5.1.2 有剩余拾取次数的情况下，重置Doodad的LootList，向客户端广播拾取结束
+      2.5.2 设置Doodad状态为dsIdle
+      2.5.3 设置玩家状态为otActionIdle
+
+  2.6 KPlayerServer::OnLootOrRollItem
+      2.6.1 服务端收到客户端拾取物品或掷骰子的请求，判断玩家在拾取距离内，执行拾取或掷
+            骰子的操作KLootList::LootOrRollItem。
+            2.6.1.1 在拾取列表中找到要拾取的物品，判断是否可以拾取KLootList::CanLoot
+                    2.6.1.1 判断物品是否在拾取列表中
+                    2.6.1.2 判断任务道具是否可以拾取
+                    2.6.1.3 根据物品分配模式判断是否可以拾取：
+                         a. 绝对自由(plmAbsoluteFree)：无winner，或自己是winner，可以拾取 
+                         b. 自由拾取(plmFreeForAll)  ：无winner，或自己是winner，可以拾取
+                         c. 轮流拾取(plmRoundRobin)  ：无winner，或自己是winner，可以拾取
+                         d. 队长分配(plmLeaderLoot)  ：无winner，或自己是winner，可以拾取
+                         e. 队伍拾取(plmGroupLoot)   ：无winner，且掷骰子数目为0，可以拾取
+                                                       自己是winner，且掷骰子数目为0，可以拾取
+            2.6.1.2 将物品添加到玩家背包中去，并向客户端发送通知
+            2.6.1.3 向一定范围内的队友发送通知
+            2.6.1.4 若不能拾取，则判断是否可以掷骰子KLootList::CanRoll
+            2.6.1.5 掷骰子，将物品添加到获胜者的背包里面去
+      2.6.2 若拾取列表为空，则结束拾取KDoodad::LootOver，向客户端发送广播消息
+
+  2.7 KPlayerServer::OnLootMoney
+      2.7.1 服务端收到客户端拾取金钱的请求，判断玩家在拾取距离内，执行拾取金钱的操作                           KLootList::LootMoney
+            2.7.1.1 拾取者是队伍成员，金钱平均分配，发送拾取消息和广播
+            2.7.1.2 拾取者不是队伍成员，金钱全部归拾取者，发送拾取消息
+            2.7.1.3 设置拾取列表里面的金钱数目为0
+      2.7.2 若拾取列表为空，则结束拾取KDoodad::LootOver，向客户端发送广播消息
+
+  2.8 KPlayerServer::OnLeaderDistributeItem
+      2.8.1 服务端收到队长分配物品的请求，判断队长在拾取距离内，执行队长分配物品的操
+            作KLootList::LeaderDistributeItem
+            2.8.1.1 判断物品在拾取列表中
+            2.8.1.2 向目标队友的背包里添加物品，并向客户端发送通知
+            2.8.1.3 向附近队友同步消息
+      2.8.2 若拾取列表为空，则结束拾取KDoodad::LootOver，向客户端发送广播消息
+
+
+Doodad消失流程：
+--------------------------------------------------------------------------------------
+KPlayerServer::OnFinishLoot
+1. 服务端收到客户端结束拾取的消息
+
+2. Doodad的掉落表非空情况下，调用KDoodad::Close
+   2.1 无剩余拾取次数，根据重生时间，决定是否加入重生队列。
+   2.2 删除掉落表
+   2.3 从场景中删除Doodad，从Doodad管理器中删除Doodad。
+   2.4 同步客户端广播
+
+3. Doodad的掉落表为空情况下，
+   3.1 删除掉落表
+   3.2 同步客户端广播
+
+
+貌似有问题的地方：
+--------------------------------------------------------------------------------------
+1. KDoodad::CheckOpen，line406
+2. KDoodad::LootOver，line287
+3. KLootList::CanLoot，line305
+4. KLootList::LootOrRollItem，line437
+5. KLootList::LootOrRollItem，line501，如果物品添加失败，则被销毁？
+6. KPlayerServer::OnLeaderDistributeItem，line9420，返回错误代码应该是lircNotExistLootItem
+7. KPlayerServer::OnLeaderDistributeItem，未判断pPlayer是队长
+

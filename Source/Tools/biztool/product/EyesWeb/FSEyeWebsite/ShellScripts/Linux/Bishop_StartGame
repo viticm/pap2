@@ -1,0 +1,16 @@
+#/bin/bash
+#add by zuolizhi
+#start game
+
+read path
+echo $path
+cd $path
+ulimit -c unlimited
+pid='pgrep kg_bishopd_lin'
+$pid
+
+if [ $? -eq 1 ]; then
+./kg_bishopd_linux &> bishop_output.txt &
+else
+echo 'process already exist! kg_bishopd_linux'
+fi

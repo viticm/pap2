@@ -1,0 +1,290 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E253078-0AFA-4B69-B27A-001B96735D60}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fireball</RootNamespace>
+    <AssemblyName>Fireball.Windows.Forms</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>fireball.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\build\libs\firefx2\Fireball.Windows.Forms\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AutoAssemblyInfo.cs">
+      <Link>AutoAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Drawing\DrawingTools.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Windows\Forms\ColorChooseControl.cs">
+      <SubType>UserControl</SubType>
+    </None>
+    <Compile Include="Windows\Forms\Dialogs\WizardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\Dialogs\WizardControl.Designer.cs">
+      <DependentUpon>WizardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Forms\FormJpgQuality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\FormJpgQuality.Designer.cs">
+      <DependentUpon>FormJpgQuality.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Forms\CustomButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\CustomButtonStyle.cs" />
+    <Compile Include="Windows\Forms\FileSystemTreeBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\FileSystemTreeBrowser.designer.cs">
+      <DependentUpon>FileSystemTreeBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Forms\GroupPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TabStripCloseButton.cs" />
+    <Compile Include="Windows\Forms\DiscoverControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\DiscoverControlDesigner.cs" />
+    <Compile Include="Windows\Forms\DiscoverGroupControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\DiscoverLanguage.cs" />
+    <Compile Include="Windows\Forms\DiscoverPane.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\DiscoverPaneDesigner.cs" />
+    <Compile Include="Windows\Forms\DiscoverSwitchBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\DocumentPresenter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\IDiscoverRenderer.cs" />
+    <Compile Include="Windows\Forms\TabStripMenuGlyph.cs" />
+    <Compile Include="Windows\Forms\DiscoverProfessionalRender.cs" />
+    <Compile Include="Windows\Forms\DiscoverRenderBase.cs" />
+    <Compile Include="Windows\Forms\SimpleCheckRadioList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TabStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TabStripItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TabStripItemClosing.cs" />
+    <Compile Include="Windows\Forms\Widget.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\WidgetListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\WidgetPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\BorderControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\BorderStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\Dialogs\WizardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\Dialogs\WizardForm.Designer.cs">
+      <DependentUpon>WizardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Forms\Dialogs\WizardPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\Dialogs\WizardPanelCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\FormatLabelElement.cs" />
+    <Compile Include="Windows\Forms\Events.cs" />
+    <Compile Include="Windows\Forms\FormatLabelControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\ImagePreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\ImagePreview.designer.cs">
+      <DependentUpon>ImagePreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Forms\IntelliMouse.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\IntelliMouseEvents.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\NumericBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\NumericRange.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\PicturePreview.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\RegionHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\FormatLabelRow.cs" />
+    <Compile Include="Windows\Forms\SplitViewChildWidget.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\SplitViewWidget.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\SplitViewThumbControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TuxBar\Graphic\FireIcons.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TuxBar\Graphic\Utils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TuxBar\HeaderState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TuxBar\Themes\FireTheme.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TuxBar\Themes\TuxTheme.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TuxBar\TuxBarContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TuxBar\TuxBarItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TuxBar\TuxBarItemCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TuxBar\TuxBarItemContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TuxBar\TuxBarItemHeader.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\FormatLabelWord.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\Dialogs\WizardControl.resx">
+      <DependentUpon>WizardControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\FormJpgQuality.resx">
+      <DependentUpon>FormJpgQuality.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\Dialogs\WizardForm.resx">
+      <DependentUpon>WizardForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\Dialogs\WizardPanel.resx">
+      <DependentUpon>WizardPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\ImagePreview.resx">
+      <DependentUpon>ImagePreview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\TuxBar\TuxBarItem.resx">
+      <DependentUpon>TuxBarItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="fireball.snk" />
+    <None Include="Resources\cd.png" />
+    <None Include="Resources\desktop.png" />
+    <None Include="Resources\diskdrive.png" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\folder_document.png" />
+    <None Include="Resources\harddisk_network.ico" />
+    <None Include="Windows\Forms\hand.cur" />
+    <EmbeddedResource Include="MoveDown.cur" />
+    <EmbeddedResource Include="MoveUp.cur" />
+    <EmbeddedResource Include="MoveUpDown.cur" />
+    <EmbeddedResource Include="Windows\Forms\ColorChooseControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ColorChooseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\IntelliMouse.resx">
+      <DependentUpon>IntelliMouse.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Resources\BUTTON_UP_34.png" />
+    <None Include="Resources\BUTTON_DOWN_34.png" />
+    <None Include="Resources\TUX_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Changelog.txt" />
+    <Content Include="Resources\show_fever.png" />
+    <Content Include="Resources\show_more.png" />
+    <Content Include="Windows\Forms\DiscoverControl.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fireball.Core\Fireball.Core.csproj">
+      <Project>{909AD284-7020-4FA9-A55E-7C633A641724}</Project>
+      <Name>Fireball.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fireball.Win32\Fireball.Win32\Fireball.Win32.csproj">
+      <Project>{A72D738D-B07F-4920-B4E7-543D18967FBF}</Project>
+      <Name>Fireball.Win32</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+</Project>

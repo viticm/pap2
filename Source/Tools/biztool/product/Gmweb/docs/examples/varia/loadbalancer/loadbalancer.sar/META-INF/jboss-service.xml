@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE server>
+<server>
+    <mbean code="org.jboss.web.loadbalancer.scheduler.RoundRobinSchedulerService"
+         name="jboss.web.loadbalancer:service=Scheduler">
+       <depends>jboss.web:service=WebServer</depends>
+       <attribute name="Config">
+          <scheduler>
+            <!-- Use sticky sessions ? -->
+            <sticky-session>true</sticky-session>
+
+            <!-- The name of the session-cookie to use -->
+            <sticky-session-cookie-name>JBoss_LB_ID</sticky-session-cookie-name>
+
+            <!-- The list of the target hosts -->
+            <hosts>
+               <host>
+                  <!-- The URL to use to connect the host. URLs like http://www.xx.yy:8080/ are also allowed -->
+                  <host-url>http://localhost/</host-url>
+               </host>
+               <host>
+                  <host-url>http://colossus/</host-url>
+               </host>
+            </hosts>
+          </scheduler>
+       </attribute>
+    </mbean>
+
+    <!-- An alternate scheduler that chooses the host with the minimal average request duration
+    <mbean code="org.jboss.web.loadbalancer.scheduler.MinAvgSchedulerService"
+         name="jboss.web.loadbalancer:service=Scheduler">
+       <depends>jboss.web:service=WebServer</depends>
+       <attribute name="Config">
+          <scheduler>
+            <sticky-session>true</sticky-session>
+            <sticky-session-cookie-name>JBoss_LB_ID</sticky-session-cookie-name>
+            <hosts>
+               <host>
+                  <host-url>http://localhost/</host-url>
+               </host>
+               <host>
+                  <host-url>http://colossus/</host-url>
+               </host>
+            </hosts>
+          </scheduler>
+       </attribute>
+    </mbean>
+    -->
+    <!-- An alternate scheduler that chooses the host with the least connections. 
+         It takes a loadbalance factor into account. The node with the higher lbFactor gets
+         more requests.
+    <mbean code="org.jboss.web.loadbalancer.scheduler.WeightedLeastConnectionSchedulerService"
+         name="jboss.web.loadbalancer:service=Scheduler">
+       <depends>jboss.web:service=WebServer</depends>
+       <attribute name="Config">
+          <scheduler>
+            <sticky-session>true</sticky-session>
+            <sticky-session-cookie-name>JBoss_LB_ID</sticky-session-cookie-name>
+            <hosts>
+               <host>
+                  <host-url>http://localhost/</host-url>
+                  <lb-factor>1</lb-factor>
+               </host>
+               <host>
+                  <host-url>http://colossus/</host-url>
+                  <lb-factor>2</lb-factor>
+               </host>
+            </hosts>
+          </scheduler>
+       </attribute>
+    </mbean>
+    -->
+
+    <mbean code="org.jboss.web.loadbalancer.LoadbalancerService"
+         name="jboss.web.loadbalancer:service=Loadbalancer">
+       <depends optional-attribute-name="Scheduler">jboss.web.loadbalancer:service=Scheduler</depends>
+       <!-- The timeout for a connection from the loadbalancer to a target host in ms -->
+       <attribute name="ConnectionTimeout">20000</attribute>
+    </mbean>
+
+    <!-- Monitor Services -->
+    <!--   A monitor that only checks that a given path is reachable
+    <mbean code="org.jboss.web.loadbalancer.monitor.SimpleMonitorService"
+         name="jboss.web.loadbalancer:service=Monitor">
+       <depends optional-attribute-name="Scheduler">jboss.web.loadbalancer:service=Scheduler</depends>
+       <attribute name="Interval">15000</attribute>
+       <attribute name="Timeout">20000</attribute>
+       <attribute name="Path">/</attribute>
+    </mbean>
+    -->
+    <!--
+       Another monitor that tries to match a regular expression against the
+       server response
+    <mbean code="org.jboss.web.loadbalancer.monitor.ECVMonitorService"
+         name="jboss.web.loadbalancer:service=Monitor">
+       <depends optional-attribute-name="Scheduler">jboss.web.loadbalancer:service=Scheduler</depends>
+       <attribute name="Interval">15000</attribute>
+       <attribute name="Timeout">20000</attribute>
+       <attribute name="Path">/index.html</attribute>
+       <attribute name="RegExp">JBOSS</attribute>
+    </mbean>
+    -->
+</server>

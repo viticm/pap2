@@ -1,0 +1,56 @@
+----Engine Name----
+Engine.dll
+Error name
+----Root Path----
+E:\JXOnline\script1
+----Keyword----
+if
+if (|) then
+end;
+[><]
+if
+if (|) then
+else
+end;
+[><]
+if
+if (|) then
+elseif () then
+end;
+[><]
+return
+return |
+[><]
+function
+function |()
+end;
+[><]
+while
+while (|) do
+end;
+[><]
+repeat
+repeat
+	|
+until ();
+[><]
+for
+for | do
+end;
+[><]
+local
+local |
+[><]
+global
+global |
+[><]
+----Param Hints----
+NewWorld
+int MapID, int X, int Y
+int MapID, int MapCopyID, int X, int Y
+地图切换函数
+[><]
+NewMapCopy
+int MapID, int X, int Y, int CallbackScriptID
+创建新地图副本
+[><]

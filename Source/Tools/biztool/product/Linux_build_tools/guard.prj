@@ -1,0 +1,30 @@
+[Include]
+../Share/Header
+../Share/Header/FSEye
+../../../../Base/Include
+
+[Config Debug]
+Product		EXE ../../../Product/linux/guardd
+Options		Debug
+Defines		__linux; _STANDALONE; C_C_VERSION; FILTERTEXT_STATICLIB
+ObjDir		LDebug
+LibDir		../../../../Base/lib/linux
+Libraries	CommonD; EngineD; z; pthread
+
+[Config Release]
+Product		Exe ../../../Product/linux/guard
+Options		Release
+Defines		__linux; _STANDALONE; C_C_VERSION; FILTERTEXT_STATICLIB
+ObjDir		LRelease
+LibDir		../../../../Base/lib/linux
+Libraries	Common; Engine; z; pthread
+
+[Source]
+client.cpp
+filedl.cpp
+getnccfg.cpp
+guard.cpp
+kclient.cpp
+plugin.cpp
+stdafx.cpp
+

@@ -1,0 +1,30 @@
+[Include]
+../../../../../Server/SO3GameServer
+../../../../../../Include
+../../../../../../../Base/Include
+../../../../../Common/SO3World
+../../../../../Common/SO3World/Src
+../../../../../../Include/SO3World
+../../../../../../../DevEnv/Include/mysql
+
+[Config Debug]
+Product     Exe ../../../../../../../Sword3-products/trunk/server/SO3GameServerD
+Options     Debug -mms-bitfields
+Defines	    _SERVER;LUA_V_5;FILTERTEXT_STATICLIB
+ObjDir      LDebug
+LibDir	    ../../../../../../../Base/Lib/Linux; ../../../../../../../DevEnv/Lib/Linux; ../../../../../../Lib/Linux
+Libraries   SO3WorldServerD; CommonD; EngineD; pthread; Lua5D; FilterTextD
+
+[Config Release]
+Product     Exe ../../../../../../../Sword3-products/trunk/server/SO3GameServer
+Options     Release -mms-bitfields
+Defines	    _SERVER;LUA_V_5;FILTERTEXT_STATICLIB
+ObjDir      LRelease
+LibDir	    ../../../../../../../Base/Lib/Linux; ../../../../../../../DevEnv/Lib/Linux; ../../../../../../Lib/Linux
+Libraries   SO3WorldServer; Common; Engine; pthread; Lua5; FilterText
+
+[Source]
+../../../../../Server/SO3GameServer/KGameServerEyes.cpp
+../../../../../Server/SO3GameServer/KSO3GameServer.cpp
+../../../../../Server/SO3GameServer/stdafx.cpp
+./SO3GameServer/Main.cpp

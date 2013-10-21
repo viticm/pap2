@@ -1,0 +1,62 @@
+---------------------------------------------------------------
+游戏自定义数据修改
+--------------------------------------------------------------
+
+评审时间：2008-05-16
+
+参与人员： 夏永  周诚
+
+增加功能
+1、原系统只能存储DWORD，BIT, STRIGN, 先修改为一个模板类可存储各种基础数据。
+
+2、提供存储和读取INT8，INT16，INT32，UINT32，UINT16，UINT8数据类型接口，自定义数据比特位存储和读取接口，字符串存储和读取接口。
+
+修改方案
+1、新增KCustomData用于存储和读取自定义数据
+
+2、在KLuaScene。cpp， KLuaCharacter.cpp，KBaseFunclist.cpp增加存储数据操作接口。
+
+本次修改涉及的代码：
+1、文件KLuaScene。cpp中 增加函数
+	    int LuaSetCustomInteger4(Lua_State* L);
+    int LuaGetCustomInteger4(Lua_State* L);
+    int LuaSetCustomInteger2(Lua_State* L);
+    int LuaGetCustomInteger2(Lua_State* L);
+    int LuaSetCustomInteger1(Lua_State* L);
+    int LuaGetCustomInteger1(Lua_State* L);
+
+    int LuaSetCustomUnsigned4(Lua_State* L);
+    int LuaGetCustomUnsigned4(Lua_State* L);
+    int LuaSetCustomUnsigned2(Lua_State* L);
+    int LuaGetCustomUnsigned2(Lua_State* L);
+    int LuaSetCustomUnsigned1(Lua_State* L);
+    int LuaGetCustomUnsigned1(Lua_State* L);
+
+    // 偏移量, 第几个Bit(从左到右, 从0开始计数), 数值为true/false
+    int LuaSetCustomBitValue(Lua_State* L);
+    int LuaGetCustomBitValue(Lua_State* L);
+
+    int LuaSetCustomString(Lua_State* L);
+    int LuaGetCustomString(Lua_State* L);
+
+2、文件KLuaCharacter.cpp，
+	    int LuaSetCustomInteger4(Lua_State* L);
+    int LuaGetCustomInteger4(Lua_State* L);
+    int LuaSetCustomInteger2(Lua_State* L);
+    int LuaGetCustomInteger2(Lua_State* L);
+    int LuaSetCustomInteger1(Lua_State* L);
+    int LuaGetCustomInteger1(Lua_State* L);
+
+    int LuaSetCustomUnsigned4(Lua_State* L);
+    int LuaGetCustomUnsigned4(Lua_State* L);
+    int LuaSetCustomUnsigned2(Lua_State* L);
+    int LuaGetCustomUnsigned2(Lua_State* L);
+    int LuaSetCustomUnsigned1(Lua_State* L);
+    int LuaGetCustomUnsigned1(Lua_State* L);
+
+    // 偏移量, 第几个Bit(从左到右, 从0开始计数), 数值为true/false
+    int LuaSetCustomBitValue(Lua_State* L);
+    int LuaGetCustomBitValue(Lua_State* L);
+
+    int LuaSetCustomString(Lua_State* L);
+    int LuaGetCustomString(Lua_State* L);

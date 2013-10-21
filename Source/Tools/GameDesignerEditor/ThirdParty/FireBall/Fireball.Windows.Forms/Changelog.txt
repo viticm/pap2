@@ -1,0 +1,11 @@
+25/09/2006 - Fixed on FormatLabelControl some dispose issue, that cause some problem with codeeditor control
+18/05/2006 - Fixed a little issue with OnDiscoverPaneChanged the e.Cancel  is ignored
+04/04/2006 - Renamed ThumbControl to SplitViewThumbControl,Commented DesktopGraphics
+04/04/2006 - Removed ImageResources and remove the Internal namespace, and moved the images to Resources of the Project
+04/04/2006 - RenderBase renamed to DiscoverRenderBase and ProfessionaRender renamed to DiscoverProfessionalRender
+04/04/2006 - Renamed HeadPosition to DiscoverHeadPosition
+04/04/2006 - Removed system.windows.forms.listbox namespace and classes because is old and not working
+04/04/2006 - Removed ToolList stuff ,and implemented IKeyedCollection methods on WizardCollection and ListBox
+04/04/2006 - Removed toolbox stuff
+
+28/03/2006 - Fixed a bug on TabStrip if you click on the cross space you close the tab also is setting to CanClose=false

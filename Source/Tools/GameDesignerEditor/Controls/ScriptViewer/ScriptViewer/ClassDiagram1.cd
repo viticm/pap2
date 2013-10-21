@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Font Name="宋体" Size="9" />
+  <Comment CommentText="onNewWindow">
+    <Position X="0.5" Y="10" Height="0.386" Width="3.744" />
+  </Comment>
+  <Comment CommentText="onWindowSave">
+    <Position X="0.5" Y="12.528" Height="0.386" Width="3.95" />
+  </Comment>
+  <Comment CommentText="tag为HashTable&#xD;&#xA;&#xD;&#xA;tag[&quot;logscript&quot;]&#xD;&#xA;tag[&quot;modify_1&quot;]&#xD;&#xA;...&#xD;&#xA;tag[&quot;modify_4&quot;]">
+    <Position X="6.896" Y="9.115" Height="1.01" Width="1.7" />
+  </Comment>
+  <Comment CommentText="公开的方法&#xD;&#xA;OpenWindow(field, modtabid)  //开启一个数据库脚本窗口&#xD;&#xA;OpenFileWindow(strfile)	      //开启一个文件脚本窗口&#xD;&#xA;公开的事件&#xD;&#xA;OnWindowSave //传fieldid,tabid,脚本,tag回来用于存数据库&#xD;&#xA;OnNewWindow  //传luaEditor实例的引用回来用于事件绑定">
+    <Position X="0.5" Y="1.395" Height="0.995" Width="3.765" />
+  </Comment>
+  <Comment CommentText="数据库脚本编辑 流程&#xD;&#xA;&#xD;&#xA;=========打开=========&#xD;&#xA;1。BaseForm调用showScriptCodeForm；&#xD;&#xA;2。showScriptCodeForm调用ScriptCodeForm；&#xD;&#xA;3。ScriptCodeForm调用脚本；&#xD;&#xA;4。脚本调用frmScriptView；&#xD;&#xA;5。frmScriptView让tree选中；&#xD;&#xA;6。tree事件通知frmScriptView已选中并弹出窗口；&#xD;&#xA;7。frmScriptView事件通知脚本主工程窗口打开了；&#xD;&#xA;8。脚本给frmScriptEdit注册自动完成信息&#xD;&#xA;--------调用过程------&#xD;&#xA;BaseForm.showScriptCodeForm()     &#xD;&#xA;- &gt; ScriptCodeForm.Show(fieldid, modtabid, tag)    //调用类ScriptCodeForm的成员&#xD;&#xA;- &gt; g_lua.DoString( &quot;OpenWindow()&quot; )                    //调用脚本&#xD;&#xA;- &gt; 脚本 OpenWindow(fieldid, modtabid, tag)		&#xD;&#xA;         //脚本中绑定OnWindowSave、OnNewWindow 事件&#xD;&#xA;- &gt; frmScriptView.OpenFileWindow() &#xD;&#xA;         //打开指定脚本&#xD;&#xA;- &gt; scriptTree.selectedByIds() &#xD;&#xA;         //让脚本树选中指定结点 触发事件&#xD;&#xA;- &gt; frmScriptView.SelectedScriptNode()&#xD;&#xA;         //收到通知 选中了结点&#xD;&#xA;         //调用类frmScriptView的成员&#xD;&#xA;         //new frmScriptEdit()       弹出编辑窗口&#xD;&#xA;- &gt; 脚本 OnNewWindow()&#xD;&#xA;         //触发OnNewWindow() 传luaEditor实例 绑定方法、时间列表查询事件&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;=========保存==========&#xD;&#xA;1。frmScriptView让frmScriptEdit保存；&#xD;&#xA;2。frmScriptEdit事件通知frmScriptView自己要保存；&#xD;&#xA;3。frmScriptView事件通知脚本自己要保存；&#xD;&#xA;4。脚本调用主工程保存函数；&#xD;&#xA;5。最后，保存结果（是否成功）一级级返回到frmScriptEdit。&#xD;&#xA;--------调用过程------&#xD;&#xA;- &gt; frmScriptView.btnSave_Click()&#xD;&#xA;- &gt; frmScriptEdit.Save()&#xD;&#xA;- &gt; frmScriptView中 frmScriptEdit.OnSave()&#xD;&#xA;- &gt; 脚本中 frmScriptView.OnWindowSave()&#xD;&#xA;- &gt; 脚本中 ScriptCodeForm.SaveScriptIntoDatabase()&#xD;&#xA;    脚本中根据tag信息保存日志&#xD;&#xA;">
+    <Position X="5.062" Y="14.177" Height="6.292" Width="5.877" />
+  </Comment>
+  <Comment CommentText="GameDesignerTools::ScriptCodeForm&#xD;&#xA;==================================&#xD;&#xA;g_lua&#xD;&#xA;==================================&#xD;&#xA;Show()                   //C# 重载2&#xD;&#xA;&#xD;&#xA;OpenWindow()            //脚本&#xD;&#xA;OpenFileWindow()        //脚本&#xD;&#xA;==================================&#xD;&#xA;fsv_OnWindowSave()      //脚本回调 OnWindowSave 时&#xD;&#xA;regEditorControl()      //脚本回调 OnNewWindow  时">
+    <Position X="0.5" Y="15.323" Height="1.865" Width="3.919" />
+  </Comment>
+  <Class Name="ScriptViewer.SqlDb">
+    <Position X="9.25" Y="7" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>DB.cs</FileName>
+      <HashCode>AIEABEAAAAgAAABABIAAAQAgAAAgACEAAAABAAAABAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptViewer.frmScriptEdit">
+    <Position X="5" Y="7" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>frmScriptEdit.cs</FileName>
+      <HashCode>EEAICKBBACEAIEIAAACQAAACAAQAAAAIAAAAAAAAACA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptViewer.OnSaveEventArgs">
+    <Position X="2.75" Y="13" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>frmScriptEdit.cs</FileName>
+      <HashCode>AAAIACAAAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptViewer.frmScriptView">
+    <Position X="0.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <FileName>frmScriptView.cs</FileName>
+      <HashCode>oAAIwAAAICQAAgAACBSBBMBCgAICRBAABIwkAgKHAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="scriptTree1" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ScriptViewer.svEventsArgs">
+    <Position X="2.5" Y="10.5" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>frmScriptView.cs</FileName>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptViewer.scriptTree">
+    <Position X="4.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>scriptTree.cs</FileName>
+      <HashCode>EAARABIAICAAABBAgACACBkGAAAAQAIAQAAAEAAACAA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="components" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="ScriptViewer.scriptTree.treeEventHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>scriptTree.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+  </Class>
+  <Class Name="ScriptViewer.treeEventArgs">
+    <Position X="7.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>scriptTree.cs</FileName>
+      <HashCode>AABIACAAAAEAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptViewer.tagPlus">
+    <Position X="7.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>scriptTree.cs</FileName>
+      <HashCode>AAAIAAAAAAEAAAAAAAAAAAAAAAQAAAAAAAAAAAgAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptViewer.Properties.Resources" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptViewer.Properties.Settings" Collapsed="true">
+    <Position X="9.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAICAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Delegate Name="ScriptViewer.OnSaveEventsHandle">
+    <Position X="5" Y="13" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>frmScriptEdit.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQQAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="ScriptViewer.svEventsHandle">
+    <Position X="0.5" Y="10.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>frmScriptView.cs</FileName>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="ScriptViewer.OnWindowSaveEventsHandle">
+    <Position X="0.5" Y="13" Width="2" />
+    <TypeIdentifier>
+      <FileName>frmScriptView.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQQAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Delegate>
+</ClassDiagram>

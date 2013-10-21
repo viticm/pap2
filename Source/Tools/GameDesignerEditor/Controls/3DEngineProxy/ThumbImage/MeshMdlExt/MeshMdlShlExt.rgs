@@ -1,0 +1,47 @@
+HKCR
+{
+	MeshMdlExt.MeshMdlShlExt.1 = s 'MeshMdlShlExt Class'
+	{
+		CLSID = s '{F2F594C3-33F2-47D1-B035-61F88F803033}'
+	}
+	MeshMdlExt.MeshMdlShlExt = s 'MeshMdlShlExt Class'
+	{
+		CLSID = s '{F2F594C3-33F2-47D1-B035-61F88F803033}'
+		CurVer = s 'MeshMdlExt.MeshMdlShlExt.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {F2F594C3-33F2-47D1-B035-61F88F803033} = s 'MeshMdlShlExt Class'
+		{
+			ProgID = s 'MeshMdlExt.MeshMdlShlExt.1'
+			VersionIndependentProgID = s 'MeshMdlExt.MeshMdlShlExt'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{5ABF40F5-53F6-4B75-81B4-7C55C83603DE}'
+		}
+	}
+	NoRemove .mesh
+	{
+		shellex
+		{
+			{BB2E617C-0920-11d1-9A0B-00C04FC2D6C1} = s '{F2F594C3-33F2-47D1-B035-61F88F803033}'
+		}
+	}
+	NoRemove .mdl
+	{
+		shellex
+		{
+			{BB2E617C-0920-11d1-9A0B-00C04FC2D6C1} = s '{F2F594C3-33F2-47D1-B035-61F88F803033}'
+		}
+	}
+	NoRemove .ani
+	{
+		shellex
+		{
+			{BB2E617C-0920-11d1-9A0B-00C04FC2D6C1} = s '{F2F594C3-33F2-47D1-B035-61F88F803033}'
+		}
+	}
+}

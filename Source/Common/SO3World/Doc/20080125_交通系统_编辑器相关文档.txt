@@ -1,0 +1,74 @@
+==================================================================
+交通系统编辑器相关功能及策划使用文档                             |
+==================================================================
+
+评审时间：2008-01-31
+
+
+参与人员：赵纯峰 陈杰 汪淘 侯锐
+
+
+策划使用说明：
+--------------------------------------------------------------
+1. 在编辑器中合适的位置点击放置小球，每个小球代表一个路径点。
+2. 编辑器会自动生成每个路径点的NodeID、MapID、x、y、z。
+3. 点击路径点，编辑器弹出窗口，供策划人员填写CityID、ForceID、TongID、ScriptID。 
+4. 在路径点间，点击生成路径。
+5. 编辑器自动生成路径上各点的坐标信息、路径的起点ID、目的点ID、TrackID。
+6. 在路径上点击右键，可以弹出小窗口，供策划人员填写本路径相关的费用和对应的
+   Road.tab的文件名。
+7. 路径跨地图的情况，由策划人员在起始路径点上点击右键，编辑器弹出窗口，供策划选
+   择目的路径点。
+
+
+编辑器相关功能支持：
+--------------------------------------------------------------
+1. 用小球代表路径点。
+2. 编辑器自动生成每个路径点的NodeID、MapID、x、y、z。
+3. 路径点的CityID、ForceID、TongID、ScriptID信息由策划人员填写。
+4. 点击"保存"后，编辑器自动将路径点信息保存至文件RoadNode.tab。
+5. 用小点代表路径点间的路径。
+6. 编辑器自动生成路径上各点的坐标信息、路径的起点ID、目的点ID、TrackID。 
+7. 路径相关的费用、速度由策划人员填写。
+8. 点击"保存"后：
+(1) 弹出窗口，供策划填写Road.tab文件的文件名，"确定"后，将路径上各点信息保存至
+    本文件Road.tab(注意：每条路径，单独存放于一个Road.tab文件)。
+(2) 编辑器将路径的起点ID、目的点ID、TrackID、费用、速度、Road.tab路径和文件名保
+    存至文件RoadTrack.tab。
+
+本次修改涉及到的代码：
+--------------------------------------------------------------
+1. 类KRoadManager中，增加以下的方法：
+public:
+    BOOL AddNode(int* pnRetNodeID);
+    BOOL DelNode(int nNodeID);
+    BOOL CanDelNode(int nNodeID);
+
+    BOOL AddTrack(int* pnRetTrackID, int nNodeFrom, int nNodeTo);
+    BOOL DelTrack(int nTrackID);
+    BOOL CanDelTrack(int nTrackID);
+
+    BOOL ExportTable();
+
+    template<class TFunc>
+    BOOL TraverseNode(DWORD dwMapID, TFunc& Func);
+
+    template<class TFunc>
+    BOOL TraverseNode(TFunc& Func);
+
+    template<class TFunc>
+    BOOL TraverseTrack(TFunc& Func);
+
+private:
+    BOOL ExportNodeTable();
+    BOOL ExportTrackTable();
+
+功能描述：
+CanDelNode，判断此Node是不是还有Track连着，如果有，则返回false。
+CanDelTrack，目前总是返回true。
+
+DelNode，如果CanDelNode，则删除该Node。
+DelTrack，如果CanDelTrack，则删除该Track。同时还要删除TrackPoint点的文件。
+
+AddNode，在KRouteMap中插入一个Node，并分配一个最小的可用NodeID给此Node。
+AddTrack，在KTrackMap中插入一个Track，并分配一个最小的可用TrackID给此Track。

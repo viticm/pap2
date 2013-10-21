@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Id: sybase-jdbc2-service.xml,v 1.1 2008/12/31 09:22:51 kuangsihao Exp $ -->
+
+<server>
+
+  <!-- ==================================================================== -->
+  <!-- Persistence and caching using Sybase                                 -->
+  <!-- Based on configuration provided by amresh.deshmukh at drkw.com       -->
+  <!-- ==================================================================== -->
+
+  <!--
+     | The destination manager is the core service within JBossMQ
+  -->
+  <mbean code="org.jboss.mq.server.jmx.DestinationManager" name="jboss.mq:service=DestinationManager">
+    <depends optional-attribute-name="MessageCache">jboss.mq:service=MessageCache</depends>
+    <depends optional-attribute-name="PersistenceManager">jboss.mq:service=PersistenceManager</depends>
+    <depends optional-attribute-name="StateManager">jboss.mq:service=StateManager</depends>
+  </mbean>
+
+  <!--
+     | The MessageCache decides where to put JBossMQ message that
+     | are sitting around waiting to be consumed by a client.
+     |
+     | The memory marks are in Megabytes.  Once the JVM memory usage hits
+     | the high memory mark, the old messages in the cache will start getting
+     | stored in the DataDirectory.  As memory usage gets closer to the
+     | Max memory mark, the amount of message kept in the memory cache aproaches 0.
+   -->
+  <mbean code="org.jboss.mq.server.MessageCache"
+	 name="jboss.mq:service=MessageCache">
+    <attribute name="HighMemoryMark">50</attribute>
+    <attribute name="MaxMemoryMark">60</attribute>
+    <attribute name="CacheStore">jboss.mq:service=PersistenceManager</attribute>
+  </mbean>
+
+  <!-- 
+     | The jdbc2 PersistenceManager is the new improved JDBC implementation.
+     | This implementation allows you to control how messages are stored in 
+     | the database.
+     |
+     | Take care that the selected blob column type in jms_messages can store
+     | all message data. Some databases (e.g. mySQL) offer blob types with
+     | different maximum capacity (e.g. mySQL-type BLOB=64K, LONGBLOB=2G).
+     |
+     | If you encouter problems with the configured BLOB_TYPE try a different
+     | setting. Valid settings are OBJECT_BLOB, BINARYSTREAM_BLOB and BYTES_BLOB.
+   -->
+    <mbean code="org.jboss.mq.pm.jdbc2.PersistenceManager"
+  	 name="jboss.mq:service=PersistenceManager">
+      <depends optional-attribute-name="ConnectionManager">jboss.jca:service=DataSourceBinding,name=jdbc/SybaseDB</depends>
+      <attribute name="SqlProperties">
+      BLOB_TYPE=BYTES_BLOB
+      INSERT_TX = INSERT INTO dbo.JMS_TRANSACTIONS (TXID) values(?)
+      INSERT_MESSAGE = INSERT INTO dbo.JMS_MESSAGES (MESSAGEID, DESTINATION, MESSAGEBLOB, TXID, TXOP) VALUES(?,?,?,?,?)
+      SELECT_ALL_UNCOMMITED_TXS = SELECT TXID FROM dbo.JMS_TRANSACTIONS
+      SELECT_MAX_TX = SELECT MAX(TXID) FROM dbo.JMS_MESSAGES
+      SELECT_MESSAGES_IN_DEST = SELECT MESSAGEID, MESSAGEBLOB FROM dbo.JMS_MESSAGES WHERE DESTINATION=?
+      SELECT_MESSAGE = SELECT MESSAGEID, MESSAGEBLOB FROM dbo.JMS_MESSAGES WHERE MESSAGEID=? AND DESTINATION=?
+      MARK_MESSAGE = UPDATE dbo.JMS_MESSAGES SET TXID=?, TXOP=? WHERE MESSAGEID=? AND DESTINATION=?
+      UPDATE_MESSAGE = UPDATE dbo.JMS_MESSAGES SET MESSAGEBLOB=? WHERE MESSAGEID=? AND DESTINATION=?
+      UPDATE_MARKED_MESSAGES = UPDATE dbo.JMS_MESSAGES SET TXID=?, TXOP=? WHERE TXOP=?
+      UPDATE_MARKED_MESSAGES_WITH_TX = UPDATE dbo.JMS_MESSAGES SET TXID=?, TXOP=? WHERE TXOP=? AND TXID=?
+      DELETE_MARKED_MESSAGES_WITH_TX = DELETE FROM dbo.JMS_MESSAGES WHERE TXID IN (SELECT TXID FROM dbo.JMS_TRANSACTIONS) AND TXOP=?
+      DELETE_TX = DELETE FROM dbo.JMS_TRANSACTIONS WHERE TXID = ?
+      DELETE_MARKED_MESSAGES = DELETE FROM dbo.JMS_MESSAGES WHERE TXID=? AND TXOP=?
+      DELETE_TEMPORARY_MESSAGES = DELETE FROM dbo.JMS_MESSAGES WHERE TXOP='T'
+      DELETE_MESSAGE = DELETE FROM dbo.JMS_MESSAGES WHERE MESSAGEID=? AND DESTINATION=?
+      CREATE_MESSAGE_TABLE = CREATE TABLE dbo.JMS_MESSAGES ( MESSAGEID INTEGER NOT NULL, \
+         DESTINATION VARCHAR(255) NOT NULL, TXID INTEGER NULL, TXOP CHAR(1), \
+         MESSAGEBLOB IMAGE, PRIMARY KEY (MESSAGEID, DESTINATION) ) LOCK DATAROWS
+      CREATE_IDX_MESSAGE_TXOP_TXID = CREATE INDEX dbo.JMS_MESSAGES_TXOP_TXID ON dbo.JMS_MESSAGES (TXOP, TXID)
+      CREATE_IDX_MESSAGE_DESTINATION = CREATE INDEX dbo.JMS_MESSAGES_DESTINATION ON dbo.JMS_MESSAGES (DESTINATION)
+      CREATE_TX_TABLE = CREATE TABLE dbo.JMS_TRANSACTIONS ( TXID INTEGER, PRIMARY KEY (TXID) ) \
+         LOCK DATAROWS
+      CREATE_TABLES_ON_STARTUP = TRUE
+      </attribute>
+    </mbean> 
+</server>

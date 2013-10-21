@@ -1,0 +1,27 @@
+HKCR
+{
+	atlax.Test3DEngine.1 = s 'Test3DEngine Class'
+	{
+		CLSID = s '{D159A323-D278-475B-B556-57C064884B9B}'
+	}
+	atlax.Test3DEngine = s 'Test3DEngine Class'
+	{
+		CLSID = s '{D159A323-D278-475B-B556-57C064884B9B}'
+		CurVer = s 'atlax.Test3DEngine.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {D159A323-D278-475B-B556-57C064884B9B} = s 'Test3DEngine Class'
+		{
+			ProgID = s 'atlax.Test3DEngine.1'
+			VersionIndependentProgID = s 'atlax.Test3DEngine'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{6F9FD12F-5554-49D7-B144-9F52B812D84D}'
+		}
+	}
+}

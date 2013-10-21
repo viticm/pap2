@@ -1,0 +1,3 @@
+Setting the RubberbandGradientBlend and RubberbandGradientColorBlend properties in the Visual Studio GUI does not work properly.
+	Everytime the code is recompiled the properties are reset.
+	Maybe this is an initialization problem of the variables underlying the properties or maybe it has got to do with the UITypeEditor used.

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  JBoss Server Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<!-- $Id: mssql-ds.xml,v 1.1 2008/12/31 09:23:29 kuangsihao Exp $ -->
+
+  <!-- ======================================================================-->
+  <!-- New ConnectionManager setup for Microsoft SQL Server 2000  driver     -->
+  <!-- You may download the latest Microsoft JDBC driver from *Microsoft*    -->
+  <!-- http://msdn.microsoft.com/downloads/default.asp?url=/downloads/gmmple.asp?url=/MSDN-FILES/027/001/779/msdncompositedoc.xml&frame=true -->
+  <!-- ===================================================================== -->
+
+<datasources>
+
+  <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_CSONLINE</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=csonline</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>
+
+  <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_SERVERSTATE</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=ServerState</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>
+
+   <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_EgmLES2_ACCOUNT_FS</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=fs</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>   
+
+ <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_EgmLES2_ACCOUNT_JX2</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=jxonline2</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  GMSystem 2.0                                                         -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+  <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.24.236:1433/database=GMWeb</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>sa</user-name>
+    <password>123456</password>
+
+  </local-tx-datasource>
+<!--  <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM</jndi-name>
+	<use-java-context>true</use-java-context>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=GMSystem</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+      <security-domain>GMWEB_JSQLConnectDB_GMSYSTEM</security-domain>
+    <min-pool-size>3</min-pool-size>
+    <max-pool-size>30</max-pool-size>   
+	<new-connection-sql>select top 1 * from userinfo</new-connection-sql>
+    <check-valid-connection-sql>select top 1 * from userinfo</check-valid-connection-sql>
+    <metadata>
+         <type-mapping>MS SQLSERVER2000</type-mapping>
+      </metadata>
+  </local-tx-datasource> 
+-->
+  <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM_CQ</jndi-name>
+    <connection-url>jdbc:JSQLConnect://61.152.146.49:2433/database=GMSystem</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>cqacc</user-name>
+    <password>ac56@gm1118</password>
+  </local-tx-datasource>
+
+ <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM_ACCOUNT_JX</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=ACCOUNT</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>    
+
+ <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM_ACCOUNT_JXIB</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=newaccount</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>
+
+ <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM_ACCOUNT_JXLH</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=jxib</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>    
+
+ <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM_KSGDC</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=ksgdc</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>    
+
+ <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM_ACCOUNT_SH</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=shqz_IB</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>    
+
+ <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM_ACCOUNT_JXVNET</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=AccountVnet</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>    
+
+ <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM_ACCOUNT_FS</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=fs</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>   
+
+ <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM_ACCOUNT_FSIB</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=fsIB</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>   
+
+ <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM_ACCOUNT_JX2</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=jx2db</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource> 
+
+ <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM_ACCOUNT_JX2IB</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.189:1433/database=jx2_IB</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource> 
+
+ <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM_PASSPORT</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=passport</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>
+
+ <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM_PASSPORT2</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=passport15</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>
+
+ <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM_ONECARD_PLUSJX</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=log</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>
+
+ <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM_CARD</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=card</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>
+
+ <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_GMSYSTEM_ACCOUNT_XL2</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=xlqy2</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  CardManager                                                          -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+  <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_CARDMANAGER</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=cardmanager</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>
+
+  <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_CARDMANAGER_NEWBIE</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245:1433/database=Newbie</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  flow                                                          -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+  <local-tx-datasource>
+    <jndi-name>reqdb</jndi-name>
+    <connection-url>jdbc:JSQLConnect://192.168.8.245/database=flowmanager</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>gm@1[P</password>
+  </local-tx-datasource>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  EJBtest                                                          -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+  <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_Locale</jndi-name>
+    <connection-url>jdbc:JSQLConnect://localhost:1433/database=zhaoqs</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>123456</password>
+  </local-tx-datasource>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  EJBtest                                                          -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+  <local-tx-datasource>
+    <jndi-name>JSQLConnectDB_LeaveApply</jndi-name>
+    <connection-url>jdbc:JSQLConnect://localhost:1433/database=osworkflow_app</connection-url>
+    <driver-class>com.jnetdirect.jsql.JSQLDriver</driver-class>
+    <user-name>gm</user-name>
+    <password>123456</password>
+  </local-tx-datasource>
+
+</datasources>

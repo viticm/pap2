@@ -1,0 +1,286 @@
+/* -------------------------------------------------------------------------
+//	文件名		：	日志表结构
+//	创建者		：	wangbin
+//	创建时间	：	2008-3-11 11:11:00
+//	功能描述	：	此文档描述日志表结构
+// -----------------------------------------------------------------------*/
+
+一、玩家历程
+1.玩家升级表: log_3_1
+	Field1(varchar(128)): 角色ID
+	Field2(int): 级别
+	索引：index(Field1)
+2.加入门派表：log_3_2
+	Field1(varchar(128)): 角色ID
+	Field2(int): 级别
+	Field3(int): 门派ID
+	索引：index(Field1)
+3.出师表：log_3_3
+	Field1(varchar(128)): 角色ID
+	Field2(int): 级别
+	Field3(int): 门派ID
+	Field4(int): 路线ID
+	索引：index(Field1)	
+4.加入家族: log_3_4
+	Field1(varchar(128)): 角色ID
+	Field2(int): 级别
+	Field3(int unsigned): 家族ID
+	索引：index(Field1)	
+5.退出家族: log_3_5
+	Field1(varchar(128)): 角色ID
+	Field2(int): 级别
+	Field3(int unsigned): 家族ID
+	索引：index(Field1)	
+6.完成任务：log_3_6
+	Field1(varchar(128)): 角色ID
+	Field2(int): 主任务ID
+	FIeld3(int): 子任务ID
+	Field4(varchar(128)): 主任务名字
+	Field5(varchar(128)): 子任务名字
+	索引：index(Field1)	
+7.玩家上下线: log_3_7
+	Field1(varchar(128)): 角色ID
+	Field2(tinyint unsisgned): 类型，0为下线，1为登录，2为开始离线托管，3为离线托管超时，4为离线托管踢号
+	Field3(varchar(128)): ip，Field2为1时有效
+	索引：index(Field1)
+8.玩家选择路线: log_3_8
+	Field1(varchar(128)): 角色ID
+	Field2(int): 级别
+	Field3(int): 门派ID
+	Field4(int): 路线ID
+	索引：index(Field1)
+二、物品流向
+1.物品生成表: log_4_1
+	Field1(varchar(128)): 物品GUID
+	Field2(varchar(128)): 拥有此物品的角色GUID，或者掉落物品的NPC名字
+	Field3(tinyint unsigned): 生成原因，1:系统产生,2:合成,3:NPC商店购买,4:奇珍阁购买,5:NPC掉落,6:手工拆分,7:贩卖拆分,8:脚本（任务）
+	Field4(int): genre
+	Field5(int): detailtype
+	Field6(int): particulartype
+	Field7(int): 级别
+	Field8(tinyint unsigned): 五行
+	Field9(datetime): 物品生成时间
+	Field10(int unsigned): 随机种子
+	Field11(int): 叠加数目
+	Field12(int): 当前耐久
+	Field13(int): 最大耐久
+	Field14(int unsigned): 幸运
+	Field15(tinyint unsigned): 强化次数
+	Field16(datetime): 绝对超时时间
+	Field17(int): 相对超时时间(分钟数)
+	Field19(int unsigned): 参数1
+	Field19(int unsigned): 参数2
+	Field20(int unsigned): 参数3
+	Field21(int unsigned): 参数4
+	Field22(int unsigned): 参数5
+	Field23(int unsigned): 参数6
+	Field24(int unsigned): 参数7
+	Field25(int unsigned): 参数8
+	Field26(int unsigned): 参数9
+	Field27(int unsigned): 参数10
+	Field28(int unsigned): 参数11
+	Field29(int unsigned): 参数12
+	Field30(varchar(128)): 物品名字
+	Field31(text): 物品描述(tip)
+	索引: index(Field1), index(Field2), index(Field4, Field5, Field6, Field7), index(Field9)
+2.物品销毁表: log_4_2
+	Field1(varchar(128)): 物品GUID
+	Field2(varchar(128)): 拥有此物品的角色GUID
+	Field3(tinyint unsigned): 销毁原因，1:系统销毁(异常情况?),2:系统回收(如丢弃在地上等),3:有效期至,4:使用消耗,5:商品叠加,6:卖给NPC,7:脚本删除(任务),8:装备磨损
+	Field4(int): 地图ID
+	Field5(int): X坐标
+	Field6(int): Y坐标
+	索引: index(Field1), index(Field2)
+3.物品丢弃表: log_4_3
+	Field1(varchar(128)): 物品GUID
+	Field2(varchar(128)): 拥有此物品的角色GUID
+	Field3(tinyint unsigned): 丢弃原因，1:丢弃在地上,2:邮寄
+	Field3(int): 地图ID
+	Field4(int): X坐标
+	Field5(int): Y坐标
+	索引: index(Field1), index(Field2)
+4.物品获得表: log_4_4
+	Field1(varchar(128)): 物品GUID
+	Field2(varchar(128)): 拥有此物品的角色GUID
+	Field3(tinyint unsigned): 获得原因，1:捡起,2:获取邮件附件
+	Field4(int): 地图ID
+	Field5(int): X坐标
+	Field6(int): Y坐标
+	索引: index(Field1), index(Field2)
+5.物品所有者变更表: log_4_5
+	Field1(varchar(128)): 物品GUID
+	Field2(varchar(128)): 目前拥有此物品的角色GUID
+	Field3(varchar(128)): 原先拥有此物品的角色GUID
+	Field4(tinyint unsigned): 所有者变更原因，1:玩家交易,2:收购,3:贩卖
+	Field5(int): 物品现拥有者玩家所在的地图ID
+	Field6(int): 物品现拥有者玩家所在的X坐标
+	Field7(int): 物品现拥有者玩家所在的Y坐标
+	Field8(int): 物品原拥有者玩家所在的地图ID
+	Field9(int): 物品原拥有者玩家所在的X坐标
+	Field10(int): 物品原拥有者玩家所在的Y坐标
+	索引: index(Field1), index(Field2), index(Field3)
+6.物品属性变化表：log_4_6
+	Field1(varchar(128)): 物品GUID
+	Field2(varchar(128)): 拥有此物品的角色GUID，或者掉落物品的NPC名字
+	Field3(tinyint unsigned): 属性变化原因，1:强化（剥离），由强化次数区别
+	Field4(int): genre
+	Field5(int): detailtype
+	Field6(int): particulartype
+	Field7(int): 级别
+	Field8(tinyint unsigned): 五行
+	Field9(datetime): 物品生成时间
+	Field10(int unsigned): 随机种子
+	Field11(int): 叠加数目
+	Field12(int): 当前耐久
+	Field13(int): 最大耐久
+	Field14(int unsigned): 幸运
+	Field15(tinyint unsigned): 强化次数
+	Field16(datetime): 绝对超时时间
+	Field17(int): 相对超时时间(分钟数)
+	Field19(int unsigned): 参数1
+	Field19(int unsigned): 参数2
+	Field20(int unsigned): 参数3
+	Field21(int unsigned): 参数4
+	Field22(int unsigned): 参数5
+	Field23(int unsigned): 参数6
+	Field24(int unsigned): 参数7
+	Field25(int unsigned): 参数8
+	Field26(int unsigned): 参数9
+	Field27(int unsigned): 参数10
+	Field28(int unsigned): 参数11
+	Field29(int unsigned): 参数12
+	Field30(varchar(128)): 物品名字
+	Field31(text): 物品描述(tip)
+	索引: index(Field1), index(Field2), index(Field4, Field5, Field6, Field7), index(Field9)
+	
+七、GM指令记录（从GM平台发送的GM指令）
+1.GameServer的GM指令：log_7_1
+	Field1(varchar(128)): 角色ID
+	Field2(text): GM指令
+	索引：index(Field1)
+2.GameCenter的GM指令: log_7_2
+	Field1(text): GM指令
+
+
+八、玩家交易记录
+1.交易地点：log_8_1
+	Field1(int): 交易流水号
+	Field2(varchar(128)): 玩家1ID
+	Field3(int): 玩家1所在的地图ID
+	Field4(int): 玩家1所在的X坐标
+	Field5(int): 玩家1所在的Y坐标
+	Field6(varchar(128)): 玩家2ID
+	Field7(int): 玩家2所在的地图ID
+	Field8(int): 玩家2所在的X坐标
+	Field9(int): 玩家2所在的Y坐标
+	索引：index(Field2), index(Field6)
+2.交易物品：log_8_2
+	Field1(int): 交易流水号
+	Field2(varchar(128)): 给出物品的玩家ID
+	Field3(varchar(128)): 接收物品的玩家ID
+	Field4(varchar(128)): 物品ID
+	Field5(varchar(128)): 物品名称
+	Field6(int): 物品数量
+	索引：index(Field2), index(Field3), index(Field4)
+3.交易金钱：log_8_3
+	Field1(int): 交易流水号
+	Field2(varchar(128)): 玩家1的ID
+	Field3(varchar(128)): 玩家2的ID
+	Field4(int): 金钱数额
+	索引：index(Field2), index(Field3)
+
+
+1.交易地点: log_9_1
+	Field1(tinyint unsigned): 交易类型，1为贩卖，0为收购
+	Field2(int): 交易流水号
+	Field3(varchar(128)): 给出物品的玩家ID
+	Field4(int): 给出物品的玩家所在的地图ID
+	Field5(int): 给出物品的玩家所在的X坐标
+	Field6(int): 给出物品的玩家所在的Y坐标
+	Field7(varchar(128)): 接收物品的玩家ID
+	Field8(int): 接收物品的玩家所在的地图ID
+	Field9(int): 接收物品的玩家所在的X坐标
+	Field10(int): 接收物品的玩家所在的Y坐标
+	索引：index(Field3), index(Field7)
+2.物品交易：log_9_2
+	Field1(tinyint unsigned): 交易类型，1为贩卖，0为收购
+	Field2(int): 交易流水号
+	Field3(varchar(128)): 给出物品的玩家ID
+	Field4(varchar(128)): 接收物品的玩家ID
+	Field5(varchar(128)): 物品名称
+	Field6(varchar(128))：源物品ID（对于叠加物品，源物品和目标物品的ID可能不一样）
+	Field7(varchar(128))：目标物品ID
+	Field8(int): 物品数量
+	索引：index(Field3), index(Field4), index(Field6), index(Field7)
+2.金钱交易: log_9_3
+	Field1(tinyint unsigned): 交易类型，1为贩卖，0为收购
+	Field2(int): 交易流水号
+	Field3(varchar(128)): 给出金钱的玩家ID
+	Field4(varchar(128)): 接收金钱的玩家ID
+	Field5(int): 金额
+	索引：index(Field3), index(Field4)
+
+物品表：
+CREATE TABLE ItemList(				#玩家物品表
+	ItemId varchar(48) not null,	#物品ID
+	RoleId varchar(48) not null,	#玩家ID
+	Genre int,						#大类
+	DetailType int,					#中类
+	ParticularType int,				#小类
+	Level tinyint,					#级别
+	Series tinyint,					#五行
+	CreateTime datetime,			#生成时间
+	Seed int unsigned,				#随机种子
+	StackCount int,					#叠加数目
+	StateFlag tinyint unsigned,		#状态标志，第0位：锁定标志，1表示锁定中；第1位：绑定锁定，1表示绑定中
+	UnlockTime int unsigned,		#解除锁定时间（离2000年1月1日的小时数），仅当锁定标志为1时有效。
+	PlaceRoom tinyint unsigned,		#放置箱位
+	PlaceX tinyint unsigned,		#放置箱位X坐标
+	PlaceY tinyint unsigned,		#放置箱位Y坐标
+	CustomType tinyint unsigned,	#自定义字符串类型
+	Custom char(32),				#自定义字符串
+	CurDur smallint unsigned,		#当前耐久度
+	MaxDur smallint unsigned,		#最大耐久度
+	Luck int unsigned,				#幸运
+	Enhance tinyint unsigned, 		#强化次数
+	Param1 int unsigned,			#参数1
+	Param2 int unsigned,			#参数2
+	Param3 int unsigned,			#参数3
+	Param4 int unsigned,			#参数4
+	Param5 int unsigned,			#参数5
+	Param6 int unsigned,			#参数6
+	Param7 int unsigned,			#参数7
+	Param8 int unsigned,			#参数8
+	Param9 int unsigned,			#参数9
+	Param10 int unsigned,			#参数10
+	Param11 int unsigned,			#参数11
+	Param12 int unsigned,			#参数12
+	TimeoutType tinyint unsigned,	#超时类型
+	TimeoutValue int unsigned,		#超时设置
+	index(ItemId),
+	index(RoleId),
+	index(Genre,DetailType,ParticularType,Level),
+	index(CreateTime));
+
+九、对照表
+1、角色ID和角色名对照表 trolebaseinfo
+2、门派ID和门派名对照表 faction
+	Field1(varchar(128)): 门派ID
+	Field2(varchar(128)): 门派名
+3、帮会ID和帮会名对照表 tong
+	Field1(varchar(128)): 帮会ID
+	Field2(varchar(128)): 帮会名
+4、家族 kin
+	Field1(varchar(128)): 家族ID
+	Field2(varchar(128)): 家族名
+
+
+这些是公用字段，每个日志表都有的：
++---------+---------------------
+| Field   | Type
++---------+---------------------
+| ID      | int(10) unsigned
+| LogTime | datetime
+| Source  | tinyint(3) unsigned
+| Ip      | varchar(128)
+| Level   | tinyint(3) unsigned

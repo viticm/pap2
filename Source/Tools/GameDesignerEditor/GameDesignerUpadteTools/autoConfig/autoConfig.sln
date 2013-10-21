@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "autoConfig", "autoConfig\autoConfig.csproj", "{CFEA3E7C-57B2-40F9-99D8-91308FFDA927}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "autoUpdateXML", "autoUpdateXML\autoUpdateXML.csproj", "{81CA18DA-E57A-45E3-9BE6-54D56C13B64B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFEA3E7C-57B2-40F9-99D8-91308FFDA927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFEA3E7C-57B2-40F9-99D8-91308FFDA927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFEA3E7C-57B2-40F9-99D8-91308FFDA927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFEA3E7C-57B2-40F9-99D8-91308FFDA927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81CA18DA-E57A-45E3-9BE6-54D56C13B64B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81CA18DA-E57A-45E3-9BE6-54D56C13B64B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81CA18DA-E57A-45E3-9BE6-54D56C13B64B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81CA18DA-E57A-45E3-9BE6-54D56C13B64B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

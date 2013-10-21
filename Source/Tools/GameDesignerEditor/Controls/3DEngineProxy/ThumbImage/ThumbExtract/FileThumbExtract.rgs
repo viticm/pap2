@@ -1,0 +1,26 @@
+HKCR
+{
+	ThumbExtract.FileThumbExtract.1 = s 'FileThumbExtract Class'
+	{
+		CLSID = s '{FC9850E3-9FC3-4C1F-8EE7-28F51EC014E1}'
+	}
+	ThumbExtract.FileThumbExtract = s 'FileThumbExtract Class'
+	{
+		CLSID = s '{FC9850E3-9FC3-4C1F-8EE7-28F51EC014E1}'
+		CurVer = s 'ThumbExtract.FileThumbExtract.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {FC9850E3-9FC3-4C1F-8EE7-28F51EC014E1} = s 'FileThumbExtract Class'
+		{
+			ProgID = s 'ThumbExtract.FileThumbExtract.1'
+			VersionIndependentProgID = s 'ThumbExtract.FileThumbExtract'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{7B85F162-5B0E-4F2A-A8AB-ACBF8F724190}'
+		}
+	}
+}

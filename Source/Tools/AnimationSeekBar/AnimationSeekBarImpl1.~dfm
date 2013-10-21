@@ -1,0 +1,102 @@
+object AnimationSeekBar: TAnimationSeekBar
+  Left = 487
+  Top = 382
+  Width = 624
+  Height = 132
+  Caption = 'AnimationSeekBar'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = ActiveFormCreate
+  DesignSize = (
+    616
+    105)
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 147
+    Top = 7
+    Width = 224
+    Height = 27
+    Anchors = []
+    BevelOuter = bvNone
+    FullRepaint = False
+    TabOrder = 0
+    DesignSize = (
+      224
+      27)
+    object Button3: TButton
+      Left = 2
+      Top = 1
+      Width = 16
+      Height = 25
+      Anchors = [akLeft]
+      Caption = '<'
+      TabOrder = 0
+    end
+    object Button2: TButton
+      Left = 202
+      Top = 1
+      Width = 18
+      Height = 25
+      Anchors = []
+      Caption = '>'
+      TabOrder = 1
+    end
+    object Panel2: TPanel
+      Left = 32
+      Top = 0
+      Width = 169
+      Height = 25
+      BevelInner = bvRaised
+      BevelOuter = bvNone
+      Caption = '0/100'
+      FullRepaint = False
+      TabOrder = 2
+      OnMouseDown = Panel2MouseDown
+      OnMouseMove = Panel2MouseMove
+      OnMouseUp = Panel2MouseUp
+    end
+  end
+  object Panel3: TPanel
+    Left = 72
+    Top = 40
+    Width = 476
+    Height = 57
+    Anchors = [akLeft, akRight]
+    BevelOuter = bvNone
+    BiDiMode = bdRightToLeftNoAlign
+    Ctl3D = True
+    ParentBiDiMode = False
+    ParentCtl3D = False
+    TabOrder = 1
+    object TimeLineBar1: TTimeLineBar
+      Left = 0
+      Top = 0
+      Width = 497
+      Height = 57
+      OnClick = TimeLineBar1Click
+    end
+  end
+  object PopupMenu_TagType: TPopupMenu
+    OnPopup = PopupMenu_TagTypePopup
+    Left = 32
+    Top = 16
+    object MenuItem_SFX: TMenuItem
+      Caption = #29305#25928
+      OnClick = OnPopMenuSFXClick
+    end
+    object MenuItem_Sound: TMenuItem
+      Caption = #22768#38899
+      OnClick = OnPopMenuSoundClick
+    end
+    object MenuItem_Motion: TMenuItem
+      Caption = #21160#20316
+      OnClick = OnPopMenuMotion
+    end
+  end
+end

@@ -1,0 +1,57 @@
+ScrollBar_GetScrollPos				
+	说明：取滚动条滑块按钮位置；
+	参数：szTreePath	窗口树路径名；
+	返回：nPosition  	左上角坐标；
+		
+ScrollBar_GetPageSize					
+	说明：取滚动条滚动页大小，一般来说，该值为显示范围；
+	参数：szTreePath	窗口树路径名；
+	返回：nPageSize  	滚动页大小；
+		
+ScrollBar_GetMaxValue					
+	说明：取滚动条滚动最大值；
+	参数：szTreePath	窗口树路径名；
+	返回：nMaxValue  	滚动最大值；
+		
+ScrollBar_GetMinValue					
+	说明：取滚动条滚动最小值；
+	参数：szTreePath	窗口树路径名；
+	返回：nMinValue  	滚动最小值；
+		
+ScrollBar_ScrollLine					
+	说明：滚动一行；
+	参数：szTreePath	窗口树路径名，
+		  bPrev			true为向前滚，false为向后滚；
+	返回：nil
+		
+ScrollBar_ScrollPage					
+	说明：滚动一页；
+	参数：szTreePath	窗口树路径名，
+		  bPrev			true为向前滚，false为向后滚；
+	返回：nil
+		
+ScrollBar_SetScrollPos				
+	说明：滚动一行；
+	参数：szTreePath	窗口树路径名，
+		  bPrev			true为向前滚，false为向后滚；
+	返回：nil
+		
+ScrollBar_SetValueRange				
+	说明：设滚动范围；
+	参数：szTreePath	窗口树路径名，
+		  nMinValue		滚动最小值，
+		  nMaxValue		滚动最大值；
+	返回：nil
+		
+ScrollBar_SetPageSize					
+	说明：设滚动条滚动页大小；
+	参数：szTreePath	窗口树路径名；
+	返回：nPageSize		滚动页大小；
+		
+ScrollBar_SetSize							
+	说明：设滚动条大小；
+	参数：szTreePath	窗口树路径名，
+		  nWidth		滚动条长，
+		  nHeight		滚动条宽；
+	返回：nil
+

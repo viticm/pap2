@@ -1,0 +1,22 @@
+D/META-INF////
+D/ROOT.war////
+D/conf////
+/catalina-manager.jar/1.1/Wed Dec 31 09:23:07 2008/-kbx/Tt_jx3_built_1-4-0-1834
+/catalina-optional.jar/1.1/Wed Dec 31 09:23:07 2008/-kbx/Tt_jx3_built_1-4-0-1834
+/catalina.jar/1.1/Wed Dec 31 09:23:07 2008/-kbx/Tt_jx3_built_1-4-0-1834
+/commons-el.jar/1.1/Wed Dec 31 09:23:07 2008/-kbx/Tt_jx3_built_1-4-0-1834
+/commons-modeler.jar/1.1/Wed Dec 31 09:23:07 2008/-kbx/Tt_jx3_built_1-4-0-1834
+/context.xml/1.1/Wed Dec 31 09:23:07 2008//Tt_jx3_built_1-4-0-1834
+/jasper-compiler-jdt.jar/1.1/Wed Dec 31 09:23:07 2008/-kbx/Tt_jx3_built_1-4-0-1834
+/jasper-compiler.jar/1.1/Wed Dec 31 09:23:07 2008/-kbx/Tt_jx3_built_1-4-0-1834
+/jasper-runtime.jar/1.1/Wed Dec 31 09:23:07 2008/-kbx/Tt_jx3_built_1-4-0-1834
+/naming-resources.jar/1.1/Wed Dec 31 09:23:08 2008/-kbx/Tt_jx3_built_1-4-0-1834
+/server.xml/1.1/Wed Dec 31 09:23:08 2008//Tt_jx3_built_1-4-0-1834
+/servlets-default.jar/1.1/Wed Dec 31 09:23:08 2008/-kbx/Tt_jx3_built_1-4-0-1834
+/servlets-invoker.jar/1.1/Wed Dec 31 09:23:08 2008/-kbx/Tt_jx3_built_1-4-0-1834
+/servlets-webdav.jar/1.1/Wed Dec 31 09:23:08 2008/-kbx/Tt_jx3_built_1-4-0-1834
+/tomcat-ajp.jar/1.1/Wed Dec 31 09:23:08 2008/-kbx/Tt_jx3_built_1-4-0-1834
+/tomcat-coyote.jar/1.1/Wed Dec 31 09:23:08 2008/-kbx/Tt_jx3_built_1-4-0-1834
+/tomcat-http.jar/1.1/Wed Dec 31 09:23:08 2008/-kbx/Tt_jx3_built_1-4-0-1834
+/tomcat-util.jar/1.1/Wed Dec 31 09:23:08 2008/-kbx/Tt_jx3_built_1-4-0-1834
+/tomcat55-service.jar/1.1/Wed Dec 31 09:23:08 2008/-kbx/Tt_jx3_built_1-4-0-1834

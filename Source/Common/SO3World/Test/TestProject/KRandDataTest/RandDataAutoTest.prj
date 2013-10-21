@@ -1,0 +1,28 @@
+[Include]
+../../../../../../Include
+../../../../../../../Base/Include
+../../../../../Common/SO3World
+../../../../../Common/SO3World/Src
+../../../../../../Include/SO3World
+./RandDataAutoTest
+
+[Config Debug]
+Product     Exe ../../../../../../../Sword3-products/trunk/RandDataAutoTestD
+Options     Debug -mms-bitfields
+Defines	    _SERVER;LUA_V_5;FILTERTEXT_STATICLIB
+ObjDir      LDebug
+LibDir	    ../../../../../../../Base/Lib/Linux; ../../../../../../../DevEnv/Lib/Linux; ../../../../../../Lib/Linux
+Libraries   SO3WorldServerD; CommonD; EngineD; pthread; Lua5D; FilterTextD
+
+[Config Release]
+Product     Exe ../../../../../../../Sword3-products/trunk/RandDataAutoTest
+Options     Release -mms-bitfields
+Defines	    _SERVER;LUA_V_5;FILTERTEXT_STATICLIB
+ObjDir      LRelease
+LibDir	    ../../../../../../../Base/Lib/Linux; ../../../../../../../DevEnv/Lib/Linux; ../../../../../../Lib/Linux
+Libraries   SO3WorldServer; Common; Engine; pthread; Lua5; FilterText
+
+[Source]
+./RandDataAutoTest/RandDataAutoTest.cpp
+./RandDataAutoTest/stdafx.cpp
+

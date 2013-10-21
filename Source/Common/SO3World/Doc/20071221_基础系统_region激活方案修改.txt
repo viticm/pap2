@@ -1,0 +1,46 @@
+===================
+Region激活方案修改 |
+===================
+
+评审时间：2007.12.21
+
+参与人员：赵纯峰 竺成敏 侯锐
+
+修改目的：
+----------------------------------------------
+1. 解决“巡逻怪”在不可见范围内不移动的问题
+2. 解决仇恨中切出地图，无法离开战斗状态的问题
+
+
+修改方案：
+----------------------------------------------
+1. 将原有的“依据引用计数来判断region是否被激活”修改成“依据场景的最后激活帧来判断region是否被激活”
+2. 将DelRegion的操作由KPlayer移交给KScene维护
+
+
+本次修改涉及到的代码：
+----------------------------------------------
+1. PLAYER相关：
+(1) 函数KScene::AddPlayer()
+(2) 函数KScene::Activate()
+(3) 函数KPlayer::Activate()
+(4) 函数KPlayer::ChangeRegion(KRegion *pDestRegion)
+	SERVER：
+		m_nActive的相关修改(只要有玩家就激活)
+	CLIENT：
+		m_nActive的相关修改(只激活当前客户端的玩家)
+		将DelRegion的操作移交给KScene维护
+
+2. NPC相关：
+(1) 函数KScene::AddNPC()
+(2) 函数KScene::Activate()
+(3) 函数KNPC::Activate()
+	加上“战斗NPC”、“巡逻NPC”的相关判断（战斗状态下的触发条件可能有隐患）
+	NPC由“非巡逻”转变成“巡逻”状态，触发Activate()函数的调用
+(4) 函数KNPC::ChangeRegion()
+	SERVER
+	CLIENT
+
+3. 类KPlayerClient里相关的两个函数：
+(1) 函数KPlayerClient::OnSyncPlayerBaseInfo()
+(2) 函数KPlayerClient::OnSwitchMap()

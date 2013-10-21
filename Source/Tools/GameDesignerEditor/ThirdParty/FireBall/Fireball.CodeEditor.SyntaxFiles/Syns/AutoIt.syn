@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Language Name="AutoIt v3" Startblock="AutoIt Code">
+	<FileTypes>
+		<FileType Extension=".au3" Name="AutoIt v3 Script" />
+	</FileTypes> 
+	
+	<Block Name="AutoIt Code" Style="AutoIt Code" IsMultiline="true">
+		<Scope Start="Func" End="EndFunc" Style="AutoIt Scope" Text="Func..." CauseIndent="true"/>
+		<Scope Start="If" End="EndIf" Style="AutoIt Scope" Text="If..." CauseIndent="true"/>
+		<Scope Start="Select" End="EndSelect" Style="AutoIt Scope" Text="Select..." CauseIndent="true"/>
+		<Scope Start="For" End="Next" Style="AutoIt Scope" Text="For..." CauseIndent="true"/>
+		<Scope Start="While" End="WEnd" Style="AutoIt Scope" Text="While..." CauseIndent="true"/>
+		<Scope Start="Do" End="Until" Style="AutoIt Scope" Text="Do..." CauseIndent="true"/>
+		<Bracket Start="(" End=")" Style="AutoIt Code" />
+		<Bracket Start="[" End="]" Style="AutoIt Code" />
+		<!-- Functions that can exist inside this block -->
+		<Keywords>			
+			<PatternGroup Name="Functions" Style="AutoIt Function" CaseSensitive="false">
+				<Patterns>
+					Abs ACos AdlibDisable AdlibEnable Asc ASin Assign ATan AutoItSetOption AutoItWinGetTitle AutoItWinSetTitle
+					BitAND BitNOT BitOR BitShift BitXOR BlockInput Break
+					Call CDTray Chr ClipGet ClipPut ConsoleWrite ControlClick ControlCommand ControlDisable ControlEnable ControlFocus ControlGetFocus ControlGetHandle ControlGetText ControlHide ControlListView ControlMove ControlSend ControlSetText ControlShow Cos 
+					Dec DirCopy DirCreate DirGetSize DirMove DirRemove DllCall DllClose DllOpen DriveGetDrive DriveGetFileSystem DriveGetLabel DriveGetSerial DriveGetType DriveMapAdd DriveMapDel DriveMapGet DriveSetLabel DriveSpaceFree DriveSpaceTotal DriveStatus
+					EnvGet EnvSet EnvUpdate Eval Exp
+					FileChangeDir FileClose FileCopy FileCreateShortcut FileDelete FileExists FileFindFirstFile FileFindNextFile FileGetAttrib FileGetLongName FileGetShortcut FileGetShortName FileGetSize FileGetTime FileGetVersion FileInstall FileMove FileOpen FileOpenDialog FileRead FileReadLine FileRecycle FileRecycleEmpty FileSaveDialog FileSelectFolder FileSetAttrib FileSetTime FileWrite FileWriteLine FtpSetProxy
+					GUICreate GUICtrlCreateAvi GUICtrlCreateButton GUICtrlCreateCheckbox GUICtrlCreateCombo GUICtrlCreateContextMenu GUICtrlCreateDate GUICtrlCreateDummy GUICtrlCreateEdit GUICtrlCreateGroup GUICtrlCreateIcon GUICtrlCreateInput GUICtrlCreateLabel GUICtrlCreateList GUICtrlCreateListView GUICtrlCreateListViewItem GUICtrlCreateMenu GUICtrlCreateMenuitem GUICtrlCreatePic GUICtrlCreateProgress GUICtrlCreateRadio GUICtrlCreateSlider GUICtrlCreateTab GUICtrlCreateTabItem GUICtrlCreateTreeView GUICtrlCreateTreeViewItem GUICtrlCreateUpdown GUICtrlDelete GUICtrlGetState GUICtrlRead GUICtrlRecvMsg GUICtrlSendMsg GUICtrlSendToDummy GUICtrlSetBkColor GUICtrlSetColor GUICtrlSetCursor GUICtrlSetData GUICtrlSetFont GUICtrlSetImage GUICtrlSetLimit GUICtrlSetOnEvent GUICtrlSetPos GUICtrlSetResizing GUICtrlSetState GUICtrlSetStyle GUICtrlSetTip GUIDelete GUIGetCursorInfo GUIGetMsg GUISetBkColor GUISetCoord GUISetCursor GUISetFont GUISetHelp GUISetIcon GUISetOnEvent GUISetState GUIStartGroup GUISwitch
+					Hex HotKeySet HttpSetProxy
+					InetGet InetGetSize IniDelete IniRead IniReadSection IniReadSectionNames IniWrite InputBox Int IsAdmin IsArray IsDeclared IsFloat IsInt IsNumber IsString
+					Log
+					MemGetStats Mod MouseClick MouseClickDrag MouseDown MouseGetCursor MouseGetPos MouseMove MouseUp MouseWheel MsgBox
+					Number
+					Opt
+					Ping PixelChecksum PixelGetColor PixelSearch ProcessClose ProcessExists ProcessList ProcessSetPriority ProcessWait ProcessWaitClose ProgressOff ProgressOn ProgressSet
+					Random RegDelete RegEnumKey RegEnumVal RegRead RegWrite Round Run RunAsSet RunWait
+					Send SetError SetExtended Shutdown Sin Sleep SoundPlay SoundSetWaveVolume SplashImageOn SplashOff SplashTextOn Sqrt StatusbarGetText String StringAddCR StringFormat StringInStr StringIsAlNum StringIsAlpha StringIsASCII StringIsDigit StringIsFloat StringIsInt StringIsLower StringIsSpace StringIsUpper StringIsXDigit StringLeft StringLen StringLower StringMid StringReplace StringRight StringSplit StringStripCR StringStripWS StringTrimLeft StringTrimRight StringUpper
+					Tan TimerDiff TimerInit ToolTip TrayTip
+					UBound
+					WinActivate WinActive WinClose WinExists WinGetCaretPos WinGetClassList WinGetClientSize WinGetHandle WinGetPos WinGetProcess WinGetState WinGetText WinGetTitle WinKill WinList WinMenuSelectItem WinMinimizeAll WinMinimizeAllUndo WinMove WinSetOnTop WinSetState WinSetTitle WinSetTrans WinWait WinWaitActive WinWaitClose WinWaitNotActive
+				</Patterns>
+			</PatternGroup>
+			
+			<PatternGroup Name="Numbers" Style="AutoIt Number">
+				<Pattern Text="(0x[0-9a-fA-F]+)" IsComplex="true" />
+				<Pattern Text="([0-9]+)" IsComplex="true" />
+			</PatternGroup>
+			
+			<!-- Keywords for AutoIt -->
+			<PatternGroup Name="Keywords" Style="AutoIt Keyword" CaseSensitive="false">
+				<Patterns>
+					#include #include-once #NoTrayIcon Const ContinueLoop Case Dim Do Else ElseIf EndFunc EndIf EndSelect Exit ExitLoop Func For Global If Local Next ReDim Return Select Then Until While WEnd 
+				</Patterns>
+			</PatternGroup>
+			
+			<!-- Macros for AutoIt -->
+			<PatternGroup Name="Macros" Style="AutoIt Macro" CaseSensitive="false">
+				<Patterns>
+					@AppDataCommonDir @AppDataDir @AutoItExe @AutoItVersion @CommonFilesDir @Compiled @ComputerName @ComSpec @CR @CRLF @DesktopCommonDir @DesktopDir @DesktopHeight @DesktopWidth @DesktopDepth @DesktopRefresh @DocumentsCommonDir @error @extended @FavoritesCommonDir @FavoritesDir @GUI_CtrlId @GUI_CtrlHandle @GUI_WinHandle @HomeDrive @HomePath @HomeShare @HOUR @InetGetActive @InetGetBytesRead @IPAddress1 @IPAddress2 @IPAddress3 @IPAddress4 @LF @LogonDNSDomain @LogonDomain @LogonServer @MDAY @MIN @MON @MyDocumentsDir @NumParams @OSBuild @OSLang @OSServicePack @OSTYPE @OSVersion @ProgramFilesDir @ProgramsCommonDir @ProgramsDir @ScriptDir @ScriptFullPath @ScriptName @SEC @StartMenuCommonDir @StartMenuDir @StartupCommonDir @StartupDir @SW_DISABLE @SW_ENABLE @SW_HIDE @SW_MAXIMIZE @SW_MINIMIZE @SW_RESTORE @SW_SHOW @SW_SHOWDEFAULT @SW_SHOWMAXIMIZED @SW_SHOWMINIMIZED @SW_SHOWMINNOACTIVE @SW_SHOWNA @SW_SHOWNOACTIVATE @SW_SHOWNORMAL @SystemDir @TAB @TempDir @UserProfileDir @UserName @WDAY @WindowsDir @WorkingDir @YDAY @YEAR 
+				</Patterns>
+			</PatternGroup>
+			
+		</Keywords>
+		
+		<!-- Operators that can exist inside this block -->
+		<Operators>
+			<PatternGroup name="Operators" Style="AutoIt Operator">
+				<Pattern Text="+" />
+				<Pattern Text="-" />
+				<Pattern Text="*" />
+				<Pattern Text="/" />
+				<Pattern Text="&amp;" />
+				<Pattern Text="^" />
+				<Pattern Text="NOT" />
+				<Pattern Text="=" />
+				<Pattern Text="&gt;" />
+				<Pattern Text="&lt;" />
+				<Pattern Text="AND" />
+				<Pattern Text="OR" />
+			</PatternGroup>
+		</Operators>
+		
+		<ChildBlocks>
+			<Child Name="AutoIt Code" />
+			<Child Name="AutoIt Singleline Comment" />
+			<Child Name="AutoIt Multiline Comment" />
+			<Child Name="AutoIt Short Multiline Comment" />
+			<Child Name="AutoIt String" />
+			<Child Name="AutoIt Literal String" />
+			<Child Name="AutoIt Variable" />
+		</ChildBlocks>
+	</Block>
+	
+	<Block Name="AutoIt Multiline Comment" Style="AutoIt Comment" EscapeChar="" IsMultiline="true">
+		<Scope Start="#comments-start" End="#comments-end" Style="AutoIt Comment" Text="#comments-start...#comments-end"/>
+		<Operators>
+			<PatternGroup name="URL" Style="AutoIt URL">
+				<Pattern Text="http://([\w-]+\.)+[\w-]+(/[\w- ./?%&amp;=]*)?" IsComplex="true" />
+			</PatternGroup>
+		</Operators>
+	</Block>
+	
+	<Block Name="AutoIt Short Multiline Comment" Style="AutoIt Comment" EscapeChar="" IsMultiline="true">
+		<Scope Start="#cs" End="#ce" Style="AutoIt Comment" Text="#cs...#ce"/>
+		<Operators>
+			<PatternGroup name="URL" Style="AutoIt URL">
+				<Pattern Text="http://([\w-]+\.)+[\w-]+(/[\w- ./?%&amp;=]*)?" IsComplex="true" />
+			</PatternGroup>
+		</Operators>
+	</Block>
+
+	<Block Name="AutoIt Singleline Comment" Style="AutoIt Comment" IsMultiline="false" >		
+		<Scope Start=";" End="" Style="AutoIt Comment" />	
+	</Block>
+	
+	<Block Name="AutoIt String" Style="AutoIt String" EscapeChar="" IsMultiline="false">
+		<Scope Start="&quot;" End="&quot;" EscapeChar="" Style="AutoIt String" />
+		<Operators>
+			<PatternGroup name="URL" Style="AutoIt URL">
+				<Pattern Text="http://([\w-]+\.)+[\w-]+(/[\w- ./?%&amp;=]*)?" IsComplex="true" />
+			</PatternGroup>
+		</Operators>
+	</Block>
+	
+	<Block Name="AutoIt Literal String" Style="AutoIt String" EscapeChar="" IsMultiline="true" >
+		<Scope Start="'" End="'" Style="AutoIt String" />
+	</Block>
+	
+	<Block Name="AutoIt Variable" Style="AutoIt Variable" IsMultiline="false" >		
+		<Scope Start="$" End=" " Style="AutoIt Variable" />	
+	</Block>
+	
+	<Style Name="AutoIt Code" ForeColor="Black" BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="AutoIt Scope" ForeColor="Blue" BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="AutoIt Keyword" ForeColor="Blue" BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="AutoIt Function" ForeColor="SteelBlue" BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="AutoIt Variable" ForeColor="DarkBlue" BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="AutoIt Macro" ForeColor="DarkMagenta" BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="AutoIt String" ForeColor="Red" BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="AutoIt Comment" ForeColor="Green" BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="AutoIt Number" ForeColor="Teal" BackColor="" Bold="true" Italic="false" Underline="false" />
+	<Style Name="AutoIt URL" ForeColor="DodgerBlue" BackColor="" Bold="false" Italic="false" Underline="true" />
+	<Style Name="AutoIt Operator" ForeColor="Crimson" BackColor="" Bold="false" Italic="false" Underline="false" />
+</Language>

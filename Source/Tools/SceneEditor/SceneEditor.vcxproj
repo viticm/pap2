@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Debug\SceneEditor.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Debug\SceneEditor.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\SceneEditor.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\Debug\SceneEditor.exe</OutputFile>
+      <AdditionalDependencies>d3dx9.lib;strmbasd.lib;d3d9.lib;dinput8.lib;winmm.lib;dxerr8.lib;uuid.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;odbc32.lib;odbccp32.lib;d3dx8dt.lib;d3dxof.lib;d3d8.lib;dxguid.lib;strmiids.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\SceneEditor.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Release\SceneEditor.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\SceneEditor.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\Release\SceneEditor.exe</OutputFile>
+      <AdditionalDependencies>d3dx9.lib;strmbasd.lib;d3d9.lib;dinput8.lib;winmm.lib;dxerr8.lib;uuid.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;odbc32.lib;odbccp32.lib;d3dx8dt.lib;d3dxof.lib;d3d8.lib;dxguid.lib;strmiids.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="_frmframe.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="CntrItem.cpp" />
+    <ClCompile Include="DataObject.cpp" />
+    <ClCompile Include="DLG_GroundTool.cpp" />
+    <ClCompile Include="DLG_MainTool.cpp" />
+    <ClCompile Include="GraphiceEngine.cpp" />
+    <ClCompile Include="GraphicTool.cpp" />
+    <ClCompile Include="KColorButton.cpp" />
+    <ClCompile Include="KDlg_Mesh.cpp" />
+    <ClCompile Include="KDlg_MeshBasePropage.cpp" />
+    <ClCompile Include="KDlg_PorItem_STLString.cpp" />
+    <ClCompile Include="KDlg_ProItem_Ani.cpp" />
+    <ClCompile Include="KDlg_ProItem_Color.cpp" />
+    <ClCompile Include="KDlg_ProItem_Enum.cpp" />
+    <ClCompile Include="KDlg_ProItem_Float.cpp" />
+    <ClCompile Include="KDlg_ProItem_Int.cpp" />
+    <ClCompile Include="KDlg_ProItem_MtlEffect.cpp" />
+    <ClCompile Include="KDlg_ProItem_MtlList.cpp" />
+    <ClCompile Include="KDlg_ProItem_MtlOption.cpp" />
+    <ClCompile Include="KDlg_ProItem_MtlState.cpp" />
+    <ClCompile Include="KDlg_ProItem_MtlTex.cpp" />
+    <ClCompile Include="KDlg_ProItem_Particle.cpp" />
+    <ClCompile Include="KDlg_ProItem_SceneObjects.cpp" />
+    <ClCompile Include="KDlg_ProItem_SFXNew.cpp" />
+    <ClCompile Include="KDlg_ProItem_String.cpp" />
+    <ClCompile Include="KDlg_ProItem_Terrain_Ground_Texture.cpp" />
+    <ClCompile Include="KDlg_ProItem_Vec3.cpp" />
+    <ClCompile Include="KDlg_ProItemBase.cpp" />
+    <ClCompile Include="KDlg_PropertyDialog.cpp" />
+    <ClCompile Include="KDlg_PropertyPage.cpp" />
+    <ClCompile Include="KDlg_SpeedTree.cpp" />
+    <ClCompile Include="KEditorSettingDialog.cpp" />
+    <ClCompile Include="KEditorSettingPageColor.cpp" />
+    <ClCompile Include="KEditorSettingPageGeneral.cpp" />
+    <ClCompile Include="KEditorSettingPageMapTest.cpp" />
+    <ClCompile Include="KEditorSettingPageMusic.cpp" />
+    <ClCompile Include="KEditorSettingPageVideo.cpp" />
+    <ClCompile Include="KEditorSettingPageView.cpp" />
+    <ClCompile Include="KEntity.cpp" />
+    <ClCompile Include="KFileFinder.cpp" />
+    <ClCompile Include="KModelEditorMaterialAlphaOperatorDialog.cpp" />
+    <ClCompile Include="KModelSceneSFX.cpp" />
+    <ClCompile Include="KModelSFXBillBoard.cpp" />
+    <ClCompile Include="KModelSpeedTree.cpp" />
+    <ClCompile Include="KModelSubd.cpp" />
+    <ClCompile Include="KModelTerrainLOD.cpp" />
+    <ClCompile Include="KModelWater.cpp" />
+    <ClCompile Include="KMovieTexture.cpp" />
+    <ClCompile Include="KObjectEditorDoc.cpp" />
+    <ClCompile Include="KPhysicsSimulator.cpp" />
+    <ClCompile Include="KRegion.cpp" />
+    <ClCompile Include="KRepGirlNo1.cpp" />
+    <ClCompile Include="KRepNPC.cpp" />
+    <ClCompile Include="KRigidBody.cpp" />
+    <ClCompile Include="KRigidBodyTable.cpp" />
+    <ClCompile Include="KSceneEditBaseSelectDialog.cpp" />
+    <ClCompile Include="KSceneModelEditorAnimationPanel.cpp" />
+    <ClCompile Include="KSceneModelEditorFrameWnd.cpp" />
+    <ClCompile Include="KSceneModelEditorMeshBindDialog.cpp" />
+    <ClCompile Include="KSceneModelEditorMeshSocketSetDialog.cpp" />
+    <ClCompile Include="KSceneModelEditorModelSaveDialog.cpp" />
+    <ClCompile Include="KSceneModelEditorPanelView.cpp" />
+    <ClCompile Include="KSceneModelEditorPropertyPageAnimation.cpp" />
+    <ClCompile Include="KSceneModelEditorPropertyPageMaterial.cpp" />
+    <ClCompile Include="KSceneModelEditorPropertyPageMesh.cpp" />
+    <ClCompile Include="KSceneModelEditorPropertySheet.cpp" />
+    <ClCompile Include="KSceneModelEditorSFXBillBoardDialog.cpp" />
+    <ClCompile Include="KSceneModelEditorSFXBladeDialog.cpp" />
+    <ClCompile Include="KSceneModelEditorSFXNewDialog.cpp" />
+    <ClCompile Include="KSceneModelEditorSFXSceneSFXDialog.cpp" />
+    <ClCompile Include="KSceneModelEditorSFXSpeedTreeDialog.cpp" />
+    <ClCompile Include="KSceneModelEditorSword2CheckTool.cpp" />
+    <ClCompile Include="KSceneObjectEditor.cpp" />
+    <ClCompile Include="KSceneObjectEditorFrameWnd.cpp" />
+    <ClCompile Include="KSceneObjectEditorPageModel.cpp" />
+    <ClCompile Include="KSceneObjectEditorPanelView.cpp" />
+    <ClCompile Include="KSceneObjectEditorPropertyPageBlock.cpp" />
+    <ClCompile Include="KSceneObjectEditorPropertySheet.cpp" />
+    <ClCompile Include="KSceneObjectEditorView.cpp" />
+    <ClCompile Include="KSceneObjectEditorWizard.cpp" />
+    <ClCompile Include="KSceneObjectFrame.cpp" />
+    <ClCompile Include="KSceneSceneEditorDialogCamera.cpp" />
+    <ClCompile Include="KSceneSceneEditorDialogDistrict.cpp" />
+    <ClCompile Include="KSceneSceneEditorDialogGroundTextureMgr.cpp" />
+    <ClCompile Include="KSceneSceneEditorDialogNewMapWizard.cpp" />
+    <ClCompile Include="KSceneSceneEditorDialogObjectMgr.cpp" />
+    <ClCompile Include="KSceneSceneEditorDialogOranment.cpp" />
+    <ClCompile Include="KSceneSceneEditorDialogTerrian.cpp" />
+    <ClCompile Include="KSceneSceneEditorDialogUnit.cpp" />
+    <ClCompile Include="KSceneSceneEditorFrameWnd.cpp" />
+    <ClCompile Include="KSceneSceneEditorObscaleDialog.cpp" />
+    <ClCompile Include="KSceneSceneEditorPanelDialog.cpp" />
+    <ClCompile Include="KSceneSceneEditorRadarView.cpp" />
+    <ClCompile Include="KSceneSceneEditorUnitPreviewView.cpp" />
+    <ClCompile Include="KSceneSwordTestWizard.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="MathTool.cpp" />
+    <ClCompile Include="MeshBillBoard.cpp" />
+    <ClCompile Include="MeshBlade.cpp" />
+    <ClCompile Include="MeshButton.cpp" />
+    <ClCompile Include="MeshColorPick.cpp" />
+    <ClCompile Include="MeshComboBox.cpp" />
+    <ClCompile Include="MeshEditCtrl.cpp" />
+    <ClCompile Include="MeshEditorDoc.cpp" />
+    <ClCompile Include="MeshEditorView.cpp" />
+    <ClCompile Include="MeshFlare.cpp" />
+    <ClCompile Include="MeshGlare.cpp" />
+    <ClCompile Include="MeshGroup.cpp" />
+    <ClCompile Include="MeshItem.cpp" />
+    <ClCompile Include="MeshLineGrass.cpp" />
+    <ClCompile Include="MeshListBox.cpp" />
+    <ClCompile Include="MeshListCtrl.cpp" />
+    <ClCompile Include="MeshMainTool.cpp" />
+    <ClCompile Include="MeshMeshAnimation.cpp" />
+    <ClCompile Include="MeshMeshMaterialTool.cpp" />
+    <ClCompile Include="MeshMeshSelect.cpp" />
+    <ClCompile Include="MeshMeshTool.cpp" />
+    <ClCompile Include="MeshMoveGrid.cpp" />
+    <ClCompile Include="MeshObjectTableTool.cpp" />
+    <ClCompile Include="MeshParticleSystem.cpp" />
+    <ClCompile Include="MeshPropertySet.cpp" />
+    <ClCompile Include="MeshRotateGrid.cpp" />
+    <ClCompile Include="MeshScreenSFX.cpp" />
+    <ClCompile Include="MeshSkyBox.cpp" />
+    <ClCompile Include="MeshSlideBar.cpp" />
+    <ClCompile Include="MeshStrip.cpp" />
+    <ClCompile Include="MeshTerran.cpp" />
+    <ClCompile Include="MeshTreeCtrl.cpp" />
+    <ClCompile Include="MeshWinBase.cpp" />
+    <ClCompile Include="ObjectTable.cpp" />
+    <ClCompile Include="Operation.cpp" />
+    <ClCompile Include="ParticleSystem.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="ResourceMgrEffect.cpp" />
+    <ClCompile Include="RInterface.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneEditBase.cpp" />
+    <ClCompile Include="SceneEditor.cpp" />
+    <ClCompile Include="SceneEditorDoc.cpp" />
+    <ClCompile Include="SceneEditorView.cpp" />
+    <ClCompile Include="SceneMeshEditor.cpp" />
+    <ClCompile Include="SceneSkinEdit.cpp" />
+    <ClCompile Include="SceneSwordTest.cpp" />
+    <ClCompile Include="SceneTable.cpp" />
+    <ClCompile Include="SFXBase.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="SwordTestDoc.cpp" />
+    <ClCompile Include="SwordTestView.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureTable.cpp" />
+    <ClCompile Include="TimePoint.cpp" />
+    <ClCompile Include="XMesh.cpp" />
+    <ClCompile Include="XMeshTable.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SceneEditor.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="_frmframe.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="CntrItem.h" />
+    <ClInclude Include="DataObject.h" />
+    <ClInclude Include="DLG_GroundTool.h" />
+    <ClInclude Include="DLG_MainTool.h" />
+    <ClInclude Include="DLLBase.h" />
+    <ClInclude Include="GraphiceEngine.h" />
+    <ClInclude Include="GraphicTool.h" />
+    <ClInclude Include="IAudio.h" />
+    <ClInclude Include="IAudioManager.h" />
+    <ClInclude Include="IMusicApplication.h" />
+    <ClInclude Include="KColorButton.h" />
+    <ClInclude Include="KDlg_Mesh.h" />
+    <ClInclude Include="KDlg_MeshBasePropage.h" />
+    <ClInclude Include="KDlg_PorItem_STLString.h" />
+    <ClInclude Include="KDlg_ProItem_Ani.h" />
+    <ClInclude Include="KDlg_ProItem_Color.h" />
+    <ClInclude Include="KDlg_ProItem_Enum.h" />
+    <ClInclude Include="KDlg_ProItem_Float.h" />
+    <ClInclude Include="KDlg_ProItem_Int.h" />
+    <ClInclude Include="KDlg_ProItem_MtlEffect.h" />
+    <ClInclude Include="KDlg_ProItem_MtlList.h" />
+    <ClInclude Include="KDlg_ProItem_MtlOption.h" />
+    <ClInclude Include="KDlg_ProItem_MtlState.h" />
+    <ClInclude Include="KDlg_ProItem_MtlTex.h" />
+    <ClInclude Include="KDlg_ProItem_Particle.h" />
+    <ClInclude Include="KDlg_ProItem_SceneObjects.h" />
+    <ClInclude Include="KDlg_ProItem_SFXNew.h" />
+    <ClInclude Include="KDlg_ProItem_String.h" />
+    <ClInclude Include="KDlg_ProItem_Terrain_Ground_Texture.h" />
+    <ClInclude Include="KDlg_ProItem_Vec3.h" />
+    <ClInclude Include="KDlg_ProItemBase.h" />
+    <ClInclude Include="KDlg_PropertyDialog.h" />
+    <ClInclude Include="KDlg_PropertyPage.h" />
+    <ClInclude Include="KDlg_SpeedTree.h" />
+    <ClInclude Include="KEditorSettingDialog.h" />
+    <ClInclude Include="KEditorSettingPageColor.h" />
+    <ClInclude Include="KEditorSettingPageGeneral.h" />
+    <ClInclude Include="KEditorSettingPageMapTest.h" />
+    <ClInclude Include="KEditorSettingPageMusic.h" />
+    <ClInclude Include="KEditorSettingPageVideo.h" />
+    <ClInclude Include="KEditorSettingPageView.h" />
+    <ClInclude Include="KEntity.h" />
+    <ClInclude Include="KFileFinder.h" />
+    <ClInclude Include="KModelEditorMaterialAlphaOperatorDialog.h" />
+    <ClInclude Include="KModelSceneSFX.h" />
+    <ClInclude Include="KModelSFXBillBoard.h" />
+    <ClInclude Include="KModelSpeedTree.h" />
+    <ClInclude Include="KModelSubd.h" />
+    <ClInclude Include="KModelTerrainLOD.h" />
+    <ClInclude Include="KModelWater.h" />
+    <ClInclude Include="KMovieTexture.h" />
+    <ClInclude Include="KObjectEditorDoc.h" />
+    <ClInclude Include="KPhysicsSimulator.h" />
+    <ClInclude Include="KRegion.h" />
+    <ClInclude Include="KRepGirlNo1.h" />
+    <ClInclude Include="KRepNPC.h" />
+    <ClInclude Include="KRigidBody.h" />
+    <ClInclude Include="KRigidBodyTable.h" />
+    <ClInclude Include="KSceneEditBaseSelectDialog.h" />
+    <ClInclude Include="KSceneModelEditorAnimationPanel.h" />
+    <ClInclude Include="KSceneModelEditorFrameWnd.h" />
+    <ClInclude Include="KSceneModelEditorMeshBindDialog.h" />
+    <ClInclude Include="KSceneModelEditorMeshSocketSetDialog.h" />
+    <ClInclude Include="KSceneModelEditorModelSaveDialog.h" />
+    <ClInclude Include="KSceneModelEditorPanelView.h" />
+    <ClInclude Include="KSceneModelEditorPropertyPageAnimation.h" />
+    <ClInclude Include="KSceneModelEditorPropertyPageMaterial.h" />
+    <ClInclude Include="KSceneModelEditorPropertyPageMesh.h" />
+    <ClInclude Include="KSceneModelEditorPropertySheet.h" />
+    <ClInclude Include="KSceneModelEditorSFXBillBoardDialog.h" />
+    <ClInclude Include="KSceneModelEditorSFXBladeDialog.h" />
+    <ClInclude Include="KSceneModelEditorSFXNewDialog.h" />
+    <ClInclude Include="KSceneModelEditorSFXSceneSFXDialog.h" />
+    <ClInclude Include="KSceneModelEditorSFXSpeedTreeDialog.h" />
+    <ClInclude Include="KSceneModelEditorSword2CheckTool.h" />
+    <ClInclude Include="KSceneObjectEditor.h" />
+    <ClInclude Include="KSceneObjectEditorFrameWnd.h" />
+    <ClInclude Include="KSceneObjectEditorPageModel.h" />
+    <ClInclude Include="KSceneObjectEditorPanelView.h" />
+    <ClInclude Include="KSceneObjectEditorPropertyPageBlock.h" />
+    <ClInclude Include="KSceneObjectEditorPropertySheet.h" />
+    <ClInclude Include="KSceneObjectEditorView.h" />
+    <ClInclude Include="KSceneObjectEditorWizard.h" />
+    <ClInclude Include="KSceneObjectFrame.h" />
+    <ClInclude Include="KSceneSceneEditorDialogCamera.h" />
+    <ClInclude Include="KSceneSceneEditorDialogDistrict.h" />
+    <ClInclude Include="KSceneSceneEditorDialogGroundTextureMgr.h" />
+    <ClInclude Include="KSceneSceneEditorDialogNewMapWizard.h" />
+    <ClInclude Include="KSceneSceneEditorDialogObjectMgr.h" />
+    <ClInclude Include="KSceneSceneEditorDialogOranment.h" />
+    <ClInclude Include="KSceneSceneEditorDialogTerrian.h" />
+    <ClInclude Include="KSceneSceneEditorDialogUnit.h" />
+    <ClInclude Include="KSceneSceneEditorFrameWnd.h" />
+    <ClInclude Include="KSceneSceneEditorObscaleDialog.h" />
+    <ClInclude Include="KSceneSceneEditorPanelDialog.h" />
+    <ClInclude Include="KSceneSceneEditorRadarView.h" />
+    <ClInclude Include="KSceneSceneEditorUnitPreviewView.h" />
+    <ClInclude Include="KSceneSwordTestWizard.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="Manager.h" />
+    <ClInclude Include="MathTool.h" />
+    <ClInclude Include="MeshBillBoard.h" />
+    <ClInclude Include="MeshBlade.h" />
+    <ClInclude Include="MeshButton.h" />
+    <ClInclude Include="MeshColorPick.h" />
+    <ClInclude Include="MeshComboBox.h" />
+    <ClInclude Include="MeshEditCtrl.h" />
+    <ClInclude Include="MeshEditorDoc.h" />
+    <ClInclude Include="MeshEditorView.h" />
+    <ClInclude Include="MeshFlare.h" />
+    <ClInclude Include="MeshGlare.h" />
+    <ClInclude Include="MeshGroup.h" />
+    <ClInclude Include="MeshItem.h" />
+    <ClInclude Include="MeshLineGrass.h" />
+    <ClInclude Include="MeshListBox.h" />
+    <ClInclude Include="MeshListCtrl.h" />
+    <ClInclude Include="MeshMainTool.h" />
+    <ClInclude Include="MeshMeshAnimation.h" />
+    <ClInclude Include="MeshMeshMaterialTool.h" />
+    <ClInclude Include="MeshMeshSelect.h" />
+    <ClInclude Include="MeshMeshTool.h" />
+    <ClInclude Include="MeshMoveGrid.h" />
+    <ClInclude Include="MeshObjectTableTool.h" />
+    <ClInclude Include="MeshParticleSystem.h" />
+    <ClInclude Include="MeshPropertySet.h" />
+    <ClInclude Include="MeshRotateGrid.h" />
+    <ClInclude Include="MeshScreenSFX.h" />
+    <ClInclude Include="MeshSkyBox.h" />
+    <ClInclude Include="MeshSlideBar.h" />
+    <ClInclude Include="MeshStrip.h" />
+    <ClInclude Include="MeshTerran.h" />
+    <ClInclude Include="MeshTreeCtrl.h" />
+    <ClInclude Include="MeshWinBase.h" />
+    <ClInclude Include="MusicApplication.h" />
+    <ClInclude Include="ObjectTable.h" />
+    <ClInclude Include="Operation.h" />
+    <ClInclude Include="ParticleSystem.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="ResourceMgrEffect.h" />
+    <ClInclude Include="RInterface.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneEditBase.h" />
+    <ClInclude Include="SceneEditor.h" />
+    <ClInclude Include="SceneEditorDoc.h" />
+    <ClInclude Include="SceneEditorView.h" />
+    <ClInclude Include="SceneMeshEditor.h" />
+    <ClInclude Include="SceneSkinEdit.h" />
+    <ClInclude Include="SceneSwordTest.h" />
+    <ClInclude Include="SceneTable.h" />
+    <ClInclude Include="SFXBase.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="structs.h" />
+    <ClInclude Include="SwordTestDoc.h" />
+    <ClInclude Include="SwordTestView.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="TextureTable.h" />
+    <ClInclude Include="TimePoint.h" />
+    <ClInclude Include="Types.h" />
+    <ClInclude Include="XMesh.h" />
+    <ClInclude Include="XMeshTable.h" />
+    <ClInclude Include="Public\KIniFile.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\bitmap1.bmp" />
+    <CustomBuild Include="res\bitmap2.bmp" />
+    <CustomBuild Include="res\bitmap3.bmp" />
+    <CustomBuild Include="res\bitmap_o.bmp" />
+    <CustomBuild Include="res\bitmapDrop.bmp" />
+    <CustomBuild Include="res\bitmaproll.bmp" />
+    <CustomBuild Include="res\bmp00001.bmp" />
+    <CustomBuild Include="res\bmp00002.bmp" />
+    <CustomBuild Include="res\bmp00003.bmp" />
+    <CustomBuild Include="res\cur00001.cur" />
+    <CustomBuild Include="res\cursor1.cur" />
+    <CustomBuild Include="res\cursor2.cur" />
+    <CustomBuild Include="res\icon1.ico" />
+    <CustomBuild Include="res\mainfram.bmp" />
+    <CustomBuild Include="res\maintool.bmp" />
+    <CustomBuild Include="mdi.ico" />
+    <CustomBuild Include="res\SceneEditor.ico" />
+    <CustomBuild Include="res\SceneEditor.rc2">
+      <FileType>RC</FileType>
+    </CustomBuild>
+    <CustomBuild Include="res\SceneEditorDoc.ico" />
+    <CustomBuild Include="res\Toolbar.bmp" />
+    <CustomBuild Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

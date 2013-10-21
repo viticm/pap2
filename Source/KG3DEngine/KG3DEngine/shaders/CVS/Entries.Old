@@ -1,0 +1,74 @@
+/BillboardCloud.fx/1.2/Mon Dec 21 22:06:04 2009//Tt_jx3_built_1-4-0-1831
+/Bloom.fx/1.1/Wed May 27 03:50:47 2009//Tt_jx3_built_1-4-0-1831
+/BoxFrame.fx/1.1/Wed May 27 03:50:47 2009//Tt_jx3_built_1-4-0-1831
+/Brush.fx/1.1/Wed May 27 03:50:47 2009//Tt_jx3_built_1-4-0-1831
+/Cloud.fx/1.2/Tue Dec 15 22:13:44 2009//Tt_jx3_built_1-4-0-1831
+/CommonParams.h/1.15/Tue Dec 15 22:13:44 2009//Tt_jx3_built_1-4-0-1831
+/DOF.fx/1.2/Tue Dec 15 22:13:44 2009//Tt_jx3_built_1-4-0-1831
+/Detail.fx/1.1/Wed May 27 03:50:47 2009//Tt_jx3_built_1-4-0-1831
+/Details.h/1.10/Tue Dec 15 22:13:44 2009//Tt_jx3_built_1-4-0-1831
+/FanFrame.fx/1.1/Wed May 27 03:50:47 2009//Tt_jx3_built_1-4-0-1831
+/FarMountain.fx/1.3/Mon Dec 14 07:49:20 2009//Tt_jx3_built_1-4-0-1831
+/Grass.fx/1.1/Wed May 27 03:50:47 2009//Tt_jx3_built_1-4-0-1831
+/HDR.fx/1.1/Wed May 27 03:50:47 2009//Tt_jx3_built_1-4-0-1831
+/Lensflare.fx/1.2/Tue Dec 15 22:13:44 2009//Tt_jx3_built_1-4-0-1831
+/Library.fx/1.1/Wed May 27 03:50:47 2009//Tt_jx3_built_1-4-0-1831
+/LinearDepthoutput.fx/1.1/Mon Dec 21 09:44:02 2009//Tt_jx3_built_1-4-0-1831
+/ModelShadow.fx/1.1/Wed May 27 03:50:47 2009//Tt_jx3_built_1-4-0-1831
+/MultiTexture.fx/1.2/Tue Dec 15 22:13:44 2009//Tt_jx3_built_1-4-0-1831
+/MultiTextureSkin.fx/1.4/Tue Dec 15 22:13:44 2009//Tt_jx3_built_1-4-0-1831
+/MultiTextureSkin_normalmap.fx/1.4/Tue Dec 15 22:13:45 2009//Tt_jx3_built_1-4-0-1831
+/MultiTexture_normalmap.fx/1.2/Tue Dec 15 22:13:45 2009//Tt_jx3_built_1-4-0-1831
+/Normal map without skin but with edge.fx/1.2/Tue Jun  2 13:05:54 2009//Tt_jx3_built_1-4-0-1831
+/Normal map without skin.fx/1.1/Wed May 27 03:50:47 2009//Tt_jx3_built_1-4-0-1831
+/NormalOutput.fx/1.1/Mon Dec 21 09:44:02 2009//Tt_jx3_built_1-4-0-1831
+/PointLight.h/1.4/Mon Dec 21 22:06:04 2009//Tt_jx3_built_1-4-0-1831
+/PostRenderFinalPass.fx/1.3/Tue Dec 15 22:13:45 2009//Tt_jx3_built_1-4-0-1831
+/PostRenderFinalPass.ini/1.1/Wed May 27 03:50:47 2009//Tt_jx3_built_1-4-0-1831
+/Rain.fx/1.2/Thu Sep 24 07:38:03 2009//Tt_jx3_built_1-4-0-1831
+/Rain.h/1.2/Thu Sep 24 07:38:03 2009//Tt_jx3_built_1-4-0-1831
+/RainEnvironment.h/1.2/Thu Sep 24 07:38:03 2009//Tt_jx3_built_1-4-0-1831
+/Road.fx/1.2/Tue Dec 15 22:13:45 2009//Tt_jx3_built_1-4-0-1831
+/Road_2_0.fx/1.1/Mon Jul 20 01:43:49 2009//Tt_jx3_built_1-4-0-1831
+/ShaderDefinitions.h/1.5/Mon Dec 14 07:49:20 2009//Tt_jx3_built_1-4-0-1831
+/ShadowMap.h/1.2/Tue Dec 15 22:13:45 2009//Tt_jx3_built_1-4-0-1831
+/SimpleColor.fx/1.1/Wed May 27 03:50:47 2009//Tt_jx3_built_1-4-0-1831
+/SkyBox.fx/1.3/Tue Sep 15 06:00:11 2009//Tt_jx3_built_1-4-0-1831
+/SpeedTree v3.fx/1.1/Thu Jun 18 07:02:02 2009//Tt_jx3_built_1-4-0-1831
+/SpeedTree.fx/1.9/Tue Dec 15 22:13:45 2009//Tt_jx3_built_1-4-0-1831
+/SpeedTree_normalmap.fx/1.2/Tue Jun  2 08:40:22 2009//Tt_jx3_built_1-4-0-1831
+/TerrainGrass v3.fx/1.1/Tue Jul 14 02:05:33 2009//Tt_jx3_built_1-4-0-1831
+/TerrainGrass.fx/1.10/Thu Dec 17 03:03:25 2009//Tt_jx3_built_1-4-0-1831
+/TerrainRender.fx/1.2/Mon Jun 15 08:12:55 2009//Tt_jx3_built_1-4-0-1831
+/TerrainRender_2_0.fx/1.12/Mon Jan  4 01:22:04 2010//Tt_jx3_built_1-4-0-1831
+/TerrainRender_Checker.fx/1.1/Mon Jun 15 07:58:17 2009//Tt_jx3_built_1-4-0-1831
+/TerrainRender_normalmap.fx/1.1/Wed May 27 03:50:47 2009//Tt_jx3_built_1-4-0-1831
+/TexFrame.fx/1.1/Wed May 27 03:50:47 2009//Tt_jx3_built_1-4-0-1831
+/ZPostRender.fx/1.3/Tue Dec 15 22:13:45 2009//Tt_jx3_built_1-4-0-1831
+/ambient only.fx/1.1/Wed May 27 03:50:47 2009//Tt_jx3_built_1-4-0-1831
+/aoe.fx/1.2/Tue Dec 15 22:13:45 2009//Tt_jx3_built_1-4-0-1831
+/box_proj_effect.fx/1.1/Wed May 27 03:50:48 2009//Tt_jx3_built_1-4-0-1831
+/gray.fx/1.1/Wed May 27 03:50:48 2009//Tt_jx3_built_1-4-0-1831
+/lightmap.fx/1.4/Wed Dec 30 03:59:39 2009//Tt_jx3_built_1-4-0-1831
+/lightmapbakeEnv.fx/1.2/Wed Dec 30 03:59:39 2009//Tt_jx3_built_1-4-0-1831
+/lightmapbake_Indirection.fx/1.1/Mon Dec 21 09:44:02 2009//Tt_jx3_built_1-4-0-1831
+/lightmapbakedirection.fx/1.1/Mon Dec 21 09:44:02 2009//Tt_jx3_built_1-4-0-1831
+/lightmapbakepoint.fx/1.2/Wed Dec 30 03:59:39 2009//Tt_jx3_built_1-4-0-1831
+/new light mode v3.fx/1.2/Mon Jun 15 08:12:55 2009//Tt_jx3_built_1-4-0-1831
+/new light mode.fx/1.9/Tue Dec 15 22:13:45 2009//Tt_jx3_built_1-4-0-1831
+/new light mode_checker.fx/1.2/Mon Jun 15 08:12:55 2009//Tt_jx3_built_1-4-0-1831
+/new light mode_detail.fx/1.2/Mon Jun 15 08:12:55 2009//Tt_jx3_built_1-4-0-1831
+/new light mode_detail_2_0.fx/1.13/Tue Dec 15 22:13:45 2009//Tt_jx3_built_1-4-0-1831
+/new light mode_detail_checker.fx/1.2/Mon Jun 15 08:12:55 2009//Tt_jx3_built_1-4-0-1831
+/ocean_surface.fx/1.2/Tue Jun  2 13:05:54 2009//Tt_jx3_built_1-4-0-1831
+/scaleoutput.fx/1.1/Mon Dec 21 09:44:02 2009//Tt_jx3_built_1-4-0-1831
+/sfx_editor.fx/1.1/Wed May 27 03:50:48 2009//Tt_jx3_built_1-4-0-1831
+/shaderbillboard.fx/1.1/Wed May 27 03:50:48 2009//Tt_jx3_built_1-4-0-1831
+/shaderskin.fx/1.14/Tue Dec 15 22:13:45 2009//Tt_jx3_built_1-4-0-1831
+/shaderskin_2.fx/1.2/Mon Jun 15 08:12:55 2009//Tt_jx3_built_1-4-0-1831
+/shaderskin_2_checker.fx/1.2/Mon Jun 15 08:12:55 2009//Tt_jx3_built_1-4-0-1831
+/shaderskin_3.fx/1.2/Mon Jun 15 08:12:55 2009//Tt_jx3_built_1-4-0-1831
+/shadertypedefinitions.h/1.1/Thu Sep 24 07:38:03 2009//Tt_jx3_built_1-4-0-1831
+/terrainshadow.fx/1.1/Wed May 27 03:50:48 2009//Tt_jx3_built_1-4-0-1831
+/water.fx/1.2/Tue Dec 15 22:13:45 2009//Tt_jx3_built_1-4-0-1831
+D

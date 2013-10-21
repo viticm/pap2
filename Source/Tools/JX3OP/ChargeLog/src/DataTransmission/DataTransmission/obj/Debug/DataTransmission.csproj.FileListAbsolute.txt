@@ -1,0 +1,12 @@
+D:\vs2008\DataTransmission\DataTransmission\obj\Debug\ResolveAssemblyReference.cache
+D:\vs2008\DataTransmission\DataTransmission\bin\Debug\DataTransmission.exe.config
+D:\vs2008\DataTransmission\DataTransmission\bin\Debug\DataTransmission.exe
+D:\vs2008\DataTransmission\DataTransmission\bin\Debug\DataTransmission.pdb
+D:\vs2008\DataTransmission\DataTransmission\obj\Debug\DataTransmission.exe
+D:\vs2008\DataTransmission\DataTransmission\obj\Debug\DataTransmission.pdb
+D:\src\Sword3\Source\Tools\JX3OP\ChargeLog\src\DataTransmission\DataTransmission\bin\Debug\DataTransmission.exe.config
+D:\src\Sword3\Source\Tools\JX3OP\ChargeLog\src\DataTransmission\DataTransmission\obj\Debug\DataTransmission.exe
+D:\src\Sword3\Source\Tools\JX3OP\ChargeLog\src\DataTransmission\DataTransmission\obj\Debug\DataTransmission.pdb
+D:\src\Sword3\Source\Tools\JX3OP\ChargeLog\src\DataTransmission\DataTransmission\obj\Debug\ResolveAssemblyReference.cache
+D:\src\Sword3\Source\Tools\JX3OP\ChargeLog\src\DataTransmission\DataTransmission\bin\Debug\DataTransmission.exe
+D:\src\Sword3\Source\Tools\JX3OP\ChargeLog\src\DataTransmission\DataTransmission\bin\Debug\DataTransmission.pdb

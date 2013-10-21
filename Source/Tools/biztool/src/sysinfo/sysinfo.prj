@@ -1,0 +1,33 @@
+[Include]
+./src
+/usr/include
+../Share/Header/FSEye
+../Share/Header
+../../../../../../Base/Include
+../../../../../../Sword3/Include/FSEyes
+
+[Config Debug]
+Product		Dll ../../product/debug/plug/sysinfo
+Options		Debug
+Defines		__linux
+ObjDir		obj
+LibDir
+Libraries
+
+[Config Release]
+Product		Dll ../../product/release/plug/sysinfo
+Options		Release
+Defines		__linux
+ObjDir		obj
+LibDir
+Libraries
+
+[Source]
+src/sysinfo.cpp
+src/ifimple.cpp
+src/lib.cpp
+src/cpu.cpp
+src/mem.cpp
+src/disk.cpp
+src/net.cpp
+src/proc.cpp

@@ -1,0 +1,100 @@
+Edit_GetTextLength							
+	说明：取文字编辑框文字长度；
+	参数：szTreePath  窗口树路径名；
+	返回：nLength     文字长度；
+		
+Edit_GetText								
+	说明：取文字编辑框文字；
+	参数：szTreePath  		窗口树路径名；
+		  [bExclueSpace]	是否排除空格，默认为排除；
+	返回：szText      		文字内容；
+		
+Edit_GetIntNumber						
+	说明：转换文字编辑框内容为数字；
+	参数：szTreePath  窗口树路径名；
+	返回：nNumber     字符串转换为数字，如果不能转换，返回0；
+		
+Edit_GetCaretPosition				
+	说明：取文字编辑框光标坐标；
+	参数：szTreePath  窗口树路径名；
+	返回：nX，nY 	  光标位置；
+		
+Edit_GetFocusBgColor				
+	说明：取文字编辑框输入焦点背景颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwFocusBkColor 	输入焦点背景颜色，目前没做可用性调整；
+		
+Edit_GetFlag								
+	说明：取文字编辑框风格参数，目前没做可用性处理，为简单封装；
+	参数：szTreePath 窗口树路径名；
+	返回：dwFlag 	 风格参数；
+
+Edit_SetColor								
+	说明：设文字编辑框文字颜色；
+	参数：szTreePath  		窗口树路径名；
+		  dwFontColor		字体颜色，目前未做可用性调整；
+	返回：nil
+
+Edit_SetText								
+	说明：设文字编辑框文字内容；
+	参数：szTreePath 	窗口树路径名，
+	 	  szText		文字内容，
+	 	  [nTextLength]	如果设置了，使用nTextLength，否则把szText当作plain text处理；
+	返回：nil
+		
+Edit_SetIntText							
+	说明：设置文字编辑框的内容为整数的字符串；
+	参数：szTreePath  		窗口树路径名，
+		  nNumber			需要显示的数字；
+	返回：nil
+	
+Edit_SetFocusBkColor				
+	说明：设文字编辑框输入焦点背景颜色；
+	参数：szTreePath  		窗口树路径名；
+		  dwFocusBkColor	输入焦点背景颜色，目前未做可用性调整；
+	返回：nil
+
+Edit_SetLimitLen						
+	说明：设文字编辑框最大可输入长度，这个长度的最大值受TextLength限制；
+	参数：szTreePath  		窗口树路径名；
+		  nLength			最大可输入长度；
+	返回：nil
+
+Edit_SetFlag								
+	说明：设文字编辑框风格参数，目前没做可用性处理，为简单封装；
+	参数：szTreePath 窗口树路径名，
+		  dwStyle 	 风格参数；
+	返回：nil
+		
+Edit_SetType								
+	说明：设文字编辑框输入类型；
+	参数：szTreePath 窗口树路径名，
+		  nType		 0数字/1英文/2中英文，
+	返回：nil
+
+Edit_SetSize						
+	说明：设文字编辑框大小，即将废弃；
+	参数：szTreePath 	窗口树路径名，
+		  nDeltaWidth	输入框宽度增量，
+		  nDeltaHeight	输入框高度增量;
+	返回：nil
+
+Edit_Enable								
+	说明：禁止或者允许文字输入框被操作，即将废弃；
+	参数：szTreePath 窗口树路径名，
+	      bEnable    true为允许，false为禁止；
+	返回：nil
+
+Edit_ClearText						
+	说明：清空文字输入框内容；
+	参数：szTreePath 窗口树路径名，
+	返回：nil
+	
+Edit_InsertString					
+	说明：向文字输入框插入字符串；
+	参数：szTreePath 	窗口树路径名，
+		  szString		插入的字符串，
+		  [bTrans]		是否需要做内码转换，默认为否;
+	返回：nil
+
+

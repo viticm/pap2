@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Src\Mgr">
+      <UniqueIdentifier>{4e78e031-3a1a-4093-8b00-e1b2bd82fca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script">
+      <UniqueIdentifier>{e712174a-9e91-498f-ab1c-1f0e06aa0dc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Text">
+      <UniqueIdentifier>{2db1461d-c7c8-4927-9248-bb042c91d58f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Event">
+      <UniqueIdentifier>{e059f98c-dea9-4d1d-a7d1-8628f4a60949}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{7183bf39-9916-4fa3-a114-380151119baa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{f7b4084d-13c8-4f99-b077-1046cd0c34eb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SO3UI.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="kgameworldmgr.cpp">
+      <Filter>Src\Mgr</Filter>
+    </ClCompile>
+    <ClCompile Include="k3denginescripttable.cpp">
+      <Filter>Src\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="kdolbyaxonscripttable.cpp">
+      <Filter>Src\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="knullui3dmodeleventhandler.cpp">
+      <Filter>Src\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="krepresentscripttable.cpp">
+      <Filter>Src\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="kschemescripttable.cpp">
+      <Filter>Src\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="kui3dmodeleventhandler.cpp">
+      <Filter>Src\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="kgameworldtextencoder.cpp">
+      <Filter>Src\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="kgwtextatom.cpp">
+      <Filter>Src\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="kgwtextatomattribute.cpp">
+      <Filter>Src\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="kgwtextencoder.cpp">
+      <Filter>Src\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="kgameworlduihandler.cpp">
+      <Filter>Src\Event</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SO3UI.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="kgameworldmgr.h">
+      <Filter>Src\Mgr</Filter>
+    </ClInclude>
+    <ClInclude Include="k3denginescripttable.h">
+      <Filter>Src\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="kdolbyaxonscripttable.h">
+      <Filter>Src\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="knullui3dmodeleventhandler.h">
+      <Filter>Src\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="krepresentscripttable.h">
+      <Filter>Src\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="kschemescripttable.h">
+      <Filter>Src\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="kscript.h">
+      <Filter>Src\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="kui3dmodeleventhandler.h">
+      <Filter>Src\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="kgameworldtextencoder.h">
+      <Filter>Src\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="kgwtextatom.h">
+      <Filter>Src\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="kgwtextatomattribute.h">
+      <Filter>Src\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="kgwtextencoder.h">
+      <Filter>Src\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="kgameworlduihandler.h">
+      <Filter>Src\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3UI\ISO3UI.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\SO3UI\SO3GameWorldUIHandler.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SO3UI.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

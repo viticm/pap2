@@ -1,0 +1,15 @@
+1，Dump收集工具由2部分组成：Dumper.dll DumpReport.exe
+Dumper.dll：负责生成要收集的文件
+DumpReport.exe：负责发送生成的文件到服务器
+
+2，Dump收集工具将生成4个文件：
+EnvInfo.xml：记录宕机主机的机器配置，DLL版本，宕机代码等相关信息
+*.dmp：Dump文件，收集宕机主机的堆栈，内存等信息，文件格式为：宕机程序_时间_32位MD5码.dmp，如：jx3client.exe_20090318_5F5AA0778BCB522C4941D81F592DAAC4.dmp
+*.log：宕机程序最新的log，有Engine库的LOG程序生成，不支持其他格式的LOG
+
+3，Dump收集工具产生的4个文件将在C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp目录下建立一个临时文件夹(宕机程序名),里面包含上面4个文件，
+	DumpReport.exe程序退出后，该文件夹将被删除
+
+4，DumpReport.exe可以重启宕机程序，查看DUMP生成的4个文件
+
+5，不能双击打开DumpReport.exe

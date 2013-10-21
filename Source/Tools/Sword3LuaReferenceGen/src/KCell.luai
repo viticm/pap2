@@ -1,0 +1,18 @@
+﻿@title KCell对象
+@obj KCell
+
+@summary rw. 是否阻止角色通行
+property nIsBlockCharacter as 整数 rw
+
+@summary rw. 是否能够摆放物品
+property nCanPutObj as 整数 rw
+
+@summary rw. 是否安全
+property nIsSafe as 整数 rw
+
+@summary rw. 能否摆摊
+property nCanStall as 整数 rw
+
+@summary ro. 类型
+property nType as 整数 ro
+

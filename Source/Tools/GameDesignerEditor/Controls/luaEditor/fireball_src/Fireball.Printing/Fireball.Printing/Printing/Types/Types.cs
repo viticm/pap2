@@ -1,0 +1,113 @@
+#region Copyright
+//    Copyright (C) 2005  Sebastian Faltoni
+//
+//    This library is free software; you can redistribute it and/or
+//    modify it under the terms of the GNU Lesser General Public
+//    License as published by the Free Software Foundation; either
+//    version 2.1 of the License, or (at your option) any later version.
+//
+//    This library is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+//    Lesser General Public License for more details.
+//
+//    You should have received a copy of the GNU Lesser General Public
+//    License along with this library; if not, write to the Free Software
+//    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#endregion
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Fireball.Printing.Types
+{
+    public class SpanElementType : PrintElementType
+    {
+        public static SpanElementType ElementType
+        {
+            get
+            {
+                return new SpanElementType();
+            }
+        }
+    }
+
+    public class ChapterElementType : PrintElementType
+    {
+        public static ChapterElementType ElementType
+        {
+            get
+            {
+                return new ChapterElementType();
+            }
+        }
+    }
+
+    public class TextBlockElementType : PrintElementType
+    {
+        public static TextBlockElementType ElementType
+        {
+            get
+            {
+                return new TextBlockElementType();
+            }
+        }
+    }
+
+    public class LineBreakElementType : PrintElementType
+    {
+        public static LineBreakElementType ElementType
+        {
+            get
+            {
+                return new LineBreakElementType();
+            }
+        }
+    }
+
+    public class ImageElementType : PrintElementType
+    {
+        public static ImageElementType ElementType
+        {
+            get
+            {
+                return new ImageElementType();
+            }
+        }
+    }
+
+
+    public class HorizontalLineElementType : PrintElementType
+    {
+        public static HorizontalLineElementType ElementType
+        {
+            get
+            {
+                return new HorizontalLineElementType();
+            }
+        }
+    }
+
+    public class PageBreakElementType : PrintElementType
+    {
+        public static PageBreakElementType ElementType
+        {
+            get
+            {
+                return new PageBreakElementType();
+            }
+        }
+    }
+
+    public class TextLabelElementType : PrintElementType
+    {
+        public static TextLabelElementType ElementType
+        {
+            get
+            {
+                return new TextLabelElementType();
+            }
+        }
+    }
+}

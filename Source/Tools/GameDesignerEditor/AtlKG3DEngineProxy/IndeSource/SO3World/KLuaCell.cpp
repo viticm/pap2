@@ -1,0 +1,10 @@
+#include "stdafx.h"
+#include "KCell.h"
+
+DEFINE_LUA_CLASS_BEGIN(KCell)
+	REGISTER_LUA_INTEGER(KCell, IsBlockCharacter)
+	REGISTER_LUA_INTEGER(KCell, CanPutObj)
+	REGISTER_LUA_INTEGER(KCell, IsSafe)
+	REGISTER_LUA_INTEGER(KCell, CanStall)
+	REGISTER_LUA_INTEGER_READONLY(KCell, Type)
+DEFINE_LUA_CLASS_END(KCell)

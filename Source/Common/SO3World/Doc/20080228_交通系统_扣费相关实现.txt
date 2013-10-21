@@ -1,0 +1,146 @@
+==================================================================
+交通系统中扣费相关流程和实现                                     |
+==================================================================
+
+评审时间：2008-02-28
+
+参与人员：陈杰 汪淘 侯锐
+
+修改目的：增加交通系统中扣费相关的流程和实现。
+
+
+交通系统扣费相关流程：
+------------------------------------------------------------------
+1. 玩家与NPC对话后，打开交通图，客户端向服务端请求同步各Node的势力。
+
+2. 服务端收到客户端数据后，遍历该玩家已经开通的结点，找出势力不是默认势力
+   的结点，将这些点的势力信息发给客户端。
+
+3. 客户端收到服务端数据后，刷新交通图。
+
+4. 玩家选择目的城市，客户端判断目的城市可以到达，并计算到达目的城市需要的
+   参考价格，再调用脚本函数(如果本结点上有脚本的话)，计算出实际价格。玩家
+   确定后，客户端将“FromNode、CityID、实际价格”发给服务端验证。
+
+5. 服务端收到客户端数据后，根据“FromNode、CityID”验证目的城市是否可以到
+   达，并计算出参考价格，再调用脚本函数(如果本结点上有脚本的话)，计算出实
+   际价格。对比客户端的发来的数据：若验证通过，开始AutoFly；否则，发送出错
+   信息给客户端。
+
+
+修改方案：
+------------------------------------------------------------------
+1. 增加几个客户端与GS通讯的协议，及相关的协议处理函数：
+(1) 上行协议：
+    客户端向服务端请求同步势力。
+
+(2) 下行协议：
+    服务端向客户端同步势力。
+
+(3) 上行协议：
+    客户端向服务端请求验证“FromNode、CityID、实际价格”。
+
+2. 增加一对GS与GC通讯的协议，及相关的协议处理函数：
+(1) 上行协议：
+    GS向GC请求同步势力。
+
+(2) 下行协议：
+    GC通知GS势力信息。
+
+3. 增加交通费用计算的函数。
+
+4. 增加Lua导出Node对象的代码。
+
+5. 增加一系列扣费相关出错值的枚举。
+
+6. 增加一个UI接口，用于判断一条道路需不需要绘制，用什么颜色绘制。
+
+7. 增加一个UI接口，用于玩家确定后向服务端发送“FromNode、CityID、实际价格”
+   进行验证。
+
+8. 增加一个函数，用于GS向客户端同步OPEN节点列表。同步时机：
+(1) 玩家登录。
+(2) 玩家新开了结点。
+
+
+本次修改涉及到的代码：
+------------------------------------------------------------------
+1. 文件GS_Client_Protocol.h中：
+(1) 增加扣费相关的协议：c2g_road_track_request
+(2) 增加客户端向服务端请求同步势力的协议：c2g_road_track_force_request
+(3) 增加服务端向客户端同步势力的协议：g2c_road_track_force_request
+(4) 增加协议相关的数据结构：
+    struct C2G_ROAD_TRACK_REQUEST : UPWARDS_PROTOCOL_HEADER
+    {
+	int     nFromNode;
+	int     nTargetCityID;
+	int     nCost;	
+    };
+
+    struct C2G_ROAD_TRACK_FORCE_REQUEST : UPWARDS_PROTOCOL_HEADER
+    {
+    };
+
+    struct G2C_ROAD_TRACK_FORCE_RESPOND : UNDEFINED_SIZE_DOWNWARDS_HEADER
+    {
+    	int nOpenNodeCount;
+    	struct KNODE_FORCE
+    	{
+           int     nNodeID;
+           DWORD   dwForceID;
+	} NodeForce[0];
+    };
+
+2. 文件relay_gs_protocol.h中：
+(1) 增加结点势力请求相关的协议：
+    g2r_sync_road_track_force
+    r2g_sync_road_track_force
+
+(2) 增加协议相关的数据结构：
+    struct G2R_SYNC_ROAD_TRACK_FORCE : INTERNAL_PROTOCOL_HEADER
+    {
+	DWORD   dwPlayerID;
+    };
+
+    struct R2G_SYNC_ROAD_TRACK_FORCE : INTERNAL_PROTOCOL_HEADER
+    {
+    	DWORD   dwPlayerID;
+        BYTE    byData[0];
+    };
+
+2. 文件KPlayerClient.cpp中:
+(1) 增加函数KPlayerClient::DoRoadTrackRequest(int nFromNode, int nTargetCityID, 
+    int nCost, BOOL bImmediately)，用于向服务端发送客户端请求，主要数据内容为：
+    “FromNode、CityID、实际价格”。
+
+(2) 增加函数OnRoadTrackForceRespond(char* pData, size_t nSize, int nFrame)，用于
+    处理服务端发来的各Node的势力信息。
+
+3. 文件KPlayerServer.cpp中：
+(1) 增加函数OnRoadTrackRequest(char* pData, size_t nSize, int nConnIndex, int nFrame)，
+    用于计算费用。处理流程如下：
+    a. 调用KRoadManager的扣费函数，计算费用。
+
+    b. 验证客户端上传的费用是否与服务端计算的相符。
+	符合：设置玩家开始AutoFly；
+        不符：发送出错信息给客户端。
+
+
+4. 文件KRoadManager.cpp中，增加函数BOOL KRoadManager::CalcCostMoney(int* pnRetCost,
+    int nFromNode, int nTargetCity, KCharacter* pCharacter)，用于计算费用。流程如下：
+
+    计算最短路径，并计算出参考价格。
+
+    判断该Node的脚本是否存在：
+    	存在：  调用Lua函数，将参考价格传入，返回实际价格。
+	不存在：直接返回参考价格。
+
+5. 文件KLuaCharacter.cpp中，增加导出Node对象的Lua代码。
+
+6. ??文件中，增加扣费相关出错值的枚举。
+
+7. 文件KRelayClient.cpp中，增加函数：BOOL KRelayClient::DoSyncRoadTrackForce()，用于
+   GS向GC请求结点势力。
+
+8. 文件KGameServer.cpp中，增加函数：void KGameServer::OnSyncRoadTrackForce(
+   BYTE* pbyData, size_t uDataLen, int nConnIndex)，用于GC向GS返回结点势力。

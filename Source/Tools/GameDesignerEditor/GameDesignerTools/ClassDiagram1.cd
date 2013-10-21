@@ -1,0 +1,697 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Font Name="宋体" Size="9" />
+  <Comment CommentText="使用HashTable保存当前所有脚本">
+    <Position X="2.568" Y="13.79" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="SelectedObject可以转化为DBCustomClass">
+    <Position X="6.477" Y="18.681" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="desc一般指这个">
+    <Position X="10.057" Y="18.176" Height="0.363" Width="1.7" />
+  </Comment>
+  <Comment CommentText="prop = desc.Property">
+    <Position X="13.669" Y="18.251" Height="0.342" Width="1.464" />
+  </Comment>
+  <Comment CommentText="desc = (CustomPropertyDescriptor)item.PropertyDescriptor">
+    <Position X="9.309" Y="14.981" Height="0.438" Width="2.302" />
+  </Comment>
+  <Comment CommentText="pg = page.pg">
+    <Position X="5.652" Y="13.027" Height="0.352" Width="1.163" />
+  </Comment>
+  <Comment CommentText="page = m_pages[i]">
+    <Position X="7.098" Y="10.597" Height="0.268" Width="1.292" />
+  </Comment>
+  <Class Name="GameDesingerTools.AppOptionsForm" Collapsed="true">
+    <Position X="24.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>AppOptionsForm.cs</FileName>
+      <HashCode>AIRAwRIAACyAABAAggCOJAACFAAAAAAKAAAIAAGAABg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.Command" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Audit\Commands.cs</FileName>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameDesingerTools.SaveCommand" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Audit\Commands.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.SetValueCommand" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Audit\Commands.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.NewSubTalbeRecordCommand" Collapsed="true">
+    <Position X="8" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Audit\Commands.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.DelSubTalbeRecordCommand" Collapsed="true">
+    <Position X="10.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Audit\Commands.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.ModifyTreeCommand" Collapsed="true">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Audit\Commands.cs</FileName>
+      <HashCode>AAAAACCAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.OpenDBToolsCommand" Collapsed="true">
+    <Position X="14.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Audit\Commands.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.OpenMetaInfoEditorCommand" Collapsed="true">
+    <Position X="17" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Audit\Commands.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.ModifyScriptCommand" Collapsed="true">
+    <Position X="1.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Audit\Commands.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.RightsSettings" Collapsed="true">
+    <Position X="24.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Audit\Rights.cs</FileName>
+      <HashCode>AAAAAAAAAAAAgAQAAAAAAAAAAAAAAEAAAAAEAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.RightManager" Collapsed="true">
+    <Position X="23" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Audit\Rights.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAABAAEAAAAAAgAAAAAAAAACAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.BaseForm" BaseTypeListCollapsed="true">
+    <Position X="21.5" Y="11" Width="4.25" />
+    <TypeIdentifier>
+      <FileName>BaseForm.cs</FileName>
+      <HashCode>YNVp3e4Y+fPZ8FkkmOyZ7REO+x87h1nfS76yae38Bn8=</HashCode>
+    </TypeIdentifier>
+    <NestedTypes>
+      <Enum Name="GameDesingerTools.BaseForm.MdlType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>BaseForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="GameDesingerTools.BaseForm.UpdateType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>BaseForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Class Name="GameDesingerTools.BaseForm.ArrayListEx" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>BaseForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameDesingerTools.TblUpdateDefault" Collapsed="true">
+    <Position X="28.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BaseForm.cs</FileName>
+      <HashCode>AAAAEAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.PageDesc">
+    <Position X="6.25" Y="10.5" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>BaseForm.cs</FileName>
+      <HashCode>gEAAAIAAAAAAAACAAAAAABAAAAAAAAAAAAAAAAACAgA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pg" />
+      <Field Name="dbClass" />
+      <Field Name="qc" />
+    </ShowAsAssociation>
+    <AssociationLine Name="pg" Type="System.Windows.Forms.PropertyGrid">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="1.125" Y="1.553" Height="0.16" Width="0.5" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="dbClass" Type="GameDesingerTools.DBCustomClass">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.457" Y="0.453" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="qc" Type="GameDesingerTools.queryCommand" ManuallyRouted="true">
+      <Path>
+        <Point X="7.5" Y="10.5" />
+        <Point X="7.5" Y="10.017" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="GameDesingerTools.PropertyChangeEventArgs" Collapsed="true">
+    <Position X="19.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\CustomClass.cs</FileName>
+      <HashCode>AAQAAAAAABAAAEAAAAAAAEAEAAAAQAAAAAAAAAAAABA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.PropertyAfterChangeEventArgs" Collapsed="true">
+    <Position X="33.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\CustomClass.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAACQAAAAAAAAAAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.CustomEditorEventArgs" Collapsed="true">
+    <Position X="33.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\CustomClass.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAACQAAAAAAAAAAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.TreeValueEventArgs" Collapsed="true">
+    <Position X="19.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\CustomClass.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAABAgAIAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.CustomClassCache" Collapsed="true">
+    <Position X="30" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\CustomClassCache.cs</FileName>
+      <HashCode>BAAAgAACIAAAIEDAAABAhAIgAAAICABAAACQAEAAAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.FileNameEditorEx" Collapsed="true">
+    <Position X="28.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\CustomEditor.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.CustomEditor" Collapsed="true">
+    <Position X="31.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\CustomEditor.cs</FileName>
+      <HashCode>AQAAAAAAAgAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.TextEditor" Collapsed="true">
+    <Position X="30" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\CustomEditor.cs</FileName>
+      <HashCode>AAAAAAAAAgAAAABAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.BoolEditor" Collapsed="true">
+    <Position X="31.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\CustomEditor.cs</FileName>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAIAAEAAAAAAAAEAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.CombxHelper" Collapsed="true">
+    <Position X="28.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\CustomProperty.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAIAAAgAAAgAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.CustomProperty">
+    <Position X="15.75" Y="14.5" Width="3.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\CustomProperty.cs</FileName>
+      <HashCode>AhAAUEIAIUQkggUCSAAIQGRCABBEICIoB0AoAAQAmGI=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="GameDesingerTools.CustomPropertyDescriptor">
+    <Position X="8.25" Y="18" Width="3.75" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\CustomProperty.cs</FileName>
+      <HashCode>AAAAEAAAZAAwAgAQQAAAAAAAAAAAAIQAAAQCAQAACAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.BoolConverter" Collapsed="true">
+    <Position X="30" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\CustomProperty.cs</FileName>
+      <HashCode>AAIAAAAAAAABAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.ComboConverter" Collapsed="true">
+    <Position X="26.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\CustomProperty.cs</FileName>
+      <HashCode>AAIAAAAAAAABAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.TreeConverter" Collapsed="true">
+    <Position X="33.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\CustomProperty.cs</FileName>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.DBCustomClass">
+    <Position X="0.75" Y="3.5" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\DBCustomClass.cs</FileName>
+      <HashCode>mAxUmZQMIJNAZMlYAXaE3AOYIDw0acJZID2oMwTGxV4=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="GameDesingerTools.DBCustomClass.AsynNotifyHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>CustomProperty\DBCustomClass.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameDesingerTools.DBCustomProperty">
+    <Position X="12.5" Y="18" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\DBCustomProperty.cs</FileName>
+      <HashCode>gAAYAAAAAAAAACAAAAAAAEAAAAAACAAAEAACAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Lock" />
+    </ShowAsAssociation>
+    <AssociationLine Name="Lock" Type="GameDesingerTools.RecordLockEx">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.069" Y="0.493" />
+      </MemberNameLabel>
+    </AssociationLine>
+  </Class>
+  <Class Name="GameDesingerTools.NewRecordForm" Collapsed="true">
+    <Position X="33.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\NewRecord.cs</FileName>
+      <HashCode>AAAAAAEAACAAABAAAACAAAACAAAAAAAIAAAAAACAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.NewRowKeyValueHelper" Collapsed="true">
+    <Position X="21.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\NewRowHelper.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAgAACAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.NewRowHelper" Collapsed="true">
+    <Position X="19.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\NewRowHelper.cs</FileName>
+      <HashCode>AAQAEAAkAAADABAAAAAUYYAAAAAAQBABAQCCEAAIAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.ObjPool" Collapsed="true">
+    <Position X="24.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\ObjPool.cs</FileName>
+      <HashCode>EABAICAEAAEAAAAAAAAAAAABAAAAAAABAACAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.addField" Collapsed="true">
+    <Position X="19.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\addField.cs</FileName>
+      <HashCode>AAABBARAAKAQABAAAACABAACEAQAIQAIAAAAAAEAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.AddVirtualField" Collapsed="true">
+    <Position X="23" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\AddVirtualField.cs</FileName>
+      <HashCode>AAABAAQAECAQABAAAACABAACECQAKQAIAIQAAAEAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.paraMetaInfo" Collapsed="true">
+    <Position X="28.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\AddVirtualField.cs</FileName>
+      <HashCode>AgABAgAAAAAAAAABACAAAQAABMACgAAEAAACCUCIAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.AttachAttribute" Collapsed="true">
+    <Position X="26.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\AttachAttribute.cs</FileName>
+      <HashCode>ACQAYQBAACCAABCFQACAIABCAFAAAQCEAQlJgIDEAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.DBTableEditor" Collapsed="true">
+    <Position X="21.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\DBTableEditor.cs</FileName>
+      <HashCode>lkumSFCAuSQACBaAiUGCJbDqAoAQgRDBAAQEI6GRIJA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.ImportInfoHelper" Collapsed="true">
+    <Position X="21.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\DBTableEditor.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAgAAAAgAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.ExportEditor" Collapsed="true">
+    <Position X="24.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\ExportEditor.cs</FileName>
+      <HashCode>IAAAAAgAMCQAAAAAAgCAAAESgAgAIAAAEAAAEgAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.IconConfig" Collapsed="true">
+    <Position X="33.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\IconConfig.cs</FileName>
+      <HashCode>EAAAiQBAQCAQAAgAAACAIAICAAAAAAAgAAAAAAQAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.ImportInfo" Collapsed="true">
+    <Position X="19.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\ImportInfo.cs</FileName>
+      <HashCode>EAAIACAAACgABBAAAACABAACEAAAAAAIEKAAAAEAgAI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.MetainfoEditorForm" Collapsed="true">
+    <Position X="26.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\MetaInfoEditorForm.cs</FileName>
+      <HashCode>dAgSFKQAICAgELABAMzACAKCRRwBEEgAASRAAAKEAUg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.ModelEdit" Collapsed="true">
+    <Position X="28.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\ModelEditor.cs</FileName>
+      <HashCode>/5CW1I71fK+B1t4AGoav3NPepRSlqyunRogYfG+15HQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.NameInput" Collapsed="true">
+    <Position X="31.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\NameInput.cs</FileName>
+      <HashCode>BAAAogAAACAAABAAAACCAAICCAAAAAAABAAAAAAAABA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.FindForm1" Collapsed="true">
+    <Position X="30" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>FindForm1.cs</FileName>
+      <HashCode>AAAAAAAEACCAAggCAASABAJCEAEABAAoACgAEAAAgAI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.ColorPicker" Collapsed="true">
+    <Position X="23" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MainFrame\ColorPicker.cs</FileName>
+      <HashCode>AIQAAABAAGQIQiAAAACAAAAKAEkAAAAAAAgCAAQIABQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.MainForm" Collapsed="true">
+    <Position X="24.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MainFrame\MainForm.cs</FileName>
+      <HashCode>1kRJWkiWgmgBggMQobHRcUkKofS64ByRDP3OSCx2QRo=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.TabExport" Collapsed="true">
+    <Position X="23" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MainFrame\TabExport.cs</FileName>
+      <HashCode>AAAgAIgAICACAAAAAACQCCBCAAEAIAAKoAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.TabImportComfirming" Collapsed="true">
+    <Position X="24.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MainFrame\TabImportComfirming.cs</FileName>
+      <HashCode>AAAAAAAAACAAABAAAACAAAACAMA4AAAAAHAMAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.FileFolderHelper" Collapsed="true">
+    <Position X="26.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Misc\FileFolderHelper.cs</FileName>
+      <HashCode>AkAAEAAAgAAAIAAAQAIAAEAAAADAAAAAABACAAABAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.Helper" Collapsed="true">
+    <Position X="31.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Misc\Helper.cs</FileName>
+      <HashCode>gACAAAIAAFMIoEgATBAgAAAAABASAABCJQAESMACAkE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.ComboComparer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Misc\Helper.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameDesingerTools.StringComparer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Misc\Helper.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameDesingerTools.LuaEx" Collapsed="true">
+    <Position X="23" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Misc\LuaEx.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.syncItem" Collapsed="true">
+    <Position X="21.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Misc\queryCommand.cs</FileName>
+      <HashCode>AAAAgAAAAAARAAAAACAAAAAAAACAAAAEABAAAAQAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.unBoldItem" Collapsed="true">
+    <Position X="6.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Misc\queryCommand.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.queryCommand" Collapsed="true">
+    <Position X="6.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Misc\queryCommand.cs</FileName>
+      <HashCode>AAAAAEIAAAAAAAAEAABAABAAAAAAAAAAAAAAAAAkAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.RecordLock" Collapsed="true">
+    <Position X="12.5" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Misc\RecordLock.cs</FileName>
+      <HashCode>gEAQQAQgMAAEAAQAAAAAACAAIAQIAgDACgAQAUJABAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.CLocalVersion" Collapsed="true">
+    <Position X="21.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Misc\RecordLock.cs</FileName>
+      <HashCode>IAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.RecordLockEx" Collapsed="true">
+    <Position X="12.5" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Misc\RecordLock.cs</FileName>
+      <HashCode>gAAQAAAAAABAAAAAAAAAAAQIAAIACAAAAAAgAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.TableLock" Collapsed="true">
+    <Position X="26.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Misc\TableLock.cs</FileName>
+      <HashCode>gEAQAAQAMAAEAAAAAAAAAAAAAAQIAgAACAAQAEBABAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.TimeLog" Collapsed="true">
+    <Position X="31.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Misc\TimeLog.cs</FileName>
+      <HashCode>BAAAAAQAAAAAAAAAAAAAAAIAAAgAAAAACAACEABAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.MyPanelEx" Collapsed="true">
+    <Position X="30" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MyPanelEx.cs</FileName>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.NPCForm" Collapsed="true">
+    <Position X="23" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>NPCForm.cs</FileName>
+      <HashCode>AgAIAAAAACAAAAAAAACBAAACgAAAAAAAAAQAIAAEAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.Program" Collapsed="true">
+    <Position X="31.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Program.cs</FileName>
+      <HashCode>EAAAAAAChAICAAAEAAAAAIAACAAAAAgACAABBAgAgAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.EV" Collapsed="true">
+    <Position X="23" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Program.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.ScriptCodeForm">
+    <Position X="26.75" Y="11.5" Width="3" />
+    <TypeIdentifier>
+      <FileName>ScriptCodeForm.cs</FileName>
+      <HashCode>AAAQAAggAAAAAARAAEAAAAAAAAEUBAAAAAACBAUAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.ScriptDebugForm" Collapsed="true">
+    <Position X="26.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ScriptDebugForm.cs</FileName>
+      <HashCode>AAAIACAAACAAAAAAAACBAAACwgAAAAAAAAQAAAAEAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.DBTools.AddImageForm" Collapsed="true">
+    <Position X="21.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\AddImageForm.cs</FileName>
+      <HashCode>/wAEAwJDACAAAJAQAICAIAASEkAAAwQAAEAAAACAAIg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.DBTools.ChooseField" Collapsed="true">
+    <Position X="33.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\ChooseField.cs</FileName>
+      <HashCode>AAAAQwFAACCKABAAAECAIAgCAAQCEAKCAAAAAACAABA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.DBTools.ChooseForm" Collapsed="true">
+    <Position X="19.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\ChooseForm.cs</FileName>
+      <HashCode>AAAAAQBAACAAABAAAMCAIAACAAQAAAABAAAAAQCAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.DBTools.PreviewForm" Collapsed="true">
+    <Position X="30" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\PreviewForm.cs</FileName>
+      <HashCode>AAAAAQFAACQAABAAAUCAIAACAA0AAAAAAAAAAACAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.DBTools.SortForm" Collapsed="true">
+    <Position X="31.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\SortForm.cs</FileName>
+      <HashCode>AwIARQBAACCAAFABAFCAIAASAAQQAAABAAAEAACBAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.DBTools.TypeForm" Collapsed="true">
+    <Position X="21.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBTools\TypeForm.cs</FileName>
+      <HashCode>AAAAgQBAACAAABAAAACAIAACAAAAABAAAAAQAACAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.Properties.Resources" Collapsed="true">
+    <Position X="21.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDesingerTools.Properties.Settings" Collapsed="true">
+    <Position X="30" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.PropertyGrid">
+    <Position X="4.5" Y="13" Width="2.75" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="SelectedGridItem" />
+    </ShowAsAssociation>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="System.Windows.Forms.PropertyGrid.PropertyTabCollection" Collapsed="true">
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Windows.Forms.GridItem">
+    <Position X="8.25" Y="14.75" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GameDesingerTools.SqlDb" Collapsed="true">
+    <Position X="33.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DBProcess.cs</FileName>
+      <HashCode>AIEABEAAAAgAAABABIAAAQAgAAAgACEAAAABAAAABAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="GameDesingerTools.ICommand" Collapsed="true">
+    <Position X="19.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Audit\Commands.cs</FileName>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameDesingerTools.IKDocument" Collapsed="true">
+    <Position X="21.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MainFrame\MainForm.cs</FileName>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="GameDesingerTools.enumValueType" Collapsed="true">
+    <Position X="19.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomProperty\CustomProperty.cs</FileName>
+      <HashCode>AAAAAAAgAAAAAAAAABAAIEAAAiAACAQAAggAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+</ClassDiagram>

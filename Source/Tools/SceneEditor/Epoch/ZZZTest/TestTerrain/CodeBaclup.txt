@@ -1,0 +1,36 @@
+BITMAPFILEHEADER bmpFH;
+	BITMAPINFOHEADER bmpIH;
+	int SizeOfColorTable=0;
+
+	FILE* HeightMapF;
+	if((HeightMapF=fopen(strHeightMapFileName, "rb"))==NULL) return FALSE;
+	fread((void *)&bmpFH, sizeof(bmpFH), 1, HeightMapF);  //读取文件头
+	fseek(HeightMapF, 0x000E, SEEK_SET); fread((void *)&bmpIH, sizeof(bmpIH), 1, HeightMapF);  //读入信息头
+	
+	if(bmpIH.biSizeImage==0) bmpIH.biSizeImage=bmpIH.biHeight*((bmpIH.biWidth*bmpIH.biBitCount)/8);
+
+	//设置Terrain所需的参数
+	m_dwHeightMap_Width=bmpIH.biWidth;
+	m_dwHeightMap_Height=bmpIH.biHeight;
+
+	m_wTerrainWidth=m_dwHeightMap_Width/2;
+	m_wTerrainHeight=m_dwHeightMap_Height/2;
+
+	m_wCols=m_wTerrainWidth-1;
+	m_wRows=m_wTerrainHeight-1;
+	
+	m_pBYTEHeightMap=new BYTE[bmpIH.biSizeImage];
+	if(!m_pBYTEHeightMap)
+	{
+		delete[] m_pBYTEHeightMap;
+		return FALSE;
+	}
+	
+	fseek(HeightMapF, bmpFH.bfOffBits, SEEK_SET); fread((void *)m_pBYTEHeightMap, bmpIH.biSizeImage, 1, HeightMapF);  //读取图像区
+
+	//Close the handle
+	fclose(HeightMapF);
+	HeightMapF=NULL;
+
+	//MessageBox(NULL, "OpenHeightMapFile OK", "", MB_OK);
+	return TRUE;

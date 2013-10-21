@@ -1,0 +1,2 @@
+<%@ control language="C#" autoeventwireup="true" inherits="Common_FtpServerDropdownlist, App_Web_1ceayx6e" %>
+<asp:DropDownList ID="FtpServerList" runat="server" OnSelectedIndexChanged="SelectedIndexChanged_Click"></asp:DropDownList>

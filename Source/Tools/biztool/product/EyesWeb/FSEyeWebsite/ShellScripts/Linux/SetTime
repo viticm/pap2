@@ -1,0 +1,7 @@
+#/bin/sh
+#create by zuolizhi
+
+cp --reply=yes /usr/share/zoneinfo/C#P1 /etc/localtime
+date -s C#P2
+date -s C#P3
+hwclock -w

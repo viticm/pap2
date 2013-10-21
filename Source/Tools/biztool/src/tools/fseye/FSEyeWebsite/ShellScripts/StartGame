@@ -1,0 +1,12 @@
+#/bin/bash
+#add by zuolizhi
+#start game
+
+read path
+
+cd $path
+
+pid=`pgrep lord`
+if [ $? -eq 1 ]; then
+./lord -d
+fi

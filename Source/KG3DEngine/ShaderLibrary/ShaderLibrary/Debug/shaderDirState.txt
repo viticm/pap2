@@ -1,0 +1,73 @@
+72
+../../KG3DEngine/shaders/ambient only.fx
+../../KG3DEngine/shaders/aoe.fx
+../../KG3DEngine/shaders/billboardcloud.fx
+../../KG3DEngine/shaders/bloom.fx
+../../KG3DEngine/shaders/boxframe.fx
+../../KG3DEngine/shaders/box_proj_effect.fx
+../../KG3DEngine/shaders/brush.fx
+../../KG3DEngine/shaders/cloud.fx
+../../KG3DEngine/shaders/commonparams.h
+../../KG3DEngine/shaders/detail.fx
+../../KG3DEngine/shaders/details.h
+../../KG3DEngine/shaders/dof.fx
+../../KG3DEngine/shaders/fanframe.fx
+../../KG3DEngine/shaders/farmountain.fx
+../../KG3DEngine/shaders/grass.fx
+../../KG3DEngine/shaders/gray.fx
+../../KG3DEngine/shaders/hdr.fx
+../../KG3DEngine/shaders/lensflare.fx
+../../KG3DEngine/shaders/library.fx
+../../KG3DEngine/shaders/lightmap.fx
+../../KG3DEngine/shaders/lightmapbakedirection.fx
+../../KG3DEngine/shaders/lightmapbakeenv.fx
+../../KG3DEngine/shaders/lightmapbakepoint.fx
+../../KG3DEngine/shaders/lightmapbake_indirection.fx
+../../KG3DEngine/shaders/lineardepthoutput.fx
+../../KG3DEngine/shaders/modelshadow.fx
+../../KG3DEngine/shaders/multitexture.fx
+../../KG3DEngine/shaders/multitextureskin.fx
+../../KG3DEngine/shaders/multitextureskin_normalmap.fx
+../../KG3DEngine/shaders/multitexture_normalmap.fx
+../../KG3DEngine/shaders/new light mode v3.fx
+../../KG3DEngine/shaders/new light mode.fx
+../../KG3DEngine/shaders/new light mode_checker.fx
+../../KG3DEngine/shaders/new light mode_detail.fx
+../../KG3DEngine/shaders/new light mode_detail_2_0.fx
+../../KG3DEngine/shaders/new light mode_detail_checker.fx
+../../KG3DEngine/shaders/normal map without skin but with edge.fx
+../../KG3DEngine/shaders/normal map without skin.fx
+../../KG3DEngine/shaders/normaloutput.fx
+../../KG3DEngine/shaders/ocean_surface.fx
+../../KG3DEngine/shaders/pointlight.h
+../../KG3DEngine/shaders/postrenderfinalpass.fx
+../../KG3DEngine/shaders/rain.fx
+../../KG3DEngine/shaders/rain.h
+../../KG3DEngine/shaders/rainenvironment.h
+../../KG3DEngine/shaders/road.fx
+../../KG3DEngine/shaders/road_2_0.fx
+../../KG3DEngine/shaders/scaleoutput.fx
+../../KG3DEngine/shaders/sfx_editor.fx
+../../KG3DEngine/shaders/shaderbillboard.fx
+../../KG3DEngine/shaders/shaderdefinitions.h
+../../KG3DEngine/shaders/shaderskin.fx
+../../KG3DEngine/shaders/shaderskin_2.fx
+../../KG3DEngine/shaders/shaderskin_2_checker.fx
+../../KG3DEngine/shaders/shaderskin_3.fx
+../../KG3DEngine/shaders/shadertypedefinitions.h
+../../KG3DEngine/shaders/shadowmap.h
+../../KG3DEngine/shaders/simplecolor.fx
+../../KG3DEngine/shaders/skybox.fx
+../../KG3DEngine/shaders/speedtree v3.fx
+../../KG3DEngine/shaders/speedtree.fx
+../../KG3DEngine/shaders/speedtree_normalmap.fx
+../../KG3DEngine/shaders/terraingrass v3.fx
+../../KG3DEngine/shaders/terraingrass.fx
+../../KG3DEngine/shaders/terrainrender.fx
+../../KG3DEngine/shaders/terrainrender_2_0.fx
+../../KG3DEngine/shaders/terrainrender_checker.fx
+../../KG3DEngine/shaders/terrainrender_normalmap.fx
+../../KG3DEngine/shaders/terrainshadow.fx
+../../KG3DEngine/shaders/texframe.fx
+../../KG3DEngine/shaders/water.fx
+../../KG3DEngine/shaders/zpostrender.fx

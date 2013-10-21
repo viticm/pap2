@@ -1,0 +1,18 @@
+D/BookmarkManager////
+D/CustomLineManager////
+D/FoldingStrategy////
+D/FormattingStrategy////
+D/HighlightingStrategy////
+D/LineManager////
+D/MarkerStrategy////
+D/Selection////
+D/TextBufferStrategy////
+/AbstractSegment.cs/1.1/Mon Apr 23 09:33:30 2007//Tt_jx3_built_1-4-0-1834
+/DefaultDocument.cs/1.1/Mon Apr 23 09:33:30 2007//Tt_jx3_built_1-4-0-1834
+/DefaultTextEditorProperties.cs/1.1/Mon Apr 23 09:33:30 2007//Tt_jx3_built_1-4-0-1834
+/DocumentEventArgs.cs/1.1/Mon Apr 23 09:33:30 2007//Tt_jx3_built_1-4-0-1834
+/DocumentFactory.cs/1.1/Mon Apr 23 09:33:30 2007//Tt_jx3_built_1-4-0-1834
+/IDocument.cs/1.1/Mon Apr 23 09:33:30 2007//Tt_jx3_built_1-4-0-1834
+/ISegment.cs/1.1/Mon Apr 23 09:33:30 2007//Tt_jx3_built_1-4-0-1834
+/ITextEditorProperties.cs/1.1/Mon Apr 23 09:33:30 2007//Tt_jx3_built_1-4-0-1834
+/TextUtilities.cs/1.1/Mon Apr 23 09:33:30 2007//Tt_jx3_built_1-4-0-1834

@@ -1,0 +1,25 @@
+[Include]
+/usr/include
+.
+../../../../Base/Include
+../../../../Base/Include/Common
+../../../../Base/Include/Engine
+../../../Include
+
+[Config Debug]
+Product		Dll ./Debug/KG_Angel
+Options		Debug
+Defines		__linux; _STANDALONE; _SERVER;
+ObjDir		LDebug
+LibDir		../../../../Base/Lib/LDebug
+Libraries	Common Engine pthread
+
+[Source]
+KG_Angel.cpp
+KG_BishopProcessor3.cpp
+KG_PublicFunction.cpp
+KG_RoleCreator.cpp
+KG_RoleInfo3.cpp
+KG_RoleProcessor3.cpp
+KG_Statistic3.cpp
+stdafx.cpp

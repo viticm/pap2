@@ -1,0 +1,443 @@
+==================================================================
+交通系统开发文档                                                 |
+==================================================================
+
+评审时间：2008.01.08
+
+参与人员：赵纯峰 陈杰 周恒达 侯锐
+
+需求功能点整理：
+--------------------------------------------------------------
+1. 本文档适用于游戏世界中的马车夫、船夫两种路线固定的移动方式。
+
+2. 玩家在马车（船）上行进过程中，模型切换为马车（船）。
+
+3. 玩家在马车（船）上行进过程中，只能聊天和转换镜头，不能自由移动、
+   释放技能、更换装备、使用道具。
+
+4. 玩家在马车上（船上）行进过程中，可以被选中，但不能被攻击。
+
+5. 交通路径由“路径点”和“路线”组成，路线由策划设定（A、B两个路径
+   点间无其他路径点的情况，，从A->B和从B->A的路线相同；若之间有其他
+   路径点，则路线可能不完全相同）。
+
+6. 玩家乘坐马车（船）之前，必须选择交通路径，且只能选择已经被开通的
+   路线。起始路径点为玩家当前所在的路径点，目的路径点为城市（门派），
+   而不是路径点。若出发点和目的地之间有被敌对势力占领的路径点，则本
+   路径点不能选择。若出发点为敌对势力的路径点，则不能上马（船）；若
+   目的地为敌对势力的路径点，则到达后必须下马（船）。
+
+7. 玩家乘坐交通工具所支付的费用，在乘坐之前扣除，费用不够，则不能乘
+   坐。路线中有多个路径点的情况下，在乘坐之前一次性扣除。例如：
+   路线：A——B——C（A—B的费用为10，B—C的费用为15）
+   当选择路径点C的时候，扣除费用25。
+
+8. 自动搜索路径的时候，优先选择费用最少的路径点。例如：
+   A、C两个路径点中有两条路线：A—B—C、A—D—C，A—B费用10，B—C费
+   用15，A—D费用15，D—C费用5，程序计算得出A—B—C费用25，A—D—C
+   费用20，则选择费用最少的路线A—D—C
+
+9. 采用“多次寻路”的方式，在玩家一开始选择目的路径点的时候，把从起
+   点至终点的最短路径寻出来，以后每到达一个新的路径点，重新计算从新
+   的路径点开始至目的路径点的最短路径，并按照这个路径走下去，直到下
+   一个路径点再重新寻路。
+
+10.玩家下线后，如果策划修改了玩家所在路径点或者路线，玩家再次上线后，
+   停在下线前的位置。
+
+11.在交通路线中，需要“切换到一个副本中再切回来”的情况，可用在指定
+   路径点上挂脚本的形式实现。例如：C为从A到B的路径中的一个路径点，在
+   C点要先进入副本，再出来继续乘坐交通工具至B点。实现方法为：在C点挂
+   一个脚本，控制玩家一旦到达C点后即进入副本，再出来。注意：目前的实
+   现没有方向的区分，只要到达C点，就一定会调用脚本。
+
+
+
+注意事项：
+--------------------------------------------------------------
+1. 玩家到达敌对势力的路径点，必须下马；玩家在敌对势力的路径点，不能
+   上马。例如：
+   路线：A——B——C——D（A、B、C、D为四个路径点，其中，A、B为
+            本势力的路径点，C、D为敌对势力的路径点），则：
+       路线B->C: 可以上马（船），但到达C后必须下马
+       路线C->B: 不能上马（船）
+       路线C->D: 不能上马（船）
+       路线D->C: 不能上马（船）
+
+2. 路径点可以被帮会占领。玩家交通中目的路径点为本帮会的路径点情况下，
+   不用收费。
+
+3. 一个路径点至少要有一个属性表示它属于哪个城市，但不一定是每个路径
+   点都有所属城市。
+
+4. 主干线之内的路径点可以直接到达，主干线之间的路径点须在两条干线相
+   交处“转车”才能到达，不能直达。
+
+5. 路径点与马车夫（船夫）的关系：马车夫（船夫）一定在路径点上，一个
+   路径点上最多只能有一个马车夫（船夫）。
+
+
+代码设计相关：
+--------------------------------------------------------------
+1. 约定：
+   <Node> 逻辑中一个数据节点，不对应3D场景中的坐标。
+   <Point>3D场景中的一个点，有具体的坐标。
+   <Track>交通工具在3D场景中的移动路线。由一系列TrackKeyPoint构成。
+   <TrackPoint>根据时间和前后两个TrackPoint由程序线性插值计算出来的
+   3D坐标点和移动信息。
+   <RouteNode>寻路点。逻辑寻路算法的参考点。描述了相应的地图、城市
+   和所属势力等信息。
+   <RouteEdge>由两个RouteNode组成的一条边。在逻辑上他代表了一条通路
+   是否存在，及其费用等信息。其实际的移动路线由对应的Track表示。
+   <RouteGraphic>由RouteNode和RouteEdge描述的交通图。用于程序最短路
+   径寻路。
+
+2. 数据结构：
+   struct KPOSITION
+   {
+       int     nDirection;
+       int     nVelocity;
+       int     nX;
+       int     nY;
+       int     nZ;
+   };
+
+   struct KTRACK_POINT
+   {
+       int     nFrame;         // 到达此点所需的帧数
+       int     nX;
+       int     nY;
+       int     nZ;
+   };
+
+   struct KTRACK
+   {
+       int             nTrackID;
+       int             nFromNode;
+       int             nToNode;
+       int             nVelocity;
+
+       int             nFrame; // 此轨迹总共帧数
+       int     	       nCostMoney;
+       std::vector<KTRACK_POINT> vPoint;
+   };
+   typedef std::map<int/*nTrackID*/, KTRACK> KTrackMap;
+
+   struct KROUTE_NODE
+   {
+       int     nNodeID;
+    
+       // 此RouteID所在的地图。
+       // 如果前后两个RouteNode的dwMapID不一致，程序将会自动切换地图。
+       DWORD   dwMapID;
+       DWORD   dwCityID;   // 作为目的地判断依据。
+       DWORD   dwForceID;
+       DWORD   dwTongID;
+       DWORD   dwScriptID; // 到达这个RouteNode的时候调用特定的脚本？
+
+       BOOL    bIsNeedOpen;
+
+       int     nX;
+       int     nY;
+       int     nZ;
+
+       std::vector<std::pair<KROUTE_NODE*, KTRACK*> > vLinkNode;    // 邻接点
+       char    szDescription[_NAME_LEN];
+   };
+   typedef std::map<int/*nNodeID*/, KROUTE_NODE> KRouteMap; 
+
+   * 可考虑在结构体KROUTE_NODE中，增加一项int nRouteID;(所属干道ID)。
+   这个ID可以快速判断两个RouteNode之间是否一定不可达。此ID可以由程
+   序在Load的时候使用图染色算法自动分配。
+
+3. 接口
+(1) 类KPlayer中增加如下内容：
+    class KPlayer
+    {
+        int m_nCurrentTrack;    // 当前移动轨迹。
+        int nFromNode；		// 起始结点
+        int nTargetCity；       // 目的城市
+        int nMoveFramCount；    // 当前移动帧
+        ...
+        // 在Player身上需要记录一些已经开通的NodeID，需要存盘。
+        typedef std::vector<int /* nRouteNode */> OpenRouteNodeVector;
+        OpenRouteNodeVector m_OpenRouteNodeList;
+    }
+
+(2) 新增类KRoadManager，作为交通系统的基类
+    class KRoadManager   
+    {
+      public:
+        BOOL Init();   
+        BOOL UnInit();
+
+        KROUTE_NODE* GetNodeInfo(int nNode);
+	KTRACK* GetTrackInfo(int nTrack);
+        KROUTE_NODE* GetNextNode(int nFromNode, int nTrackID);
+
+    	BOOL GetNextTrack(
+    	    int* pnRetTrack, 
+    	    int nFromNode, int nCurrentNode, int nTargetCity, 
+    	    DWORD dwForceID, DWORD dwTongID, const NodeList* cpOpenList
+    	);
+
+    	BOOL IsReachable(
+    	    int* pnRetCostMoney, 
+    	    int nFromNode, int nTargetCity, 
+    	    DWORD dwForceID, DWORD dwTongID, 
+	    const NodeList* cpOpenList
+    	);
+
+        BOOL GetPosition(
+            KPOSITION* pRetPosition, 
+            int nTrackID, int nFrame, int nFromNode
+    	);
+
+     private:
+	BOOL ShortestPath(
+            int *pnRetMiniCost,
+            int nFromNodeID, int nTargetCityn,
+            int nExludeNodeID,
+            const NodeList* cpOpenNodeList
+        );
+    }
+
+    BOOL KRoadManager::GetNextTrack(
+		int* pnRetTrack,  
+		int nFromNode, int nCurrentNode, int nTargetCity, 
+    	DWORD dwForceID, DWORD dwTongID
+    )
+    {
+        int nNoUse = 0;
+        ASSERT(pnRetTrack);
+
+        // 使用Dijkstra最短路径算法找出从nCurrentNode到nTargetCity
+        // 的最短路径。在搜索的过程中排除nFromNode这个节点，防止走
+        // 回头路。
+        nRetCode = FindNearestWay(
+            pnRetTrack, &nNoUse, 
+            nFromNode, nCurrentNode, nTargetCity, 
+            dwForceID, dwTongID
+        );
+
+        return bResult; // Success: true; Faild: false. 
+    }
+    
+    BOOL KRoadManager::IsReachable(
+        int* pnRetCostMoney, 
+        int nFromNode, int nTargetCity, 
+        DWORD dwForceID, DWORD dwTongID
+    )
+    {
+        int nTrack = 0;
+        ASSERT(pnRetCostMoney);
+        
+        nRetCode = FindNearestWay(
+            &nTrack, pnRetCostMoney, 
+            0, nFromNode, nTargetCity, 
+            dwForceID, dwTongID
+        );
+        
+        KG_PROCESS_ERROR(nTrack != 0);
+        
+        return bResult; // Success: true; Faild: false. 
+    }
+
+    BOOL KRoadManager::GetPosition(
+        KPOSITION* pPoint, int nTrackID, int nFrame, int nFromNode
+    )
+    {
+        // 预先计算的Track信息是有方向的。
+        // 如果我们现在是逆向行驶，则需要对nFrame进行相应的换算。
+
+        pTrack = GetTrackInfo(nTrackID);
+        
+        if (nFromNode != pTrack->nFromNode) // 逆向
+        {
+            nFrame = pTrack->nFrame - nFrame;
+            ASSERT(nFrame > 0);
+        }
+        
+        // 对轨迹做线性插值运算
+        ...
+        
+        如果是逆向，需要修正插值计算出来的人物朝向。
+        
+        return bResult; // Success: true; Faild: false. 
+    }
+
+(3) 在KCharacter.cpp增加以下函数：
+    // 托管移动接口。
+    // 从nFromNode所表示的路径点，移动到KG_RouteNode::nCityID等于
+    // nToCity的路径点。
+    BOOL KCharacter::AutoFly(int nFromNode, int nToCity)
+    {
+        bRetCode = g_RoadManager.GetNextTrack(
+        	&pThis->m_nCurrentTrack, 0, nFromNode, nToCity
+        );
+        
+        m_nMoveFrameCounter = 0;
+        SetMoveState(cmsOnAutoFly);
+        
+        pThis->m_nFromNode   = nFromNode;
+        pThis->m_nTargetCity = nToCity;
+        
+        return bResult; // Success: true; Faild: false. 
+    }
+    
+    BOOL KCharacter::ProcessAutoFly()
+    {
+        KPlayer*        pThis       = (KPlayer*)this;
+        KG_Track*       pTrack      = NULL;
+        KTRACK_POINT    TrackPoint;
+        
+        ASSERT(g_IsPlayer(m_dwID));
+        
+        pTrack = g_RoadManager.GetTrackInfo(pThis->m_nCurrentTrack);
+        KG_PROCESS_ERROR(pTrack);
+        
+        if (m_nMoveFrameCounter > pTrack->nFrame)   // 当前轨迹已经走完。
+        {
+            nFromNode = m_nFromNode;
+            nCurrentNode = (pTrack->nFromNodeID == m_nFromNode) ? 			
+            	pTrack->nToNodeID : pTrack->nFromNodeID;
+            m_nFromNode = 0;
+            
+            m_nMoveFrameCounter = 0;
+            
+            // 调脚本
+            
+            // 如果已经到达目的地 
+            if (nCurrentNode的nCity == pThis->m_nTargetCity)    
+            {
+                Stop();
+                KG_PROCESS_SUCCESS(true);
+            }
+            
+            // 判断当前节点的势力关系
+            bRetCode = m_ReputeList.GetFightFlag(CurrentNode的dwForceID);
+            KG_PROCESS_ERROR(bRetCode);
+            
+            bRetCode = g_RoadManager.GetNextTrack(
+                &pThis->m_nCurrentTrack, nFromNode, nCurrentNode, pThis->m_nToCity
+            );
+            KG_PROCESS_ERROR(bRetCode);
+            m_nFromNode = m_nCurrentNode;
+        
+            // 该死的，居然要切换地图！
+            if (CurrentNode的MapID != ToNode的MapID)    
+            {
+                // 我们已经走了一帧了。规定所有的跨地图的Track都是1帧长
+                // 度的。那么切换到目的地图后，会自动计算下一个路径点。
+                m_nMoveFrameCounter = 1;
+                
+                SwitchMap(ToNode的MapID, ToNode的X, ToNode的Y, ToNode的Z);
+                
+                KG_PROCESS_SUCCESS(true);
+            }
+        }
+    
+        bRetCode = g_RoadManager.GetTrackPoint(
+            &TrackPoint, pThis->m_nCurrentTrack, 		
+            m_nMoveFrameCounter
+        );
+        KG_PROCESS_ERROR(bRetCode);
+        
+        bRetCode = MoveTo(
+        	TrackPoint.nX, TrackPoint.nY, 
+        	TrackPoint.nZ, false
+        );
+        KG_PROCESS_ERROR(bRetCode);
+    
+        m_nFaceDirection = TrackPoint.nDirection;
+        
+        ASSERT(m_nFaceDirection >= 0 && m_nFaceDirection<DIRECTION_COUNT);
+        
+        m_nMoveFrameCounter++;
+    
+        // 取当前路径的插值位置
+        // 如果成功,则MoveTo该点
+        // 否则(到路径终点了): 
+            // 看是否已经到达了最终目标,到达则停止,否则继续:
+            // 搜索下一条路径,如果收索不到,则停止,如果下一个路径的终点
+            // 不属于当前
+            // 路径的干道,或者当前节点势力关系不对,则停止,否则继续
+            // 如果下一条路径是跨场景的,则直接SwitchMap到终点
+            // 否则进入下一条路径,移动帧计数器清零
+    
+        Exit0:
+        if (!bResult)
+        {
+           m_nMoveFrameCounter = 0;
+           Stop();
+        }
+        
+        return;
+    }
+
+4. 算法描述
+(1) 图染色算法：
+    0.  初始状态下，所有的KG_RouteNode::nRouteID为0。
+    1.  设置当前RouteID为0。
+    2.  当前RouteID++。
+    3.  从RouteGraphic中选取一个KG_RouteNode::nRouteID为0的节点。
+        如果该节点不存在，则退出。
+    4.  以此节点为起点使用图遍历算法(DFS)遍历所有的连通节点。
+        在遍历过程中将所有的访问到的节点KG_RouteNode::nRouteID赋值为
+        当前RouteID。
+    5.  重复步骤2
+
+(2) Dijkstra最短路径算法：
+    0.  将起点放入Open队列，设置到达起点的开销为0。Close表清空。根据
+        参数设置Exclude表。
+    1.  从Open队列取出一个节点NodeA，如果此节点不存，则跳转到步骤8。
+    2.  取出一个和NodeA相连接的节点NodeB，如果此节点不存在就回到步骤1。
+    3.  判断NodeB是否在Exclude表中，如果是，则回到步骤2。
+    4.  判断NodeB的势力关系是否敌对，如果是，则回到步骤2。
+    5.  计算当前路径到达NodeB的开销Cost[NodeB]为：Cost[NodeA] + NodeA
+        到NodeB的开销。
+    6.  如果NodeB不在Close表中，或者当前Cost小于Cost[NodeB]，则将NodeB
+        加入Close表中，并令Cost[NodeB] = Cost，将到达NodeB的上一个节点
+        设置为NodeA。
+    7.  将NodeB放入Open队列中，回到步骤2。
+    8.  判断目标节点是否在Close表中。
+
+5. 需要其他模块配合
+(1) 进、出副本的路径的费用应该是无穷大。
+(2) 由于在飞行状态下切地图需要处理，所以飞行状态下不能用脚本切换地图。
+    LuaSwitchMap()函数中要对人物的飞行状态做判断。
+
+
+6. 相关配置文件（表格）
+(1) RoadPoint.Tab，用于存放Track上的所有point的实际坐标(x,y,z)。每条Track一张
+   表。表结构如下：
+   TrackID   X   Y   Z
+
+(2) RoadNode.tab，用于存放每个Node信息。交通地图中的所有Node相关的信息(
+   路径点ID、描述信息、所在地图ID、所在城市ID、势力ID、帮会ID、脚本文件)
+   都存放于这张表中。表结构如下：
+   NodeID  Description MapID  CityID  ForceID TongID ScriptFile
+
+(3) RoadTrack.tab，用于存放每条Track相关的信息(起点ID、目的点ID、费用、
+   TrackID、速度)。交通地图中的所有Track相关的信息都存放于这张表中。表
+   结构如下：
+    FromNodeID  ToNodeID  CostMoney  TrackID  Velocity
+
+
+7. 编辑器相关功能支持，见文档《20080125_交通系统_编辑器相关文档.txt》。
+
+
+8. 人物飞行状态的存盘和同步：
+(1) 保存：玩家的移动状态、当前飞行轨迹、当前飞行帧数、当前轨迹的起点、目的城市的ID。
+(2) 加载：如果玩家的移动状态不是死亡、飞行或漂浮，则玩家的状态为站立。
+(3) 同步：
+    struct G2C_SYNC_REGION_PLAYER
+   	UINT64 uX : (REGION_GRID_WIDTH_BIT_NUM  + CELL_LENGTH_BIT_NUM); // 11 bits
+   	UINT64 uY : (REGION_GRID_HEIGHT_BIT_NUM + CELL_LENGTH_BIT_NUM); // 11 bits
+   	UINT64 uZ : MAX_Z_POINT_BIT_NUM;	  // 22 bits
+
+    // AutoMove状态下:
+    // uX表示沿TrackID，因为uX只有11位，所以TrackID不能大于2048。
+    // uY表示Track的方向，是一个bool值，如果运动方向和Track本身的方向相反，则
+    // 为1，否则为0。
+    // uZ表示沿轨迹飞行的Frame。

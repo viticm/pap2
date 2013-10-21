@@ -1,0 +1,118 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3814F627-858A-42A3-9AAF-CD649413F2A8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fireball.CodeEditor.SyntaxFiles</RootNamespace>
+    <AssemblyName>Fireball.CodeEditor.SyntaxFiles</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>fireball.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\build\libs\firefx2\Fireball.CodeEditor.SyntaxFiles\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AutoAssemblyInfo.cs">
+      <Link>AutoAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="CodeEditorSyntaxLoader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Syns\Lang6502.syn" />
+    <EmbeddedResource Include="Syns\CPP.syn" />
+    <EmbeddedResource Include="Syns\Cobol.syn" />
+    <EmbeddedResource Include="Syns\CSharp.syn" />
+    <EmbeddedResource Include="Syns\CSS.syn" />
+    <EmbeddedResource Include="Syns\DataFlex.syn" />
+    <EmbeddedResource Include="Syns\Delphi.syn" />
+    <EmbeddedResource Include="Syns\DOSBatch.syn" />
+    <EmbeddedResource Include="Syns\Fortran90.syn" />
+    <EmbeddedResource Include="Syns\AutoIt.syn" />
+    <None Include="Syns\FoxPro.syn" />
+    <EmbeddedResource Include="Syns\Java.syn" />
+    <EmbeddedResource Include="Syns\JavaScript.syn" />
+    <EmbeddedResource Include="Syns\JSP.syn" />
+    <EmbeddedResource Include="Syns\LotusScript.syn" />
+    <EmbeddedResource Include="Syns\MSIL.syn" />
+    <EmbeddedResource Include="Syns\MySql_SQL.syn" />
+    <EmbeddedResource Include="Syns\NPath.syn" />
+    <EmbeddedResource Include="Syns\Oracle_SQL.syn" />
+    <EmbeddedResource Include="Syns\Perl.syn" />
+    <EmbeddedResource Include="Syns\PHP.syn" />
+    <EmbeddedResource Include="Syns\Povray.syn" />
+    <EmbeddedResource Include="Syns\Python.syn" />
+    <EmbeddedResource Include="Syns\Rtf.syn" />
+    <EmbeddedResource Include="Syns\SmallTalk.syn" />
+    <EmbeddedResource Include="Syns\SqlServer2K.syn" />
+    <EmbeddedResource Include="Syns\SqlServer7.syn" />
+    <EmbeddedResource Include="Syns\SystemPolicies.syn" />
+    <EmbeddedResource Include="Syns\Template.syn" />
+    <EmbeddedResource Include="Syns\Text.syn" />
+    <EmbeddedResource Include="Syns\TurboPascal.syn" />
+    <EmbeddedResource Include="Syns\VBNET.syn" />
+    <EmbeddedResource Include="Syns\VB.syn" />
+    <EmbeddedResource Include="Syns\VBScript.syn" />
+    <EmbeddedResource Include="Syns\VRML97.syn" />
+    <EmbeddedResource Include="Syns\XML.syn" />
+    <EmbeddedResource Include="Syns\HTML.syn" />
+    <EmbeddedResource Include="Syns\Nemerle.syn" />
+    <EmbeddedResource Include="Syns\SqlServer2K5.syn" />
+    <None Include="fireball.snk" />
+    <EmbeddedResource Include="Syns\Lua.syn" />
+    <EmbeddedResource Include="Syns\Gemix.syn" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Changelog.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fireball.CodeEditor\Fireball.CodeEditor\Fireball.CodeEditor.csproj">
+      <Project>{94BFA44A-F4D0-4605-88E6-3ADD498F5E16}</Project>
+      <Name>Fireball.CodeEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fireball.Core\Fireball.Core.csproj">
+      <Project>{909AD284-7020-4FA9-A55E-7C633A641724}</Project>
+      <Name>Fireball.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fireball.SyntaxDocument\Fireball.SyntaxDocument.csproj">
+      <Project>{3F43BAB0-22B4-4FD6-9655-8BA214A093A5}</Project>
+      <Name>Fireball.SyntaxDocument</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fireball.Win32\Fireball.Win32\Fireball.Win32.csproj">
+      <Project>{A72D738D-B07F-4920-B4E7-543D18967FBF}</Project>
+      <Name>Fireball.Win32</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fireball.Windows.Forms\Fireball.Windows.Forms.csproj">
+      <Project>{0E253078-0AFA-4B69-B27A-001B96735D60}</Project>
+      <Name>Fireball.Windows.Forms</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

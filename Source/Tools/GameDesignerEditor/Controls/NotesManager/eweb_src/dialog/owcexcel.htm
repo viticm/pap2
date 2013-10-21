@@ -1,0 +1,100 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script language=javascript src="dialog.js"></script>
+
+<script language=javascript>
+document.write ("<link href='../language/" + AvailableLangs["Active"] + ".css' type='text/css' rel='stylesheet'>");
+document.write ("<link href='dialog.css' type='text/css' rel='stylesheet'>");
+
+document.write("<title>" + lang["DlgOWCExcel"] + "</title>");
+
+function InitDocument(){
+	AvailableLangs.TranslatePage(document);
+	adjustDialog();
+}
+
+function ok(){
+	var s_Width = BaseTrim(d_width.value);
+	var s_Height = BaseTrim(d_height.value);
+
+	var html = "<object classid='CLSID:";
+	switch(d_version.options[d_version.selectedIndex].value){
+	case "9":
+		html += "0002E510-0000-0000-C000-000000000046";
+		break;
+	case "10":
+		html += "0002E551-0000-0000-C000-000000000046";
+		break;
+	case "11":
+		html += "0002E559-0000-0000-C000-000000000046";
+		break;
+	}
+	html += "'";
+	if (s_Width!=""){
+		html += " width='"+s_Width+"'";
+	}
+	if (s_Height!=""){
+		html += " height='"+s_Height+"'";
+	}
+	html += ">";
+	html += "<param name=DisplayTitleBar value=false>";
+	html += "<param name=DataType value=HTMLData>";
+	html += "<param name=HTMLData value=''>";
+	html += "<p style='margin-top:100;font-size:8.0pt'>"+lang["DlgOWCExcelNoOWC"]+" "+d_version.options[d_version.selectedIndex].innerText+"</p>";
+	html += "</object>";
+
+	dialogArguments.insertHTML(html);
+	window.returnValue = null;
+	window.close();
+}
+
+</script>
+
+</HEAD>
+
+<body onload="InitDocument()">
+<table border=0 cellpadding=0 cellspacing=5 id=tabDialogSize><tr><td>
+
+
+<table border=0 cellpadding=0 cellspacing=0 align=center>
+<tr>
+	<td>
+	<fieldset>
+	<legend><span lang=DlgOWCExcelProperty></span></legend>
+	<table border=0 cellpadding=5 cellspacing=0 width="100%">
+	<tr><td>
+
+		<table border=0 cellpadding=0 cellspacing=2 width="100%">
+		<tr>
+			<td noWrap width="20%"><span lang=DlgOWCExcelVersion></span>:</td>
+			<td noWrap width="80%" colspan=4>
+				<select name=d_version size=1>
+				<option value="9" selected>Microsoft&reg; Office 2000 Web Components (OWC9)</option>
+				<option value="10">Microsoft&reg; Office XP/2002 Web Components (OWC10)</option>
+				<option value="11">Microsoft&reg; Office 2003 Web Components (OWC11)</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td noWrap width="20%"><span lang=DlgOWCExcelWidth></span>:</td>
+			<td noWrap width="29%"><input style="width:80px" id=d_width size=10 value=""></td>
+			<td width="2%">&nbsp;</td>
+			<td noWrap width="20%"><span lang=DlgOWCExcelHeight></span>:</td>
+			<td noWrap width="29%"><input style="width:80px" id=d_height size=10 value=""></td>
+		</tr>
+		</table>
+
+	</td></tr>
+	</table>
+	</fieldset>
+	</td>
+</tr>
+<tr><td height=5></td></tr>
+<tr><td noWrap align=right><input type=submit class="dlgBtnCommon" value='' id=Ok onclick="ok()" lang=DlgBtnOK>&nbsp;&nbsp;<input type=button class="dlgBtnCommon" value='' onclick="window.close();" lang=DlgBtnCancel></td></tr>
+</table>
+
+
+</td></tr></table>
+</BODY>
+</HTML>

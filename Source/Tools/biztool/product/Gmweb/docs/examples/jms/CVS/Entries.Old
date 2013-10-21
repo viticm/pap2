@@ -1,0 +1,16 @@
+D/conf////
+D/standalone////
+/file-state-service.xml/1.1/Wed Dec 31 09:22:50 2008//Tt_jx3_built_1-4-0-1831
+/hsqldb-jdbc3-service.xml/1.1/Wed Dec 31 09:22:50 2008//Tt_jx3_built_1-4-0-1831
+/https-service.xml/1.1/Wed Dec 31 09:22:50 2008//Tt_jx3_built_1-4-0-1831
+/mssql-jdbc2-service.xml/1.1/Wed Dec 31 09:22:51 2008//Tt_jx3_built_1-4-0-1831
+/mysql-jdbc2-service.xml/1.1/Wed Dec 31 09:22:51 2008//Tt_jx3_built_1-4-0-1831
+/null-persistence-service.xml/1.1/Wed Dec 31 09:22:51 2008//Tt_jx3_built_1-4-0-1831
+/oil-service.xml/1.1/Wed Dec 31 09:22:51 2008//Tt_jx3_built_1-4-0-1831
+/oracle-jdbc2-service.xml/1.1/Wed Dec 31 09:22:51 2008//Tt_jx3_built_1-4-0-1831
+/oracle-jdbc3-service.xml/1.1/Wed Dec 31 09:22:51 2008//Tt_jx3_built_1-4-0-1831
+/postgres-jdbc2-service.xml/1.1/Wed Dec 31 09:22:51 2008//Tt_jx3_built_1-4-0-1831
+/postgres-jdbc3-service.xml/1.1/Wed Dec 31 09:22:51 2008//Tt_jx3_built_1-4-0-1831
+/rmi-il-service.xml/1.1/Wed Dec 31 09:22:51 2008//Tt_jx3_built_1-4-0-1831
+/sybase-jdbc2-service.xml/1.1/Wed Dec 31 09:22:51 2008//Tt_jx3_built_1-4-0-1831
+/uil-service.xml/1.1/Wed Dec 31 09:22:51 2008//Tt_jx3_built_1-4-0-1831

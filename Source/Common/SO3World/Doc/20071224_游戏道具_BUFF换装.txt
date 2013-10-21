@@ -1,0 +1,21 @@
+==================
+BUFF换装功能开发 |
+==================
+
+评审时间：2007.12.24
+
+参与人员：赵纯峰 夏永 侯锐
+
+修改目的：
+--------------------------------------------------------------
+1. 增加“释放BUFF可以使玩家换装”功能
+2. 明确“BUFF的取代规则应该设置为“替代”，而不能共存或叠加”
+
+
+本次修改涉及到的代码：
+--------------------------------------------------------------
+1. 技能魔法属性的列表KAttribute中，增加换装的项，具体KAttribData中的三个变量nKey、nValue1、nValue2分别对应“换装标识”、“nRepresentIndex”、“m_nRepresentId”。
+2. 换装流程，采用“应用魔法属性”的流程。在数组g_AttributeProcessFunctions[atTotal]中，增加处理换装的函数，该函数类似KItemList::Equip函数的实现，但是m_pPlayer->m_wRepresentId[nRepresentIndex] = (WORD)pItem->m_nRepresentId;此处的赋值改成用BUFF里的属性赋值，而不是pItem的属性赋值。
+3. BUFF结束后的属性恢复，采用“反应用魔法属性”的处理流程。nKey、nValue1、nValue2三个值中的前两个值不变，nValue2变为原来pItem的属性。
+4. 为解决应用换装BUFF后可以随意切换玩家身上装备的问题，增加一个DWORD类型的按位与的标志位，保存在player身上，在KItemList里面的Equip和UnEquip的时候，根据标志位决定是否要修改玩家的该项表现ID。当应用魔法属性的时候，设置相应的标志位为1，反应用的时候设置其为0。
+

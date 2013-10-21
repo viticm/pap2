@@ -1,0 +1,130 @@
+List_GetStringLength						
+	说明：取文字列表列表项文字长度；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex  		列表项索引，从0开始；
+	返回：nLength     		文字长度；
+		
+List_GetString							
+	说明：取文字列表列表项文字长度；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex  		列表项索引，从0开始；
+	返回：szString    		文字内容；
+		
+List_GetTopItemIndex				
+	说明：取文字列表最顶列表项索引；
+	参数：szTreePath  		窗口树路径名；
+	返回：szString    		文字内容；
+		
+List_GetVisibleItemCount		
+	说明：取文字列表可显示列表项数目；
+	参数：szTreePath  		窗口树路径名；
+	返回：nVisibleItemCount 列表项数目；
+
+List_GetCount								
+	说明：取文字列表总列表项数目；
+	参数：szTreePath  		窗口树路径名；
+	返回：nItemCount 		列表项数目；
+
+List_GetCurSel							
+	说明：取文字列表当前选中列表项索引；
+	参数：szTreePath  		窗口树路径名；
+	返回：nItemIndex 		列表项索引；
+
+List_GetSelectItemBgColor			
+	说明：取文字列表选中列表项背景颜色；
+	参数：szTreePath  		窗口树路径名；
+	返回：dwColor 			背景颜色，目前没做可用性调整；
+
+List_GetNormalItemFontScheme
+	说明：取文字列表列表项一般状态字体方案；
+	参数：szTreePath  		窗口树路径名；
+	返回：nScheme 			字体方案；
+
+List_GetSelectItemFontScheme
+	说明：取文字列表列表项选中状态字体方案；
+	参数：szTreePath  		窗口树路径名；
+	返回：nScheme 			字体方案；
+
+List_GetOverItemFontScheme
+	说明：取文字列表列表项鼠标移到上方字体方案；
+	参数：szTreePath  		窗口树路径名；
+	返回：nScheme 			字体方案；
+
+List_GetRowHeight
+	说明：取文字列表行高；
+	参数：szTreePath  		窗口树路径名；
+	返回：nRowHeight 		列表行高；
+
+List_FindString							
+	说明：根据字符串在文字列查找表完全匹配列表项；
+	参数：szTreePath  		窗口树路径名，
+		  szString 			待查找字符串，
+		  [nStartItemIndex]	重指定的所有开始查找；
+	返回：nItemIndex		列表项索引，如果没找到，返回-1；
+	
+List_IsItemSelect						
+	说明：判断文字列表列表项是否被选中；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex 		列表项索引；
+	返回：bIsSelected		true为选中，false为未选中；
+
+List_Append
+	说明：追加文字列表列表项；
+	参数：szTreePath  		窗口树路径名，
+		  szString			待追加的文字；
+	返回：nil
+
+List_Remove
+	说明：删除文字列表列表项；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex		待删除的列表项索引；
+	返回：nil
+
+List_Clear
+	说明：删除文字列表所有列表项；
+	参数：szTreePath  		窗口树路径名；
+	返回：nil
+
+List_SetTopItemIndex				
+	说明：设文字列表最顶列表项；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex		列表项索引；
+	返回：nil
+		
+List_SetCurSel							
+	说明：选中文字列表指定列表项；
+	参数：szTreePath  		窗口树路径名，
+		  nItemIndex		待选中列表项索引；
+	返回：nil
+
+
+List_EnableMultiSel					
+	说明：禁止或激活文字列表多选；
+	参数：szTreePath  		窗口树路径名；
+		  bEnable			true为激活，false为禁止；
+	返回：nil
+
+List_SetNormalFontScheme
+	说明：选中文字列表列表项一般字体方案；
+	参数：szTreePath  		窗口树路径名，
+		  nScheme			字体方案；
+	返回：nil
+
+List_SetSelectFontScheme
+	说明：选中文字列表列表项选中字体方案；
+	参数：szTreePath  		窗口树路径名，
+		  nScheme			字体方案；
+	返回：nil
+
+List_SetOverFontScheme
+	说明：选中文字列表列表项鼠标移到上方字体方案；
+	参数：szTreePath  		窗口树路径名，
+		  nScheme			字体方案；
+	返回：nil
+
+List_SetSelectItemBgColor			
+	说明：设文字列表选中列表项背景颜色；
+	参数：szTreePath  		窗口树路径名；
+		  dwColor			背景颜色，目前未做可用性调整；
+	返回：nil
+

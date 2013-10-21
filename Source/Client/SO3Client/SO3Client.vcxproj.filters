@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Src">
+      <UniqueIdentifier>{ed4503a9-2702-4129-a301-15ac1ef14308}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ClientString.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="KDllHolder.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="KGWin32App.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="KJX33DDeviceCallback.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="KJX3ClientEvent.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="KJX3ClientLua.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="KJX3CodePage.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="KJX3Sdoa.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="KLoadingWindow.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="KSO3Client.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="SO3Client.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\DevEnv\BuildVer_Conf\resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="KDllHolder.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KGWin32App.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KJX33DDeviceCallback.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KJX3ClientEvent.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KJX3ClientLua.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KJX3CodePage.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KJX3Sdoa.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KLoadingWindow.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KSO3Client.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KSO3ClientData.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KSO3ClientMemoryLeak.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KSO3ClientMsgProc.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="SO3Client.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\jx3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SO3Client.rc" />
+  </ItemGroup>
+</Project>

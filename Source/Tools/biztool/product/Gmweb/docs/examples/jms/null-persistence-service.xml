@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Id: null-persistence-service.xml,v 1.1 2008/12/31 09:22:51 kuangsihao Exp $ -->
+
+<server>
+
+  <!-- ==================================================================== -->
+  <!-- Persistence and caching using MSSQL                                  -->
+  <!-- IMPORTANT: Remove hsqldb-jdbc2-service.xml                           -->
+  <!-- Provided by matty@mattygiedt.com                                     -->
+  <!-- ==================================================================== -->
+
+  <!--
+     | The destination manager is the core service within JBossMQ
+  -->
+  <mbean code="org.jboss.mq.server.jmx.DestinationManager" name="jboss.mq:service=DestinationManager">
+    <depends optional-attribute-name="MessageCache">jboss.mq:service=MessageCache</depends>
+    <depends optional-attribute-name="PersistenceManager">jboss.mq:service=PersistenceManager</depends>
+    <depends optional-attribute-name="StateManager">jboss.mq:service=StateManager</depends>
+    
+    <!-- If using a delegate persistence manager, use the in memory cache store -->
+    <!-- for temporary queues/topics (uncomment to enable)                      -->
+    <!--attribute name="TemporaryInMemory">true</attribute-->
+  </mbean>
+
+  <!--
+     | The MessageCache decides where to put JBossMQ message that
+     | are sitting around waiting to be consumed by a client.
+     |
+     | The memory marks are in Megabytes.  Once the JVM memory usage hits
+     | the high memory mark, the old messages in the cache will start getting
+     | stored in the DataDirectory.  As memory usage gets closer to the
+     | Max memory mark, the amount of message kept in the memory cache aproaches 0.
+   -->
+  <mbean code="org.jboss.mq.server.MessageCache"
+	 name="jboss.mq:service=MessageCache">
+    <attribute name="HighMemoryMark">50</attribute>
+    <attribute name="MaxMemoryMark">60</attribute>
+    <attribute name="CacheStore">jboss.mq:service=PersistenceManager</attribute>
+  </mbean>
+
+  <!-- This PersistenceManager does not store messages to disk               -->
+  <!-- All persistence requests are ignored and the cache store is in memory -->
+  <!--                                                                       -->
+  <!-- Use org.jboss.mq.pm.none.NewPersistenceManager to enable the          -->
+  <!-- optimized topic persistence with or without a jdbc3 delegate          -->
+  <!--                                                                       -->
+  <!-- A delegate persistence manager can be configured                      -->
+  <!-- The delegate will be used unless the queue/topic is configured with   -->
+  <!-- <attribute name="InMemory">true</attribute>                           -->
+  <mbean code="org.jboss.mq.pm.none.PersistenceManager"
+	 name="jboss.mq:service=PersistenceManager">
+	 
+	<!-- An optional delegate for real persistence of some destinations e.g. jdbc2 -->
+   <!-- depends optional-attribute-name="DelegatePM">jboss.mq:service=SomePersistenceManager</depends-->
+  </mbean>
+
+</server>

@@ -1,0 +1,15 @@
+#/bin/bash
+#add by zuolizhi
+#start game
+
+read path
+echo $path
+cd $path
+ulimit -c unlimited
+pid='pgrep kg_goddessd_li'
+$pid
+if [ $? -eq 1 ]; then
+./kg_goddessd_linux start --daemon &> goddess_output.txt &
+else
+echo 'process already exist! kg_goddessd_linux'
+fi

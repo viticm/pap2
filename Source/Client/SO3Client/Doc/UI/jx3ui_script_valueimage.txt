@@ -1,0 +1,7 @@
+valueImage_SetValue
+	说明：设置百分比图片的百分比；
+	参数：szTreePath  		窗口树路径名，
+		  nCurrentValue		分子，
+		  nFullValue 		分母；
+	返回：nil
+	

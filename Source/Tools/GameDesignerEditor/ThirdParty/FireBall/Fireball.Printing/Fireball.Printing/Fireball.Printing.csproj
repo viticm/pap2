@@ -1,0 +1,95 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DAA87377-3E4B-4FE2-B932-D4DC38526FFF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fireball</RootNamespace>
+    <AssemblyName>Fireball.Printing</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\..\..\build\Fireball.Printing.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\build\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Fireball.Core, Version=1.1.0.1, Culture=neutral, PublicKeyToken=f84d0e3f884fb1e4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\build\Fireball.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\AutoAssemblyInfo.cs">
+      <Link>AutoAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Printing\BasePrintingContext.cs" />
+    <Compile Include="Printing\Block.cs" />
+    <Compile Include="Printing\BlockCollection.cs" />
+    <Compile Include="Printing\Chapter.cs" />
+    <Compile Include="Printing\FlowPage.cs" />
+    <Compile Include="Printing\FlowRow.cs" />
+    <Compile Include="Printing\FlowRowCollection.cs" />
+    <None Include="fireball.snk" />
+    <None Include="Printing\FlowRowElement.cs" />
+    <Compile Include="Printing\FontStyle.cs" />
+    <Compile Include="Printing\HorizontalAlignment.cs" />
+    <Compile Include="Printing\HorizontalLine.cs" />
+    <Compile Include="Printing\IHaveChild.cs" />
+    <Compile Include="Printing\ImageElement.cs" />
+    <Compile Include="Printing\IPrintElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Printing\IPrintingContext.cs" />
+    <Compile Include="Printing\LineBreak.cs" />
+    <Compile Include="Printing\PageBreak.cs" />
+    <Compile Include="Printing\Paragraph.cs" />
+    <Compile Include="Printing\PrintableDocument.cs" />
+    <Compile Include="Printing\PrintableDocumentType.cs" />
+    <Compile Include="Printing\PrintColor.cs" />
+    <Compile Include="Printing\PrintElementBase.cs" />
+    <Compile Include="Printing\PrintElementCollection.cs" />
+    <Compile Include="Printing\PrintPen.cs" />
+    <Compile Include="Printing\TextLabelElement.cs" />
+    <Compile Include="Printing\Types\PrintElementType.cs" />
+    <Compile Include="Printing\Rect.cs" />
+    <Compile Include="Printing\SpanElement.cs" />
+    <Compile Include="Printing\TextBlock.cs" />
+    <Compile Include="Printing\TextElement.cs" />
+    <Compile Include="Printing\TextElementType.cs" />
+    <Compile Include="Printing\Types\Types.cs" />
+    <Compile Include="Printing\VerticalAlignment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

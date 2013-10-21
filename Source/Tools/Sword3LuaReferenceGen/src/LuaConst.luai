@@ -1,0 +1,1420 @@
+@title lua脚本中使用的常量
+@obj
+@detail 定义剑网3lua脚本中的常量，避免直接使用数字。例如，GLOBAL.CELL_LENGTH或GLOBAL["CELL_LENGTH"]就是取得游戏中cell的边长。但是有些还没有导出为常量，对于这些表，会给出对应的数字，并附有说明。例如KSKILL_EFFECT_TYPE就是一例。
+@catalogs 武功技能,装备道具,角色相关,生活技能,队伍相关,商店相关,NPC相关, 任务相关
+
+@summary            全局常量表
+@catalog            
+@remarks            
+table GLOBAL {
+	{GAME_FPS|| 游戏帧速率},
+	{DIRECTION_COUNT|| 逻辑方向的数目，即把360度等分为多少份},
+	{CELL_LENGTH|| Cell边长，单位点},
+	{LOGICAL_CELL_CM_LENGTH|| Cell边长有多少厘米},
+	{INVALID_PARTY_ID|| 非法队伍ID},
+	{INVALID_SKILL_ID|| 非法技能ID},
+	{MOVE_DEST_RANGE|| 主角移动时定位前方目标点的距离},
+	{CURRENT_ITEM_VERSION|| 当前道具系统的版本号},
+	{MAX_BANK_PACKAGE_COUNT|| 银行中背包的最大数量},
+	{START_QUEST_DELAY|| 小队任务的开始延迟时间},
+	{AI_USER_EVENT||},
+	{AI_USER_ACTION||},
+}
+
+@summary            目标类型
+@catalog            武功技能
+@remarks            
+table TARGET {
+	{NO_TARGET|| 无目标},
+	{COORDINATION|| 坐标},
+	{NPC|| NPC},
+	{DOODAD|| doodad},
+	{PLAYER|| player},
+	{ITEM|| item},
+}
+
+@summary            道具种类
+@catalog            装备道具
+@remarks            
+table ITEM_GENRE {
+	{EQUIPMENT|| 装备 },
+	{POTION|| 药品},
+	{TASK_ITEM|| 任务道具},
+	{MATERIAL|| 材料},
+	{BOOK|| 书籍},
+	{TOTAL|| 道具种类数量，即有多少种道具},
+}
+
+@summary            装备分类
+@catalog            装备道具
+@remarks           
+table EQUIPMENT_SUB {
+	{MELEE_WEAPON|| 近战武器 },
+	{RANGE_WEAPON|| 远程武器 },
+	{CHEST|| 上衣 },
+	{HELM|| 头盔 },
+	{AMULET|| 项链 },
+	{RING|| 戒指 },
+	{WAIST|| 腰带 },
+	{PENDANT|| 腰坠 },
+	{PANTS|| 裤子 },
+	{BOOTS|| 鞋子 },
+	{BANGLE||护臂 },
+	{WAIST_EXTEND||  腰部扩展类装备，酒壶之类的},
+	{PACKAGE|| 包裹 },
+	{ARROW|| 暗器 },
+	{BACK_EXTEND||	BACK_EXTEND	|| 背部扩展},
+	{HORSE||    坐骑},
+	{TOTAL|| 分类总数},
+}
+
+@summary            武器具体类型
+@catalog            装备道具
+@remarks           
+table WEAPON_DETAIL {
+	{WAND|| 棍  },
+	{SPEAR|| 枪 },
+	{SWORD|| 剑 },
+	{FIST|| 拳套	},
+	{DOUBLE_WEAPON|| 双手武器},
+	{PEN|| 笔},
+	{SLING_SHOT|| 钝器},
+	{DART|| 锐器},
+	{MACH_DART|| 机关暗器},
+	{TOTAL|| 武器类型的数量},
+}
+
+@summary            装备背包的位置
+@catalog            装备道具
+@remarks           
+table EQUIPMENT_INVENTORY {
+	{MELEE_WEAPON|| 近战武器	},
+	{RANGE_WEAPON|| 远程武器	},
+	{CHEST|| 上衣				},
+	{HELM|| 头盔				},
+	{AMULET|| 项链				},
+	{LEFT_RING|| 左手戒指		},
+	{RIGHT_RING|| 右手戒指		},
+	{WAIST|| 腰带				},
+	{PENDANT|| 腰坠			},
+	{PANTS|| 裤子				},
+	{BOOTS|| 鞋子				},
+	{BANGLE|| 护臂				},
+	{WAIST_EXTEND|| 腰部扩展道具			},
+	{PACKAGE1|| 背包1			},
+	{PACKAGE2|| 背包2			},
+	{PACKAGE3|| 背包3			},
+	{PACKAGE4|| 背包4			},
+	{BANK_PACKAGE1|| },
+	{BANK_PACKAGE2|| },
+	{BANK_PACKAGE3|| },
+	{BANK_PACKAGE4|| },
+	{BANK_PACKAGE5|| },
+	{BANK_PACKAGE6|| },
+	{ARROW|| 暗器			},
+	{BACK_EXTEND|| 背部扩展道具	},
+	{HORSE||    马},
+	{TOTAL|| 总数				},
+}
+
+@summary            道具配置表
+@catalog            装备道具
+@remarks            
+table ITEM_TABLE_TYPE {
+	{ATTRIB|| Attrib.tab表 || %v%=1},
+	{WEAPON||},
+	{ARMOR|| armor表 || %v%},
+	{TRINKET|| || %v%},
+	{OTHER|| || %v%},
+	{CUST_WEAPON||Custom_Weapon表 || %v%},
+	{CUST_ARMOR|| Custom_Armor表 || %v%},
+	{CUST_TRINKET|| Custom_Trinket表 || %v%},
+	{SET|| || %v%},
+}
+
+@summary            角色体形表
+@catalog            角色相关
+@remarks            
+table ROLE_TYPE {
+	{STANDARD_MALE|| 标准男},
+	{STANDARD_FEMALE|| 标准女},
+	{STRONG_MALE|| 魁梧男},
+	{SEXY_FEMALE|| 性感女},
+	{LITTLE_BOY|| 小男孩},
+	{LITTLE_GIRL|| 小女孩},
+}
+
+@summary            任务完成状态
+@catalog            任务相关
+@remarks           
+table QUEST_STATE {
+	{UNFINISHED|| },
+	{FINISHED|| },
+}
+
+@summary            任务事件
+@catalog            任务相关
+@remarks            一般用于通知UI
+table QUEST_EVENT_TYPE {
+	{UPDATE_ALL|| },
+	{KILL_NPC|| },
+	{GET_ITEM|| },
+	{DELETE_ITEM|| },
+	{SET_QUEST_VALUE|| },
+}
+
+@summary            任务结果
+@catalog            任务相关
+@remarks           
+table QUEST_RESULT {
+	{INVALID|| },
+	{SUCCESS|| },
+	{FAILED|| },
+	{ERROR_QUEST_INDEX|| },
+	{ERROR_QUEST_ID|| },
+	{QUESTLIST_FULL|| },
+	{ERROR_QUEST_STATE|| },
+	{ALREADY_ACCEPTED|| },
+	{ALREADY_FINISHED|| },
+	{CANNOT_FIND_QUEST|| },
+	{TOO_LOW_LEVEL|| },
+	{TOO_HIGH_LEVEL|| },
+	{TOO_LOW_MORAL|| },
+	{TOO_HIGH_MORAL|| },
+	{ERROR_GENDER|| },
+	{ERROR_ROLETYPE|| },
+	{ERROR_FORCE_ID|| },
+	{COOLDOWN|| },
+	{PREQUEST_UNFINISHED|| },
+	{ERROR_ITEM_COUNT|| },
+	{ERROR_KILL_NPC_COUNT|| },
+	{TOO_LONG_TIME|| },
+	{ERROR_TASK_VALUE|| },
+	{ASSIST_QUEST_LIST_FULL|| },
+	{ERROR_ASSIST_QUEST_INDEX|| },
+	{ERROR_START_NPC_TARGET|| },
+	{ERROR_START_DOODAD_TARGET|| },
+	{ERROR_END_NPC_TARGET|| },
+	{ERROR_END_DOODAD_TARGET|| },
+	{NO_START_QUEST_ITEM|| },
+	{NO_END_QUEST_ITEM|| },
+	{TOO_EARLY_TIME|| },
+	{TOO_LATE_TIME|| },
+	{TOO_LOW_SKILL_LEVEL|| },
+	{TOO_LOW_LIFE_LEVEL|| },
+	{ERROR_GENERATE_ITEM|| },
+	{ADD_ITEM_FAILED|| },
+	{ADD_MONEY_FAILED|| },
+	{ADD_REPUTATION_FAILED|| },
+	{NOT_ENOUGH_START_ITEM|| },
+	{NOT_ENOUGH_FREE_ROOM|| },
+	{ERROR_MAP|| },
+	{UNFINISHED_QUEST|| },
+	{CANNOT_FIND_QUEST_IN_DEST_PLAYER|| },
+	{NEED_ACCEPT|| },
+	{NO_NEED_ACCEPT|| },
+	{QUEST_FAILED|| },
+	{ADD_SKILL_FAILED|| },
+	{NOT_ENOUGH_MONEY|| },
+}
+
+@summary            任务相关常量
+@catalog            任务相关
+@remarks           
+table QUEST_COUNT {
+	{MAX_ACCEPT_QUEST_COUNT|| 最大可以接受任务的数量},
+	{QUEST_PARAM_COUNT|| 任务参数的个数},
+}
+
+@summary            生活技能类型
+@catalog           
+@remarks            生活技能
+table ALL_CRAFT_TYPE {
+	{INVALID||},
+	{COLLECTION|| 采集},
+	{PRODUCE|| 生产},
+	{READ|| 阅读},
+	{ENCHANT|| 附魔},
+	{RADAR|| },
+	{COPY|| },
+	{TOTAL|| },
+}
+
+@summary            小地图雷达的类型
+@catalog           
+@remarks            
+table MINI_RADAR_TYPE {
+	{INVALID|| },
+	{NO_RADAR|| },
+	{FIND_NPC|| },
+	{FIND_CRAFT_DOODAD|| },
+	{TOTAL|| },
+}
+
+@summary            技能效果类型枚举值（没有导出为常量，需要直接使用数字）
+@catalog            技能相关
+@remarks            
+table SKILL_EFFECT_TYPE {
+	{INVALID|| 非法值},
+	{SKILL|| 普通技能},
+	{DOT|| Dot},
+	{HOT|| Hot},
+	{TOTAL|| 总数},
+}
+
+@summary            技能释放方式常量表
+@catalog            武功技能
+@remarks            
+table SKILL_CAST_MODE {
+	{SECTOR||},
+	{CASTER_AREA||},
+	{TARGET_AREA||},
+	{POINT_AREA||},
+	{CASTER_SINGLE||},
+	{TARGET_SINGLE||},
+	{TARGET_CHAIN||},
+	{POINT||},
+	{ITEM||},
+}
+
+@summary            技能类型
+@catalog            武功技能
+@remarks           
+table SKILL_KIND_TYPE {
+	{PHYSICS|| 外功},
+	{SOLAR_MAGIC|| 阳性内功},
+	{NEUTRAL_MAGIC|| 中性内功},
+	{LUNAR_MAGIC|| 阴性内功},
+	{POISON|| 毒性},
+	{NONE|| },
+}
+
+@summary            技能作用结果的类型
+@catalog            武功技能
+@remarks           
+table SKILL_RESULT_TYPE {
+	{PHYSICS_DAMAGE|| 外功伤害},
+	{SOLAR_MAGIC_DAMAGE|| 阳性内功伤害},
+	{NEUTRAL_MAGIC_DAMAGE|| 中性内功伤害},
+	{LUNAR_MAGIC_DAMAGE|| 阴性内功伤害},
+	{POISON_DAMAGE|| 毒性伤害},
+	{REFLECTIED_DAMAGE|| 反弹伤害},
+	{THERAPY|| 治疗},
+	{STEAL_LIFE|| 偷生命},
+	{ABSORB_DAMAGE|| 吸收伤害},
+	{SHIELD_DAMAGE|| 内力抵消伤害},
+	{PARRY_DAMAGE|| },
+	{INSIGHT_DAMAGE|| },
+}
+
+@summary            技能属性作用模式常量表
+@catalog            武功技能
+@remarks            对应技能属性的作用情况。
+table ATTRIBUTE_EFFECT_MODE {
+	{EFFECT_TO_SELF_AND_ROLLBACK|| 属性应用于自身，完成后回滚},
+	{EFFECT_TO_SELF_NOT_ROLLBACK|| 属性应用于自身，完成后不回滚},
+	{EFFECT_TO_DEST_AND_ROLLBACK|| 属性应用于目标，完成后回滚},
+	{EFFECT_TO_DEST_NOT_ROLLBACK|| 属性应用于目标，完成后不回滚},
+	{EFFECT_TO_DEST_ON_MINOR_WEAK|| 目标段位破绽为低时，应用的属性},
+	{EFFECT_TO_DEST_ON_MAJOR_WEAK|| 目标段位破绽为中时，应用的属性},
+	{EFFECT_TO_DEST_ON_MAX_WEAK|| 目标段位破绽为高时，应用的属性},
+}
+
+@summary            技能属性类型常量表
+@catalog            武功技能
+@remarks            
+table ATTRIBUTE_TYPE {
+	{WALK_SPEED_BASE|| 走路速度 || 点/帧 || ——},
+	{RUN_SPEED_BASE|| 跑步速度 || 点/帧 || ——},
+	{SWIM_SPEED_BASE|| || || -},
+	{MOVE_SPEED_PERCENT|| 行走百分比加成 || 1/1024 || ——},
+	{MAX_JUMP_COUNT|| 最大跳跃次数 || 次数 || ——},
+	{GRAVITY_BASE|| 重力基础值},
+	{GRAVITY_PERCENT|| 重力百分比加成 || 单位1/1024 || ——},
+	{JUMP_SPEED_BASE|| 水平方向跳跃速度基础值 || 点/帧 || ——},
+	{JUMP_SPEED_PERCENT|| 水平方向跳跃速度百分比加成 || 单位1/1024 || ——},
+	{DROP_DEFENCE|| 抗摔伤系数 || [0 - 1024] || ——},
+	{DIVING_FRAME_BASE||最大潜水时间基数},
+	{DIVING_FRAME_PERCENT||最大潜水时间百分比},
+	{WATER_FLY_ABILITY|| 是否可以水上漂},
+	{STRENGTH_BASE|| 力量 || 点数 || ——},
+	{STRENGTH_BASE_PERCENT_ADD|| 力量百分比加成 || 单位1/1024 || },
+	{AGILITY_BASE|| 敏捷 || 点数 || ——},
+	{AGILITY_BASE_PERCENT_ADD|| 敏捷百分比加成 || 单位1/1024 || },
+	{VITALITY_BASE|| 体质 || 点数 || ——},
+	{VITALITY_BASE_PERCENT_ADD|| 体质百分比加成 || 单位1/1024 || },
+	{SPIRIT_BASE|| 根骨 || 点数 || ——},
+	{SPIRIT_BASE_PERCENT_ADD|| 根骨百分比加成 || 单位1/1024 || },
+	{SPUNK_BASE|| 精神 || 点数 || ——},
+	{SPUNK_BASE_PERCENT_ADD|| 精神百分比加成 || 单位1/1024 || },
+	{MAX_TRAIN_VALUE|| 最大修为值 },
+	{BASE_VENATION_COF||基础系经脉的成功率},
+	{PHYSICS_VENATION_COF||},
+	{MAGIC_VENATION_COF||},
+	{ASSIST_VENATION_COF||},
+	{BASE_POTENTIAL_ADD|| 作用基本潜能 },
+	{CURRENT_LIFE|| 当前生命 || 点数 || ——},
+	{MAX_LIFE_BASE|| 最大生命基础值 || 点数 || ——},
+	{MAX_LIFE_PERCENT_ADD|| 生命最大值增加百分比 || 单位1/1024 || ——},
+	{MAX_LIFE_ADDITIONAL|| 生命最大值附加值 || 点数 || ——},
+	{LIFE_REPLENISH|| 生命点数恢复速度 || 点/秒 || ——},
+	{LIFE_REPLENISH_PERCENT|| 生命百分比恢复速度 || (1/1024)最大生命值/秒 || ——},
+	{LIFE_REPLENISH_COEFFICIENT|| 生命恢复系数},
+	{LIFE_REPLENISH_EXT|| 额外的回复生命},
+	{CURRENT_MANA|| 当前内力 || 点数 || ——},
+	{MAX_MANA_BASE|| 最大内力基础值 || 点数 || ——},
+	{MAX_MANA_PERCENT_ADD|| 生命最大值增加百分比 || 单位1/1024 || ——},
+	{MAX_MANA_ADDITIONAL|| 内力最大值附加值 || 点数 || ——},
+	{MANA_REPLENISH|| 内力点数恢复速度 || 点/秒 || ——},
+	{MANA_REPLENISH_PERCENT|| 内力百分比恢复速度 || (1/1024)最大生命值/秒 || ——},
+	{MANA_REPLENISH_COEFFICIENT|| 魔法恢复系数},
+	{MANA_REPLENISH_EXT|| 额外的回复魔法},
+	{CURRENT_STAMINA|| 当前体力值 || 点数 || ——},
+	{CURRENT_THEW||},
+	{GAIN_POSITIVE_THREAT_COEFFICIENT|| 闪避值 || 1-10000 || ——},
+	{GAIN_NEGATIVE_THREAT_COEFFICIENT||},
+	{IMPAIR_POSITIVE_THREAT_COEFFICIENT||},
+	{IMPAIR_NEGATIVE_THREAT_COEFFICIENT||},
+	{DODGE||闪避值||点数},
+	{DODGE_BASE_RATE||},
+	{PARRY_BASE||招架基础值||点数},
+	{PARRY_PERCENT||招架值修正百分比||1/1024，默认值1024},
+	{PARRYVALUE_BASE||招架减免值（化劲值）||点数},
+	{PARRYVALUE_PERCENT||招架减免值修正百分比||1/1024，默认值1024},
+	{SENSE|| 洞察值 },
+	{STRAIN_BASE||应变值基础值||点数},
+	{STRAIN_PERCENT||应变值修正百分比||1/1024，默认值1024},
+	{TOUGHNESS_BASE||韧性基础值（拆招值）||点数},
+	{TOUGHNESS_PERCENT||韧性修正百分比||1/1024，默认值1024},
+	{CRITICALDAMAGEPOWER_BASE||暴击伤害力基础值||点数},
+	{CRITICALDAMAGEPOWER_PERCENT||暴击伤害力修正百分比	||1/1024，默认值1024},
+	{DECRITICALDAMAGEPOWER_BASE||御劲基础值（被暴击降低伤害）	||	点数},
+	{DECRITICALDAMAGEPOWER_PERCENT||御劲修正百分比	||	1/1024，默认值1024},
+	{POSITIVE_SHIELD|| 无类型格挡状态 || 1/0 || ——},
+	{NEGATIVE_SHIELD||},
+	{GLOBAL_RESIST_PERCENT||全局减免伤害百分比  参数1-1024},
+	{GLOBAL_BLOCK||},
+	{GLOBAL_DAMAGE_ABSORB|| 无类型限制的伤害吸收 || 点数 || ——},
+	{GLOBAL_DAMAGE_MANA_SHIELD|| 无类型限制的内力抵消伤害 || 点数 || ——},
+	{DAMAGE_TO_LIFE_FOR_SELF|| 偷取生命百分比 || 1/1024 || ——},
+	{DAMAGE_TO_MANA_FOR_SELF|| 偷取内力百分比 || 1/1024 || ——},
+	{BEAT_BACK_RATE|| OT动作被打退的退几率 || 单位是1/1024 || ——},
+	{KNOCKED_BACK_RATE|| 击退率 || 1/1024 || ——},
+	{KNOCKED_OFF_RATE|| 击飞率 || 1/1024 || ——},
+	{IMMORTAL|| 不会死去},
+	{MOUNTING_RATE|| 被打下马的抵抗概率},
+	{MELEE_WEAPON_DAMAGE_BASE|| 近身武器基础伤害 || 伤害点数 || ——},
+	{MELEE_WEAPON_DAMAGE_RAND|| 近身武器浮动范围值 || 点数 || ——},
+	{RANGE_WEAPON_DAMAGE_BASE|| 远程武器基础伤害 || 伤害点数 || ——},
+	{RANGE_WEAPON_DAMAGE_RAND|| 远程武器浮动范围值 || 点数 || ——},
+	{SKILL_PHYSICS_DAMAGE|| 技能外功伤害 || 点数 || ——},
+	{SKILL_PHYSICS_DAMAGE_RAND|| 技能外功伤害浮动值 || 点数 || ——},
+	{SKILL_PHYSICS_DAMAGE_PERCENT|| 技能外功伤害百分比},
+	{PHYSICS_DAMAGE_COEFFICIENT|| 受外功伤害系数修正 || 1024 || ——},
+	{PHYSICS_ATTACK_POWER_BASE|| 外功攻击力基础值 || 点数 || ——},
+	{PHYSICS_ATTACK_POWER_PERCENT||外功攻击力修正百分比	||	1/1024，默认值1024},
+	{PHYSICS_HIT_BASE_RATE||外功命中基础几率	||	百分比几率点数(1/10000)},
+	{PHYSICS_HIT_VALUE||外功命中值	||	点数},
+	{PHYSICS_CRITICAL_STRIKE_BASE_RATE||外功会心基础几率	||	百分比点数(1/10000)},
+	{PHYSICS_CRITICAL_STRIKE|| 外功会心值 || 点数 || ——},
+	{PHYSICS_OVERCOME_BASE||外功破防基础值	||	点数},
+	{PHYSICS_OVERCOME_PERCENT||外功破防修正百分比	||	1/1024，默认值1024},
+	{PHYSICS_RESIST_PERCENT|| 外功伤害抵抗百分比，单位是1/1024 || 1~1024 || ——},
+	{PHYSICS_DEFENCE_ADD|| 外功防御系数增加值 || 点数 || ——},
+	{PHYSICS_DEFENCE_MAX|| 外功防御系数最大值 || 点数 || ——},
+	{PHYSICS_SHIELD_BASE|| 外功防御力基础值 || 点数 || ——},
+	{PHYSICS_SHIELD_PERCENT||},
+	{PHYSICS_SHIELD_ADDITIONAL|| 外功防御力增加值 || 点数 || ——},
+	{PHYSICS_REFLECTION|| 外功反弹点数 || 点数 || ——},
+	{PHYSICS_REFLECTION_PERCENT|| 外功反弹百分比 || 1/1024 || ——},
+	{PHYSICS_BLOCK|| 外功格挡 || 1或0 || ——},
+	{PHYSICS_DAMAGE_ABSORB|| 外功伤害吸收 || 点数 || ——},
+	{PHYSICS_DAMAGE_MANA_SHIELD|| 外功伤害魔法盾吸收 || 点数 || ——},
+	{SKILL_MAGIC_DAMAGE||所有内功伤害 },
+	{MAGIC_ATTACK_POWER_BASE||全内功攻击力基础值	||	点数},
+	{MAGIC_ATTACK_POWER_PERCENT||全内功攻击力修正百分比	||	1/1024，默认值1024},
+	{MAGIC_CRITICAL_STRIKE|| 所有内功暴击},
+	{MAGIC_SHIELD|| 所有内功抗性},
+	{MAGIC_OVERCOME|| 所有内功的克性},
+	{SKILL_SOLAR_DAMAGE|| 技能阳性内功伤害 || 点数 || ——},
+	{SKILL_SOLAR_DAMAGE_RAND|| || || },
+	{SKILL_SOLAR_DAMAGE_PERCENT|| 技能阳性内功伤害修正百分比 || 1/1024 || ——},
+	{SOLAR_DAMAGE_COEFFICIENT|| 受阳性内功伤害系数修正 || 1/1024 || ——},
+	{SOLAR_ATTACK_POWER_BASE|| 阳性内功攻击力基础值	||	点数},
+	{SOLAR_ATTACK_POWER_PERCENT||阳性内功攻击力修正百分比	||	1/1024，默认值1024},
+	{SOLAR_HIT_BASE_RATE||阳性内功命中基础几率	||	百分比几率点数(1/10000)},
+	{SOLAR_HIT_VALUE||阳性内功命中值 ||点数},
+	{SOLAR_CRITICAL_STRIKE_BASE_RATE||阳性内功会心基础几率	||	百分比点数(1/10000)},
+	{SOLAR_CRITICAL_STRIKE|| 阳性内功会心值 || 1/10000 || ——},
+	{SOLAR_OVERCOME_BASE||},
+	{SOLAR_OVERCOME_PERCENT||},
+	{SOLAR_MAGIC_RESIST_PERCENT|| 受阳性内功伤害减少百分比 || 1/1024 || ——},
+	{SOLAR_MAGIC_SHIELD_BASE||阳性内功抗性基础值	||	点数},
+	{SOLAR_MAGIC_SHIELD_PERCENT||阳性内功抗性修正百分比	||	1/1024，默认值1024},
+	{SOLAR_MAGIC_REFLECTION|| 阳性内功反弹 || 点数 || ——},
+	{SOLAR_MAGIC_REFLECTION_PERCENT|| 阳性内功反弹百分比 || 1/1024 || ——},
+	{SOLAR_MAGIC_BLOCK|| 阳性内功伤害格挡 || 1/0 || ——},
+	{SOLAR_DAMAGE_ABSORB|| 阳性内功伤害吸收 || 点数 || ——},
+	{SOLAR_DAMAGE_MANA_SHIELD|| 阳性内功伤害魔法盾吸收 || 点数 || ——},
+	{SKILL_NEUTRAL_DAMAGE|| 技能中性内功伤害 || ——},
+	{SKILL_NEUTRAL_DAMAGE_RAND|| || || },
+	{SKILL_NEUTRAL_DAMAGE_PERCENT|| 技能中性内功伤害百分比修正 || 1/1024 || ——},
+	{NEUTRAL_DAMAGE_COEFFICIENT|| 受中性内功伤害系数修正 || 1/1024 || ——},
+	{NEUTRAL_ATTACK_POWER_BASE|| 中性内功攻击力基础值	||	点数},
+	{NEUTRAL_ATTACK_POWER_PERCNET||中性内功攻击力修正百分比	||	1/1024，默认值1024},
+	{NEUTRAL_HIT_BASE_RATE||中性内功命中基础几率	||	百分比几率点数(1/10000)},
+	{NEUTRAL_HIT_VALUE||中性内功命中值	||	点数},
+	{NEUTRAL_CRITICAL_STRIKE_BASE_RATE||阴性内功会心基础几率	||	百分比点数(1/10000)},
+	{NEUTRAL_CRITICAL_STRIKE|| 中性内功会心值 || 1/10000 || ——},
+	{NEUTRAL_OVERCOME_BASE||},
+	{NEUTRAL_OVERCOME_PERCENT||},
+	{NEUTRAL_MAGIC_RESIST_PERCENT|| 受中性内功伤害减少百分比 || 1/1024 || ——},
+	{NEUTRAL_MAGIC_SHIELD_BASE||中性内功抗性基础值	||	点数},
+	{NEUTRAL_MAGIC_SHIELD_PERCENT||中性内功抗性修正百分比	||	1/1024，默认值1024},
+	{NEUTRAL_MAGIC_REFLECTION|| 中性内功伤害反弹点数 || 点数 || ——},
+	{NEUTRAL_MAGIC_REFLECTION_PERCENT|| 中性内功伤害反弹百分比 || 1/1024 || ——},
+	{NEUTRAL_MAGIC_BLOCK|| 中性内功格挡 || 1/0 || ——},
+	{NEUTRAL_DAMAGE_ABSORB|| 中性内功伤害吸收 || 点数 || ——},
+	{NEUTRAL_DAMAGE_MANA_SHIELD|| 中性内功伤害魔法盾吸收 || 点数 || ——},
+	{SKILL_LUNAR_DAMAGE|| 技能阴性内功伤害 || 点数 || ——},
+	{SKILL_LUNAR_DAMAGE_RAND|| || || },
+	{SKILL_LUNAR_DAMAGE_PERCENT|| 阴性内功伤害修正 || 1/1024 || ——},
+	{LUNAR_DAMAGE_COEFFICIENT|| 受阴性内功伤害系数修正 || 1/1024 || ——},
+	{LUNAR_ATTACK_POWER_BASE|| 阴性内功攻击力基础值	||	点数},
+	{LUNAR_ATTACK_POWER_PERCENT||阴性内功攻击力修正百分比	||	1/1024，默认值1024},
+	{LUNAR_HIT_BASE_RATE||阴性内功命中基础几率	||	百分比几率点数(1/10000)},
+	{LUNAR_HIT_VALUE||阴性内功命中值||点数},
+	{LUNAR_CRITICAL_STRIKE_BASE_RATE||中性内功会心基础几率	||	百分比点数(1/10000)},
+	{LUNAR_CRITICAL_STRIKE|| 阴性内功会心值 || 1/10000 || ——},
+	{LUNAR_OVERCOME_BASE||},
+	{LUNAR_OVERCOME_PERCENT||},
+	{LUNAR_MAGIC_RESIST_PERCENT|| 受阴性内功伤害减少百分比 || 1/1024 || ——},
+	{LUNAR_MAGIC_SHIELD_BASE||阴性内功抗性基础值	||	点数},
+	{LUNAR_MAGIC_SHIELD_PERCENT||阴性内功抗性百分比	||	1/1024，默认值1024},
+	{LUNAR_MAGIC_REFLECTION|| 阴性内功伤害反弹点数 || 点数 || ——},
+	{LUNAR_MAGIC_REFLECTION_PERCENT|| 阴性内功伤害反弹百分比 || 1/1024 || ——},
+	{LUNAR_MAGIC_BLOCK|| 阴性内功格挡 || 1/0 || ——},
+	{LUNAR_DAMAGE_ABSORB|| 阴性内功伤害吸收值 || 点数 || ——},
+	{LUNAR_DAMAGE_MANA_SHIELD|| 阴性内功伤害魔法盾吸收值 || 点数 || ——},
+	{SKILL_POISON_DAMAGE|| 技能毒性伤害 || 点数 || ——},
+	{SKILL_POISON_DAMAGE_RAND|| || || },
+	{SKILL_POISON_DAMAGE_PERCENT|| 技能毒性伤害百分比修正 || 1/1024 || ——},
+	{POISON_DAMAGE_COEFFICIENT|| 受毒伤害系数修正 || 1/1024 || ——},
+	{POISON_ATTACK_POWER_BASE||毒攻击力基础值	||	点数},
+	{POISON_ATTACK_POWER_PERCENT||毒攻击力修正百分比	||	1/1024，默认值1024},
+	{POISON_HIT_Base_RATE||毒命中基础几率	||	百分比几率点数(1/10000)},
+	{POISON_HIT_VALUE||毒命中值	||	点数},
+	{POISON_CRITICAL_STRIKE_BASE_RATE||毒会心基础几率||百分比点数(1/10000)},
+	{POISON_CRITICAL_STRIKE|| 毒会心值 || 点数(1/10000)},
+	{POISON_OVERCOME_BASE||},
+	{POISON_OVERCOME_PERCENT||},
+	{POISON_MAGIC_RESIST_PERCENT|| 受毒伤害减少百分比 || 1/1024 || ——},
+	{POISON_MAGIC_SHIELD_BASE||},
+	{POISON_MAGIC_SHIELD_PERCENT||},
+	{POISON_MAGIC_REFLECTION|| 毒伤害点数反弹 || 点数 || ——},
+	{POISON_MAGIC_REFLECTION_PERCENT|| 毒伤害百分比反弹 || 1/1024 || ——},
+	{POISON_MAGIC_BLOCK|| 毒伤害格挡 || 1/0 || ——},
+	{POISON_DAMAGE_ABSORB|| 毒伤害吸收 || 点数 || ——},
+	{POISON_DAMAGE_MANA_SHIELD|| 毒伤害魔法盾吸收 || 点数 || ——},
+	{THERAPY_POWER_BASE|| 治疗力基础值(类似AP) || 点数 || ——},
+	{THERAPY_POWER_PERCENT||治疗能力修正百分比	||	1/1024，默认值1024},
+	{SKILL_THERAPY|| 技能治疗值 || 点数 || ——},
+	{SKILL_THERAPY_RAND||	||	|| },
+	{SKILL_THERAPY_PERCENT|| 技能治疗百分比修正 || 1/1024 || ——},
+	{THERAPY_COEFFICIENT||治疗效果加成系数},
+	{BE_THERAPY_COEFFICIENT||被治疗加成系数},
+	{NONE_WEAPON_ATTACK_SPEED_BASE|| 无武器时攻击速度 || 1/1024(次/每桢) || ——},
+	{MELEE_WEAPON_ATTACK_SPEED_BASE|| 近战武器攻击速度基础值 || 1/1024(次/每桢) || ——},
+	{MELEE_WEAPON_ATTACK_SPEED_PERCENT_ADD|| 近战武器攻击速度百分比增加值 || 1/1024(%) || ——},
+	{MELEE_WEAPON_ATTACK_SPEED_ADDITIONAL||},
+	{RANGE_WEAPON_ATTACK_SPEED_BASE|| 远程武器攻击速度基础值 || 1/1024(次/每桢) || ——},
+	{RANGE_WEAPON_ATTACK_SPEED_PERCENT_ADD|| 远程武器攻击速度百分比增加值 || 1/1024(%) || ——},
+	{RANGE_WEAPON_ATTACK_SPEED_ADDITIONAL|| 远程武器攻击速度增加值 || 1/1024(次/每桢) || ——},
+	{IGNORE_OTHER_ALARM_RANGE|| || || },
+	{SELF_ALARM_RANGE_REVISE|| || || },
+	{OTHER_ALARM_RANGE_REVISE|| |||| },
+	{DASH|| 冲锋 || 速度(点/帧)},
+	{DASH_FORWARD|| 向前冲 || 速度(点/帧)},
+	{DASH_BACKWARD|| 向后冲 || 速度(点/帧)},
+	{DASH_LEFT|| 向左冲 || 速度(点/帧)},
+	{DASH_RIGHT|| 向右冲 || 速度(点/帧)},
+	{HALT|| 晕 || —— || ——},
+	{FEAR|| 恐惧	|| || },
+	{REVIVE|| 复活 || 复活后生命(点数) || 复活后内力(点数)},
+	{JUMP|| 跳 || ? || ?},
+	{SIT|| 坐下	||	—— || ——},
+	{CALL_KNOCKED_BACK_EXHALE|| 击退(发散) || 距离 || 速度},
+	{CALL_KNOCKED_BACK_CONVERGENCE|| 击退(收敛) || 距离 || 速度},
+	{CALL_KNOCKED_BACK_RANDOM|| 击退(随机) || 距离 || 速度},
+	{CALL_KNOCKED_BACK_SRC_FACE|| 击退(按施放者朝向) || 距离 || 速度},
+	{CALL_KNOCKED_OFF_PARABOLA|| 击飞(抛物线) || 距离 || 速度},
+	{CALL_KNOCKED_DOWN|| || || },
+	{CALL_THERAPY|| 添加治疗 || 点数 || ——},
+	{CALL_PHYSICS_DAMAGE|| 外功伤害 || 点数 || ——},
+	{CALL_SOLAR_DAMAGE|| 阳性内功伤害 || 点数 || ——},
+	{CALL_NEUTRAL_DAMAGE|| 中性内功伤害 || 点数 || ——},
+	{CALL_LUNAR_DAMAGE|| 阴性内功伤害 || 点数 || ——},
+	{CALL_POISON_DAMAGE|| 毒伤害 || 点数 || ——},
+	{CAST_SKILL_TARGET_SRC|| 受到攻击时给该攻击施放者施放技能 || 施放的技能SkillID || SkillLevel},
+	{CAST_SKILL_TARGET_DST|| 受到攻击时给自己施放技能 || 施放的技能SkillID || SkillLevel},
+	{SKILL_EVENT_HANDLER|| 添加技能事件 || EventID || ——},
+	{PRACTICE_KUNG_FU|| 修练武功	|| SkillID || ——},
+	{ACCUMULATE|| 聚气	|| 聚气所需帧数	|| —— },
+	{CALL_BUFF|| 添加Buff || BuffID || BuffLevel},
+	{CALL_BUFF_ACCORDING_TO_ATTRACTION||添加阵法buff || 类型: 1 buff, 2 debuff, 3 dot, 4 hot || buff id},
+	{DETACH_SINGLE_BUFF|| 驱散单个Buff || DOT类型 || DOT强度},
+	{DETACH_MULTI_GROUP_BUFF|| 成组驱散Buff || Buff类型 || Buff强度},
+	{DEL_SINGLE_BUFF_BY_FUNCTIONTYPE||},
+	{DEL_MULTI_GROUP_BUFF_BY_FUNCTIONTYPE||},
+	{DEL_SINGLE_BUFF_BY_ID_AND_LEVEL||},
+	{MODIFY_THREAT|| 修改仇恨 || 仇恨类型 || 仇恨值(点数?)},
+	{SPOOF||嘲讽},
+	{SILENCE|| 禁魔 || || || },
+	{SILENCE_ALL|| 群体禁魔	||	|| },
+	{IMMUNITY|| 免疫		||	|| },
+	{ADD_WEAK|| 增加破绽值		||	|| },
+	{SHIFT_WEAK||	转换破绽||	|| },
+	{ADD_WEAK_SHIELD||	增加破绽盾||	|| },
+	{MODIFY_SKILL_CAST_FLAG|| 技能条件标志	||	|| },
+	{EXECUTE_SCRIPT|| 脚本 || 脚本路径 || },
+	{PRINK_REPRESENT_ID||化妆的表现逻辑id	||[[see EQUIPMENT_REPRESENT]]	|| 表现id},
+	{PRINK_MODEL||化妆的MODEL id	|| dword	|| },
+	{PRINK_FORCE|| 伪装某个势力},
+	{RIDE_HORSE||         骑马或下马},
+	{DO_ACTION|| 播放表情},
+	{ADD_EXP_PERCENT|| 增加经验获得倍率 },
+	{EMPLOYER_CAST_SKILL_TARGET_SELF|| 雇主释放技能，目标为自己},
+	{CLEAR_COOL_DOWN||清CD的魔法属性},
+	{TRANSFER_DAMAGE_TO_MANA_PERCENT||伤害转为内力},
+	{MODIFY_COST_MANA_PERCENT||人物技能的消耗修正},
+	{DIRECT_CAST_MASK||吟唱掩码},
+	{PULL||},
+	{TURN||},
+}
+
+@summary            角色交互动作
+@catalog            角色相关
+@remarks            
+table CHARACTER_ACTION_TYPE {
+	{DIALOGUE|| 对话},
+	{HOWL|| 嚎叫},
+}
+
+@summary            背包序号
+@catalog            装备道具
+@remarks           
+table INVENTORY_INDEX {
+	{INVALID|| 非法值},
+	{EQUIP|| 身上装备},
+	{PACKAGE|| 原始背包},
+	{PACKAGE1|| 背包1(从右往左)},
+	{PACKAGE2|| 背包2},
+	{PACKAGE3|| 背包3},
+	{PACKAGE4|| 背包4},
+	{BANK|| 银行},
+	{BANK_PACKAGE1|| },
+	{BANK_PACKAGE2|| },
+	{BANK_PACKAGE3|| },
+	{BANK_PACKAGE4|| },
+	{BANK_PACKAGE5|| },
+	{BANK_PACKAGE6|| },
+	{SOLD_LIST|| 回购列表},
+	{STALL_PACKAGE||},
+	{TOTAL|| },
+}
+
+@summary            生活技能相关返回码
+@catalog            生活技能
+@remarks           
+table CRAFT_RESULT_CODE {
+	{INVALID|| },
+	{SUCCESS|| },
+	{FAILED|| },
+	{INVALID_CAST_MODE|| },
+	{NOT_ENOUGH_STAMINA|| },
+	{NOT_ENOUGH_THEW||},
+	{NOT_ENOUGH_ITEM|| },
+	{SKILL_NOT_READY|| },
+	{INVALID_PROFESSION|| },
+	{INVALID_CRAFT|| },
+	{INVALID_RECIPE|| },
+	{INVALID_TARGET|| },
+	{INVALID_CASTER|| },
+	{INVALID_ITEM|| },
+	{LOOT_FAILED|| },
+	{WEAPON_ERROR|| },
+	{TOO_LOW_PROFESSION_LEVEL|| },
+	{ADD_ITEM_FAILED|| },
+	{INVENTORY_IS_FULL|| },
+	{IN_OTACTION|| },
+	{PROFESSION_NOT_LEARNED|| },
+	{ERROR_TOOL|| },
+	{BOOK_IS_ALREADY_MEMORIZED|| 书籍已被记忆},
+	{REQUIRE_DOODAD|| },
+	{ITEM_TYPE_ERROR|| },
+	{BOOK_CANNOT_BE_COPY||},
+}
+
+@summary            组队相关的通知码
+@catalog            队伍相关
+@remarks           
+table PARTY_NOTIFY_CODE {
+	{PNC_PLAYER_INVITE_NOT_EXIST|| },
+	{PNC_PLAYER_APPLY_NOT_EXIST|| },
+	{PNC_PLAYER_ALREAD_IN_YOUR_PARTY|| },
+	{PNC_PLAYER_ALREAD_IN_OTHER_PARTY|| },
+	{PNC_YOU_ALREAD_IN_PARTY_STATE|| },
+	{PNC_PLAYER_IS_BUSY|| },
+	{PNC_INVITATION_DENIED|| },
+	{PNC_APPLICATION_DENIED|| },
+	{PNC_PLAYER_NOT_ONLINE|| },
+	{PNC_DEST_PARTY_IS_FULL|| },
+	{PNC_YOUR_PARTY_IS_FULL|| },
+	{PNC_INVITATION_OUT_OF_DATE|| },
+	{PNC_APPLICATION_OUT_OF_DATE|| },
+	{PNC_PARTY_CREATED|| },
+	{PNC_PARTY_JOINED|| },
+	{PNC_INVITATION_DONE|| },
+	{PNC_APPLICATION_DONE|| },
+	{PNC_INVITATION_REJECT|| },
+	{PNC_APPLICATION_REJECT|| },
+}
+
+@summary            队伍的拾取方式
+@catalog            队伍相关
+@remarks            
+table PARTY_LOOT_MODE {
+	{INVALID||  非法值},
+	{ABSOLUTE_FREE||   绝对自由},
+	{FREE_FOR_ALL||  自由拾取},
+	{ROUND_ROBIN||  轮流拾取},
+	{LEADER_LOOT||  队长分配},
+	{GROUP_LOOT||   队伍拾取},
+}
+
+@summary            技能相关函数的返回码
+@catalog            武功技能
+@remarks            
+table SKILL_RESULT_CODE {
+	{SUCCESS||  成功},
+	{FAILED|| 失败},
+	{INVALID_CAST_MODE|| 非法的释放方式},
+	{NOT_ENOUGH_LIFE||  生命值不足},
+	{NOT_ENOUGH_MANA||  内力值不足},
+	{NOT_ENOUGH_STAMINA||  体力值不足},
+	{NOT_ENOUGH_RAGE||  怒气不足},
+	{NOT_ENOUGH_ITEM||  道具不够},
+	{NOT_ENOUGH_AMMO|| 弹药不足},
+	{SKILL_NOT_READY||  技能未准备好},
+	{INVALID_SKILL|| 非法技能},
+	{INVALID_TARGET||  非法目标},
+	{NO_TARGET|| 没有目标},
+	{NEED_TARGET|| 需要指定目标},
+	{TOO_CLOSE_TARGET||  目标距离过近},
+	{TOO_FAR_TARGET|| 目标距离过远},
+	{OUT_OF_ANGLE||  超出角度范围},
+	{TARGET_INVISIBLE||  目标不可见},
+	{WEAPON_ERROR|| 武器不对},
+	{WEAPON_DESTROY|| 武器已损坏(耐久度为0)},
+	{AMMO_ERROR|| 弹药与武器不匹配},
+	{NOT_EQUIT_AMMO||没有装备弹药},
+	{MOUNT_ERROR||  武功装备不对},
+	{IN_OTACTION||  正在进行OT动作},
+	{ON_SILENCE|| 正处于禁言状态},
+	{NOT_FORMATION_LEADER|| 不是阵眼，不能释放阵法},
+	{NOT_ENOUGH_MEMBER|| 组成阵法的成员不足},
+	{NOT_START_ACCUMULATE||没有开始蓄气},
+	{BUFF_ERROR||没有所需要的Buff},
+	{NOT_IN_FIGHT||不能在战斗中},
+	{MOVE_STATE_ERROR||移动状态错误},
+	{ERROR_BY_HORSE||上下马的状态出错},
+	{NOT_STALL||无法在摆摊时使用},
+	{BUFF_INVALID||你作用的BUFF不存在},
+	{FORCE_EFFECT||更强大的效果在作用中},
+	{BUFF_IMMUNITY||你的BUFF被免疫了},
+	{TARGET_LIFE_ERROR||},
+}
+
+@summary            技能的功能分类
+@catalog            武功技能
+@remarks           
+table SKILL_FUNCTION_TYPE {
+	{NORMAL||},
+	{SLOW|| 迟缓},
+	{FEAR|| 恐惧},
+	{HALT|| 定身},
+	{SILENCE|| 禁言},
+	{CHAOS|| 混乱},
+	{CHARM|| 魅惑},
+	{STUN|| 击晕},
+	{ENMITY|| 仇恨 },
+	{BLOODING||},
+	{DAZE|| 眩晕},
+	{DAMAGE|| 伤害},
+}
+
+@summary            Doodad类型
+@catalog           
+@remarks           
+table DOODAD_KIND {
+	{INVALID|| 非法值},
+	{NORMAL|| 普通},
+	{CORPSE|| 尸体},
+	{QUEST|| 任务相关 },
+	{READ|| 可以看的},
+	{DIALOG||},
+	{ACCEPT_QUEST|| 可以接任务的},
+	{TREASURE|| 宝箱},
+	{ORNAMENT|| 装饰物，不能操作},
+	{CRAFT_TARGET|| 生活技能的采集物},
+	{CLIENT_ONLY|| },
+	{CHAIR||},
+}
+
+@summary            NPC类型
+@catalog            NPC相关
+@remarks           
+table CHARACTER_KIND {
+	{INVALID|| },
+	{PLAYER|| },
+	{FIGHT_NPC|| },
+	{DIALOG_NPC|| },
+	{CLIENT_NPC|| },
+}
+
+@summary            角色阵营关系
+@catalog            角色相关
+@remarks           
+table RELATION_TYPE {
+	{INVALID|| 非法值	},
+	{NONE|| 没关系	},
+	{SELF|| 自己		},
+	{ALLY|| 同阵营	},
+	{ENEMY|| 敌对		},
+	{NEUTRALITY||			},
+	{PARTY|| 同一队伍	},
+	{ALL||			},
+}
+
+@summary            玩家所属阵营
+@catalog            角色相关
+@remarks           
+table CAMP {
+	{NEUTRAL|| 中立	||  cNeutral},
+	{GOOD|| 善良 ||  cGood},
+	{EVIL|| 邪恶 ||  cEvil},
+}
+
+@summary            商店系统相关函数的返回值
+@catalog            商店相关
+@remarks           
+table SHOP_SYSTEM_RESPOND_CODE {
+	{INVALID|| 非法值},
+	{SELL_SUCCESS|| 出售成功},
+	{BUY_SUCCESS|| 购买成功},
+	{REPAIR_SUCCESS|| 修理成功},
+	{SELL_FAILED|| 出售失败},
+	{BUY_FAILED|| 购买失败},
+	{REPAIR_FAILED|| 修理失败},
+	{TOO_FAR_AWAY|| 距离太远},
+	{NOT_ENOUGH_MONEY|| 金钱不够},
+	{NOT_ENOUGH_REPATE|| 声望不够},
+	{NOT_ENOUGH_RANK|| 称号没达到要求},
+	{ITEM_SOLD_OUT|| 商店物品已卖完},
+	{BAG_FULL|| 背包已满},
+	{ITEM_EXIST_LIMIT|| 购买的数量超出商店中有的数量},
+	{ITEM_NOT_NEED_REPAIR|| 物品不需修理},
+	{NONE_ITEM_NEED_REPAIR|| 没有物品可以修理},
+	{CAN_NOT_SELL|| 不能出售该物品},
+	{ITEM_HAD_LIMIT|| 物品拥有已达到上限},
+	{ITEM_MODIFIED_WHILEBUY||},
+	{MOVE_STATE_WRONG|| },
+	{ITEM_BROKEN|| },
+	{ITEM_NOT_IN_PACKAGE|| },
+	{TOTAL|| 返回码的总数},
+}
+
+@summary            角色移动状态
+@catalog            角色相关
+@remarks            
+table MOVE_STATE {
+	{INVALID|| 非法值},
+	{ON_STAND|| 站立},
+	{ON_WALK|| 走路},
+	{ON_RUN|| 跑步},
+	{ON_JUMP|| 跳 },
+	{ON_SWIM|| 游泳},
+	{ON_FLOAT|| 水中悬浮},
+	{ON_SIT|| 坐下},
+	{ON_KNOCKED_DOWN|| 被击倒 },
+	{ON_KNOCKED_BACK|| 被击退 },
+	{ON_KNOCKED_OFF|| 被击飞 },
+	{ON_HALT|| 被击晕 },
+	{ON_AUTO_FLY|| 自动移动},
+	{ON_DEATH|| 死亡 },
+	{ON_DASH|| 冲刺 },
+	{ON_PULL||被抓状态},
+}
+
+@summary            角色身上的背包类型
+@catalog            装备道具
+@remarks           
+table INVENTORY_TYPE {
+	{EQUIPMENT|| 装备包	|| %v%=0 },
+	{PACKAGE|| 普通背包 || %v% },
+	{BANK|| 银行		|| %v% },
+	{SLOT||			|| %v% },
+	{SOLD_LIST||卖出物品栏	|| %v% },
+	{STALL||},
+	{TOTAL|| 背包类型总数 || %v% },
+}
+
+@summary            聊天频道
+@catalog           
+@remarks           
+table PLAYER_TALK_CHANNEL {
+	{INVALID|| 非法值},
+	{NEARBY||  },
+	{PARTY|| },
+	{SENCE||},
+	{WHISPER|| },
+	{FACE|| 表情频道},
+	{LOCAL_SYS|| },
+	{GLOBAL_SYS|| },
+	{NPC_NEARBY|| },
+	{NPC_PARTY|| },
+	{NPC_SENCE|| },
+	{NPC_WHISPER|| },
+	{NPC_SAY_TO|| },
+	{NPC_YELL_TO|| },
+	{NPC_FACE|| },
+	{NPC_SAY_TO_ID||},
+	{CHANNEL1||	},
+	{CHANNEL2|| },
+	{CHANNEL3|| },
+	{CHANNEL4|| },
+	{CHANNEL5|| },
+	{CHANNEL6|| },
+	{CHANNEL7|| },
+	{CHANNEL8|| },
+}
+
+@summary            PK状态
+@catalog            角色相关
+@remarks            
+table PK_STATE {
+	{INVALID||},
+	{IDLE||},
+	{WAIT_FOR_DUEL_RESPOND||},
+	{CONFIRM_DUEL||},
+	{PREPARE_DUEL||},
+	{DUELING||},
+	{DUEL_OUTRANGE||},
+	{REVENGING||},
+	{START_SLAY||},
+	{SLAYING||},
+	{EXITSLAY||},
+}
+
+@summary            好友列表操作相关返回码
+@catalog           
+@remarks           
+table PLAYER_FELLOWSHIP_RESPOND {
+	{INVALID|| },
+	{SUCCESS|| },
+	{SUCCESS_ADD|| },
+	{ERROR|| },
+	{ERROR_INVALID_NAME|| },
+	{ERROR_ADD_SELF|| },
+	{ERROR_LIST_FULL|| },
+	{ERROR_EXISTS|| },
+	{ERROR_NOT_FOUND|| },
+	{ERROR_INVALID_GROUP_NAME|| },
+	{ERROR_INVALID_REMARK|| },
+	{ERROR_GROUP_FULL|| },
+	{ERROR_GROUP_NOT_EMPTY||},
+	{ERROR_GROUP_NOT_FOUND|| },
+	{ERROR_SYSTEM_GROUP||},
+}
+
+@summary            交易返回码
+@catalog           
+@remarks           
+table TRADING_RESPOND_CODE {
+	{INVALID|| },
+	{SUCCESS|| },
+	{FAILED|| },
+	{INVALID_INVITE|| },
+	{INVALID_TARGET||},
+	{REFUSE_INVITE|| },
+	{TARGET_NOT_IN_GAME|| },
+	{TARGET_BUSY|| },
+	{YOU_BUSY|| },
+	{TOO_FAR|| },
+	{TRADING_CANCEL|| },
+	{TRADING_CANCELED|| },
+	{ITEM_BE_BOUND|| },
+	{NOT_ENOUGH_MONEY|| },
+	{NOT_ENOUGH_FREE_ROOM|| },
+	{ITEM_EXIST_AMOUNT_LIMIT|| },
+	{YOU_DEAD|| },
+	{ITEM_NOT_IN_PACKAGE|| },
+	{TARGET_DEAD||},
+	{YOU_STALL|| },
+	{TARGET_STALL|| },
+	{Total||},
+}
+
+@summary            道具相关的返回码
+@catalog           
+@remarks           
+table ITEM_RESULT_CODE {
+	{INVALID|| },
+	{SUCCESS|| 成功},
+	{FAILED|| 失败},
+	{ITEM_NOT_EXIST|| 道具不存在},
+	{NOT_ENOUGH_DURABILITY|| 耐久度不够},
+	{ERROR_EQUIP_PLACE|| 错误的装备位置},
+	{TOO_LOW_AGILITY|| 敏捷不够},
+	{TOO_LOW_STRENGTH|| },
+	{TOO_LOW_SPIRIT|| },
+	{TOO_LOW_VITALITY|| },
+	{TOO_LOW_LEVEL|| },
+	{TOO_LOW_DURABILITY|| },
+	{CANNOT_EQUIP||物品不可被装备 },
+	{CANNOT_PUT_THAT_PLACE|| 不能放入},
+	{CANNOT_DISABLE_PACKAGE|| 不能关闭背包},
+	{PACKAGE_NOT_ENOUGH_SIZE|| 没有充足的空间},
+	{BANK_PACKAGE_DISABLED|| 银行背包是否可用},
+	{EQUIPED_PACKAGE_CANNOT_DESTROY|| 已经装备上的背包不能摧毁},
+	{ITEM_BINDED|| 物品绑定},
+	{TOTAL|| },
+}
+
+@summary            拾取物品时的返回码
+@catalog           
+@remarks           
+table LOOT_ITEM_RESULT_CODE {
+	{INVALID|| },
+	{SUCCESS|| },
+	{FAILED|| },
+	{INVENTORY_IS_FULL|| },
+	{NOT_EXIST_LOOT_ITEM|| },
+	{ADD_LOOT_ITEM_FAILED|| },
+	{NO_LOOT_TARGET|| },
+	{TOO_FAR_TO_LOOT|| },
+	{OVER_ITEM_LIMIT|| },
+	{TOTAL|| },
+}
+
+@summary            日期格式
+@catalog           
+@remarks           
+table DATE_FORMAT {
+	{SECOND|| },
+	{MINUTE|| },
+	{HOUR|| },
+	{DAY|| },
+	{MONTH|| },
+	{YEAR|| },
+	{WEEK|| },
+}
+
+@summary            装备帮定类型
+@catalog            装备道具
+@remarks           
+table ITEM_BIND {
+	{INVALID|| },
+	{NEVER_BIND|| },
+	{BIND_ON_EQUIPPED|| },
+	{BIND_ON_PICKED||	},
+}
+
+@summary            [仅客户端使用] 登录游戏时的状态
+@catalog           
+@remarks           
+table LOGIN {
+	{UNABLE_TO_CONNECT_SERVER|| },
+	{MISS_CONNECTION|| },
+	{SYSTEM_MAINTENANCE|| },
+	{UNMATCHED_PROTOCOL_VERSION|| },
+	{VERIFY_ALREADY_IN_GATEWAY|| },
+	{VERIFY_IN_GATEWAY_BLACK_LIST|| },
+	{VERIFY_SUCCESS|| },
+	{VERIFY_IN_GAME|| },
+	{VERIFY_ACC_PSW_ERROR|| },
+	{VERIFY_NO_MONEY|| },
+	{VERIFY_NOT_ACTIVE|| },
+	{VERIFY_ACTIVATE_CODE_ERR|| },
+	{VERIFY_IN_OTHER_GROUP|| },
+	{VERIFY_ACC_FREEZED|| },
+	{VERIFY_PAYSYS_BLACK_LIST|| },
+	{VERIFY_UNKNOWN_ERROR|| },
+	{GET_ROLE_LIST_SUCCESS|| },
+	{UPDATE_HOMETOWN_LIST|| },
+	{CREATE_ROLE_SUCCESS|| },
+	{CREATE_ROLE_FAILED|| },
+	{REQUEST_LOGIN_GAME_SUCCESS|| },
+	{REQUEST_LOGIN_GAME_OVERLOAD|| },
+	{REQUEST_LOGIN_GAME_MAINTENANCE|| },
+	{REQUEST_LOGIN_GAME_UNKNOWN_ERROR|| },
+	{DELETE_ROLE_SUCCESS|| },
+	{DELETE_ROLE_BAD_PASSWORD|| },
+	{DELETE_ROLE_NOT_ALLOWED|| },
+	{DELETE_ROLE_UNKNOWN_ERROR|| },
+}
+
+@summary            邮件相关函数的返回码
+@catalog            邮件系统
+@remarks           
+table MAIL_RESPOND_CODE {
+	{SUCCEED|| },
+	{FAILED|| },
+	{SYSTEM_BUSY|| },
+	{DST_NOT_EXIST|| },
+	{NOT_ENOUGH_MONEY|| },
+	{ITEM_AMOUNT_LIMIT|| },
+	{NOT_ENOUGH_ROOM|| },
+	{MONEY_LIMIT|| },
+	{MAIL_NOT_FOUND|| },
+	{MAIL_BOX_FULL|| },
+	{RETURN_MAIL_FAILED|| },
+	{ITEM_BE_BIND|| },
+	{ITEM_NOT_IN_PACKAGE|| },
+	{DST_NOT_SELF||},
+	{TOTAL|| },
+}
+
+@summary            AI事件触发的条件
+@catalog           
+@remarks           
+table AI_EVENT_CONDITION {
+	{SELF_HP_BELOW|| },
+	{TARGET_HP_BELOW|| },
+	{FRAME_INTERVAL|| },
+	{RANDOM|| },
+	{TURN_TO_FIGHT|| },
+	{TURN_TO_IDLE|| },
+	{RETURN_TO_ORIGIN|| },
+	{SELF_DEAD|| },
+	{TARGET_DEAD|| },
+}
+
+@summary            技能攻击的破绽部位
+@catalog           
+@remarks           
+table SKILL_ATTACK_WEAK_POS {
+	{UPPER|| },
+	{MIDDLE|| },
+	{LOWER|| },
+}
+
+@summary            错误码类型
+@catalog           
+@remarks           
+table ERROR_CODE_TYPE {
+	{INVALID|| },
+	{SKILL_ERROR_CODE|| },
+	{LOGIN_ERROR_CODE|| },
+	{QUEST_ERROR_CODE|| },
+	{FELLOW_SHIP_ERROR_CODE|| },
+	{ITEM_ERROR_CODE|| },
+	{TRADING_ERROR_CODE|| },
+	{TALK_ERROR_CODE|| },
+	{CRAFT_ERROR_CODE|| },
+	{LOOT_ITEM_ERROR_CODE|| },
+	{MAIL_ERROR_CODE|| },
+	{STALL_ERROR_CODE|| },
+	{USE_ITEM_ERROR_CODE||},
+	{ADD_ITEM_ERROR_CODE||添加道具失败码},
+}
+
+@summary            查看其它玩家信息时的返回码
+@catalog           
+@remarks           
+table PEEK_OTHER_PLAYER_RESPOND {
+	{INVALID|| },
+	{SUCCESS|| },
+	{FAILED|| },
+	{CAN_NOT_FIND_PLAYER|| },
+	{TOO_FAR|| },
+}
+
+@summary            玩家装备表现
+@catalog            装备道具
+@remarks           
+table EQUIPMENT_REPRESENT {
+	{FACE_STYLE||		脸型},
+	{FACE_COLOR||		脸的颜色},
+	{HAIR_STYLE||		发型},
+	{HAIR_COLOR||		头发颜色},
+	{HELM_STYLE||		头盔外形},
+	{HELM_COLOR||		头盔颜色},
+	{HELM_ENCHANT||	头盔附魔效果},
+	{CHEST_STYLE||		上装样式},
+	{CHEST_COLOR||		上装颜色},
+	{CHEST_ENCHANT||	上装附魔效果},
+	{WAIST_STYLE||		腰带外形},
+	{WAIST_COLOR||		腰带颜色},
+	{WAIST_ENCHANT||	腰带附魔},
+	{BANGLE_STYLE||	护腕外形},
+	{BANGLE_COLOR||	护腕颜色},
+	{BANGLE_ENCHANT||	护腕附魔},
+	{BOOTS_STYLE||		鞋子外形},
+	{BOOTS_COLOR||		鞋子颜色},
+	{WEAPON_STYLE||	武器外形},
+	{WEAPON_COLOR||	武器颜色},
+	{WEAPON_ENCHANT1||	武器附魔1 },
+	{WEAPON_ENCHANT2||	武器附魔2 },
+	{BACK_EXTEND||		背部扩展},
+	{WAIST_EXTEND||	腰部扩展},
+	{HORSE_STYLE|| 马},
+	{HORSE_ADORNMENT1||},
+	{HORSE_ADORNMENT2||},
+	{HORSE_ADORNMENT3||},
+	{HORSE_ADORNMENT4||},
+	{RESERVED|| 保留},
+	{TOTAL|| },
+}
+
+@summary            PK状态的返回码
+@catalog           
+@remarks           
+table PK_RESPOND {
+	{INVALID|| },
+	{SUCCESS|| },
+	{FAILED|| },
+	{APPLY_DUEL_FAILED|| },
+	{TARGET_IS_DUELING||},
+	{TARGET_IS_REVENGING||},
+	{APPLY_REVENGE_FAILED|| },
+	{APPLY_SLAY_FAILED|| },
+	{LEVEL_TOO_LOW||},
+	{PK_NOT_READY||},
+}
+
+@summary           
+@catalog           
+@remarks           
+table PLAYER_TALK_ERROR {
+	{PLAYER_NOT_FOUND|| },
+	{NOT_IN_PARTY|| },
+	{NOT_IN_SENCE|| },
+	{PLAYER_OFFLINE|| },
+	{YOU_BLACKLIST_TARGET|| },
+	{TARGET_BLACKLIST_YOU|| },
+}
+
+@summary            Buff检查链表
+@catalog            武功技能
+@remarks           
+table BUFF_COMPARE_FLAG {
+	{EQUAL|| },
+	{GREATER_EQUAL|| },
+}
+
+@summary            摆摊返回码
+@catalog            
+@remarks           
+table STALL_RESPOND_CODE {
+	{INVALID|| },
+	{SUCCESS|| },
+	{FAILED|| },
+	{NOT_ENOUGH_MONEY|| },
+	{NOT_ENOUGH_FREE_ROOM|| },
+	{ITEM_NOT_EXIST|| },
+	{TOO_FAR|| },
+	{NEED_STALL_ITEM|| },
+	{FIGHTING|| },
+	{PKING|| },
+	{TRADING|| },
+	{STALLBOX_EMPTY||},
+	{CANNOT_PUT_TO_THAT_PLACE|| },
+	{TOTAL|| },
+}
+
+@summary            巡逻类型
+@catalog           NPC相关
+@remarks           
+table PATROL {
+	{NO_REPEAT|| 单次},
+	{CIRCLE|| 循环},
+	{LINE|| 直线},
+}
+
+@summary           技能释放影响效果
+@catalog           
+@remarks           
+table SKILL_CAST_EFFECT_TYPE {
+	{INVALID||},
+	{HARMFUL|| 有害的},
+	{NERTUAL||},
+	{BENEFICIAL|| 有益的},
+}
+
+@summary           分配道具
+@catalog           组队相关
+@remarks           
+table LOOT_ITEM {
+	{INVALID||},
+	{SUCCESS||},
+	{FAILED||},
+	{INVENTORY_IS_FULL||},
+	{NOT_EXIST_LOOT_ITEM||},
+	{ADD_LOOT_ITEM_FAILED||},
+	{NO_LOOT_TARGET||},
+	{TOO_FAR_TO_LOOT||},
+	{OVER_ITEM_LIMIT||},
+	{TOTAL||},
+}
+
+@summary           
+@catalog           
+@remarks           
+table CHARACTER_OTACTION_TYPE {
+	{ACTION_IDLE||},
+	{ACTION_SKILL_PREPARE||},
+	{ACTION_SKILL_CHANNEL||},
+	{ACTION_RECIPE_PREPARE||},
+	{ACTION_PICK_PREPARE||},
+	{ACTION_PICKING||},
+}
+
+@summary           分配道具时间
+@catalog           
+@remarks           
+table LOOT_TIME {
+	{FREE_LOOT_TIME|| 自由拾取时间},
+	{LOOT_ROLL_TIME|| 掷骰子分配时间},
+}
+
+@summary           AI事件行为
+@catalog           
+@remarks           
+table AI_EVENT_ACTION {
+	{ESCAPE||},
+	{ESCAPE_FOR_HELP||},
+	{CALL_HELP||},
+	{DEATH||},
+	{RUN_SCRIPT||},
+}
+
+@summary            复活类型
+@catalog           
+@remarks           
+table REVIVE_TYPE {
+	{IN_SITU||},
+	{BY_PLAYER||},
+	{IN_ALTAR||},
+}
+
+@summary            AI行为
+@catalog           
+@remarks           
+table AI_ACTION {
+	{INVALID||},
+	{SET_STATE||},
+	{SET_PRIMARY_TIMER||},
+	{SET_SECONDARY_TIMER||},
+	{RANDOM_BI_BRANCH||},
+	{RANDOM_TRI_BRANCH||},
+	{STAND||},
+	{SEARCH_ENEMY||},
+	{ADD_TARGET_TO_THREAT_LIST||},
+	{SELECT_FIRST_THREAT||},
+	{IS_IN_FIGHT||},
+	{KEEP_RANGE||},
+	{CAST_SKILL||},
+	{SET_SYSTEM_SHEILD||},
+	{RECORD_RETURN_POSITION||},
+	{RETURN||},
+	{ENTER_PATROL_PATH||},
+	{LEAVE_PATROL_PATH||},
+	{DO_PATROL||},
+	{RECORD_ORIGIN_POSITION||},
+	{KEEP_ORIGIN_DIRECTION||},
+	{FACE_TARGET||},
+	{WANDER||},
+	{SEARCH_PLAYER||},
+	{SELECT_EVENT_SRC||},
+	{NPC_OPEN_DIALOG_WINDOW||},
+	{NPC_SAY_TO_TARGET||},
+	{CHECK_LIFE||},
+	{NPC_INIT_SKILL_CD||},
+	{NPC_STANDARD_SKILL_SELECTOR||},
+	{NPC_KEEP_SKILL_CAST_RANGE||},
+	{NPC_CAST_SELECT_SKILL||},
+	{DO_ANIMATION||},
+	{TOTAL||},
+}
+
+@summary           AI事件
+@catalog           
+@remarks           
+table AI_EVENT {
+	{INVALID||},
+	{ON_PRIMARY_TIMER||},
+	{ON_SECONDARY_TIMER||},
+	{ON_PATH_SUCCESS||},
+	{ON_PATH_FAILED||},
+	{ON_DIALOG||},
+	{ON_ACTION||},
+	{ON_ATTACKED||},
+	{ON_SELF_KILLED||},
+	{ON_TARGET_KILLED||},
+	{TOTAL||},
+}
+
+@summary         
+@catalog         
+@remarks         
+table SWITCH_MAP {
+	{INVALID||},
+	{SUCCESS|| 成功},
+	{FAILED|| 失败},
+	{MAP_CREATING|| 地图创建中},
+	{ENTER_NEW_COPY_TOO_MANY_TIMES|| 进入副本太多次},
+	{GAME_MAINTENANCE|| 服务器维护中},
+	{GAME_OVERLOADED|| 服务器超过负载},
+	{CREATE_MAP_FINISHED||地图创建完成},
+}
+
+@summary      
+@catalog      
+@remarks      
+table USE_ITEM_RESULT_CODE {
+	{INVALID||},
+	{SUCCESS||},
+	{FAILED||},
+	{ITEM_NOT_EXIST|| 道具不存在},
+	{CANNOT_USE_ITEM|| 不能使用道具},
+	{NOT_ENOUGH_DURABILITY|| 没有足够的耐久度},
+	{NOT_READY|| 没有准备好},
+	{USE_IN_PACKAGE|| 只能在背包中使用},
+	{USE_WHEN_EQUIPPED|| 只能装备时使用},
+	{TOO_LOW_LEVEL|| 等级太低},
+	{REQUIRE_PROFESSION|| 需要学习某生活技能},
+	{REQUIRE_PROFESSION_BRANCH|| 需要学习某生活技能分支},
+	{PROFESSION_LEVEL_TOO_LOW|| 生活技能等级太低},
+	{ON_HORSE|| 正在骑马},
+	{IN_FIGHT|| 正在战斗},
+	{REQUIRE_MALE|| 男人才能使用},
+	{REQUIRE_FEMALE|| 女人才能使用},
+	{CAMP_CANNOT_USE|| 角色所在阵营不能使用},
+	{CANNOT_CAST_SKILL|| 不能释放物品上的技能},
+	{CAST_SKILL_FAILED|| 释放失败},
+	{COST_ITEM_DURABILITY_FAILED|| 消耗耐久度失败},
+}
+
+@summary     
+@catalog     
+@remarks     
+table ADD_ITEM_RESULT_CODE {
+	{INVALID||},
+	{SUCCESS||},
+	{FAILED||},
+	{NOT_ENOUGH_FREE_ROOM||},
+	{ITEM_AMOUNT_LIMITED||},
+	{CANNOT_PUT_THAT_PLACE||},
+}
+

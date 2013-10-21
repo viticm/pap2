@@ -1,0 +1,16 @@
+D/SyntaxModes///////
+/DefaultHighlightingStrategy.cs///1177320810////
+/FontContainer.cs///1177320810////
+/HighlightBackground.cs///1177320810////
+/HighlightColor.cs///1177320810////
+/HighlightInfo.cs///1177320810////
+/HighlightRuleSet.cs///1177320810////
+/HighlightingColorNotFoundException.cs///1177320810////
+/HighlightingDefinitionParser.cs///1177320810////
+/HighlightingManager.cs///1177320810////
+/HighlightingStrategyFactory.cs///1177320810////
+/IHighlightingStrategy.cs///1177320810////
+/NextMarker.cs///1177320810////
+/PrevMarker.cs///1177320810////
+/Span.cs///1177320810////
+/TextWord.cs///1177320810////

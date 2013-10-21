@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fireball.Ssh", "Fireball.Ssh\Fireball.Ssh.csproj", "{43B48F08-5432-411B-BF51-A5B541A63CE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FireScp", "..\..\apps\FireScp\FireScp.csproj", "{941FEF52-8675-4699-85E9-7F47BF615BC9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43B48F08-5432-411B-BF51-A5B541A63CE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43B48F08-5432-411B-BF51-A5B541A63CE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43B48F08-5432-411B-BF51-A5B541A63CE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43B48F08-5432-411B-BF51-A5B541A63CE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{941FEF52-8675-4699-85E9-7F47BF615BC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{941FEF52-8675-4699-85E9-7F47BF615BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{941FEF52-8675-4699-85E9-7F47BF615BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{941FEF52-8675-4699-85E9-7F47BF615BC9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

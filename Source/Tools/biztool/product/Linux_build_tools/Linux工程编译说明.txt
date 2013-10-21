@@ -1,0 +1,106 @@
+        《Linux工程编译说明》
+            lailigao
+----------------------------------------
+1.	工程环境的建立：
+    a)	每个工程需有一个*.prj文件(类似VC的dsp文件)，prj文件的格式(以gameserver.prj为例)：
+	[Include]
+	../../include
+	../Engine
+	/usr/include
+
+	[Config Release]
+	Product     Exe ../../product/linux/gameserver
+	Options     Release
+	Defines   __linux; _SERVER; _STANDALONE; _USBKEY
+	ObjDir      LRelease
+	LibDir    ../../lib/linux/; /usr/local/lib; /usr/lib/lib; /lib/
+	Libraries   core; usbkey; epas; engine; lua; epoll; epassapi; uuid; 
+	pthread
+
+	[Config Debug]
+	Product     Exe ../../product/linux/gameserver
+	Options     Debug
+	Defines   __linux; _SERVER; _STANDALONE; _USBKEY
+	ObjDir      LDebug
+	LibDir    ../../lib/linuxd/; /usr/local/lib; /usr/lib/lib; /lib/
+	Libraries   core; usbkey; epas; engine; lua; epoll; epassapi; uuid; pthread
+
+	[Source]
+	GameServer.cpp
+	KSG_EncodeDecode.cpp
+	KSOServer.cpp
+	...
+
+	// ----------------------------------------------------
+	[Include]：头文件Include搜索路径
+	[Source]：源文件列表。源文件是指C/C++源代码文件(*.c, *.cc, *.cpp, *.cxx)
+	[Config]的节名
+           [Config]节可以带一个节名，也就是配置名。例如上面的Release, Debug。
+           节名除了不能带空格，并没有太多规定(如[Config ToolVersion])
+           通常我们有Release, Debug这两个配置。
+	[Config]的各项说明
+	   .Product项用于描述工程的输出(产品)。语法为：
+		Product $ProdType $ProdName
+　		$ProdType     - 可以是 Exe, Dll, 或者 Lib
+     		$ProdName     - 产品名。相对于工程目录的输出路径。
+	  .Options项用于描述一些编译选项。语法为：
+     		Options $Opt1; $Opt2; ...
+                有两种编译选项描述方式：
+               一种直接用gcc/g++的编译选项，如 -O0 -g3 等。
+               一种用prj文件定义的友好编译选项，以便达到编译器无关性。
+               建议尽可能选择后者。
+               目前友好编译选项有：
+                    Debug           等价: -D_DEBUG -g3
+                    Release         等价: -DNDEBUG -O2
+                    Unicode         等价: -DUNICODE
+                    AnsiChar        等价: 
+                    MultiThread     等价: -D_MT
+                    SingleThread    等价: 
+                    Exception       等价: -fexceptions
+                    NoException     等价: -fno-exceptions
+                    Rtti            等价: -frtti
+                    NoRtti          等价: -fno-rtti
+	.Defines项描述工程预定义宏。语法为：
+                  Defines $Def1; $Def2; ...
+                $Def如：_SERVER; _STANDALONE
+	.ObjDir项描述中间文件(*.o, *.obj)存放目录。语法为：
+                  ObjDir $ObjDir
+                $ObjDir如： LDebug
+	.LibDir项描述链接库文件(*.a, *.so)的所在目录。语法为：
+                  LibDir $LibDir
+                $LibDir如：/usr/lib
+	.Libraries项描述需要链接的Lib库名字。语法为：
+                  Libraries $Lib1; $Lib2; ...
+                $Lib如：pthread (不需要lib前缀，及.a/.so后缀)
+
+    b)	多个工程文件，可组成一个列表文件*.plf (类似VC的dsw文件)，格式(以gameserver.plf为例)：
+		lua/lua
+		Engine/engine
+		USBKey/usbkey
+		Core/core
+		gameserver/gameserver
+
+2.编译工具使用说明：
+   a)	工具说明：
+     mk – 编译一个工程(需*.prj文件)
+     	格式：mk [-c -r] prjfile[.prj] Config
+     	     -c 表示rebuild
+             -r 表示Config=Release，默认为Debug
+     		* 如果没有指明prjfile，则尝试取prjfile与当前目录同名。如：
+                    在gameserver目录下输入mk，则prjfile=gameserver.prj
+                * Config是指要编译的版本。如果指明了Config，则忽略-r开关 (如ToolVersion)
+
+     mks – 编译多个工程(需*.plf文件-工程列表)
+     	格式：mks [-c -r] plffile[.plf] Config
+             参数的含义与mk基本相同
+
+     mg – 根据*.prj生成Makefile
+
+   b)	环境设置：
+      1) 取$/DevEnv/devtools/linux/ 到本地 (root或私有身份登陆)
+      2) 将编译工具所在目录设置到环境变量中：
+	.对单个用户：在$HOME目录下，编辑 .bash_profile(隐含文件)，在PATH加上相应路径，如：
+    		PATH=$PATH: $HOME/devtools
+	.对于想让所有用户使用此工具，以将文件取到公共目录下(如/usr/dev_tools)，然后编辑/etc/profile，在PATH加上相应路径
+	.若不想重新登陆，可运行source .bash_profile (profile)，令设置生效 
+

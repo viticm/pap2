@@ -1,0 +1,566 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Client|Win32">
+      <Configuration>Debug_Client</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_Server|Win32">
+      <Configuration>Debug_Server</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Client|Win32">
+      <Configuration>Release_Client</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Server|Win32">
+      <Configuration>Release_Server</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D9F789A3-547C-4FA2-A443-A0EF6F89375F}</ProjectGuid>
+    <RootNamespace>SO3World</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Client|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Client|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Client|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Client|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Client|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_Client|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Client|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Client|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug_Client|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug_Client|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug_Client|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release_Client|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release_Client|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release_Client|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Client|Win32'">
+    <PreBuildEvent>
+      <Command>attrib -r ..\..\..\lib\win32\$(TargetName).lib</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../Include/SO3World;../../../Include;../../../../Base/Include;../../../../DevEnv/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CLIENT;LUA_V_5;FILTERTEXT_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(OutDir)$(ProjectName)ClientD.lib</OutputFile>
+      <AdditionalLibraryDirectories>../../../../Base/Lib;../../../../Base/Lib/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy "$(TargetDir)$(TargetName).lib" ..\..\..\Lib\Win32</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Client|Win32'">
+    <PreBuildEvent>
+      <Command>attrib -r ..\..\..\lib\win32\$(TargetName).lib</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>../../../Include/SO3World;../../../Include;../../../../Base/Include;../../../../DevEnv/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CLIENT;LUA_V_5;FILTERTEXT_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(OutDir)$(ProjectName)Client.lib</OutputFile>
+      <AdditionalLibraryDirectories>../../../../Base/Lib;../../../../Base/Lib/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy "$(TargetDir)$(TargetName).lib" ..\..\..\Lib\Win32</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'">
+    <PreBuildEvent>
+      <Command>attrib -r ..\..\..\lib\win32\$(TargetName).lib</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./;../../../Include/SO3World;../../../Include;../../../../Base/Include;../../../../DevEnv/Include/mysql;../../../../DevEnv/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;PROFILE;_WINDOWS;_SERVER;LUA_V_5;FILTERTEXT_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(OutDir)$(ProjectName)ServerD.lib</OutputFile>
+      <AdditionalLibraryDirectories>../../../../Base/Lib;../../../../Base/Lib/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy $(TargetDir)$(TargetName).lib ..\..\..\Lib\Win32</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'">
+    <PreBuildEvent>
+      <Command>attrib -r ..\..\..\lib\win32\$(TargetName).lib</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>../../../Include/SO3World;../../../Include;../../Client/SO3Client;../../../../Base/Include;../../Server/SO3GameCenter;../../Server/SO3GameServer;../../../../DevEnv/Include/mysql;../../../../DevEnv/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_SERVER;LUA_V_5;FILTERTEXT_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(OutDir)$(ProjectName)Server.lib</OutputFile>
+      <AdditionalLibraryDirectories>../../../../Base/Lib;../../../../Base/Lib/Release;../../../../DevEnv/Lib/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy $(TargetDir)$(TargetName).lib ..\..\..\Lib\Win32</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\KEnchantLib.cpp" />
+    <ClCompile Include="src\KItem.cpp" />
+    <ClCompile Include="Src\KLuaItem.cpp" />
+    <ClCompile Include="Src\KTimeLimitationBindItemMgr.cpp" />
+    <ClCompile Include="src\KItemLib.cpp" />
+    <ClCompile Include="src\KItemManager.cpp" />
+    <ClCompile Include="src\KInventory.cpp" />
+    <ClCompile Include="src\KItemList.cpp" />
+    <ClCompile Include="src\KItemTransaction.cpp" />
+    <ClCompile Include="src\KAttribGroup.cpp" />
+    <ClCompile Include="Src\KCustomEquipInfoList.cpp" />
+    <ClCompile Include="Src\KItemInfo.cpp" />
+    <ClCompile Include="src\KItemInfoList.cpp" />
+    <ClCompile Include="src\KSkillDebug.cpp" />
+    <ClCompile Include="Src\KBuff.cpp" />
+    <ClCompile Include="Src\KBuffList.cpp" />
+    <ClCompile Include="src\KBuffManager.cpp" />
+    <ClCompile Include="src\KLuaSkill.cpp" />
+    <ClCompile Include="src\KSkill.cpp" />
+    <ClCompile Include="src\KSkillList.cpp" />
+    <ClCompile Include="src\KSkillManager.cpp" />
+    <ClCompile Include="src\KSkillRecipeList.cpp" />
+    <ClCompile Include="src\KGSO3WorldClient.cpp" />
+    <ClCompile Include="src\KGSO3WorldServer.cpp" />
+    <ClCompile Include="Src\KGatewayClient.cpp" />
+    <ClCompile Include="Src\KLogClient.cpp" />
+    <ClCompile Include="Src\KPlayerClient.cpp" />
+    <ClCompile Include="Src\KPlayerServer.cpp" />
+    <ClCompile Include="src\KPlayerServerBase.cpp" />
+    <ClCompile Include="Src\KRelayClient.cpp" />
+    <ClCompile Include="Src\KCell.cpp" />
+    <ClCompile Include="Src\KLuaCell.cpp" />
+    <ClCompile Include="Src\KLuaScene.cpp" />
+    <ClCompile Include="Src\KLuaSceneObject.cpp" />
+    <ClCompile Include="src\KRegion.cpp">
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'">All</AssemblerOutput>
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'">All</AssemblerOutput>
+    </ClCompile>
+    <ClCompile Include="src\KScene.cpp" />
+    <ClCompile Include="src\KSceneObject.cpp" />
+    <ClCompile Include="src\KSceneObjNode.cpp" />
+    <ClCompile Include="src\KSO3World.cpp" />
+    <ClCompile Include="src\KTerrainData.cpp" />
+    <ClCompile Include="src\KWorldSettings.cpp" />
+    <ClCompile Include="src\KCharacterActionList.cpp" />
+    <ClCompile Include="src\KCoolDownList.cpp" />
+    <ClCompile Include="Src\KDesignationList.cpp" />
+    <ClCompile Include="src\KDoodadClassList.cpp" />
+    <ClCompile Include="src\KFightFlagList.cpp" />
+    <ClCompile Include="Src\KGameCardInfoList.cpp" />
+    <ClCompile Include="src\KGMList.cpp" />
+    <ClCompile Include="src\KGWConstList.cpp" />
+    <ClCompile Include="Src\KLevelUpList.cpp" />
+    <ClCompile Include="src\KMapListFile.cpp" />
+    <ClCompile Include="src\KRelationList.cpp" />
+    <ClCompile Include="src\KReputationLimit.cpp" />
+    <ClCompile Include="src\KRoadManager.cpp" />
+    <ClCompile Include="src\KSmartDialogList.cpp" />
+    <ClCompile Include="Src\KTransmissionList.cpp" />
+    <ClCompile Include="src\KWeaponTypeList.cpp" />
+    <ClCompile Include="src\KAttribute.cpp" />
+    <ClCompile Include="src\KAttrModifier.cpp" />
+    <ClCompile Include="src\KBookList.cpp" />
+    <ClCompile Include="src\KCraft.cpp" />
+    <ClCompile Include="src\KLuaProfession.cpp" />
+    <ClCompile Include="src\KProfession.cpp" />
+    <ClCompile Include="src\KProfessionList.cpp" />
+    <ClCompile Include="src\KProfessionManager.cpp" />
+    <ClCompile Include="src\KRecipeList.cpp" />
+    <ClCompile Include="src\KLuaRecipe.cpp" />
+    <ClCompile Include="src\KRecipe.cpp" />
+    <ClCompile Include="src\KRecipeMaster.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug_Client|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug_Client|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release_Client|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release_Client|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="Src\KCenterRemote.cpp" />
+    <ClCompile Include="Src\KLuaConstList.cpp" />
+    <ClCompile Include="src\KScriptCenter.cpp" />
+    <ClCompile Include="Src\KScriptClient.cpp" />
+    <ClCompile Include="Src\KScriptServer.cpp" />
+    <ClCompile Include="src\luna.cpp" />
+    <ClCompile Include="Src\KBaseFuncList.cpp" />
+    <ClCompile Include="src\kLoginFuncList.cpp" />
+    <ClCompile Include="src\KShopFuncList.cpp" />
+    <ClCompile Include="src\KLuaShop.cpp" />
+    <ClCompile Include="src\KShop.cpp" />
+    <ClCompile Include="src\KShopCenter.cpp" />
+    <ClCompile Include="src\KTradingBox.cpp" />
+    <ClCompile Include="Src\KEscortQuestManager.cpp" />
+    <ClCompile Include="src\KGPQ.cpp" />
+    <ClCompile Include="Src\KLuaQuestInfo.cpp" />
+    <ClCompile Include="Src\KQuestInfoList.cpp" />
+    <ClCompile Include="Src\KQuestList.cpp" />
+    <ClCompile Include="src\KGod.cpp" />
+    <ClCompile Include="src\KGodClient.cpp" />
+    <ClCompile Include="src\KGodServer.cpp" />
+    <ClCompile Include="src\KAIPatrolGroupManager.cpp" />
+    <ClCompile Include="src\KPatrolPath.cpp" />
+    <ClCompile Include="src\KPatrolPathList.cpp" />
+    <ClCompile Include="src\KAIAction.cpp" />
+    <ClCompile Include="src\KAILogic.cpp" />
+    <ClCompile Include="src\KAIManager.cpp" />
+    <ClCompile Include="src\KAISearchTactics.cpp" />
+    <ClCompile Include="src\KAISkillSelector.cpp" />
+    <ClCompile Include="src\KAIState.cpp" />
+    <ClCompile Include="src\KAIVM.cpp" />
+    <ClCompile Include="Src\KThreatList.cpp" />
+    <ClCompile Include="src\KBaseObject.cpp" />
+    <ClCompile Include="src\KCircleList.cpp" />
+    <ClCompile Include="src\KIDCache.cpp" />
+    <ClCompile Include="src\KMath.cpp" />
+    <ClCompile Include="src\KDoodadReviveManager.cpp" />
+    <ClCompile Include="src\KNpcReviveManager.cpp" />
+    <ClCompile Include="src\Global.cpp" />
+    <ClCompile Include="Src\KCDTimerList.cpp" />
+    <ClCompile Include="Src\KLuaTarget.cpp" />
+    <ClCompile Include="Src\KRandGenerator.cpp" />
+    <ClCompile Include="Src\KStartTimeEvaluation.cpp" />
+    <ClCompile Include="src\KTarget.cpp" />
+    <ClCompile Include="src\KUserPreferences.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_Client|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_Client|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Src\KTeamClient.cpp" />
+    <ClCompile Include="Src\KTeamServer.cpp" />
+    <ClCompile Include="src\KFellowship.cpp" />
+    <ClCompile Include="src\KCharacter.cpp" />
+    <ClCompile Include="Src\KLuaCharacter.cpp" />
+    <ClCompile Include="src\KDoodad.cpp" />
+    <ClCompile Include="Src\KDoodadFile.cpp" />
+    <ClCompile Include="src\KDoodadTemplateList.cpp" />
+    <ClCompile Include="Src\KLuaDoodad.cpp" />
+    <ClCompile Include="src\KLuaDoodadTemplate.cpp" />
+    <ClCompile Include="Src\KDesignation.cpp" />
+    <ClCompile Include="Src\KLuaPlayer.cpp" />
+    <ClCompile Include="src\KPKController.cpp" />
+    <ClCompile Include="src\KPlayer.cpp" />
+    <ClCompile Include="Src\KReputation.cpp" />
+    <ClCompile Include="Src\KLuaNpc.cpp" />
+    <ClCompile Include="src\KNpc.cpp" />
+    <ClCompile Include="Src\KNpcClassList.cpp" />
+    <ClCompile Include="Src\KNpcFile.cpp" />
+    <ClCompile Include="src\KNpcOrderList.cpp" />
+    <ClCompile Include="src\KNpcTeamList.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug_Client|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug_Client|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug_Server|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release_Client|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release_Client|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release_Server|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="Src\KNpcTemplateList.cpp" />
+    <ClCompile Include="Src\KDropCenter.cpp" />
+    <ClCompile Include="src\KDropList.cpp" />
+    <ClCompile Include="Src\KIndividualDropList.cpp" />
+    <ClCompile Include="Src\KLevelDropList.cpp" />
+    <ClCompile Include="src\KLevelMoneyDropList.cpp" />
+    <ClCompile Include="Src\KLootList.cpp" />
+    <ClCompile Include="Src\KProtocolRecorder.cpp" />
+    <ClCompile Include="Src\KProtocolReplayer.cpp" />
+    <ClCompile Include="Src\KRecorderFactory.cpp" />
+    <ClCompile Include="src\KRecorderSceneLoaderNormal.cpp" />
+    <ClCompile Include="Src\KRecorderSocketClientNormal.cpp" />
+    <ClCompile Include="Src\KRecorderSocketServerNormal.cpp" />
+    <ClCompile Include="Src\KRecorderToolsNormal.cpp" />
+    <ClCompile Include="src\KRecorderSceneLoaderRecord.cpp" />
+    <ClCompile Include="Src\KRecorderSocketClientRecord.cpp" />
+    <ClCompile Include="Src\KRecorderSocketServerRecord.cpp" />
+    <ClCompile Include="Src\KRecorderSocketStreamRecord.cpp" />
+    <ClCompile Include="Src\KRecorderToolsRecord.cpp" />
+    <ClCompile Include="src\KRecorderSceneLoaderReplay.cpp" />
+    <ClCompile Include="Src\KRecorderSocketClientReplay.cpp" />
+    <ClCompile Include="Src\KRecorderSocketServerReplay.cpp" />
+    <ClCompile Include="Src\KRecorderSocketStreamReplay.cpp" />
+    <ClCompile Include="Src\KRecorderToolsReplay.cpp" />
+    <ClCompile Include="Src\KLuaTongClient.cpp" />
+    <ClCompile Include="Src\KTongClient.cpp" />
+    <ClCompile Include="Src\KTongRepertoryCache.cpp" />
+    <ClCompile Include="Src\KCampInfo.cpp" />
+    <ClCompile Include="Src\KLuaCampInfo.cpp" />
+    <ClCompile Include="Src\KAuctionClient.cpp" />
+    <ClCompile Include="Src\KLuaAuctionClient.cpp" />
+    <ClCompile Include="Src\KGlobalSystemValueCache.cpp" />
+    <ClCompile Include="Src\KAchievement.cpp" />
+    <ClCompile Include="Src\KAchievementInfoList.cpp" />
+    <ClCompile Include="Src\KStatDataServer.cpp" />
+    <ClCompile Include="Src\KLuaMailClient.cpp" />
+    <ClCompile Include="Src\KMailClient.cpp" />
+    <ClCompile Include="Src\KApexClient.cpp" />
+    <ClCompile Include="Src\KGameCardClient.cpp" />
+    <ClCompile Include="Src\KLuaGameCardClient.cpp" />
+    <ClCompile Include="Src\KAntiFarmer.cpp" />
+    <ClCompile Include="Src\KLuaMentorCache.cpp" />
+    <ClCompile Include="Src\KMentorCache.cpp" />
+    <ClCompile Include="Src\KMentorClient.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Include\SO3World\KEnchantLib.h" />
+    <ClInclude Include="src\KItem.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KTimeLimitationBindItemMgr.h" />
+    <ClInclude Include="src\KItemLib.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KItemManager.h" />
+    <ClInclude Include="src\KInventory.h" />
+    <ClInclude Include="src\KItemList.h" />
+    <ClInclude Include="src\KItemTransaction.h" />
+    <ClInclude Include="src\KAttribGroup.h" />
+    <ClInclude Include="Src\KCustomEquipInfoList.h" />
+    <ClInclude Include="Src\KItemInfo.h" />
+    <ClInclude Include="src\KItemInfoList.h" />
+    <ClInclude Include="src\KSkillDebug.h" />
+    <ClInclude Include="Src\KBuff.h" />
+    <ClInclude Include="Src\KBuffList.h" />
+    <ClInclude Include="src\KBuffManager.h" />
+    <ClInclude Include="src\KSkill.h" />
+    <ClInclude Include="..\..\..\Include\KSkillDef.h" />
+    <ClInclude Include="src\KSkillList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KSkillManager.h" />
+    <ClInclude Include="src\KSkillRecipeList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\IDoodadFile.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\IKGSO3WorldClient.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\IKGSO3WorldServer.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\INpcFile.h" />
+    <ClInclude Include="src\KGSO3WorldClient.h" />
+    <ClInclude Include="src\KGSO3WorldServer.h" />
+    <ClInclude Include="..\..\..\Include\GS_Client_Protocol.h" />
+    <ClInclude Include="Src\KConnectionData.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KGatewayClient.h" />
+    <ClInclude Include="Src\KLogClient.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KPlayerClient.h" />
+    <ClInclude Include="Src\KPlayerServer.h" />
+    <ClInclude Include="Src\KRelayClient.h" />
+    <ClInclude Include="..\..\..\Include\SO3ProtocolBasic.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KCell.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KRegion.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KScene.h" />
+    <ClInclude Include="src\KSceneObject.h" />
+    <ClInclude Include="src\KSceneObjNode.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KSO3World.h" />
+    <ClInclude Include="src\KTerrainData.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KWorldSettings.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KCharacterActionList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KCoolDownList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KDesignationList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KDoodadClassList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KFightFlagList.h" />
+    <ClInclude Include="Src\KGameCardInfoList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KGMList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KGWConstList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KLevelUpList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KMapListFile.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KRelationList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KReputationLimit.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KRoadManager.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KSmartDialogList.h" />
+    <ClInclude Include="Src\KTransmissionList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KWeaponTypeList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KAttribute.h" />
+    <ClInclude Include="src\KAttrModifier.h" />
+    <ClInclude Include="src\KBookList.h" />
+    <ClInclude Include="src\KCraft.h" />
+    <ClInclude Include="src\KProfession.h" />
+    <ClInclude Include="src\KProfessionList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KProfessionManager.h" />
+    <ClInclude Include="src\KRecipeList.h" />
+    <ClInclude Include="src\KRecipe.h" />
+    <ClInclude Include="src\KRecipeMaster.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KCenterRemote.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KScriptCenter.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KScriptClient.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KScriptFuncList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KScriptServer.h" />
+    <ClInclude Include="..\..\..\Include\Luna.h" />
+    <ClInclude Include="src\KShop.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KShopCenter.h" />
+    <ClInclude Include="src\KTradingBox.h" />
+    <ClInclude Include="Src\KEscortQuestManager.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KGPQ.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KQuestInfoList.h" />
+    <ClInclude Include="Src\KQuestList.h" />
+    <ClInclude Include="..\..\..\Include\GE_Protocol.h" />
+    <ClInclude Include="src\KGod.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KGodClient.h" />
+    <ClInclude Include="src\KGodServer.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KAIPatrolGroupManager.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KPatrolPath.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KPatrolPathList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KAIAction.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KAILogic.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KAIManager.h" />
+    <ClInclude Include="src\KAISearchTactics.h" />
+    <ClInclude Include="src\KAISkillSelector.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KAIState.h" />
+    <ClInclude Include="src\KAIVM.h" />
+    <ClInclude Include="Src\KThreatList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KBaseObject.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KCircleList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KCustomData.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KIDCache.h" />
+    <ClInclude Include="src\KMath.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KObjectIndex.h" />
+    <ClInclude Include="src\KDoodadReviveManager.h" />
+    <ClInclude Include="src\KNpcReviveManager.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\Global.h" />
+    <ClInclude Include="Src\KCDTimerList.h" />
+    <ClInclude Include="Src\KRandGenerator.h" />
+    <ClInclude Include="Src\KStartTimeEvaluation.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KTarget.h" />
+    <ClInclude Include="src\KUserPreferences.h" />
+    <ClInclude Include="..\..\..\Include\SO3GlobalDef.h" />
+    <ClInclude Include="..\..\..\Include\SO3Result.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KTeamClient.h" />
+    <ClInclude Include="Src\KTeamServer.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KFellowship.h" />
+    <ClInclude Include="src\KCharacter.h" />
+    <ClInclude Include="src\KDoodad.h" />
+    <ClInclude Include="Src\KDoodadFile.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KDoodadTemplateList.h" />
+    <ClInclude Include="Src\KDesignation.h" />
+    <ClInclude Include="src\KPKController.h" />
+    <ClInclude Include="src\KPlayer.h" />
+    <ClInclude Include="Src\KProbability.h" />
+    <ClInclude Include="Src\KReputation.h" />
+    <ClInclude Include="..\..\..\Include\KRoleDBDataDef.h" />
+    <ClInclude Include="src\KNpc.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KNpcClassList.h" />
+    <ClInclude Include="Src\KNpcFile.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KNpcOrderList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KNpcTeamList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KNpcTemplateList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KDropCenter.h" />
+    <ClInclude Include="Src\KDropList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KIndividualDropList.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KLevelDropList.h" />
+    <ClInclude Include="src\KLevelMoneyDropList.h" />
+    <ClInclude Include="Src\KLootList.h" />
+    <ClInclude Include="Src\KProtocolRecorder.h" />
+    <ClInclude Include="Src\KProtocolRecorderBase.h" />
+    <ClInclude Include="Src\KProtocolReplayer.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KRecorderFactory.h" />
+    <ClInclude Include="src\KRecorderSceneLoaderNormal.h" />
+    <ClInclude Include="Src\KRecorderSocketClientNormal.h" />
+    <ClInclude Include="Src\KRecorderSocketServerNormal.h" />
+    <ClInclude Include="Src\KRecorderToolsNormal.h" />
+    <ClInclude Include="src\KRecorderSceneLoaderRecord.h" />
+    <ClInclude Include="Src\KRecorderSocketClientRecord.h" />
+    <ClInclude Include="Src\KRecorderSocketServerRecord.h" />
+    <ClInclude Include="Src\KRecorderSocketStreamRecord.h" />
+    <ClInclude Include="Src\KRecorderToolsRecord.h" />
+    <ClInclude Include="src\KRecorderSceneLoaderReplay.h" />
+    <ClInclude Include="Src\KRecorderSocketClientReplay.h" />
+    <ClInclude Include="Src\KRecorderSocketServerReplay.h" />
+    <ClInclude Include="Src\KRecorderSocketStreamReplay.h" />
+    <ClInclude Include="Src\KRecorderToolsReplay.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KTongClient.h" />
+    <ClInclude Include="..\..\..\Include\KTongDef.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KTongRepertoryCache.h" />
+    <ClInclude Include="Src\KCampInfo.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KAuctionClient.h" />
+    <ClInclude Include="Src\KGlobalSystemValueCache.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KAchievement.h" />
+    <ClInclude Include="..\..\..\Include\SO3World\KAchievementInfoList.h" />
+    <ClInclude Include="..\..\..\Include\KStatDataDef.h" />
+    <ClInclude Include="Src\KStatDataServer.h" />
+    <ClInclude Include="Src\KMailClient.h" />
+    <ClInclude Include="Src\KApexClient.h" />
+    <ClInclude Include="Src\KGameCardClient.h" />
+    <ClInclude Include="Src\KAntiFarmer.h" />
+    <ClInclude Include="Src\KMentorCache.h" />
+    <ClInclude Include="Src\KMentorClient.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SO3World.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SO3World.prj" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

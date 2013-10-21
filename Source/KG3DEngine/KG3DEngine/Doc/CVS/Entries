@@ -1,0 +1,33 @@
+D/3D渲染开关和调试工具////
+D/场景相关////
+D/地图格式相关////
+D/动画相关////
+D/多线程加载相关////
+D/模型相关////
+D/视频压缩相关////
+D/投影贴图脚印相关////
+/3D引擎开发功能一览和详细设计方案.doc/1.1/Mon Oct 17 02:48:53 2005/-kb/Tt_jx3_built_1-4-0-1834
+/Animation.doc/1.1/Thu Jul 13 03:21:29 2006/-kb/Tt_jx3_built_1-4-0-1834
+/BSP简介.TXT/1.1/Thu Apr 23 09:35:58 2009//Tt_jx3_built_1-4-0-1834
+/Cloth Simulation.doc/1.1/Thu Jul 13 03:21:29 2006/-kb/Tt_jx3_built_1-4-0-1834
+/KG3DClip.doc/1.1/Thu Jul 13 03:21:30 2006/-kb/Tt_jx3_built_1-4-0-1834
+/KG3DInterface.mdl/1.1/Thu Jul 13 03:21:30 2006//Tt_jx3_built_1-4-0-1834
+/KG3DParticles.vsd/1.1/Thu Jul 13 03:21:30 2006/-kb/Tt_jx3_built_1-4-0-1834
+/KG3DParticlesClasses.vsd/1.1/Thu Jul 13 03:21:30 2006/-kb/Tt_jx3_built_1-4-0-1834
+/KG3DWaterEffect.txt/1.1/Mon Mar 30 07:43:22 2009//Tt_jx3_built_1-4-0-1834
+/code doc0 - sfx.pdf/1.1/Mon Sep 28 07:25:25 2009/-kb/Tt_jx3_built_1-4-0-1834
+/gfx(1).doc/1.1/Thu Jul 13 03:21:30 2006/-kb/Tt_jx3_built_1-4-0-1834
+/gfx(2).doc/1.1/Thu Jul 13 03:21:30 2006/-kb/Tt_jx3_built_1-4-0-1834
+/gfx.doc/1.1/Thu Jul 13 03:21:30 2006/-kb/Tt_jx3_built_1-4-0-1834
+/jx3_font_design.doc/1.1/Wed May 24 02:27:39 2006/-kb/Tt_jx3_built_1-4-0-1834
+/jx3_font_design.wps/1.5/Mon Apr 10 05:58:57 2006/-kb/Tt_jx3_built_1-4-0-1834
+/jx3_terrain_loader.doc/1.1/Fri Jul 28 02:12:49 2006/-kb/Tt_jx3_built_1-4-0-1834
+/关于Normal检查工具.txt/1.1/Tue Nov 18 07:36:51 2008//Tt_jx3_built_1-4-0-1834
+/剑3统一光照模型.txt/1.4/Tue Sep  9 02:44:14 2008//Tt_jx3_built_1-4-0-1834
+/模型编辑器使用说明.wps/1.1/Tue Aug 25 02:20:43 2009/-kbx/Tt_jx3_built_1-4-0-1834
+/模型文件数据结构说明.doc/1.1/Tue Nov 18 01:52:40 2008/-kb/Tt_jx3_built_1-4-0-1834
+/生成阴影函数调用流程.vsd/1.2/Wed Jul 26 08:02:08 2006/-kb/Tt_jx3_built_1-4-0-1834
+/特效编辑器功能描述.doc/1.1/Mon Oct 17 07:00:37 2005/-kb/Tt_jx3_built_1-4-0-1834
+/音效球.txt/1.3/Wed Jan 14 01:36:32 2009//Tt_jx3_built_1-4-0-1834
+/阴影渲染工具函数调用流程.vsd/1.1/Mon Jul 31 09:29:46 2006/-kb/Tt_jx3_built_1-4-0-1834
+/阴影渲染工具函数调用流程图.wps/1.2/Fri Aug 11 03:53:38 2006/-kb/Tt_jx3_built_1-4-0-1834

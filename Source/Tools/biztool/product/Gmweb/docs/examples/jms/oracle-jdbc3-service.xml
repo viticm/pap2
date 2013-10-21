@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Id: oracle-jdbc3-service.xml,v 1.1 2008/12/31 09:22:51 kuangsihao Exp $ -->
+
+<server>
+
+  <!-- ==================================================================== -->
+  <!-- Persistence and caching using Oracle                                 -->
+  <!-- IMPORTANT: Remove hsqldb-jdbc2-service.xml                           -->
+  <!-- ==================================================================== -->
+
+  <!--
+     | The destination manager is the core service within JBossMQ
+  -->
+  <mbean code="org.jboss.mq.server.jmx.DestinationManager" name="jboss.mq:service=DestinationManager">
+    <depends optional-attribute-name="MessageCache">jboss.mq:service=MessageCache</depends>
+    <depends optional-attribute-name="PersistenceManager">jboss.mq:service=PersistenceManager</depends>
+    <depends optional-attribute-name="StateManager">jboss.mq:service=StateManager</depends>
+  </mbean>
+
+  <!--
+     | The MessageCache decides where to put JBossMQ message that
+     | are sitting around waiting to be consumed by a client.
+     |
+     | The memory marks are in Megabytes.  Once the JVM memory usage hits
+     | the high memory mark, the old messages in the cache will start getting
+     | stored in the DataDirectory.  As memory usage gets closer to the
+     | Max memory mark, the amount of message kept in the memory cache aproaches 0.
+   -->
+  <mbean code="org.jboss.mq.server.MessageCache"
+	 name="jboss.mq:service=MessageCache">
+    <attribute name="HighMemoryMark">50</attribute>
+    <attribute name="MaxMemoryMark">60</attribute>
+    <attribute name="CacheStore">jboss.mq:service=PersistenceManager</attribute>
+  </mbean>
+
+  <!-- 
+     | The jdbc2 PersistenceManager is the new improved JDBC implementation.
+     | This implementation allows you to control how messages are stored in 
+     | the database.
+     |
+     | Use this PM if you want the reliablity a relational database can offer
+     | you.  The default configuration is known to work with hsqldb, other
+     | databases will requrie teaking of the SqlProperties e.g. changing table
+     | colum definitions to database supported types.
+     |
+     | Take care that the selected blob column type can store
+     | all message data. Some databases (e.g. mySQL) offer blob types with
+     | different maximum capacity (e.g. mySQL-type BLOB=64K, LONGBLOB=2G).
+     |
+     | If you encouter problems with the configured BLOB_TYPE try a different
+     | setting. Valid settings are OBJECT_BLOB, BINARYSTREAM_BLOB and BYTES_BLOB.
+   -->
+  <mbean code="org.jboss.mq.pm.jdbc3.PersistenceManager"
+	 name="jboss.mq:service=PersistenceManager">
+    <depends optional-attribute-name="ConnectionManager">jboss.jca:service=DataSourceBinding,name=OracleDS</depends>
+    <attribute name="SqlProperties">
+      BLOB_TYPE=BINARYSTREAM_BLOB
+      UPDATE_MARKED_MESSAGES = UPDATE JMS_MESSAGE_LOG SET TXID=?, TXOP=? WHERE TXOP=?
+      UPDATE_MARKED_REFERENCES = UPDATE JMS_REFERENCE_LOG SET TXID=?, TXOP=? WHERE TXOP=?
+      UPDATE_MARKED_MESSAGES_WITH_TX = UPDATE JMS_MESSAGE_LOG SET TXID=?, TXOP=? WHERE TXOP=? AND TXID=?
+      UPDATE_MARKED_REFERENCES_WITH_TX = UPDATE JMS_REFERENCE_LOG SET TXID=?, TXOP=? WHERE TXOP=? AND TXID=?
+      DELETE_MARKED_MESSAGES_WITH_TX = DELETE FROM JMS_MESSAGE_LOG WHERE TXID IN (SELECT TXID FROM JMS_TRANSACTION_LOG) AND TXOP=?
+      DELETE_MARKED_REFERENCES_WITH_TX = DELETE FROM JMS_REFERENCE_LOG WHERE TXID IN (SELECT TXID FROM JMS_TRANSACTION_LOG) AND TXOP=?
+      DELETE_TX = DELETE FROM JMS_TRANSACTION_LOG WHERE TXID = ?
+      DELETE_MARKED_MESSAGES = DELETE FROM JMS_MESSAGE_LOG WHERE TXID=? AND TXOP=?
+      DELETE_MARKED_REFERENCES = DELETE FROM JMS_REFERENCE_LOG WHERE TXID=? AND TXOP=?
+      DELETE_TEMPORARY_MESSAGES = DELETE FROM JMS_MESSAGE_LOG WHERE TXOP='T'
+      DELETE_TEMPORARY_REFERENCES = DELETE FROM JMS_REFERENCE_LOG WHERE TXOP='T'
+      INSERT_TX = INSERT INTO JMS_TRANSACTION_LOG (TXID) values(?)
+      SELECT_MAX_TX = SELECT MAX(TXID) FROM JMS_TRANSACTION_LOG
+      SELECT_MESSAGES_IN_DEST = SELECT MESSAGEID, MESSAGEBLOB FROM JMS_MESSAGE_LOG WHERE DESTINATION=?
+      SELECT_REFERENCES_IN_DEST = SELECT R.MESSAGEID, M.MESSAGEBLOB, R.REDELIVERED, R.REDELIVERS FROM JMS_REFERENCE_LOG R, JMS_MESSAGE_LOG M \
+                                  WHERE R.MESSAGEID = M.MESSAGEID AND R.DESTINATION=?
+      SELECT_MESSAGE = SELECT MESSAGEID, MESSAGEBLOB FROM JMS_MESSAGE_LOG WHERE MESSAGEID=? AND DESTINATION=?
+      INSERT_MESSAGE = INSERT INTO JMS_MESSAGE_LOG (MESSAGEID, DESTINATION, MESSAGEBLOB, TXID, TXOP, LATECLONE) VALUES(?,?,?,?,?,?)
+      INSERT_REFERENCE = INSERT INTO JMS_REFERENCE_LOG (MESSAGEID, DESTINATION, TXID, TXOP, REDELIVERED, REDELIVERS) VALUES(?,?,?,?,?,?)
+      MARK_MESSAGE = UPDATE JMS_MESSAGE_LOG SET TXID=?, TXOP=? WHERE MESSAGEID=? AND DESTINATION=?
+      MARK_REFERENCE = UPDATE JMS_REFERENCE_LOG SET TXID=?, TXOP=? WHERE MESSAGEID=? AND DESTINATION=?
+      DELETE_MESSAGE = DELETE FROM JMS_MESSAGE_LOG WHERE MESSAGEID=? AND DESTINATION=?
+      DELETE_REFERENCE = DELETE FROM JMS_REFERENCE_LOG WHERE MESSAGEID=? AND DESTINATION=?
+      UPDATE_MESSAGE = UPDATE JMS_MESSAGE_LOG SET MESSAGEBLOB=? WHERE MESSAGEID=? AND DESTINATION=?
+      UPDATE_REFERENCE = UPDATE JMS_REFERENCE_LOG SET REDELIVERED=?, REDELIVERS=? WHERE MESSAGEID=? AND DESTINATION=?
+      DELETE_ORPHANED_MESSAGES = DELETE FROM JMS_MESSAGE_LOG WHERE LATECLONE = '1' AND MESSAGEID NOT IN (SELECT MESSAGEID FROM JMS_REFERENCE_LOG)
+      DELETE_ALL_TXS = DELETE FROM JMS_TRANSACTION_LOG
+      CREATE_REFERENCE_TABLE = CREATE TABLE JMS_REFERENCE_LOG ( MESSAGEID INTEGER NOT NULL, \
+      	 DESTINATION VARCHAR(255) NOT NULL, TXID INTEGER, TXOP CHAR(1), REDELIVERED CHAR(1), \
+      	 REDELIVERS INTEGER, PRIMARY KEY (MESSAGEID, DESTINATION) )
+      CREATE_MESSAGE_TABLE = CREATE TABLE JMS_MESSAGE_LOG ( MESSAGEID INTEGER NOT NULL, DESTINATION VARCHAR(255) NOT NULL, \
+         TXID INTEGER, TXOP CHAR(1), LATECLONE CHAR(1), MESSAGEBLOB BLOB, PRIMARY KEY (MESSAGEID, DESTINATION) )
+      CREATE_TX_TABLE = CREATE TABLE JMS_TRANSACTION_LOG ( TXID INTEGER )
+      CREATE_TABLES_ON_STARTUP = TRUE
+    </attribute>
+  </mbean>
+
+</server>
+

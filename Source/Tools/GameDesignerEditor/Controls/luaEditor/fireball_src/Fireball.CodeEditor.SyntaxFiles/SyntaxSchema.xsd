@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Language">
+		<xs:annotation>
+			<xs:documentation>Root tag for the SyntaxDef</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FileTypes" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>List of filetypes associated with this syntax</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FileType" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Type and Name of a filetype</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="Extension" type="xs:string" use="required"/>
+									<xs:attribute name="Name" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Block" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Represents a block of code , eg a String , Comment or Code</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Scope" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Start and end patterns for a block scope</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="Start" type="xs:string" use="required"/>
+									<xs:attribute name="End" type="xs:string" use="required"/>
+									<xs:attribute name="Style" type="xs:string" use="required"/>
+									<xs:attribute name="Text" type="xs:string" use="optional"/>
+									<xs:attribute name="CauseIndent" type="xs:boolean" use="optional"/>
+									<xs:attribute name="DefaultExpanded" type="xs:boolean" use="optional"/>
+									<xs:attribute name="EscapeChar" type="xs:string" use="optional"/>
+									<xs:attribute name="StartIsComplex" type="xs:boolean" use="optional"/>
+									<xs:attribute name="EndIsComplex" type="xs:boolean" use="optional"/>
+									<xs:attribute name="SpawnBlockOnStart" type="xs:string" use="optional"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Bracket" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Start and end brackets</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="Start" type="xs:string" use="required"/>
+									<xs:attribute name="End" type="xs:string" use="required"/>
+									<xs:attribute name="Style" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Keywords" type="PatternGroupType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>List of keyword groups in a block</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="Operators" type="PatternGroupType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>List of operator groups in a block</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ChildBlocks" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>List of childblocks in a block</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence maxOccurs="unbounded">
+										<xs:element name="Child" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Name of a child block reference</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="Name" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="Name" type="xs:string" use="required"/>
+						<xs:attribute name="Style" type="xs:string" use="required"/>
+						<xs:attribute name="EscapeChar" type="xs:string" use="optional"/>
+						<xs:attribute name="IsMultiline" type="xs:boolean" use="optional"/>
+						<xs:attribute name="TerminateChildren" type="xs:string" use="optional"/>
+						<xs:attribute name="BackColor" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Style" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Text style def</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="Name" type="xs:string" use="required"/>
+						<xs:attribute name="ForeColor" type="Webcolor" use="optional"/>
+						<xs:attribute name="BackColor" type="Webcolor" use="optional"/>
+						<xs:attribute name="Bold" type="xs:boolean" use="optional"/>
+						<xs:attribute name="Italic" type="xs:boolean" use="optional"/>
+						<xs:attribute name="Underline" type="xs:boolean" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Name" type="xs:string" use="required"/>
+			<xs:attribute name="StartBlock" type="xs:string" use="required"/>
+		</xs:complexType>
+		<xs:key name="key1">
+			<xs:selector xpath=".//Style"/>
+			<xs:field xpath="@Name"/>
+		</xs:key>
+		<xs:keyref name="StyleBlock" refer="key1">
+			<xs:selector xpath=".//Block"/>
+			<xs:field xpath="@Style"/>
+		</xs:keyref>
+		<xs:key name="key2">
+			<xs:selector xpath=".//Block"/>
+			<xs:field xpath="@Name"/>
+		</xs:key>
+		<xs:keyref name="BlockChild" refer="key2">
+			<xs:selector xpath=".//Child"/>
+			<xs:field xpath="@Name"/>
+		</xs:keyref>
+		<xs:keyref name="StyleScope" refer="key1">
+			<xs:selector xpath=".//Scope"/>
+			<xs:field xpath="@Style"/>
+		</xs:keyref>
+		<xs:keyref name="StyleBracket" refer="key1">
+			<xs:selector xpath=".//Bracket"/>
+			<xs:field xpath="@Style"/>
+		</xs:keyref>
+	</xs:element>
+	<xs:complexType name="PatternGroupType">
+		<xs:sequence>
+			<xs:element name="PatternGroup" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>List of patterns a pattern group</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Pattern" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Represents a single pattern , eg a complex pattern (RegEx)</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="Text" type="xs:string" use="required"/>
+								<xs:attribute name="IsComplex" type="xs:boolean" use="optional"/>
+								<xs:attribute name="IsSeparator" type="xs:boolean" use="optional"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Patterns" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>List of whitespace separated static patterns</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="Name" type="xs:string" use="optional"/>
+					<xs:attribute name="Style" type="xs:string" use="required"/>
+					<xs:attribute name="CaseSensitive" type="xs:boolean" use="optional"/>
+					<xs:attribute name="NormalizeCase" type="xs:boolean" use="optional"/>
+				</xs:complexType>
+				<xs:keyref name="StylePatternGroup" refer="key1">
+					<xs:selector xpath="."/>
+					<xs:field xpath="@Style"/>
+				</xs:keyref>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="Webcolor">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value=""/>
+			<xs:enumeration value="Black"/>
+			<xs:enumeration value="DimGray"/>
+			<xs:enumeration value="Gray"/>
+			<xs:enumeration value="DarkGray"/>
+			<xs:enumeration value="Silver"/>
+			<xs:enumeration value="LightGrey"/>
+			<xs:enumeration value="Gainsboro"/>
+			<xs:enumeration value="WhiteSmoke"/>
+			<xs:enumeration value="White"/>
+			<xs:enumeration value="RosyBrown"/>
+			<xs:enumeration value="IndianRed"/>
+			<xs:enumeration value="Brown"/>
+			<xs:enumeration value="Firebrick"/>
+			<xs:enumeration value="LightCoral"/>
+			<xs:enumeration value="Maroon"/>
+			<xs:enumeration value="DarkRed"/>
+			<xs:enumeration value="Red"/>
+			<xs:enumeration value="Snow"/>
+			<xs:enumeration value="MistyRose"/>
+			<xs:enumeration value="Salmon"/>
+			<xs:enumeration value="Tomato"/>
+			<xs:enumeration value="DarkSalmon"/>
+			<xs:enumeration value="Coral"/>
+			<xs:enumeration value="OrangeRed"/>
+			<xs:enumeration value="LightSalmon"/>
+			<xs:enumeration value="Sienna"/>
+			<xs:enumeration value="SeaShell"/>
+			<xs:enumeration value="Chocolate"/>
+			<xs:enumeration value="SaddleBrown"/>
+			<xs:enumeration value="SandyBrown"/>
+			<xs:enumeration value="PeachPuff"/>
+			<xs:enumeration value="Peru"/>
+			<xs:enumeration value="Linen"/>
+			<xs:enumeration value="Bisque"/>
+			<xs:enumeration value="DarkOrange"/>
+			<xs:enumeration value="BlanchedAlmond"/>
+			<xs:enumeration value="BurlyWood"/>
+			<xs:enumeration value="Tan"/>
+			<xs:enumeration value="AntiqueWhite"/>
+			<xs:enumeration value="NavajoWhite"/>
+			<xs:enumeration value="PapayaWhip"/>
+			<xs:enumeration value="Moccasin"/>
+			<xs:enumeration value="Orange"/>
+			<xs:enumeration value="Wheat"/>
+			<xs:enumeration value="OldLace"/>
+			<xs:enumeration value="FlorarWhite"/>
+			<xs:enumeration value="DarkGoldenrod"/>
+			<xs:enumeration value="Goldenrod"/>
+			<xs:enumeration value="Cornsilk"/>
+			<xs:enumeration value="Gold"/>
+			<xs:enumeration value="Khaki"/>
+			<xs:enumeration value="LemonChiffon"/>
+			<xs:enumeration value="PaleGoldenrod"/>
+			<xs:enumeration value="DarkKhaki"/>
+			<xs:enumeration value="Beige"/>
+			<xs:enumeration value="LightGoldenrodYellow"/>
+			<xs:enumeration value="Olive"/>
+			<xs:enumeration value="Yellow"/>
+			<xs:enumeration value="LightYellow"/>
+			<xs:enumeration value="Ivory"/>
+			<xs:enumeration value="OliveDrad"/>
+			<xs:enumeration value="YellowGreen"/>
+			<xs:enumeration value="DarkOliveGreen"/>
+			<xs:enumeration value="GreenYellow"/>
+			<xs:enumeration value="Chartreuse"/>
+			<xs:enumeration value="LawnGreen"/>
+			<xs:enumeration value="DarkSeaGreen"/>
+			<xs:enumeration value="ForestGreen"/>
+			<xs:enumeration value="LimeGreen"/>
+			<xs:enumeration value="LightGreen"/>
+			<xs:enumeration value="PaleGreen"/>
+			<xs:enumeration value="DarkGreen"/>
+			<xs:enumeration value="Green"/>
+			<xs:enumeration value="Lime"/>
+			<xs:enumeration value="Honeydew"/>
+			<xs:enumeration value="SeaGreen"/>
+			<xs:enumeration value="MediumSeaGreen"/>
+			<xs:enumeration value="SpringGreen"/>
+			<xs:enumeration value="MintCream"/>
+			<xs:enumeration value="MediumSpringGreen"/>
+			<xs:enumeration value="MediumAquamarine"/>
+			<xs:enumeration value="Aquamarine"/>
+			<xs:enumeration value="Turguoise"/>
+			<xs:enumeration value="LightSeaGreen"/>
+			<xs:enumeration value="MediumTurquoise"/>
+			<xs:enumeration value="DarkSlateGray"/>
+			<xs:enumeration value="PaleTurquoise"/>
+			<xs:enumeration value="Teal"/>
+			<xs:enumeration value="DarkCyan"/>
+			<xs:enumeration value="Aqua"/>
+			<xs:enumeration value="Cyan"/>
+			<xs:enumeration value="LightCian"/>
+			<xs:enumeration value="Azure"/>
+			<xs:enumeration value="DarkTurquoise"/>
+			<xs:enumeration value="CadetBlue"/>
+			<xs:enumeration value="PowderBlue"/>
+			<xs:enumeration value="LightBlue"/>
+			<xs:enumeration value="DeepSkyBlue"/>
+			<xs:enumeration value="SkyBlue"/>
+			<xs:enumeration value="LightSkyBlue"/>
+			<xs:enumeration value="SteelBlue"/>
+			<xs:enumeration value="AliceBlue"/>
+			<xs:enumeration value="DodgerBlue"/>
+			<xs:enumeration value="SlateGray"/>
+			<xs:enumeration value="LightSlateGray"/>
+			<xs:enumeration value="LightSteelBlue"/>
+			<xs:enumeration value="CornFlowerBlue"/>
+			<xs:enumeration value="RoyalBlue"/>
+			<xs:enumeration value="MidnightBlue"/>
+			<xs:enumeration value="Lavendel"/>
+			<xs:enumeration value="Navy"/>
+			<xs:enumeration value="DarkBlue"/>
+			<xs:enumeration value="MediumBlue"/>
+			<xs:enumeration value="Blue"/>
+			<xs:enumeration value="GostWhite"/>
+			<xs:enumeration value="SlateBlue"/>
+			<xs:enumeration value="DarkSlateBlue"/>
+			<xs:enumeration value="MediumSlateBlue"/>
+			<xs:enumeration value="MediumPurple"/>
+			<xs:enumeration value="BlueViolet"/>
+			<xs:enumeration value="Indigo"/>
+			<xs:enumeration value="DarkOrchid"/>
+			<xs:enumeration value="DarkViolet"/>
+			<xs:enumeration value="MediumOrchid"/>
+			<xs:enumeration value="Thistle"/>
+			<xs:enumeration value="Plum"/>
+			<xs:enumeration value="Violet"/>
+			<xs:enumeration value="Purple"/>
+			<xs:enumeration value="DarkMagenta"/>
+			<xs:enumeration value="Magenta"/>
+			<xs:enumeration value="Fuchsia"/>
+			<xs:enumeration value="Orchid"/>
+			<xs:enumeration value="MediumVioletRed"/>
+			<xs:enumeration value="DeepPink"/>
+			<xs:enumeration value="HotPink"/>
+			<xs:enumeration value="LavendelBlush"/>
+			<xs:enumeration value="PaleVioletRed"/>
+			<xs:enumeration value="Crimson"/>
+			<xs:enumeration value="Pink"/>
+			<xs:enumeration value="LightPink"/>
+			<xs:enumeration value="ActiveBorder"/>
+			<xs:enumeration value="ActiveCaption"/>
+			<xs:enumeration value="ActiveCaptionText"/>
+			<xs:enumeration value="AppWorkspace"/>
+			<xs:enumeration value="Control"/>
+			<xs:enumeration value="ControlDark"/>
+			<xs:enumeration value="ControlDarkDark"/>
+			<xs:enumeration value="ControlLight"/>
+			<xs:enumeration value="ControlLightLight"/>
+			<xs:enumeration value="ControlText"/>
+			<xs:enumeration value="DeskTop"/>
+			<xs:enumeration value="GrayText"/>
+			<xs:enumeration value="HighLight"/>
+			<xs:enumeration value="HighLightTezt"/>
+			<xs:enumeration value="HotTrack"/>
+			<xs:enumeration value="InactiveBorder"/>
+			<xs:enumeration value="InactiveCaption"/>
+			<xs:enumeration value="InactiveCaptionText"/>
+			<xs:enumeration value="Info"/>
+			<xs:enumeration value="InfoText"/>
+			<xs:enumeration value="Menu"/>
+			<xs:enumeration value="MenuText"/>
+			<xs:enumeration value="ScrollBar"/>
+			<xs:enumeration value="Window"/>
+			<xs:enumeration value="WindowFrame"/>
+			<xs:enumeration value="WindowText"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

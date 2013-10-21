@@ -1,0 +1,27 @@
+[Include]
+../../../../../../DevEnv/Include
+../../../../../../Base/Include
+../../../../../../Sword3/Source/Tools/biztool/src/jx3roleanalyser
+
+[Config Debug]
+Product     EXE ./Product/Jx3RoleModifyDBPQ_LinuxD
+Options     Debug 
+Defines	    
+ObjDir      LDebug
+LibDir 	    ../../../biztool/src/jx3roleanalyser/products;../../../../../../Base/Lib/Linux;../../../../../../DevEnv/Lib/Linux
+Libraries   jx3roleanalyserD;Engine;Lua5D;Common;pthread;MySQLClientD
+
+[Config Release]
+Product     EXE ./Product/Jx3RoleModifyDBPQ_Linux
+Options     Release 
+Defines	    
+ObjDir      Release
+LibDir      ../../../biztool/src/jx3roleanalyser/products;../../../../../../Base/Lib/Linux;../../../../../../DevEnv/Lib/Linux
+Libraries   jx3roleanalyser;Engine;Common;Lua5;pthread;MySQLClient
+
+[Source]
+./stdafx.cpp
+./KDBBase.cpp
+./KDBTools.cpp
+./KJx3RoleModifyDBPQTools.cpp
+./Main.cpp

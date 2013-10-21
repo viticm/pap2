@@ -1,0 +1,76 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  FileName    : KG3DMemHeap.h
+//  Version     : 1.0
+//  Creator     : dengchao
+//  Create Date : 2006-10-24 14:43:32
+//  Comment     : memory hunk heap
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+#ifndef _INCLUDE_KG3DMEMHEAP_H_
+#define _INCLUDE_KG3DMEMHEAP_H_
+
+
+#include  <memory>
+
+
+
+//////////////////////////////////////////////////////////////////////
+//   class  :   KG3DMemHeap
+//   brief  :
+//   author :   dengchao
+//   log    :     
+//               
+//////////////////////////////////////////////////////////////////////
+class KG3DMemHeap
+{
+public:
+	////////////////////////////////////////////////
+	// constructors / destructors
+	KG3DMemHeap();
+	~KG3DMemHeap();
+
+
+protected:
+	////////////////////////////////////////////////
+	// noncopyable
+	KG3DMemHeap( KG3DMemHeap const& rhs );
+	KG3DMemHeap& operator=( KG3DMemHeap const& rhs );
+
+
+public:
+	////////////////////////////////////////////////
+	// initialize / clean
+	bool  Initialize( UINT memBudget );
+	void  CleanUp( );
+
+
+	////////////////////////////////////////////////
+	// malloc / free
+	void* Malloc( unsigned int memSize );
+	void  Free( void* memPtr );
+
+
+	////////////////////////////////////////////////
+	// get budget
+	int   GetFreePages();
+	int   GetMallocPages();
+
+
+private:
+	////////////////////////////////////////////////
+	// member
+	typedef struct IMPL_T;
+	typedef std::auto_ptr< IMPL_T > PIMPL_T;
+
+
+	PIMPL_T		M_PIMPL;
+
+};
+
+
+
+
+#endif // _INCLUDE_KG3DMEMHEAP_H_

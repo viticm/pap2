@@ -1,0 +1,39 @@
+[Include]
+/usr/include/
+../../../../../../Include
+../../../../../../../Base/Include
+../../../
+
+[Config Debug]
+Product     EXE ./Product/SO3GatewayTest_LinuxD
+Options     Debug 
+Defines	    
+ObjDir      LDebug
+LibDir 	    ../../../../../../../DevEnv/Lib/linux;../../../../../../../Base/lib/linuxd;/usr/local/lib
+Libraries   Engine;Lua5D;Common;cppunit;pthread
+
+[Config Release]
+Product     EXE ./Product/SO3GatewayTest_Linux
+Options     Release 
+Defines	    
+ObjDir      Release
+LibDir      ../../../../../../../DevEnv/Lib/linuxd;../../../../../../../Base/lib/linux;/usr/local/lib
+Libraries   Engine;Common;Lua5;cppunit
+
+[Source]
+../../../stdafx.cpp
+./KGateWayMonitor.cpp
+./KClientController.cpp
+./KSimulateClient.cpp
+./KSimulatePaysys.cpp
+./KSimulateRelay.cpp
+./main.cpp
+./SO3GatewayTest.cpp
+./SO3GatewayTestCreateRole.cpp
+./SO3GatewayTestDeleteRole.cpp
+./SO3GatewayTestGetHometownList.cpp
+./SO3GatewayTestGetRoleList.cpp
+./SO3GatewayTestHandshake.cpp
+./SO3GatewayTestOthers.cpp
+./SO3GatewayTestRoleEnterGame.cpp
+./SO3GatewayTestUserLogin.cpp

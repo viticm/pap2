@@ -1,0 +1,6 @@
+MovingImage_SetMoveValue					
+	说明：设置可移动图形窗口的百分比，即将废弃；
+	参数：szTreePath  		窗口树路径名，
+		  nCurrentValue		分子，
+		  nFullValue 		分母；
+	返回：nil

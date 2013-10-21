@@ -1,0 +1,47 @@
+包含两个函数：
+function GetConstName(typeid, dbvalue)             --根据常数数据获取文本显示，例如把“5,99”转化成“江湖令”
+function OnValueEdit(typeid, dbvalue)			   --当用户点“浏览”的时候调用。
+
+可用的对象：
+DBM      DBManager的实例
+luanet.System.Windows.Forms.MessageBox.Show(sql)   弹出对话框
+
+例子：
+function GetConstName(typeid, dbvalue)
+	local pos = string.find(dbvalue, ",")
+	local r1 = ""
+	local r2 = ""
+	if pos then
+		r1 = string.sub(dbvalue, 0, pos - 1)
+		r2 = string.sub(dbvalue, pos + 1)
+	else
+		return(dbvalue)
+	end
+	local sql = ""
+	if r1 == "5" then sql = "other" 		end
+	if r1 == "6" then sql = "item_Custom_Weapon" 	end
+	if r1 == "7" then sql = "item_Custom_Armor" 	end
+	if r1 == "8" then sql = "Custom_Trinket" 	end
+	sql = "select name from " .. sql .. " where id = " .. r2
+	local Conn = DBM:NewCustomConnection("Server = jx3web; DataBase = s3design_rtm; Uid = s3design; Password = ddd12345678;")
+	return DBM:GetConstTextFromSQL(sql, Conn)
+end
+
+function OnValueEdit(typeid, dbvalue)
+	local Conn = DBM:NewCustomConnection("Server = jx3web; DataBase = s3design_rtm; Uid = s3design; Password = ddd12345678;")
+	local pos = string.find(dbvalue, ",")
+	local r1 = ""
+	local r2 = ""
+	if pos then
+		r1 = string.sub(dbvalue, 0, pos - 1)
+		r2 = string.sub(dbvalue, pos + 1)
+	else
+		r1 = "0"
+		r2 = "0"
+	end
+	luanet.load_assembly("NpcClassify.dll")
+	local cls = luanet.import_type("NpcClassify.Program")
+	o = cls()
+	local r = o:Show(Conn, tonumber(r1), tonumber(r2), 3)
+	return true, o:GetMapType() .. "," .. r
+end

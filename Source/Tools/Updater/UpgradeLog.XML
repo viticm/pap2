@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Updater">
+</Property><Property Name="Solution File" Value="D:\Code\Game\Sword3\Source\Tools\Updater\Updater.sln">
+</Property><Property Name="Date" Value="2010年7月8日">
+</Property><Property Name="Time" Value="21:15">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Updater.sln" Description="File successfully backed up as D:\Code\Game\Sword3\Source\Tools\Updater\Updater.sln.old">
+</Event><Event ErrorLevel="0" Project="UpdatePakSfx" Source="UpdatePakSfx\UpdatePakSfx.vcproj" Description="Converting project file 'D:\Code\Game\Sword3\Source\Tools\Updater\UpdatePakSfx\UpdatePakSfx.vcproj'.">
+</Event><Event ErrorLevel="1" Project="UpdatePakSfx" Source="UpdatePakSfx\UpdatePakSfx.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="UpdatePakSfx" Source="UpdatePakSfx\UpdatePakSfx.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="UpdatePakSfx" Source="UpdatePakSfx\UpdatePakSfx.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="0" Project="UpdatePakSfx" Source="UpdatePakSfx\UpdatePakSfx.vcproj" Description="Done converting to new project file 'D:\Code\Game\Sword3\Source\Tools\Updater\UpdatePakSfx\UpdatePakSfx.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="UpdatePakSfx" Source="UpdatePakSfx\UpdatePakSfx.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Gameupdater" Source="GameUpdater\Gameupdater.vcproj" Description="Converting project file 'D:\Code\Game\Sword3\Source\Tools\Updater\GameUpdater\Gameupdater.vcproj'.">
+</Event><Event ErrorLevel="1" Project="Gameupdater" Source="GameUpdater\Gameupdater.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="Gameupdater" Source="GameUpdater\Gameupdater.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Gameupdater" Source="GameUpdater\Gameupdater.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Gameupdater" Source="GameUpdater\Gameupdater.vcproj" Description="MSB8012: $(TargetName) ('Gameupdater') does not match the Linker's OutputFile property value 'D:\Code\Game\Sword3\Source\Tools\Updater\Debug\GameupdaterD.exe' ('GameupdaterD') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetName) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="1" Project="Gameupdater" Source="GameUpdater\Gameupdater.vcproj" Description="MSB8012: $(TargetPath) ('D:\Code\Game\Sword3\Source\Tools\Updater\Debug\Gameupdater.exe') does not match the Linker's OutputFile property value 'D:\Code\Game\Sword3\Source\Tools\Updater\Debug\GameupdaterD.exe' ('D:\Code\Game\Sword3\Source\Tools\Updater\Debug\GameupdaterD.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="0" Project="Gameupdater" Source="GameUpdater\Gameupdater.vcproj" Description="Done converting to new project file 'D:\Code\Game\Sword3\Source\Tools\Updater\GameUpdater\Gameupdater.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="Gameupdater" Source="GameUpdater\Gameupdater.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Updater.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Updater.sln" Description="Converted">
+</Event></UpgradeLog>

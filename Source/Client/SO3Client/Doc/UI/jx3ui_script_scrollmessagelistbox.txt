@@ -1,0 +1,17 @@
+ScrollMessageListBox_HeightToLineHeight
+	说明：窗口高度换算行高度，即将废弃；
+	参数：szTreePath  		窗口树路径名，
+		  nHeight			窗口高度；
+	返回：nLineHeight		行高度；
+	
+ScrollMessageListBox_WidthToCharWidth		
+	说明：窗口宽度换算字符宽度，即将废弃；
+	参数：szTreePath  		窗口树路径名，
+		  nWidth			窗口宽度；
+	返回：nCharWidth		字符宽度；
+	
+ScrollMessageListBox_GetMinHeight			
+	说明：取窗口最小高度，即将废弃；
+	参数：szTreePath  		窗口树路径名；
+	返回：nMinHeight		最小高度；
+

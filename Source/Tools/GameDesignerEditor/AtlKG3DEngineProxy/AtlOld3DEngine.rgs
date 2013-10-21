@@ -1,0 +1,27 @@
+HKCR
+{
+	AtlKG3DEngineProxy.AtlOld3DEngine.1 = s 'AtlOld3DEngine Class'
+	{
+		CLSID = s '{80B73C62-93C8-441C-9D52-F3DAC3B0D6C6}'
+	}
+	AtlKG3DEngineProxy.AtlOld3DEngine = s 'AtlOld3DEngine Class'
+	{
+		CLSID = s '{80B73C62-93C8-441C-9D52-F3DAC3B0D6C6}'
+		CurVer = s 'AtlKG3DEngineProxy.AtlOld3DEngine.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {80B73C62-93C8-441C-9D52-F3DAC3B0D6C6} = s 'AtlOld3DEngine Class'
+		{
+			ProgID = s 'AtlKG3DEngineProxy.AtlOld3DEngine.1'
+			VersionIndependentProgID = s 'AtlKG3DEngineProxy.AtlOld3DEngine'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{F77619C9-C039-4EDF-AB63-A7BEE4D1E75A}'
+		}
+	}
+}

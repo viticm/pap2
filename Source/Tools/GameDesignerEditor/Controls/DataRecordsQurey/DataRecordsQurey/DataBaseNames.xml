@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <DefaultDataBase>s3design_rtm</DefaultDataBase>
+  <DataBaseNames>
+    <name>s3design-1-0-8-1380</name>
+    <name_cn>1380库</name_cn>
+  </DataBaseNames>
+
+  <DataBaseNames>
+    <name>s3design-1-0-8-1380-new</name>
+    <name_cn>1380新库</name_cn>
+  </DataBaseNames>
+
+  <DataBaseNames>
+    <name>s3design_rtm</name>
+    <name_cn>rtm库</name_cn>
+  </DataBaseNames>
+
+  <DataBaseNames>
+    <name>s3design_skill_branch</name>
+    <name_cn>技能分支库</name_cn>
+  </DataBaseNames>
+</root>

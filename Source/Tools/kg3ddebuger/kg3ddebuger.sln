@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kg3ddebuger", "kg3ddebuger\kg3ddebuger.vcproj", "{35C47B1B-44B2-4407-9AC4-9356F3A40ADA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35C47B1B-44B2-4407-9AC4-9356F3A40ADA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{35C47B1B-44B2-4407-9AC4-9356F3A40ADA}.Debug|Win32.Build.0 = Debug|Win32
+		{35C47B1B-44B2-4407-9AC4-9356F3A40ADA}.Release|Win32.ActiveCfg = Release|Win32
+		{35C47B1B-44B2-4407-9AC4-9356F3A40ADA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

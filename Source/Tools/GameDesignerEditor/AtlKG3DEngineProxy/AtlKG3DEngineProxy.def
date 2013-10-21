@@ -1,0 +1,9 @@
+; AtlKG3DEngineProxy.def : Declares the module parameters.
+
+LIBRARY      "AtlKG3DEngineProxy.DLL"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE

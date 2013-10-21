@@ -1,0 +1,375 @@
+﻿@title KDoodad对象
+@obj KDoodad
+@catalogs 物理属性
+
+@summary ro. Doodad的id
+property dwID as DWORD ro
+
+@summary ro. X坐标，单位：水平方向的点
+@catalog 物理属性
+property nX as int ro
+
+@summary ro. Y坐标, 单位：水平方向的点
+@catalog 物理属性
+property nY as int ro
+
+@summary ro. Z坐标, 单位：垂直方向的点
+@catalog 物理属性
+property nZ as int ro
+
+@summary rw. 触碰范围
+@catalog 物理属性
+@remarks 
+property nTouchRange
+
+@summary ro. Region中X方向的第几个格子
+@catalog 物理属性
+@remarks 
+property nXCell
+
+@summary ro. Region中Y方向的第几个格子
+@catalog 物理属性
+@remarks 
+property nYCell
+
+@summary rw. 物体的质量
+@catalog 物理属性
+@remarks 
+property nMass
+
+
+@summary rw. 宽度，单位点
+@catalog 物理属性
+@remarks 
+property nWidth
+
+@summary rw. 长度，单位点
+@catalog 物理属性
+@remarks 
+property nLength
+
+@summary rw. 高度，单位点
+@catalog 物理属性
+@remarks 
+property nHeight
+
+@summary rw. 面部朝向，单位360/256度
+@catalog 物理属性
+@remarks 
+property nFaceDirection
+
+@summary rw. 俯仰角,单位(360/256)度
+@catalog 物理属性
+property nPitchDirection
+
+@summary rw. Doodad的模板id
+property dwTemplateID as DWORD rw
+
+@summary rw. Doodad的名字
+property szName as 字符串 rw
+
+@summary rw. Doodad的类型，取值[[see DOODAD_KIND]]
+@remarks 取值：[[get DOODAD_KIND]]
+property nKind as 枚举 rw
+
+# @summary rw. 能够被攻击
+# property bAttackable as 布尔值 rw
+  
+# @summary rw. 能否拾取
+# @remarks 目前的程序中好像没有用到这个值
+# property bPickable as 布尔值 rw
+
+
+# @summary rw. 最大生命值
+# property nMaxLife as int rw
+
+@summary rw. 打开需要的帧数
+property nOpenFrames as int rw
+
+@summary rw. 过多少帧消失
+property nDisappearFrames as int rw
+
+@summary rw. 对应npc的模板id
+@remarks Doodad如果是尸体，那么它会对应一个npc（player目前不会产生尸体），这时
+@	这个属性就记录了对应npc的模板id
+property dwNpcTemplateID
+
+@summary rw. 表现逻辑id
+property dwRepresentID as dword rw
+
+# @summary rw. 当前生命值
+# property nCurrentLife as int rw
+
+@summary rw. 脚本id
+property dwScriptID as DWORD rw
+
+@summary [仅服务器端使用] dw. 所有者id
+property dwOwnerID
+
+# @summary rw. 是否设置了阻碍角色的属性
+# property nIsSetBlockCharacter as int rw
+
+# @summary rw. 是否阻碍角色
+# property nIsBlockCharacter as int rw
+
+# @summary rw. 是否设置了可摆放物品属性
+# property nIsSetPutObj as int rw
+
+# @summary rw. 是否可摆放物品
+# property nIsPutObj as int rw
+
+# @summary rw. 是否设置了安全区属性
+# property nIsSetSafe as int rw
+
+# @summary rw. 是否安全
+# property nIsSafe as int rw
+
+# @summary rw. 是否设置了可摆摊属性
+# property nIsSetStall as int rw
+
+# @summary rw. 是否可以摆摊
+# property nIsStall as int rw
+
+# @summary rw. 是否设置了Cell类型属性
+# property nIsSetCellType as int rw
+
+# @summary rw. Cell类型
+# property nCellType as int rw
+
+# @summary rw. 是否设置了可通行宽度属性
+# property nIsSetPassWidth as int rw
+
+# @summary rw. 可以通行的物体宽度
+# property nPassWidth as int rw
+
+@summary 获取拾取列表中的指定物品
+@param dwLootIndex 物品在拾取列表中的序号，从0开始
+@param KObjData KPlayer对象
+@remarks 返回3个值：
+@n 1) KItem对象 
+@n 2)如果该物品被投骰子的次数为0，为false；否则为true
+@n 3) 如果分配模式为队长分配，且物品的品质高于分配线，那么为true，否则为false
+function GetLootItem(dwLootIndex, KObjData)
+
+@summary 获取拾取列表中的金钱数目
+function GetLootMoney()
+
+@summary 获取Doodad所在的场景对象，返回KScene对象
+function GetScene()
+
+@summary 获取拾取方式
+@remarks 返回2个值：
+@n	1) 分配方式，取值：[[get PARTY_LOOT_MODE]]
+@n	2) 投骰底线，即达到何种品质之上就要掷骰子
+function GetLootMode()
+
+@summary Doodad是否能够和Player对话
+@param playerObj	目标KPlayer对象
+@remarks 如果可以对话，返回true；否则返回false
+function CanDialog(playerObj)
+
+@summary 判断能否被选中
+@remarks 如果该Doodad能够被选中，返回true，否则返回false
+function IsSelectable()
+
+@summary 判断能否被Loot
+@param dwPlayerID	拾取者的id
+@remarks 如果指定玩家能够参与该doodad的拾取，那么返回true；否则返回false
+function CanLoot(dwPlayerID)
+
+@summary 判断是否包含有任务
+@param dwPlayerID	玩家id
+@remarks 如果doodad上有指定玩家可以领取的任务，那么返回true；否则返回false
+function HaveQuest(dwPlayerID)
+
+@summary [仅客户端使用] 队长分配物品
+@param dwItemID 物品id
+@param dwDstPlayerID 目标玩家id
+function LeaderDistributeItem(dwItemID, dwDstPlayerID)
+
+@summary [仅客户端使用] 获取拾取者名单
+@remarks 返回1个包含拾取者信息的table，这个table是下标从1开始的数组，数组
+@	的每一项又是一个table，包含队伍每个成员的信息：
+@
+@	1) szName: 队员名字。
+@	2) dwID:	队员id
+@	3) bOnLineFlag:	如果队员在线，且可以参与拾取该物品，则为true；否则为false
+@	
+@n	例如有2个队伍成员，都在线，但只有甲可以拾取，那么结果为，
+@	{[1]={szName="甲", dwID=ID_1, bOnLineFlag=true}, 
+@		[2]={szName="乙", dwID=ID2, bOnLineFlag=false}}
+function GetLooterList()
+
+@summary [仅服务器端使用] 绑定一个脚本
+@param szScript 脚本名字
+@remarks 否绑定成功返回true，失败则返回false
+function SetScript(szScript)
+
+@summary [仅服务器端使用] 产生一个空的拾取列表
+@remarks 成功返回true，失败返回false
+@
+@	产生的列表的分配方式为绝对自由，掷骰底线为0
+function GenerateEmptyLootList()
+
+@summary [仅服务器端使用] 向拾取列表中添加道具
+@param dwPlayerID	新添加的道具将属于哪个玩家。如果填0，那么
+@	不会马上指定该道具的归属人。
+@param dwTabType 道具表类型，取值[[get ITEM_TABLE_TYPE]]
+@param dwIndex 道具在配置表的id
+@param nStackNum 可选。叠放数量
+@remarks 如果函数执行成功，返回新添加道具的KItem对象
+function AddLootItem(dwPlayerID, dwTabType, dwIndex, [nStackNum])
+
+@summary [仅服务器端使用] 判断是否有角色坐在上面
+@catalog
+@remarks 如果有角色坐在上面，返回true；否则返回false
+function IsCharacterSit()
+
+@summary [仅服务器端使用] 设置doodad消失的帧数
+@catalog
+@param nFrames	经过多少帧doodad消失
+@param bGotoReviveList	doodad消失后是否进入重生列表
+@remarks doodad将在nFrames帧后消失,并根据bGotoReviveList决定是否进入重生列表
+@n
+@n	如果函数执行成功,返回true;否则返回false
+function SetDisappearFrames(nFrames, bGotoReviveList)
+
+
+@summary 获取Doodad的坐标
+@remarks 返回3个值，nX, nY, nPosZ, 其中nX和nY分别是水平方向上的X坐标和Y坐标，
+@	单位是水平方向上的点。
+@	nPosZ是垂直方向上距离水平面的坐标，单位是垂直方向上的点。
+function GetAbsoluteCoordinate()
+
+@summary 能否坐下
+@remarks 如果可以坐下，返回true；否则返回false
+function CanSit()
+
+@summary [仅服务端使用] 设置INT32类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围（INT_MIN - INT_MAX）
+@remarks 函数不返回
+function 	SetCustomInteger4(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取INT32类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomInteger4(nOffset)
+
+@summary [仅服务端使用] 设置INT16类型自定义数据
+@catalog   定制数据 
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围（SHRT_MIN - SHRT_MAX）
+@remarks 	函数不返回
+function 	SetCustomInteger2(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取INT16类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomInteger2(nOffset)
+
+@summary [仅服务端使用] 设置INT8类型自定义数据
+@catalog   定制数据 
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围（SCHAR_MIN - SCHAR_MAX）
+@remarks 函数不返回
+function 	SetCustomInteger1(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取INT8类型自定义数据
+@catalog   定制数据 
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomInteger1(nOffset)
+
+@summary [仅服务端使用] 设置UINT32类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围 (0 - UINT_MAX )
+@remarks 函数不返回
+function 	SetCustomUnsigned4(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取UINT32类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomUnsigned4(nOffset)
+
+@summary [仅服务端使用] 设置UINT16类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围 (0 - USHRT_MAX )
+@remarks 函数不返回
+function 	SetCustomUnsigned2(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取UINT16类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomUnsigned2(nOffset)
+
+@summary [仅服务端使用] 设置UINT8类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	nInput 输入值 范围 (0 - UCHAR_MAX )
+@remarks 函数不返回
+function 	SetCustomUnsigned1(nOffset, nInput)
+
+@summary  [仅服务端使用] 获取UINT8类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomUnsigned1(nOffset)
+
+@summary [仅服务端使用] 设置比特位自定义数据
+@catalog   定制数据
+@param 	nByteOffset 自定义数据块字节位索引
+@param 	nBitOffset 自定义数据块比特位索引 范围 (0 - 7)
+@param 	bValue 输入值
+@remarks 函数不返回
+function 	SetCustomBitValue(nByteOffset, nBitOffset)
+
+@summary  [仅服务端使用] 获取比特位类型自定义数据
+@catalog   定制数据
+@param 	nByteOffset 自定义数据块字节位索引
+@param 	nBitOffset 自定义数据块比特位索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomBitValue(nByteOffset, nBitOffset)
+
+@summary [仅服务端使用] 设置字符串类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	pcszValue 输入值
+@remarks 函数不返回
+function 	SetCustomString(nOffset, pcszValue)
+
+@summary  [仅服务端使用] 获取字符串类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomString(nOffset)
+
+@summary [仅服务端使用] 设置布尔类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@param 	bInput 输入值 范围（0-1）
+@remarks 函数不返回
+function 	SetCustomBoolean(nOffset, bInput)
+
+@summary  [仅服务端使用] 获取布尔类型自定义数据
+@catalog   定制数据
+@param 	nOffset 自定义数据块索引
+@remarks 	如果函数执行成功，返回获取值；否则不返回
+function 	GetCustomBoolean(nOffset)
+
+@summary   获取配方ID
+@catalog   
+@remarks 	如果函数执行成功，返回配方ID；否则返回0
+function 	GetRecipeID()
+
+@summary   能否查找
+@catalog   
+@remarks 	如果函数执行成功，返回true， 否则返回false
+function 	CanSearch()

@@ -1,0 +1,174 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script language=javascript src="dialog.js"></script>
+
+<script language="javascript">
+document.write ("<link href='../language/" + AvailableLangs["Active"] + ".css' type='text/css' rel='stylesheet'>");
+document.write ("<link href='dialog.css' type='text/css' rel='stylesheet'>");
+
+var sAction = URLParams['action'] ;
+var sTitle = lang["DlgLocal"];
+var sHTML = "";
+
+switch (sAction) {
+	case "paste":
+		sTitle += "(" + lang["DlgLocalPaste"] + ")";
+		sHTML = dialogArguments.GetClipboardHTML();
+		break;
+	default:
+		sAction = "";
+		sHTML = dialogArguments.getHTML();
+		break;
+}
+
+
+document.write ("<TITLE>" + sTitle + "</TITLE>");
+
+function ok(){
+	var b_File = false;
+	if (d_file.checked){
+		v_installing.style.display = "";
+		v_installing.innerHTML = "<OBJECT ID='eWebEditorClient' CLASSID='CLSID:D39A5EBE-F907-4EC2-BCDF-A72F58DA01F4' width=0 height=0 CODEBASE='eWebEditorClient.CAB#version=1,2,0,3'></OBJECT>";
+		try{
+			if(eWebEditorClient.Test()!="eWebEditor"){
+				alert(lang["MsgNoClient"]);
+				return;
+			}
+		}catch(e){
+			alert(lang["MsgNoClient"]);
+			return;
+		}
+
+		b_File = true;
+		var s_PostUrl = getSitePath() + getWebEditorRootPath() + "/" + config.ServerExt + "/upload." + config.ServerExt + "?action=local&type=local&style=" + config.StyleName + "&language=" + AvailableLangs["Active"] + "&cusdir=" + config.CusDir;
+		
+		divProcessing.style.display = "";
+		eWebEditorClient.LocalUpload(sHTML, s_PostUrl);
+		divProcessing.style.display = "none";
+
+		var s_Error = eWebEditorClient.Error;
+		if (s_Error!=""){
+			alert(s_Error);
+			return;
+		}
+
+		sHTML = eWebEditorClient.Body;
+
+		var s_OriginalFiles = eWebEditorClient.OriginalFiles;
+		var s_SavedFiles = eWebEditorClient.SavedFiles;
+		if (s_OriginalFiles){
+			var a_Original = s_OriginalFiles.split("|");
+			var a_Saved = s_SavedFiles.split("|");
+			for (var i=0; i<a_Original.length; i++){
+				if (a_Saved[i]){
+					var s_OriginalFileName = a_Original[i];
+					var s_SaveFileName = a_Saved[i].substr(a_Saved[i].lastIndexOf("/")+1);
+					var s_SavePathFileName = a_Saved[i];
+					dialogArguments.addUploadFile(s_OriginalFileName, s_SaveFileName, s_SavePathFileName);
+				}
+			}
+		}	
+	}
+	
+	var b_VML = false;
+	if (d_vml.checked){
+		var el = dialogArguments.eWebEditor.document.getElementsByName("eWebEditor_Style_VML")[0];
+		if (!el){
+			b_VML = true;
+		}
+	}
+
+	var b_Style = false;
+	if (d_style.checked){
+		var el = dialogArguments.eWebEditor.document.getElementsByName("eWebEditor_Style_Word")[0];
+		if (!el){
+			b_Style = true;
+		}
+	}
+
+	var s_StyleVML = "\n"
+			+"<STYLE id=eWebEditor_Style_VML>\n"
+			+"v\\:* {behavior: url(#default#VML);}\n"
+			+"o\\:* {behavior: url(#default#VML);}\n"
+			+"w\\:* {behavior: url(#default#VML);}\n"
+			+"x\\:* {behavior: url(#default#VML);}\n"
+			+".shape{behavior: url(#default#VML);}\n"
+			+"</STYLE>\n";
+	var s_StyleWord = "\n<STYLE id=eWebEditor_Style_Word>\n" + lang["DlgLocalStyleWord"] + "\n</STYLE>\n";
+	
+	var s_Style = "";
+	if (b_VML){
+		s_Style += s_StyleVML;
+	}
+	if (b_Style){
+		s_Style += s_StyleWord;
+	}
+
+	switch (sAction) {
+		case "paste":
+			dialogArguments.insertHTML(sHTML);
+			if (s_Style){
+				sHTML = s_Style + dialogArguments.getHTML();
+				dialogArguments.setHTML(sHTML, true);
+			}
+			break;
+		default:
+			sHTML = s_Style + sHTML;
+			dialogArguments.setHTML(sHTML, true);
+			break;
+	}
+
+	window.returnValue = true;
+	window.close();
+}
+
+
+function InitDocument(){
+	AvailableLangs.TranslatePage(document);	
+	adjustDialog();
+}
+
+</script>
+
+
+<BODY onload="InitDocument()">
+
+
+
+<table border=0 cellpadding=0 cellspacing=5 id=tabDialogSize><tr><td>
+
+<table border=0 cellpadding=0 cellspacing=0 align=center>
+<tr>
+	<td>
+	<fieldset>
+	<legend><span lang=DlgLocalOption></span>:</legend>
+	<table border=0 cellpadding=5 cellspacing=0 width="100%">
+	<tr><td>
+
+		<table border=0 cellpadding=0 cellspacing=2 width="100%">
+		<tr>
+			<td noWrap><input type=checkbox id=d_file checked><label for=d_file><span lang=DlgLocalOptionFile></span></label>&nbsp; <input type=checkbox id=d_vml checked><label for=d_vml><span lang=DlgLocalOptionVML></span></label>&nbsp; <input type=checkbox id=d_style checked><label for=d_style><span lang=DlgLocalOptionStyle></span></label></td>
+		</tr>
+		</table>
+
+	</td></tr>
+	</table>
+	</fieldset>
+	</td>
+</tr>
+<tr><td height=5></td></tr>
+<tr><td noWrap align=right><input type=submit class="dlgBtnCommon" value='' id=Ok onclick="ok()" lang=DlgBtnOK>&nbsp;&nbsp;<input type=button class="dlgBtnCommon" value='' onclick="window.close();" lang=DlgBtnCancel></td></tr>
+</table>
+
+</td></tr></table>
+
+<div id=divProcessing style="width:200px;height:30px;position:absolute;left:50px;top:30px;display:none">
+<table border=0 cellpadding=0 cellspacing=1 bgcolor="#000000" width="100%" height="100%"><tr><td bgcolor=#3A6EA5 align=center><marquee align="middle" behavior="alternate" scrollamount="5"><font color=#FFFFFF><span lang=DlgLocalUploading></span></font></marquee></td></tr></table>
+</div>
+<div id=v_installing style="display:none"></div>
+
+
+
+</body>
+</html>

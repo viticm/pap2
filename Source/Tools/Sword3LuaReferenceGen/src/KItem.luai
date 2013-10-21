@@ -1,0 +1,154 @@
+﻿@title KItem对象
+@obj KItem
+
+@summary ro. 物品ID
+property dwID as DWORD ro
+
+@summary rw. 物品当前的耐久度
+property nCurrentDurability as 整数 rw
+
+@summary rw. 物品是否可叠放
+property bCanStack as 布尔值 rw
+
+@summary rw. 物品的叠放数量
+property nStackNum as 整数 rw
+
+@summary rw. 物品的最大耐久度
+property nMaxDurability as 整数 rw
+
+
+@summary rw. 物品的最大叠放数量
+property nMaxStackNum as 整数 rw
+
+@summary ro. 名字
+property szName as 字符串 ro
+
+@summary rw. 等级
+property nLevel as 整数 rw
+
+@summary rw. 价格
+property nPrice as 整数 rw
+
+@summary rw. 大类
+property nGenre as 整数 rw
+
+@summary rw. 小类
+property nSub as 整数 rw
+
+@summary rw. 具体类别
+property nDetail as 整数 rw
+
+@summary rw. 帮定类型
+property nBindType as 整数 rw
+
+@summary rw. 能否交易
+property bCanTrade as 布尔值 rw
+
+@summary rw. 道具配置表类型，取值[[see ITEM_TABLE_TYPE]]
+@remarks 取值：[[see ITEM_TABLE_TYPE]]
+property dwTabType as DWORD rw
+
+@summary rw. 在道具配置表中的索引
+property dwIndex as DWORD rw
+
+@summary rw. 物品的数量限制，0表示没有限制
+property nMaxExistAmount as int rw
+
+@summary rw. 品质
+property nQuality as 整数 rw
+
+@summary rw. 版本号
+property nVersion as 整数 rw
+
+@summary rw. 表现逻辑id
+property nRepresentId as 整数 rw
+
+@summary rw. [仅在客户端使用]
+property nUiId as 整数 rw
+
+@summary [仅在客户端使用] 获取物品基本属性
+@remarks 返回一个包含物品基本属性的table，每一项又是一个包含以下字段的table：nID,
+@	nValue1, nValue2
+function GetBaseAttrib()
+
+@summary [仅在客户端使用] 获取物品的需求属性
+@remarks 返回一个包含物品需求属性的table，每一项又是一个包含以下字段的table：nID,
+@	nValue1, nValue2.
+@n
+@	这里nID对应道具配置表中RequireXType(X是数字), nValue1对应RequireXValue, nValue2
+@	总是0
+function GetRequireAttrib()
+
+@summary [仅在客户端使用] 获取物品的魔法属性
+@remarks 返回一个包含物品魔法属性的table，每一项又是一个包含以下字段的table：nID,
+@	nValue1, nValue2
+function GetMagicAttrib()
+
+@summary [仅在客户端使用] 获取道具的附魔属性
+@catalog
+@remarks 如果道具有附魔属性，那么返回一个table，这个table包含以下字段:
+@n	nID: 附魔id
+@n	nValue1: 属性的第一个值
+@n	nValue2: 属性的第二个值
+@n
+@n	如果没有附魔属性，那么没有返回值。
+function GetPermanentEnchantAttrib()
+
+@summary [仅在客户端使用] 获取道具的临时附魔属性
+@catalog
+@remarks 如果道具有临时附魔属性，那么返回一个table，这个table包含以下字段:
+@n	nID: 附魔id
+@n	nValue1: 属性的第一个值
+@n	nValue2: 属性的第二个值
+@n
+@n	如果没有附魔属性，那么没有返回值。
+function  GetTemporaryEnchantAttrib()
+
+@summary [仅在客户端使用] 获取套装的属性
+@remarks 获取道具所属套装的属性。如果本道具不属于某个套装，则返回nil。
+@n
+@n	如果道具属于某个套装，那么返回5个值：
+@n	1)dwUiId: 套装的Ui Id
+@
+@n	2)table: 这个table是一个下标从1开始的数组，每个数组元素又是一个table,
+@		这个table包含2个字段："nUiId"和"bEquiped", nUiId表示装备的ui id，
+@		bEquiped表示是否穿上了这件装备。
+@
+@n	3)套装所包含的装备数量
+@
+@n	4)套装中有几件穿在身上了
+@
+@n	5)table: 这个table包含套装特殊属性，下标从最小能够激活套装特殊属性的
+@		装备数量开始。例如，如果从2件开始能够激活套装属性，那么这个table中
+@		的元素从下标2开始。这个table的每个元素又是一个table,
+@		这个table包含5个字段："nID"(套装特殊属性的id), "nCount"（这是几件
+@		装备激活的属性），"nValue1"（属性的第一个值），"nValue2"（属性的第2个
+@		值，"bEquiped"（当前是否激活了这个属性）。
+function GetSetAttrib()
+
+@summary [仅在客户端使用] 测试道具能否装备到玩家身上
+@catalog 装备道具
+@remarks 这个函数测试道具能否装备到当前客户端玩家，并返回2个值：
+@n	bCanEquip: bool型，能否装备
+@n	nEquipPos: 装备的位置。如果不能装备，则这个值为-1
+function CanEquip()
+
+@summary [仅在客户端使用] 判断道具是否可以修理
+@catalog 装备道具
+@remarks 如果道具可修理，那么返回true；否则返回false
+@n
+@n	当道具大类属于装备，不可叠放，且当前耐久小于最大耐久时，会
+@	认为该道具可以修理。
+function IsRepairable()
+
+@summary 获取物品上附加的技能对象，返回值是一个KSkill对象
+function GetUseSkill()
+
+@summary 判断道具上是否挂有脚本，返回一个bool值
+function HasScript()
+
+@summary rw. 是否被绑定
+property bBind as BOOL rw
+
+@summary rw. 摆摊出售价格
+property nUserPrice as DWORD int

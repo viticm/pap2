@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fireball.Core", "Fireball.Core.csproj", "{909AD284-7020-4FA9-A55E-7C633A641724}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fireball.Win32", "..\Fireball.Win32\Fireball.Win32\Fireball.Win32.csproj", "{A72D738D-B07F-4920-B4E7-543D18967FBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipHelperTest", "..\..\..\..\Fireball-private\trunk\Tests\ZipHelperTest\ZipHelperTest.csproj", "{2FF2F704-12A5-49CB-B402-CC37EDE9A93E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{909AD284-7020-4FA9-A55E-7C633A641724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{909AD284-7020-4FA9-A55E-7C633A641724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{909AD284-7020-4FA9-A55E-7C633A641724}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{909AD284-7020-4FA9-A55E-7C633A641724}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{909AD284-7020-4FA9-A55E-7C633A641724}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{909AD284-7020-4FA9-A55E-7C633A641724}.Debug|Win32.Build.0 = Debug|Win32
+		{909AD284-7020-4FA9-A55E-7C633A641724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{909AD284-7020-4FA9-A55E-7C633A641724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{909AD284-7020-4FA9-A55E-7C633A641724}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{909AD284-7020-4FA9-A55E-7C633A641724}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{909AD284-7020-4FA9-A55E-7C633A641724}.Release|Win32.ActiveCfg = Release|Any CPU
+		{909AD284-7020-4FA9-A55E-7C633A641724}.Release|Win32.Build.0 = Release|Win32
+		{A72D738D-B07F-4920-B4E7-543D18967FBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A72D738D-B07F-4920-B4E7-543D18967FBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A72D738D-B07F-4920-B4E7-543D18967FBF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A72D738D-B07F-4920-B4E7-543D18967FBF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A72D738D-B07F-4920-B4E7-543D18967FBF}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{A72D738D-B07F-4920-B4E7-543D18967FBF}.Debug|Win32.Build.0 = Debug|Win32
+		{A72D738D-B07F-4920-B4E7-543D18967FBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A72D738D-B07F-4920-B4E7-543D18967FBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A72D738D-B07F-4920-B4E7-543D18967FBF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A72D738D-B07F-4920-B4E7-543D18967FBF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A72D738D-B07F-4920-B4E7-543D18967FBF}.Release|Win32.ActiveCfg = Release|Any CPU
+		{A72D738D-B07F-4920-B4E7-543D18967FBF}.Release|Win32.Build.0 = Release|Win32
+		{2FF2F704-12A5-49CB-B402-CC37EDE9A93E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FF2F704-12A5-49CB-B402-CC37EDE9A93E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FF2F704-12A5-49CB-B402-CC37EDE9A93E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2FF2F704-12A5-49CB-B402-CC37EDE9A93E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2FF2F704-12A5-49CB-B402-CC37EDE9A93E}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{2FF2F704-12A5-49CB-B402-CC37EDE9A93E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FF2F704-12A5-49CB-B402-CC37EDE9A93E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FF2F704-12A5-49CB-B402-CC37EDE9A93E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2FF2F704-12A5-49CB-B402-CC37EDE9A93E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2FF2F704-12A5-49CB-B402-CC37EDE9A93E}.Release|Win32.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

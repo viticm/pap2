@@ -1,0 +1,420 @@
+﻿body 
+{
+	padding: 0px;
+	margin: 0px;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+.TableNormal
+{
+	border: solid 1px #0D456E;
+	width: 100%;
+}
+
+.TableInsidePanelNoScroll
+{
+	border: solid 1px #0D456E;
+	width: 100%;
+}
+
+.TableInsidePanelScroll
+{
+	border: solid 1px #0D456E;
+	width: 97%;
+}
+
+.TableMedium
+{
+	border: solid 1px #0D456E;
+	width: 60%;
+}
+
+.TableSection
+{
+	width: 100%;
+}
+
+.TableRowSectionTitle
+{
+	font-weight: bold;
+	color: #333333;
+}
+
+.TableCellList
+{
+	background-color: #DDDDDD;
+}
+
+.TableRowSpacing
+{
+	width: 100%;
+	height: 10px;
+}
+
+.TableCaption
+{
+	color: #333333;
+	width: 100%;
+	height: 20px;
+	font-weight: bold;	
+}
+
+.TableRowButton
+{
+	width: 100%;
+	height: 22px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.TableRowHeader
+{
+	text-align: center;
+	color: #FFFFFF;
+	background-color: #0D456E;
+}
+
+.TableRowNormal
+{
+	height: 25px;
+	text-align: center;		
+}
+
+.ButtonInTable
+{
+	font-size: 9pt;		
+	height: 20px;
+}
+
+.Connected
+{
+	color: #FFFFFF;
+	background-color: #009900;
+}
+
+.Disconnected
+{
+	color: #FFFFFF;
+	background-color: #FF0000;
+}
+
+.Unknown
+{
+	color: #000000;
+	background-color: #AAAAAA;
+}
+
+.Starting
+{
+	color: #000000;
+	background-color: #FFFF00;
+}
+
+.Running
+{
+	color: #FFFFFF;
+	background-color: #009900;
+}
+
+.Stopping
+{
+	color: #000000;
+	background-color: #FFFF00;
+}
+
+.Stopped
+{
+	color: #FFFFFF;
+	background-color: #FF0000;
+}
+
+.LowLoad
+{
+	color: #FFFFFF;
+	background-color: Green;
+}
+
+.MediumLoad
+{
+	color: #FFFFFF;
+	background-color: #FF6600;
+}
+
+.HighLoad
+{
+	color: #FFFFFF;
+	background-color: #FF0000;
+}
+
+.ButtonNormal
+{
+	width: 80px;
+	height: 25px;
+}
+
+.TableCaption
+{
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+ul, ul li 
+{
+	padding: 0;
+	margin: 0;
+	list-style: none;	
+}
+
+ul li, ul li a
+{
+	float: left;
+}
+
+.TextButton
+{
+	text-align: center;
+	vertical-align: middle;
+	padding: 5px;
+	margin: 2px;
+	font-weight: bold;	
+	text-decoration: none;
+	display: block;
+	float: left;
+	background: #F5F5F5;
+	border: 1px solid #0D456E;
+	color: #0D456E;
+	cursor: hand;
+}
+
+.TextButton:hover
+{
+	background: #0D456E;
+	border: 1px solid #0D456E;
+	color: #FFF;
+}
+
+.TextButton_Small
+{
+	text-align: center;
+	vertical-align: middle;
+	padding: 2px;
+	margin: 1px;
+	font-weight: normal;	
+	text-decoration: none;
+	display: block;
+	float: left;
+	background: #F5F5F5;
+	border: 1px solid #0D456E;
+	color: #0D456E;
+	cursor: hand;
+}
+
+.TextButton_Small:hover
+{
+	background: #0D456E;
+	border: 1px solid #0D456E;
+	color: #FFF;
+}
+
+a.LinkButton
+{
+	text-align: center;
+	vertical-align: middle;
+	padding: 5px;
+	margin: 2px;
+	font-weight: bold;	
+	text-decoration: none;	
+	display: block;
+}
+
+a.LinkButton:link, a.LinkButton:visited
+{
+	background: #F5F5F5;
+	border: 1px solid #0D456E;
+	color: #0D456E;
+}
+
+a.LinkButton:hover
+{
+	background: #0D456E;
+	border: 1px solid #0D456E;
+	color: #FFF;
+}
+
+a.LinkButton_Samll
+{
+	text-align: center;
+	vertical-align: middle;
+	padding: 2px;
+	margin: 1px;
+	font-weight: normal;
+	text-decoration: none;	
+	display: block;
+	float: left;
+}
+
+a.LinkButton_Samll:link, a.LinkButton_Samll:visited
+{
+	background: #F5F5F5;
+	border: 1px solid #0D456E;
+	color: #0D456E;
+}
+
+a.LinkButton_Samll:hover
+{
+	background: #0D456E;
+	border: 1px solid #0D456E;
+	color: #FFF;
+}
+
+input.TextBox
+{
+	color: #000000;
+	border: 1px solid #0D456E;
+	background-color: #CCFFCC;	
+	height: 17px;
+}
+
+input.Button
+{
+	padding: 3px;	
+	font-weight: bold;
+	text-decoration: none;	
+	background: #F5F5F5;
+	border: 1px solid #0D456E;
+	color: #0D456E;
+}
+
+.TopBar
+{
+	position: absolute;
+	color: #FFFFFF;
+	z-index:10;
+	width:100%;
+	height: 30px;
+	background-color: #000066;
+	border-top: solid 1px #000000;
+	border-bottom: solid 1px #000000;
+}
+
+.TopMessage
+{
+	position: absolute;	
+	left: 10px;
+	top: 10px;
+	margin: 0px;
+	text-align:	center;
+	filter: alpha(opacity=0);	
+}
+
+.MessageSuccess
+{
+	color: #00FF00;
+}
+
+.MessageFailure
+{
+	color: #FF0000;
+}
+
+.MessageAttention
+{
+	color: #FFFF00;
+}
+
+.MessageNormal
+{
+	color: #FFFFFF;
+}
+
+.ServerOverviewConnected
+{
+	color: #000000;
+	background-color: #00CC00;
+	border: outset 2px #FFFFFF;	
+}
+
+.ServerOverviewDisconnected
+{
+	color: #FFFFFF;
+	background-color: #999999;
+	border: outset 2px #FFFFFF;
+}
+
+.ProgressBarProcessed
+{	
+	background-color: #0055FF;
+}
+
+.ProgressBarIndicator
+{
+	color: #000000;
+	font-size: 12px;
+}
+
+.ProgressBarCompleted
+{
+	background-color: #00FF00;
+}
+
+.ProgressBarBorder
+{
+	border: outset 2px #FFFFFF;
+	background-color: #DDDDDD;
+}
+
+.CpuLoadBarBorder
+{
+	border: solid 1px #000000;
+	background-color: #DDDDDD;
+}
+
+.CpuLoadBarLowLoad
+{
+	background-color: #00FF00;
+}
+
+.CpuLoadBarMidLoad
+{
+	background-color: #FF6600;
+}
+
+.CpuLoadBarHighLoad
+{
+	background-color: #FF0000;
+}
+
+.FrameTop
+{	
+	background-color: #0D456E;	
+}
+
+.FrameLeft
+{
+	color: #FF0000;
+	background-color: #DDDDDD;	
+}
+
+.Copyright
+{
+	text-align: center;
+	height: 30px;
+	background-color: #666666;
+}
+
+.GameServerSummary
+{
+	width: 280px;
+	color: #FFFFFF; 
+	background-color: #000000;
+	position: absolute;
+	left: 10px;
+	top: 45px;
+	visibility: hidden;
+	border: outset 2px #CCCCCC;
+}

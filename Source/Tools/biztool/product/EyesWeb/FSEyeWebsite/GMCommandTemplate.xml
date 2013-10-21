@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--  GM指令模板使用说明
+*
+*   本xml用生成常用的GM指令，供/GameMaster/GMCommand.aspx使用，生成对应的页面表现
+*
+* 1.root元素为<GMCommandTemplates>
+* 
+* 2.<GMCommandTemplates>的直接子节点只有一种,为<Template>,每个<Template>均对应一种GM指令
+* 
+* 3.<Template>下的直接子节点有五种,分别为<TemplateName>,<Executer>,<TemplateCMD>,<Description>,<Parameter>.
+*   这五种节点必须按上面的顺序书写,前三种为必需的,并且各只能有一个;后两种为可选的.
+*   <TemplateName>: 叶结点,为该GM指令的名称,例如:发公告, 冻结角色.这是供用户看的提示信息
+*   <Executer>: 叶结点,为该GM指令的执行对象,值有三种:Role,Account,GameCenter.分别表示指令作用于角色、账号、中心服务器
+*   <TemplateCMD>: 叶结点,为该GM指令的脚本内容,使用时需要输入的参数用占位符代替,占位符从{0}开始，依次递增
+*     注意: 如果在<TemplateCMD>出现不作为占位符使用的'{'或'}',必须对其用'{{'和'}}'进行替换方才有效.
+*   <Description>: 叶结点,提供该GM指令的描述,供用户阅读.
+*     若需要换行,使用&lt;br /&gt;作为 换行符,另外可以通过&lt;font color=''&gt;和&lt;/font&gt;把描述内容包起来,指定字体颜色
+*   <Parameter>: 跟据具体GM指令是否需要参数来确定,可以有多个,
+*     按照出现的顺序对应<TemplateCMD>中的占位符，程序将把用户输入的内容替换掉占位符，最终得到有效的GM指令
+* 
+* 4.<Parameter>下有2种节点,均为必填,分别为<Name>和<Control>,必须按顺序书写
+*   <Name>: 叶结点,为该参数的名称,例如: 公告内容,经验值,冻结时间
+*   <Control>: 该参数在页面上对应的供用户输入的控件.
+* 
+* 5.<Control>下的首个子节点必须为<Type>,<Type>为叶结点,只有三种值:TextBox,IntegerTextBox,DropDownList
+* 
+* 6.若<Type>的值为"TextBox",则生成的控件为TextBox,
+*     这种情况下可以在<Type>后通过<MultiLine>True</MultiLine>来设置该TextBox允许多行;
+*     并且可以通过<MaxCharCount>节点来限制该TextBox能输入的最大字符数;
+*     注意: 如果存在<MultiLine>True</MultiLine>,则<MaxCharCount>必须在其后声明才有效.
+*   若<Type>的值为"IntegerTextBox",则生成的控件为TextBox,且只允许输入整数。
+*     这种情况下可以在<Type>后通过<MinValue>和<MaxValue>指定允许输入的最大值和最小值。
+*     例如: <MinValue>1</MinValue>和<MaxValue>10000</MaxValue>一起使用就将输入限制在1和10000之间(包括1和10000)
+*   若<Type>的值为"DropDownList",则生成的控件为DropDownList.
+*     这种情况下必须通过<Item>结点指定该DropDownList中的可选项.
+*     每个<Item>结点代表一项,且其中有两个子结点: <Text>和<Value>.
+*     <Text>为用户看到的显示内容,<Value>为该项的值,被用来生成最终的GM指令
+*
+* 7.<Control>下可以通过<Style>结点指定控件的界面效果,该结点的内容为HTML风格,将被赋给控件的.Style.Value属性.
+*     比如在<Control>下,<Type>的值为TextBox,则<Style>height:280px;width:100%</Style>表示该TextBox的高度为280像素，宽度为父容器宽度的100%
+-->
+
+<GMCommandTemplates>
+  <Template>
+    <TemplateName>发公告(聊天栏)</TemplateName>
+    <Executer>GameCenter</Executer>
+    <TemplateCMD>GlobalExcute({{"KDialog.Msg2SubWorld", "{0}"}});return 1;</TemplateCMD>
+    <Description>对游戏世界发公告，公告信息将作为系统提示显示在左下角的聊天栏中</Description>
+    <Parameter>
+      <Name>公告内容</Name>
+      <Control>
+        <Type>TextBox</Type>
+        <MultiLine>True</MultiLine>
+        <MaxCharCount>20</MaxCharCount>
+        <Style>height:280px;width:100%</Style>
+      </Control>
+    </Parameter>
+  </Template>
+
+  <Template>
+    <TemplateName>发公告(屏幕上方)</TemplateName>
+    <Executer>GameCenter</Executer>
+    <TemplateCMD>GlobalExcute{{"KDialog.NewsMsg", 0, Env.NEWSMSG_NORMAL, "{0}"}};return 1;</TemplateCMD>
+    <Description>对游戏世界发公告，公告信息将作为新闻消息显示在屏幕上方正中</Description>
+    <Parameter>
+      <Name>公告内容</Name>
+      <Control>
+        <Type>TextBox</Type>
+        <MultiLine>True</MultiLine>
+        <MaxCharCount>200</MaxCharCount>
+        <Style>height:280px;width:100%</Style>
+      </Control>
+    </Parameter>
+  </Template>
+
+  <Template>
+    <TemplateName>开启金币交易所</TemplateName>
+    <Executer>GameCenter</Executer>
+    <TemplateCMD>KJbExchange.SetClose(0);return 1;</TemplateCMD>
+    <Description>这个操作没有参数</Description>
+  </Template>
+
+  <Template>
+    <TemplateName>关闭金币交易所</TemplateName>
+    <Executer>GameCenter</Executer>
+    <TemplateCMD>KJbExchange.SetClose(1);return 1;</TemplateCMD>
+    <Description>这个操作没有参数</Description>
+  </Template>
+
+  <Template>
+    <TemplateName>给角色发邮件</TemplateName>
+    <Executer>GameCenter</Executer>
+    <TemplateCMD>local szName="{0}";local nMoney={1};GSExcute(1, {{"KPlayer.SendMail", szName, "{2}", "{3}", 0, nMoney}});return 1;</TemplateCMD>
+    <Description>角色名最多8个字,银两为零到一百万,邮件标题最多8个字,正文最多200个字</Description>
+    <Parameter>
+      <Name>角色名</Name>
+      <Control>
+        <Type>TextBox</Type>
+        <MaxCharCount>8</MaxCharCount>
+      </Control>
+    </Parameter>
+    <Parameter>
+      <Name>附件中银两数量</Name>
+      <Control>
+        <Type>IntegerTextBox</Type>
+        <MinValue>0</MinValue>
+        <MaxValue>1000000</MaxValue>
+      </Control>
+    </Parameter>
+    <Parameter>
+      <Name>邮件标题</Name>
+      <Control>
+        <Type>TextBox</Type>
+        <MaxCharCount>8</MaxCharCount>
+      </Control>
+    </Parameter>
+    <Parameter>
+      <Name>邮件正文</Name>
+      <Control>
+        <Type>TextBox</Type>
+        <MaxCharCount>200</MaxCharCount>
+        <Style>height:280px;width:100%</Style>
+      </Control>
+    </Parameter>
+  </Template>
+
+  <Template>
+    <TemplateName>给角色增加绑定金币</TemplateName>
+    <Executer>Role</Executer>
+    <TemplateCMD>me.AddBindCoin({0});return 1;</TemplateCMD>
+    <Parameter>
+      <Name>绑定金币数量</Name>
+      <Control>
+        <Type>IntegerTextBox</Type>
+        <MinValue>1</MinValue>
+        <MaxValue>10000</MaxValue>
+      </Control>
+    </Parameter>
+  </Template>
+
+  <Template>
+    <TemplateName>给角色增加指定数量的绑定金币</TemplateName>
+    <Executer>Role</Executer>
+    <TemplateCMD>me.AddBindCoin({0});return 1;</TemplateCMD>
+    <Parameter>
+      <Name>绑定金币数量</Name>
+      <Control>
+        <Type>DropDownList</Type>
+        <Item>
+          <Text>一百</Text>
+          <Value>100</Value>
+        </Item>
+        <Item>
+          <Text>一千</Text>
+          <Value>1000</Value>
+        </Item>
+        <Item>
+          <Text>一万</Text>
+          <Value>10000</Value>
+        </Item>
+        <Item>
+          <Text>十万</Text>
+          <Value>100000</Value>
+        </Item>
+      </Control>
+    </Parameter>
+  </Template>
+</GMCommandTemplates>

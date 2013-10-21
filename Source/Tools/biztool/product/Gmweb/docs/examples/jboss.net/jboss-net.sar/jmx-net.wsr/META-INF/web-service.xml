@@ -1,0 +1,74 @@
+<!-- Descriptor for the JMX Adaptor Web Service -->
+
+<deployment 
+	name="JMX.net"
+	targetNameSpace="http://net.jboss.org/jmx"
+	xmlns="http://xml.apache.org/axis/wsdd/"
+	xmlns:jmx="http://net.jboss.org/jmx"
+	xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <documentation>An example JMX-based Web Service</documentation>
+  
+  <!-- this service hits a connector web service that re-exposes the complete MBeanServer API -->
+  <service name="RemoteAdaptor" provider="Handler">
+    <parameter name="handlerClass" value="org.jboss.net.jmx.server.MBeanProvider"/>
+	<parameter name="ObjectName" value="jboss.net:service=Adaptor"/>
+	<parameter name="allowedMethods" value="invoke isRegistered"/>
+	<parameter name="allowedReadAttributes" value="DefaultDomain"/>
+  </service> 
+
+  <typeMapping qname="jmx:AttributeType" 
+	type="java:javax.management.Attribute"
+	serializer="org.jboss.net.jmx.adaptor.AttributeSerFactory" 
+	deserializer="org.jboss.net.jmx.adaptor.AttributeDeserFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+  <typeMapping qname="jmx:MBeanAttributeInfo" 
+	type="java:javax.management.MBeanAttributeInfo"
+	serializer="org.jboss.net.jmx.adaptor.MBeanAttributeInfoSerFactory" 
+	deserializer="org.jboss.net.jmx.adaptor.MBeanAttributeInfoDeserFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+  <typeMapping qname="jmx:MBeanConstructorInfo" 
+	type="java:javax.management.MBeanConstructorInfo"
+	serializer="org.jboss.net.jmx.adaptor.MBeanConstructorInfoSerFactory" 
+	deserializer="org.jboss.net.jmx.adaptor.MBeanConstructorInfoDeserFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+  <typeMapping qname="jmx:MBeanInfo" 
+	type="java:javax.management.MBeanInfo"
+	serializer="org.jboss.net.jmx.adaptor.MBeanInfoSerFactory" 
+	deserializer="org.jboss.net.jmx.adaptor.MBeanInfoDeserFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+  <typeMapping qname="jmx:MBeanNotificationInfo" 
+	type="java:javax.management.MBeanNotificationInfo"
+	serializer="org.jboss.net.jmx.adaptor.MBeanNotificationInfoSerFactory" 
+	deserializer="org.jboss.net.jmx.adaptor.MBeanNotificationInfoDeserFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+  <typeMapping qname="jmx:MBeanOperationInfo" 
+	type="java:javax.management.MBeanOperationInfo"
+	serializer="org.jboss.net.jmx.adaptor.MBeanOperationInfoSerFactory" 
+	deserializer="org.jboss.net.jmx.adaptor.MBeanOperationInfoDeserFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+  <typeMapping qname="jmx:MBeanParameterInfo" 
+	type="java:javax.management.MBeanParameterInfo"
+	serializer="org.jboss.net.jmx.adaptor.MBeanParameterInfoSerFactory" 
+	deserializer="org.jboss.net.jmx.adaptor.MBeanParameterInfoDeserFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+  <typeMapping qname="jmx:ObjectInstance" 
+	type="java:javax.management.ObjectInstance"
+	serializer="org.jboss.net.jmx.adaptor.ObjectInstanceSerFactory" 
+	deserializer="org.jboss.net.jmx.adaptor.ObjectInstanceDeserFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+  <typeMapping qname="jmx:ObjectNameType" 
+	type="java:javax.management.ObjectName"
+	serializer="org.jboss.net.jmx.adaptor.ObjectNameSerFactory" 
+	deserializer="org.jboss.net.jmx.adaptor.ObjectNameDeserFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+</deployment>

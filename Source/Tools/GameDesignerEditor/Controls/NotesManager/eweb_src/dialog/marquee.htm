@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script language=javascript src="dialog.js"></script>
+
+<script language=javascript>
+document.write ("<link href='../language/" + AvailableLangs["Active"] + ".css' type='text/css' rel='stylesheet'>");
+document.write ("<link href='dialog.css' type='text/css' rel='stylesheet'>");
+
+var sAction = "INSERT";
+var sTitle = lang["DlgComInsert"];
+var sel = dialogArguments.eWebEditor.document.selection.createRange();
+sel.type = dialogArguments.eWebEditor.document.selection.type;
+
+var el;
+var sText = "";
+var sBehavior = "";
+
+if (sel.type=="Control") {
+	if (sel.item(0).tagName=="MARQUEE"){
+		sAction = "MODI";
+		sTitle = lang["DlgComModify"];
+		el = sel.item(0);
+		sBehavior = el.behavior;
+		sText = el.innerHTML;
+	}
+}
+
+document.write("<title>" + lang["DlgMarquee"] + "(" + sTitle + ")</title>");
+
+function check(){
+	sBehavior = event.srcElement.value;
+}
+
+function InitDocument() {
+	AvailableLangs.TranslatePage(document);
+
+	d_text.value = sText;
+	switch (sBehavior) {
+	case "scroll":
+		document.all("d_behavior")[0].checked = true;
+		break;
+	case "slide":
+		document.all("d_behavior")[1].checked = true;
+		break;
+	default:
+		sBehavior = "alternate";
+		document.all("d_behavior")[2].checked = true;
+		break;
+	}
+
+	adjustDialog();
+}
+
+function ok(){
+	sText = d_text.value;
+	if (sAction == "MODI") {
+		el.behavior = sBehavior;
+		el.innerHTML = sText;
+	}else{
+		dialogArguments.insertHTML("<marquee behavior='"+sBehavior+"'>"+sText+"</marquee>");
+	}
+	window.returnValue = null;
+	window.close();
+}
+</script>
+</HEAD>
+
+<body onload="InitDocument()">
+<table border=0 cellpadding=0 cellspacing=5 id=tabDialogSize><tr><td>
+
+
+<table border=0 cellpadding=0 cellspacing=0 align=center>
+<tr><td>
+	<FIELDSET>
+	<LEGEND></LEGEND>
+	<table border=0 cellspacing=0 cellpadding=5 width="100%">
+	<tr><td>
+
+		<table border=0 cellspacing=2 cellpadding=0 width="100%">
+		<tr>
+			<td noWrap width="20%"><span lang=DlgMarqueeText></span>:</td>
+			<td noWrap width="80%"><input type=text id="d_text" size=40 value=""></td>
+		</tr>
+		<tr>
+			<td noWrap width="20%"><span lang=DlgMarqueeBehavior></span>:</td>
+			<td noWrap width="80%"><input onclick="check()" type="radio" name="d_behavior" value="scroll"> <span lang=DlgMarqueeScroll></span> <input onclick="check()" type="radio" name="d_behavior" value="slide"> <span lang=DlgMarqueeSlide></span> <input onclick="check()" type="radio" name="d_behavior" value="alternate"> <span lang=DlgMarqueeAlternate></span></td>
+		</tr>
+
+		</table>
+
+	</td></tr>
+	</table>
+	</FIELDSET>
+
+</td></tr>
+<tr><td height=10></td></tr>
+<tr><td noWrap align=right><input type=submit class="dlgBtnCommon" value='' id=Ok onclick="ok()" lang=DlgBtnOK>&nbsp;&nbsp;<input type=button class="dlgBtnCommon" value='' onclick="window.close();" lang=DlgBtnCancel></td></tr>
+</table>
+
+
+</td></tr></table>
+</body>
+</html>

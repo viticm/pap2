@@ -1,0 +1,52 @@
+#/bin/bash
+#add by zuolizhi
+#bt
+
+read path
+
+cd $path
+
+nowhour=`date +%H`
+nowmin=`date +%M`
+
+latestmin=0
+latesthour=0
+latestfile="none"
+
+ls -l core.* > curls.txt
+
+while read line
+do
+fname=`echo $line | awk '{print $9}'`
+ftime=`echo $line | awk '{print $8}'`
+fhour=`echo $ftime | awk -F : '{print $1}'`
+fmin=`echo $ftime | awk -F : '{print $2}'`
+expr $fhour + 0 > /dev/null 2>&1
+if [ $? -eq 0  ]; then
+if [ $fhour -gt $latesthour ]; then
+if [ $fmin -gt $latestmin ]; then
+ latesthour=$fhour
+ latestmin=$fmin
+ latestfile=$fname
+fi
+fi
+fi
+done < curls.txt
+rm -rf curls.txt
+
+if [ $latestfile != "none" ]; then
+#echo $latesthour
+#echo $latestmin
+#echo $latestfile
+echo bt > bt.txt
+echo =================================
+echo
+gdb -batch -c $latestfile lord -x bt.txt
+echo
+echo =================================
+echo
+gdb -batch -c $latestfile lord.gm -x bt.txt
+echo
+rm -rf bt.txt
+rm -rf core.*
+fi
